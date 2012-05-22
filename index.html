@@ -48,6 +48,7 @@
      <h1 class="remove-bottom" style="margin-top: 40px">Nuxeo on Github</h1>
      <h5>Follow every Nuxeo projects on Github</h5>
      <h5><a href="https://github.com/nuxeo"><span id="num-members">&nbsp;</span> members</a></h5>
+     <h5><a href="https://github.com/nuxeo"><span id="num-total-repos">&nbsp;</span> repositories</a></h5>
      <br />
   </div>
   <div class="eight columns">
@@ -60,25 +61,23 @@
 
 <ul class="tabs">
   <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
-  <li><a class="active" href="#community">Community</a></li>
-  <li><a href="#nuxeo">Nuxeo</a></li>
-  <li><a href="#personal">Personal</a></li>
+  <li><a class="active"  href="#nuxeo">Nuxeo&nbsp;(<span id="num-repos">&nbsp;</span>)</a></li>
+  <li><a href="#community">Community&nbsp;(<span id="num-cm-repos">&nbsp;</span>)</a></li>
+  <li><a href="#personal">Personal&nbsp;(<span id="num-pers-repos">&nbsp;</span>)</a></li>
   <li><a href="#timeline">Timeline</a></li>
 </ul>
 
 <!-- Standard <ul> with class of "tabs-content" -->
 <ul class="tabs-content">
   <!-- Give ID that matches HREF of above anchors -->
-  <li class="active" id="community"><ol id="communityRepos"></ol></li>
-  <li id="nuxeo"><ol id="repos"></ol></li>
+  <li class="active"  id="nuxeo"><ol id="repos"></ol></li>
+  <li id="community"><ol id="communityRepos"></ol></li>
   <li id="personal"> <ol id="personalRepos"></ol></li>
   <li id="timeline"> <ol id="timeline"></ol></li>
 </ul>
 
 
-
-
-	</div>
+</div>
 <!-- container -->
 
 	<!-- JS
@@ -105,6 +104,8 @@
         // Put custom repo descriptions in this object, keyed by repo name.
         var customRepoDescriptions;
 
+        var defaultRepoCategories;
+
         var commits = new Array();
 
 
@@ -114,6 +115,7 @@
             timelineRepos = data.timeline;
             customRepoDescriptions = data.customRepoDescriptions;
             customRepoUrls= data.customRepoUrls;
+            defaultRepoCategories = data.defaultRepoCategories;
             startLoadingData();
         });
 
@@ -153,6 +155,20 @@
             $link.append($("<p>").text("name: " + repo.name));
             $link.append($("<p>").text("language: " + repo.language));
             $link.append($("<p>").text("description: " + repoDescription(repo)));
+            var categories = new Array();
+            categories.push(repo.language);
+            categories.push("Nuxeo");
+            if (defaultRepoCategories[repo.name]) {
+                categories = categories.concat(defaultRepoCategories[repo.name]);
+            }
+            var formatedCategories = "";
+            $.each(categories, function (i, category) {
+                formatedCategories += category;
+                if (i != categories.length -1) {
+                    formatedCategories += ", ";
+                }
+            });
+            $link.append($("<p>").text("categories: " + formatedCategories));
             $link.append($("<p>").text("url: " + repo.url));
             $link.append($("<p>").text("homepage: " + repo.homepage));
             $link.append($("<p>").text("watchers: " + repo.watchers));
@@ -162,7 +178,8 @@
             $link.append($("<p>").text("size: " + repo.size));
             $link.append($("<p>").text("private: " + repo.private));
             $link.append($("<p>").text("created_at: " + repo.created_at));
-            $link.append($("<p>").text("owner: " + repo.owner));
+            $link.append($("<p>").text("owner: " + repo.owner.login));
+            $link.append($("<img>").attr("src",repo.owner.avatar_url));
             $link.append($("<p>").text("open_issues: " + repo.open_issues));
             $link.append($("<p>").text("pushed_at: " + repo.pushed_at));
             $link.append($("<p>").text("fork: " + repo.fork));
@@ -170,12 +187,22 @@
             $item.appendTo("#repos");
         }
 
-        function addCommunityRepo(repo) {
+        function addCommunityRepo(repo, categories) {
             var $item = $("<li>").addClass("repo grid-1 " + (repo.language || '').toLowerCase());
             var $link = $("<a>").attr("href", repoUrl(repo)).appendTo($item);
             $link.append($("<p>").text("name: " + repo.name));
             $link.append($("<p>").text("language: " + repo.language));
             $link.append($("<p>").text("description: " + repoDescription(repo)));
+            var formatedCategories = "";
+            categories.push(repo.language);
+            categories.push("community");
+            $.each(categories, function (i, category) {
+                formatedCategories += category;
+                if (i != categories.length -1) {
+                    formatedCategories += ", ";
+                }
+            });
+            $link.append($("<p>").text("categories: " + formatedCategories));
             $link.append($("<p>").text("url: " + repo.url));
             $link.append($("<p>").text("homepage: " + repo.homepage));
             $link.append($("<p>").text("watchers: " + repo.watchers));
@@ -193,12 +220,22 @@
             $item.appendTo("#communityRepos");
         }
 
-        function addPersonalRepo(repo) {
+        function addPersonalRepo(repo, categories) {
             var $item = $("<li>").addClass("repo grid-1 " + (repo.language || '').toLowerCase());
             var $link = $("<a>").attr("href", repoUrl(repo)).appendTo($item);
             $link.append($("<p>").text("name: " + repo.name));
             $link.append($("<p>").text("language: " + repo.language));
             $link.append($("<p>").text("description: " + repoDescription(repo)));
+            var formatedCategories = "";
+            categories.push(repo.language);
+            categories.push("Personal");
+            $.each(categories, function (i, category) {
+                formatedCategories += category;
+                if (i != categories.length -1) {
+                    formatedCategories += ", ";
+                }
+            });
+            $link.append($("<p>").text("categories: " + formatedCategories));
             $link.append($("<p>").text("url: " + repo.url));
             $link.append($("<p>").text("homepage: " + repo.homepage));
             $link.append($("<p>").text("watchers: " + repo.watchers));
@@ -240,7 +277,7 @@
         function startLoadingData() {
         $.each(communityRepos, function (i, repo) {
             $.getJSON(formatRepoUrl(repo), function(result) {
-                addCommunityRepo(result.repository);
+                addCommunityRepo(result.repository, repo.categories);
             });
         });
 
@@ -266,7 +303,7 @@
 
         $.each(personalRepos, function (i, repo) {
             $.getJSON(formatRepoUrl(repo), function(result) {
-                addPersonalRepo(result.repository);
+                addPersonalRepo(result.repository, repo.categories);
             });
         });
 
@@ -277,6 +314,8 @@
                 $("#num-repos").text(repos.length);
                 $("#num-cm-repos").text(communityRepos.length);
                 $("#num-pers-repos").text(personalRepos.length);
+                var totalRepositories = repos.length + communityRepos.length + personalRepos.length;
+                $("#num-total-repos").text(totalRepositories);
                 // Convert pushed_at to Date.
                 $.each(repos, function (i, repo) {
                     repo.pushed_at = new Date(repo.pushed_at);

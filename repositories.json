@@ -1,12 +1,12 @@
 {
     "community":[
-        {"owner":"intelliant", "projectName":"cronbackup"},
-        {"owner":"mkalam-alami", "projectName":"nuxeo-webengine-isotope-browsing"},
-        {"owner":"IMAmuseum", "projectName":"nuxeo-7.x-1.x-dev"}
+        {"owner":"intelliant", "projectName":"cronbackup", "categories": ["addon", "administration"]},
+        {"owner":"mkalam-alami", "projectName":"nuxeo-webengine-isotope-browsing", "categories": ["addon", "UI"]},
+        {"owner":"IMAmuseum", "projectName":"nuxeo-7.x-1.x-dev", "categories": ["addon", "administration"]}
     ],
     "personal" : [
-        {"owner":"tiry", "projectName":"nuxeo-platform-rendering-templates"},
-        {"owner":"tiry", "projectName":"nuxeo-tree-snapshot"}
+        {"owner":"tiry", "projectName":"nuxeo-platform-rendering-templates", "categories": ["addon", "UI"]},
+        {"owner":"tiry", "projectName":"nuxeo-tree-snapshot", "categories": ["addon", "core"]}
     ],
     "timeline" : [
         {"owner":"nuxeo", "projectName":"nuxeo-distribution"},
@@ -25,6 +25,11 @@
         {"owner":"nuxeo", "projectName":"nuxeo"},
         {"owner":"nuxeo", "projectName":"addons"}
     ],
+    "defaultRepoCategories" : {
+        "nuxeo-diff": ["addon", "UI"],
+        "nuxeo-platform-audio": ["addon", "dam"]
+
+    },
     "customRepoUrls" : {
         "nuxeo": "http://nuxeo.github.com/nuxeo/",
         "nuxeo-features": "http://nuxeo.github.com/nuxeo-feature/"
