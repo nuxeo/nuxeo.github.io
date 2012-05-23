@@ -185,6 +185,7 @@
             $link.append($("<p>").text("fork: " + repo.fork));
             $link.append($("<p>").text("forks: " + repo.forks));
             $item.appendTo("#repos");
+            addCollaborators($link, repo.owner.login, repo.name);
         }
 
         function addCommunityRepo(repo, categories) {
@@ -218,6 +219,7 @@
             $link.append($("<p>").text("fork: " + repo.fork));
             $link.append($("<p>").text("forks: " + repo.forks));
             $item.appendTo("#communityRepos");
+            addCollaborators($link, repo.owner, repo.name);
         }
 
         function addPersonalRepo(repo, categories) {
@@ -251,6 +253,21 @@
             $link.append($("<p>").text("fork: " + repo.fork));
             $link.append($("<p>").text("forks: " + repo.forks));
             $item.appendTo("#personalRepos");
+            addCollaborators($link, repo.owner, repo.name);
+        }
+
+        function addCollaborators($link, owner, name) {
+            $.getJSON(formatRepoCollaborator(owner, name), function(result) {
+                if (result.data) {
+                    var $facepile = $("<div>").attr("class", "collaborators");
+                    $.each(result.data, function (i, collaborator) { 
+                         $facepile.append($("<img>").attr("src", collaborator.avatar_url).
+                             attr("width", "50px").attr("height", "100%").
+                             attr("title", collaborator.login).attr("alt", collaborator.login));
+                    });
+                    $link.append($facepile);
+                }
+            })
         }
 
         function addCommit(commit) {
@@ -272,6 +289,11 @@
         function formatRepoCommitUrl(repo) {
             return "http://github.com/api/v2/json/commits/list/"+
                     repo.owner  +"/" + repo.projectName+"/master?page=1&callback=?"
+        }
+
+        function formatRepoCollaborator(owner, name) {
+            return "https://api.github.com/repos/"+
+                    owner  +"/" + name + "/collaborators?callback=?"
         }
 
         function startLoadingData() {
@@ -300,7 +322,6 @@
                 }
             });
         });
-
         $.each(personalRepos, function (i, repo) {
             $.getJSON(formatRepoUrl(repo), function(result) {
                 addPersonalRepo(result.repository, repo.categories);
