@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo</title>
+	<meta name="description" content="Nuxeo on Github">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+
+
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+
+<div class="container">
+  <div class="eight columns">
+     <h1 class="remove-bottom">Download Nuxeo</h1>
+     <h5>Download every Nuxeo project released</h5>
+     <br />
+  </div>
+
+<ul class="tabs">
+  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
+  <li><a class="active"  href="#55">Nuxeo 5.5&nbsp;</a></li>
+  <li><a href="#542">Nuxeo 5.4.2&nbsp;</a></li>
+  <li><a href="#541">Nuxeo 5.4.1&nbsp;</a></li>
+  <li><a href="#540">Nuxeo 5.4.0&nbsp;</a></li>
+  <li><a href="#532">Nuxeo 5.3.2&nbsp;</a></li>
+  <li><a href="#531">Nuxeo 5.3.1&nbsp;</a></li>
+  <li><a href="#530">Nuxeo 5.3.0&nbsp;</a></li>
+  <li><a href="#520">Nuxeo 5.2.0&nbsp;</a></li>
+  <li><a href="#sources">All Version Sources&nbsp;</a></li>
+</ul>
+
+<!-- Standard <ul> with class of "tabs-content" -->
+<ul class="tabs-content">
+  <!-- Give ID that matches HREF of above anchors -->
+  <li class="active"  id="55"><ul id="links55"></ul></li>
+  <li id="542"><ul id="links542"></ul></li>
+  <li id="541"> <ul id="links541"></ul></li>
+  <li id="540"> <ul id="links540"></ul></li>
+  <li id="532"> <ul id="links532"></ul></li>
+  <li id="531"> <ul id="links531"></ul></li>
+  <li id="530"> <ul id="links530"></ul></li>
+  <li id="520"> <ul id="links520"></ul></li>
+  <li id="sources"> <ul id="linksSources"></ul></li>
+</ul>
+
+
+</div>
+<!-- container -->
+
+	<!-- JS
+	================================================== -->
+    <script src="javascripts/jquery-1.7.1.min.js"></script>
+    <script src="javascripts/strftime.js"></script>
+    <script src="javascripts/tabs.js"></script>
+
+    <script type="text/javascript">
+    (function ($, undefined) {
+
+        function fillTab(dlLinks, tabId) {
+            $.each(dlLinks, function (i, item) {
+                addDownloadLink(item, tabId);
+            });
+        }
+
+        function addDownloadLink(dlItem, tabId) {
+            var $item = $("<li>").addClass("downloadItem");
+            var $link = $("<a>").attr("href", dlItem.url).appendTo($item);
+            $link.append($("<span>").text(dlItem.label));
+            if (dlItem.md5) {
+                 var $md5link = $("<a>").attr("href", dlItem.md5);
+                 $md5link.append($("<span>").text("md5"));
+                $item.append(document.createTextNode(" ("));
+                $item.append($md5link);
+                $item.append(document.createTextNode(")"));
+            }
+            $item.appendTo(tabId);
+       }
+
+var data = {
+"5.5": [
+{"label":"Nuxeo 5.5 sources","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip", "md5":":http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip.md5"},
+{"label":"Nuxeo 5.5 for Windows","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-setup.exe.md5"},
+{"label":"Nuxeo 5.5 ovf vm","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-ovf.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-ovf.zip.md5"},
+{"label":"Nuxeo 5.5 vmx vm","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-vmx.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-vmx.zip.md5"},
+{"label":"Nuxeo 5.5 Cap Jboss EAR","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-jboss-ear.zip.md5"},
+{"label":"Nuxeo 5.5 CAP tomcat offline","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-offline.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-offline.zip.md5"},
+{"label":"Nuxeo 5.5 CAP tomcat online","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-online.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-online.zip.md5"},
+{"label":"Nuxeo 5.5 tomcat CAP SDK","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-sdk.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-sdk.zip.md5"},
+{"label":"Nuxeo 5.5 Jboss DM EAR","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-dm-5.5-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-dm-5.5-jboss-ear.zip.md5"}
+],
+"5.4.2": [
+{"label":"Nuxeo 5.4.2 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-5.4.2-sources.zip"},
+{"label":"Nuxeo 5.4.2 CAP Jboss EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss-ear.zip.md5"},
+{"label":"Nuxeo 5.4.2 CAP Jboss zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss.zip.md5"},
+{"label":"Nuxeo 5.4.2 CAP Jetty zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jetty.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jetty.zip.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat CAP izpack installer zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.app.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.app.zip.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat CAP izpack installer exe","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.exe.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat CAP izpack installer jar","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.jar", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.jar.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat CAP zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat CoreServer izpack installer zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.app.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.app.zip.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat CoreServer izpack installer exe","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.exe.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat CoreServer izpack installer jar","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.jar", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.jar.md5"},
+{"label":"Nuxeo 5.4.2Tomcat CoreServer zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.2 JBoss DM EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss-ear.zip.md5"},
+{"label":"Nuxeo 5.4.2 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss.zip.md5"},
+{"label":"Nuxeo 5.4.2 Jetty DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jetty.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jetty.zip.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat DM izpack installer zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.app.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.app.zip.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat DM izpack installer exe","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.exe.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat DM izpack installer jar","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.jar", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.jar.md5"},
+{"label":"Nuxeo 5.4.2 Tomcat DM setup exe","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-setup.exe"},
+{"label":"Nuxeo 5.4.2 Tomcat DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.2 DM OVF","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-ovf.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-ovf.zip.md5"},
+{"label":"Nuxeo 5.4.2 DM VMX","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-vmx.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-vmx.zip.md5"}
+],
+"5.4.1" : [
+{"label":"Nuxeo 5.4.1 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-5.4.1-sources.zip"},
+{"label":"Nuxeo 5.4.1 JBoss CAP EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss-ear.zip.md5"},
+{"label":"Nuxeo 5.4.1 JBoss CAP zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss.zip.md5"},
+{"label":"Nuxeo 5.4.1 Tomcat CAP zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.1 Tomcat CoreServer zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-coreserver-5.4.1-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-coreserver-5.4.1-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.1 JBoss DM EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss-ear.zip.md5"},
+{"label":"Nuxeo 5.4.1 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss.zip.md5"},
+{"label":"Nuxeo 5.4.1 Tomcat DM setup exe","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat-setup.exe.md5"},
+{"label":"Nuxeo 5.4.1 Tomcat DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.1 DM OVF","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-ovf.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-ovf.zip.md5"},
+{"label":"Nuxeo 5.4.1 DM VMX","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-vmx.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-vmx.zip.md5"},
+{"label":"Nuxeo 5.4.1_01 JBoss DM EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss-ear.zip.md5"},
+{"label":"Nuxeo 5.4.1_01 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss.zip.md5"},
+{"label":"Nuxeo 5.4.1 shell","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-shell-5.4.1.jar"}
+],
+"5.4.0" : [
+{"label":"Nuxeo 5.4.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0-sources.zip"},
+{"label":"Nuxeo 5.4.0.1 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip.md5"},
+{"label":"Nuxeo 5.4.0 JBoss CAP EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-jboss-ear.zip.md5"},
+{"label":"Nuxeo 5.4.0 Tomcat CAP zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 JBoss CAP EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss-ear.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 JBoss CAP zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 Jetty CAP zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jetty.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jetty.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 Tomcat CAP zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.0 Tomcat CoreServer zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 Tomcat CoreServer zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0_01-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0_01-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.0 JBoss DM EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jboss-ear.zip.md5"},
+{"label":"Nuxeo 5.4.0 Jetty DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jetty.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jetty.zip.md5"},
+{"label":"Nuxeo 5.4.0 Tomcat DM setup exe","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat-setup.exe.md5"},
+{"label":"Nuxeo 5.4.0 Tomcat DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.0 DM OVF","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-ovf.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-ovf.zip.md5"},
+{"label":"Nuxeo 5.4.0 DM VMX","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-vmx.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-vmx.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 JBoss EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss-ear.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 Jetty DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jetty.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jetty.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 Tomcat setup exe","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat-setup.exe.md5"},
+{"label":"Nuxeo 5.4.0_01 Tomcat DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 DM OVF","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-ovf.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-ovf.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 DM VMX","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-vmx.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-vmx.zip.md5"},
+{"label":"Nuxeo 5.4.0 Shell","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0.zip.md5"},
+{"label":"Nuxeo 5.4.0_01 Shell","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0_01.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0_01.zip.md5"}
+],
+"5.3.2": [
+{"label":"Nuxeo 5.3.2 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-5.3.2-sources.zip"},
+{"label":"Nuxeo 5.3.2 VM OVF","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-VM-ovf.zip"},
+{"label":"Nuxeo 5.3.2 VM VMX","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-VM-vmx.zip"},
+{"label":"Nuxeo 5.3.2 JBoss DM setup exe","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-jboss-setup.exe"},
+{"label":"Nuxeo 5.3.2 Tomcat DM setup exe","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-tomcat-setup.exe"},
+{"label":"Nuxeo CoreServer 5.3.2 Tomcat zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-coreserver-5.3.2-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-coreserver-5.3.2-tomcat.zip.md5"},
+{"label":"Nuxeo 5.3.2 Shell","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-distribution-shell-5.3.2.zip"},
+{"label":"Nuxeo 5.3.2 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jboss.zip.md5"},
+{"label":"Nuxeo 5.3.2 Jetty DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jetty.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jetty.zip.md5"},
+{"label":"Nuxeo 5.3.2 Tomcat DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-tomcat.zip.md5"}
+],
+"5.3.1" : [
+{"label":"Nuxeo 5.3.1 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-ep-5.3.1-src.zip"},
+{"label":"Nuxeo 5.3.1 Tomcat CoreServer zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-coreserver-5.3.1-tomcat_02.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-coreserver-5.3.1-tomcat_02.zip.md5"},	 
+{"label":"Nuxeo 5.3.1 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jboss_02.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jboss_02.zip.md5"},
+{"label":"Nuxeo 5.3.1 Jetty DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jetty.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jetty.zip.md5"},
+{"label":"Nuxeo 5.3.1 Tomcat DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-tomcat_02.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-tomcat_02.zip.md5"},
+{"label":"Nuxeo 5.3.1 DM Windows installer exe","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1.exe.md5"},
+{"label":"Nuxeo 5.3.1 DM windows installer 64 exe","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1_64.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1_64.exe.md5"},
+{"label":"Nuxeo 5.3.1 Shell","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-shell-5.3.1.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-shell-5.3.1.zip.md5"}
+],
+"5.3.0" : [
+{"label":"Nuxeo 5.3.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-5.3.0-sources.zip"},
+{"label":"Nuxeo 5.3.0 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jboss.zip.md5"},
+{"label":"Nuxeo 5.3.0 Jetty DM zip","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jetty.zip", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jetty.zip.md5"},
+{"label":"Nuxeo 5.3.0 DM Windows installer exe","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-setup.exe.md5"},
+{"label":"Nuxeo 5.3.0 Tomcat DM zip","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-tomcat.zip.md5"},
+{"label":"Nuxeo 5.3.0 DM Windows installer 64 exe","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA_64-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA_64-setup.exe.md5"},
+{"label":"Nuxeo 5.3.0-RC1 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1-jboss.zip.md5"},
+{"label":"Nuxeo 5.3.0-RC1 DM Windows installer exe","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_02-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_02-setup.exe.md5"},
+{"label":"Nuxeo 5.3.0-RC1 DM Windows installer 64 exe","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_64_02-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_64_02-setup.exe.md5"},
+{"label":"Nuxeo 5.3.0 Shell","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-shell-5.3.0.zip", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-shell-5.3.0.zip.md5"}
+],
+"5.2.0" : [
+{"label":"Nuxeo 5.2.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-5.2.0-sources.zip"},
+{"label":"Nuxeo 5.2.0 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-jboss.zip.md5"},
+{"label":"Nuxeo 5.2.0 DM Windows installer exe","url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-setup.exe.md5"},
+{"label":"Nuxeo 5.2.0 DM Windows installer 64 exe","url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0_64-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0_64-setup.exe.md5"}
+],
+"sources" : [
+{"label":"Nuxeo 5.5 sources","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip", "md5":":http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip.md5"},
+{"label":"Nuxeo 5.4.2 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-5.4.2-sources.zip"},
+{"label":"Nuxeo 5.4.1 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-5.4.1-sources.zip"},
+{"label":"Nuxeo 5.4.0.1 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip.md5"},
+{"label":"Nuxeo 5.4.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0-sources.zip"},
+{"label":"Nuxeo 5.3.2 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-5.3.2-sources.zip"},
+{"label":"Nuxeo 5.3.1 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-ep-5.3.1-src.zip"},
+{"label":"Nuxeo 5.3.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-5.3.0-sources.zip"},
+{"label":"Nuxeo 5.2.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-5.2.0-sources.zip"}
+]
+};
+
+            fillTab(data["5.5"], "#links55");
+            fillTab(data["5.4.2"], "#links542");
+            fillTab(data["5.4.1"], "#links541");
+            fillTab(data["5.4.0"], "#links540");
+            fillTab(data["5.3.2"], "#links532");
+            fillTab(data["5.3.1"], "#links531");
+            fillTab(data["5.3.0"], "#links530");
+            fillTab(data["5.2.0"], "#links520");
+            fillTab(data["sources"], "#linksSources");
+       
+      
+    })(jQuery);
+    </script>
+
+<!-- End Document
+================================================== -->
+</body>
+</html>
