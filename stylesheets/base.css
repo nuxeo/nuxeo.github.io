@@ -69,7 +69,7 @@
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 133%; line-height: 50px; margin-bottom: 14px;}
 	h2 { font-size: 121%; line-height: 40px; margin-bottom: 10px; }
-	h3 { font-size: 115%; line-height: 34px; margin-bottom: 8px; padding:0.3em 0.7em; color:white;background-color:black;display:inline-block;}
+	h3 { font-size: 115%; line-height: 34px; margin-top:1em;margin-bottom: 8px; padding:0.3em 0.7em; color:white;background-color:black;display:inline-block;}
 	h4 { font-size: 107%; line-height: 30px; margin-bottom: 4px; }
 	h5 { font-size: 17px; line-height: 24px; }
 	h6 { font-size: 14px; line-height: 21px; }
@@ -364,3 +364,16 @@
   margin:0 1em 1em 0;
   } 
 
+#participant-list img {
+  width:64px
+  height:64px;
+} 
+
+.personal, .nuxeo {
+  background-color:white;
+}
+
+.community {
+  background-color:#dde6ef;
+}
+	
