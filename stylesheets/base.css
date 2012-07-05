@@ -52,7 +52,7 @@
 /* #Basic Styles
 ================================================== */
 	body {
-		background: #fff;
+		background-color:#e8eff5;
 		font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
@@ -340,4 +340,25 @@
 	.half-bottom { margin-bottom: 10px !important; }
 	.add-bottom { margin-bottom: 20px !important; }
 
+/* Nuxeo */
+  
+  #welcome {
+    clear:both;
+    background-color:white;
+  }
+  
+  #welcome h2 {
+    display:inline-block;
+    background-color:#ffe600;
+    margin:1em;
+    }
+  
+  .numbers {
+    background-color:#c6d6e5;	
+  }
+
+  #participant-list div {
+  float:left;
+  margin:0 1em 1em 0;
+  } 
 
