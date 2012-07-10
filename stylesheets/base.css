@@ -53,7 +53,7 @@
 ================================================== */
 	body {
 		background-color:#e8eff5;
-		font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 14px/21px 'PT Sans Caption', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
@@ -64,7 +64,6 @@
 ================================================== */
 	h1, h2, h3, h4, h5, h6 {
 		color: #181818;
-		font-family: "Georgia", "Times New Roman", serif;
 		font-weight: normal; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 133%; line-height: 50px; margin-bottom: 14px;}
@@ -343,7 +342,6 @@
 /* Nuxeo */
 
 #site-title {
- font-family: 'PT Sans Caption', sans-serif;
  font-weight:700;
  font-size:32px;
 }
@@ -354,6 +352,7 @@
 
 #site-title span.separator {
   color:#93bdd3; 
+  margin:0 0.2em;
 }
 
 #site-title span.nxsexion {
