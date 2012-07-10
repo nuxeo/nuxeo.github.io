@@ -353,6 +353,7 @@
 #site-title span.separator {
   color:#93bdd3; 
   margin:0 0.2em;
+  display:inline-block;
 }
 
 #site-title span.nxsexion {
