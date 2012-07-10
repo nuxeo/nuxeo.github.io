@@ -343,7 +343,7 @@
 
 #site-title {
  font-weight:700;
- font-size:32px;
+ font-size:36px;
 }
 
 #site-title span {
@@ -390,6 +390,10 @@
 
 .numbers h5.members {
   font-size:28px;	
+}
+
+#num-members {
+  font-size:32px;
 }
 
   #participant-list div {
