@@ -341,7 +341,24 @@
 	.add-bottom { margin-bottom: 20px !important; }
 
 /* Nuxeo */
-  
+
+#site-title {
+ font-family: 'PT Sans Caption', sans-serif;
+ font-weight:bold;
+ font-size:32px;
+}
+
+#site-title span {
+  font-weight:400; 
+}
+
+#site-title span.separator {
+  color:#93bdd3; 
+}
+
+#site-title span.nxsexion {
+}
+
   #welcome {
     clear:both;
     background-color:white;
