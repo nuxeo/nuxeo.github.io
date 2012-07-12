@@ -402,6 +402,10 @@
   text-decoration:none;	
 }
 
+#participant-list {
+  padding:1em;
+}
+
   #participant-list div {
   float:left;
   margin:0 1em 1em 0;
