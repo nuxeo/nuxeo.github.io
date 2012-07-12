@@ -377,6 +377,8 @@
  
   .numbers {
     background-color:#c6d6e5;
+    margin:2em -1em 0 1em;
+  text-align:center;
   }
   
   .numbers div {
@@ -389,7 +391,7 @@
 
 .numbers h5.members {
   font-size:28px;
-  margin-bottom:1em;
+  margin-bottom:0.5em;
 }
 
 #num-members {
@@ -398,10 +400,6 @@
 
 .numbers a {
   text-decoration:none;	
-}
-
-.numbers {
-  margin:2em -1em 0 1em;
 }
 
   #participant-list div {
@@ -414,8 +412,12 @@
   height:64px;
 } 
 
-.personnal, .nuxeo {
+.personal, .nuxeo {
   background-color:white;
+}
+
+.personal {
+  background-color:#f4f7fa;	
 }
 
 .community {
