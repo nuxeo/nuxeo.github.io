@@ -388,7 +388,8 @@
 }
 
 .numbers h5.members {
-  font-size:28px;	
+  font-size:28px;
+  margin-bottom:1em;
 }
 
 #num-members {
@@ -397,6 +398,10 @@
 
 .numbers a {
   text-decoration:none;	
+}
+
+.numbers {
+  margin:2em -1em 0 1em;
 }
 
   #participant-list div {
