@@ -68,8 +68,8 @@
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 133%; line-height: 50px; margin-bottom: 14px;}
 	h2 { font-size: 121%; line-height: 40px; margin-bottom: 10px; }
-	h3 { font-size: 115%; line-height: 34px; margin-top:1em;margin-bottom: 1em;margin-left:-1em;padding:0.3em 0.7em; color:white;background-color:black;display:inline-block;}
-	h4 { font-size: 107%; line-height: 30px; margin-top:1em;margin-bottom: 1em;margin-left: 0em;padding:0.3em 0.7em; color:white;background-color:#41b3f2;display:inline-block;}
+	h3 { font-size: 115%; line-height: 34px; margin-top:1em;margin-bottom: 0.75em;margin-left:-1em;padding:0.3em 0.7em; color:white;background-color:black;display:inline-block;}
+	h4 { font-size: 107%; line-height: 30px; margin-top:1em;margin-bottom: 0.75em;margin-left: 0em;padding:0.3em 0.7em; color:white;background-color:#41b3f2;display:inline-block;}
 	h5 { font-size: 17px; line-height: 24px; }
 	h6 { font-size: 14px; line-height: 21px; }
 	.subheader { color: #777; }
@@ -426,6 +426,7 @@
 
 .community {
   background-color:#dde6ef;
+  font-size:90%;
 }
 
 .project {
@@ -435,7 +436,7 @@
 }
 
 .project p {
-  padding:0;	
+  margin:1em 0;	
 }
 
 .project .byline {
