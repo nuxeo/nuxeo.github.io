@@ -371,7 +371,9 @@
     margin-left:-1em;
     padding:0.3em 0.7em;
     }
- 
+ .message {
+   padding-bottom:0.5em;	
+ }
  #welcome p {
  }
  
@@ -414,6 +416,7 @@
 #participant-list img {
   width:64px;
   height:64px;
+  border:1px solid #666;
 } 
 
 .personal, .nuxeo {
@@ -432,11 +435,12 @@
 .project {
   padding:1em;
   margin:1em;
-  background-color:rgba(232,239,245,0.5);
+  background-color:rgba(232,239,245,1);
 }
 
 .project p {
-  margin:1em 0;	
+  margin:0.5em 0;
+  margin-bottom:1em;
 }
 
 .project .byline {
