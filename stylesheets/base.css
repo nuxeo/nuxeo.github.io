@@ -69,7 +69,7 @@
 	h1 { font-size: 133%; line-height: 50px; margin-bottom: 14px;}
 	h2 { font-size: 121%; line-height: 40px; margin-bottom: 10px; }
 	h3 { font-size: 115%; line-height: 34px; margin-top:1em;margin-bottom: 1em;margin-left:-1em;padding:0.3em 0.7em; color:white;background-color:black;display:inline-block;}
-	h4 { font-size: 107%; line-height: 30px; margin-bottom: 4px; }
+	h4 { font-size: 107%; line-height: 30px; margin-top:1em;margin-bottom: 1em;margin-left:-1em;padding:0.3em 0.7em; color:white;background-color:#41b3f2;display:inline-block;}
 	h5 { font-size: 17px; line-height: 24px; }
 	h6 { font-size: 14px; line-height: 21px; }
 	.subheader { color: #777; }
@@ -426,5 +426,13 @@
 
 .community {
   background-color:#dde6ef;
+}
+
+
+
+.project {
+  padding:1em;
+  border:2px solid #c0cfe0;
+  margin-bottom:0.5em;
 }
 	
