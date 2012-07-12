@@ -416,7 +416,7 @@
 #participant-list img {
   width:64px;
   height:64px;
-  border:1px solid #666;
+/*  border:1px solid #666; */
 } 
 
 .personal, .nuxeo {
@@ -429,7 +429,7 @@
 
 .community {
   background-color:#dde6ef;
-  font-size:90%;
+  font-size:85%;
 }
 
 .project {
@@ -439,16 +439,16 @@
 }
 
 .project p {
-  margin:0.5em 0;
-  margin-bottom:1em;
+  margin:1em 0;
 }
 
 .project .byline {
-  color:#c9c9c9;	
+  color:#666;	
 }
 
 .toggle {
   margin:1em;
+  margin-top:1.5em;
   margin-bottom:2em;
 }
 
