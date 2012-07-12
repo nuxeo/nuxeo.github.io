@@ -395,6 +395,10 @@
   font-size:32px;
 }
 
+.numbers a {
+  text-decoration:none;	
+}
+
   #participant-list div {
   float:left;
   margin:0 1em 1em 0;
