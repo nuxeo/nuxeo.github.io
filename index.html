@@ -32,8 +32,7 @@
 #xnav-footer {margin-top:0px !important;}
 </style>
 <script src="javascripts/jquery-1.7.1.min.js"></script>
-<script src="jsonpath-0.8.0.js"></script>
-<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_confluence_get.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
 	<!-- Favicons
 	================================================== -->
 	<link rel="shortcut icon" href="images/favicon.ico">
@@ -191,9 +190,17 @@
             var $projectContainer = $("<div>").attr("class","project");
             var $title = $("<h5>").appendTo($projectContainer);
             var $link = $("<a>").attr("href", repo.html_url).text(repo.name).appendTo($title);
+            var meta ="";
             if (repo.language) {
-                var $byline = $("<div>").attr("class", "byline").text(repo.language + " " + repo.watchers).appendTo($projectContainer);
+                meta = meta + "Written in " + repo.language + "; ";
             }
+            if (repo.watchers && repo.watchers != 0) {
+                meta = meta + repo.watchers + " watchers; ";
+            }
+            if (repo.forks && repo.forks != 0) {
+                meta = meta + repo.forks + " forks; ";
+            }
+            var $byline = $("<div>").attr("class", "byline").text(meta).appendTo($projectContainer);
             var $description = $("<p>").text(repoDescription(repo)).appendTo($projectContainer);
             $projectContainer.appendTo(targetId);
         }
@@ -204,7 +211,17 @@
             var $link = $("<a>").attr("href", repo.html_url).text(repo.name).appendTo($title);
             var $orgaSpan = $("<span>").attr("class", "orga").text(" by " ).appendTo($title);
             var $orgaLink = $("<a>").attr("href", "https://github.com/" + repo.owner.login).text(repo.owner.login).appendTo($orgaSpan);
-            var $byline = $("<div>").attr("class", "byline").text(repo.language + " " + repo.watchers).appendTo($projectContainer);
+            var meta ="";
+            if (repo.language) {
+                meta = meta + "Written in " + repo.language + "; ";
+            }
+            if (repo.watchers && repo.watchers != 0) {
+                meta = meta + repo.watchers + " watchers; ";
+            }
+            if (repo.forks && repo.forks != 0) {
+                meta = meta + repo.forks + " forks; ";
+            }
+            var $byline = $("<div>").attr("class", "byline").text(meta).appendTo($projectContainer)
             var $description = $("<p>").text(repoDescription(repo)).appendTo($projectContainer);
             $projectContainer.appendTo("#cmProjectContainer");
         }
