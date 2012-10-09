@@ -2,8 +2,11 @@
     "community":[
         {"owner":"intelliant", "projectName":"cronbackup", "categories": ["addon", "administration"]},
         {"owner":"mkalam-alami", "projectName":"nuxeo-webengine-isotope-browsing", "categories": ["addon", "UI"]},
+        {"owner":"IMAmuseum", "projectName":"ima-nuxeo-custom", "categories": ["addon"]},
+        {"owner":"IMAmuseum", "projectName":"ima-nuxeo-template", "categories": ["addon", "configuration"]},
         {"owner":"IMAmuseum", "projectName":"nuxeo-7.x-1.x-dev", "categories": ["addon", "administration"]}
     ],
+    "platform":["nuxeo","nuxeo-common", "nuxeo-runtime","nuxeo-core","nuxeo-services","nuxeo-jsf","nuxeo-webengine","nuxeo-theme","nuxeo-features","nuxeo-dm","nuxeo-distribution","nuxeo-social-collaboration","nuxeo-dam","nuxeo-cmf"],
     "personal" : [
         {"owner":"tiry", "projectName":"nuxeo-platform-rendering-templates", "categories": ["addon", "UI"]},
         {"owner":"tiry", "projectName":"nuxeo-tree-snapshot", "categories": ["addon", "core"]}

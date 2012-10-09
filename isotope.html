@@ -18,10 +18,14 @@
 
 	<!-- CSS
   ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
 
 
  <style>
@@ -107,38 +111,49 @@ width : 200px;
 	================================================== -->
 
 <div>
-  <div id="options">
-<div style="float: left;">
-<h2>Options:</h2>
-    <div class="option-set" data-group="origin">
-      <input type="checkbox" value="" id="origin-all" class="all" checked="true" /><label for="brand-all">all origins</label>
-      <input type="checkbox" value=".Nuxeo" id="Nuxeo" /><label for="Nuxeo">Nuxeo</label>
-      <input type="checkbox" value=".Community" id="Community" /><label for="Community">Community</label>
-      <input type="checkbox" value=".Personal" id="Personal" /><label for="Personal">Personal</label>
+  <div  style="float: left;" id="options">
+<div >
+
+<fieldset>
+      <label for="">Origins</label>
+      <div class="option-set" data-group="origin">
+      <label for="origin-all"><input type="checkbox" value="" id="origin-all" class="all" checked="true" /><span>all</span></label></label>
+      <label for="origin-all"><input type="checkbox" value=".Nuxeo" id="Nuxeo" /><span>Nuxeo</span></label>
+      <label for="origin-all"><input type="checkbox" value=".Community" id="Community" /><span>Community</span></label>
+      <label for="origin-all"><input type="checkbox" value=".Personal" id="Personal" /><span>Personal</span></label>
     </div>
+</fieldset>
+<fieldset>
+      <label for="">Languages</label>
     <div id="languagesSelector" class="option-set" data-group="language">
-      <input type="checkbox" value="" id="language-all" class="all" checked="true" /><label for="language-all">all languages</label>
+      <label for="language-all"><input type="checkbox" value="" id="language-all" class="all" checked="true" /><span>all</span></label>
     </div>
+</fieldset>
+<fieldset>
+      <label for="">Categories</label>
     <div id="categoriesSelector" class="option-set" data-group="categories">
-      <input type="checkbox" value="" id="categories-all" class="all" checked="true" /><label for="categories-all">all categories</label>
+      <label for="language-all"><input type="checkbox" value="" id="categories-all" class="all" checked="true" /><span>all</span></label>
     </div>
+</fieldset>
 </div>
 
 
-<div style="float: right;padding-right:200px;">
-<h2>Sort by:</h2>
-  <ul id="sort-by" >
-    <li><a class="highlight" href="#original-order">default</a></li>
-    <li><a href="#name">name</a></li>
-    <li><a href="#pushed_at">pushed_at</a></li>
-    <li><a href="#watchers">watchers</a></li>
-    <li><a href="#random">random</a></li>
-  </ul>
+</div>
+
+
+<div>
+
+  <div id="sort-by" >
+    <h6>Sort by:</h6>
+    <span><a class="highlight" href="#original-order">default</a></span>
+    <span><a href="#name">name</a></span>
+    <span><a href="#pushed_at">pushed_at</a></span>
+    <span><a href="#watchers">watchers</a></span>
+    <span><a href="#random">random</a></span>
   </div>
-</div>
-<div style="clear:both;" />
+  </div>
 
-  <p id="filter-display"></p>
+ <div>  <p id="filter-display"></p> </div>
 
   <div id="container">
   </div>
@@ -177,13 +192,13 @@ width : 200px;
 
         var uniqueLanguages = new Array();
 
-   Array.prototype.pushUnique = function (value) {
-        var arrVal = this;
-        if ($.inArray(value, arrVal) === -1) {
-            arrVal.push(value);
+        Array.prototype.pushUnique = function (value) {
+            var arrVal = this;
+            if ($.inArray(value, arrVal) === -1) {
+                arrVal.push(value);
+            }
+            return arrVal;
         }
-        return arrVal;
-    }
 
         $.getJSON("./repositories.json", function(data) {
             communityRepos = data.community;
@@ -305,8 +320,9 @@ width : 200px;
         }
 
         function addSelector(value, containerId) {
-            var $input = $("<input>").attr("type", "checkbox").attr("value", "."+value).attr("id", value).appendTo(containerId);
-            var $label = $("<label>").text(value).attr("for", value).appendTo($input).appendTo(containerId);
+            var $label = $("<label>").attr("for", value).appendTo(containerId);
+            var $input = $("<input>").attr("type", "checkbox").attr("value", "."+value).attr("id", value).appendTo($label);
+            var $span = $("<span>").text(value).appendTo($label);
         }
 
         function startLoadingData() {
