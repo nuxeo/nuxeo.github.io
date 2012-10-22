@@ -1,5 +1,6 @@
 {
     "community":[
+        {"owner":"astone-solutions", "projectName":"NuxeoOutlookAddin", "categories": ["addon"]},
         {"owner":"intelliant", "projectName":"cronbackup", "categories": ["addon", "administration"]},
         {"owner":"mkalam-alami", "projectName":"nuxeo-webengine-isotope-browsing", "categories": ["addon", "UI"]},
         {"owner":"IMAmuseum", "projectName":"ima-nuxeo-custom", "categories": ["addon"]},
