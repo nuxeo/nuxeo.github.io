@@ -240,11 +240,11 @@
         function addPlatformRepo() {
             $("#platformLoading").show();
             $.each(platformRepos, function (i, repo) {
-            var repoURL = formatNuxeoRepoUrl(repo);
-            $.getJSON(repoURL, function(result) {
-                addProject(result.data, "#nxPlatformContainer");
-            });
-            $("#platformLoading").hide();
+              var repoURL = formatNuxeoRepoUrl(repo);
+              $.getJSON(repoURL, function(result) {
+                  addProject(result, "#nxPlatformContainer");
+              });
+              $("#platformLoading").hide();
             });
         }
 
@@ -258,7 +258,7 @@
             var repoURL = formatRepoUrl(repo);
             $("#cmLoading").show();
             $.getJSON(repoURL, function(result) {
-                addCMProject(result.data);
+                addCMProject(result);
             $("#cmLoading").hide();
             });
         }
@@ -269,34 +269,28 @@
             }
         }
 
-        function formatRepoUrl(repo, page) {
-            return "https://api.github.com/repos/"+
-                    repo.owner  +"/" + repo.projectName+"?callback=?&";
+        function formatRepoUrl(repo) {
+            return "./data/"+
+                    repo.owner  +"/" + repo.projectName + "/repo.json";
         }
 
-        function formatNuxeoRepoUrl(repo, page) {
-            return "https://api.github.com/repos/nuxeo/" + repo + "?callback=?&";
-        }
-
-        function formatRepoCollaborator(owner, name) {
-            return "https://api.github.com/repos/"+
-                    owner  +"/" + name + "/collaborators?callback=?"
+        function formatNuxeoRepoUrl(repoName) {
+            return "./data/nuxeo/" + repoName + "/repo.json";
         }
 
         function formatOrgRepoUrl(page) {
-            var url = "https://api.github.com/orgs/nuxeo/repos?callback=?&";
+            var url = "./data/";
             if (page) {
-               return url + "&page="+page;
+               return url + page + ".json";
             } else {
-               return url;
+               return url + "1.json";
             }
         }
 
         function addOrgaMembers() {
         $("#membersLoading").show();
         $("#membersCountLoading").show();
-        $.getJSON("https://api.github.com/orgs/nuxeo/members?callback=?", function (result) {
-            var members = result.data;
+        $.getJSON("./data/members.json", function (members) {
             $(function () {
                 $("#num-members").text(members.length);
                 $.each(members, function (i, member) {
@@ -313,8 +307,7 @@
 
         function addRepoCount() {
         $("#repoCountLoading").show();
-        $.getJSON("https://api.github.com/orgs/nuxeo?callback=?", function (result) {
-            var orga = result.data;
+        $.getJSON("./data/orga.json", function (orga) {
             $(function () {
                 var totalRepositories = orga.public_repos + communityRepos.length;
                 $("#num-total-repos").text(totalRepositories);
@@ -327,30 +320,25 @@
         var lastPageUrl;
         function nextAddonPage() {
         $("#addonLoading").show();
-        $.getJSON(formatOrgRepoUrl(pageCount), function (result) {
+        var status = $.getJSON(formatOrgRepoUrl(pageCount), function (result) {
             $(function () {
-                var repos = result.data;
+                var repos = result;
                 $.each(repos, function (i, repo) {
                       if (platformRepos.indexOf(repo.name) == -1) {
                         addProject(repo, "#nxAddonContainer");
                     }
                 });
-                if (!lastPageUrl) {
-                    var links = result.meta.Link;
-                    $.each(links, function (i, link) {
-                     if (link[1].rel == 'last') {
-                        lastPageUrl = link[0];
-                     }
-                    });
-               }
-               if (lastPageUrl && lastPageUrl.match(pageCount+"$")) {
-                  $('#addonToggle').remove();
-                  $(window).unbind('scroll');
-               }
                pageCount++;
             });
         $("#addonLoading").hide();
+
         });
+
+        if (status.readyState == 0) {
+           $('#addonToggle').remove();
+           $(window).unbind('scroll');
+           $("#addonLoading").hide();
+        }
         }
 
     })(jQuery);
