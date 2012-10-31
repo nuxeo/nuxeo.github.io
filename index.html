@@ -136,6 +136,9 @@
         // Put custom repo descriptions in this object, keyed by repo name.
         var customRepoDescriptions;
 
+        // Put custom repo languages in this object, keyed by repo name.
+        var customRepoLanguages;
+
         var defaultRepoCategories;
 
         var commits = new Array();
@@ -156,6 +159,7 @@
             personalRepos = data.personal;
             timelineRepos = data.timeline;
             customRepoDescriptions = data.customRepoDescriptions;
+            customRepoLanguages = data.customRepoLanguages;
             customRepoUrls= data.customRepoUrls;
             defaultRepoCategories = data.defaultRepoCategories;
             addOrgaMembers();
@@ -186,13 +190,19 @@
             return customRepoDescriptions[repo.name] || repo.description;
         }
 
+        function repoLanguage(repo) {
+            return customRepoLanguages[repo.name] || repo.language;
+        }
+
+
         function addProject(repo, targetId) {
             var $projectContainer = $("<div>").attr("class","project");
             var $title = $("<h5>").appendTo($projectContainer);
             var $link = $("<a>").attr("href", repo.html_url).text(repo.name).appendTo($title);
             var meta ="";
-            if (repo.language) {
-                meta = meta + "Written in " + repo.language + "; ";
+            var language = repoLanguage(repo);
+            if (language) {
+                meta = meta + "Written in " + language + "; ";
             }
             if (repo.watchers && repo.watchers != 0) {
                 meta = meta + repo.watchers + " watchers; ";
@@ -212,8 +222,9 @@
             var $orgaSpan = $("<span>").attr("class", "orga").text(" by " ).appendTo($title);
             var $orgaLink = $("<a>").attr("href", "https://github.com/" + repo.owner.login).text(repo.owner.login).appendTo($orgaSpan);
             var meta ="";
-            if (repo.language) {
-                meta = meta + "Written in " + repo.language + "; ";
+            var language = repoLanguage(repo);
+            if (language) {
+                meta = meta + "Written in " + language + "; ";
             }
             if (repo.watchers && repo.watchers != 0) {
                 meta = meta + repo.watchers + " watchers; ";

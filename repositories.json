@@ -41,6 +41,9 @@
     "customRepoDescriptions" : {
         "nuxeo": "Nuxeo root",
         "addons": "Nuxeo addons root"
+    },
+    "customRepoLanguages" : {
+        "nuxeo": "Java"
     }
 
 }
