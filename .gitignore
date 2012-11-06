@@ -1,0 +1,26 @@
+# common ignores
+.classpath
+.project
+.settings
+.idea
+.gradle
+bin
+build
+target
+*~
+*~bak
+*-bak
+*.bak
+*-new
+*.rej
+*.orig
+.DS_Store
+.pydevproject
+*.pyc
+*.iml
+*.ipr
+*.iws
+*.gpd.*
+*cpJar*
+dependency-tree.log
+
