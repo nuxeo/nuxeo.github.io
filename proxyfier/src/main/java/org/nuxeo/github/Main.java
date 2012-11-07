@@ -11,7 +11,7 @@ public class Main {
             IOException {
         if (args.length != 3) {
             System.out.println("repositoryHome, username, password needed");
-            System.exit(0);
+            System.exit(1);
             return;
         }
         ApiProxyfier proxyfier = new ApiProxyfier(args[0], args[1], args[2]);
