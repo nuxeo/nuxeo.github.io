@@ -1,0 +1,36 @@
+buildscript {
+    repositories { mavenCentral() }
+    dependencies { classpath 'org.ajoberstar:gradle-git:0.2.2' }
+}
+
+import org.ajoberstar.gradle.git.tasks.*
+
+
+project.ext {
+    username = project.getProperties().get('github.credentials.username')
+    password = project.getProperties().get('github.credentials.password')
+}
+
+repositories { mavenCentral() }
+
+task pullRepo(type: GitPull) {
+    credentials {
+        username =  project.username
+        password =  project.password
+    }
+}
+
+task add(type: GitAdd) {}
+
+
+task commit(type: GitCommit) {
+    message = 'automatic github repo update by ' + project.username
+}
+
+task push(type: GitPush) {
+    credentials {
+        username =  project.username
+        password =  project.password
+    }
+}
+
