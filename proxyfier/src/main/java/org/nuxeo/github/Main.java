@@ -9,12 +9,12 @@ public class Main {
 
     public static void main(String[] args) throws JSONException, HttpException,
             IOException {
-        if (args.length != 3) {
-            System.out.println("repositoryHome, username, password needed");
+        if (args.length != 2) {
+            System.out.println("repositoryHome, oauth access token needed");
             System.exit(1);
             return;
         }
-        ApiProxyfier proxyfier = new ApiProxyfier(args[0], args[1], args[2]);
+        ApiProxyfier proxyfier = new ApiProxyfier(args[0], args[1]);
         proxyfier.writeCommunityRepo();
         proxyfier.writeMembers();
         proxyfier.writeNuxeoRepo();

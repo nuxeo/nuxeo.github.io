@@ -5,17 +5,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
-import org.apache.commons.httpclient.UsernamePasswordCredentials;
-import org.apache.commons.httpclient.auth.AuthPolicy;
-import org.apache.commons.httpclient.auth.AuthScope;
+import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
@@ -39,43 +35,33 @@ public class ApiProxyfier {
 
     private JSONArray platform;
 
-    private String REPO_URL = "https://api.github.com/repos/%s/%s?type=public";
+    private String REPO_URL = "https://api.github.com/repos/%s/%s";
 
-    private String NUXEO_MEMBERS_URL = "https://api.github.com/orgs/nuxeo/public_members?type=public";
+    private String NUXEO_MEMBERS_URL = "https://api.github.com/orgs/nuxeo/public_members";
 
-    private String NUXEO_ORGA_URL = "https://api.github.com/orgs/nuxeo?type=public";
+    private String NUXEO_ORGA_URL = "https://api.github.com/orgs/nuxeo";
 
-    private String NUXEO_REPOS_PAGES_URL = "https://api.github.com/orgs/nuxeo/repos?type=public";
+    private String NUXEO_REPOS_PAGES_URL = "https://api.github.com/orgs/nuxeo/repos";
 
-    protected Pattern lastPagePattern = Pattern.compile(
-            "( <https://api.github.com/orgs/nuxeo/repos\\?page=)(\\d+)(&type=public>; rel=\"last\")",
+    protected Pattern linkPagePattern = Pattern.compile("<(.*)>; rel=\"(.*)\"",
             Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
 
-    private String USERNAME;
-
-    private String PASSWORD;
+    private NameValuePair[] params = new NameValuePair[2];
 
     HttpClient client;
 
-    public ApiProxyfier(String repositoryHome, String username, String password)
+    public ApiProxyfier(String repositoryHome, String oauthToken)
             throws JSONException, HttpException, IOException {
         log.info("creating ApiProxyfier");
         container = new File(repositoryHome + "data");
         if (!container.exists()) {
             container.mkdir();
         }
+        params[0] = new NameValuePair("type", "public");
+        params[1] = new NameValuePair("access_token", oauthToken);
         log.info("Container file: " + container.getAbsolutePath());
-        USERNAME = username;
-        PASSWORD = password;
         client = new HttpClient();
-        List<String> authPrefs = new ArrayList<String>(1);
-        authPrefs.add(AuthPolicy.BASIC);
 
-        client.getParams().setParameter(AuthPolicy.AUTH_SCHEME_PRIORITY,
-                authPrefs);
-        client.getState().setCredentials(AuthScope.ANY,
-                new UsernamePasswordCredentials(USERNAME, PASSWORD));
-        client.getParams().setAuthenticationPreemptive(true);
         FileReader fr = new FileReader(repositoryHome + "repositories.json");
         JSONTokener jsot = new JSONTokener(fr);
         JSONObject jso = new JSONObject(jsot);
@@ -91,7 +77,7 @@ public class ApiProxyfier {
             JSONObject repo = (JSONObject) communityRepo.get(i);
             String owner = (String) repo.get("owner");
             String projectName = (String) repo.get("projectName");
-            log.info("Downloading " + owner + "/" + projectName);
+            log.info("Downloadingx " + owner + "/" + projectName);
             doGet(owner, projectName);
         }
     }
@@ -111,51 +97,69 @@ public class ApiProxyfier {
         log.info("Downloading members");
         File members = new File(container.getAbsolutePath() + File.separator
                 + "members.json");
-        writeUrlToFile(NUXEO_MEMBERS_URL, members);
+        writeUrlToFile(NUXEO_MEMBERS_URL, members, params);
     }
 
     public void writeOrga() throws JSONException, HttpException, IOException {
         log.info("Downloading organization details");
         File orga = new File(container.getAbsolutePath() + File.separator
                 + "orga.json");
-        writeUrlToFile(NUXEO_ORGA_URL, orga);
+        writeUrlToFile(NUXEO_ORGA_URL, orga, params);
     }
 
     public void writeOrgaPages() throws HttpException, JSONException,
             IOException {
-        GetMethod method = new GetMethod(NUXEO_REPOS_PAGES_URL);
+        writeOrgaPages("", NUXEO_REPOS_PAGES_URL, 1, false);
+    }
+
+    public void writeOrgaPages(String lastPage, String nextPage, int page,
+            boolean stop) throws HttpException, JSONException, IOException {
+        log.info("handling page " + page);
+        GetMethod method = new GetMethod(nextPage);
         method.setDoAuthentication(true);
+        if (page == 1) {
+            method.setQueryString(params);
+        }
         client.executeMethod(method);
         InputStream response = method.getResponseBodyAsStream();
-        File page1 = new File(container.getAbsolutePath() + File.separator
-                + "1.json");
-        writeInputToFile(response, page1);
+        File pageFile = new File(container.getAbsolutePath() + File.separator
+                + String.valueOf(page) + ".json");
+        writeInputToFile(response, pageFile);
         Header linkHeader = method.getResponseHeader("Link");
         String links = linkHeader.getValue();
         String[] linksArray = links.split(",");
-        String limit = "1";
         for (int i = 0; i < linksArray.length; i++) {
-            String link = linksArray[i];
-            Matcher m = lastPagePattern.matcher(link);
+            String link = linksArray[i].trim();
+            Matcher m = linkPagePattern.matcher(link);
             if (m.matches()) {
-                limit = m.group(2);
+                String rel = m.group(2);
+                if ("next".equals(rel)) {
+                    nextPage = m.group(1);
+                } else if ("last".equals(rel)) {
+                    lastPage = m.group(1);
+                }
+
             }
         }
         method.releaseConnection();
-        for (int i = 2; i <= Integer.valueOf(limit); i++) {
-            String url = formatOrgRepoUrl(String.valueOf(i));
-            File file = new File(container.getAbsolutePath() + File.separator
-                    + String.valueOf(i) + ".json");
-            writeUrlToFile(url, file);
+        page++;
+        if (!stop) {
+            if (lastPage.equals(nextPage)) {
+                stop = true;
+            }
+            writeOrgaPages(lastPage, nextPage, page, stop);
         }
-
     }
 
-    private void writeUrlToFile(String url, File file) throws JSONException,
-            HttpException, IOException {
+    private void writeUrlToFile(String url, File file,
+            NameValuePair[] customParams) throws JSONException, HttpException,
+            IOException {
         log.info("write " + url + " to " + file.getAbsolutePath());
         GetMethod method = new GetMethod(url);
         method.setDoAuthentication(true);
+        if (customParams != null) {
+            method.setQueryString(customParams);
+        }
         client.executeMethod(method);
         InputStream response = method.getResponseBodyAsStream();
         writeInputToFile(response, file);
@@ -167,6 +171,7 @@ public class ApiProxyfier {
         String url = String.format(REPO_URL, owner, projectName);
         GetMethod method = new GetMethod(url);
         method.setDoAuthentication(true);
+        method.setQueryString(params);
         client.executeMethod(method);
         InputStream response = method.getResponseBodyAsStream();
         writeToRepos(response, owner, projectName);
@@ -201,14 +206,6 @@ public class ApiProxyfier {
                 IOUtils.write(actual, fw);
                 fw.close();
             }
-        }
-    }
-
-    private String formatOrgRepoUrl(String page) {
-        if (page != null) {
-            return NUXEO_REPOS_PAGES_URL + "&page=" + page;
-        } else {
-            return NUXEO_REPOS_PAGES_URL;
         }
     }
 
