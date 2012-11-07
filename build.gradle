@@ -14,10 +14,6 @@ project.ext {
 repositories { mavenCentral() }
 
 task pullRepo(type: GitPull) {
-    credentials {
-        username =  project.username
-        password =  project.password
-    }
 }
 
 task add(type: GitAdd) {}
@@ -28,9 +24,5 @@ task commit(type: GitCommit) {
 }
 
 task push(type: GitPush) {
-    credentials {
-        username =  project.username
-        password =  project.password
-    }
 }
 
