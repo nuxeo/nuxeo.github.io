@@ -8,8 +8,8 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>Nuxeo</title>
-	<meta name="description" content="Nuxeo on Github">
+	<title>Download Nuxeo</title>
+	<meta name="description" content="Download Nuxeo">
 	<meta name="author" content="nuxeo">
 
 	<!-- Mobile Specific Metas
@@ -18,7 +18,7 @@
 
 	<!-- CSS
   ================================================== -->
-	<link rel="stylesheet" href="stylesheets/clean-base.css">
+	<link rel="stylesheet" href="stylesheets/base.css">
 	<link rel="stylesheet" href="stylesheets/skeleton.css">
 	<link rel="stylesheet" href="stylesheets/layout.css">
 
@@ -26,7 +26,13 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 
+<style>
+#xnav-footer {margin-top:0px !important;}
+</style>
+<script src="javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
 	<!-- Favicons
 	================================================== -->
 	<link rel="shortcut icon" href="images/favicon.ico">
@@ -37,49 +43,22 @@
 </head>
 <body>
 
-
-
 	<!-- Primary Page Layout
 	================================================== -->
 
-
-<div class="container">
-  <div class="twelve columns">
-<ul class="tabs">
-  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
-  <li><a class="active"  href="#56">Nuxeo 5.6&nbsp;</a></li>
-  <li><a href="#55">Nuxeo 5.5&nbsp;</a></li>
-  <li><a href="#542">Nuxeo 5.4.2&nbsp;</a></li>
-  <li><a href="#541">Nuxeo 5.4.1&nbsp;</a></li>
-  <li><a href="#540">Nuxeo 5.4.0&nbsp;</a></li>
-  <li><a href="#532">Nuxeo 5.3.2&nbsp;</a></li>
-  <li><a href="#531">Nuxeo 5.3.1&nbsp;</a></li>
-  <li><a href="#530">Nuxeo 5.3.0&nbsp;</a></li>
-  <li><a href="#520">Nuxeo 5.2.0&nbsp;</a></li>
-  <li><a href="#sources">All Version Sources&nbsp;</a></li>
-</ul>
+  <div id="mainContainer" class="container">
+    <div class="sixteen columns">
+      <h1 class="remove-bottom" id="site-title" style="margin-top: 40px">nuxeo<span class="separator">/</span><span class="nxsexion">Download</span></h1>
+    </div>
+    <div id="welcome">
+    <div class="sixteen columns message">
+       <h2>Welcome to the Nuxeo Download page</h2>
+        <p>Here you will find every version of Nuxeo ever released as well as the sources of every version (scroll to the bottom)!</p>
+    </div>
+    <div style="clear:both;"></div>
   </div>
 
-  <div class="sixteen columns">
-<!-- Standard <ul> with class of "tabs-content" -->
-<ul class="tabs-content">
-  <!-- Give ID that matches HREF of above anchors -->
-  <li class="active"  id="56"><ul id="links56"></ul></li>
-  <li id="55"><ul id="links55"></ul></li>
-  <li id="542"><ul id="links542"></ul></li>
-  <li id="541"> <ul id="links541"></ul></li>
-  <li id="540"> <ul id="links540"></ul></li>
-  <li id="532"> <ul id="links532"></ul></li>
-  <li id="531"> <ul id="links531"></ul></li>
-  <li id="530"> <ul id="links530"></ul></li>
-  <li id="520"> <ul id="links520"></ul></li>
-  <li id="sources"> <ul id="linksSources"></ul></li>
-</ul>
-
   </div>
-
-</div>
-<!-- container -->
 
 	<!-- JS
 	================================================== -->
@@ -90,36 +69,78 @@
     <script type="text/javascript">
     (function ($, undefined) {
 
-        function fillTab(dlLinks, tabId) {
+        var alreadyloading = false;
+
+        var $mainContainer = $("#mainContainer");
+
+        function fillTab(title, dlLinks) {
+            $versionContainer = $("<div>").attr("class","sixteen columns");
+            $mainContainer.append($versionContainer);
+            $titleContainer = $("<div>").attr("class","three columns").appendTo($versionContainer);
+            $arrowContainer = $("<div>").attr("class","one columns").appendTo($versionContainer);
+            $tableContainer = $("<div>").attr("class","eleven columns").appendTo($versionContainer);
+            appendTitle($titleContainer, title);
+            appendArrow($arrowContainer);
+            id = appendTable($tableContainer, title);
+            // fill the table
             $.each(dlLinks, function (i, item) {
-                addDownloadLink(item, tabId);
+                addDownloadLink(item, id);
             });
+        }
+        function appendTitle(target, title) {
+           target.append($("<h2>").text("Nuxeo " + title));
+        }
+        function appendArrow(target) {
+           target.append($("<div>").text("O"));
+        }
+        function appendTable(target, title) {
+           tbodyid = "tbody-" + title;
+           $table = $("<table>").attr("id", "table-" + title);
+           $thead = $("<thead>").append($("<tr>").append($("<th>").append($("<h3>").text("OS"))).append($("<th>").append($("<h3>").text("Name")).append($("<h4>").text("description"))).append($("<th>").append($("<h3>").text("Notes"))).append($("<th>").append($("<h3>").text("Check"))).append($("<th>").append($("<h3>").text("Permalink + download"))));
+           $table.append($thead);
+           $tbody = $("<tbody>").attr("id", tbodyid);
+           $table.append($tbody);
+           target.append($table);
+           return tbodyid;
         }
 
         function addDownloadLink(dlItem, tabId) {
-            var $item = $("<li>").addClass("downloadItem");
-            var $link = $("<a>").attr("href", dlItem.url).appendTo($item);
-            $link.append($("<span>").text(dlItem.label));
+            $tbody = $(jq(tabId));
+            $tr = $("<tr>");
+            $os = $("<td>").text("OS");
+            $name = $("<td>").text(dlItem.label);
+            $notes = $("<td>").text("Notes Notes Notes");
+            $linkTd = $("<td>");
+            $check = $("<td>");
+            var $link = $("<a>").attr("href", dlItem.url);
+            $link.append($("<span>").text("Download"));
+            $linkTd.append($link);
             if (dlItem.md5) {
-                 var $md5link = $("<a>").attr("href", dlItem.md5);
-                 $md5link.append($("<span>").text("md5"));
-                $item.append(document.createTextNode(" ("));
-                $item.append($md5link);
-                $item.append(document.createTextNode(")"));
+                var $md5link = $("<a>").attr("href", dlItem.md5);
+                $md5link.append($("<span>").text("MD5"));
+                $check.append($md5link);
             }
-            $item.appendTo(tabId);
+            $tr.append($os).append($name).append($notes).append($check).append($link);
+            $tr.appendTo($tbody);
        }
 
-var data = {
-"5.6": [
+       function jq(myid) { 
+         return '#' + myid.replace(/(:|\.)/g,'\\$1');
+       }
+
+
+       var data = [{
+"name": "5.6",
+"data": [
 {"label":"Nuxeo 5.6 sources","url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip.md5"},
 {"label":"Nuxeo 5.6 for Windows","url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-setup.exe.md5"},
 {"label":"Nuxeo 5.6 vm","url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-vm.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-vm.zip.md5"},
 {"label":"Nuxeo 5.6 Cap Jboss","url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-jboss.zip.md5"},
 {"label":"Nuxeo 5.6 tomcat CAP SDK","url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat-sdk.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat-sdk.zip.md5"},
 {"label":"Nuxeo 5.6 tomcat CAP","url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat.zip.md5"}
-],
-"5.5": [
+]},{
+"name": "5.5",
+"data": [
 {"label":"Nuxeo 5.5 sources","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip.md5"},
 {"label":"Nuxeo 5.5 for Windows","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-setup.exe.md5"},
 {"label":"Nuxeo 5.5 ovf vm","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-ovf.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-ovf.zip.md5"},
@@ -129,8 +150,10 @@ var data = {
 {"label":"Nuxeo 5.5 CAP tomcat online","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-online.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-online.zip.md5"},
 {"label":"Nuxeo 5.5 tomcat CAP SDK","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-sdk.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-sdk.zip.md5"},
 {"label":"Nuxeo 5.5 Jboss DM EAR","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-dm-5.5-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-dm-5.5-jboss-ear.zip.md5"}
-],
-"5.4.2": [
+]},
+{
+"name": "5.4.2",
+"data": [
 {"label":"Nuxeo 5.4.2 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-5.4.2-sources.zip"},
 {"label":"Nuxeo 5.4.2 CAP Jboss EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss-ear.zip.md5"},
 {"label":"Nuxeo 5.4.2 CAP Jboss zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss.zip.md5"},
@@ -153,8 +176,9 @@ var data = {
 {"label":"Nuxeo 5.4.2 Tomcat DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat.zip.md5"},
 {"label":"Nuxeo 5.4.2 DM OVF","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-ovf.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-ovf.zip.md5"},
 {"label":"Nuxeo 5.4.2 DM VMX","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-vmx.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-vmx.zip.md5"}
-],
-"5.4.1" : [
+]},{
+"name": "5.4.1",
+"data": [
 {"label":"Nuxeo 5.4.1 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-5.4.1-sources.zip"},
 {"label":"Nuxeo 5.4.1 JBoss CAP EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss-ear.zip.md5"},
 {"label":"Nuxeo 5.4.1 JBoss CAP zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss.zip.md5"},
@@ -169,8 +193,9 @@ var data = {
 {"label":"Nuxeo 5.4.1_01 JBoss DM EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss-ear.zip.md5"},
 {"label":"Nuxeo 5.4.1_01 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss.zip.md5"},
 {"label":"Nuxeo 5.4.1 shell","url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-shell-5.4.1.jar"}
-],
-"5.4.0" : [
+]},{
+"name": "5.4.0",
+"data": [
 {"label":"Nuxeo 5.4.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0-sources.zip"},
 {"label":"Nuxeo 5.4.0.1 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip.md5"},
 {"label":"Nuxeo 5.4.0 JBoss CAP EAR zip","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-jboss-ear.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-jboss-ear.zip.md5"},
@@ -196,8 +221,9 @@ var data = {
 {"label":"Nuxeo 5.4.0_01 DM VMX","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-vmx.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-vmx.zip.md5"},
 {"label":"Nuxeo 5.4.0 Shell","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0.zip.md5"},
 {"label":"Nuxeo 5.4.0_01 Shell","url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0_01.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0_01.zip.md5"}
-],
-"5.3.2": [
+]},{
+"name": "5.3.2",
+"data": [
 {"label":"Nuxeo 5.3.2 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-5.3.2-sources.zip"},
 {"label":"Nuxeo 5.3.2 VM OVF","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-VM-ovf.zip"},
 {"label":"Nuxeo 5.3.2 VM VMX","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-VM-vmx.zip"},
@@ -208,8 +234,9 @@ var data = {
 {"label":"Nuxeo 5.3.2 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jboss.zip.md5"},
 {"label":"Nuxeo 5.3.2 Jetty DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jetty.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jetty.zip.md5"},
 {"label":"Nuxeo 5.3.2 Tomcat DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-tomcat.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-tomcat.zip.md5"}
-],
-"5.3.1" : [
+]},{
+"name": "5.3.1",
+"data": [
 {"label":"Nuxeo 5.3.1 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-ep-5.3.1-src.zip"},
 {"label":"Nuxeo 5.3.1 Tomcat CoreServer zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-coreserver-5.3.1-tomcat_02.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-coreserver-5.3.1-tomcat_02.zip.md5"},	 
 {"label":"Nuxeo 5.3.1 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jboss_02.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jboss_02.zip.md5"},
@@ -218,8 +245,9 @@ var data = {
 {"label":"Nuxeo 5.3.1 DM Windows installer exe","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1.exe.md5"},
 {"label":"Nuxeo 5.3.1 DM windows installer 64 exe","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1_64.exe", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1_64.exe.md5"},
 {"label":"Nuxeo 5.3.1 Shell","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-shell-5.3.1.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-shell-5.3.1.zip.md5"}
-],
-"5.3.0" : [
+]},{
+"name": "5.3.0",
+"data": [
 {"label":"Nuxeo 5.3.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-5.3.0-sources.zip"},
 {"label":"Nuxeo 5.3.0 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jboss.zip.md5"},
 {"label":"Nuxeo 5.3.0 Jetty DM zip","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jetty.zip", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jetty.zip.md5"},
@@ -230,14 +258,17 @@ var data = {
 {"label":"Nuxeo 5.3.0-RC1 DM Windows installer exe","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_02-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_02-setup.exe.md5"},
 {"label":"Nuxeo 5.3.0-RC1 DM Windows installer 64 exe","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_64_02-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_64_02-setup.exe.md5"},
 {"label":"Nuxeo 5.3.0 Shell","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-shell-5.3.0.zip", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-shell-5.3.0.zip.md5"}
-],
-"5.2.0" : [
+]},{
+"name": "5.2.0",
+"data": [
 {"label":"Nuxeo 5.2.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-5.2.0-sources.zip"},
 {"label":"Nuxeo 5.2.0 JBoss DM zip","url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-jboss.zip", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-jboss.zip.md5"},
 {"label":"Nuxeo 5.2.0 DM Windows installer exe","url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-setup.exe.md5"},
 {"label":"Nuxeo 5.2.0 DM Windows installer 64 exe","url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0_64-setup.exe", "md5":"http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0_64-setup.exe.md5"}
-],
-"sources" : [
+]},
+{
+"name": "sources",
+"data": [
 {"label":"Nuxeo 5.6 sources","url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip.md5"},
 {"label":"Nuxeo 5.5 sources","url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip", "md5":"http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip.md5"},
 {"label":"Nuxeo 5.4.2 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-5.4.2-sources.zip"},
@@ -248,23 +279,32 @@ var data = {
 {"label":"Nuxeo 5.3.1 Sources","url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-ep-5.3.1-src.zip"},
 {"label":"Nuxeo 5.3.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-5.3.0-sources.zip"},
 {"label":"Nuxeo 5.2.0 Sources","url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-5.2.0-sources.zip"}
-]
-};
+]}
+];
 
-            fillTab(data["5.6"], "#links56");
-            fillTab(data["5.5"], "#links55");
-            fillTab(data["5.4.2"], "#links542");
-            fillTab(data["5.4.1"], "#links541");
-            fillTab(data["5.4.0"], "#links540");
-            fillTab(data["5.3.2"], "#links532");
-            fillTab(data["5.3.1"], "#links531");
-            fillTab(data["5.3.0"], "#links530");
-            fillTab(data["5.2.0"], "#links520");
-            fillTab(data["sources"], "#linksSources");
-       
-      
-    })(jQuery);
-    </script>
+       var count = 0;
+
+       function addTab() {
+         version = data[count];
+         fillTab(version.name, version.data);
+         count = count + 1;
+       }
+
+       $(window).scroll(function() {
+         if ($('body').height() <= ($(window).height() + $(window).scrollTop())) {
+           if (alreadyloading == false) {
+             alreadyloading = true;
+             addTab();
+             alreadyloading = false;
+           }
+         }
+       });
+
+       addTab();
+       addTab();
+
+})(jQuery);
+</script>
 
 <!-- End Document
 ================================================== -->

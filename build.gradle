@@ -5,12 +5,6 @@ buildscript {
 
 import org.ajoberstar.gradle.git.tasks.*
 
-
-project.ext {
-    username = project.getProperties().get('github.credentials.username')
-    password = project.getProperties().get('github.credentials.password')
-}
-
 repositories { mavenCentral() }
 
 task pullRepo(type: GitPull) {
@@ -20,7 +14,7 @@ task add(type: GitAdd) {}
 
 
 task commit(type: GitCommit) {
-    message = 'automatic github repo update by ' + project.username
+    message = 'automatic github repo update by proxyfier'
 }
 
 task push(type: GitPush) {
