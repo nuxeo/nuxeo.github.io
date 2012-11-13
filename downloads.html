@@ -80,22 +80,22 @@
             $versionContainer = $("<div>").attr("class","sixteen");
             $mainContainer.append($versionContainer);
             $titleContainer = $("<div>").attr("class","three columns version").appendTo($versionContainer);
-            $arrowContainer = $("<div>").attr("class","one columns timeline").appendTo($versionContainer);
-            $tableContainer = $("<div>").attr("class","twelve columns dl").appendTo($versionContainer);
+            $tableContainer = $("<div>").attr("class","thirteen columns dl").appendTo($versionContainer);
             appendTitle($titleContainer, title);
-            appendArrow($arrowContainer);
             id = appendTable($tableContainer, title);
             // fill the table
             $.each(dlLinks, function (i, item) {
                 addDownloadLink(item, id);
             });
         }
+
         function appendTitle(target, title) {
            target.append($("<h2>").text("Nuxeo " + title));
+           if (count == 0) {
+             target.append($("<div class='current'>").text("Current"));
+           }
         }
-        function appendArrow(target) {
-           target.append($("<div class='time'>")).append($("<div class='line'>"));
-        }
+
         function appendTable(target, title) {
            tbodyid = "tbody-" + title;
            $table = $("<table>").attr("id", "table-" + title).attr("class","nxdl").attr("border","0").attr("cellpadding","0").attr("cellspacing","0");
