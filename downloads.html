@@ -83,7 +83,8 @@
             id = appendTable($tableContainer, title);
             // fill the table
             $.each(dlLinks, function (i, item) {
-                addDownloadLink(item, id);
+                tr = addDownloadLink(item, id);
+                if ((i+1)%2 == 0) {tr.attr("class","even")}
             });
         }
 
@@ -108,7 +109,6 @@
         function addDownloadLink(dlItem, tabId) {
             $tbody = $(jq(tabId));
             $tr = $("<tr>");
-
             $icon =  $("<img>").attr("src", dlItem.icon);
             $os = $("<td class='os'>").append($icon);
             $name = $("<td class='name'>").text(dlItem.label);
@@ -134,6 +134,7 @@
             }
             $tr.append($os).append($name).append($notes).append($check).append($size).append($linkTd);
             $tr.appendTo($tbody);
+            return $tr;
        }
 
        function jq(myid) { 
