@@ -98,7 +98,7 @@
         function appendTable(target, title) {
            tbodyid = "tbody-" + title;
            $table = $("<table>").attr("id", "table-" + title).attr("class","nxdl").attr("border","0").attr("cellpadding","0").attr("cellspacing","0");
-           $thead = $("<thead>").append($("<tr>").append($("<th class='os'>").append($("<span>").text("OS"))).append($("<th>").append($("<span>").text("Name")).append($("<span>").attr("class", "subtitle").text("description"))).append($("<th>").append($("<span>").text("Notes"))).append($("<th>").append($("<span>").text("Check"))).append($("<th>").append($("<span>").text("Size"))).append($("<th>").append($("<span>").text("Permalink + download"))));
+           $thead = $("<thead>").append($("<tr>").append($("<th class='os'>").append($("<span>").text("OS"))).append($("<th>").append($("<span>").text("Name")).append($("<span>").attr("class", "subtitle").text("description"))).append($("<th>").append($("<span>").text("Check"))).append($("<th>").append($("<span>").text("Size"))).append($("<th>").append($("<span>").text("Permalink + download"))));
            $table.append($thead);
            $tbody = $("<tbody>").attr("id", tbodyid);
            $table.append($tbody);
@@ -111,8 +111,7 @@
             $tr = $("<tr>");
             $icon =  $("<img>").attr("src", dlItem.icon);
             $os = $("<td class='os'>").append($icon);
-            $name = $("<td class='name'>").text(dlItem.label);
-            $notes = $("<td>").text(dlItem.notes);
+            $name = $("<td class='name'>").text(dlItem.label).append($("<span class='subtitle'>").text(dlItem.description));
             $linkTd = $("<td>");
             $check = $("<td class='check'>");
             $size = $("<td class='size'>").text(dlItem.size);
@@ -132,7 +131,7 @@
                 $md5link.append($("<span>").text("MD5"));
                 $check.append($md5link);
             }
-            $tr.append($os).append($name).append($notes).append($check).append($size).append($linkTd);
+            $tr.append($os).append($name).append($check).append($size).append($linkTd);
             $tr.appendTo($tbody);
             return $tr;
        }
@@ -150,7 +149,7 @@
        var data = [ { "data" : [ { "date" : "11-Sep-2012 16:23",
           "icon" : "images/pdf.png",
           "label" : "5.6 Release Notes.pdf",
-          "notes" : "notes",
+          "description" : "Release Notes for the 5.6 version",
           "size" : "101K",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.6/5.6%20Release%20Notes.pdf"
         },
