@@ -96,7 +96,7 @@
         function appendTable(target, title) {
            tbodyid = "tbody-" + title;
            $table = $("<table>").attr("id", "table-" + title);
-           $thead = $("<thead>").append($("<tr>").append($("<th>").append($("<h3>").text("OS"))).append($("<th>").append($("<h3>").text("Name")).append($("<h4>").text("description"))).append($("<th>").append($("<h3>").text("Notes"))).append($("<th>").append($("<h3>").text("Check"))).append($("<th>").append($("<h3>").text("Permalink + download"))));
+           $thead = $("<thead>").append($("<tr>").append($("<th>").append($("<span>").text("OS"))).append($("<th>").append($("<span>").text("Name")).append($("<span>").attr("class", "subtitle").text("description"))).append($("<th>").append($("<span>").text("Notes"))).append($("<th>").append($("<span>").text("Check"))).append($("<th>").append($("<span>").text("Size"))).append($("<th>").append($("<span>").text("Permalink + download"))));
            $table.append($thead);
            $tbody = $("<tbody>").attr("id", tbodyid);
            $table.append($tbody);
@@ -112,6 +112,7 @@
             $notes = $("<td>").text("Notes Notes Notes");
             $linkTd = $("<td>");
             $check = $("<td>");
+            $size = $("<td>").text("size");
             var $link = $("<a>").attr("href", dlItem.url);
             $link.append($("<span>").text("Download"));
             $linkTd.append($link);
@@ -120,7 +121,7 @@
                 $md5link.append($("<span>").text("MD5"));
                 $check.append($md5link);
             }
-            $tr.append($os).append($name).append($notes).append($check).append($link);
+            $tr.append($os).append($name).append($notes).append($check).append($size).append($link);
             $tr.appendTo($tbody);
        }
 
