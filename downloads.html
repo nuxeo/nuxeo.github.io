@@ -109,8 +109,11 @@
         function addDownloadLink(dlItem, tabId) {
             $tbody = $(jq(tabId));
             $tr = $("<tr>");
-            $osdiv =  $("<div>").attr("class", dlItem.os);
-            $os = $("<td class='os'>").append($osdiv);
+            $os = $("<td class='os'>");
+            if (dlItem.os) {
+              $osdiv =  $("<div>").attr("class", dlItem.os).text(dlItem.os);
+              $os.append($osdiv);
+            }
             $name = $("<td class='name'>").text(dlItem.label).append($("<span class='subtitle'>").text(dlItem.description));
             $linkTd = $("<td class='buttons'>");
             $check = $("<td class='check'>");
