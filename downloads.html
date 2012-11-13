@@ -109,10 +109,10 @@
         function addDownloadLink(dlItem, tabId) {
             $tbody = $(jq(tabId));
             $tr = $("<tr>");
-            $icon =  $("<img>").attr("src", dlItem.icon);
-            $os = $("<td class='os'>").append($icon);
+            $osdiv =  $("<div>").attr("class", dlItem.os);
+            $os = $("<td class='os'>").append($osdiv);
             $name = $("<td class='name'>").text(dlItem.label).append($("<span class='subtitle'>").text(dlItem.description));
-            $linkTd = $("<td>");
+            $linkTd = $("<td class='buttons'>");
             $check = $("<td class='check'>");
             $size = $("<td class='size'>").text(dlItem.size);
             var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("class", "button launch");
@@ -147,7 +147,7 @@
        }
 
        var data = [ { "data" : [ { "date" : "11-Sep-2012 16:23",
-          "icon" : "images/pdf.png",
+          "os" : "all",
           "label" : "5.6 Release Notes.pdf",
           "description" : "Release Notes for the 5.6 version",
           "size" : "101K",
@@ -161,7 +161,7 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-5.6/5.6%20Upgrade%20Notes.pdf"
         },
         { "date" : "31-Aug-2012 17:49",
-          "icon" : "images/exe.png",
+          "os" : "win",
           "label" : "nuxeo-5.6-setup.exe",
           "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-setup.exe.md5",
           "notes" : "notes",
@@ -177,7 +177,7 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip"
         },
         { "date" : "31-Aug-2012 18:09",
-          "icon" : "images/zip.png",
+          "os" : "vm",
           "label" : "nuxeo-5.6-vm.zip",
           "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-vm.zip.md5",
           "notes" : "notes",
