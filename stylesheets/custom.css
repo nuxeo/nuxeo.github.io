@@ -36,21 +36,37 @@ h1#site-title {
     display: inline-block;
 }
 
-/* .dl {
-  border-left:4px solid #9bb8dc;
-  }
-  */
+div.current {
+  background-color: #d2ff00;
+  position: relative;
+  float:right;
+  padding:0px 6px;
+  font-size: 75%;
+  box-shadow: 0 0 5px rgba(1,1,1,0.3);
+  -moz-transform: rotate(-2deg);
+  -webkit-transform:rotate(-2deg); 
+  -o-transform:rotate(-2deg); 
+  margin-right:54px;
+  margin-top:-11px;
+}
 
+.dl {
+  background: transparent url(../images/line.png) top left repeat-y;
+  }
+  
+.thirteen:first-child {
+  background-position: left 30px;
+}  
+  
 table.nxdl {
   margin: 0;
   margin-bottom: 2em;
 /*  border:1px solid black; */
   border-collapse: collapse;
   width: 95%;
-/*  font-size: 80%; */
   font-size: 12px;
   position: relative;
-  margin-left: 20px;
+  margin-left: 23px;
   background-color: white;
 }
 
@@ -89,8 +105,18 @@ table.nxdl thead span.subtitle {
   font-weight: normal;
 }
 
+.nxdl .os {
+  text-align: center;
+}
+
 .nxdl .check {
   text-align: center;
+   font-size: 80%; 
+}
+
+.nxdl .size {
+  text-align: right;
+  font-size: 80%;
 }
 
 .nxdl .name {
@@ -103,4 +129,30 @@ table.nxdl thead span.subtitle {
 
 a.button:visited {
   color:#666;
+}
+
+.thirteen:before {
+  border: 4px solid #dde6ef;
+    border-radius: 20px 20px 20px 20px;
+    content: "";
+    float: left;
+    height: 10px;
+    margin-left: -17px;
+    margin-top: 18px;
+    width: 10px;
+    background-color: white;
+}
+
+
+.container .sixteen:first-child .thirteen {
+  background-color: red;
+}
+
+#welcome:after {
+ background-color: white;
+    content: "";
+    height: 28px;
+    left: 174px;
+    position: absolute;
+    width: 17px;
 }
