@@ -96,7 +96,7 @@
         }
         function appendTable(target, title) {
            tbodyid = "tbody-" + title;
-           $table = $("<table>").attr("id", "table-" + title);
+           $table = $("<table>").attr("id", "table-" + title).attr("class","nxdl").attr("border","0").attr("cellpadding","0").attr("cellspacing","0");
            $thead = $("<thead>").append($("<tr>").append($("<th>").append($("<span>").text("OS"))).append($("<th>").append($("<span>").text("Name")).append($("<span>").attr("class", "subtitle").text("description"))).append($("<th>").append($("<span>").text("Notes"))).append($("<th>").append($("<span>").text("Check"))).append($("<th>").append($("<span>").text("Size"))).append($("<th>").append($("<span>").text("Permalink + download"))));
            $table.append($thead);
            $tbody = $("<tbody>").attr("id", tbodyid);
@@ -122,7 +122,7 @@
                 $md5link.append($("<span>").text("MD5"));
                 $check.append($md5link);
             }
-            $tr.append($os).append($name).append($notes).append($check).append($size).append($link);
+            $tr.append($os).append($name).append($notes).append($check).append($size).append($linkTd);
             $tr.appendTo($tbody);
        }
 
