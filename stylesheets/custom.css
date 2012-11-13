@@ -1,5 +1,26 @@
 /* Nuxeo on Skeleton */
 
-.container .three.columns {
+.container {
    background-color: #fff;
 }
+
+h1#site-title {
+  margin:0 auto;
+  width: 940px;
+}
+
+.twelve table {
+  margin:0;
+  border:1px solid black;
+  border-collapse: collapse;
+}
+
+.twelve table td, .twelve th {
+  padding:0.3em;
+  border:1px solid black;  
+}
+
+.twelve thead tr {
+  background-color: #3670b9;
+}
+
