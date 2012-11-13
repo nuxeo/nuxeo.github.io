@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="stylesheets/base.css">
 	<link rel="stylesheet" href="stylesheets/skeleton.css">
 	<link rel="stylesheet" href="stylesheets/layout.css">
+	<link rel="stylesheet" href="stylesheets/custom.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -74,11 +75,11 @@
         var $mainContainer = $("#mainContainer");
 
         function fillTab(title, dlLinks) {
-            $versionContainer = $("<div>").attr("class","sixteen columns");
+            $versionContainer = $("<div>").attr("class","sixteen");
             $mainContainer.append($versionContainer);
             $titleContainer = $("<div>").attr("class","three columns").appendTo($versionContainer);
             $arrowContainer = $("<div>").attr("class","one columns").appendTo($versionContainer);
-            $tableContainer = $("<div>").attr("class","eleven columns").appendTo($versionContainer);
+            $tableContainer = $("<div>").attr("class","twelve columns").appendTo($versionContainer);
             appendTitle($titleContainer, title);
             appendArrow($arrowContainer);
             id = appendTable($tableContainer, title);
