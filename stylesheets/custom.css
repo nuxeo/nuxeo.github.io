@@ -9,18 +9,98 @@ h1#site-title {
   width: 940px;
 }
 
-.twelve table {
-  margin:0;
-  border:1px solid black;
-  border-collapse: collapse;
+.version h2 {
+    background: #3670b9;
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    padding: 10px 20px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    margin: 0px 20px 0 0;
+    text-decoration: none;
+    float:right;
+    line-height: 34px;
 }
 
-.twelve table td, .twelve th {
-  padding:0.3em;
+.version h2:after {
+   display: inline-block;
+    border: 19px solid;
+    border-color: transparent transparent transparent #3670b9;
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: -38px;
+    top: 9px;
+    content: "";
+    display: inline-block;
+}
+
+/* .dl {
+  border-left:4px solid #9bb8dc;
+  }
+  */
+
+table.nxdl {
+  margin: 0;
+  margin-bottom: 2em;
+/*  border:1px solid black; */
+  border-collapse: collapse;
+  width: 95%;
+/*  font-size: 80%; */
+  font-size: 12px;
+  position: relative;
+  margin-left: 20px;
+  background-color: white;
+}
+
+table.nxdl:before {
+   display: inline-block;
+    border: 19px solid;
+    border-color: transparent #3670b9 transparent transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: -38px;
+    top: 8px;
+    content: "";
+    display: inline-block;
+    z-index: 300;
+}
+
+table.nxdl td, table.nxdl th {
+  padding:5px 10px;
   border:1px solid black;  
 }
 
-.twelve thead tr {
-  background-color: #3670b9;
+table.nxdl th {
+  border-color: #3670b9;
 }
 
+table.nxdl thead tr {
+  background-color: #3670b9;
+  color:white;
+  text-align: left;
+  font-weight: bold;
+}
+
+table.nxdl thead span.subtitle {
+  display:block;
+  font-weight: normal;
+}
+
+.nxdl .check {
+  text-align: center;
+}
+
+.nxdl .name {
+  font-weight: bold;
+}
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  font-size: 15px;
+}
+
+a.button:visited {
+  color:#666;
+}
