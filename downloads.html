@@ -48,9 +48,7 @@
 	================================================== -->
 <h1 class="remove-bottom" id="site-title" style="margin-top: 40px">nuxeo<span class="separator">/</span><span class="nxsexion">Download</span></h1>
   <div id="mainContainer" class="container">
-    <div class="sixteen columns">
-      
-    </div>
+
     <div id="welcome">
     <div class="sixteen message">
        <h2>Welcome to the Nuxeo Download page</h2>
@@ -99,7 +97,7 @@
         function appendTable(target, title) {
            tbodyid = "tbody-" + title;
            $table = $("<table>").attr("id", "table-" + title).attr("class","nxdl").attr("border","0").attr("cellpadding","0").attr("cellspacing","0");
-           $thead = $("<thead>").append($("<tr>").append($("<th>").append($("<span>").text("OS"))).append($("<th>").append($("<span>").text("Name")).append($("<span>").attr("class", "subtitle").text("description"))).append($("<th>").append($("<span>").text("Notes"))).append($("<th>").append($("<span>").text("Check"))).append($("<th>").append($("<span>").text("Size"))).append($("<th>").append($("<span>").text("Permalink + download"))));
+           $thead = $("<thead>").append($("<tr>").append($("<th class='os'>").append($("<span>").text("OS"))).append($("<th>").append($("<span>").text("Name")).append($("<span>").attr("class", "subtitle").text("description"))).append($("<th>").append($("<span>").text("Notes"))).append($("<th>").append($("<span>").text("Check"))).append($("<th>").append($("<span>").text("Size"))).append($("<th>").append($("<span>").text("Permalink + download"))));
            $table.append($thead);
            $tbody = $("<tbody>").attr("id", tbodyid);
            $table.append($tbody);
@@ -110,13 +108,14 @@
         function addDownloadLink(dlItem, tabId) {
             $tbody = $(jq(tabId));
             $tr = $("<tr>");
+
             $icon =  $("<img>").attr("src", dlItem.icon);
-            $os = $("<td>").append($icon);
+            $os = $("<td class='os'>").append($icon);
             $name = $("<td class='name'>").text(dlItem.label);
             $notes = $("<td>").text(dlItem.notes);
             $linkTd = $("<td>");
             $check = $("<td class='check'>");
-            $size = $("<td>").text(dlItem.size);
+            $size = $("<td class='size'>").text(dlItem.size);
             var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("class", "button");
             $dowloadLink.append($("<span>").text("Download"));
             var $permaLink = $("<a>").attr("href", dlItem.url).attr("class", "button").click(
