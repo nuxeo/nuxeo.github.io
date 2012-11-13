@@ -115,9 +115,9 @@
             $linkTd = $("<td>");
             $check = $("<td class='check'>");
             $size = $("<td class='size'>").text(dlItem.size);
-            var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("class", "button");
+            var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("class", "button launch");
             $dowloadLink.append($("<span>").text("Download"));
-            var $permaLink = $("<a>").attr("href", dlItem.url).attr("class", "button").click(
+            var $permaLink = $("<a>").attr("href", dlItem.url).attr("class", "button permalink").click(
               function(){ 
                 window.prompt("Copy to clipboard: Ctrl+C",  dlItem.url);
                 return false;

@@ -89,8 +89,14 @@ table.nxdl td, table.nxdl th {
   border:1px solid black;  
 }
 
+table.nxdl td {
+  vertical-align: middle;
+}
+
 table.nxdl th {
   border-color: #3670b9;
+  padding-top:5px;
+  padding-bottom: 5px;
 }
 
 table.nxdl thead tr {
@@ -100,9 +106,13 @@ table.nxdl thead tr {
   font-weight: bold;
 }
 
-table.nxdl thead span.subtitle {
+table.nxdl span.subtitle {
   display:block;
   font-weight: normal;
+}
+
+.nxdl .even {
+  background-color: #eff9ff;
 }
 
 .nxdl .os {
@@ -123,12 +133,37 @@ table.nxdl thead span.subtitle {
   font-weight: bold;
 }
 
-.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
-  font-size: 15px;
+td.name {
+ line-height: 115%;
 }
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  font-size: 12px;
+  margin:5px;
+  float:left;
+}
+
+.permalink {
+  padding-bottom: 6px;
+  padding-top: 6px;
+  opacity:0.5;
+}
+
 
 a.button:visited {
   color:#666;
+}
+
+.permalink:hover {
+  opacity:1;
+ }
+  
+.launch:after {
+  clear:both;
+} 
+
+.buttons {
+  width:139px;
 }
 
 .thirteen:before {
@@ -156,3 +191,4 @@ a.button:visited {
     position: absolute;
     width: 17px;
 }
+
