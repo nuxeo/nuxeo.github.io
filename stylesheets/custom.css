@@ -96,8 +96,8 @@ table.nxdl td {
 
 table.nxdl th {
   border-color: #3670b9;
-  padding-top:5px;
-  padding-bottom: 5px;
+  padding-top:10px;
+  padding-bottom: 15px;
 }
 
 table.nxdl thead tr {
@@ -127,14 +127,21 @@ table.nxdl span.subtitle {
 
 .nxdl .size {
   text-align: right;
+}
+
+.nxdl td.size {
   font-size: 80%;
+}
+
+.nxdl .size, .nxdl .check {
+  width:35px;
 }
 
 .nxdl .name {
   font-weight: bold;
 }
 
-td.name {
+.name {
  line-height: 115%;
 }
 

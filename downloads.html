@@ -98,7 +98,7 @@
         function appendTable(target, title) {
            tbodyid = "tbody-" + title;
            $table = $("<table>").attr("id", "table-" + title).attr("class","nxdl").attr("border","0").attr("cellpadding","0").attr("cellspacing","0");
-           $thead = $("<thead>").append($("<tr>").append($("<th class='os'>").append($("<span>").text("OS"))).append($("<th>").append($("<span>").text("Name")).append($("<span>").attr("class", "subtitle").text("description"))).append($("<th>").append($("<span>").text("Check"))).append($("<th>").append($("<span>").text("Size"))).append($("<th>").append($("<span>").text("Permalink + download"))));
+           $thead = $("<thead>").append($("<tr>").append($("<th class='os'>").append($("<span>").text("OS"))).append($("<th class='name'>").append($("<span>").text("Name")).append($("<span>").attr("class", "subtitle").text("description"))).append($("<th>").append($("<span>").text("Check"))).append($("<th class='size'>").append($("<span>").text("Size"))).append($("<th>").append($("<span>"))));
            $table.append($thead);
            $tbody = $("<tbody>").attr("id", tbodyid);
            $table.append($tbody);
