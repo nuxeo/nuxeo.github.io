@@ -74,12 +74,12 @@
 
         var count = 0;
 
-        function fillTab(title, dlLinks) {
+        function fillTab(title, date, dlLinks) {
             $versionContainer = $("<div>").attr("class","sixteen");
             $mainContainer.append($versionContainer);
             $titleContainer = $("<div>").attr("class","three columns version").appendTo($versionContainer);
             $tableContainer = $("<div>").attr("class","thirteen columns dl").appendTo($versionContainer);
-            appendTitle($titleContainer, title);
+            appendTitle($titleContainer, title, date);
             id = appendTable($tableContainer, title);
             // fill the table
             $.each(dlLinks, function (i, item) {
@@ -88,10 +88,12 @@
             });
         }
 
-        function appendTitle(target, title) {
+        function appendTitle(target, title, date) {
            target.append($("<h2>").text("Nuxeo " + title));
            if (count == 0) {
-             target.append($("<div class='current'>").text("Current"));
+             target.append($("<div class='current'>").text("Latest!"));
+           } else {
+             target.append($("<div class='current'>").text(date));
            }
         }
 
@@ -145,12 +147,12 @@
 
        function addTab() {
          version = data[count];
-         fillTab(version.name, version.data);
+         fillTab(version.name, version.date, version.data);
          count = count + 1;
        }
 
        var data = [ { "data" : [ { "date" : "11-Sep-2012 16:23",
-          "description" : "Release Notes description",
+          "description" : "",
           "label" : "5.6 Release Notes.pdf",
           "os" : "all",
           "size" : "101K",
@@ -220,6 +222,7 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat.zip"
         }
       ],
+    "date" : "2012-09-05",
     "name" : "5.6"
   },
   { "data" : [ { "date" : "15-Dec-2011 16:09",
@@ -295,6 +298,7 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-dm-5.5-jboss-ear.zip"
         }
       ],
+    "date" : "2011-12-13",
     "name" : "5.5"
   },
   { "data" : [ { "date" : "31-May-2011 22:48",
@@ -472,6 +476,7 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-vmx.zip"
         }
       ],
+    "date" : "2011-06-01",
     "name" : "5.4.2"
   },
   { "data" : [ { "date" : "23-Mar-2011 04:15",
@@ -585,6 +590,7 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-shell-5.4.1.jar"
         }
       ],
+    "date" : "2011-04-06",
     "name" : "5.4.1"
   },
   { "data" : [ { "date" : "09-Nov-2010 21:11",
@@ -787,6 +793,7 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0_01.zip"
         }
       ],
+    "date" : "2010-11-10",
     "name" : "5.4.0"
   },
   { "data" : [ { "date" : "20-Jul-2010 21:55",
@@ -864,6 +871,7 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-tomcat.zip"
         }
       ],
+    "date" : "2010-07-20 ",
     "name" : "5.3.2"
   },
   { "data" : [ { "date" : "23-Mar-2010 15:24",
@@ -930,6 +938,7 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-shell-5.3.1.zip"
         }
       ],
+    "date" : "2010-03-22 ",
     "name" : "5.3.1"
   },
   { "data" : [ { "date" : "16-Nov-2009 11:59",
@@ -1012,6 +1021,7 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-shell-5.3.0.zip"
         }
       ],
+    "date" : "2009-10-27 ",
     "name" : "5.3.0"
   },
   { "data" : [ { "date" : "22-May-2009 19:04",
@@ -1046,78 +1056,79 @@
           "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0_64-setup.exe"
         }
       ],
+    "date" : "2009-05-18",
     "name" : "5.2.0"
   },
   { "data" : [ { "date" : "31-Aug-2012 17:17",
           "description" : "description",
-          "os" : "all",
           "label" : "nuxeo-5.6-sources.zip",
           "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip.md5",
+          "os" : "all",
           "size" : "83M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip"
         },
         { "date" : "10-Jan-2012 15:11",
           "description" : "description",
-          "os" : "all",
           "label" : "nuxeo-5.5-sources.zip",
           "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip.md5",
+          "os" : "all",
           "size" : "82M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip"
         },
         { "date" : "31-May-2011 22:48",
           "description" : "description",
-          "os" : "all",
           "label" : "nuxeo-5.4.2-sources.zip",
+          "os" : "all",
           "size" : "84M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-5.4.2-sources.zip"
         },
         { "date" : "23-Mar-2011 04:15",
           "description" : "description",
-          "os" : "all",
           "label" : "nuxeo-5.4.1-sources.zip",
+          "os" : "all",
           "size" : "61M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-5.4.1-sources.zip"
         },
         { "date" : "09-Nov-2010 21:11",
           "description" : "description",
-          "os" : "all",
           "label" : "nuxeo-5.4.0-sources.zip",
+          "os" : "all",
           "size" : "63M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0-sources.zip"
         },
         { "date" : "24-Nov-2010 19:37",
           "description" : "description",
-          "os" : "all",
           "label" : "nuxeo-5.4.0.1-sources.zip",
           "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip.md5",
+          "os" : "all",
           "size" : "64M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip"
         },
         { "date" : "19-Jul-2010 18:45",
           "description" : "Nuxeo Platform 5.3.1 sources",
-          "os" : "all",
           "label" : "nuxeo-5.3.2-sources.zip",
+          "os" : "all",
           "size" : "53M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-5.3.2-sources.zip"
         },
         { "date" : "25-Mar-2010 09:11",
           "description" : "Nuxeo Platform 5.3.1 sources",
-          "os" : "all",
           "label" : "nuxeo-ep-5.3.1-src.zip",
+          "os" : "all",
           "size" : "50M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-ep-5.3.1-src.zip"
         },
         { "date" : "16-Nov-2009 11:59  ",
           "description" : "Nuxeo DM 5.3.0 sources",
-          "os" : "all",
           "label" : "nuxeo-5.3.0-sources.zip",
+          "os" : "all",
           "size" : "48M",
           "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-5.3.0-sources.zip"
         },
         { "date" : "22-May-2009 19:04",
           "description" : "Nuxeo DM 5.2 sources",
-          "os" : "all",
           "label" : "nuxeo-5.2.0-sources.zip",
+          "os" : "all",
           "size" : "35M",
           "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-5.2.0-sources.zip"
         }
@@ -1126,18 +1137,10 @@
   }
 ];
 
-       $(window).scroll(function() {
-         if ($('body').height() <= ($(window).height() + $(window).scrollTop())) {
-           if (alreadyloading == false) {
-             alreadyloading = true;
-             addTab();
-             alreadyloading = false;
-           }
-         }
+       $.each(data, function (i, item) {
+         addTab();
        });
 
-       addTab();
-       addTab();
 
 })(jQuery);
 </script>
