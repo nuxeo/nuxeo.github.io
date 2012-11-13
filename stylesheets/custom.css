@@ -86,11 +86,12 @@ table.nxdl:before {
 
 table.nxdl td, table.nxdl th {
   padding:5px 10px;
-  border:1px solid black;  
+  border:1px solid #757575;  
 }
 
 table.nxdl td {
   vertical-align: middle;
+  border-width:1px 0;
 }
 
 table.nxdl th {
