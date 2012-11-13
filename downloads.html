@@ -46,13 +46,13 @@
 
 	<!-- Primary Page Layout
 	================================================== -->
-
+<h1 class="remove-bottom" id="site-title" style="margin-top: 40px">nuxeo<span class="separator">/</span><span class="nxsexion">Download</span></h1>
   <div id="mainContainer" class="container">
     <div class="sixteen columns">
-      <h1 class="remove-bottom" id="site-title" style="margin-top: 40px">nuxeo<span class="separator">/</span><span class="nxsexion">Download</span></h1>
+      
     </div>
     <div id="welcome">
-    <div class="sixteen columns message">
+    <div class="sixteen message">
        <h2>Welcome to the Nuxeo Download page</h2>
         <p>Here you will find every version of Nuxeo ever released as well as the sources of every version (scroll to the bottom)!</p>
     </div>
@@ -79,9 +79,9 @@
         function fillTab(title, dlLinks) {
             $versionContainer = $("<div>").attr("class","sixteen");
             $mainContainer.append($versionContainer);
-            $titleContainer = $("<div>").attr("class","three columns").appendTo($versionContainer);
-            $arrowContainer = $("<div>").attr("class","one columns").appendTo($versionContainer);
-            $tableContainer = $("<div>").attr("class","twelve columns").appendTo($versionContainer);
+            $titleContainer = $("<div>").attr("class","three columns version").appendTo($versionContainer);
+            $arrowContainer = $("<div>").attr("class","one columns timeline").appendTo($versionContainer);
+            $tableContainer = $("<div>").attr("class","twelve columns dl").appendTo($versionContainer);
             appendTitle($titleContainer, title);
             appendArrow($arrowContainer);
             id = appendTable($tableContainer, title);
@@ -94,7 +94,7 @@
            target.append($("<h2>").text("Nuxeo " + title));
         }
         function appendArrow(target) {
-           target.append($("<div>").text("O"));
+           target.append($("<div class='time'>")).append($("<div class='line'>"));
         }
         function appendTable(target, title) {
            tbodyid = "tbody-" + title;
@@ -111,12 +111,12 @@
             $tbody = $(jq(tabId));
             $tr = $("<tr>");
             $os = $("<td>").text(dlItem.os);
-            $name = $("<td>").text(dlItem.label);
+            $name = $("<td class='name'>").text(dlItem.label);
             $notes = $("<td>").text(dlItem.notes);
             $linkTd = $("<td>");
-            $check = $("<td>");
+            $check = $("<td class='check'>");
             $size = $("<td>").text(dlItem.size);
-            var $link = $("<a>").attr("href", dlItem.url);
+            var $link = $("<a>").attr("href", dlItem.url).attr("class", "button");
             $link.append($("<span>").text("Download"));
             $linkTd.append($link);
             if (dlItem.md5) {
