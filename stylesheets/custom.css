@@ -14,13 +14,16 @@ h1#site-title {
     display: inline-block;
     color: #fff;
     position: relative;
-    padding: 10px 20px;
+    padding: 10px 20px 15px 20px;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
     margin: 0px 20px 0 0;
     text-decoration: none;
     float:right;
-    line-height: 34px;
+    line-height: 121%;
+    font-size: 100%;
+    text-align: right;
+    z-index: 15;
 }
 
 .version h2:after {
@@ -36,19 +39,59 @@ h1#site-title {
     display: inline-block;
 }
 
-div.current {
-  background-color: #d2ff00;
-  position: relative;
-  float:right;
-  padding:0px 6px;
+div.date {
+  background-color: #f1f2f3;
+  box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.3);
   font-size: 75%;
-  box-shadow: 0 0 5px rgba(1,1,1,0.3);
-  -moz-transform: rotate(-2deg);
-  -webkit-transform:rotate(-2deg); 
-  -o-transform:rotate(-2deg); 
-  margin-right:54px;
-  margin-top:-11px;
+  margin-left: 10px;
+  margin-top: -21px;
+  padding: 0 6px 20px;
+  position: absolute;
+  z-index: 10;
 }
+
+div.current {
+  -moz-transform: rotate(-23deg);
+  -webkit-transform:rotate(-23deg); 
+  -o-transform:rotate(-23deg); 
+    background-color: #D2FF00;
+    line-height: normal;
+    margin-left: -10px;
+    margin-top: 4px;
+    padding: 0 18px;
+    z-index: 30;
+}
+
+.os div {
+
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.4) inset, 1px 1px 1px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    line-height: normal;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+      background: -moz-linear-gradient(center top , #94E48D 0%, #82CF7C 100%) repeat scroll 0 0 transparent;
+    border: 1px solid #4DAB46;
+    color: #569D51 !important;
+    font-size: 12px;
+    font-weight: bold !important;
+    margin: 5px;
+    padding: 8px;
+    width: 21px;
+}
+
+.os div.win {
+ background: -moz-linear-gradient(center top , #8EDBFF 0%, #60CDFF 100%) repeat scroll 0 0 transparent;
+    border: 1px solid #51B5E4;
+    color: #348DB6 !important;
+}
+
+.os div.vm {
+ background: -moz-linear-gradient(center top , #FFCB8C 0%, #FFB660 100%) repeat scroll 0 0 transparent;
+    border: 1px solid #DB9C51;
+    color: #C7822F !important;
+    }
+
+/* */
 
 .dl {
   background: transparent url(../images/line.png) top left repeat-y;
@@ -118,6 +161,7 @@ table.nxdl span.subtitle {
 
 .nxdl .os {
   text-align: center;
+  width: 40px;
 }
 
 .nxdl .check {
