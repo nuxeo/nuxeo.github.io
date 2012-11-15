@@ -62,6 +62,16 @@ div.current {
     z-index: 30;
 }
 
+.check a {
+  line-height: normal;
+  padding: 10px;
+}
+
+.check a:hover {
+  background-color: #ddeeff;
+  border-radius: 3px;
+}
+
 .os div {
 
     border-radius: 10px 10px 10px 10px;
