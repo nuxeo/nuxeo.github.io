@@ -35,12 +35,8 @@
 
     },
     "customRepoUrls" : {
-        "nuxeo": "http://nuxeo.github.com/nuxeo/",
-        "nuxeo-features": "http://nuxeo.github.com/nuxeo-feature/"
     },
     "customRepoDescriptions" : {
-        "nuxeo": "Nuxeo root",
-        "addons": "Nuxeo addons root"
     },
     "customRepoLanguages" : {
         "nuxeo": "Java"
