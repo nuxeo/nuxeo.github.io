@@ -90,6 +90,7 @@
 
         function appendTitle(target, title, date) {
            target.append($("<h2>").text("Nuxeo Platform " + title));
+           target.append($("<a>").attr("name",title));
            if (count == 0) {
              target.append($("<div class='date current'>").text("Latest!"));
            } else {
