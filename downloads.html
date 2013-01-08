@@ -33,7 +33,6 @@
 #xnav-footer {margin-top:0px !important;}
 </style>
 <script src="javascripts/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
 	<!-- Favicons
 	================================================== -->
 	<link rel="shortcut icon" href="images/favicon.ico">
@@ -61,18 +60,22 @@
 
 	<!-- JS
 	================================================== -->
+    <script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
     <script src="javascripts/jquery-1.7.1.min.js"></script>
     <script src="javascripts/strftime.js"></script>
     <script src="javascripts/tabs.js"></script>
 
+    
     <script type="text/javascript">
-    (function ($, undefined) {
+    $(document).ready(function () {
 
         var alreadyloading = false;
 
         var $mainContainer = $("#mainContainer");
 
         var count = 0;
+
+        var identifier = window.location.hash;
 
         function fillTab(title, date, dlLinks) {
             $versionContainer = $("<div>").attr("class","sixteen");
@@ -86,11 +89,13 @@
                 tr = addDownloadLink(item, id);
                 if ((i+1)%2 == 0) {tr.attr("class","even")}
             });
+            if (identifier == "#"+title) {
+               $('html,body').animate({scrollTop: $(identifier.replace(/(:|\.)/g,'\\$1')).offset().top},'fast');
+            }
         }
 
         function appendTitle(target, title, date) {
-           target.append($("<h2>").text("Nuxeo Platform " + title));
-           target.append($("<a>").attr("name",title));
+           target.append($("<h2>").attr("id",title).text("Nuxeo Platform " + title));
            if (count == 0) {
              target.append($("<div class='date current'>").text("Latest!"));
            } else {
@@ -158,7 +163,8 @@
          });
        });
 
-})(jQuery);
+
+});
 </script>
 
 <!-- End Document
