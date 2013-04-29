@@ -5,12 +5,6 @@ apply plugin:'application'
 sourceCompatibility = 1.6
 version = '0.1'
 
-
-project.ext {
-    oauthToken = project.getProperties().get('githubCredentialsOauthToken')
-    repositoryHome = '../'
-}
-
 repositories { mavenCentral() }
 
 dependencies {
@@ -24,8 +18,20 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.10'
 }
 
+def loadProperties(String sourceFileName) {
+    def config = new Properties()
+    def propFile = new File(sourceFileName)
+    if (propFile.canRead()) {
+        config.load(new FileInputStream(propFile))
+        for (Map.Entry property in config) {
+            ext[property.key] = property.value;
+        }
+    }
+}
+
 run {
-    args project.repositoryHome, project.oauthToken
+    loadProperties githubProperties
+    args '../', project.githubCredentialsOauthToken
 }
 
 mainClassName = "org.nuxeo.github.Main"
