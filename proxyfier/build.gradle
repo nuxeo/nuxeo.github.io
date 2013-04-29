@@ -7,7 +7,7 @@ version = '0.1'
 
 
 project.ext {
-    oauthToken = project.getProperties().get('github.credentials.oauth.token')
+    oauthToken = project.getProperties().get('githubCredentialsOauthToken')
     repositoryHome = '../'
 }
 
