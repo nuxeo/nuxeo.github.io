@@ -114,3 +114,8 @@ column-gap:20px;
   margin:0.5em 0 1em 0;
   border-bottom:3px solid #d3e0eb;
 }
+
+img{
+    max-width:500px;
+}
+
