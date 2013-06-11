@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Nuxeo 5.7.1 - New and Noteworthy</title>
+</head>
+<body>
+
+<h1>New features in DAM</h1>
+
+<h2>DAM is customizable with Nuxeo Studio </h2>
+Redesign from the ground up using ContentView, Layouts and widgets. It makes every part of DAM screen (Search panel, result panel, asset view) easy to customize using Nuxeo Studio.
+
+<h2>Ajax Navigation</h2>
+
+Ajax Nav and Story push state -> permlink -> share the url 
+
+<h2>Permlink available for any Asset</h2>
+
+<h2>Saved Search Managment tab</h2>
+Every saved search are listed on an home tab. A subtab for dam, a subtab for faceted search. You can share those saved searches with other users using the manage/rights tab.
+
+<h2>HTML5 PlaceHolder</h2>
+You can use the HTML5 place holder attribute on inputtext and textarea. It's a widget property(placeholder property)/ it's an EL, always translated.
+screenshot 
+
+<h2>UI Framework</h2>
+
+
+<p>Widget Label now accept EL expression. This allows you to have dynamic labels, see https://jira.nuxeo.com/browse/NXP-11040</p>
+<p>Ajax Event queue global by default. If no queue is specified, it's tied to the global one thanks to rich favces -> more stable pages ?XP-11136</p>
+
+<p>Widget Actions</p>
+<p>1- One can use automatic JS confirmation popup. If you add a confirmMessage property in the actions, it generates the appropriate js method + you can pass EL args. Here's an example:</p>
+<code>
+ <action id="JenkinsReportSendMail">
+   <properties>
+     <property name="confirmMessage">label.jenkins.sendMail.confirm</property>
+     <propertyList name="confirmMessageArgs">
+       <value>#{docSuggestionActions.getDocumentWithId(currentSuperSpace.id).getPropertyValue('jenkinsreports:report_email')}</value>
+     </propertyList>
+   </properties>
+ </action> 
+messages:
+label.jenkins.sendMail.confirm=This will send an email to {0}, are you sure that you would like to continue?
+</code>
+
+ 
+<p>2- We have widgets that render actions. -> action types can blend different action types like a submit button, an outgoing link and an action that opens a fancybox.
+Now you can merge them
+NXP-11006 and NXP-11044</p>
+<p>3- more granularity know if the action bar belong to the existing form/ or it's an independant action bar that holds it's own form to make sure
+le contenu de la fancy box contient un formulaire qu on peut sousmettre sans soumettre le reste ou faire des nested form. NXP-9444</p>
+
+<p>4- Control the ajax behavior of those actions. If one action does not support ajax (like download) , we can mix those actions in any order.</p>
+
+<p>5- We try as much as possible to pass select action of content view to action bar widdget.(copy paste etx..) you can now open open fancy box on copy paste etcc button
+Bulk edit anyone? DM edit dublincore on fancy box screenshot / same in DAM with new asset /?XP-11138</p>
+
+
+<p>6- Ajax - component refresh issue. JSF cache on component that is not reseted on ajax actions. submit clear filter etc.. have to be reseted because it should
+new api to do that NXP-11566</p>
+
+<p>7- Safe edit - stay or leave page
+reprise de donnée html 5 sur le edit tab.
+NXP-11168 DAM
+</p>
+
+Well continue to pass all elements of the page to layouts, widgets, 
+
+<h2>Use tags in searches</h2>
+You can now add tags in your search form. Wheter you're using the advances search form, any faceted search, a content view query or a query operation. It works because we've added tag suppport to NXQL/
+We handle the join automatically  NXP-11061
+screenshot?
+
+
+</body></html>
+

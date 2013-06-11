@@ -1,0 +1,2612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Nuxeo 5.7.1 - New and Noteworthy</title>
+</head>
+<body>
+
+<h1>Upgrade Notes</h1>
+
+<p><a href="https://jira.nuxeo.com/issues/?jql=fixVersion%20%3D%20%225.7.1%22%20AND%20%22Upgrade%20notes%22%20is%20not%20EMPTY">Issues list</a></p>
+
+<table id="issuetable">
+                                <thead>
+        <tr class="rowHeader">
+            
+                                                            <th class="colHeaderLink headerrow-issuekey">
+                            Key
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary">
+                            Summary
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-components">
+                            Components
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-description">
+                            Description
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10100">
+                            Upgrade notes
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10091">
+                            Impact type
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-versions">
+                            Affects Version/s
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-fixVersions">
+                            Fix Version/s
+                                                    </th>
+                                                                    </tr>
+    </thead>
+    <tbody>
+                                <tr class="issuerow" data-issuekey="NXP-11566" rel="57524" id="issuerow57524">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11566">NXP-11566</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11566">Allow resetting some JSF components state when using ajax</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10656">Layouts / Widgets</a>            </td>
+                                                        <td class="nav description">      <p>There are several components showing cache issues when switching screens/pages only using ajax actions.</p>
+
+<ul type="square" class="alternate">
+	<li>a "list" widget type is caching its internal state, it is only refreshed correctly when the original data it was mapping differs, but this is not a solution for all use cases (when the initial list is empty, that does not mean that the cache can be kept, for instance)</li>
+	<li>the nxu:valueHolder component also keeps its internal state when set</li>
+	<li>A "shuttle" widget type using the logics made available by the SelectionActionsBean methods (to move up/down, shift from left to right, etc...) are setting the "value" attribute on selectItems components (nxu:selectItems here). This value is kept though ajax calls so are not refreshed correctly when using that kind of logics in ajaxified screens.</li>
+	<li>maybe the chain select components <img width="16" height="16" border="0" align="absmiddle" alt="" src="https://jira.nuxeo.com/images/icons/emoticons/help_16.gif" class="emoticon"> --&gt; to check</li>
+</ul>
+
+
+<p>As the states need to be kept when performing ajax actions, a solution would be to define behaviours to reset the cache on some components explicitely, when performing ajax actions that changes the problematic screens.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      JSF action listener #{jsfResetActions.resetComponents} can be used in actions that need to reset all components in the same JSF naming container
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.7-SNAPSHOT            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14418">5.6.0-HF18</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11564" rel="57515" id="issuerow57515">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11564">NXP-11564</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11564">Add version label into the detach action in DocumentModelImpl</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10040">Core</a>            </td>
+                                                        <td class="nav description"></td>
+                                                        <td class="nav customfield_10100">      Add version label into the documentModel detach method
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>Content model Change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6.0-HF17            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14418">5.6.0-HF18</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11562" rel="57512" id="issuerow57512">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11562">NXP-11562</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11562">Allow attaching schemas to proxies</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10040">Core</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10368">Core SQL Storage</a>            </td>
+                                                        <td class="nav description">      <p>Allow attaching schemas to proxies:</p>
+<ul type="square" class="alternate">
+	<li>one or more schemas to be available on all proxies (independently of the type of the doc to which a proxy points),</li>
+	<li>read/write of properties on the proxy for this schema goes to the proxy's version,</li>
+	<li>queries on this schema for proxies go to the proxy's version,</li>
+	<li>if the same schema is available on the document to which a proxy points then it is hidden (shadowed) when accessing through the proxy.</li>
+</ul>
+
+
+<p>Note, ACLs already behave this way (except for the query part which doesn't exist).</p>
+  </td>
+                                                        <td class="nav customfield_10100">      To define one or more schemas that should be available on all proxies, use this kind of extension point:
+<br>
+
+<br>
+&nbsp;&nbsp;&lt;extension target="org.nuxeo.ecm.core.schema.TypeService" point="doctype"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;proxies&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;schema name="myschema1"/&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;schema name="myschema2"/&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/proxies&gt;
+<br>
+&nbsp;&nbsp;&lt;/extension&gt;
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11543" rel="57432" id="issuerow57432">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11543">NXP-11543</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11543">Allow execution of client-specific SQL at database init</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10368">Core SQL Storage</a>            </td>
+                                                        <td class="nav description">      <p>Some customers and even some plugins need to execute additional SQL in the database when it is initialized. This should be configurable in the repository configuration.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      In the repository configuration use &lt;sqlInitFile&gt;myconf.sql.txt&lt;/sqlInitFile&gt; to read one or more additional files.
+<br>
+
+<br>
+The format of the file is documented at <a href="http://doc.nuxeo.com/x/hwQz">http://doc.nuxeo.com/x/hwQz</a>.
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11536" rel="57422" id="issuerow57422">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11536">NXP-11536</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11536">Add version label into the Document/JSON Export from Automation Rest Request</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10701">Automation</a>            </td>
+                                                        <td class="nav description"></td>
+                                                        <td class="nav customfield_10100">      Add VersionLabel into the JSON export and Add new Getter into the org.nuxeo.ecm.automation.client.model.Document to get this information
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>Content model Change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6.0-HF16            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14414">5.6.0-HF17</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11503" rel="57258" id="issuerow57258">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11503">NXP-11503</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11503">Automation requests with valid credentials but that lacks some permissions on a doc should be mapped to HTTP 403 instead of 401</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10701">Automation</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/12001">Nuxeo Drive</a>            </td>
+                                                        <td class="nav description">      <p>HTTP 401 should only be used to signal authentication issues (lack or invalid credentials, for instance the basic http auth header is lacking or invalid).</p>
+
+<p>HTTP 403 should be used to signal authorization issues: for instance when an authenticated client is trying to access a resource without being granted the permissions to do so.</p>
+
+<p>Right now <tt>org.nuxeo.ecm.automation.server.jaxrs.ExceptionHandler</tt> is mapping any authorization exceptions from the core to 401 instead of 403 which makes it impossible for the automation client to know whether there a problem with the credentials (e.g. a password has been changed) or whether the user lacks the permissions on a specific document.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      To preserve backward compat for 5.6 compatible clients, the hotfix will not change the behavior of automation server by default unless explicitly stated in {{nuxeo.conf}} with the following line.
+<br>
+
+<br>
+org.nuxeo.ecm.automation.server.permission.httpcode=403
+<br>
+
+<br>
+In 5.7, authorization exceptions are mapped by default to 403.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14414">5.6.0-HF17</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11477" rel="57177" id="issuerow57177">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11477">NXP-11477</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11477">Move Operation and Script feature from Presales Toolkit into the Nuxeo Platform</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10701">Automation</a>            </td>
+                                                        <td class="nav description">      <p>Importing operations created in the context of the Presales toolkit into the default Nuxeo Operations Registry.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Add following new Operations :
+<br>
+- AddEntryToMultiValuedProperty
+<br>
+- CreateProxyLive
+<br>
+- GetLiveDocument
+<br>
+- RemoveEntryOfMultiValuedProperty
+<br>
+Add the following new functions into the Fn Object:
+<br>
+- concatenateIntoList
+<br>
+- concatenateValuesAsNewList
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11463" rel="57126" id="issuerow57126">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11463">NXP-11463</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11463">Update nuxeo dependency management following automation client changes</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description">      <p>To build automation client osgi compliant, existing libraries of nuxeo used for the client are not in osgi version. Furthermore, Pax Exam has been included for osgi compliance testing.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      To get osgi versions of these dependencies, upgrades have been made:
+<br>
+- javax.mail:mail upgrade from 1.4 to 1.4.5
+<br>
+- org.apache.httpcomponents versions upgrade to 4.2.4 from 4.2.3
+<br>
+
+<br>
+Exclusions:
+<br>
+- log4j:log4j, avalon-framework:avalon-framework, logkit:logkit exclusions from: javax.persistence:persistence-api
+<br>
+- commons-logging:commons-logging, org.apache.httpcomponents:httpclient-cache exclusions from: org.apache.httpcomponents:httpclient
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11440" rel="57047" id="issuerow57047">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11440">NXP-11440</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11440">Long running transactions might cause Nuxeo Drive to miss some document updates</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/12001">Nuxeo Drive</a>            </td>
+                                                        <td class="nav description">      <p>Suppose a user updates 3 documents in a row (e.g. using drag and drop) and that writing documents take 2s each (for instance computing some thumbnails synchronously, a S3BinaryManager blob upload or something similarly costly). Let's call the first document creation / update start start at t0.</p>
+
+<p>The CoreSession will fire document created / updated events at t0, t0 + 2, t0 + 4. The event audit logger is an asynchronous event listener that will insert the whole batch of events in the audit table at once at time (t0 + 5).</p>
+
+<p>In the mean time let's assume that the client did two non-overlapping range queries: query 1 for the range [t0 - 2 to t0 + 3[ at time (t0 + 3) and query 2 for the range [t0 + 3, t0 + 8[ at time (t0 + 8).</p>
+
+<p>The audit event logger is an asynchronous listener will only see the last document update that occurred at (t0 + 4) in the query 2. query 1 will return 0 result as the changed are not yet committed in the audit db at that time.</p>
+
+<p>Therefore the range queries made by the client should not rely upon <tt>log_event_date</tt> but rather use a new <tt>log_date</tt> generated by the database at insertion time to guarantee a near monotonic behavior.</p>
+
+  </td>
+                                                        <td class="nav customfield_10100">      A new column {{log_date}} is introduced in the {{nxp_log_date}} column. By default the log_date of the old events will be null which should not be a problem.
+<br>
+
+<br>
+It is possible to set the value of the {{log_date = null}} rows to {{log_event_date}} instead.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6.0-HF15            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14410">5.6.0-HF16</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11419" rel="56909" id="issuerow56909">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11419">NXP-11419</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11419">Cannot restore content view with currentPage &gt; 0</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description">      <p>When restoring a content view from a <tt>jsonContentViewState</tt> and using a <tt>currentPage &gt; 0</tt>, we end up with the following stack trace:</p>
+
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">Caused by: org.nuxeo.ecm.core.api.ClientRuntimeException: org.nuxeo.ecm.core.api.ClientException: Cannot build query of provider 'netflix_dam_faceted_search': no search document model is set
+     at org.nuxeo.ecm.platform.query.nxql.CoreQueryDocumentPageProvider.buildQuery(CoreQueryDocumentPageProvider.java:221)
+     at org.nuxeo.ecm.platform.query.nxql.CoreQueryDocumentPageProvider.getCurrentPage(CoreQueryDocumentPageProvider.java:87)
+     at org.nuxeo.ecm.platform.query.api.AbstractPageProvider.setCurrentPage(AbstractPageProvider.java:171)
+     at org.nuxeo.ecm.platform.query.core.PageProviderServiceImpl.getPageProvider(PageProviderServiceImpl.java:112)
+     at org.nuxeo.ecm.platform.contentview.jsf.ContentViewServiceImpl.getPageProvider(ContentViewServiceImpl.java:260)
+     at org.nuxeo.ecm.platform.contentview.jsf.ContentViewImpl.getPageProvider(ContentViewImpl.java:302)
+     at org.nuxeo.ecm.platform.contentview.jsf.ContentViewImpl.getPageProvider(ContentViewImpl.java:309)
+     at org.nuxeo.ecm.platform.contentview.jsf.ContentViewServiceImpl.restoreContentView(ContentViewServiceImpl.java:360)
+     at org.nuxeo.ecm.platform.contentview.seam.ContentViewRestActions.restoreContentView(ContentViewRestActions.java:85)
+</pre>
+</div></div>
+  </td>
+                                                        <td class="nav customfield_10100">      PageProviderService#getPageProvider API now take an additional DocumentModel parameter to represent the search document model
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11408" rel="56868" id="issuerow56868">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11408">NXP-11408</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11408">Comments in the default serial workflow are not displayed in "Past tasks" view</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10170">Workflow</a>            </td>
+                                                        <td class="nav description"></td>
+                                                        <td class="nav customfield_10100">      Workflow enablement filter id has been temporarily changed from "<a href="mailto:filter@SerialDocumentReview">filter@SerialDocumentReview</a>" to "<a href="mailto:filter@wf">filter@wf</a>@SerialDocumentReview", and included in 5.6.0-HF17, but this change will be reverted for 5.6.0-HF18
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14414">5.6.0-HF17</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11403" rel="56855" id="issuerow56855">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11403">NXP-11403</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11403">org.nuxeo.ecm.automation.OperationException should not be mapped to HTTP 500</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10701">Automation</a>            </td>
+                                                        <td class="nav description">      <p>Looking at the following stacktrace logged on server side:</p>
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">Apr 11, 2013 6:34:10 PM com.sun.jersey.spi.container.ContainerResponse logException
+18:34:10 SEVERE: Mapped exception to response: 500 (Internal Server Error)
+18:34:10 javax.ws.rs.WebApplicationException: org.nuxeo.ecm.automation.OperationException: Failed to invoke operation NuxeoDrive.Move
+18:34:10 	at org.nuxeo.ecm.automation.server.jaxrs.ExceptionHandler.newException(ExceptionHandler.java:50)
+18:34:10 	at org.nuxeo.ecm.automation.server.jaxrs.ExecutableResource.doPost(ExecutableResource.java:77)
+18:34:10 	at sun.reflect.GeneratedMethodAccessor47.invoke(Unknown Source)
+18:34:10 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+18:34:10 	at java.lang.reflect.Method.invoke(Method.java:597)
+18:34:10 	at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60)
+18:34:10 	at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ObjectOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:258)
+18:34:10 	at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75)
+18:34:10 	at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:288)
+18:34:10 	at com.sun.jersey.server.impl.uri.rules.SubLocatorRule.accept(SubLocatorRule.java:134)
+18:34:10 	at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)
+18:34:10 	at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108)
+18:34:10 	at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)
+18:34:10 	at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84)
+18:34:10 	at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1469)
+18:34:10 	at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1400)
+18:34:10 	at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1349)
+18:34:10 	at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1339)
+18:34:10 	at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416)
+18:34:10 	at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:537)
+18:34:10 	at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:708)
+18:34:10 	at org.nuxeo.ecm.webengine.app.jersey.WebEngineServlet.containerService(WebEngineServlet.java:60)
+18:34:10 	at org.nuxeo.ecm.webengine.app.jersey.WebEngineServlet.service(WebEngineServlet.java:44)
+18:34:10 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+18:34:10 	at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
+18:34:10 	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1221)
+18:34:10 	at org.nuxeo.ecm.webengine.jaxrs.context.RequestContextFilter.run(RequestContextFilter.java:42)
+18:34:10 	at org.nuxeo.ecm.webengine.jaxrs.HttpFilter.doFilter(HttpFilter.java:43)
+18:34:10 	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+18:34:10 	at org.nuxeo.ecm.webengine.jaxrs.session.SessionCleanupFilter.run(SessionCleanupFilter.java:45)
+18:34:10 	at org.nuxeo.ecm.webengine.jaxrs.HttpFilter.doFilter(HttpFilter.java:43)
+18:34:10 	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+18:34:10 	at org.nuxeo.ecm.webengine.app.WebEngineFilter.doFilter(WebEngineFilter.java:92)
+18:34:10 	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+18:34:10 	at org.nuxeo.ecm.platform.ui.web.auth.NuxeoAuthenticationFilter.doFilterInternal(NuxeoAuthenticationFilter.java:548)
+18:34:10 	at org.nuxeo.ecm.platform.ui.web.auth.NuxeoAuthenticationFilter.doFilter(NuxeoAuthenticationFilter.java:345)
+18:34:10 	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212)
+18:34:10 	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399)
+18:34:10 	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216)
+18:34:10 	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+18:34:10 	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766)
+18:34:10 	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450)
+18:34:10 	at org.mortbay.jetty.handler.HandlerCollection.handle(HandlerCollection.java:114)
+18:34:10 	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+18:34:10 	at org.mortbay.jetty.Server.handle(Server.java:322)
+18:34:10 	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+18:34:10 	at org.mortbay.jetty.HttpConnection$RequestHandler.content(HttpConnection.java:945)
+18:34:10 	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:756)
+18:34:10 	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:218)
+18:34:10 	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+18:34:10 	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+18:34:10 	at org.mortbay.thread.BoundedThreadPool$PoolThread.run(BoundedThreadPool.java:451)
+18:34:10 Caused by: org.nuxeo.ecm.automation.OperationException: Failed to invoke operation NuxeoDrive.Move
+18:34:10 	at org.nuxeo.ecm.automation.core.impl.InvokableMethod.invoke(InvokableMethod.java:140)
+18:34:10 	at org.nuxeo.ecm.automation.core.impl.CompiledChainImpl.doInvoke(CompiledChainImpl.java:114)
+18:34:10 	at org.nuxeo.ecm.automation.core.impl.CompiledChainImpl.invoke(CompiledChainImpl.java:96)
+18:34:10 	at org.nuxeo.ecm.automation.core.impl.OperationServiceImpl.run(OperationServiceImpl.java:81)
+18:34:10 	at org.nuxeo.ecm.automation.server.jaxrs.OperationResource.execute(OperationResource.java:42)
+18:34:10 	at org.nuxeo.ecm.automation.server.jaxrs.ExecutableResource.doPost(ExecutableResource.java:56)
+18:34:10 	... 50 more
+18:34:10 Caused by: java.lang.UnsupportedOperationException: Cannot move a virtual folder item.
+18:34:10 	at org.nuxeo.drive.adapter.impl.AbstractVirtualFolderItem.move(AbstractVirtualFolderItem.java:90)
+18:34:10 	at org.nuxeo.drive.service.impl.FileSystemItemManagerImpl.move(FileSystemItemManagerImpl.java:230)
+18:34:10 	at org.nuxeo.drive.operations.NuxeoDriveMove.run(NuxeoDriveMove.java:55)
+18:34:10 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+18:34:10 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+18:34:10 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+18:34:10 	at java.lang.reflect.Method.invoke(Method.java:597)
+18:34:10 	at org.nuxeo.ecm.automation.core.impl.InvokableMethod.doInvoke(InvokableMethod.java:117)
+18:34:10 	at org.nuxeo.ecm.automation.core.impl.InvokableMethod.invoke(InvokableMethod.java:132)
+18:34:10 	... 55 more</pre>
+</div></div>
+
+<p>The error is known and well managed server side ("Cannot move a virtual folder item"). It is logged at level SEVERE because the HTTP status is 500, which is wrong.</p>
+
+<p>=&gt; Manage <tt>java.lang.UnsupportedOperationException</tt> and/or <tt>org.nuxeo.ecm.automation.OperationException</tt> in <tt>org.nuxeo.ecm.automation.server.jaxrs.ExceptionHandler</tt>.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Kept org.nuxeo.ecm.automation.OperationException mapping with HTTP 500 waiting for <a title="Add Exception management in Automation" href="https://jira.nuxeo.com/browse/NXP-11094">NXP-11094</a>.
+<br>
+Made Drive wrap java.lang.UnsupportedOperationException into a new org.nuxeo.ecm.automation.InvalidOperationException, itself mapped with HTTP 400.
+<br>
+Also, made the org.nuxeo.ecm.automation.server.jaxrs.ExceptionHandler map org.nuxeo.ecm.core.api.ClientException with no root cause to HTTP 400.
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.3.2            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11370" rel="56771" id="issuerow56771">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11370">NXP-11370</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11370">Flag to globally disable proxies</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10040">Core</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10368">Core SQL Storage</a>            </td>
+                                                        <td class="nav description">      <p>A number of projects have no use for proxies. It would be more cost-effective to have a global flag disabling proxies than having to add "<tt>AND ecm:isProxy = 0</tt>" to every custom query.</p>
+
+<p>When this mode is activated:</p>
+<ul type="square" class="alternate">
+	<li>the <tt>proxies</tt> table is not created,</li>
+	<li>proxy creation will fail,</li>
+	<li>queries for proxies only <tt>ecm:isProxy = 1</tt> will fail,</li>
+	<li>queries will never do the <tt>UNION ALL</tt> and double <tt>JOIN</tt> to get proxies.</li>
+</ul>
+
+
+<p>Note that this mode is incompatible with the use of features like publishing in sections.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      To disable proxies, add to the repository configuration: 
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;proxies enabled="false" /&gt; 
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14317">5.6.0-HF15</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11335" rel="56656" id="issuerow56656">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11335">NXP-11335</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11335">Soft delete for PostgreSQL, SQL Server and Oracle</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10368">Core SQL Storage</a>            </td>
+                                                        <td class="nav description">      <p>Deleting documents by issuing a SQL <tt>DELETE</tt> on their <tt>hierarchy</tt> row may cause two kinds of problems in some situations:</p>
+<ol>
+	<li>some databases (Oracle with RAC for instance) have problems processing a large number of <tt>DELETE</tt> with <tt>ON DELETE CASCADE</tt> that apply recursively on the <tt>hierarchy</tt> table, in particular because this causes a large number of changes to the undo and redo logs,</li>
+	<li>in a multithreaded scenario where a first thread does a <tt>DELETE</tt> on a document and therefore its <tt>hierarchy</tt> row, and a second threads tries to update the same document and that update causes a new row for a secondary table to be <tt>INSERT</tt>-ed, the row's <tt>FOREIGN KEY</tt> pointing to the deleted (in the first thread) <tt>hierarchy</tt> row will cause a constraint error.</li>
+</ol>
+
+
+<p>To solve this, we introduce <b>soft deletes</b>. In this mode, deleting a document does not immediately cause a <tt>DELETE</tt> but just marks the row as deleted (<tt>hierarchy.isdeleted = true</tt>). Later on, cleaning of the soft-deleted rows can be performed. To avoid seeing soft-deleted rows, all queries to the <tt>hierarchy</tt> table add an additional clause checking that the row is not soft-deleted (<tt>hierarchy.isdeleted IS NULL</tt>).</p>
+  </td>
+                                                        <td class="nav customfield_10100">      To enable soft-delete, add to the repository configuration:
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;softDelete enabled="true" /&gt;
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11217" rel="56329" id="issuerow56329">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11217">NXP-11217</a>
+</td>
+                                                        <td class="nav summary"><p>
+                        <a title="New DAM Search " class="parentIssue" href="https://jira.nuxeo.com/browse/NXP-11080">NXP-11080</a>
+                        <a href="https://jira.nuxeo.com/browse/NXP-11217">Move widgets and containers styles to a specific css</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10158">Web UI</a>            </td>
+                                                        <td class="nav description">      <p>All the styles concerning widgets and containers are included in the tabs_content.css file.</p>
+
+<p>Now that the layouts and widgets systems are thicker and more complex, they deserve a specific css to manage the styles in a more clever way</p>
+  </td>
+                                                        <td class="nav customfield_10100">      style named "grids_and_widgets" should be added to theme pages that need these styles
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11199" rel="56268" id="issuerow56268">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11199">NXP-11199</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-11199">Make the 'summary_current_document_comments' widget be able to handle its label</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10023">Web Foundations</a>            </td>
+                                                        <td class="nav description"></td>
+                                                        <td class="nav customfield_10100">      To display the label, the 'handleLabels' control needs to be added to the widget definition:
+<br>
+
+<br>
+&lt;widget name="summary_current_document_comments" type="summary_current_document_comments"&gt;
+<br>
+&nbsp;&nbsp;&lt;controls mode="any"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;control name="handleLabels"&gt;true&lt;/control&gt;
+<br>
+&nbsp;&nbsp;&lt;/controls&gt;
+<br>
+&lt;/widget&gt;
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11061" rel="55911" id="issuerow55911">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11061">NXP-11061</a>
+</td>
+                                                        <td class="nav summary"><p>
+                        <a title="New DAM Asset View" class="parentIssue" href="https://jira.nuxeo.com/browse/NXP-11168">NXP-11168</a>
+                        <a href="https://jira.nuxeo.com/browse/NXP-11061">Improve tags and tagging widgets</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/11321">DAM</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/11402">Faceted Search</a>            </td>
+                                                        <td class="nav description">      <p>Improve the existing tags widget displaying the document tags to make it work correctly in DAM.</p>
+
+<p>Add a new widget to be used in search forms to select a list of tags.<br>
+The default operator will be <tt>OR</tt> between the tags (to be consistent with other widget allowing multiple selections).</p>
+  </td>
+                                                        <td class="nav customfield_10100">      To keep the old behavior about re-rendering on the 'summary_current_document_tagging' widget, the 'ajaxReRender' property need to be defined on the widget instance.
+<br>
+To display the label, the 'handleLabels' control needs to be added to the widget definition.
+<br>
+
+<br>
+&lt;widget name="summary_current_document_tagging"&gt;
+<br>
+...
+<br>
+&nbsp;&nbsp;&lt;controls mode="any"&gt; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;... 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;control name="handleLabels"&gt;true&lt;/control&gt; 
+<br>
+&nbsp;&nbsp;&lt;/controls&gt;
+<br>
+&nbsp;&nbsp;&lt;properties mode="any"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="ajaxReRender"&gt;MultiTreeView&lt;/property&gt;
+<br>
+&nbsp;&nbsp;&lt;/properties&gt;
+<br>
+...
+<br>
+&lt;/widget&gt;
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11056" rel="55906" id="issuerow55906">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11056">NXP-11056</a>
+</td>
+                                                        <td class="nav summary"><p>
+                        <a title="New DAM Search " class="parentIssue" href="https://jira.nuxeo.com/browse/NXP-11080">NXP-11080</a>
+                        <a href="https://jira.nuxeo.com/browse/NXP-11056">Do not rely anymore on 'HiddenInFacetedSearch' facet</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/11321">DAM</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/11402">Faceted Search</a>            </td>
+                                                        <td class="nav description">      <p>This facet is set on the saved searches documents to not display them in the results.</p>
+
+<p>This facet should be replaced by 'HiddenInNavigation' when checking about what we want to display in the faceted search results.</p>
+
+<p>Deprecate the 'HiddenInFacetedSearch' facet and remove it from the default search document model.</p>
+
+<p>The folder inside the user workspace listing the saved search should now have a custom type and a custom content view to list only the saved search.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      The saved searches are not anymore displayed in the "Saved searches" folder on the Personal workspace of the users.
+<br>
+However they are still inside that folder (now empty in the UI).
+<br>
+
+<br>
+In Home / Saved searches / Faceted searches, there is a button "Migrate saved searches" to migrate the old saved searches stored inside the "Saved searches" folder. After doing that, the "Saved searches" folder can be safely deleted.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-11045" rel="55891" id="issuerow55891">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-11045">NXP-11045</a>
+</td>
+                                                        <td class="nav summary"><p>
+                        <a title="DAM &gt; Infra Initialization " class="parentIssue" href="https://jira.nuxeo.com/browse/NXP-11171">NXP-11171</a>
+                        <a href="https://jira.nuxeo.com/browse/NXP-11045">Make restDocumentLink create a link when there is no document</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description">      <p>The is useful when there is no document context (can happen for some users) but navigation is still useful to access a dashboard for instance.</p>
+
+<p>An additional "repositoryName" attribute would be useful to build the DocumentView instance (since repository name is currently retrieved from the document)</p>
+  </td>
+                                                        <td class="nav customfield_10100">      By default, the main tabs generate URLs with a document or a repositoryName.
+<br>
+If you want to force your main tab to generate an URL only with a document, you need to specify it in its action properties.
+<br>
+
+<br>
+It's done for the Document Management tab:
+<br>
+
+<br>
+&lt;action id="documents" link="view_documents" label="label.main.tab.documents"
+<br>
+&nbsp;&nbsp;order="40"&gt;
+<br>
+&nbsp;&nbsp;&lt;category&gt;MAIN_TABS&lt;/category&gt;
+<br>
+&nbsp;&nbsp;&lt;properties&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="requireDocument"&gt;true&lt;/property&gt;
+<br>
+&nbsp;&nbsp;&lt;/properties&gt;
+<br>
+&lt;/action&gt;
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10954" rel="55631" id="issuerow55631">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10954">NXP-10954</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10954">Make the 'summary_current_document_states' widget be able to handle its label</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10023">Web Foundations</a>            </td>
+                                                        <td class="nav description"></td>
+                                                        <td class="nav customfield_10100">      
+<br>
+To display the label, the 'handleLabels' control needs to be added to the widget definition: 
+<br>
+
+<br>
+&lt;widget name="summary_current_document_states" type="summary_current_document_states"&gt; 
+<br>
+&nbsp;&nbsp;&lt;controls mode="any"&gt; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;... 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;control name="handleLabels"&gt;true&lt;/control&gt; 
+<br>
+&nbsp;&nbsp;&lt;/controls&gt; 
+<br>
+&lt;/widget&gt;
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10948" rel="52212" id="issuerow52212">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10948">NXP-10948</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10948">Can't change label of workflow summary widget</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10656">Layouts / Widgets</a>            </td>
+                                                        <td class="nav description">      <ul type="square" class="alternate">
+	<li>I create a tab with designer</li>
+	<li>I add a container where I put "Tasks" and "Workflow Process"</li>
+	<li>I change the label.</li>
+</ul>
+
+
+<p>Problem:</p>
+<ul type="square" class="alternate">
+	<li>Titles are still the default ones.</li>
+</ul>
+
+  </td>
+                                                        <td class="nav customfield_10100">      
+<br>
+To display the label, the 'handleLabels' control needs to be added to the widget definition: 
+<br>
+
+<br>
+&lt;widget name="summary_current_document_single_tasks" type="summary_current_document_single_tasks"&gt; 
+<br>
+&nbsp;&nbsp;&lt;controls mode="any"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;... 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;control name="handleLabels"&gt;true&lt;/control&gt; 
+<br>
+&nbsp;&nbsp;&lt;/controls&gt; 
+<br>
+&lt;/widget&gt;
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10921" rel="55482" id="issuerow55482">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10921">NXP-10921</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10921">Safari drag'n drop on Safari 6.0.2 doesn't work anymore</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description">      <p>If I drag'n drop a file safari open it and doesn't try to upload it. Drag'n drop zone is not at all enabled.</p>
+
+<p>This is the case since the update of OS and upgrade of Safari 6.x. On Safari 5.x it worked.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Mac OS Mountain Lion 10.8.2
+<br>
+Safari 6.0.2 (8536.26.17)
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14111">5.6.0-HF11</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10886" rel="55400" id="issuerow55400">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10886">NXP-10886</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10886">Fix navigation in history for proxies and versions</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10030">Audit</a>            </td>
+                                                        <td class="nav description">      <p>When a document has two or more pages in its history, it's impossible to navigate to the next pages.</p>
+
+<p>Problem is that current code compares parameters already resolved on the page provider, and parameters not only resolved =&gt; let the page provider make the comparison itself.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Need to implement the need method hasChangedParameters(Object[]) from PageProvider interface
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10793" rel="55072" id="issuerow55072">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10793">NXP-10793</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10793">Remove dash character from form names</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description">      <p>If the "-" dash character is used in ajaxified forms, it may generate issues with ajax requests, as this character is badly encoded/decoded by the ajax re-render.</p>
+
+<p>Symptom is that an ajax action will work once, but not twice, and the following error is visible in the javascript console:</p>
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">Error: TypeError: <span class="code-keyword">this</span>._form is <span class="code-keyword">null</span>
+Source File: http:<span class="code-comment">//localhost:8080/nuxeo/a4j/g/3_3_1.GA/org/ajax4jsf/framework.pack.js.xhtml
+</span>Line: 2792
+</pre>
+</div></div>
+
+<p>As ids on client side are usually generated from the layout or widget id, the layout service should strip this character from layout and widget names when generating ids.</p>
+
+<p>But other templates generating form names (like content view templates) should be stripping this character too =&gt; add a helper JSF function to handle these cases.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      JSF function nxu:jsfTagIdEscape can now be used to sanitize ids fir JSF/Ajax
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14111">5.6.0-HF11</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10780" rel="55020" id="issuerow55020">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10780">NXP-10780</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10780">Allow save without auto-checkout</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10040">Core</a>            </td>
+                                                        <td class="nav description">      <p>For modules that store metadata about documents in facet and update it asynchronously, we need a way to save this metadata on a checked-in document without making an auto-checkout occur.</p>
+
+<p>For instance the quotas need to update the computed total size even on a checked in document.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      To disable auto-checkout before a document save, do:
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc.putContextData(VersioningService.DISABLE_AUTO_CHECKOUT, Boolean.TRUE);
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;doc = session.saveDocument(doc);
+<br>
+
+<br>
+Make sure that this is done only for changes that do not correspond to things that the user would like to see versioned.
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13936">5.6.0-HF09</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10702" rel="54824" id="issuerow54824">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10702">NXP-10702</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10702">Provide auto -relogin feature on OpenSocial Dashboard</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description"></td>
+                                                        <td class="nav customfield_10100">      When the http session timeout on a dashboard page, touching one of the gadget will refresh it and will end up displaying the login form in the gadget IFrame.
+<br>
+
+<br>
+We should provide a dedicated auth chain for OpenSocial gadget rendering fetching so that in case of un authenticated request it ill return a custom page that can trigger the reload of the hosting page.
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13929">5.6.0-HF08</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10701" rel="54818" id="issuerow54818">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10701">NXP-10701</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10701">Allow FileManager to save version after creation</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10621">Importer</a>            </td>
+                                                        <td class="nav description">      <p>Allow FileManager to increment version automatically as soon as a document is created or overwritten.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Example (default is false): 
+<br>
+
+<br>
+&nbsp;&nbsp;&lt;extension target="org.nuxeo.ecm.platform.filemanager.service.FileManagerService" point="versioning"&gt; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;versioning&gt; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;defaultVersioningOption&gt;MAJOR&lt;/defaultVersioningOption&gt; 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;versionAfterAdd&gt;true&lt;/versionAfterAdd&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/versioning&gt; 
+<br>
+&nbsp;&nbsp;&lt;/extension&gt;
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13936">5.6.0-HF09</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10694" rel="54806" id="issuerow54806">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10694">NXP-10694</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10694">Improve Timeout Management in Html5 DnD</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10158">Web UI</a>            </td>
+                                                        <td class="nav description">      <ul>
+	<li>Make it easy to configure all http related timeouts :</li>
+</ul>
+
+
+<ul>
+	<li>
+	<ul>
+		<li>upload timeout</li>
+		<li>execution timeout</li>
+	</ul>
+	</li>
+</ul>
+
+
+<ul>
+	<li>Propagate client side timeout to the server side Tx timeout for automation exec</li>
+</ul>
+
+
+<ul>
+	<li>Make it easy to configure the extended Mode switch</li>
+</ul>
+
+  </td>
+                                                        <td class="nav customfield_10100">      There are 3 timeouts (expressed in milliseconds) that are configurable server wide using system properties or nuxeo.conf entries:
+<br>
+- org.nuxeo.dnd.extendedmode.timeout (default 2000) defines after how long the drop zone switches to extended import mode with metadata.
+<br>
+- org.nuxeo.dnd.upload.timeout (default 30000) defines the timeout for the upload of a single file to the server (into a temporary storage).
+<br>
+- org.nuxeo.dnd.exec.timeout (default 30000) defines the timeout for the execution, after all files have been uploaded, of the actual addition of the files to the document and related processing.
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13929">5.6.0-HF08</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14111">5.6.0-HF11</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10679" rel="54738" id="issuerow54738">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10679">NXP-10679</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10679">WorkManager should allow Work execution to be delayed after the transaction commit</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10040">Core</a>            </td>
+                                                        <td class="nav description">      <p>Many Work instances will need to read data written by the main thread that created the work instance. In order for the work instance to see this data, the main thread must have committed its transaction.</p>
+
+<p>This means that submitting Work to the WorkManager must, in most cases, be delayed until after transaction commit.</p>
+
+<p>(We should leave the possibility though to execute the Work instance as soon as possible without waiting for transaction commit, in the case where the work instance does not care about it.)</p>
+  </td>
+                                                        <td class="nav customfield_10100">      New WorkManager APIs:
+<br>
+- void schedule(Work work, boolean afterCommit)
+<br>
+- void schedule(Work work, Scheduling scheduling, boolean afterCommit)
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10669" rel="54699" id="issuerow54699">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10669">NXP-10669</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10669">Wrap LDAP calls to retry the request if LDAP is temporary unavailable</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10026">Directory</a>            </td>
+                                                        <td class="nav description">      <p>Sometimes, the first request to LDAP fails with a ServiceUnavailableException.<br>
+Another try returns the expected results.</p>
+
+<p>So we can wrap LDAP calls to retry n times when this exception is detected.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      A new attribute {{retries}} can be set when defining LDAP server to indicates how many times the request is sent to LDAP before considering the service is really unavailable
+<br>
+&lt;server name="foo"&gt;
+<br>
+&nbsp;&nbsp;&lt;retries&gt;5&lt;/retries&gt;
+<br>
+&lt;/server&gt;
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.4.2            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13915">5.4.2-HF31</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13916">5.5.0-HF18</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13917">5.6.0-HF07</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10668" rel="54677" id="issuerow54677">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10668">NXP-10668</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10668">Allow WorkManager scheduling to use a priority queue</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10040">Core</a>            </td>
+                                                        <td class="nav description">      <p>Some Work instances would benefit from being queued according to a priority ordering.</p>
+
+<p>An example would be fulltext indexing, which we'd want single-threaded but where the "quick" metadata changes should go before the "slower" fulltext extraction from binaries.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      When specifying the configuration for a Work queue, you can add:
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;usePriority&gt;true&lt;/usePriority&gt;
+<br>
+
+<br>
+to make the queue be a PriorityQueue. In this case the Work instances inserted in the queue must be Comparable with each other.
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10643" rel="54593" id="issuerow54593">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10643">NXP-10643</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10643">Allow nuxeo-diff to compare files statelessly</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description">      <p>Add API to get a diff URL to compare two files indenpendently of the current document.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      New method available: org.nuxeo.ecm.diff.web.DiffActionsBean#getContentDiffURL taking leftDocId and rightDocId
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10576" rel="54362" id="issuerow54362">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10576">NXP-10576</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10576">Provide a new extension point to choose the default increment option for versioning</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10621">Importer</a>            </td>
+                                                        <td class="nav description">      <p>When importing a file that already exists in the target container, Nuxeo is doing a minor increment of the version, but this is not configurable.</p>
+
+<p>Add an extension point in the FileManager service to do that.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      New extension point "versioning" for FileManager service. Example (default is MINOR):
+<br>
+
+<br>
+&nbsp;&nbsp;&lt;extension target="org.nuxeo.ecm.platform.filemanager.service.FileManagerService" point="versioning"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;versioning&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;defaultVersioningOption&gt;MAJOR&lt;/defaultVersioningOption&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/versioning&gt;
+<br>
+&nbsp;&nbsp;&lt;/extension&gt;
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13914">5.6.0-HF06</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10551" rel="54291" id="issuerow54291">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10551">NXP-10551</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10551">Add a property to make inverse reference read only</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10026">Directory</a>            </td>
+                                                        <td class="nav description">      <p>An inverse reference represents a value/property that does not belongs to the entry.<br>
+So when you edit an entry, you may want not to update the inverse reference, which could belongs to a read only directory for instance or to a directory that does not support updates.</p>
+
+<p>Having a property défined on the inverse reference will handle this use case.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      A new attribute is available when defining an InverseReference: 
+<br>
+add readOnly="true" to skip any update of the directory defined as a target of the inverse reference.
+<br>
+Example :
+<br>
+&lt;inverseReference field="parentGroups" directory="groupDirectoryMulti" dualReferenceField="subGroups" readOnly="true"/&gt;
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.4.2            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13813">5.4.2-HF30</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13814">5.5.0-HF17</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13914">5.6.0-HF06</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10481" rel="53999" id="issuerow53999">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10481">NXP-10481</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10481">Provide destination folder in ABOUT_TO_XXX events</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10040">Core</a>            </td>
+                                                        <td class="nav description">      <p>Improve ABOUT_TO_COPY and ABOUT_TO_MOVE event notifications so that they include the requested destination folder.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Should not impact existing code
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13914">5.6.0-HF06</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10435" rel="53885" id="issuerow53885">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10435">NXP-10435</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10435">Add fine grained form control on some widget types</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10656">Layouts / Widgets</a>            </td>
+                                                        <td class="nav description">      <p>Following improvements on container widget types (and also layout templates) on widget label management (see <a title="Add a &quot;decorative&quot; or &quot;container&quot; widget type" href="https://jira.nuxeo.com/browse/NXP-4937"><del>NXP-4937</del></a>), we need a similar fine-grained control over forms around widgets.</p>
+
+<p>The idea is to add a marker on widget instances (boolean to specify whether widget should be surrounded by a form, whether this form should be ajaxified...) and make parents check it (layout template, complex, list, container and also actions widget types) to add the accurate form around the widget.</p>
+
+<p>(also need to keep backward compat on current widgets adding forms, like the container and actions widget types)</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Widgets now accept "control" properties by mode to control if a form is displayed around them and if they handle their label
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10380" rel="53622" id="issuerow53622">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10380">NXP-10380</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10380">Remove global form around summary view</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10158">Web UI</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10170">Workflow</a>            </td>
+                                                        <td class="nav description">      <p>Currently summary widgets are all in the same form, which makes it difficult to handle sub forms (see <a title="Make it easier to support form in fancy box content opened by an action" href="https://jira.nuxeo.com/browse/NXP-9444"><del>NXP-9444</del></a>) and produces problems when setting up workflow variables.</p>
+
+<p>For instance, if a workflow variable is required, adding a tag without adding it will not be possible as a validation error will occur.<br>
+Also the form is not using multipart/form data so files cannot be uploaded (see <a class="external-link" href="http://answers.nuxeo.com/questions/4120/workflow-file-widgets-only-work-under-the-workflow-tab">http://answers.nuxeo.com/questions/4120/workflow-file-widgets-only-work-under-the-workflow-tab</a>)</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Summary widgets that need a surrounding form have to specify that they need a surrounding form by adding the following control to their definition:
+<br>
+&lt;controls mode="any"&gt;
+<br>
+&nbsp;&nbsp;&lt;control name="addSurroundingForm"&gt;true&lt;/control&gt;
+<br>
+&lt;/controls&gt;
+<br>
+
+<br>
+Old summary layouts defined on document type for mode "summary" will not have a surrounding form. When using the mode "grid_summary", there will be no surrounding form.
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10350" rel="53498" id="issuerow53498">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10350">NXP-10350</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10350">Make relation graphs use core directly (not Jena) (except annotations)</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10032">Relations</a>            </td>
+                                                        <td class="nav description">      <p>When Core relation graphs were introduced, a compatibility mode was kept so that Core graph mode is used only if no Jena graph is already present an non-empty for each graph.</p>
+
+<p>For 5.7, switch to using Core directly. Upgrade notes will list the config to use to keep using Jena if really needed.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      If you wish to keep using Jena for some of the relation graphs, use the following contributions:
+<br>
+
+<br>
+&nbsp;&nbsp;&lt;require&gt;org.nuxeo.ecm.platform.relations.default.graph&lt;/require&gt;
+<br>
+
+<br>
+&nbsp;&nbsp;&lt;extension target="org.nuxeo.ecm.platform.relations.services.RelationService"
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;point="graphs"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;graph name="default" type="jena-or-core"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="doctype"&gt;DefaultRelation&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="backend"&gt;sql&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="databaseType"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${org.nuxeo.ecm.sql.jena.databaseType}
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="datasource"&gt;jdbc/nxrelations-default-jena&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="databaseDoCompressUri"&gt;false&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespaces&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespace name="rdf"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/namespace&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespace name="dcterms"&gt;<a href="http://purl.org/dc/terms/&lt;/namespace">http://purl.org/dc/terms/&amp;lt;/namespace</a>&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespace name="nuxeo"&gt;<a href="http://www.nuxeo.org/document/uid/&lt;/namespace">http://www.nuxeo.org/document/uid/&amp;lt;/namespace</a>&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/namespaces&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/graph&gt;
+<br>
+&nbsp;&nbsp;&lt;/extension&gt;
+<br>
+
+<br>
+&nbsp;&nbsp;&lt;require&gt;org.nuxeo.ecm.platform.comment.service.default.graph&lt;/require&gt;
+<br>
+
+<br>
+&nbsp;&nbsp;&lt;extension target="org.nuxeo.ecm.platform.relations.services.RelationService"
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;point="graphs"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;graph name="documentComments" type="jena-or-core"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="doctype"&gt;CommentRelation&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="backend"&gt;sql&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="databaseType"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${org.nuxeo.ecm.sql.jena.databaseType}
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="datasource"&gt;jdbc/comment-relations&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="databaseDoCompressUri"&gt;false&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespaces&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespace name="comment"&gt;<a href="http://www.nuxeo.org/comments/uid&lt;/namespace">http://www.nuxeo.org/comments/uid&amp;lt;/namespace</a>&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespace name="isCommentFor"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.nuxeo.org/predicates/isCommentFor">http://www.nuxeo.org/predicates/isCommentFor</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/namespace&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespace name="document"&gt;<a href="http://www.nuxeo.org/document/uid&lt;/namespace">http://www.nuxeo.org/document/uid&amp;lt;/namespace</a>&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/namespaces&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/graph&gt;
+<br>
+&nbsp;&nbsp;&lt;/extension&gt;
+<br>
+
+<br>
+&nbsp;&nbsp;&lt;require&gt;org.nuxeo.ecm.platform.publisher.relations.contrib&lt;/require&gt;
+<br>
+
+<br>
+&nbsp;&nbsp;&lt;extension target="org.nuxeo.ecm.platform.relations.services.RelationService"
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;point="graphs"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;graph name="publication" type="jena-or-core"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="doctype"&gt;PublicationRelation&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="backend"&gt;sql&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="databaseType"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${org.nuxeo.ecm.sql.jena.databaseType}
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option name="datasource"&gt;java:/nxrelations-default-jena&lt;/option&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespaces&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespace name="rdf"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/namespace&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespace name="dcterms"&gt;<a href="http://purl.org/dc/terms/1.1/&lt;/namespace">http://purl.org/dc/terms/1.1/&amp;lt;/namespace</a>&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespace name="nuxeo"&gt;<a href="http://www.nuxeo.org/document/uid/&lt;/namespace">http://www.nuxeo.org/document/uid/&amp;lt;/namespace</a>&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namespace name="pTree"&gt;<a href="http://www.nuxeo.org/publication/tree/&lt;/namespace">http://www.nuxeo.org/publication/tree/&amp;lt;/namespace</a>&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/namespaces&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/graph&gt;
+<br>
+&nbsp;&nbsp;&lt;/extension&gt;
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10340" rel="53475" id="issuerow53475">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10340">NXP-10340</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10340">NXQL fails on backslash at end of string</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10028">Search / Query</a>            </td>
+                                                        <td class="nav description">      <p>A string literal with a backslash as last character cannot be parsed. This should work but does not:</p>
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">SELECT * FROM Document WHERE dc:title='foo\\'
+</pre>
+</div></div>
+<p>Which has double escaping from Java code:</p>
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">session.query(<span class="code-quote">"SELECT * FROM Document WHERE dc:title='foo\\\\'"</span>)
+</pre>
+</div></div>
+
+<p>Failure:</p>
+<div style="border-width: 1px;" class="preformatted panel"><div class="preformattedContent panelContent">
+<pre>org.nuxeo.ecm.core.query.QueryParseException: org.nuxeo.ecm.core.query.QueryParseException: Syntax error: Invalid token &lt;null&gt; at offset -1 in query: SELECT * FROM Document WHERE dc:title='foo\\'
+	at org.nuxeo.ecm.core.query.sql.SQLQueryParser.parse(SQLQueryParser.java:51)
+Caused by: org.nuxeo.ecm.core.query.QueryParseException: org.nuxeo.ecm.core.query.QueryParseException: Syntax error: Invalid token &lt;null&gt; at offset -1
+	at org.nuxeo.ecm.core.query.sql.SQLQueryParser.parse(SQLQueryParser.java:41)
+	at org.nuxeo.ecm.core.query.sql.SQLQueryParser.parse(SQLQueryParser.java:47)
+	... 23 more
+Caused by: org.nuxeo.ecm.core.query.QueryParseException: Syntax error: Invalid token &lt;null&gt; at offset -1
+	at org.nuxeo.ecm.core.query.sql.parser.parser.parseFailed(parser.java:466)
+	at org.nuxeo.ecm.core.query.sql.parser.parser.unrecovered_syntax_error(parser.java:457)
+	at java_cup.runtime.lr_parser.parse(lr_parser.java:601)
+	at org.nuxeo.ecm.core.query.sql.SQLQueryParser.parse(SQLQueryParser.java:39)
+	... 24 more
+</pre>
+</div></div>
+  </td>
+                                                        <td class="nav customfield_10100">      NXQL incompatibility: \\ used to mean \\ but now means \
+<br>
+
+<br>
+i.e., two consecutive backslashes inside a strings were previously interpreted as two backslashes. Now they are interpreted as only one backslash.
+<br>
+
+<br>
+There are two new helper methods to do string escaping:
+<br>
+- NXQL.escapeString
+<br>
+- NXQL.escapeStringInner
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API change</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13929">5.6.0-HF08</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10308" rel="53407" id="issuerow53407">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10308">NXP-10308</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10308">Single-datasource mode to work without XA</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10040">Core</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10368">Core SQL Storage</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10026">Directory</a>            </td>
+                                                        <td class="nav description">      <p>Using XA has costs:</p>
+<ul type="square" class="alternate">
+	<li>slower in general, as coordination is required between resources,</li>
+	<li>much slower on Oracle RAC,</li>
+	<li>not available on SQL Server (simulated using jTDS),</li>
+	<li>not available at all on Azure.</li>
+</ul>
+
+
+<p>Change Nuxeo to be able to work in a mode where, in a given thread, only one database connection is used for all resources (VCS, directories, hibernate). This allows for a secure rollback.</p>
+
+<p>Symptoms of the Oracle RAC problems may be errors like:</p>
+<div style="border-width: 1px;" class="preformatted panel"><div class="preformattedContent panelContent">
+<pre>ORA-02049: timeout: distributed transaction waiting for lock
+</pre>
+</div></div>
+  </td>
+                                                        <td class="nav customfield_10100">      To activate single-datasource mode (which is the default since Nuxeo 5.7.1), define the variable:
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nuxeo.db.singleDataSource=jdbc/NuxeoDS
+<br>
+
+<br>
+By default this is defined from templates/common-base/nuxeo.defaults.
+<br>
+To disable it, just use:
+<br>
+
+<br>
+&nbsp; &nbsp; nuxeo.db.singleDataSource=
+<br>
+
+<br>
+The datasource name can of course be different than jdbc/NuxeoDS, but it must be a valid datasource already defined elsewhere.
+<br>
+
+<br>
+In addition, the maximum pool size for the datasource must be enough for all the VCS connections, which means that you must have
+<br>
+
+<br>
+&nbsp;&nbsp;nuxeo.db.max-pool-size ≥ nuxeo.vcs.max-pool-size + 2
+<br>
+
+<br>
+(The + 2 comes from two reserved connections for the VCS lock manager and the cluster node handler.)
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>Deployment change</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10306" rel="53396" id="issuerow53396">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10306">NXP-10306</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10306">Automation client: add an API to get a session using a token</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10701">Automation</a>            </td>
+                                                        <td class="nav description">      <p>We need to be able to make automation calls using the token based authentication plugin done in <a title="Add a token based authentication module" href="https://jira.nuxeo.com/browse/NXP-10268"><del>NXP-10268</del></a>.<br>
+The principle is to add an API to the <tt>AutomationClient</tt> to allow getting a client Session following these steps:</p>
+<ul>
+	<li>First acquire a token remotely from the server (thanks to the token authentication plugin for example) using parameters gathered by the client.</li>
+	<li>Store this token locally for later use.</li>
+	<li>Use the token to get a Session passing it as a request header, readable by the token authentication plugin.</li>
+</ul>
+
+
+<p>A <tt>TokenCallback</tt> interface will define the API to gather the token parameters, acquire a remote token, save it locally, read it locally.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Added:
+<br>
+- AutomationClient#getSession(String token)
+<br>
+- AutomationClient#getSession(TokenCallback cb)
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14011">5.6.0-HF10</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10268" rel="53182" id="issuerow53182">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10268">NXP-10268</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10268">Add a token based authentication module</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10021">Security / Rights</a>            </td>
+                                                        <td class="nav description">      <p>This plugin will allow to authenticate a user with a token sent as a request header.<br>
+This implies:</p>
+<ul>
+	<li>A Servlet bound on basic authentication to get a generated token in the first place given some user information (username, application name, device name, device description, permission).</li>
+	<li>A storage service to map tokens to users</li>
+	<li>An authentication plugin to handle requests with a token header, using the <tt>Trusting_LM</tt> login  module</li>
+	<li>A view for the current user to manage its token (for now, ability to revoke it only). For now, as this module is mostly dedicated to Nuxeo Drive (see <a title="Use token based authentication instead of basic one" href="https://jira.nuxeo.com/browse/NXP-10269"><del>NXP-10269</del></a>), it only provides an XHTML view including a layout, but this view is not included by default in the User Center, it will be used in the specific "Nuxeo Drive" tab of the User Center.</li>
+</ul>
+
+  </td>
+                                                        <td class="nav customfield_10100">      Added:
+<br>
+- TokenAuthenticationService
+<br>
+- TokenAuthenticator
+<br>
+- TokenAuthenticationServlet
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14011">5.6.0-HF10</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10255" rel="53162" id="issuerow53162">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10255">NXP-10255</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10255">Make it easier to test Nuxeo with webdriver</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10780">Tests</a>            </td>
+                                                        <td class="nav description">      <p>Some helpers could be added to ease up testing + some ids in templates would be useful too</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Added helper classes LayoutElement, WidgetElement...
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10238" rel="53118" id="issuerow53118">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10238">NXP-10238</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10238">Use FileManager service to create appropriate document type through WebDAV</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10522">WebDAV / WSS</a>            </td>
+                                                        <td class="nav description">      <p>Currently every new document added via WebDAV are created as File type.</p>
+
+<p>We should detect mimetype from imported file and use FileManager service to call the corresponding importer plugin to create the adequate document type.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      If the old behavior is absolutely needed, the following Nuxeo property can be set:
+<br>
+
+<br>
+&nbsp;&nbsp;nuxeo.webdav.always-create-file=true
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/14212">5.6.0-HF12</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10235" rel="53114" id="issuerow53114">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10235">NXP-10235</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10235">Add missing indexes to scale </a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10368">Core SQL Storage</a>            </td>
+                                                        <td class="nav description">      <p>There are missing index on fulltext and nxp_logs that impacts performances<br>
+with &gt; 100kdocuments.</p>
+
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">CREATE INDEX FULLTEXT_JOBID_ID_IDX ON FULLTEXT(JOBID, ID);
+CREATE INDEX NXP_LOGS_LOG_DOC_UUID_IDX ON NXP_LOGS(LOG_DOC_UUID);
+CREATE INDEX NXP_LOGS_LOG_EVENT_DATE_IDX ON NXP_LOGS(LOG_EVENT_DATE);
+</pre>
+</div></div>
+  </td>
+                                                        <td class="nav customfield_10100">      For customer that have put an index on fulltext jobid you need to remove it because the name has changed:
+<br>
+DROP INDEX JOBID_ID_IDX;
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.5.0-HF14,                     5.6.0-HF01            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13515">5.5.0-HF15</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13526">5.6.0-HF02</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10224" rel="53068" id="issuerow53068">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10224">NXP-10224</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10224">Fix configuration templates deployment order</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/11101">Launcher</a>            </td>
+                                                        <td class="nav description">      <p>It seems there's sometimes an issue in the deployment order. For instance, a custom template depending on common template seems to be deployed before the common-base template!</p>
+
+<p>Also add DEBUG information.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Prior to that fix, configuration templates missing a nuxeo.defaults file may sometimes be included. That's no more the case: in order to be included, a template must have a nuxeo.defaults file.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13714">5.6.0-HF03</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10219" rel="53061" id="issuerow53061">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10219">NXP-10219</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10219">Support Microsoft's JDBC driver for SQL Server</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10368">Core SQL Storage</a>            </td>
+                                                        <td class="nav description">      <p>There are some changes needed to replace jtds with Microsoft's driver.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      To support XA using the Microsoft JDBC driver, some setup has to be done in the SQL Server itself. It is *NECESSARY* to follow the Configuration Instructions listed at <a href="http://msdn.microsoft.com/en-us/library/aa342335(v=sql.105).aspx">http://msdn.microsoft.com/en-us/library/aa342335(v=sql.105).aspx</a>
+<br>
+
+<br>
+In particular, after the configuration, note that you must add your database user ('nuxeo' in this example) to proper role in order for him to execute XA statements:
+<br>
+
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;USE master
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EXEC sp_grantdbaccess 'nuxeo', 'nuxeo'
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EXEC sp_addrolemember [SqlJDBCXAUser], 'nuxeo'
+<br>
+
+<br>
+Some screenshots for the first part are visible at <a href="http://www.sqlserver-dba.com/2011/12/enable-xa-transactions-for-sql-server.html">http://www.sqlserver-dba.com/2011/12/enable-xa-transactions-for-sql-server.html</a>
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13526">5.6.0-HF02</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10210" rel="53031" id="issuerow53031">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10210">NXP-10210</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10210">Improve pathOptimizations on Oracle</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10368">Core SQL Storage</a>            </td>
+                                                        <td class="nav description">      <p>The DialectOracle.getInTreeSql with pathOptimizations use an "ancestors" table with a nested table to simulate an array of ancestors for each document.</p>
+
+<p>The index on the nested table is not used during ancestors search, the execution plan is doing a full scan on the ancestor table.</p>
+
+<p>This does not scales with large amount of documents (&gt;500k). It impacts the move and permanent delete operations.</p>
+
+  </td>
+                                                        <td class="nav customfield_10100">      When upgrading from 5.6 to 5.7 and using Oralce, you need to drop the ancestors table, see the ticket for more information.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6.0-HF01            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13524">5.4.2-HF29</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13617">5.5.0-HF16</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13812">5.6.0-HF04</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10209" rel="53029" id="issuerow53029">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10209">NXP-10209</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10209">Automation - SendMail: allow to not rollback the automation chain in case of an Exception</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10701">Automation</a>            </td>
+                                                        <td class="nav description">      <p>If <tt>rollbackOnError</tt> is true, any <tt>Exception</tt> thrown while trying to send the mail will be rethrown, and the whole automation chain rolled back, else the exception will simply be WARNED and the chain will continue.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      New boolean optional parameter: rollbackOnError.
+<br>
+Default value = true to keep the previous behavior.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13526">5.6.0-HF02</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10184" rel="52891" id="issuerow52891">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10184">NXP-10184</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10184">Fix user/group suggestion widget types</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10656">Layouts / Widgets</a>            </td>
+                                                        <td class="nav description">      <p>There are several issues with user/group suggestion widget types:</p>
+<ul type="square" class="alternate">
+	<li>multiple and multiple prefixed widget types have gone out of sync</li>
+	<li>single user suggestion is not working anymore in view mode</li>
+	<li>display is not the same</li>
+	<li>CSV and PDF modes are not handled</li>
+</ul>
+
+  </td>
+                                                        <td class="nav customfield_10100">      singleUserSuggestion now displays a link to the user/group by default on view, add property "displayAction" with value "nothing" to get back the old behaviour. It also displays a user/group icon by default, use property "hideIcon" with value "true" to get back the old behaviour.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13524">5.4.2-HF29</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13515">5.5.0-HF15</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13526">5.6.0-HF02</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10179" rel="52879" id="issuerow52879">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10179">NXP-10179</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10179">Allow to use "Compatible Classic" mode for Freemarker rendering</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10057">Notifications</a>            </td>
+                                                        <td class="nav description">      <p>If an expression evaluation returns null, Freemarker is raising this exception</p>
+<div style="border-width: 1px;" class="preformatted panel"><div class="preformattedContent panelContent">
+<pre>ERROR [freemarker.runtime]
+
+Expression document.dublincore.description is undefined on line 16, column 6 in modif.</pre>
+</div></div>
+<p>whereas sometimes we want to get this null value.</p>
+
+<p>The solution is to use the "Compatible Classic" mode.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Classic Compatible mode is now set to true to render freemarker template for notifications
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13526">5.6.0-HF02</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10155" rel="52758" id="issuerow52758">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10155">NXP-10155</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10155">Allow forcing refresh of content views on rendering</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10028">Search / Query</a>            </td>
+                                                        <td class="nav description">      <p>As stated in the doc at <a class="external-link" href="http://doc.nuxeo.com/x/FQ4z">http://doc.nuxeo.com/x/FQ4z</a>, using a cache size "0" (meaning "no cache") on content views is making selections misbehave.</p>
+
+<p>=&gt; Need a better solution to handle refresh of content views on rendering, without relying on a complicated (and not distributed) refresh on Seam events.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      When content view cache is set to 0, the content view is cached anyhow with only one instance per user (and a static cache key), when rendering the content view again, the associated page provider is refreshed.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13526">5.6.0-HF02</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10118" rel="52638" id="issuerow52638">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10118">NXP-10118</a>
+</td>
+                                                        <td class="nav summary"><p>
+                        <a title="Fix Automation limitations" class="parentIssue" href="https://jira.nuxeo.com/browse/NXP-10078">NXP-10078</a>
+                        <a href="https://jira.nuxeo.com/browse/NXP-10118">Improve AutomationClient</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description">      <p>Small improvements in Nuxeo AutomationClient that should be merged.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      - Added AbstractAutomationClient#setSharedRegistryExpirationDelay(long delay) to update the default delay set to 60 seconds.
+<br>
+
+<br>
+- Added HttpConnector#HttpConnector(HttpClient http, long httpConnectionTimeout) and HttpConnector#HttpConnector(HttpClient http, HttpContext ctx, long httpConnectionTimeout) to instantiate a new HttpConnector with an HTTP connection timeout.
+<br>
+
+<br>
+- Added HttpAutomationClient#HttpAutomationClient(String url, long httpConnectionTimeout) and HttpAutomationClient#HttpAutomationClient(String url, long httpConnectionTimeout, long asyncAwaitTerminationTimeout) to instantiate a new HttpAutomationClient with an HTTP connection timeout and a timeout for the wiat of the asynchronous thread pool execution.
+<br>
+
+<br>
+- Added AsyncAutomationClient#AsyncAutomationClient(String url, long asyncAwaitTerminationTimeout) and AsyncAutomationClient#AsyncAutomationClient(String url, ExecutorService executor, long asyncAwaitTerminationTimeout) for the same reason.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10117" rel="52633" id="issuerow52633">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10117">NXP-10117</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10117">Allow UserWorkspace to built itself with a principal</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description">      <p>In some case, when trying to get UserWorkspace in a Computed group resolution for instance, the current API do not let workspace creation without getting user's NuxeoPrincipal. <br>
+But; principal creation need computed group resolution. So an infinite loop occured.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      org.nuxeo.ecm.platform.userworkspace.api.UserWorkspaceService#getUserPersonalWorkspace
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10092" rel="52568" id="issuerow52568">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10092">NXP-10092</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10092">Automation: add a generic operation similar to GetSelectedDocuments with a parameter for the selection list name</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10701">Automation</a>            </td>
+                                                        <td class="nav description"></td>
+                                                        <td class="nav customfield_10100">      Added GetDocumentsFromSelectionList operation.
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10060" rel="52490" id="issuerow52490">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10060">NXP-10060</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10060">Importer: plug a method call on node creation error and allow to continue global import task</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10621">Importer</a>            </td>
+                                                        <td class="nav description">      <p>Currently, when an error occurs while creating a node (<tt>GenericThreadedImportTask#doCreateFolderishNode and GenericThreadedImportTask#doCreateLeafNode</tt>), the whole import task stops.<br>
+It would be nice to be able to:</p>
+<ul>
+	<li>Execute a specific process to deal with the node creation error</li>
+	<li>Decide if we want to stop the whole import task immediately afer such an error occurs or if we'd like to continue it.</li>
+</ul>
+
+  </td>
+                                                        <td class="nav customfield_10100">      Added
+<br>
+ImporterDocumentModelFactory#processFolderishNodeCreationError(CoreSession session,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DocumentModel parent, SourceNode node)
+<br>
+and
+<br>
+ImporterDocumentModelFactory#processLeafNodeCreationError(CoreSession session,
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DocumentModel parent, SourceNode node)
+<br>
+
+<br>
++ add default implementation in AbstractDocumentModelFactory
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10053" rel="52467" id="issuerow52467">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10053">NXP-10053</a>
+</td>
+                                                        <td class="nav summary"><p>
+                        <a title="Improve XSD Types support in schema definition" class="parentIssue" href="https://jira.nuxeo.com/browse/NXP-10018">NXP-10018</a>
+                        <a href="https://jira.nuxeo.com/browse/NXP-10053">Extend usage of XSD maxOccurs attribute to handle List definition</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10040">Core</a>            </td>
+                                                        <td class="nav description">      <p>Typically, this complex type is considered as a sequence of string.</p>
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java"> &lt;xs:complexType name=<span class="code-quote">"stringSequence"</span>&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name=<span class="code-quote">"item"</span> type=<span class="code-quote">"xs:string"</span> minOccurs=<span class="code-quote">"0"</span>
+        maxOccurs=<span class="code-quote">"unbounded"</span> /&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+</pre>
+</div></div>
+
+<p>But, if the sequence contains more that one element the maxOccurs won't be used :</p>
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java"> &lt;xs:complexType name=<span class="code-quote">"complexWithSubList"</span>&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name=<span class="code-quote">"fieldA"</span> type=<span class="code-quote">"xs:string"</span> /&gt;
+      &lt;xs:element name=<span class="code-quote">"items"</span> type=<span class="code-quote">"xs:string"</span> minOccurs=<span class="code-quote">"0"</span>
+        maxOccurs=<span class="code-quote">"unbounded"</span> /&gt;
+      &lt;xs:element name=<span class="code-quote">"fieldB"</span> type=<span class="code-quote">"xs:string"</span> /&gt;
+      &lt;xs:element name=<span class="code-quote">"moreitems"</span> type=<span class="code-quote">"xs:string"</span> minOccurs=<span class="code-quote">"0"</span>
+        maxOccurs=<span class="code-quote">"unbounded"</span> /&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+</pre>
+</div></div>
+<p>and then :</p>
+
+<ul type="square" class="alternate">
+	<li>items will be seen a string rather than a List of string</li>
+	<li>moreitems will be seen a string rather than a List of string</li>
+</ul>
+
+
+
+  </td>
+                                                        <td class="nav customfield_10100">      h3. Background info
+<br>
+
+<br>
+Until 5.6 the {{maxOccurs}} attribute of the {{xs:element}} was not parsed correctly in all cases.
+<br>
+
+<br>
+Normally, an {{xs:element}} with a {{maxoccurs}} &gt;1 should be seen as a List.
+<br>
+
+<br>
+Until 5.6 it was only true when the {{xs:sequence}} had just one element.
+<br>
+
+<br>
+The problem is visible for complex types declaring several fields : 
+<br>
+
+<br>
+{code}
+<br>
+&lt;xs:complexType name="complexWithSubList"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="fieldA" type="xs:string" /&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="items" type="xs:string" minOccurs="0"
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxOccurs="unbounded" /&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;
+<br>
+&lt;/xs:complexType&gt;
+<br>
+{code}
+<br>
+
+<br>
+Here in 5.6, the field "items" won't be considered as a List.
+<br>
+In 5.7, the parsing will be ok and items will be List&lt;String&gt;.
+<br>
+
+<br>
+Unfortunately, until 5.6, probably because of bad copy/past a lot of schema were wrongly declared.
+<br>
+
+<br>
+{code}
+<br>
+&lt;xs:complexType name="relatedtextresource"&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:sequence&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="relatedtextid" type="xs:string" minOccurs="0"
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxOccurs="unbound" /&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xs:element name="relatedtext" type="xs:string" minOccurs="0"
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxOccurs="unbound" /&gt;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xs:sequence&gt;
+<br>
+&lt;/xs:complexType&gt;
+<br>
+{code}
+<br>
+
+<br>
+In 5.6 this {{relatedtextresource}} was  seen as a Map&lt;String, String&gt; with 2 keys, {{relatedtextid}} and {{relatedtext}}.
+<br>
+In 5.7 this same item would be correctly parsed as Map&lt;String, List&lt;String&gt;&gt; with 2 keys, {{relatedtextid}} and {{relatedtext}}.
+<br>
+
+<br>
+All Nuxeo "built-in" schema where updated, like the relatedText one : <a href="https://github.com/nuxeo/nuxeo-core/commit/efadc46527cd06f0cd0ec8cb4f55595016c2a408">https://github.com/nuxeo/nuxeo-core/commit/efadc46527cd06f0cd0ec8cb4f55595016c2a408</a>
+<br>
+
+<br>
+h3. What should be checked
+<br>
+
+<br>
+Inside your XSD schemas, check that the declaration of complex Type that have more than one field don't use maxOccurs="unbound" whithout any reasons.
+<br>
+
+<br>
+
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>Content model Change</span>,                  <span>API change</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10051" rel="52461" id="issuerow52461">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10051">NXP-10051</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10051">Avoid WARN at JAX-RS app init</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10621">Importer</a>            </td>
+                                                        <td class="nav description">      <p>Importer: make the kill() method return a String to avoid WARN at JAX-RS Application initialization (and to have the method result message).</p>
+
+<p>This is the WARN we get:</p>
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">WARN  [com.sun.jersey.spi.inject.Errors] The following warnings have been detected with resource and/or provider classes:
+WARNING: A HTTP GET method, <span class="code-keyword">public</span> void org.nuxeo.ecm.platform.importer.executor.jaxrs.AbstractJaxRSImporterExecutor.kill(), MUST <span class="code-keyword">return</span> a non-void type.
+</pre>
+</div></div>
+  </td>
+                                                        <td class="nav customfield_10100">      In both AbstractImporterExecutor and AbstractJaxRSImporterExecutor:
+<br>
+public void kill() becomes public String kill()
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10018" rel="52371" id="issuerow52371">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10018">NXP-10018</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10018">Improve XSD Types support in schema definition</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description">      <h2><a name="Problems"></a>Problems </h2>
+
+<p>When importing existing XSD schemas definition inside Nuxeo, there are some problems when some XSD types are used :</p>
+
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">org.nuxeo.ecm.core.schema.types.TypeException: Failed to load XSD schema http:<span class="code-comment">//XXX.YYY.ZZZ
+</span>	at org.nuxeo.ecm.core.schema.XSDLoader.loadSchema(XSDLoader.java:190)
+	at org.nuxeo.ecm.core.schema.XSDLoader.loadSchema(XSDLoader.java:123)
+...
+Caused by: java.lang.NullPointerException
+	at org.nuxeo.ecm.core.schema.types.ListTypeImpl.&lt;init&gt;(ListTypeImpl.java:72)
+	at org.nuxeo.ecm.core.schema.XSDLoader.createListType(XSDLoader.java:393)
+	at org.nuxeo.ecm.core.schema.XSDLoader.createComplexType(XSDLoader.java:364)
+	at org.nuxeo.ecm.core.schema.XSDLoader.loadComplexType(XSDLoader.java:266)
+	at org.nuxeo.ecm.core.schema.XSDLoader.loadType(XSDLoader.java:226)
+	at org.nuxeo.ecm.core.schema.XSDLoader.loadSchema(XSDLoader.java:177)
+	... 26 more
+</pre>
+</div></div>
+
+<p>Problems are visibles in several cases :</p>
+
+<h3><a name="oneofthefieldisdeclaredwith{{xs:anyType}}"></a>one of the field is declared with <tt>xs:anyType</tt></h3>
+
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java"> &lt;xs:complexType name = <span class="code-quote">"UserObject"</span> <span class="code-keyword">abstract</span> = <span class="code-quote">"<span class="code-keyword">true</span>"</span>&gt;
+        &lt;xs:complexContent&gt;
+            &lt;xs:extension base = <span class="code-quote">"xs:anyType"</span>/&gt;
+        &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+</pre>
+</div></div>
+
+<p>The best option is probably to consider this field as a big String (CLOB).</p>
+
+<h3><a name="oneofthefieldisdeclaredwith{{xs:duration}}"></a>one of the field is declared with <tt>xs:duration</tt></h3>
+
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java"> &lt;xs:element name = <span class="code-quote">"interval"</span> type = <span class="code-quote">"xs:duration"</span>/&gt;
+</pre>
+</div></div>
+
+<p>The best option is probably to consider this field as a String.</p>
+
+<h3><a name="asimpletypeisdeclatedas{{enumeration}}"></a>a simple type is declated as <tt>enumeration</tt></h3>
+
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java"> &lt;xs:simpleType name = <span class="code-quote">"Gender"</span>&gt;
+        &lt;xs:restriction base = <span class="code-quote">"xs:string"</span>&gt;
+            &lt;xs:enumeration value = <span class="code-quote">"Male"</span>/&gt;
+            &lt;xs:enumeration value = <span class="code-quote">"Female"</span>/&gt;
+            &lt;xs:enumeration value = <span class="code-quote">"Unknown"</span>/&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+</pre>
+</div></div>
+
+<p>For now, we have no simple way to support this at Core Level since the values validation is done at Widget level.</p>
+
+<p>=&gt; The best option is probably to consider this field as a String.</p>
+
+<h3><a name="afieldtypeuses{{xs:choice}}"></a>a field type uses <tt>xs:choice</tt></h3>
+
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">        &lt;xs:complexType&gt;
+            &lt;xs:complexContent&gt;
+                &lt;xs:extension base = <span class="code-quote">"types:AbstractExtensibleObject"</span>&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name = <span class="code-quote">"header"</span> type = <span class="code-quote">"ApplicationHeader"</span>&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:choice&gt;
+                            &lt;xs:element name = <span class="code-quote">"error"</span> type = <span class="code-quote">"Error"</span>&gt;
+                            &lt;/xs:element&gt;
+                            &lt;xs:choice maxOccurs = <span class="code-quote">"unbounded"</span>&gt;
+                                &lt;xs:element name = <span class="code-quote">"score"</span> type = <span class="code-quote">"Score"</span>/&gt;
+                                &lt;xs:element name = <span class="code-quote">"decisionResults"</span> type = <span class="code-quote">"DecisionResults"</span>/&gt;
+                            &lt;/xs:choice&gt;
+                        &lt;/xs:choice&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+</pre>
+</div></div>
+
+<p>This could be added to the Core, but this would require significant work, and so far, not sure to see what would be the real use cases ...</p>
+
+
+<h3><a name="{{xs:attribute}}elementswithembedded{{xs:simpleType}}definitionsarenotsupported"></a><tt>xs:attribute</tt> elements with embedded <tt>xs:simpleType</tt> definitions are not supported</h3>
+
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">&lt;xs:attribute name = <span class="code-quote">"Bureau"</span>&gt;
+        &lt;xs:simpleType&gt;
+            &lt;xs:restriction base = <span class="code-quote">"xs:string"</span>&gt;
+                &lt;xs:enumeration value = <span class="code-quote">"EFU"</span>/&gt;
+            &lt;/xs:restriction&gt;
+        &lt;/xs:simpleType&gt;
+    &lt;/xs:attribute&gt;
+</pre>
+</div></div>
+
+<p>Even if workaround is simple, we should try to fix this.</p>
+
+
+<h2><a name="XSD2JSONandXSDLoader"></a>XSD2JSON and XSDLoader</h2>
+
+<p>The problem were actually reported while playing with XSD2JSON that parses XSD files to generate JSON definition for Nuxeo Studio.</p>
+
+<p>However, since XSD2JSON uses the XSDLoader of Nuxeo Core the problem reported via XSD2JSON are in fact problems inside Nuxeo Core.</p>
+
+<p>A simple workaround would be to tweak the XSD at the time XSD2JSON does the loading, this would allow to generate a usable JSON definition inside Studio, but :</p>
+
+<ul type="square" class="alternate">
+	<li>this JSON definition won't match with the XSD</li>
+	<li>the XSD won't be correctly loaded by Nuxeo Core anyway</li>
+</ul>
+
+
+<p>This means that most of the work should be done directly inside the XSDLoader of Nuxeo Core.</p>
+
+
+  </td>
+                                                        <td class="nav customfield_10100">      Added support for more XSD types, see <a href="https://jira.nuxeo.com/browse/NXP-10053">https://jira.nuxeo.com/browse/NXP-10053</a> for more upgrade notes
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API change</span>,                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-10006" rel="52341" id="issuerow52341">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-10006">NXP-10006</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-10006">importer should use path segment service for naming documents</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10621">Importer</a>            </td>
+                                                        <td class="nav description">      <p>When importing a document, the file component name is renamed according to old rules. ie: foo_A is renamed in foo-a.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      If needed, the older naming rules can be selected by setting the 'nuxeo.importer.compatFilenames' to 'true'.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.5            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13410">5.5.0-HF14</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13413">5.6.0-HF01</a>,                     <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-9975" rel="52256" id="issuerow52256">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-9975">NXP-9975</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-9975">Use PostgreSQL unlogged table for cache tables</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10368">Core SQL Storage</a>            </td>
+                                                        <td class="nav description">      <p>Some tables will benefit from the new UNLOGGED table available since PostgreSQL 9.1,</p>
+
+<p>for instances cache tables: </p>
+<ul type="square" class="alternate">
+	<li>aclr_user which contains the list of logged users</li>
+	<li>aclr_user_map which contains the list of read acls for logged users</li>
+</ul>
+
+
+<p><a class="external-link" href="http://www.postgresql.org/docs/9.1/static/sql-createtable.html">http://www.postgresql.org/docs/9.1/static/sql-createtable.html</a></p>
+  </td>
+                                                        <td class="nav customfield_10100">      To take effect on existing instance, acl_user, acl_user_map and aclr_modified tables need to  be droped.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6-RC3            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-9940" rel="52115" id="issuerow52115">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-9940">NXP-9940</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-9940">Translate restart page</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/11101">Launcher</a>            </td>
+                                                        <td class="nav description"></td>
+                                                        <td class="nav customfield_10100">      * Server restarting page is available in english only. French labels would be:
+<br>
+** Nuxeo server is restarting -&gt; Redémarrage du serveur en cours.
+<br>
+** You will be automatically redirected to the login page when Nuxeo server is back online. (please, do not refresh this page) -&gt; La page d'authentification sera automatiquement affichée lorsque le serveur aura redémarré / aura fini de redémarrer. Merci de ne pas rafraîchir cette page.
+<br>
+
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.6            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-9564" rel="50903" id="issuerow50903">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-9564">NXP-9564</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-9564">don't rely on core session transactionnal wrapper for committing event bundles</a>
+    </p>
+</td>
+                                                        <td class="nav components">    &nbsp;
+</td>
+                                                        <td class="nav description">      <p>The core implementation is call-backing events service for handling the transaction commit. A better design would be to enlist event bundles in the transaction. This will insure that event bundles will always processed at the moment of the transaction commit.</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Removed from the CoreSession transaction synchronization handles. If needed, upgrade your code in a transaction synchronization listener.
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.4            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-8732" rel="48274" id="issuerow48274">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-8732">NXP-8732</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-8732">Add Drag &amp; drop in DAM domain</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/11321">DAM</a>            </td>
+                                                        <td class="nav description">      <p>Drag and drop to and content on repository don't work on DAM domain (asset librairy)</p>
+
+<p>work fine in DM domain (default domain)</p>
+  </td>
+                                                        <td class="nav customfield_10100">      upgrade friom nuxeo DM 5.4.2 to nuxeo platform 5.5 with DM and DAM module.
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">                        5.5            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-8630" rel="47582" id="issuerow47582">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-8630">NXP-8630</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-8630">Fix inverted event handler EL expression evaluation</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10701">Automation</a>            </td>
+                                                        <td class="nav description">      <p>For instance,</p>
+
+<p>If we have an expression like</p>
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">!Document.hasFacet(<span class="code-quote">"Folderish"</span>)
+</pre>
+</div></div>
+
+<p>It will execute the event handler only if the document DOES HAVE the facet folderish</p>
+
+<p>From org.nuxeo.ecm.automation.core.events.EventHandler:250</p>
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">        <span class="code-keyword">if</span> (expression != <span class="code-keyword">null</span>) {
+            <span class="code-keyword">if</span> (expr == <span class="code-keyword">null</span>) {
+                expr = Scripting.newExpression(expression);
+            }
+            <span class="code-keyword">if</span> ((<span class="code-object">Boolean</span>) expr.eval(ctx)) {
+                <span class="code-keyword">return</span> <span class="code-keyword">false</span>;
+            }
+        }
+        <span class="code-keyword">return</span> <span class="code-keyword">true</span>;
+</pre>
+</div></div>
+<p>is wrong and should be </p>
+<div style="border-width: 1px;" class="code panel"><div class="codeContent panelContent">
+<pre class="code-java">        <span class="code-keyword">if</span> (expression != <span class="code-keyword">null</span>) {
+            <span class="code-keyword">if</span> (expr == <span class="code-keyword">null</span>) {
+                expr = Scripting.newExpression(expression);
+            }
+            <span class="code-keyword">if</span> (!(<span class="code-object">Boolean</span>) expr.eval(ctx)) {
+                <span class="code-keyword">return</span> <span class="code-keyword">false</span>;
+            }
+        }
+        <span class="code-keyword">return</span> <span class="code-keyword">true</span>;
+</pre>
+</div></div>
+  </td>
+                                                        <td class="nav customfield_10100">      Use the new parameter "condition" instead of "expression" when migrating event handlers
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span> Configuration format change</span>            </div>
+</td>
+                                                        <td class="nav versions">                        5.5            </td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-7672" rel="45744" id="issuerow45744">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-7672">NXP-7672</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-7672">Handle CSS3 format in theme styling files</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10645">Themes</a>            </td>
+                                                        <td class="nav description">      <p>For instance, the following change was made for the parsing to pass:</p>
+
+<div style="border-width: 1px;" class="preformatted panel"><div class="preformattedContent panelContent">
+<pre> /*-- =Buttons */
+ .button, input.button {
+ 	box-shadow:inset 0px 1px 0px 0px #fff;
+-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f5f2f5), color-stop(1, #dfdfdf) );
+-	background:-moz-linear-gradient( center top, #f5f2f5 5%, #dfdfdf 100% );
+-	background: linear-gradient( center top, #f5f2f5 5%, #dfdfdf 100% );
+-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f2f5', endColorstr='#dfdfdf');
+ 	background-color:#dfdfdf;
+ 	border-radius:3px;
+ 	border:1px solid #c6c6c6;
+</pre>
+</div></div>
+  </td>
+                                                        <td class="nav customfield_10100">      The flute CSS parser has now been replaced by phloc-css (<a href="https://code.google.com/p/phloc-css/">https://code.google.com/p/phloc-css/</a>)
+<br>
+
+<br>
+The following dependencies have been removed from the dependencyManagement of Nuxeo root pom:
+<br>
+
+<br>
+&lt;dependency&gt;
+<br>
+&nbsp;&nbsp;&lt;groupId&gt;org.milyn&lt;/groupId&gt;
+<br>
+&nbsp;&nbsp;&lt;artifactId&gt;milyn-magger&lt;/artifactId&gt;
+<br>
+&nbsp;&nbsp;&lt;version&gt;1.3.1-<a title="remove duplicate classes in distribution class paths" href="https://jira.nuxeo.com/browse/NXP-7750"><strike>NXP-7750</strike></a>&lt;/version&gt; &lt;!-- removed duplicate batik classes --&gt;
+<br>
+&nbsp;&nbsp;&lt;/dependency&gt;
+<br>
+&lt;dependency&gt;
+<br>
+&nbsp;&nbsp;&lt;groupId&gt;org.milyn&lt;/groupId&gt;
+<br>
+&nbsp;&nbsp;&lt;artifactId&gt;milyn-commons&lt;/artifactId&gt;
+<br>
+&nbsp;&nbsp;&lt;version&gt;1.3.1&lt;/version&gt;
+<br>
+&lt;/dependency&gt;
+<br>
+&lt;dependency&gt;
+<br>
+&nbsp;&nbsp;&lt;groupId&gt;org.milyn&lt;/groupId&gt;
+<br>
+&nbsp;&nbsp;&lt;artifactId&gt;flute&lt;/artifactId&gt;
+<br>
+&nbsp;&nbsp;&lt;version&gt;1.3-gg2&lt;/version&gt;
+<br>
+&lt;/dependency&gt;
+<br>
+&lt;dependency&gt;
+<br>
+&nbsp;&nbsp;&lt;groupId&gt;org.w3c&lt;/groupId&gt;
+<br>
+&nbsp;&nbsp;&lt;artifactId&gt;sac&lt;/artifactId&gt;
+<br>
+&nbsp;&nbsp;&lt;version&gt;1.3&lt;/version&gt;
+<br>
+&nbsp;&nbsp;&lt;groupId&gt;com.phloc&lt;/groupId&gt;
+<br>
+&nbsp;&nbsp;&lt;artifactId&gt;phloc-css&lt;/artifactId&gt;
+<br>
+&nbsp;&nbsp;&lt;version&gt;3.3.1&lt;/version&gt;
+<br>
+&lt;/dependency&gt;
+  </td>
+                                                        <td class="nav customfield_10091"></td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+            <tr class="issuerow" data-issuekey="NXP-4147" rel="30797" id="issuerow30797">
+                                                        <td class="nav issuekey">
+
+    <a href="https://jira.nuxeo.com/browse/NXP-4147">NXP-4147</a>
+</td>
+                                                        <td class="nav summary"><p>
+                <a href="https://jira.nuxeo.com/browse/NXP-4147">VCS: allow queries about tags using NXQL</a>
+    </p>
+</td>
+                                                        <td class="nav components">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/component/10368">Core SQL Storage</a>            </td>
+                                                        <td class="nav description">      <p>We need to retrieve and paginate documents that are referenced by the tag service.<br>
+This can be achieved by extending NXQL for being able to evaluate expression like </p>
+
+<p>SELECT * from Document WHERE ecm:tag IN ('photo','movie');</p>
+
+<p>The first and critical need is to be able to evaluate expression using the equal operator </p>
+
+<p>SELECT * FROM Document WHERE ecm:tag = 'photo'</p>
+  </td>
+                                                        <td class="nav customfield_10100">      Examples from the doc:
+<br>
+
+<br>
+SELECT * FROM Document WHERE ecm:tag = 'tag1'
+<br>
+SELECT * FROM Document WHERE ecm:tag IN ('tag1', 'tag2')               -- documents with either tag
+<br>
+SELECT * FROM Document WHERE ecm:tag/* = 'tag1' AND ecm:tag/* = 'tag2' -- documents with both tags
+<br>
+SELECT ecm:tag FROM Document WHERE dc:title = 'something'              -- with queryAndFetch
+<br>
+SELECT ecm:tag FROM Document WHERE ecm:tag LIKE 'abc%'                 -- with queryAndFetch
+<br>
+SELECT ecm:tag/*1 FROM Document WHERE ecm:tag/*1 LIKE 'abc%' AND ecm:tag/*2 = 'tag1'
+<br>
+SELECT ecm:tag FROM Document WHERE ecm:tag LIKE 'abc%' AND ecm:tag/* = 'tag1'  -- simpler version of above
+  </td>
+                                                        <td class="nav customfield_10091">    <div id="customfield_10091-field" class="shorten">
+                  <span>API added</span>            </div>
+</td>
+                                                        <td class="nav versions">    &nbsp;
+</td>
+                                                        <td class="nav fixVersions">                        <a class="tinylink" href="https://jira.nuxeo.com/browse/NXP/fixforversion/13116">5.7.1</a>            </td>
+                    </tr>
+                </tbody>
+    </table>
+
+</body></html>
+
