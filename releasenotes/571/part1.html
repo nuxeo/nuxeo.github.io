@@ -138,7 +138,25 @@ if not will remove just the first one found</p>
 <p> Updates directory entries. Entries to update are sent as a JSON array. Returns the updated entries ids as a JSON array of JSON objects containing all fields </p>
 
 
+
+<h2>Nuxeo.conf new parameters</h2>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tr><td>org.nuxeo.dnd.upload.timeout</td><td>30000</td><td>Maximum time for uploading a file via Drag & Drop to the server.</td></tr>
+<tr><td>org.nuxeo.dnd.exec.timeout</td><td>30000</td><td>Maximum time for executing import of files uploaded via Drag & Drop</td></tr>
+<tr><td>org.nuxeo.dnd.extendedmode.timeout</td><td>2000</td><td>Mouse over time before switching to extended mode UI (setting to -1 disables the extended mode)</td></tr>
+<tr><td>org.nuxeo.ecm.automation.server.permission.httpcode</td><td>403</td><td>Indicates the HTTP status code to be returned by the Automation server in case a security exception occurs when fetching a document, typically if the request user doesn't have read access.</td></tr>
+</table>
+
+<h2>New Facet</h2>
+<h3>NotFulltextIndexable</h3>
+<p>The document won't be full-text indexed.</p>
+
 <h2>MarketPlace/Update Center</h2>
+<h3>nuxectl commands</h3>
+<p>mp-show: Show Marketplace package(s) information. You must provide the package file(s), name(s) or ID(s) as parameter.</p>
 
 
 </body></html>

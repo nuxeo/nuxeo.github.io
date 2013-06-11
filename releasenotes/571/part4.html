@@ -12,8 +12,6 @@
 <h2>Enhancements</h2>
 <p><a href="<a href="https://jira.nuxeo.com/browse/NXP-10308">Single datasource mode</a>, remove extra cost of XA transaction when all datasource point to the database. It simplifies configuration and enhance performances.</p>
 
-<p>    <a href="https://jira.nuxeo.com/browse/NXP-11079">Use coda hale Yammer Metrics to instrument Nuxeo</a>, providing lots of internal metrics, accessible from JMX or Graphite http://doc.nuxeo.com/pages/viewpage.action?pageId=12914816</p>
-
 <p>    <a href="https://jira.nuxeo.com/browse/NXP-11335">Soft delete</a>, efficient deletion, use batch to perform mass deletion</p>
 
 <p>    <a href="https://jira.nuxeo.com/browse/NXP-10894">NXP-10894</a>, <a href="https://jira.nuxeo.com/browse/NXP-4803">NXP-4803</a>: Enable usage of internal db uuid or sequence as document id instead of varchar(36), this improving performance and db memory footprint.
@@ -29,7 +27,13 @@ specific conf to activate (repository conf idtype="sequence|uid"</p>
 
 <p></p>
 <h2>NXQL</h2>
-<p>support of ecm:tag</p>
+<p><a href="http://doc.nuxeo.com/x/uItH">NXQL Documentation</a></p>
+<p>ecm:tag: a tag of the document. This property, when used multiple times in the same query, always refers to the same tag. If you want to refer to multiple tags in the same query, you can use a wildcard syntax similar to complex properties: every instance of ecm:tag/* will always refer to a different tag. If you want to refer several times to the same tag but still have flexibility, use correlated wildcards like for complex properties: ecm:tag/*1, ecm:tag/*2, etc. See the examples below for more.</p>
+
+<p>ecm:proxyTargetId: the id of the target of a proxy (usually a version). Implies a search for proxies (ecm:proxy = 1).</p>
+
+<p>ecm:proxyVersionableId: the id of the versionable document of a proxy (the versionable document is the one from which the version to which the proxy is pointing was created). Implies a search for proxies (ecm:proxy = 1).</p>
+
 <p></p>
 <h2>Misc</h2>
 <p>Performance enhancements for Postgres, Oracle and MSSQL</p>
