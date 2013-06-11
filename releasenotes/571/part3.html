@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Nuxeo 5.7.1 - New and Noteworthy</title>
+</head>
+<body>
+
+<h1>New features in Modules</h1>
+
+<h2>Quota</h2>
+<a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20fixVersion%20%3D%20%225.7.1%22%20AND%20component%20in%20%28Quota%2C%20Quotas%29%20AND%20resolution%20not%20in%20%28%22Won%27t%20Fix%22%2C%20duplicate%29%20ORDER%20BY%20issuetype%20DESC%2C%20updated%20DESC">Issues</a>
+
+<p>We've worked a lot on the Quota module, available on our <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-quota">marketplace</a>.</p>
+
+<p><a href="https://jira.nuxeo.com/browse/NXP-10713">Global Quotas Activation</a>, Quotas can be activated in the admin center</p>
+<p><img src="quota-admin-activation-unactive.gif"/></p>
+<p>Once it's activated, everything statistics are automatically computed.</p>
+<p><img src="quota-admin-statistics.gif"/></p>
+<p>Administrators can see (in Manage &gt; Quotas &gt; Stats) the following statistics :</p>
+<ul class="alternate" type="square">
+	<li>Total volume used  (deleted, live, versions) + "/Available space"</li>
+	<li>Volume used by deleted files (trash)</li>
+	<li>Volume used by  Archived Versions</li>
+</ul>
+<p>+ A graphical representation of those 3 stats. <br>
++ A content view nwith title "Sub Folders"  with the listing of subfolders</p>
+<ul class="alternate" type="square">
+	<li>Columns are title, do:modified, last contributor, size</li>
+	<li>Buttons Delete and Add to cart (to cut/paste)</li>
+</ul>
+<p><img src="quota-manager-activation-active.gif"/></p>
+
+<p>Return meaningful error message when encountering a quota error</p>
+<img src="creation_or_modification_impossible.gif" />
+<img src="drag_drop_impossible.gif" />
+<img src="quota-listing-status-no-more.gif" />
+
+<p>User workspace quota management activation</p>
+<p>As the Administrator of the system, you can enable quota on user workspaces (radio button) with a default value (slider). The value is the same for all the user workspaces.</p>
+<img src="quota-admin-activation-active-2.gif"/>
+
+<p>Quota processing has its own work queue</p>
+
+<h2>Birt</h2>
+<a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-birt-integration">Marketplace Package</a>
+<p>The Birt connector as been aligned on Birt 4.2.2. It means you can create your report in Birt Designer 4.2.2. We also made some significant ergonomy enhancements on the admin center UI and we've added paramater validation when generating a report.</p>
+
+SCREENSHOTS
+
+
+<h2>Importer CSV</h2>
+<p>Import a csv, choose csv, click on import and create documents with properties (only scalar metadata)</p>
+<p>Folder in Nuxeo.conf to specify a folder containg blobs. Put the relative path and it's imported.</p>
+<p><a href="CSVimportSample.csv">CSV import sample</a></p>
+
+<p><img src="CSVImporteremail.png"/></p>
+
+<h2>Right Audit</h2>
+<p><a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-groups-rights-audit">Marketplace Package</a>.</p>
+
+<p>This package allows running an audit on all permissions for all users of a document tree.</p>
+<p>Export excel of users/groups</p>
+<p>CSV/XLS Matrix for every exported documents. What permission for which user, is there a Blocking user permission.</p>
+
+<h2>Login Module</h2>
+
+<p>A Kerberos module has been contributed by OpenWide, allowing authentication throught the Kerberos protocol.</p>
+
+<p>You can also login to Nuxeo using your OpenID thanks to Nelson Silva:</p>
+<div id="wistia_kzyw68vabh" class="wistia_embed" style="width:750px;height:450px;" data-video-width="750" data-video-height="422"><div itemprop="video" itemscope itemtype="http://schema.org/VideoObject"><meta itemprop="duration" content="PT24S" /><meta itemprop="thumbnailUrl" content="https://embed-ssl.wistia.com/deliveries/4dc044658763d59478fb2a2dff648fc570d11ceb.bin" /><meta itemprop="contentURL" content="https://embed-ssl.wistia.com/deliveries/0f5364b86f07399d57191ccd127e945adfca9355.bin" /><meta itemprop="embedURL" content="https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?2013-05-14&controlsVisibleOnLoad=true&customColor=3670b9&mediaDuration=24.57&showVolume=true&stillUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F4dc044658763d59478fb2a2dff648fc570d11ceb.jpg%3Fimage_crop_resized%3D750x422&unbufferedSeek=true&videoUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F0f5364b86f07399d57191ccd127e945adfca9355.bin" /><meta itemprop="uploadDate" content="2013-03-25T14:47:45Z" /><object id="wistia_kzyw68vabh_seo" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style="display:block;height:450px;position:relative;width:750px;"><param name="movie" value="https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?2013-05-14"></param><param name="allowfullscreen" value="true"></param><param name="allowscriptaccess" value="always"></param><param name="bgcolor" value="#000000"></param><param name="wmode" value="opaque"></param><param name="flashvars" value="controlsVisibleOnLoad=true&customColor=3670b9&mediaDuration=24.57&showVolume=true&stillUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F4dc044658763d59478fb2a2dff648fc570d11ceb.jpg%3Fimage_crop_resized%3D750x422&unbufferedSeek=true&videoUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F0f5364b86f07399d57191ccd127e945adfca9355.bin"></param><embed src="https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?2013-05-14" allowfullscreen="true" allowscriptaccess="always" bgcolor=#000000 flashvars="controlsVisibleOnLoad=true&customColor=3670b9&mediaDuration=24.57&showVolume=true&stillUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F4dc044658763d59478fb2a2dff648fc570d11ceb.jpg%3Fimage_crop_resized%3D750x422&unbufferedSeek=true&videoUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F0f5364b86f07399d57191ccd127e945adfca9355.bin" name="wistia_kzyw68vabh_html" style="display:block;height:100%;position:relative;width:100%;" type="application/x-shockwave-flash" wmode="opaque"></embed></object><noscript itemprop="description">Quck example of how the OpenID authentication works in Nuxeo with Google as provider.</noscript></div></div>
+<script charset="ISO-8859-1" src="https://fast.wistia.com/static/concat/E-v1%2Csocialbar-v1.js"></script>
+<script>
+wistiaEmbed = Wistia.embed("kzyw68vabh", {
+  version: "v1",
+  videoWidth: 750,
+  videoHeight: 422,
+  volumeControl: true,
+  controlsVisibleOnLoad: true,
+  playerColor: "3670b9",
+  plugin: {
+    "socialbar-v1": {
+      buttons: "embed-email-twitter-linkedIn-googlePlus-facebook",
+      logo: true,
+      badgeUrl: "http://nuxeo.com",
+      badgeImage: "https://wistia.sslcs.cdngc.net/deliveries/69dd187a8507510b932208750621ac3008837e2e.jpg?image_crop_resized=100x20"
+    }
+  }
+});
+</script>
+<script charset="ISO-8859-1" src="https://fast.wistia.com/embed/medias/kzyw68vabh/metadata.js"></script>
+
+<h2>Jenkins Report Module</h2>
+We have a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-jenkins-report-mp">new module</a> available on the marketplace. It's an integration between Jenkins and Nuxeo that we uses internaly. It helps us keep track of our CI, see it's evolution and easily send a report of the state of the CI to our dev.
+
+
+<h2>Outlook</h2>
+
+
+</body></html>
+
