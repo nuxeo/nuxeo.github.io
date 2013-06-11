@@ -1,11 +1,11 @@
-nuxeo.github.com
------------------
+nuxeo.github.io
+---------------
 
 Home of the different Nuxeo projects on GitHub.
 To add projects to the page, you have to edit repositories.json file. Pull requests are welcome :)
 
 
-[nuxeo.github.com/downloads.html](http://nuxeo.github.com/downloads.html)
+[nuxeo.github.io/downloads.html](http://nuxeo.github.io/downloads.html)
 -----------------------------
 
 Nuxeo's download page (downloads.html and downloads.json). downloads.json file is generated automatically from apache file listing.
