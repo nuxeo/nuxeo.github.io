@@ -1,0 +1,116 @@
+/* Nuxeo Release notes special CSS */
+
+#site-title {
+  margin-top:2em;
+  line-height: 50px;
+    margin-bottom: 14px;
+}
+
+p#site-title {
+  padding:0;
+}
+
+#site-title a {
+  color:black;
+}
+
+#site-title a:hover {
+  color:black;
+  text-decoration: none;
+}
+
+#welcome h1 {
+    background-color: #3670B9;
+    display: inline-block;
+    margin: 1em 1em 1em -1em;
+    padding: 0.3em 0.7em;
+    margin-left:-2.5em;
+    color:white;
+}
+
+#welcome h2, #welcome h3 {
+  background-color: transparent;
+  display:block;
+  margin:0;
+  padding: inherit;
+  color:black;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+#welcome h1, #welcome h2, #welcome h3 {
+  clear:both;
+}
+
+#welcome h3 {
+ color:#454545;
+ font-size:100%;
+}
+
+#welcome p {
+ padding:0.75em 0 1em 0;
+ padding-left:1em;
+}
+/* #welcome h1:after, #welcome h2:after,#welcome h1:before, #welcome h2:before {
+  clear: both;
+  content: "-";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+} */
+
+#welcome ul {
+  list-style: none inside disc;
+  margin:1em 3em;
+}
+
+#welcome {
+  padding: 0.5em 2em;
+}
+
+hr {
+  margin:1em 0;
+}
+
+sup {
+  font-size: 80%;
+  vertical-align: top;
+  padding:0.2em 0.5em;
+  padding-top:0;
+  display:inline-block;
+}
+
+a:hover, a:focus {
+  color: #3670B9;
+}
+
+.message {
+  margin:-0.5em -2em;
+  margin-bottom: 1em;
+  padding:1em;
+  background-color: rgba(227,235,243,0.5);
+  line-height: 166%;
+  border-top:3px solid #d3e0eb;
+}
+
+.container {
+  margin-bottom: 3em;
+  width:600px;
+}
+
+ul#features {
+  -moz-column-count:2;
+-webkit-column-count:2;
+-o-column-count:2;
+column-count:2;
+-moz-column-gap:20px;
+-webkit-column-gap:20px;
+-o-column-gap:20px;
+column-gap:20px;
+}
+
+.wistia_embed  {
+  margin:0.5em 0 1em 0;
+  border-bottom:3px solid #d3e0eb;
+}
