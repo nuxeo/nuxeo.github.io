@@ -116,6 +116,23 @@ column-gap:20px;
 }
 
 img{
-    max-width:500px;
+  max-width:500px;
+}
+
+table {
+ border-collapse: collapse;
+}
+
+table {
+ border-collapse: collapse;
+}
+
+th,td {
+  padding: 5px 10px;
+  border: 1px solid #666;
+}
+
+th {
+  font-weight: bold;
 }
 

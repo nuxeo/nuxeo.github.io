@@ -115,31 +115,27 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
 
 <h2>Thumbnail</h2>
 
-<p>Thumbnail generated for pdf and images documents using the mail document’s file.
-Now you can contribute a thumbnail adapter for a specific Document Type or a Facet. Useful for files different than pictures.</p>
-<p>Async generation (workers) for picture (default placeholder in the meantime)</p>
+<p>Thumbnail can be autmatically generated for pdf or images documents using the main file of a  document. It's also possible to contribute a thumbnail adapter for a specific Document Type or Facet. This is useful mainly for files different than pictures.</p>
+<p>The generation of these thumbs is asynchronous thanks to the use of workers. There is also a default placehoder showed while the generation isn't finished, or if Nuxeo could not generate the thumb.</p>
 
 
 
 <h2>Content Routing</h2>
-<p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20in%20%28%22Content%20Routing%22%2C%20%22Content%20routing%22%29%20AND%20fixVersion%20%3D%20%225.7.1%22%20AND%20status%20in%20%28Resolved%2C%20Closed%29%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
 
-
-<p>The workflow tab -> can be enabled  List WF tasks in content views + select actions bulk validation on WF tasks</p>
+<p>A main workflow tab can be enabled to list running workflow tasks. This way you can select several tasks hence do bulk validation.</p>
 
 <p><a href="https://jira.nuxeo.com/browse/NXP-11340">Content routing prefetch</a> has been made more efficient, which improve performances.</p>
-<p><a href="https://jira.nuxeo.com/browse/NXP-9825">Add an Operation</a> to start a workflow</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-9825">There is a new Operation</a> to start a workflow</p>
 <p><a href="https://jira.nuxeo.com/browse/NXP-10049">Redirect User</a> when she has no more rights to read the document after changing the state of the workflow</p>
 <p><a href="https://jira.nuxeo.com/browse/NXP-10142">Filter system WorkFlow</a> related documents from search </p>
 
+<p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20in%20%28%22Content%20Routing%22%2C%20%22Content%20routing%22%29%20AND%20fixVersion%20%3D%20%225.7.1%22%20AND%20status%20in%20%28Resolved%2C%20Closed%29%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
+
 <h2>Contribution</h2>
-<p>We had some significant pull requests from OpenWide and Inevo;, including Tomcat7 Support, A kerberos authentication module, OpenID and oAuth2 support</p>
+<p>We had some significant pull requests from OpenWide and Inevo, including Tomcat7 Support, a Kerberos authentication module, OpenID and oAuth2 support.</p>
 
-
-<h2>DragNDrop</h2>
-
-<h2><a href="https://jira.nuxeo.com/browse/NXP-11054">Bulk Edit in listing</a></h2>
-<p>It's now easy to show a form in a popup, displaying any layout you want, and that apply to documents you've selected.</p>
+<h2>Bulk Edit in listing</h2>
+<p>We have enabled <a href="https://jira.nuxeo.com/browse/NXP-11054">Bulk Edititing</a> for document listing</a>. It's now easy to show a form in a popup, displaying any layout you want, and that apply to documents you've selected.</p>
 
 <h2>New drop zone Widget</h2>
 <p><a href="https://jira.nuxeo.com/browse/NXP-11043">This widget</a> allows you to execute an operation with the files you've dropped as input. </p>
@@ -157,7 +153,6 @@ Now you can contribute a thumbnail adapter for a specific Document Type or a Fac
 
 <h3>Add Message</h3>
 <p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR, default is INFO. Messages parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
-
 <h3>Add entry into multi-valued metadata</h3>
 <p>Add value into the field expressed by the xpath parameter. This field must be a multivalued metadata.</p>
 <h3>Convert to given mime-type</h3>
@@ -209,6 +204,7 @@ if not will remove just the first one found</p>
 <h3>nuxectl commands</h3>
 <p>mp-show: Show Marketplace package(s) information. You must provide the package file(s), name(s) or ID(s) as parameter.</p>
 
+<h2>DragNDrop</h2>
 
   </div>
 
