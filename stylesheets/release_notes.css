@@ -136,3 +136,21 @@ th {
   font-weight: bold;
 }
 
+#floatMenu {  
+    position:absolute;  
+    top:5em;  
+    left:-5%;  
+    margin-left:20em;  
+    width:200px;  
+}  
+#floatMenu ul {  
+    margin-bottom:20px;  
+}  
+#floatMenu ul li a {  
+    display:block;  
+    border:1px solid #999;  
+    border-left:6px solid #999;  
+    text-decoration:none;   
+    padding:2px 2px 2px 25px;  
+}  
+
