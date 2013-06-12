@@ -51,11 +51,6 @@
   <p class="remove-bottom" id="site-title"><a href="./index.html">nuxeo<span class="separator">/</span><span class="nxsexion">5.7.1 Release Notes</span></a></p>
 
     <div id="welcome">
-    
-    <div class="message">
-<p>We just release Nuxeo 5.7.1! This new version is available <a href="http://nuxeo.github.io/downloads.html" >here</a>. It's the first version of our new release cycle, You'll find more informations about this <a href="http://www.nuxeo.com/blog/updates/2013/05/release-cycle/">here</a>. Here is an hopefully comprehensive summary of the changes we've made to the Platform core and its components for the past 10 months. </p> 
-    </div>
-    
     <div style="clear:both;"></div>
 
 <h1>New features in the Platform</h1>
@@ -225,18 +220,22 @@ if not will remove just the first one found</p>
 
 <h3>Widget Actions</h3>
 <p>One can use automatic JS confirmation popup. If you add a confirmMessage property in the actions, it generates the appropriate js method. It accepts any EL as parameter. Here's an example:</p>
-<code>
- <action id="JenkinsReportSendMail">
-   <properties>
-     <property name="confirmMessage">label.jenkins.sendMail.confirm</property>
-     <propertyList name="confirmMessageArgs">
-       <value>#{docSuggestionActions.getDocumentWithId(currentSuperSpace.id).getPropertyValue('jenkinsreports:report_email')}</value>
-     </propertyList>
-   </properties>
- </action> 
+<blockquote>
+<pre>
+ &lt;action id="JenkinsReportSendMail"&gt;
+   &lt;properties&gt
+     &lt;property name="confirmMessage"&gt;label.jenkins.sendMail.confirm&lt;/property&gt
+     &lt;propertyList name="confirmMessageArgs"&gt;
+       &lt;value&gt;#{docSuggestionActions.getDocumentWithId(currentSuperSpace.id)
+         .getPropertyValue('jenkinsreports:report_email')}&lt;/value&gt;
+     &lt;/propertyList&gt;
+   &lt;/properties&gt;
+ &lt;/action&gt; 
 messages:
-label.jenkins.sendMail.confirm=This will send an email to {0}, are you sure that you would like to continue?
-</code>
+label.jenkins.sendMail.confirm=This will send an email to {0},
+ are you sure that you would like to continue?
+</pre>
+</blockquote>
 
 <p>You can now include widgets that rendre actions. This is particularly useful in Nuxeo Studio. This allow us to easily blend different action types like a submit button, an outgoing link and an action that <a href="https://jira.nuxeo.com/browse/NXP-11006">opens a fancybox</a>. You can also <a href="https://jira.nuxeo.com/browse/NXP-11044">merge all of them</a> in any order that you want.</p>
 

@@ -50,16 +50,13 @@
   <p class="remove-bottom" id="site-title"><a href="./index.html">nuxeo<span class="separator">/</span><span class="nxsexion">5.7.1 Release Notes</span></a></p>
 
     <div id="welcome">
-    <div class="sixteen message">
-<p>We just release Nuxeo 5.7.1! This new version is available <a href="http://nuxeo.github.io/downloads.html" >here</a>. It's the first version of our new release cycle, You'll find more informations about this <a href="http://www.nuxeo.com/blog/updates/2013/05/release-cycle/">here</a>. Here is an hopefully comprehensive summary of the changes we've made to the Platform core and its components for the past 10 months. </p> 
-    </div>
+
     <div style="clear:both;"></div>
      <h1>New features in Modules</h1>
 
 <h2>Quota</h2>
-<a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20fixVersion%20%3D%20%225.7.1%22%20AND%20component%20in%20%28Quota%2C%20Quotas%29%20AND%20resolution%20not%20in%20%28%22Won%27t%20Fix%22%2C%20duplicate%29%20ORDER%20BY%20issuetype%20DESC%2C%20updated%20DESC">Issues</a>
 
-<p>We've worked a lot on the Quota module, available as a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-quota">marketplace package</a>.</p>
+<p>We've made many improvements on the Quota <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-quota">marketplace package</a>.</p>
 
 <p><a href="https://jira.nuxeo.com/browse/NXP-10713">Global Quotas Activation</a>, Quotas can be activated in the admin center</p>
 <p><img src="quota-admin-activation-unactive.gif"/></p>
@@ -71,24 +68,27 @@
 	<li>Volume used by deleted files (trash)</li>
 	<li>Volume used by  Archived Versions</li>
 </ul>
-<p>+ A graphical representation of those 3 stats. <br>
-+ A content view nwith title "Sub Folders"  with the listing of subfolders</p>
+<p>A graphical representation of those 3 stats. </p>
+<p>A content view with title "Sub Folders"  with the listing of subfolders</p>
 <ul class="alternate" type="square">
 	<li>Columns are title, do:modified, last contributor, size</li>
 	<li>Buttons Delete and Add to cart (to cut/paste)</li>
 </ul>
 <p><img src="quota-manager-activation-active.gif"/></p>
 
-<p>Return meaningful error message when encountering a quota error</p>
+<h3>Return meaningful error message when encountering a quota error</h3>
 <img src="creation_or_modification_impossible.gif" />
 <img src="drag_drop_impossible.gif" />
 <img src="quota-listing-status-no-more.gif" />
 
-<p>User workspace quota management activation</p>
+<h3>User workspace quota management activation</h3>
 <p>As the Administrator of the system, you can enable quota on user workspaces (radio button) with a default value (slider). The value is the same for all the user workspaces.</p>
 <img src="quota-admin-activation-active-2.gif"/>
 
-<p>Quota processing has its own work queue</p>
+<p>Quota processing now uses its own work queue.</p>
+
+<a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20fixVersion%20%3D%20%225.7.1%22%20AND%20component%20in%20%28Quota%2C%20Quotas%29%20AND%20resolution%20not%20in%20%28%22Won%27t%20Fix%22%2C%20duplicate%29%20ORDER%20BY%20issuetype%20DESC%2C%20updated%20DESC">Issues List</a>
+
 
 <h2>Birt</h2>
 <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-birt-integration">Marketplace Package</a>
@@ -98,9 +98,9 @@ SCREENSHOTS
 
 
 <h2>Importer CSV</h2>
-<p>Import a csv, choose csv, click on import and create documents with properties (only scalar metadata)</p>
-<p>Folder in Nuxeo.conf to specify a folder containg blobs. Put the relative path and it's imported.</p>
-<p><a href="CSVimportSample.csv">CSV import sample</a></p>
+<p>We have a new module allowing import of documents from a CSV file <sup>(1)</sup>. Import a csv, choose csv, click on import and create documents with properties (only scalar metadata)</p>
+<p>You can specify a folder in Nuxeo.conf where the importer will look for binaries. Just make sure you put their relative path in the CSV.</p>
+<p><sup>(1)</sup><a href="CSVimportSample.csv">CSV import sample</a></p>
 
 <p><img src="CSVImporteremail.png"/></p>
 
