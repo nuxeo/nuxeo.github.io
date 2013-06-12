@@ -3,10 +3,8 @@
 
 
     $(document).ready(function () { 
-var  $mainContainer = $("<div id='floatMenu'>");
-
-
-        var menuYloc = null;  
+        var  $mainContainer = $("<div id='floatMenu'>");
+        var menuYloc;
         $menuContainer = $("<ul>");
         $.each( $("h2"), function (i,item) {
             $menuContainer.append('<li><a href="#anchor-'+i+'">'+$(item).html()+'</a></li>');
@@ -14,9 +12,10 @@ var  $mainContainer = $("<div id='floatMenu'>");
         });
         $mainContainer.append($menuContainer);
 
-
-        menuYloc = parseInt($mainContainer.css("top").substring(0,$mainContainer.css("top").indexOf("px")))  
-        $(window).scroll(function () {   
+       
+        $(window).scroll(function () {
+            if(!menuYloc)
+                menuYloc = parseInt($mainContainer.css("top").substring(0,$mainContainer.css("top").indexOf("px")));
             var offset = menuYloc+$(document).scrollTop()+"px";  
             $mainContainer.animate({top:offset},{duration:500,queue:false});  
         }); 
