@@ -208,7 +208,45 @@ if not will remove just the first one found</p>
 <h3>nuxectl commands</h3>
 <p>mp-show: Show Marketplace package(s) information. You must provide the package file(s), name(s) or ID(s) as parameter.</p>
 
+<h2>Saved Search Managment Tab</h2>
+<p>Every saved search are listed on an home tab. A subtab for dam, a subtab for faceted search. You can share those saved searches with other users using the manage/rights tab.</p>
+
 <h2>DragNDrop</h2>
+
+
+<h2>UI Framework</h2>
+
+<p>Widget Label properties now accept an EL expression. This allows you to have <a href=" https://jira.nuxeo.com/browse/NXP-11040">dynamic labels</a>.</p>
+<p>Every richfaces ajax call use a <a href="https://jira.nuxeo.com/browse/NXP-11136">global default ajax event queue</a>. You can of course still specify your own queue. This results in more stable pages.</p>
+
+<h3>HTML5 PlaceHolder</h3>
+<p>You can use the HTML5 placeHolder attribute on inputtext and textarea. It's available as a widget property. You can put text(that will be translated) or an EL.</p>
+<p>screenshot</p>
+
+<h3>Widget Actions</h3>
+<p>One can use automatic JS confirmation popup. If you add a confirmMessage property in the actions, it generates the appropriate js method. It accepts any EL as parameter. Here's an example:</p>
+<code>
+ <action id="JenkinsReportSendMail">
+   <properties>
+     <property name="confirmMessage">label.jenkins.sendMail.confirm</property>
+     <propertyList name="confirmMessageArgs">
+       <value>#{docSuggestionActions.getDocumentWithId(currentSuperSpace.id).getPropertyValue('jenkinsreports:report_email')}</value>
+     </propertyList>
+   </properties>
+ </action> 
+messages:
+label.jenkins.sendMail.confirm=This will send an email to {0}, are you sure that you would like to continue?
+</code>
+
+<p>You can now include widgets that rendre actions. This is particularly useful in Nuxeo Studio. This allow us to easily blend different action types like a submit button, an outgoing link and an action that <a href="https://jira.nuxeo.com/browse/NXP-11006">opens a fancybox</a>. You can also <a href="https://jira.nuxeo.com/browse/NXP-11044">merge all of them</a> in any order that you want.</p>
+
+<p>We have a better support of <a href="https://jira.nuxeo.com/browse/NXP-9444">form inside fancybox</a> opened by actions. You can submit the associated form withouth submitting every other form on the page. No need to do nested form anymore.</p>
+
+<p>You can mix any type of action. If one action does not support ajax (like a download), it can be in the same tool bar than an ajax actio.</p>
+
+<p>You can associate selected documents of a content view to actions outside the content view. That's how we made bulk edit.</p>
+
+<p><a href="https://jira.nuxeo.com/browse/NXP-11566">We allow resetting of JSF components state when using ajax</a>. JSF action listener <em>#{jsfResetActions.resetComponents}</em> can be used in actions that need to reset all components in the same JSF naming container.</p>
 
   </div>
 
