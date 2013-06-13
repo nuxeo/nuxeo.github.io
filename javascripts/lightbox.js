@@ -3,7 +3,7 @@
 
 
     $(document).ready(function () { 
-
+      $('img').css('cursor', 'pointer');
       $('img').click(function (e) { 
 
         e.preventDefault();
@@ -16,7 +16,7 @@
         else {
             var lightbox =
             '<div id="lightbox">' +
-                '<p>Click to close</p>' +
+                '<p></p>' +
                 '<div id="content">' + //insert clicked link's href into img src
                     '<img src="' + image_href +'" />' +
                 '</div>' +
