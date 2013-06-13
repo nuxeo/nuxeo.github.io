@@ -61,11 +61,11 @@
 <p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20%3D%20%22Core%20SQL%20Storage%22%20AND%20fixVersion%20%3D%20%225.7.1%22%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
 
 <h2>Enhancements</h2>
-<p><a href="<a href="https://jira.nuxeo.com/browse/NXP-10308">Single datasource mode</a>, remove extra cost of XA transaction when all datasource point to the database. It simplifies configuration and enhance performances.</p>
+<p><a href="<a href="https://jira.nuxeo.com/browse/NXP-10308">Single datasource mode</a>, removes extra cost of XA transaction when all datasource points to the database. It simplifies configuration and enhances performance.</p>
 
 <p>    <a href="https://jira.nuxeo.com/browse/NXP-11335">Soft delete</a>, efficient deletion, use batch to perform mass deletion</p>
 
-<p>    <a href="https://jira.nuxeo.com/browse/NXP-10894">NXP-10894</a>, <a href="https://jira.nuxeo.com/browse/NXP-4803">NXP-4803</a>: Enable usage of internal db uuid or sequence as document id instead of varchar(36), this improving performance and db memory footprint.
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-10894">NXP-10894</a>, <a href="https://jira.nuxeo.com/browse/NXP-4803">NXP-4803</a>: Enables usage of internal db uuid or sequence as document id instead of varchar(36), thus improving performance and db memory footprint.
 specific conf to activate (repository conf idtype="sequence|uid"</p>
 
 <p>    <a href="https://jira.nuxeo.com/browse/NXP-11370">Flag to disable proxies</a>, if you don't use proxies then it removes extra useless clauses at the SQL level.</p>
@@ -79,7 +79,7 @@ specific conf to activate (repository conf idtype="sequence|uid"</p>
 <p></p>
 <h2>NXQL</h2>
 <p><a href="http://doc.nuxeo.com/x/uItH">NXQL Documentation</a></p>
-<p>ecm:tag: a tag of the document. This property, when used multiple times in the same query, always refers to the same tag. If you want to refer to multiple tags in the same query, you can use a wildcard syntax similar to complex properties: every instance of ecm:tag/* will always refer to a different tag. If you want to refer several times to the same tag but still have flexibility, use correlated wildcards like for complex properties: ecm:tag/*1, ecm:tag/*2, etc. See the examples below for more.</p>
+<p>ecm:tag: a tag of the document. This property, when used multiple times in the same query, always refers to the same tag. If you want to refer to multiple tags in the same query, you can use a wildcard syntax similar to complex properties: every instance of ecm:tag/* will always refer to a different tag. If you want to refer several times to the same tag but still want to have flexibility, use correlated wildcards like for complex properties: ecm:tag/*1, ecm:tag/*2, etc. See the examples below for more.</p>
 
 <p>ecm:proxyTargetId: the id of the target of a proxy (usually a version). Implies a search for proxies (ecm:proxy = 1).</p>
 
@@ -112,4 +112,5 @@ Attached stack trace of such a call.</p>
     <script src="../../javascripts/float_menu.js"></script>
     <script src="../../javascripts/lightbox.js"></script>
 </body></html>
+
 
