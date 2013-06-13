@@ -96,7 +96,8 @@ a:hover, a:focus {
 
 .container {
   margin-bottom: 3em;
-  width:600px;
+  width:50%;
+  min-width: 540px;
 }
 
 ul#features {
@@ -138,19 +139,50 @@ th {
 
 #floatMenu {  
     position:absolute;  
-    top:5em;  
-    left:-5%;  
-    margin-left:20em;  
-    width:200px;  
+    top:22px;  
+    left:10%;  
+    width:15%;  
 }  
 #floatMenu ul {  
-    margin-bottom:20px;  
-}  
-#floatMenu ul li a {  
-    display:block;  
-    border:1px solid #999;  
-    border-left:6px solid #999;  
-    text-decoration:none;   
-    padding:2px 2px 2px 25px;  
+  margin-bottom:20px;  
 }  
 
+#floatMenu ul li {
+  margin-bottom: 0;
+}  
+
+#floatMenu ul li a {  
+    display:block;  
+    border-bottom:1px solid rgb(132,174,203);  
+    border-right:1px solid #E8EFF5;  
+    text-decoration:none;   
+    padding:4px 8px;  
+    background-color: white;
+    font-size: 12px;
+}  
+
+#floatMenu ul li:last-child a {  
+  border-bottom: none;
+}
+
+#floatMenu ul li a:hover {  
+    background-color:#E8EFF5; 
+}  
+
+table.release {
+  table-layout: fixed;
+  max-width: 99%;
+}
+
+table.release td.parameter {
+  word-break: break-all;
+}
+
+blockquote {
+  overflow:auto;
+}
+
+blockquote, blockquote p {
+  font-size: 14px;
+  line-height: 180%;
+}
