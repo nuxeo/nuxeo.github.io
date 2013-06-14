@@ -114,6 +114,7 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
 <p>Thumbnail can be automatically generated for pdf or image documents using the main file of a  document. It's also possible to contribute a thumbnail adapter for a specific document type or Facet. This is useful mainly for files other than pictures.</p>
 <p>The generation of these thumbs is asynchronous, thanks to the use of workers. There is also a default placeholder showed when the generation isn't finished, or if Nuxeo could not generate the thumb.</p>
 
+<p><img src="dm_thumbnails.png"/></p>
 
 
 <h2>Content Routing</h2>
@@ -161,37 +162,66 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
 <h2>New operations</h2>
 
 <h3>Add Message</h3>
+<p><strong>Category:</strong> User Interface</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.AddMessage">Seam.AddMessage</a></p>
 <p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR, default is INFO. Message parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
 <h3>Add entry into multi-valued metadata</h3>
+<p><strong>Category:</strong> Document</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/AddEntryToMultivaluedProperty">AddEntryToMultivaluedProperty</a></p>
 <p>Add value into the field expressed by the xpath parameter. This field must be a multivalued metadata.</p>
 <h3>Convert to given mime-type</h3>
+<p><strong>Category:</strong> Conversion</p> 
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.Convert">Blob.Convert</a></p> 
 <p> Convert the input file to a file of the given mime-type and return the new file. </p>
 <h3>Create Asset(s) from file(s)</h3>
+<p> <strong>Category:</strong> Dam</p> 
+<p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Dam.Import">Dam.Import</a></p> 
 <p> Create Asset(s) from Blob(s) using the FileManagerService. </p>
 <h3>Create Proxy Live</h3>
+<p><strong>Category:</strong> Document</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/CreateProxyLive">CreateProxyLive</a></p>
 <p> This operation will create a proxy that points the given document as input. This is like a symbolic link for File System. The proxy will be created into the destination specified as parameter. </p>
 <h3>Creates directory entries</h3>
+<p><strong>Category:</strong> Services</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.CreateEntries">Directory.CreateEntries</a></p>
 <p> Creates directory entries. Entries are sent as a JSON array. Returns the created entry ids as a JSON array. </p>
 <h3>Deletes directory entries</h3>
+<p> <strong>Category:</strong> Services</p> 
+<p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.DeleteEntries">Directory.DeleteEntries</a></p>
 <p> Deletes directory entries. Entry ids to be delete are sent through a JSON array. Returns the deleted entry ids as a JSON array. </p>
 <h3>Get Live Document</h3>
+<p><strong>Category:</strong> Document</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/GetLiveDocument">GetLiveDocument</a></p>
 <p> Get the live document even if this is a Proxy or Version Document. </p>
 <h3>Get Nuxeo Principal</h3>
+<p><strong>Category:</strong> Users & Groups</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/NuxeoPrincipal.Get">NuxeoPrincipal.Get</a></p>
 <p> Retrieve Nuxeo principal and export it as a DocumentModel. If login parameter is not set, the operation will return informations about the current user, otherwise Directory Administration rights are required. </p>
 <h3>QueryAndFetch</h3>
+<p> <strong>Category:</strong> Fetch</p> 
+<p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Resultset.PageProvider">Resultset.PageProvider</a></p> 
 <p> Perform a query or a named provider query on the repository. Result is paginated. The result is returned as a RecordSet (QueryAndFetch) rather than as a List of Document. The query result will become the input for the next operation. If no query or provider name is given, a query returning all the documents that the user has access to will be executed. </p>
 <h3>Raise Seam events</h3>
+<p><strong>Category:</strong> User Interface</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.RaiseEvents">Seam.RaiseEvents</a></p>
 <p> Raise Seam events without parameters. This is a void operation - the input object is returned back as the output </p>
 <h3>Reads directory entries</h3>
+<p><strong>Category:</strong> Services</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.ReadEntries">Directory.ReadEntries</a></p>
 <p> Reads directory entries. Entry ids to be read are sent as a JSON array. Returns the entries as a JSON array of JSON objects containing all fields. </p>
 <h3>Remove Entry Of Multivalued Property</h3>
+<p><strong>Category:</strong> Document</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/RemoveEntryOfMultivaluedProperty">RemoveEntryOfMultivaluedProperty</a></p>
 <p>Removes the first entry of the giving value in the multivalued xpath, does nothing if does not exist. If 'is Remove All' is checked, all entry instances in the list will be removed.
 if not then just the first one found will be removed.</p>
 <h3>UI Selected documents form list</h3>
+<p><strong>Category:</strong> Fetch</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.GetDocumentsFromSelectionList">Seam.GetDocumentsFromSelectionList</a></p>
 <p> Fetch the documents selected in the selection list passed as a parameter. If the list name is empty, the current folder selection list is used. </p>
 <h3>Updates directory entries</h3>
+<p><strong>Category:</strong> Services</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.UpdateEntries">Directory.UpdateEntries</a></p>
 <p> Updates directory entries. Entries to be updated are sent as a JSON array. Returns the updated entry ids as a JSON array of JSON objects containing all fields </p>
-
 
 
 <h2>Nuxeo.conf new parameters</h2>
@@ -218,9 +248,6 @@ if not then just the first one found will be removed.</p>
 
 <p><img src="Saved Searches.png"/></p>
 <p><img src="Saved searches 2.png"/></p>
-
-<h2>DragNDrop</h2>
-
 
 <h2>UI Framework</h2>
 
@@ -273,4 +300,4 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 
 </body></html>
 
-
+<strong><strong>Category:</strong></strong>
