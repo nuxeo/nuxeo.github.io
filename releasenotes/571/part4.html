@@ -22,7 +22,6 @@
 	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
 	<link rel="stylesheet" href="../../stylesheets/layout.css">
 	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
-	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -46,59 +45,17 @@
 
 <body>
 
-
   <div id="mainContainer" class="container">
   <p class="remove-bottom" id="site-title"><a href="./index.html">nuxeo<span class="separator">/</span><span class="nxsexion">5.7.1 Release Notes</span></a></p>
 
     <div id="welcome">
 
-
     <div style="clear:both;"></div>
 
+<h1  style="margin-left:-0.5em !important;">Upgrade Notes</h1>
 
-<h1 style="margin-left:-0.5em !important;">New features in VCS</h1>
-
-<p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20%3D%20%22Core%20SQL%20Storage%22%20AND%20fixVersion%20%3D%20%225.7.1%22%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
-
-<h2>Enhancements</h2>
-<p><a href="<a href="https://jira.nuxeo.com/browse/NXP-10308">Single datasource mode</a>, removes extra cost of XA transaction when all datasource points to the database. It simplifies configuration and enhances performance.</p>
-
-<p>    <a href="https://jira.nuxeo.com/browse/NXP-11335">Soft delete</a>, efficient deletion, use batch to perform mass deletion</p>
-
-<p>    <a href="https://jira.nuxeo.com/browse/NXP-10894">NXP-10894</a>, <a href="https://jira.nuxeo.com/browse/NXP-4803">NXP-4803</a>: Enables usage of internal db uuid or sequence as document id instead of varchar(36), thus improving performance and db memory footprint.
-specific conf to activate (repository conf idtype="sequence|uid"</p>
-
-<p>    <a href="https://jira.nuxeo.com/browse/NXP-11370">Flag to disable proxies</a>, if you don't use proxies then it removes extra useless clauses at the SQL level.</p>
-
-<p>    <a href="https://jira.nuxeo.com/browse/NXP-11562">Allow attaching schemas to proxies</a></p>
-
-<p></p>
-<h2>DataBase Support</h2>
-<p> MSSQL 2012 support, PostreSQL 9.2</p>
-
-<p></p>
-<h2>NXQL</h2>
-<p><a href="http://doc.nuxeo.com/x/uItH">NXQL Documentation</a></p>
-<p>ecm:tag: a tag of the document. This property, when used multiple times in the same query, always refers to the same tag. If you want to refer to multiple tags in the same query, you can use a wildcard syntax similar to complex properties: every instance of ecm:tag/* will always refer to a different tag. If you want to refer several times to the same tag but still want to have flexibility, use correlated wildcards like for complex properties: ecm:tag/*1, ecm:tag/*2, etc. See the examples below for more.</p>
-
-<p>ecm:proxyTargetId: the id of the target of a proxy (usually a version). Implies a search for proxies (ecm:proxy = 1).</p>
-
-<p>ecm:proxyVersionableId: the id of the versionable document of a proxy (the versionable document is the one from which the version to which the proxy is pointing was created). Implies a search for proxies (ecm:proxy = 1).</p>
-
-<p></p>
-<h2>Misc</h2>
-<p>Performance enhancements for Postgres, Oracle and MSSQL</p>
-<p>Uses temporary tables for Oracle</p>
-<p>Unlogged table for Postgres -> reduce I/O</p>
-<p>Oracle: refactor ancestors search with STARTSWITH operator</p>
-<p>Add indexes</p>
-<p><a href="https://jira.nuxeo.com/browse/NXP-10324">Add "NotFulltextIndexable" facet</a> to avoid indexing documents with this facet </p>
-<p><a href="https://jira.nuxeo.com/browse/NXP-10272">Allow clustering</a> for Oracle on Amazon RDS</p> 
-<p><a href="https://jira.nuxeo.com/browse/NXP-10216">Optimize complex list property update (no DELETE + INSERT)</a></p>
-<p>Updating a complex list property triggers DELETE and INSERT SQL statements.
-This could be optimized using UPDATE statements (DELETE is quite costly because of the ON DELETE CASCADE option).
-Attached stack trace of such a call.</p>
-
+<p>You'll find the details of our upgrade notes directly in <a href="https://jira.nuxeo.com/issues/?jql=fixVersion%20%3D%20%225.7.1%22%20AND%20%22Upgrade%20notes%22%20is%20not%20EMPTY">our Jira instance</a>.</p>
+<p>You'll also find a comprehensive overview on our <a href="http://doc.nuxeo.com/x/e4O7">documentation</a>.</p>
 
   </div>
 
@@ -109,8 +66,5 @@ Attached stack trace of such a call.</p>
 	================================================== -->
     <script src="../../javascripts/strftime.js"></script>
     <script src="../../javascripts/tabs.js"></script>
-    <script src="../../javascripts/float_menu.js"></script>
-    <script src="../../javascripts/lightbox.js"></script>
 </body></html>
-
 

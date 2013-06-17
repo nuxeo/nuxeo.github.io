@@ -55,90 +55,30 @@
 
     <div style="clear:both;"></div>
 
-<h1 style="margin-left:-0.5em !important;">New features in DAM</h1>
+<h1 style="margin-left:-0.5em !important;">For Administrators</h1>
 
-<h2>DAM is customizable with Nuxeo Studio </h2>
-<p>Redesign from the ground up using ContentView, Layouts and widgets. It makes every part of DAM screen (Search panel, result panel, asset view) easy to customize using Nuxeo Studio.</p>
-
-<ul>
-    <li>Define the Left Hand Side with your own search layout</li>
-    <li>Define the layout for the fields displayed in the thumbnail</li>
-    <li>Define the Right Hand Side data for the selected asset (view/edit, as toggable layout)</li>
-    <li>Define the Bulk-edit layout</li>
-    <li>Define toolbar buttons, add your own</li>
-    <li>Define the document types DAM2 can handle</li>
-</ul>
-
-<h2>Browse all Assets from the Repository</h2>
-<p>All the assets of the repository are displayed (not just the one under "Media Library")</p>
-
-<p><img src="dam_example.png"/></p>
-
-<h2>Back Navigation</h2>
-<p>We've enhanced the back navigation of your browser using HTML5 pushState.</p>
-
-<h2>Permlink available for any Asset</h2>
-<p>Every Asset now has an accessible and sharable permlink for you to share.</p>
-
-<h2>Use tags in searches</h2>
-<p>You can now add tags in your search form. Whether you're using the advanced search form, any faceted search, a content view query or a query operation. It works because we've added tag suppport to NXQL.</p>
-<p><img src="tag_search.png"/></p>
+<h2>Monitoring</h2>
+<p><a href="https://jira.nuxeo.com/browse/NXP-11079">Use Coda Hale Yammer Metrics to instrument Nuxeo</a>, providing lots of internal metrics, accessible from JMX or Graphite. Read more on our <a href="http://doc.nuxeo.com/pages/viewpage.action?pageId=12914816">documentation</a>.</p>
+<img src="graphite-reporting.png"/>
+<img src="graphite-nuxeo.png"/>
+<img src="graphite-nuxeo2.png"/>
 
 
-     <h2>Search Panel</h2>
+<h2>Nuxeo.conf new parameters</h2>
+<table class="release">
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+<tr><td class="parameter">org.nuxeo.dnd.upload.timeout</td><td>30000</td><td>Maximum time for uploading a file via Drag & Drop to the server.</td></tr>
+<tr><td class="parameter">org.nuxeo.dnd.exec.timeout</td><td>30000</td><td>Maximum time for executing import of files uploaded via Drag & Drop</td></tr>
+<tr><td class="parameter">org.nuxeo.dnd.extendedmode.timeout</td><td>2000</td><td>Mouse over time before switching to extended mode UI (setting to -1 disables the extended mode)</td></tr>
+<tr><td class="parameter">org.nuxeo.ecm.automation.server.permission.httpcode</td><td>403</td><td>Indicates the HTTP status code to be returned by the Automation server in case a security exception occurs when fetching a document, typically if the request user doesn't have read access.</td></tr>
+</table>
 
-<ul>
-        <li>Search criteria can be saved</li>
-        <li>Search layout re-organized for better user friendly interface</li>
-        <li>Search is triggered when user clicks "Filter" or "Clear"</li>
-        <li>Rename "Keywords" with "Text Search"</li>
-        <li>Search by location renamed</li>
-        <li>New search by tags</li>
-        <li>New search by creation date</li>
-        <li>New search by Author</li>
-        <li>New search by Original Author</li>
-        <li>Search by Subjects with a new, better, interface</li>
-        <li>Search by Coverage with a new, better, interface</li>
-</ul>
+<h2>MarketPlace/Update Center</h2>
+<h3>nuxectl commands</h3>
+<p><strong>mp-show</strong>: Show Marketplace package(s) information. You must provide the package file(s), name(s) or ID(s) as parameter.</p>
 
-<p><img src="Saved searches 2.png"/></p>
-     <h2>Assets Browsing</h2>
-<ul>
-        <li>"New Asset" button:</li>
-                    <ul><li>Choose among appropriate document types with different metadata</li></ul>
-        <li>Import with D&D</li>
-          <ul><li>Also in "List" view</li></ul>
-        <li>New "Items/Page" dropdown</li>
-        <li>New "Refresh" button</li>
-        <li>New "Select all" button</li>
-        <li>New "Copy" button</li>
-        <li>New "Add to worklist" button</li>
-</ul>
-
-<p><img src="Bulk Edit DAM .png"/></p>
-
-
-     <h2>Asset View</h2>
-<ul>
- 	<li>New toolbar, with following buttons:</li>
-        <ul>
-            <li>Like</li>
-            <li>Lock</li>
-            <li>Permanent link</li>
-            <li>Follow</li>
-            <li>Preview</li>
-            <li>Add to worklist</li>
-            <li>Go To DM view</li>
-            <li>Print</li>
-        </ul>
-        <li>New "Tags" feature</li>
-            <ul><li>Multiple tags</li>
-            <li>Click on a tag to display the list of assets using it</li></ul>
-        <li>New "Creator/LifeCycle/Version" display</li>
-        <li>New count of people who liked the document</li>
-        <li>Smart "Comments" group: Displayed only if there is at least one comment</li>
-        <li>Access to workflow actions directly from the DAM UI​​</li>
-</ul>
 
   </div>
 
