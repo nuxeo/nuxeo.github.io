@@ -53,124 +53,172 @@
     <div id="welcome">
 
     <div style="clear:both;"></div>
-     <h1  style="margin-left:-0.5em !important;">New features in Modules</h1>
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
-<h2>Quota</h2>
+<h2>Content Automation</h2>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10078">Automation client is fully OSGI, which means you can use it from any OSGI container (Felix, Equinox etc..)</a></p>
+<p>Even though we have a new version coming out, we've kept Nuxeo 5.7.1 compatible with the 5.6 automation client.</p>
+<p>You can fetch dirty properties of a modified document to send only modified properties with automation client</p>
+<p>JSon Marshaling enhancement. You can send POJO in input or parameters. (5.7.1 only)</p>
 
-<p>We've made many improvements on the Quota <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-quota">marketplace package</a>.</p>
+<h2>New operations</h2>
 
-<p><a href="https://jira.nuxeo.com/browse/NXP-10713">Global Quotas Activation</a>, Quotas can be activated in the admin center</p>
-<p><img src="quota-admin-activation-unactive.gif"/></p>
-<p>Once it's activated, everything statistical are automatically computed.</p>
-<p><img src="quota-admin-statistics.gif"/></p>
-<p>Administrators can see (in Manage &gt; Quotas &gt; Stats) the following statistics :</p>
-<ul class="alternate" type="square">
-	<li>Total volume used  (deleted, live, versions) + "/Available space"</li>
-	<li>Volume used by deleted files (trash)</li>
-	<li>Volume used by  Archived Versions</li>
-</ul>
-<p>A graphical representation of those 3 stats. </p>
-<p>A content view with title "Sub Folders"  with the listing of subfolders</p>
-<ul class="alternate" type="square">
-	<li>Columns are title, do:modified, last contributor, size</li>
-	<li>Buttons Delete and Add to cart (to cut/paste)</li>
-</ul>
-<p><img src="quota-manager-activation-active.gif"/></p>
-
-<h3>Return meaningful error message when encountering a quota error</h3>
-<img src="creation_or_modification_impossible.gif" />
-<img src="drag_drop_impossible.gif" />
-<img src="quota-listing-status-no-more.gif" />
-
-<h3>User workspace quota management activation</h3>
-<p>As the Administrator of the system, you can enable quota on user workspaces (radio button) with a default value (slider). The value is the same for all the user workspaces.</p>
-<img src="quota-admin-activation-active-2.gif"/>
-
-<p>Quota processing now uses its own work queue.</p>
-
-<a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20fixVersion%20%3D%20%225.7.1%22%20AND%20component%20in%20%28Quota%2C%20Quotas%29%20AND%20resolution%20not%20in%20%28%22Won%27t%20Fix%22%2C%20duplicate%29%20ORDER%20BY%20issuetype%20DESC%2C%20updated%20DESC">Issues List</a>
-
-
-<h2>Birt</h2>
-<a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-birt-integration">Marketplace Package</a>
-<p>The Birt connector as been aligned on Birt 4.2.2. It means you can create your report in Birt Designer 4.2.2. We also made some significant ergonomy enhancements on the admin center UI and we've added paramater validation when generating a report.</p>
-
-SCREENSHOTS
-
-<h2>Importer CSV</h2>
-<p>We have a new module allowing import of documents from a CSV file <sup>(1)</sup>. Here's how it works: click on Import a CSV, choose the CSV file, click on import and documents will be created using properties from the CSV (only scalar metadata).</p>
-<p>You can specify a folder in Nuxeo.conf where the importer will look for binaries. Just make sure you put their relative path in the CSV.</p>
-<p><sup>(1)</sup><a href="CSVimportSample.csv">CSV import sample</a></p>
-
-<p><img src="CSV Importer beginning.png"/></p>
-<p><img src="CSV Importer In progress.png"/></p>
-<p><img src="CSV Importer In progress2.png"/></p>
-<p><img src="CSV Importer Imported.png"/></p>
-<p><img src="CSVImporteremail.png"/></p>
-
-<h2>Right Audit</h2>
-
-<p>This <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-groups-rights-audit">Marketplace package</a> allows to run an audit on all permissions for all users of a document tree. The result is an XLS matrix for every exported document showing permission for each user, and if there is a blocking permission.</p>
-<p>You can also do an excel export of all the users and groups.</p>
-
-<p><img src="export_users.png"/></p>
-<p><img src="usergroups_export.png"/></p>
-<p><img src="permission_audit_export.png"/></p>
-<p><img src="audit_started_feedback.png"/></p>
-<p><img src="permission_csv_export.png"/></p>
-
-<h2>Login Module</h2>
-
-<p>A <a href="http://doc.nuxeo.com/x/QxDF">Kerberos module</a> has been contributed by OpenWide, allowing authentication throught the Kerberos protocol.</p>
-
-<p>You can also <a href="http://www.nuxeo.com/blog/development/2013/03/contributed-openid-authentication-nelson-silva/">login to Nuxeo using your OpenID</a>, thanks to Nelson Silva:</p>
-<div id="wistia_kzyw68vabh" class="wistia_embed" style="width:480px;height:321px;" data-video-width="480" data-video-height="270"><div itemprop="video" itemscope itemtype="http://schema.org/VideoObject"><meta itemprop="duration" content="PT24S" /><meta itemprop="thumbnailUrl" content="https://embed-ssl.wistia.com/deliveries/4dc044658763d59478fb2a2dff648fc570d11ceb.bin" /><meta itemprop="contentURL" content="https://embed-ssl.wistia.com/deliveries/0f5364b86f07399d57191ccd127e945adfca9355.bin" /><meta itemprop="embedURL" content="https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?2013-05-14&controlsVisibleOnLoad=true&customColor=3670b9&mediaDuration=24.57&showVolume=true&stillUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F4dc044658763d59478fb2a2dff648fc570d11ceb.jpg%3Fimage_crop_resized%3D480x270&unbufferedSeek=true&videoUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F0f5364b86f07399d57191ccd127e945adfca9355.bin" /><meta itemprop="uploadDate" content="2013-03-25T14:47:45Z" /><object id="wistia_kzyw68vabh_seo" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style="display:block;height:321px;position:relative;width:480px;"><param name="movie" value="https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?2013-05-14"></param><param name="allowfullscreen" value="true"></param><param name="allowscriptaccess" value="always"></param><param name="bgcolor" value="#000000"></param><param name="wmode" value="opaque"></param><param name="flashvars" value="controlsVisibleOnLoad=true&customColor=3670b9&mediaDuration=24.57&showVolume=true&stillUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F4dc044658763d59478fb2a2dff648fc570d11ceb.jpg%3Fimage_crop_resized%3D480x270&unbufferedSeek=true&videoUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F0f5364b86f07399d57191ccd127e945adfca9355.bin"></param><embed src="https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?2013-05-14" allowfullscreen="true" allowscriptaccess="always" bgcolor=#000000 flashvars="controlsVisibleOnLoad=true&customColor=3670b9&mediaDuration=24.57&showVolume=true&stillUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F4dc044658763d59478fb2a2dff648fc570d11ceb.jpg%3Fimage_crop_resized%3D480x270&unbufferedSeek=true&videoUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F0f5364b86f07399d57191ccd127e945adfca9355.bin" name="wistia_kzyw68vabh_html" style="display:block;height:100%;position:relative;width:100%;" type="application/x-shockwave-flash" wmode="opaque"></embed></object><noscript itemprop="description">Quck example of how the OpenID authentication works in Nuxeo with Google as provider.</noscript></div></div>
-<script charset="ISO-8859-1" src="https://fast.wistia.com/static/concat/E-v1%2Csocialbar-v1.js"></script>
-<script>
-wistiaEmbed = Wistia.embed("kzyw68vabh", {
-  version: "v1",
-  videoWidth: 480,
-  videoHeight: 270,
-  volumeControl: true,
-  controlsVisibleOnLoad: true,
-  playerColor: "3670b9",
-  plugin: {
-    "socialbar-v1": {
-      buttons: "embed-email-twitter-linkedIn-googlePlus-facebook",
-      logo: true,
-      badgeUrl: "http://nuxeo.com",
-      badgeImage: "https://wistia.sslcs.cdngc.net/deliveries/69dd187a8507510b932208750621ac3008837e2e.jpg?image_crop_resized=100x20"
-    }
-  }
-});
-</script>
-<script charset="ISO-8859-1" src="https://fast.wistia.com/embed/medias/kzyw68vabh/metadata.js"></script>
+<h3>Add Message</h3>
+<p><strong>Category:</strong> User Interface</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.AddMessage">Seam.AddMessage</a></p>
+<p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR, default is INFO. Message parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
+<h3>Add entry into multi-valued metadata</h3>
+<p><strong>Category:</strong> Document</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/AddEntryToMultivaluedProperty">AddEntryToMultivaluedProperty</a></p>
+<p>Add value into the field expressed by the xpath parameter. This field must be a multivalued metadata.</p>
+<h3>Convert to given mime-type</h3>
+<p><strong>Category:</strong> Conversion</p> 
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.Convert">Blob.Convert</a></p> 
+<p> Convert the input file to a file of the given mime-type and return the new file. </p>
+<h3>Create Asset(s) from file(s)</h3>
+<p> <strong>Category:</strong> Dam</p> 
+<p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Dam.Import">Dam.Import</a></p> 
+<p> Create Asset(s) from Blob(s) using the FileManagerService. </p>
+<h3>Create Proxy Live</h3>
+<p><strong>Category:</strong> Document</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/CreateProxyLive">CreateProxyLive</a></p>
+<p> This operation will create a proxy that points the given document as input. This is like a symbolic link for File System. The proxy will be created into the destination specified as parameter. </p>
+<h3>Creates directory entries</h3>
+<p><strong>Category:</strong> Services</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.CreateEntries">Directory.CreateEntries</a></p>
+<p> Creates directory entries. Entries are sent as a JSON array. Returns the created entry ids as a JSON array. </p>
+<h3>Deletes directory entries</h3>
+<p> <strong>Category:</strong> Services</p> 
+<p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.DeleteEntries">Directory.DeleteEntries</a></p>
+<p> Deletes directory entries. Entry ids to be delete are sent through a JSON array. Returns the deleted entry ids as a JSON array. </p>
+<h3>Get Live Document</h3>
+<p><strong>Category:</strong> Document</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/GetLiveDocument">GetLiveDocument</a></p>
+<p> Get the live document even if this is a Proxy or Version Document. </p>
+<h3>Get Nuxeo Principal</h3>
+<p><strong>Category:</strong> Users & Groups</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/NuxeoPrincipal.Get">NuxeoPrincipal.Get</a></p>
+<p> Retrieve Nuxeo principal and export it as a DocumentModel. If login parameter is not set, the operation will return informations about the current user, otherwise Directory Administration rights are required. </p>
+<h3>QueryAndFetch</h3>
+<p> <strong>Category:</strong> Fetch</p> 
+<p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Resultset.PageProvider">Resultset.PageProvider</a></p> 
+<p> Perform a query or a named provider query on the repository. Result is paginated. The result is returned as a RecordSet (QueryAndFetch) rather than as a List of Document. The query result will become the input for the next operation. If no query or provider name is given, a query returning all the documents that the user has access to will be executed. </p>
+<h3>Raise Seam events</h3>
+<p><strong>Category:</strong> User Interface</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.RaiseEvents">Seam.RaiseEvents</a></p>
+<p> Raise Seam events without parameters. This is a void operation - the input object is returned back as the output </p>
+<h3>Reads directory entries</h3>
+<p><strong>Category:</strong> Services</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.ReadEntries">Directory.ReadEntries</a></p>
+<p> Reads directory entries. Entry ids to be read are sent as a JSON array. Returns the entries as a JSON array of JSON objects containing all fields. </p>
+<h3>Remove Entry Of Multivalued Property</h3>
+<p><strong>Category:</strong> Document</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/RemoveEntryOfMultivaluedProperty">RemoveEntryOfMultivaluedProperty</a></p>
+<p>Removes the first entry of the giving value in the multivalued xpath, does nothing if does not exist. If 'is Remove All' is checked, all entry instances in the list will be removed.
+if not then just the first one found will be removed.</p>
+<h3>UI Selected documents form list</h3>
+<p><strong>Category:</strong> Fetch</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.GetDocumentsFromSelectionList">Seam.GetDocumentsFromSelectionList</a></p>
+<p> Fetch the documents selected in the selection list passed as a parameter. If the list name is empty, the current folder selection list is used. </p>
+<h3>Updates directory entries</h3>
+<p><strong>Category:</strong> Services</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.UpdateEntries">Directory.UpdateEntries</a></p>
+<p> Updates directory entries. Entries to be updated are sent as a JSON array. Returns the updated entry ids as a JSON array of JSON objects containing all fields </p>
 
 
-<h2>Jenkins Report Module</h2>
-We have a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-jenkins-report-mp">new module</a> available in the marketplace. It's an integration between Jenkins and Nuxeo that we use internally. It helps us keep track of our CI, see it's evolution and easily send a report of the state of the CI to our dev.
-Here's an example of the email we receive:
+<h2>CSS 3 support in Theme engine</h2>
+<p><a href="https://jira.nuxeo.com/browse/NXP-7672">The flute CSS parser</a> has now been replaced by <a href="https://code.google.com/p/phloc-css/">phloc-css</a>, allowing CSS3 to be used in the Theme engine.</p>
+
+<h2>UI Framework</h2>
+
+<p>Widget Label properties now accept an EL expression. This allows you to have <a href=" https://jira.nuxeo.com/browse/NXP-11040">dynamic labels</a>.</p>
+<p>Every richfaces ajax call use a <a href="https://jira.nuxeo.com/browse/NXP-11136">global default ajax event queue</a>. You can of course still specify your own queue. This results in more stable pages.</p>
+
+<h3>HTML5 PlaceHolder</h3>
+<p>You can use the HTML5 placeHolder attribute on inputtext and textarea. It's available as a widget property. You can put text(that will be translated) or an EL.</p>
+<p><img src="placeholder.png"/></p>
+
+
+<h3>New drop zone Widget</h3>
+<p><a href="https://jira.nuxeo.com/browse/NXP-11043">This widget</a> allows you to execute an operation with the files you've dropped as input. </p>
+
+
+<h3>Widget Actions</h3>
+<p>One can use automatic JS confirmation popup. If you add a confirmMessage property in the actions, it generates the appropriate js method. It accepts any EL as parameter. Here's an example:</p>
 <blockquote>
-Hello devs!
-
-Here's a status of our CI main jobs on Jenkins.
-
-Current number of failing jobs: 3.
-Current number of unclaimed jobs: 1.
-
-Duty comments:
-
-To see the complete report click here.
-
-Cheers!
+<pre>
+ &lt;action id="JenkinsReportSendMail"&gt;
+   &lt;properties&gt
+     &lt;property name="confirmMessage"&gt;label.jenkins.sendMail.confirm&lt;/property&gt
+     &lt;propertyList name="confirmMessageArgs"&gt;
+       &lt;value&gt;#{docSuggestionActions.getDocumentWithId(currentSuperSpace.id)
+         .getPropertyValue('jenkinsreports:report_email')}&lt;/value&gt;
+     &lt;/propertyList&gt;
+   &lt;/properties&gt;
+ &lt;/action&gt; 
+messages:
+label.jenkins.sendMail.confirm=This will send an email to {0},
+ are you sure that you would like to continue?
+</pre>
 </blockquote>
 
+<p>You can now include widgets that render actions. This is particularly useful in Nuxeo Studio. This allow us to easily blend different action types like a submit button, an outgoing link and an action that <a href="https://jira.nuxeo.com/browse/NXP-11006">opens a fancybox</a>. You can also <a href="https://jira.nuxeo.com/browse/NXP-11044">merge all of them</a> in any order you want.</p>
 
-<h2>Monitoring</h2>
-<p><a href="https://jira.nuxeo.com/browse/NXP-11079">Use Coda Hale Yammer Metrics to instrument Nuxeo</a>, providing lots of internal metrics, accessible from JMX or Graphite. Read more on our <a href="http://doc.nuxeo.com/pages/viewpage.action?pageId=12914816">documentation</a>.</p>
-<img src="graphite-reporting.png"/>
-<img src="graphite-nuxeo.png"/>
-<img src="graphite-nuxeo2.png"/>
+<p>We have a better support of <a href="https://jira.nuxeo.com/browse/NXP-9444">form inside fancybox</a> opened by actions. You can submit the associated form without submitting every other form on the page. No need to do nested form anymore.</p>
+
+<p>You can mix any type of action. If one action does not support ajax (like a download), it can be in the same tool bar as an ajax action.</p>
+
+<p>You can associate selected documents of a content view to actions outside the content view. That's how we made bulk edit.</p>
+
+<p><a href="https://jira.nuxeo.com/browse/NXP-11566">We allow resetting of JSF components state when using ajax</a>. JSF action listener <em>#{jsfResetActions.resetComponents}</em> can be used in actions that need to reset all components in the same JSF naming container.</p>
+
+<h2>New Facet</h2>
+<h3>NotFulltextIndexable</h3>
+<p>The document won't be full-text indexed.</p>
+
+
+
+<h2>Nuxeo Visible Content Store (VCS)</h2>
+<p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20%3D%20%22Core%20SQL%20Storage%22%20AND%20fixVersion%20%3D%20%225.7.1%22%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
+
+<h3>Enhancements</h3>
+<p><a href="<a href="https://jira.nuxeo.com/browse/NXP-10308">Single datasource mode</a>, removes extra cost of XA transaction when all datasource points to the database. It simplifies configuration and enhances performance.</p>
+
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-11335">Soft delete</a>, efficient deletion, use batch to perform mass deletion</p>
+
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-10894">NXP-10894</a>, <a href="https://jira.nuxeo.com/browse/NXP-4803">NXP-4803</a>: Enables usage of internal db uuid or sequence as document id instead of varchar(36), thus improving performance and db memory footprint.
+specific conf to activate (repository conf idtype="sequence|uid"</p>
+
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-11370">Flag to disable proxies</a>, if you don't use proxies then it removes extra useless clauses at the SQL level.</p>
+
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-11562">Allow attaching schemas to proxies</a></p>
+
+<p></p>
+<h3>DataBase Support</h3>
+<p> MSSQL 2012 support, PostreSQL 9.2</p>
+
+<p></p>
+<h3>NXQL</h3>
+<p><a href="http://doc.nuxeo.com/x/uItH">NXQL Documentation</a></p>
+<p><strong>ecm:tag</strong>: a tag of the document. This property, when used multiple times in the same query, always refers to the same tag. If you want to refer to multiple tags in the same query, you can use a wildcard syntax similar to complex properties: every instance of ecm:tag/* will always refer to a different tag. If you want to refer several times to the same tag but still want to have flexibility, use correlated wildcards like for complex properties: ecm:tag/*1, ecm:tag/*2, etc. See the examples below for more.</p>
+
+<p><strong>ecm:proxyTargetId</strong>: the id of the target of a proxy (usually a version). Implies a search for proxies (ecm:proxy = 1).</p>
+
+<p><strong>ecm:proxyVersionableId</strong>: the id of the versionable document of a proxy (the versionable document is the one from which the version to which the proxy is pointing was created). Implies a search for proxies (ecm:proxy = 1).</p>
+
+<h3>Misc</h3>
+<p>Performance enhancements for Postgres, Oracle and MSSQL</p>
+<p>Uses temporary tables for Oracle</p>
+<p>Unlogged table for Postgres -> reduce I/O</p>
+<p>Oracle: refactor ancestors search with STARTSWITH operator</p>
+<p>Add indexes</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10324">Add "NotFulltextIndexable" facet</a> to avoid indexing documents with this facet </p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10272">Allow clustering</a> for Oracle on Amazon RDS</p> 
+<p><a href="https://jira.nuxeo.com/browse/NXP-10216">Optimize complex list property update (no DELETE + INSERT)</a></p>
+<p>Updating a complex list property triggers DELETE and INSERT SQL statements.
+This could be optimized using UPDATE statements (DELETE is quite costly because of the ON DELETE CASCADE option).
+Attached stack trace of such a call.</p>
+
 
   </div>
 
