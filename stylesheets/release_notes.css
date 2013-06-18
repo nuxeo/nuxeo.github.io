@@ -189,6 +189,7 @@ margin-bottom: 1em;
 #features > li {
  list-style: none none inside;
  float:left;
+ clear:both;
 }
 
  #features > li {
