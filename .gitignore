@@ -24,3 +24,5 @@ target
 *cpJar*
 dependency-tree.log
 proxifier/build
+caches
+jna
