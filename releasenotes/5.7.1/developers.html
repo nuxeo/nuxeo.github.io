@@ -177,42 +177,37 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 <p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20%3D%20%22Core%20SQL%20Storage%22%20AND%20fixVersion%20%3D%20%225.7.1%22%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
 
 <h3>Enhancements</h3>
-<p><a href="https://jira.nuxeo.com/browse/NXP-10308">Single datasource mode</a>, removes extra cost of XA transaction when all datasource points to the database. It simplifies configuration and enhances performance.</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10308">Single datasource mode</a>, removes the extra cost of XA transactions when all datasources points to the same database (which is the most common setup). It simplifies configuration and enhances performance.</p>
 
-<p>    <a href="https://jira.nuxeo.com/browse/NXP-11335">Soft delete</a>, efficient deletion, use batch to perform mass deletion</p>
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-11335">Soft delete</a>, more efficient deletion using delayed batching.</p>
 
-<p>    <a href="https://jira.nuxeo.com/browse/NXP-10894">NXP-10894</a>, <a href="https://jira.nuxeo.com/browse/NXP-4803">NXP-4803</a>: Enables usage of internal db uuid or sequence as document id instead of varchar(36), thus improving performance and db memory footprint.
-specific conf to activate (repository conf idtype="sequence|uid"</p>
+<p>    Optimized id generation, using database-native sequences (<a href="https://jira.nuxeo.com/browse/NXP-10894">PostgreSQL</a>, <a href="https://jira.nuxeo.com/browse/NXP-10912">SQL Server</a>) or UUIDs (<a href="https://jira.nuxeo.com/browse/NXP-4803">PostgreSQL</a>). This improves performance and database size.</p>
 
-<p>    <a href="https://jira.nuxeo.com/browse/NXP-11370">Flag to disable proxies</a>, if you don't use proxies then it removes extra useless clauses at the SQL level.</p>
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-11370">Flag to disable proxies</a>, if you don't use proxies then this removes extra work the SQL level and improves performance.</p>
 
 <p>    <a href="https://jira.nuxeo.com/browse/NXP-11562">Allow attaching schemas to proxies</a></p>
 
 <p></p>
-<h3>DataBase Support</h3>
-<p> MSSQL 2012 support, PostreSQL 9.2</p>
+<h3>Database Support</h3>
+<p> <a href="https://jira.nuxeo.com/browse/NXP-10234">Microsoft SQL Server 2012 support</a>, including Azure.</p>
+<p> <a href="https://jira.nuxeo.com/browse/NXP-10270">PostgreSQL 9.2 support</a> for cluster mode (non-clustered mode already worked in Nuxeo 5.6).</p>
+<p> <a href="https://jira.nuxeo.com/browse/NXP-4406">IBM DB2 9.5 preliminary support</a> (non-optimized, therefore only for small databases).</p>
 
 <p></p>
 <h3>NXQL</h3>
-<p><a href="http://doc.nuxeo.com/x/uItH">NXQL Documentation</a></p>
-<p><strong>ecm:tag</strong>: a tag of the document. This property, when used multiple times in the same query, always refers to the same tag. If you want to refer to multiple tags in the same query, you can use a wildcard syntax similar to complex properties: every instance of ecm:tag/* will always refer to a different tag. If you want to refer several times to the same tag but still want to have flexibility, use correlated wildcards like for complex properties: ecm:tag/*1, ecm:tag/*2, etc. See the examples below for more.</p>
+<p>See the <a href="http://doc.nuxeo.com/x/uItH">NXQL Documentation</a> for the current state of NXQL.</p>
+<p><strong>ecm:tag</strong>: allows NXQL queries on a document's tags.</p>
 
-<p><strong>ecm:proxyTargetId</strong>: the id of the target of a proxy (usually a version). Implies a search for proxies (ecm:proxy = 1).</p>
+<p><strong>ecm:proxyTargetId</strong>: allows NXQL queries on the id of the target of a proxy.</p>
 
-<p><strong>ecm:proxyVersionableId</strong>: the id of the versionable document of a proxy (the versionable document is the one from which the version to which the proxy is pointing was created). Implies a search for proxies (ecm:proxy = 1).</p>
+<p><strong>ecm:proxyVersionableId</strong>: allows NXQL queries on the id of the versionable document of a proxy (the versionable document is the one from which the version to which the proxy is pointing was created).</p>
 
 <h3>Misc</h3>
-<p>Performance enhancements for Postgres, Oracle and MSSQL</p>
-<p>Uses temporary tables for Oracle</p>
-<p>Unlogged table for Postgres -> reduce I/O</p>
-<p>Oracle: refactor ancestors search with STARTSWITH operator</p>
-<p>Add indexes</p>
-<p><a href="https://jira.nuxeo.com/browse/NXP-10324">Add "NotFulltextIndexable" facet</a> to avoid indexing documents with this facet </p>
-<p><a href="https://jira.nuxeo.com/browse/NXP-10272">Allow clustering</a> for Oracle on Amazon RDS</p> 
-<p><a href="https://jira.nuxeo.com/browse/NXP-10216">Optimize complex list property update (no DELETE + INSERT)</a></p>
-<p>Updating a complex list property triggers DELETE and INSERT SQL statements.
-This could be optimized using UPDATE statements (DELETE is quite costly because of the ON DELETE CASCADE option).
-Attached stack trace of such a call.</p>
+<p>Various performance enhancements for PostgreSQL, Oracle and SQL Server</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10324">Added "NotFulltextIndexable" facet</a> to avoid indexing documents with this facet.</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10272">Allow clustering</a> for Oracle on Amazon RDS.</p> 
+<p><a href="https://jira.nuxeo.com/browse/NXP-10216">Optimize complex list property update</a> (use UPDATE instead of DELETE + INSERT).</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10219">Support Microsoft's JDBC driver for SQL Server</a>.</p>
 
 
   </div>
