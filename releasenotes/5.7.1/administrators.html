@@ -59,6 +59,46 @@
 
 <h1 style="margin-left:-0.5em !important;">For Administrators</h1>
 
+
+<h2>Right Audit</h2>
+
+<p>This <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-groups-rights-audit">Marketplace package</a> allows to run an audit on all permissions for all users of a document tree. The result is an XLS matrix for every exported document showing permission for each user, and if there is a blocking permission.</p>
+<p>You can also do an excel export of all the users and groups.</p>
+
+<p><img src="export_users.png"/></p>
+<p><img src="usergroups_export.png"/></p>
+<p><img src="permission_audit_export.png"/></p>
+<p><img src="audit_started_feedback.png"/></p>
+<p><img src="permission_csv_export.png"/></p>
+
+<h2>Login Module</h2>
+
+<p>A <a href="http://doc.nuxeo.com/x/QxDF">Kerberos module</a> has been contributed by OpenWide, allowing authentication throught the Kerberos protocol.</p>
+
+<p>You can also <a href="http://www.nuxeo.com/blog/development/2013/03/contributed-openid-authentication-nelson-silva/">login to Nuxeo using your OpenID</a>, thanks to Nelson Silva:</p>
+<div id="wistia_kzyw68vabh" class="wistia_embed" style="width:480px;height:321px;" data-video-width="480" data-video-height="270"><div itemprop="video" itemscope itemtype="http://schema.org/VideoObject"><meta itemprop="duration" content="PT24S" /><meta itemprop="thumbnailUrl" content="https://embed-ssl.wistia.com/deliveries/4dc044658763d59478fb2a2dff648fc570d11ceb.bin" /><meta itemprop="contentURL" content="https://embed-ssl.wistia.com/deliveries/0f5364b86f07399d57191ccd127e945adfca9355.bin" /><meta itemprop="embedURL" content="https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?2013-05-14&controlsVisibleOnLoad=true&customColor=3670b9&mediaDuration=24.57&showVolume=true&stillUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F4dc044658763d59478fb2a2dff648fc570d11ceb.jpg%3Fimage_crop_resized%3D480x270&unbufferedSeek=true&videoUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F0f5364b86f07399d57191ccd127e945adfca9355.bin" /><meta itemprop="uploadDate" content="2013-03-25T14:47:45Z" /><object id="wistia_kzyw68vabh_seo" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style="display:block;height:321px;position:relative;width:480px;"><param name="movie" value="https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?2013-05-14"></param><param name="allowfullscreen" value="true"></param><param name="allowscriptaccess" value="always"></param><param name="bgcolor" value="#000000"></param><param name="wmode" value="opaque"></param><param name="flashvars" value="controlsVisibleOnLoad=true&customColor=3670b9&mediaDuration=24.57&showVolume=true&stillUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F4dc044658763d59478fb2a2dff648fc570d11ceb.jpg%3Fimage_crop_resized%3D480x270&unbufferedSeek=true&videoUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F0f5364b86f07399d57191ccd127e945adfca9355.bin"></param><embed src="https://embed-ssl.wistia.com/flash/embed_player_v2.0.swf?2013-05-14" allowfullscreen="true" allowscriptaccess="always" bgcolor=#000000 flashvars="controlsVisibleOnLoad=true&customColor=3670b9&mediaDuration=24.57&showVolume=true&stillUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F4dc044658763d59478fb2a2dff648fc570d11ceb.jpg%3Fimage_crop_resized%3D480x270&unbufferedSeek=true&videoUrl=https%3A%2F%2Fembed-ssl.wistia.com%2Fdeliveries%2F0f5364b86f07399d57191ccd127e945adfca9355.bin" name="wistia_kzyw68vabh_html" style="display:block;height:100%;position:relative;width:100%;" type="application/x-shockwave-flash" wmode="opaque"></embed></object><noscript itemprop="description">Quck example of how the OpenID authentication works in Nuxeo with Google as provider.</noscript></div></div>
+<script charset="ISO-8859-1" src="https://fast.wistia.com/static/concat/E-v1%2Csocialbar-v1.js"></script>
+<script>
+wistiaEmbed = Wistia.embed("kzyw68vabh", {
+  version: "v1",
+  videoWidth: 480,
+  videoHeight: 270,
+  volumeControl: true,
+  controlsVisibleOnLoad: true,
+  playerColor: "3670b9",
+  plugin: {
+    "socialbar-v1": {
+      buttons: "embed-email-twitter-linkedIn-googlePlus-facebook",
+      logo: true,
+      badgeUrl: "http://nuxeo.com",
+      badgeImage: "https://wistia.sslcs.cdngc.net/deliveries/69dd187a8507510b932208750621ac3008837e2e.jpg?image_crop_resized=100x20"
+    }
+  }
+});
+</script>
+<script charset="ISO-8859-1" src="https://fast.wistia.com/embed/medias/kzyw68vabh/metadata.js"></script>
+
+
 <h2>Monitoring</h2>
 <p><a href="https://jira.nuxeo.com/browse/NXP-11079">Use Coda Hale Yammer Metrics to instrument Nuxeo</a>, providing lots of internal metrics, accessible from JMX or Graphite. Read more on our <a href="http://doc.nuxeo.com/pages/viewpage.action?pageId=12914816">documentation</a>.</p>
 <img src="graphite-reporting.png"/>
