@@ -1,5 +1,7 @@
 /* Nuxeo Release notes special CSS */
 
+@media all {
+
 #mainContainer {
  border-bottom: 3px solid #D3E0EB;
 }
@@ -8,7 +10,7 @@
   margin-top:2em;
   line-height: 50px;
     margin-bottom: 14px;
-  font-size: 32px;  
+  font-size: 28px;  
 }
 
 p#site-title {
@@ -83,6 +85,7 @@ p.backbutton a:active {
     padding: 0.3em 0.7em;
     margin-left:-2.5em;
     color:white;
+    line-height: 34px;
 }
 
 #welcome h2, #welcome h3 {
@@ -99,10 +102,23 @@ p.backbutton a:active {
   clear:both;
 }
 
+#welcome h2 a, #welcome h2 a:visited {
+  color:#3670b9;
+}
+
+#welcome h2 a:hover {
+  cursor: default;
+  color:#3670b9;
+  text-decoration: none;
+}
+
 #welcome h3 {
  color:#454545;
  font-size:100%;
+ padding-left: 0.5em;
 }
+
+
 
 #welcome p {
  padding:0.75em 0 1em 0;
@@ -288,4 +304,48 @@ blockquote {
 blockquote, blockquote p {
   font-size: 14px;
   line-height: 180%;
+}
+
+}
+
+
+@media handheld, screen and (max-width:1020px)  {
+
+
+
+#site-title, .container {
+  margin:0;
+  width:100%;
+}
+
+.container {
+  min-width: 1% !important;
+}  
+
+p#site-title {
+  padding:0 25px;
+}
+
+#mainContainer {
+ width: 100%;
+ overflow:hidden;
+}
+
+#floatMenu, #xnav, #xnav-footer, .xnav-set {
+  display: none !important;
+  max-width: 99%;
+}
+
+p.backbutton a {
+  margin-right: 20px;
+}
+
+#welcome img {
+ max-width: 99%;
+ margin:auto;
+ display:block;
+ height:auto;
+}
+
+
 }
