@@ -303,8 +303,11 @@ blockquote, blockquote p {
 #site-title, .container {
   margin:0;
   width:100%;
-  
 }
+
+.container {
+  min-width: 1% !important;
+}  
 
 p#site-title {
   padding:0 25px;
