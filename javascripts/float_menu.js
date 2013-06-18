@@ -11,7 +11,7 @@
             $(item).html('<a name="anchor-'+i+'">'+$(item).html()+'</a>');
         });
         $mainContainer.append($menuContainer);
-        var t = jQuery("#welcome").offset().top + 20;
+        var t = jQuery("#welcome").offset().top + 21;
         $mainContainer.animate({top:t},{duration:0,queue:false}); 
         $(window).scroll(function () {
            
