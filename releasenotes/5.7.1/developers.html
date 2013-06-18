@@ -60,18 +60,18 @@
 <p><a href="https://jira.nuxeo.com/browse/NXP-10078">Automation client is fully OSGI, which means you can use it from any OSGI container (Felix, Equinox etc..)</a></p>
 <p>Even though we have a new version coming out, we've kept Nuxeo 5.7.1 compatible with the 5.6 automation client.</p>
 <p>You can fetch dirty properties of a modified document to send only modified properties with automation client</p>
-<p>JSon Marshaling enhancement. You can send POJO in input or parameters. (5.7.1 only)</p>
+<p>JSON Marshalling enhancement. You can send POJO in input or parameters. (5.7.1 only)</p>
 
 <h2><a name="anchor-1">New operations</a></h2>
 
 <h3>Add Message</h3>
 <p><strong>Category:</strong> User Interface</p>
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.AddMessage">Seam.AddMessage</a></p>
-<p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR, default is INFO. Message parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
+<p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR, INFO being the default. Message parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
 <h3>Add entry into multi-valued metadata</h3>
 <p><strong>Category:</strong> Document</p>
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/AddEntryToMultivaluedProperty">AddEntryToMultivaluedProperty</a></p>
-<p>Add value into the field expressed by the xpath parameter. This field must be a multivalued metadata.</p>
+<p>Add value to the field expressed by the xpath parameter. This field must be a multivalued metadata.</p>
 <h3>Convert to given mime-type</h3>
 <p><strong>Category:</strong> Conversion</p> 
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.Convert">Blob.Convert</a></p> 
@@ -99,11 +99,11 @@
 <h3>Get Nuxeo Principal</h3>
 <p><strong>Category:</strong> Users & Groups</p>
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/NuxeoPrincipal.Get">NuxeoPrincipal.Get</a></p>
-<p> Retrieve Nuxeo principal and export it as a DocumentModel. If login parameter is not set, the operation will return informations about the current user, otherwise Directory Administration rights are required. </p>
+<p> Retrieve Nuxeo principal and export it as a DocumentModel. If login parameter is not set, the operation will return information about the current user, otherwise Directory Administration rights are required. </p>
 <h3>QueryAndFetch</h3>
 <p> <strong>Category:</strong> Fetch</p> 
 <p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Resultset.PageProvider">Resultset.PageProvider</a></p> 
-<p> Perform a query or a named provider query on the repository. Result is paginated. The result is returned as a RecordSet (QueryAndFetch) rather than as a List of Document. The query result will become the input for the next operation. If no query or provider name is given, a query returning all the documents that the user has access to will be executed. </p>
+<p> Perform a query or a named provider query on the repository. The result is paginated. The result is returned as a RecordSet (QueryAndFetch) rather than as a List of Document. The query result will become the input for the next operation. If no query or provider name is given, a query returning all the documents that the user has access to will be executed. </p>
 <h3>Raise Seam events</h3>
 <p><strong>Category:</strong> User Interface</p>
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.RaiseEvents">Seam.RaiseEvents</a></p>
@@ -124,7 +124,7 @@ if not then just the first one found will be removed.</p>
 <h3>Updates directory entries</h3>
 <p><strong>Category:</strong> Services</p>
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.UpdateEntries">Directory.UpdateEntries</a></p>
-<p> Updates directory entries. Entries to be updated are sent as a JSON array. Returns the updated entry ids as a JSON array of JSON objects containing all fields </p>
+<p> Updates directory entries. Entries to be updated are sent as a JSON array. Returns the updated entry ids as a JSON array of JSON objects containing all fields. </p>
 
 <h2><a name="anchor-2">CSS 3 Support in Theme Engine</a></h2>
 <p><a href="https://jira.nuxeo.com/browse/NXP-7672">The flute CSS parser</a> has now been replaced by <a href="https://code.google.com/p/phloc-css/">phloc-css</a>, allowing CSS3 to be used in the Theme engine.</p>
@@ -165,7 +165,7 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 </pre>
 </blockquote>
 
-<p>You can now include widgets that render actions. This is particularly useful in Nuxeo Studio. This allow us to easily blend different action types like a submit button, an outgoing link and an action that <a href="https://jira.nuxeo.com/browse/NXP-11006">opens a fancybox</a>. You can also <a href="https://jira.nuxeo.com/browse/NXP-11044">merge all of them</a> in any order you want.</p>
+<p>You can now include widgets that render actions. This is particularly useful in Nuxeo Studio. This allows us to easily blend different action types like a submit button, an outgoing link and an action that <a href="https://jira.nuxeo.com/browse/NXP-11006">opens a fancybox</a>. You can also <a href="https://jira.nuxeo.com/browse/NXP-11044">merge all of them</a> in any order you want.</p>
 
 <p>We have a better support of <a href="https://jira.nuxeo.com/browse/NXP-9444">form inside fancybox</a> opened by actions. You can submit the associated form without submitting every other form on the page. No need to do nested form anymore.</p>
 
@@ -185,7 +185,7 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 
 <p>    Optimized id generation, using database-native sequences (<a href="https://jira.nuxeo.com/browse/NXP-10894">PostgreSQL</a>, <a href="https://jira.nuxeo.com/browse/NXP-10912">SQL Server</a>) or UUIDs (<a href="https://jira.nuxeo.com/browse/NXP-4803">PostgreSQL</a>). This improves performance and database size.</p>
 
-<p>    <a href="https://jira.nuxeo.com/browse/NXP-11370">Flag to disable proxies</a>, if you don't use proxies then this removes extra work the SQL level and improves performance.</p>
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-11370">Flag to disable proxies</a>, if you don't use proxies, then this removes the extra work at the SQL level and improves performance.</p>
 
 <p>    <a href="https://jira.nuxeo.com/browse/NXP-11562">Allow attaching schemas to proxies</a></p>
 
