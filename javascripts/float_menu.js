@@ -7,8 +7,7 @@
         var menuYloc;
         $menuContainer = $("<ul>");
         $.each( $("h2"), function (i,item) {
-            $menuContainer.append('<li><a href="#anchor-'+i+'">'+$(item).html()+'</a></li>');
-            $(item).html('<a name="anchor-'+i+'">'+$(item).html()+'</a>');
+            $menuContainer.append('<li><a href="#anchor-'+i+'">'+$(item).text()+'</a></li>');
         });
         $mainContainer.append($menuContainer);
         var t = jQuery("#welcome").offset().top + 21;
