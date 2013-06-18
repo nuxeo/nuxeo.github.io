@@ -10,7 +10,7 @@
   margin-top:2em;
   line-height: 50px;
     margin-bottom: 14px;
-  font-size: 32px;  
+  font-size: 28px;  
 }
 
 p#site-title {
@@ -102,10 +102,23 @@ p.backbutton a:active {
   clear:both;
 }
 
+#welcome h2 a, #welcome h2 a:visited {
+  color:#3670b9;
+}
+
+#welcome h2 a:hover {
+  cursor: default;
+  color:#3670b9;
+  text-decoration: none;
+}
+
 #welcome h3 {
  color:#454545;
  font-size:100%;
+ padding-left: 0.5em;
 }
+
+
 
 #welcome p {
  padding:0.75em 0 1em 0;
