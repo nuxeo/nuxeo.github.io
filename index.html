@@ -104,7 +104,6 @@
 <div id="cmProjectContainer" >
 
 </div>
-<div class="toggle"><a id="cmToggle">[ Show more ]</a><span id="cmLoading"><img src="./images/loading.gif" /></span></div>
   </div>
 
 </div>
@@ -143,8 +142,6 @@
 
         var commits = new Array();
 
-        var cmProjectIdx = 0;
-
         var alreadyloading = false;
 
         $.getJSON("./repositories.json", function(data) {
@@ -153,7 +150,7 @@
             $("#membersLoading").hide();
             $("membersCountLoading").hide();
             $("#platformLoading").hide();
-            $("#cmLoading").hide();
+
             communityRepos = data.community;
             platformRepos = data.platform;
             personalRepos = data.personal;
@@ -164,10 +161,9 @@
             defaultRepoCategories = data.defaultRepoCategories;
             addOrgaMembers();
             addRepoCount();
-            addThreeCommunityRepo();
+            addCommunityRepo();
             addPlatformRepo();
             nextAddonPage();
-            $('#cmToggle').click(addThreeCommunityRepo);
             $('#addonToggle').click(nextAddonPage);
         });
 
@@ -249,23 +245,12 @@
         }
 
         function addCommunityRepo() {
-            if (communityRepos.length == cmProjectIdx) {
-                $('#cmToggle').remove();
-                return;
-            }
-            var repo = communityRepos[cmProjectIdx];
-            cmProjectIdx++;
-            var repoURL = formatRepoUrl(repo);
-            $("#cmLoading").show();
-            $.getJSON(repoURL, function(result) {
-                addCMProject(result);
-            $("#cmLoading").hide();
-            });
-        }
-
-        function addThreeCommunityRepo() {
-            for (i=1; i<=3; i++) {
-                addCommunityRepo();
+            for (i=0; i<communityRepos.length; i++) {
+              var repo = communityRepos[i];
+              var repoURL = formatRepoUrl(repo);
+              $.getJSON(repoURL, function(result) {
+                  addCMProject(result);
+              });
             }
         }
 
