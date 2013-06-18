@@ -1,5 +1,7 @@
 /* Nuxeo Release notes special CSS */
 
+@media all {
+
 #mainContainer {
  border-bottom: 3px solid #D3E0EB;
 }
@@ -83,6 +85,7 @@ p.backbutton a:active {
     padding: 0.3em 0.7em;
     margin-left:-2.5em;
     color:white;
+    line-height: 34px;
 }
 
 #welcome h2, #welcome h3 {
@@ -288,4 +291,45 @@ blockquote {
 blockquote, blockquote p {
   font-size: 14px;
   line-height: 180%;
+}
+
+}
+
+
+@media handheld, screen and (max-width:1020px)  {
+
+
+
+#site-title, .container {
+  margin:0;
+  width:100%;
+  
+}
+
+p#site-title {
+  padding:0 25px;
+}
+
+#mainContainer {
+ width: 100%;
+ overflow:hidden;
+}
+
+#floatMenu, #xnav, #xnav-footer, .xnav-set {
+  display: none !important;
+  max-width: 99%;
+}
+
+p.backbutton a {
+  margin-right: 20px;
+}
+
+#welcome img {
+ max-width: 99%;
+ margin:auto;
+ display:block;
+ height:auto;
+}
+
+
 }
