@@ -1,9 +1,16 @@
-[ { "data" : [ { "date" : "19-Jun-2013 00:00",
+[ { "data" : [ { "date" : "19-Jun-2013 17:09",
           "description" : "",
           "label" : "5.7.1 Release Notes.pdf",
           "os" : "all",
-          "size" : "0K",
+          "size" : "2.0M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.7.1/5.7.1%20Release%20Notes.pdf"
+        },
+        { "date" : "19-Jun-2013 16:30",
+          "description" : "",
+          "label" : "5.7.1 Upgrade Notes.pdf",
+          "os" : "all",
+          "size" : "91K",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.1/5.7.1%20Upgrade%20Notes.pdf"
         },
         { "date" : "18-Jun-2013 16:36",
           "description" : "",
