@@ -32,6 +32,7 @@
 
 <style>
 #xnav-footer {margin-top:0px !important;}
+td.parameter {width:36%;}
 </style>
 <script src="../../javascripts/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
@@ -62,6 +63,24 @@
   <h2><a name="anchor-0">Monitoring</a></h2>
     <p>Upgrade to the latest <a href="https://jira.nuxeo.com/browse/NXP-11995">metrics codahale lib</a> providing more metrics and fixes, also note that metrics names have change. Read more in our <a href="http://doc.nuxeo.com/x/gBDF">documentation</a>.</p>
 <p><img src="./nuxeo-jmx-metrics.png"/></p>
+
+  <h2><a name="anchor-0">Multi-Tabs Navigation</a></h2>
+  <p>Nuxeo now handles Multiple-Tabs navigation without having a "can not restore view" error. A new StateManager has been introduced in order to store ViewStates per conversation basis. In other words, when a user navigates in a new tab, a new conversation is started and its view states are saved separatly. If the user comes back to an old tab, he won't have "view expired" exceptions.</p>
+  <ul>
+    <li>By default, 4 conversation states are saved following a LRU policy (Least Recently Used).</li>
+    <li>Each conversation state still has max 4 saved view states.</li>
+    <li>This means that potentially, a maximum of 16 view states are saved in session.</li>
+  </ul>
+  <p>You can adapt these settings adding the following parameters in nuxeo.conf:</p>
+  <table class="release">
+  <thead>
+  <tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+  </thead>
+  <tbody><tr><td class="parameter">nuxeo.jsf.numberOfConversationsInSession</td><td>4</td><td>Since 5.7.2, Parameter to control the number of conversation states that are saved in session. Each conversation holds a number of view states that is defined by nuxeo.jsf.numberOfViewsInSession</td></tr>
+  <tr><td class="parameter">nuxeo.jsf.numberOfViewsInSession</td><td>4</td><td>Since 5.7.2 (5.6-HF20) Parameter to control the JSF init parameter com.sun.faces.numberOfViewsInSession</td></tr>
+  <tr><td class="parameter">nuxeo.jsf.numberOfLogicalViews</td><td>4</td><td>Since 5.7.2 (5.6-HF20) Parameter to control the JSF init parameter com.sun.faces.numberOfLogicalViews
+</td></tr>
+  </tbody></table>
 
   </div>
 
