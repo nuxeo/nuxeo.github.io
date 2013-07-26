@@ -71,16 +71,21 @@ td.parameter {width:36%;}
     <li>Each conversation state still has max 4 saved view states.</li>
     <li>This means that potentially, a maximum of 16 view states are saved in session.</li>
   </ul>
-  <p>You can adapt these settings adding the following parameters in nuxeo.conf:</p>
-  <table class="release">
-  <thead>
-  <tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
-  </thead>
-  <tbody><tr><td class="parameter">nuxeo.jsf.numberOfConversationsInSession</td><td>4</td><td>Since 5.7.2, Parameter to control the number of conversation states that are saved in session. Each conversation holds a number of view states that is defined by nuxeo.jsf.numberOfViewsInSession</td></tr>
+  <p>You can adapt these settings using the apropriate parameters in nuxeo.conf.</p>
+
+
+<h2><a name="anchor-2">Nuxeo.conf new parameters</a></h2>
+<table class="release">
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+  <tr><td class="parameter">nuxeo.jsf.numberOfConversationsInSession</td><td>4</td><td>Since 5.7.2, Parameter to control the number of conversation states that are saved in session. Each conversation holds a number of view states that is defined by nuxeo.jsf.numberOfViewsInSession</td></tr>
   <tr><td class="parameter">nuxeo.jsf.numberOfViewsInSession</td><td>4</td><td>Since 5.7.2 (5.6-HF20) Parameter to control the JSF init parameter com.sun.faces.numberOfViewsInSession</td></tr>
   <tr><td class="parameter">nuxeo.jsf.numberOfLogicalViews</td><td>4</td><td>Since 5.7.2 (5.6-HF20) Parameter to control the JSF init parameter com.sun.faces.numberOfLogicalViews
 </td></tr>
-  </tbody></table>
+  <tr><td class="parameter">nuxeo.notification.eMailSigner</td><td>The Nuxeo team</td><td>Signer of the sent mail..</td></tr>
+</table>
+
 
   </div>
 
