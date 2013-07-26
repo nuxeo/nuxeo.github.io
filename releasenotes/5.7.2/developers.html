@@ -65,6 +65,23 @@
       <li>Chains contributed are displayed into the automation documentation with operations listing, parameters and input/output.</li>
       <li>An automation Client Test Suite in java (or java Test Compatibility Kit -> TCK) is provided for helping people understanding how Automation is working remotely.</li>
     </ul>
+http://doc.nuxeo.com/display/NXDOC/Automation+API+and+client+library
+http://doc.nuxeo.com/display/NXDOC/Document+oriented+REST+API
+
+ CRUD REST Binding for DocumentModel 
+
+
+
+ Domain model object and Automation 
+https://jira.nuxeo.com/browse/NXP-11260
+
+
+<h3>Add Message</h3>
+<p><strong>Category:</strong> User Interface</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.AddMessage">Seam.AddMessage</a></p>
+<p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR, INFO being the default. Message parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
+
+
 
 <h2><a name="anchor-1">Richfaces</a></h2>
 
@@ -72,8 +89,31 @@
       <li>Nuxeo uses a custom version of Richfaces based on 3.3.1 GA</li>
       <li>This custom version of Richfaces is now available on <a href="https://github.com/nuxeo/richfaces">GitHub</a> with all Nuxeo's patches</li>
     </ul>
-  </div>
 
+
+<h2><a name="anchor-2">CMIS</a></h2>
+
+<p>We've upgraded OpenCMIS to 0.9.0 . This gives us the new CMIS 1.1 browser bindings but we don't implement all the new features.</p>
+
+<h2><a name="anchor-3">Content Views</a></h2>
+<ul>
+  <li>On Nuxeo side, filter can be shown unfolded by defaults, and some content view templates have been redefined to ease up customization.</li>
+  <li>On Studio side, the "filter unfolded" option is presented for 5.7.2, and events as well as the page provider class and properties can now be configured also</li>
+</ul>
+
+
+<h2><a name="anchor-4">Core</a></h2>
+<p>Add PermissionFilter to filter documents based on permissions</p>
+<p>New VCS CachingMapper implementation using ehcache.</p>
+
+
+<h2><a name="anchor-5">CORS support</a></h2>
+
+<h2><a name="anchor-6">Workflow</a></h2>
+<h2><a name="anchor-7">Scan Importer</a></h2>
+
+
+  </div>
 </div>
 
 
