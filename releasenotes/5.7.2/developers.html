@@ -72,8 +72,8 @@
 <p>We have a new <a href="http://doc.nuxeo.com/x/WIvZ">document oriented API</a> for CRUD operation.</p>
 
 <h3>Create</h3>
-<code><pre>
-POST /nuxeo/site/api/id/{idOfTheDoc}
+<div class="embededCode"><pre>
+<strong>POST</strong> /nuxeo/site/api/id/{idOfTheDoc}
 {
     "entity-type": "document",
     "name":"newName",
@@ -84,17 +84,17 @@ POST /nuxeo/site/api/id/{idOfTheDoc}
         "common:size": null
     }
 }
-</pre></code>
+</pre></div>
 
 <h3>Read</h3>
-<code><pre>
-GET /nuxeo/site/api/path/{pathOfTheDoc}
-GET /nuxeo/site/api/id/{idOfTheDoc}
-</pre></code>
+<div class="embededCode"><pre>
+<strong>GET</strong> /nuxeo/site/api/path/{pathOfTheDoc}
+<strong>GET</strong> /nuxeo/site/api/id/{idOfTheDoc}
+</pre></div>
 
 <h3>Update</h3>
-<code><pre>
-PUT /nuxeo/site/api/id/{idOfTheDoc}
+<div class="embededCode"><pre>
+<strong>PUT</strong> /nuxeo/site/api/id/{idOfTheDoc}
 {
     "entity-type": "document",
     "repository": "default",
@@ -105,12 +105,12 @@ PUT /nuxeo/site/api/id/{idOfTheDoc}
         "common:size": null
     }
 }
-</pre></code>
+</pre></div>
 
 <h3>Delete</h3>
-<code><pre>
-DELETE /nuxeo/site/api/id/{idOfTheDoc}
-</pre></code>
+<div class="embededCode"><pre>
+<strong>DELETE</strong> /nuxeo/site/api/id/{idOfTheDoc}
+</pre></div>
 
 
 <h3> Domain model object and Automation </h3>
@@ -149,6 +149,7 @@ DELETE /nuxeo/site/api/id/{idOfTheDoc}
 
 
 <h2><a name="anchor-6">CORS support</a></h2>
+<p>We added a new extension point to support <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-origin_resource_sharing</a>.
 
 <h2><a name="anchor-7">Workflow</a></h2>
 
