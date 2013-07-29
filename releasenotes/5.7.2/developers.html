@@ -149,7 +149,11 @@
 
 
 <h2><a name="anchor-6">CORS support</a></h2>
-<p>We added a new extension point to support <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-origin_resource_sharing</a>.
+<p>If you do cross-domain requests from any Javascript client, like accessing a WebEngine resources or Automation client. There are a lot of chance that your browser will forbid it. <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> allows you to communicate with Nuxeo with XMLHttpRequests from another domain.</p>
+
+<p>We've added <a href="http://doc.nuxeo.com/x/vIvZ">a new extension point</a> based on Vladimir Dzhuvinov universal CORS filter, which allows you to configure on which URL cross-origin headers are needed.</p>
+
+
 
 <h2><a name="anchor-7">Workflow</a></h2>
 
