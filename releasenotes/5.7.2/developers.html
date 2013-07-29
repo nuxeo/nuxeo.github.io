@@ -123,8 +123,6 @@
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.AddMessage">Seam.AddMessage</a></p>
 <p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR, INFO being the default. Message parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
 
-
-
 <h2><a name="anchor-2">Richfaces</a></h2>
 
     <ul>
@@ -149,16 +147,14 @@
 
 
 <h2><a name="anchor-6">CORS support</a></h2>
-<p>If you do cross-domain requests from any Javascript client, like accessing a WebEngine resources or Automation client. There are a lot of chance that your browser will forbid it. <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> allows you to communicate with Nuxeo with XMLHttpRequests from another domain.</p>
+<p>If you do cross-domain requests from any JavaScript client to access WebEngine resources or Automation APIs, there's a chance that your browser forbids it. <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> allows you to communicate with Nuxeo from another domain using XMLHttpRequests.</p>
 
-<p>We've added <a href="http://doc.nuxeo.com/x/vIvZ">a new extension point</a> based on Vladimir Dzhuvinov universal CORS filter, which allows you to configure on which URL cross-origin headers are needed.</p>
-
-
+<p>We've added <a href="http://doc.nuxeo.com/x/vIvZ">a new extension point</a> based on Vladimir Dzhuvinov's universal CORS filter, which allows you to configure on which URL cross-origin headers are needed.</p>
 
 <h2><a name="anchor-7">Workflow</a></h2>
 
 <h2><a name="anchor-8">Scan Importer</a></h2>
-
+<p>The scan importer has been improved. You can also choose if you want to create the import document container each time you launch an import. You can now choose to update an existing document instead of creating a new one.</p>
 
   </div>
 </div>
