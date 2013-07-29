@@ -57,24 +57,66 @@
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
 
-<h2><a name="anchor-0">Automation</a></h2>
+<h2><a name="anchor-0">Content Automation</a></h2>
+<p>We made a lot of progres on the Content Automation API.</p>
 
     <ul>
       <li>It's possible to contribute a chain into another chain -> Composite Automation Chain</li>
       <li>It's possible to add parameters to a chain</li>
       <li>Chains contributed are displayed into the automation documentation with operations listing, parameters and input/output.</li>
-      <li>An automation Client Test Suite in java (or java Test Compatibility Kit -> TCK) is provided for helping people understanding how Automation is working remotely.</li>
+      <li>An automation Client Test Suite in java (or java Test Compatibility Kit -> TCK) is provided for helping people understanding how Automation is working remotely. You can read our <a href="http://doc.nuxeo.com/x/v4XZ">documentation</a> for the details.</li>
     </ul>
-http://doc.nuxeo.com/display/NXDOC/Automation+API+and+client+library
-http://doc.nuxeo.com/display/NXDOC/Document+oriented+REST+API
-
- CRUD REST Binding for DocumentModel 
 
 
+<h3>Document Oriented REST API</h3>
+<p>We have a new <a href="http://doc.nuxeo.com/x/WIvZ">document oriented API</a> for CRUD operation.</p>
 
- Domain model object and Automation 
-https://jira.nuxeo.com/browse/NXP-11260
+<h3>Create</h3>
+<code><pre>
+POST /nuxeo/site/api/id/{idOfTheDoc}
+{
+    "entity-type": "document",
+    "name":"newName",
+    "type": "File",
+    "properties": {
+        "common:icon": "/icons/domain.gif",
+        "common:icon-expanded": null,
+        "common:size": null
+    }
+}
+</pre></code>
 
+<h3>Read</h3>
+<code><pre>
+GET /nuxeo/site/api/path/{pathOfTheDoc}
+GET /nuxeo/site/api/id/{idOfTheDoc}
+</pre></code>
+
+<h3>Update</h3>
+<code><pre>
+PUT /nuxeo/site/api/id/{idOfTheDoc}
+{
+    "entity-type": "document",
+    "repository": "default",
+    "uid": "37b1502b-26ff-430f-9f20-4bd0d803191e",
+    "properties": {
+        "common:icon": "/icons/domain.gif",
+        "common:icon-expanded": null,
+        "common:size": null
+    }
+}
+</pre></code>
+
+<h3>Delete</h3>
+<code><pre>
+DELETE /nuxeo/site/api/id/{idOfTheDoc}
+</pre></code>
+
+
+<h3> Domain model object and Automation </h3>
+
+
+<h2><a name="anchor-1">New Operation</a></h2>
 
 <h3>Add Message</h3>
 <p><strong>Category:</strong> User Interface</p>
@@ -83,34 +125,34 @@ https://jira.nuxeo.com/browse/NXP-11260
 
 
 
-<h2><a name="anchor-1">Richfaces</a></h2>
+<h2><a name="anchor-2">Richfaces</a></h2>
 
     <ul>
       <li>Nuxeo uses a custom version of Richfaces based on 3.3.1 GA</li>
       <li>This custom version of Richfaces is now available on <a href="https://github.com/nuxeo/richfaces">GitHub</a> with all Nuxeo's patches</li>
     </ul>
 
-
-<h2><a name="anchor-2">CMIS</a></h2>
+<h2><a name="anchor-3">CMIS</a></h2>
 
 <p>We've upgraded OpenCMIS to 0.9.0 . This gives us the new CMIS 1.1 browser bindings but we don't implement all the new features.</p>
 
-<h2><a name="anchor-3">Content Views</a></h2>
+<h2><a name="anchor-4">Content Views</a></h2>
 <ul>
   <li>On Nuxeo side, filter can be shown unfolded by defaults, and some content view templates have been redefined to ease up customization.</li>
   <li>On Studio side, the "filter unfolded" option is presented for 5.7.2, and events as well as the page provider class and properties can now be configured also</li>
 </ul>
 
 
-<h2><a name="anchor-4">Core</a></h2>
+<h2><a name="anchor-5">Core</a></h2>
 <p>Add PermissionFilter to filter documents based on permissions</p>
 <p>New VCS CachingMapper implementation using ehcache.</p>
 
 
-<h2><a name="anchor-5">CORS support</a></h2>
+<h2><a name="anchor-6">CORS support</a></h2>
 
-<h2><a name="anchor-6">Workflow</a></h2>
-<h2><a name="anchor-7">Scan Importer</a></h2>
+<h2><a name="anchor-7">Workflow</a></h2>
+
+<h2><a name="anchor-8">Scan Importer</a></h2>
 
 
   </div>
