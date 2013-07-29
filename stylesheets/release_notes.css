@@ -322,6 +322,14 @@ blockquote, blockquote p {
   line-height: 180%;
 }
 
+.embededCode {
+  background-color: #E8EFF5;
+  border: 1px dashed #3670B9;
+  color: black;
+  line-height: 1.1em;
+  padding: 1em;
+}
+
 }
 
 
