@@ -102,11 +102,11 @@ wistiaEmbed = Wistia.embed("3hnh3c33xu", {
 
 <h3>Browse all Assets from the Repository</h3>
 <p>All the assets of the repository are displayed (not just the one under "Media Library")</p>
-<p><img src="dam_example.png"/></p>
+<p><img class="lightboxed" src="dam_example.png"/></p>
 
 <h3>DAM Drag and Drop</h3>
 You can now drag and drop as many assets as you want in the New Asset window:
-<p><img src="dam_droped_upload.png"/></p>
+<p><img class="lightboxed" src="dam_droped_upload.png"/></p>
 
 <h3>Assets Browsing</h3>
 <ul>
@@ -121,7 +121,7 @@ You can now drag and drop as many assets as you want in the New Asset window:
         <li>New "Add to worklist" button</li>
 </ul>
 
-<p><img src="Bulk Edit DAM .png"/></p>
+<p><img class="lightboxed" src="Bulk Edit DAM .png"/></p>
 
 
 <h3>Asset View</h3>
@@ -178,7 +178,7 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
 <p>You can specify a folder in Nuxeo.conf where the importer will look for binaries. Just make sure you put their relative path in the CSV.</p>
 <p><sup>(1)</sup><a href="CSVimportSample.csv">CSV import sample</a></p>
 
-<p><img src="CSV Importer Imported.png"/></p>
+<p><img class="lightboxed" src="CSV Importer Imported.png"/></p>
 
 <h2><a name="anchor-4">User Experience</a></h2>
 <p>The platform screens have been redesigned and improved. More than eighty issues about the user experience, user interface and styles have been resolved.</p>
@@ -189,14 +189,14 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
 
 <h3>Bulk Edit in listing</h3>
 <p>We have enabled <a href="https://jira.nuxeo.com/browse/NXP-11054">Bulk Editing</a> for document listing</a>. It's now easy to show a form in a popup, displaying any layout you want, and that applies to documents you've selected.</p>
-<p><img src="Bulk Edit DM 2.png"/></p>
+<p><img class="lightboxed" src="Bulk Edit DM 2.png"/></p>
 
 <h3>Content Thumbnails</h3>
 
 <p>Thumbnail can be automatically generated for pdf or image documents using the main file of a  document. It's also possible to contribute a thumbnail adapter for a specific document type or Facet. This is useful mainly for files other than pictures.</p>
 <p>The generation of these thumbs is asynchronous, thanks to the use of workers. There is also a default placeholder showed when the generation isn't finished, or if Nuxeo could not generate the thumb.</p>
 
-<p><img src="dm_thumbnails.png"/></p>
+<p><img class="lightboxed" src="dm_thumbnails.png"/></p>
 
 <h3>Back Navigation</h3>
 <p>We've enhanced the back navigation of your browser using HTML5 pushState.</p>
@@ -209,13 +209,13 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
 
 <h3>Use tags in searches</h3>
 <p>You can now add tags in your search form. Whether you're using the advanced search form, any faceted search, a content view query or a query operation. It works because we've added tag suppport to NXQL.</p>
-<p><img src="tag_search.png"/></p>
+<p><img class="lightboxed" src="tag_search.png"/></p>
 
 
 <h3>Saved Search Management Tab</h3>
 <p>Every saved search is listed on a home tab, a subtab for dam, a subtab for faceted search. You can share those saved searches with other users using the manage/rights tab.</p>
 
-<p><img src="Saved searches 2.png"/></p>
+<p><img class="lightboxed" src="Saved searches 2.png"/></p>
 
 
 <h3>Search Panel</h3>
@@ -234,7 +234,7 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
         <li>Search by coverage with a new, better, interface</li>
 </ul>
 
-<p><img src="Saved searches 2.png"/></p>
+<p><img class="lightboxed" src="Saved searches 2.png"/></p>
 
 
 <h2><a name="anchor-6">Quota</a></h2>
@@ -243,7 +243,7 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
 
 <p><a href="https://jira.nuxeo.com/browse/NXP-10713">Global Quotas Activation</a>, Quotas can be activated in the admin center</p>
 <p>Once it's activated, everything statistical are automatically computed.</p>
-<p><img src="quota-admin-statistics.gif"/></p>
+<p><img class="lightboxed" src="quota-admin-statistics.gif"/></p>
 <p>Administrators can see (in Manage &gt; Quotas &gt; Stats) the following statistics :</p>
 <ul class="alternate" type="square">
 	<li>Total volume used  (deleted, live, versions) + "/Available space"</li>
@@ -258,7 +258,7 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
 </ul>
 
 <h3>Return meaningful error message when encountering a Quota error</h3>
-<img src="creation_or_modification_impossible.gif" />
+<img class="lightboxed" src="creation_or_modification_impossible.gif" />
 
 <h3>User Workspace Quota Management Activation</h3>
 <p>As the Administrator of the system, you can enable Quota on user workspaces (radio button) with a default value (slider). The value is the same for all the user workspaces.</p>
@@ -272,7 +272,7 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
 <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-birt-integration">Marketplace Package</a>
 <p>The BIRT Connector has been aligned on BIRT 4.2.2. It means that you can create your report in BIRT Designer 4.2.2. We also made some significant ergonomy enhancements on the admin center UI and we've added parameter validation when generating a report.</p>
 
-<img src="birt.png" />
+<img class="lightboxed" src="birt.png" />
 
 <h2><a name="anchor-8">Content Routing</a></h2>
 
@@ -282,7 +282,7 @@ wistiaEmbed = Wistia.embed("4zqwm5p4xh", {
 <p><a href="https://jira.nuxeo.com/browse/NXP-9825">There is a new operation</a> to start a workflow</p>
 <p><a href="https://jira.nuxeo.com/browse/NXP-10049">Redirect user</a> when she has no more rights to read the document after changing the state of the workflow</p>
 <p><a href="https://jira.nuxeo.com/browse/NXP-10142">Filter system workflow</a> related documents from search </p>
-<p><img src="Workflow tab Bluk process.png"/></p>
+<p><img class="lightboxed" src="Workflow tab Bluk process.png"/></p>
 
 <p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20in%20%28%22Content%20Routing%22%2C%20%22Content%20routing%22%29%20AND%20fixVersion%20%3D%20%225.7.1%22%20AND%20status%20in%20%28Resolved%2C%20Closed%29%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
 

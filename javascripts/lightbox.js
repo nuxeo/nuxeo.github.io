@@ -3,8 +3,8 @@
 
 
     $(document).ready(function () { 
-      $('img').css('cursor', 'pointer');
-      $('img').click(function (e) { 
+      $('.lightboxed').css('cursor', 'pointer');
+      $('.lightboxed').click(function (e) { 
 
         e.preventDefault();
         var image_href = $(this).attr("src");
