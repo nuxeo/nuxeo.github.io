@@ -84,18 +84,38 @@
 <P>Now you can use the HTML5 DnD on the Bulk import form.</p>
 <P>If your import fails for some reason (for instance, if you forgot to fill a required field), you get an appropriate error message and you don't have to select DnD files to import again.</p>
 
-<h2><a name="anchor-1">Video</a></h2>
+
+<h2><a name="anchor-1">Workflow</a></h2>
+<h3>Escalation Rules </h3>
+<p>Escalation rules lets you run an operation chain when a condition is true. These conditions are evaluated every 5 minutes by a configurable scheduler. They can be executed one time(default behaviour) or multiple times.</p>
+<p><img class="lightboxed" src="./escalation.png"/></p>
+
+<h3>Sub Workflow</h3>
+<p>We have added a new node called SubWorkflow. As you have already guessed it, it lets you embed sub-workflow into existing one. You can also give them parameters, escalation rules, input and output chains, transitions, like a regular node. </p>
+<p><img class="lightboxed" src="./subWorkflow.png"/></p>
+
+<h3>Exclusive Node</h3>
+<p>When the workflow engine runs an exclusive node, it evaluates the transitions one by one and follow the first one evaluated to true.</p>
+<p><img class="lightboxed" src="./exclusiveNode.png"/></p>
+
+<h3>New Workflow Operations</h3>
+
+<p>We've added new operations to cancel a Workflow, resume a node, get the opened tasks, complete a task and improved the Start Workflow and Set Workflow variable operation.</p>
+
+<h2><a name="anchor-2">Video</a></h2>
 <p>The video.js player has been updated to version 4.1.0. This will enable us to benefit from their new plugin architecture. The first plugin we've integrated shows thumbnails of the video while hovering on the progress bar.</p>
 <p><img class="lightboxed" src="./videoThumb.png" /></p>
 
-<h2><a name="anchor-2">Ergonomy and UX</a></h2>
+<h2><a name="anchor-3">Ergonomy and UX</a></h2>
 <p>Tables, forms and layout have been reviewed and simplified.
 A focus has been added to simplify the fill of inputs and make the document edition smoother.</p>
 
 <p>We have started to update the icons throughout the platform. This effort will continue until the next LTS release.</p>
 
-<h2><a name="anchor-3">Translations</a></h2>
+<h2><a name="anchor-4">Translations</a></h2>
 <p>Some contributions have been integrated to Nuxeo. Thanks to Patrick Turcotte for the French (Canada) translation and to Jordi Mallach for the Catalan translation.</p>
+
+
 
     </div>
 
