@@ -63,8 +63,18 @@
 <p>It's possible to add parameters to a chain</p>
 <p>Chains contributed are displayed into the automation documentation with operations listing, parameters and input/output.</p>
 <p>An automation Client Test Suite in java (or java Test Compatibility Kit -> TCK) is provided for helping people understanding how Automation is working remotely. You can read our <a href="http://doc.nuxeo.com/x/v4XZ">documentation</a> for the details.</p>
+<p><a href="http://doc.nuxeo.com/x/vwIz#UsingNuxeoAutomationClient-managing-business-objectsManagingBusinessObjects">Managing business objects</a> (Plain Old Java Object client side for mapping Nuxeo Document Model Adapter server side) is now available.</p>
 
-<h3>Document Oriented REST API</h3>
+<p>The goal is to manipulate business object and avoid direct DocumentModel manipulation on client side:</p>
+	
+<div class="embededCode"><pre>
+pull : BusinessObject (POJO) <----JSON---- DocumentModelAdapter <---- DocumentModel
+
+push : BusinessObject (POJO) -----JSON---> DocumentModelAdapter ----> DocumentModel
+
+</pre></div>
+
+<h2><a name="anchor-1">Document Oriented REST API</a></h2>
 <p>We have a new <a href="http://doc.nuxeo.com/x/WIvZ">document oriented API</a> for CRUD operation.</p>
 
 <h3>Create</h3>
@@ -110,41 +120,48 @@
 
 
 <h3> Domain model object and Automation </h3>
+<p>You can use <a href="http://doc.nuxeo.com/x/WIvZ#DocumentorientedRESTAPI-Businessobjectadapters">Business objects with automation</a>. They are also binded on the REST API and you just have to use the same semantics than for document resources.</p>
+
+<h3>Updating a business object</h3>
+<div class="embededCode"><pre>
+<strong>PUT</strong>  /nuxeo/site/api/path/{pathOfTheDoc}/@bo/BusinessBeanAdapter
+{
+    "entity-typee: "BusinessBeanAdapter"
+    "value": {
+        id: "37b1502b-26ff-430f-9f20-4bd0d803191e",
+        "type": "Domain",
+        "title":"Default domain"
+        "description:"My new description"
+     }
+}
+</pre></div>
 
 
-<h2><a name="anchor-1">New Operation</a></h2>
+<h2><a name="anchor-2">New Operation</a></h2>
 
 <h3>Add Message</h3>
 <p><strong>Category:</strong> User Interface</p>
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.AddMessage">Seam.AddMessage</a></p>
 <p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR; INFO being the default. Message parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
 
-<h2><a name="anchor-2">Richfaces</a></h2>
+<h2><a name="anchor-3">Richfaces</a></h2>
 
 <p>Nuxeo uses a custom version of Richfaces based on 3.3.1 GA, This custom version of Richfaces is now available on <a href="https://github.com/nuxeo/richfaces">GitHub</a> with all Nuxeo's patches</p>
 
-<h2><a name="anchor-3">CMIS</a></h2>
+<h2><a name="anchor-4">CMIS</a></h2>
 
 <p>We've upgraded OpenCMIS to 0.9.0 . This gives us the new CMIS 1.1 browser bindings but we don't implement all the new features.</p>
 
-<h2><a name="anchor-4">Content Views</a></h2>
+<h2><a name="anchor-5">Content Views</a></h2>
 <p>On Nuxeo side, filter can be shown unfolded by default, and some content view templates have been redefined to ease the customization.</p>
 <p>On Studio side, the "filter unfolded" option is presented for 5.7.2, and events as well as the page provider class and properties can now be configured also</p>
-
-<h2><a name="anchor-5">Core</a></h2>
-<p>Add PermissionFilter to filter documents based on permissions</p>
-<p>New VCS CachingMapper implementation using ehcache.</p>
-
 
 <h2><a name="anchor-6">CORS support</a></h2>
 <p>If you do cross-domain requests from any JavaScript client to access WebEngine resources or Automation APIs, there's a chance that your browser forbids it. <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> allows you to communicate with Nuxeo from another domain using XMLHttpRequests.</p>
 
 <p>We've added <a href="http://doc.nuxeo.com/x/vIvZ">a new extension point</a> based on Vladimir Dzhuvinov's universal CORS filter, which allows you to configure on which URL cross-origin headers are needed.</p>
-
-<h2><a name="anchor-7">Workflow</a></h2>
-
-<h2><a name="anchor-8">Scan Importer</a></h2>
-<p>The scan importer has been improved. You can also choose if you want to create the import document container each time you launch an import. You can now choose to update an existing document instead of creating a new one.</p>
+<h2><a name="anchor-7">Scan Importer</a></h2>
+<p>The scan importer has been improved. You can choose if you want to create the import document container each time you launch an import. You can also choose to update an existing document instead of creating a new one.</p>
 
   </div>
 </div>
