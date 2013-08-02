@@ -329,6 +329,8 @@ blockquote, blockquote p {
   line-height: 1.1em;
   padding: 1em;
   font-family: Consolas,Courier,monospace;
+  max-width: 700px;
+  overflow-x:auto;
 }
 
 }
