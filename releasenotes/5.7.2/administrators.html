@@ -65,7 +65,7 @@ td.parameter {width:36%;}
 <p><img class="lightboxed" src="./nuxeo-jmx-metrics.png"/></p>
 
   <h2><a name="anchor-1">Multi-Tabs Navigation</a></h2>
-  <p>Nuxeo now handles multiple-tabs navigation without having a "cannot restore view" error. A new StateManager has been introduced in order to store ViewStates per conversation basis. In other words, when a user navigates in a new tab, a new conversation is started and its view states are saved separately. If the user comes back to an old tab, he won't have "view expired" exceptions.</p>
+  <p>Nuxeo now handles multiple-tabs navigation without having a "cannot restore view" error. A new StateManager has been introduced in order to store ViewStates per conversation. In other words, when a user navigates to a new tab, a new conversation is started and its view states are saved separately. If the user comes back to an old tab, he will not have "view expired" exceptions anymore.</p>
   <ul>
     <li>By default, 4 conversation states are saved following a LRU policy (Least Recently Used).</li>
     <li>Each conversation state still has max 4 saved view states.</li>
