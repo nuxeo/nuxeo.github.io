@@ -157,10 +157,23 @@ push : BusinessObject (POJO) -----JSON---> DocumentModelAdapter ----> DocumentMo
 
 <h2><a name="anchor-7">New Operation</a></h2>
 
-<h3>Add Message</h3>
-<p><strong>Category:</strong> User Interface</p>
-<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.AddMessage">Seam.AddMessage</a></p>
-<p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR; INFO being the default. Message parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
+<h3>Get a Directory Projection</h3>
+<p><strong>Category:</strong> Services</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.Projection">Directory.Projection</a></p>
+<p>Executes a query using given filter and return only the column *<b>columnName</b>*. The result is assigned to the context variable *<b>variableName</b>*. The filters are specified as <i>key=value</i> pairs separated by a new line. The key used for a filter is the column name of the directory. To specify multi-line values you can use a \\ character followed by a new line.</p>
+<p>Example:</p>
+<div class="embededCode"><pre>
+firstName=John
+lastName=doe
+</pre></div>
+<p>By default, the search filters use exact match. You can do a fulltext search on some specific columns using the fulltextFields. it's specified as comma separated columnName, for instance:</p><p>Example:</p><div class="embededCode"><pre>firstName,lastName</pre></div></p>
+
+
+<h3>Run For Each in new TX</h3>
+<p><strong>Category:</strong> Execution Flow</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Context.RunOperationOnListInNewTx">Context.RunOperationOnListInNewTx</a></p>
+<p>Run an operation in a new Transaction for each element from the list defined by the 'list' paramter. The 'list' parameter is pointing to context variable that represent the list which will be iterated. The 'item' parameter represent the name of the context varible which will point to the current element in the list at each iteration. You can use the 'isolate' parameter to specify whether or not the evalution context is the same as the parent context or a copy of it. If the isolate is 'true' then a copy of the current contetx is used and so that modifications in this context will not affect the parent context. Any input is accepted. The input is returned back as output when operation terminate. </p>
+
 
 <h2><a name="anchor-8">Login Page</a></h2>
 
@@ -184,6 +197,19 @@ push : BusinessObject (POJO) -----JSON---> DocumentModelAdapter ----> DocumentMo
 &lt;/extension&gt;
 </pre></div>
 
+<h2><a name="anchor-9">Long Running Listener</a></h2>
+<p>You can now extend a new abstract class called <strong>AbstractLongRunningListener</strong>. Its purpose is to help building an Asynchronous listeners that will handle a long running process. </p>
+<p>By default, PostCommitEventListener are executed in a Worker that will take care of starting/comitting the transaction.</p>
+<p>If the listener requires a long processing, this will create long transactions which should be avoided. To avoid this behavior, this base class split the processing in 3 steps:</p>
+<ul>
+<li>Pre processing: transactional first step</li>
+<li>Long running: long running processing that should not require transactional resources</li>
+<li>Post processing: transactional final step
+</ul>
+<p>To manage sharing between the 3 steps, a simple Map is provided.</p>
+
+<h2><a name="anchor-10">Move To Tomcat 7</a></h2>
+<p>Tomcat has been upgraded to version 7.0.42. The main improvement is the upgrade to the Servlet 3.0 API. You can see the details on <a href="http://www.tomcatexpert.com/presentation/whats-new-apache-tomcat-7">tomcatexpert</a>. </p>
   </div>
 </div>
 
