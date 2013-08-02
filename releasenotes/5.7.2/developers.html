@@ -164,11 +164,11 @@ push : BusinessObject (POJO) -----JSON---> DocumentModelAdapter ----> DocumentMo
 
 <h2><a name="anchor-8">Login Page</a></h2>
 
-<p>The login page can now be configured via an extension point, making it easier to upgrade more easily when the login page is customized, and benefit from new features, like <a href="http://www.nuxeo.com/blog/development/2013/03/contributed-openid-authentication-nelson-silva/">OpenID authentication</a> provided by Nelson Silva</p>
+<p>The login page can now be configured via an extension point, making it easier to upgrade more easily when the login page is customized, and benefit from new features, like <a href="http://www.nuxeo.com/blog/development/2013/03/contributed-openid-authentication-nelson-silva/">OpenID authentication</a> provided by Nelson Silva.</p>
 
 <p>Here is a sample configuration for the login page:</p>
 
-<div class="embededCode"><pre>
+<div class="embeddedCode"><pre>
   <extension target="org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService" point="loginScreen">
     <loginScreenConfig>
       <bodyBackgroundStyle>url("${org.nuxeo.ecm.contextPath}/img/my_login_background_img.png") 100px 100px no-repeat black</bodyBackgroundStyle>
