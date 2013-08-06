@@ -114,8 +114,8 @@ A focus has been added to simplify the fill of inputs and make the document edit
 <h2><a name="anchor-4">Translations</a></h2>
 <p>Some contributions have been integrated to Nuxeo. Thanks to Patrick Turcotte for the French (Canada) translation and to Jordi Mallach for the Catalan translation.</p>
 
-<!-- Administrators -->
-<h1 style="margin-left:-0.5em !important; page-break-before: always">For Administrators</h1>
+<p style="page-break-before: always"><!-- Administrators --></p>
+<h1 style="margin-left:-0.5em !important">For Administrators</h1>
 
   <h2><a name="anchor-0">Monitoring</a></h2>
     <p>Upgrade to the latest <a href="https://jira.nuxeo.com/browse/NXP-11995">metrics codahale lib</a> providing more metrics and fixes. Also note that metrics names have changed. Read more in our <a href="http://doc.nuxeo.com/x/gBDF">documentation</a>.</p>
@@ -143,8 +143,8 @@ A focus has been added to simplify the fill of inputs and make the document edit
   <tr><td class="parameter">nuxeo.notification.eMailSigner</td><td>The Nuxeo team</td><td>Signer of the sent e-mail.</td></tr>
 </table>
 
-     <!-- Developers -->
-     <h1  style="margin-left:-0.5em !important; page-break-before: always">For Developers</h1>
+     <p style="page-break-before: always"><!-- Developers --></p>
+     <h1  style="margin-left:-0.5em !important">For Developers</h1>
 
 
 <h2><a name="anchor-0">Content Automation</a></h2>
@@ -212,7 +212,7 @@ push : BusinessObject (POJO) -----JSON---> DocumentModelAdapter ----> DocumentMo
 <h3> Domain model object and Automation </h3>
 <p>You can use <a href="http://doc.nuxeo.com/x/WIvZ#DocumentorientedRESTAPI-Businessobjectadapters">Business objects with Automation</a>. They are also binded on the REST API and you just have to use the same semantics than for document resources.</p>
 
-<h3>Updating a business object</h3>
+<h3 style="page-break-before: always">Updating a business object</h3>
 <div class="embededCode"><pre>
 <strong>PUT</strong>  /nuxeo/site/api/path/{pathOfTheDoc}/@bo/BusinessBeanAdapter
 {
@@ -265,7 +265,7 @@ lastName=doe
 <p>Run an operation in a new Transaction for each element from the list defined by the 'list' paramter. The 'list' parameter is pointing to context variable that represent the list which will be iterated. The 'item' parameter represent the name of the context varible which will point to the current element in the list at each iteration. You can use the 'isolate' parameter to specify whether or not the evalution context is the same as the parent context or a copy of it. If the isolate is 'true' then a copy of the current contetx is used and so that modifications in this context will not affect the parent context. Any input is accepted. The input is returned back as output when operation terminate. </p>
 
 
-<h2><a name="anchor-8">Login Page</a></h2>
+<h2 style="page-break-before: always"><a name="anchor-8">Login Page</a></h2>
 
 <p>The login page can now be configured via an extension point, making it easier to upgrade when the login page is customized, and benefit from new features, like <a href="http://www.nuxeo.com/blog/development/2013/03/contributed-openid-authentication-nelson-silva/">OpenID authentication</a> provided by Nelson Silva.</p>
 
