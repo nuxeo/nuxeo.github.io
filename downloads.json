@@ -1,4 +1,18 @@
 [ { "data" : [ 
+        { "date" : "07-Aug-2013 16:04",
+          "description" : "",
+          "label" : "5.7.2 Release Notes.pdf",
+          "os" : "all",
+          "size" : "964K",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.2/5.7.2%20Release%20Notes.pdf"
+        },
+        { "date" : "07-Aug-2013 16:04",
+          "description" : "",
+          "label" : "5.7.2 Upgrade Notes.pdf",
+          "os" : "all",
+          "size" : "131K",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.2/5.7.2%20Upgrade%20Notes.pdf"
+        },
         { "date" : "03-Aug-2013 05:20",
           "description" : "",
           "label" : "nuxeo-5.7.2-setup.exe",
