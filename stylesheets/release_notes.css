@@ -134,7 +134,7 @@ p.backbutton a:active {
 } */
 
 #welcome ul {
-  list-style: none inside disc;
+  list-style: disc outside;
   margin:1em 3em;
 }
 
