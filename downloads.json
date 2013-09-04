@@ -55,7 +55,8 @@
         }
       ],
     "date" : "2013-08-03",
-    "name" : "5.7.2"
+    "name" : "5.7.2",
+    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.7.2"
   },
   { "data" : [ { "date" : "19-Jun-2013 17:09",
           "description" : "",
@@ -113,7 +114,8 @@
         }
       ],
     "date" : "2013-06-18",
-    "name" : "5.7.1"
+    "name" : "5.7.1",
+    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.7.1"
   },
   { "data" : [ { "date" : "11-Sep-2012 16:23",
           "description" : "",
@@ -187,7 +189,8 @@
         }
       ],
     "date" : "2012-09-05",
-    "name" : "5.6"
+    "name" : "5.6",
+    "htmlReleaseNotes" : "http://cdn.nuxeo.com/nuxeo-5.6/5.6%20Release%20Notes.pdf"
   },
   { "data" : [ { "date" : "15-Dec-2011 16:09",
           "description" : "",

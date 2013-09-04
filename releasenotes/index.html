@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo Rekease Notes</title>
+	<meta name="description" content="Nuxeo release notes index">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../stylesheets/base.css">
+	<link rel="stylesheet" href="../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../stylesheets/layout.css">
+	<link rel="stylesheet" href="../stylesheets/release_notes.css">
+
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+</style>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+
+  <div id="mainContainer" class="container">
+  <p class="remove-bottom" id="site-title" style="margin-top: 40px">nuxeo<span class="separator">/</span><span class="nxsexion">Release Notes Index</span></p>
+
+    <div id="welcome">
+    <div style="clear:both;"></div>
+  </div>
+
+</div>
+
+
+	<!-- JS
+	================================================== -->
+    <script src="../javascripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
+    <script src="../javascripts/strftime.js"></script>
+    <script src="../javascripts/tabs.js"></script>
+
+
+    
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+        var alreadyloading = false;
+
+        var $mainContainer = $("#welcome");
+
+        var count = 0;
+        var LTScount = 0;
+        var FTcount = 0;
+
+        var identifier = window.location.hash;
+
+        function fillTab(title, date, htmlReleaseNotes) {
+            $versionContainer = $("<div>");
+            $mainContainer.append($versionContainer);
+            $titleContainer = $("<div>").attr("class","sixteen columns version").appendTo($versionContainer);
+            appendTitle($titleContainer, title, date);
+            tr = addDownloadLink(htmlReleaseNotes, $titleContainer);
+            if (identifier == "#"+title) {
+               $('html,body').animate({scrollTop: $(identifier.replace(/(:|\.)/g,'\\$1')).offset().top},'fast');
+            }
+        }
+
+        function appendTitle(target, title, date) {
+           target.append($("<h2>").attr("id",title).text("Nuxeo Platform " + title));
+           if (LTScount == 1) {
+             target.append($("<span class='date current'>").text("Latest LTS!"));
+             LTScount = LTScount + 1;
+           } else if (FTcount == 1) {
+             target.append($("<span class='date current'>").text("Latest Fast Track!"));
+             FTcount = FTcount + 1;
+           } else {
+             target.append($("<span class='date'>").text(date));
+           }
+        }
+
+        function addDownloadLink(htmlReleaseNotes, tabId) {
+            $tbody = tabId;
+            $linkTd = $("<span>");
+            var $dowloadLink = $("<a>").attr("href", htmlReleaseNotes);
+            $dowloadLink.append($("<span>").text("Release Notes"));
+            $linkTd.append($dowloadLink);
+            $linkTd.appendTo($tbody);
+            return $linkTd;
+       }
+
+       function jq(myid) { 
+         return '#' + myid.replace(/(:|\.)/g,'\\$1');
+       }
+
+       function addTab(data) {
+         version = data[count];
+         if (version.name.length == 3) {
+           LTScount = LTScount + 1;
+         } else {
+           FTcount = FTcount + 1;
+         }
+         if (version.htmlReleaseNotes) {
+           fillTab(version.name, version.date, version.htmlReleaseNotes);
+           count = count + 1;
+         }
+       }
+       $.getJSON("../downloads.json", function(data) {
+         $.each(data, function () {
+           addTab(data);
+         });
+       });
+
+
+});
+</script>
+
+</body></html>
+
