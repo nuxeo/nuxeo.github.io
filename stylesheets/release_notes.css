@@ -168,6 +168,27 @@ a:hover, a:focus {
   border-top:3px solid #d3e0eb;
 }
 
+/* Index page */
+
+.index {
+  padding-bottom: 0.5em;
+}
+
+.index h2 {
+  line-height: 30px;
+  }
+
+.message.index {
+  padding:2em;
+  background-color: #f9f5e2;
+}
+
+.message.index h2 {
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+}
+
+
 .container {
   margin-bottom: 3em;
   width:50%;
