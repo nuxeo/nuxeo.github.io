@@ -77,9 +77,8 @@
 
         function fillTab(title, date, htmlReleaseNotes) {
             $versionContainer = $("<div class='index'>");
-
             if (count == 0) {
-              $versionContainer.attr("class","index yellow")
+              $versionContainer.attr("class","index message")
             }
             $mainContainer.append($versionContainer);
             appendTitle($versionContainer, title, date);
