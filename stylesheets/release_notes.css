@@ -171,12 +171,23 @@ a:hover, a:focus {
 /* Index page */
 
 .index {
-  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
 }
 
 .index h2 {
   line-height: 30px;
   }
+  
+.index .date {
+  color:#666;
+  padding-right:0.5em;
+}  
+
+.index span a {
+  background: url(../images/document.png) transparent top left no-repeat;
+  padding-left:22px;
+}
 
 .message.index {
   padding:2em;
