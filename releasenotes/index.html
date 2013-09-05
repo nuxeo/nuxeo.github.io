@@ -106,7 +106,7 @@
             $tbody = tabId;
             $linkTd = $("<span>");
             var $dowloadLink = $("<a>").attr("href", htmlReleaseNotes);
-            $dowloadLink.append($("<span>").text("Release Notes"));
+            $dowloadLink.text("Release Notes");
             $linkTd.append($dowloadLink);
             $linkTd.appendTo($tbody);
             return $linkTd;
