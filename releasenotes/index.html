@@ -28,6 +28,8 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
+    <script src="../javascripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 
 <style>
@@ -55,8 +57,6 @@
 
 	<!-- JS
 	================================================== -->
-    <script src="../javascripts/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
     <script src="../javascripts/strftime.js"></script>
     <script src="../javascripts/tabs.js"></script>
 
@@ -76,11 +76,14 @@
         var identifier = window.location.hash;
 
         function fillTab(title, date, htmlReleaseNotes) {
-            $versionContainer = $("<div>");
+            $versionContainer = $("<div class='index'>");
+
+            if (count == 0) {
+              $versionContainer.attr("class","index yellow")
+            }
             $mainContainer.append($versionContainer);
-            $titleContainer = $("<div>").attr("class","sixteen columns version").appendTo($versionContainer);
-            appendTitle($titleContainer, title, date);
-            tr = addDownloadLink(htmlReleaseNotes, $titleContainer);
+            appendTitle($versionContainer, title, date);
+            tr = addDownloadLink(htmlReleaseNotes, $versionContainer);
             if (identifier == "#"+title) {
                $('html,body').animate({scrollTop: $(identifier.replace(/(:|\.)/g,'\\$1')).offset().top},'fast');
             }
