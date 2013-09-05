@@ -180,13 +180,13 @@ a:hover, a:focus {
   }
   
 .index .date {
-  color:#666;
+  color:#757575;
   padding-right:0.5em;
 }  
 
 .index span a {
   background: url(../images/document.png) transparent top left no-repeat;
-  padding-left:22px;
+  padding-left:20px;
 }
 
 .message.index {
