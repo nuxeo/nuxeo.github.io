@@ -57,6 +57,152 @@
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
 
+<h2><a name="anchor-0"></a>API</h2>
+<p>This is the makor improvement of the 5.7.3 release. Nuxeo <a href="http://doc.nuxeo.com/x/WIvZ">REST API</a> is available on a Nuxeo Server at the following URL : http://localhost:8080/nuxeo/api/</p>
+<p>Here's the list of endpoints available at the moment:</p>
+<ul>
+<li>Documents (/nuxeo/api/id/{docId}): to do CRUD on documents (including paginated search)</li>
+<li>Users (/nuxeo/api/user/{userId}): to do CRUD on users</li>
+<li>Groups (/nuxeo/api/group/{groupId}): to do CRUD on groups</li>
+<li>Directories (/nuxeo/api/directory/{directoryId}):  to do CRUD on directories</li>
+<li>Automation (/nuxeo/api/automation/{Operation id}): to call a "command", i.e. an operation or chain of operations deployed on the server. This is the main way of exposing the platform services remotely</li>
+</ul>
+
+<p>You can also use several adapters:</p>
+<p>@audit adapter</p>
+
+
+<p>Blob Batch Upload</p>
+<p>use operation on blob POST - /api/id/{docId}/@blob/{xpath}/@op/{operationId} - to inject a document blob as operation input</p>
+<p>Make returned context pluggable via an URL pattern on REST API</p>
+
+<h2><a name="anchor-1"></a>Automation</h2>
+<h3>Trace</h3> 
+<p>You can now enable <a href="http://doc.nuxeo.com/x/FwDk##AutomationException-AutomationTracing">tracing</a> of Content Automation call. Automation chains and operations calls information is collected and logged during their execution by the Automation Trace feature.</p>
+<h3>Error management</h3> 
+<p>Automation <a href="http://doc.nuxeo.com/x/FwDk#AutomationException-AutomationChainException">exception chain</a> can be added to be executed when an error occurs during an Automation execution. After contributing your custom chains, you can declare your exception chains:</p>
+
+<div class="embededCode"><pre>
+&lt;extension point="chainException"
+             target="org.nuxeo.ecm.core.operation.OperationServiceComponent"&gt;
+  
+    &lt;catchChain id="catchChainA" onChainId="contributedchain"&gt;
+      &lt;run chainId="chainExceptionA" priority="0" rollBack="true" filterId="filterA"/&gt;
+      &lt;run chainId="chainExceptionA" priority="0" rollBack="false" filterId="filterA"/&gt;
+      &lt;run chainId="chainExceptionB" priority="10" rollBack="true" filterId="filterB"/&gt;
+    &lt;/catchChain&gt;
+  
+    &lt;catchChain id="catchChainB" onChainId="anothercontributedchain"&gt;
+      &lt;run chainId="chainExceptionA" rollBack="false"/&gt;
+    &lt;/catchChain&gt;
+  
+&lt;/extension&gt;
+</pre></div>
+
+<h3>New Description Parameter for Operation</h3>
+<p>When you write a new operation, you can add a description to your declared parameters. This comes in handy for the API documentation and Nuxeo Studio.</p>
+
+<h3>New operations</h3>
+
+<h2><a name="anchor-2"></a>UI/UX Framework</h2>
+
+
+<h3>Runtime Service Seam Injection</h3>
+<p>You can now inject Nuxeo runtime services directly in a Seam bean. Where you use to call <em>Framework.getLocalService(SchemaManager.class)</em> in a method, you can simply inject the service.</p>
+<div class="embededCode"><pre>
+    @In
+    SchemaManager theSchemaManagerService;
+</pre></div>
+
+<h3>Action/widgets</h3>
+<p>standard JSF EL in actions https://jira.nuxeo.com/browse/NXP-10566</p>
+
+
+
+
+<h2><a name="anchor-3"></a>Miscellaneous</h2>
+
+<h3>Simple Computed group</h3>
+
+<p>Idea is to simplify the Computed Group manage by a simple contribution here is 2 examples. The first one will create a virtual <em>group grade_companyValue</em> where companyValue is the company value for the user. The second one will create a creator_documentId for each document where the user is the creator.</p>
+<div class="embededCode"><pre>
+  &lt;extension point="computer" target="org.nuxeo.ecm.platform.computedgroups.ComputedGroupsServiceImpl"&gt;
+    &lt;!-- userAttibute --&gt;
+    &lt;userMetadataGroupComputer xpath="company" groupPattern="grade_%s" name="grade_cg"/&gt;
+    &lt;!-- documentMetadata --&gt;
+    &lt;documentMetadataGroupComuter xpath="dc:title" whereClause="dc:creator = '%s'" groupPattern="creator_%s" name="creator_cg"/&gt;
+  &lt;/extension&gt;
+</pre></div>
+
+<h3>Nuxeo Drive</h3>
+<p>Drive improvements are mainly bug fixes. We now handle transparently server-side version restoration. We have switched from PySide to PyQt for the GUI. We've also worked on the error code return by the server. The user will receive a 403 if credentials are wrong and a 401 if he don't have sufficient permission on a document.</p>
+
+<h3>ScanImporter Enhancement</h3>
+<p>We're sitll improving the scan importer. One of the latest enhancement is the support of <a href="http://mvel.codehaus.org/">MVEL</a> in the XML mapping code. This will allow you to setup some business logic during import without writing cutom Java code. Here's an example:</p>
+
+<div class="embededCode"><pre>
+&lt;extension target="org.nuxeo.ecm.platform.importer.xml.parser.XMLImporterComponent"
+  point="documentMapping"&gt;
+
+  &lt;docConfig tagName="html"&gt;
+    &lt;docType&gt;Instruction&lt;/docType&gt;
+    &lt;parent&gt;&lt;![CDATA[ #{
+      nodes = xml.selectNodes('//meta[@name=\'RCDirection\']/@content');
+      String parent = nodes.get(0).getText();
+      return Fn.mkdir(root, '/', parent ,'StructureFolder');
+    }]]&gt;&lt;/parent&gt;
+    &lt;name&gt;&lt;![CDATA[ #{
+      String valueFound = xml.selectNodes("//meta[@name='RCIdentifiant']/@content")[0].getText();
+      String name = valueFound.replace(' ', '').replace('/', '-');
+      return name;
+    }]]&gt;&lt;/name&gt;
+    &lt;postCreationAutomationChain&gt;testBJA&lt;/postCreationAutomationChain&gt;
+  &lt;/docConfig&gt;
+
+&lt;/extension&gt;
+</pre></div>
+
+with the following xml fragment:
+<div class="embededCode"><pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta name="RCDirection" content="Dir1/Sec1.1" /&gt;
+    &lt;meta name="RCIdentifiant" content="DGAL/C98 - 8010" /&gt;
+  &lt;/head&gt;
+...
+</pre></div>
+
+Will be equivalent to this following code ():
+
+<div class="embededCode"><pre>
+// This computation is because the parent evaluation with the Fn.mkdir part.
+// This happends if the Dir1/Sec1.1 documents doesn't exist in root 
+// => see Fn.mkdir description above
+String path = root.pathAsString;
+DocumentModel doc = session.createDocumentModel(path, "Dir1", "StructureFolder");
+doc = session.createDocument(doc);
+
+path = doc.getPathAsString();
+doc = session.createDocumentModel(path, "Sec1.1", "StructureFolder");
+doc = session.createDocument(doc);
+
+// Here is because the document creation activation
+// Parent MVEL expression return the result of the mkdir
+path = doc.getPathAsString();
+// node selected into the xml is "DGAL/C98 - 8010"
+// MVEL expression remove space and replace slash by minus
+String name = "DGA-C98-8010";
+doc = session.createDocumentModel(path, name, "Instruction");
+</pre></div>
+
+<h3>NXQL</h3>
+<p>See the <a href="http://doc.nuxeo.com/x/uItH">NXQL Documentation</a> for the current state of NXQL.</p>
+
+<p><strong>ecm:isCheckedIn</strong>: 1 if the document is checked in and 0 if not (the opposite of DocumentModel.isCheckedOut()). This can only be compared to 1 or 0.</p>
+<p><strong>ecm:isVersion or ecm:isCheckedInVersion</strong>: 1 for versions and 0 for non-version (DocumentModel.isVersion()). This can only be compared to 1 or 0. (The name ecm:isVersion is available since Nuxeo 5.7.3)</p>
+<p><strong>ecm:versionVersionableId</strong>: the id of the versionable document of a version (the versionable document is the one from which the version was created).</p>
+<p><strong>ecm:isLatestVersion</strong>: 1 if this is the latest version of a document, 0 if not. This can only be compared to 1 or 0.</p>
+<p><strong>ecm:isLatestMajorVersion</strong>: 1 if this is the latest major version of a document, 0 if not. This can only be compared to 1 or 0.</p>
 
   </div>
 </div>
