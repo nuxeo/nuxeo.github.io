@@ -58,7 +58,8 @@
 
 
 <h2><a name="anchor-0"></a>API</h2>
-<p>This is the makor improvement of the 5.7.3 release. Nuxeo <a href="http://doc.nuxeo.com/x/WIvZ">REST API</a> is available on a Nuxeo Server at the following URL : http://localhost:8080/nuxeo/api/</p>
+<h3>New Endpoints</h3>
+<p>This is the major improvement of the 5.7.3 release. Nuxeo <a href="http://doc.nuxeo.com/x/WIvZ">REST API</a> is available on a Nuxeo Server at the following URL: http://localhost:8080/nuxeo/api/</p>
 <p>Here's the list of endpoints available at the moment:</p>
 <ul>
 <li>Documents (/nuxeo/api/id/{docId}): to do CRUD on documents (including paginated search)</li>
@@ -68,13 +69,16 @@
 <li>Automation (/nuxeo/api/automation/{Operation id}): to call a "command", i.e. an operation or chain of operations deployed on the server. This is the main way of exposing the platform services remotely</li>
 </ul>
 
-<p>You can also use several adapters:</p>
-<p>@audit adapter</p>
+<h3>New Adapters</h3>
+<p>You can also use several adapters for ACLs, blob, business objects, document children, operation, page provider, search etc... An adapter is a URL segment that starts with "@" and that transforms the input resource so as to return another resource. For example, using @blob will return the file of a document (the one store on the property given by the next URL segment), and chaining it to @op will call an operation (that takes in input a blob):</p>
 
+<div class="embededCode"><pre>
+/nuxeo/api/id/{docId}/@blob/file:content/@op/Blob.ToPDF
+</pre></div>
 
-<p>Blob Batch Upload</p>
-<p>use operation on blob POST - /api/id/{docId}/@blob/{xpath}/@op/{operationId} - to inject a document blob as operation input</p>
-<p>Make returned context pluggable via an URL pattern on REST API</p>
+<h3>Pluggable Context</h3>
+
+<p>Because it is sometimes useful to optimize the number of requests you send to the server, we provide a mechanism to request more information on the answer, simply by specifying the context you want in the request header. You can activate contributor simply by adding the right header on the request. Those contributors can also be activated using action filter.</p>
 
 <h2><a name="anchor-1"></a>Automation</h2>
 <h3>Trace</h3> 
@@ -83,7 +87,8 @@
 <p>Automation <a href="http://doc.nuxeo.com/x/FwDk#AutomationException-AutomationChainException">exception chain</a> can be added to be executed when an error occurs during an Automation execution. After contributing your custom chains, you can declare your exception chains:</p>
 
 <div class="embededCode"><pre>
-&lt;extension point="chainException"
+&lt;extension point="chainEx
+ception"
              target="org.nuxeo.ecm.core.operation.OperationServiceComponent"&gt;
   
     &lt;catchChain id="catchChainA" onChainId="contributedchain"&gt;
@@ -102,9 +107,18 @@
 <h3>New Description Parameter for Operation</h3>
 <p>When you write a new operation, you can add a description to your declared parameters. This comes in handy for the API documentation and Nuxeo Studio.</p>
 
-<h3>New operations</h3>
-
 <h2><a name="anchor-2"></a>UI/UX Framework</h2>
+
+<h3>Action Context</h3>
+
+<p>Until now, action filters were using JEXL for resolution instead of the engine used by JSF, and Seam components could be resolved in this context, but using a hack, hence only actions *starting with the seam component name* could be resolved correctly, for instance #{clipboardActions.canCopy}. Others were not resolved correctly, for instance #{!clipboardActions.canCopy}, #{empty clipboardActions.selectedDocuments}, #{clipboardActions.canCopy and clipboardActions.canPaste}, etc...</p>
+
+<p>Now the action context has been changed into an interface, and is responsible for evaluating expressions held by filters (instead of the filter itself) => by implementing this interface, <em>any kind of expression with any kind of variables</em> in context can be resolved using the filters/actions service API. Seam JSF EL are resolved in a native Seam/JSF context.</p>
+
+
+<h3>Action Widget Types</h3>
+
+<p>We've made a pluggable action types library. It means that now you can define your own action type and associated rendering. You can use it within new action widget types (like ToolBar actions, Form actions, Tabs actions etc...).</p>
 
 
 <h3>Runtime Service Seam Injection</h3>
@@ -114,15 +128,10 @@
     SchemaManager theSchemaManagerService;
 </pre></div>
 
-<h3>Action/widgets</h3>
-<p>standard JSF EL in actions https://jira.nuxeo.com/browse/NXP-10566</p>
-
-
-
 
 <h2><a name="anchor-3"></a>Miscellaneous</h2>
 
-<h3>Simple Computed group</h3>
+<h3>Simple Computed Group</h3>
 
 <p>Idea is to simplify the Computed Group manage by a simple contribution here is 2 examples. The first one will create a virtual <em>group grade_companyValue</em> where companyValue is the company value for the user. The second one will create a creator_documentId for each document where the user is the creator.</p>
 <div class="embededCode"><pre>
