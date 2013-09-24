@@ -364,6 +364,19 @@ blockquote, blockquote p {
   overflow-x:auto;
 }
 
+#site-title .version-number {
+  display:inline-block;
+  background: url(../images/empty-version-tag.png) transparent top left no-repeat;
+  color:white;
+  width:64px;
+  height:46px;
+  font-size:15px;
+  line-height: 39px;
+  text-align: center;
+  font-weight: bold;
+  font-size:22px;
+}
+
 }
 
 
@@ -404,6 +417,7 @@ p.backbutton a {
  display:block;
  height:auto;
 }
+
 
 
 }
