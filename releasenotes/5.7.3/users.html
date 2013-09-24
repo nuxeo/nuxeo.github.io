@@ -51,7 +51,7 @@
 
     <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
 
-  <p class="remove-bottom" id="site-title"><a href="./index.html"><img src="../../images/572g.png" alt="Nuxeo 5.7.3 Tag" /> Release Notes</a></p>
+  <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">5.7.3</span> Release Notes</a></p>
 
 
     <div id="welcome">
@@ -62,15 +62,15 @@
 
 <h2><a name="anchor-0"></a>UI/UX Improvements</h2>
 <h3>Select2 Integration</h3>
-<p>We have replaced the old selection/suggestion JSF widgets by <a href="http://ivaynberg.github.io/select2/index.html">select2</a> based widgets. Not only does it looks better but it's also easier to customize. You can easily setup a user suggestion widget that filter search query with a group parameter.</p>
+<p>We have replaced the old selection/suggestion JSF widgets by <a href="http://ivaynberg.github.io/select2/index.html">select2</a> based widgets. Not only does it look better but it's also easier to customize. You can easily setup a user suggestion widget that filter search query with a group parameter.</p>
 <p><img class="lightboxed" src="./select2Example.png"/></p>
 
 <h3>SessionTimeOut Feedback</h3>
-<p>Users see a 'session expired" message when their session expires.</p>
+<p>Users see a <em>'session expired'</em> message when their session expires.</p>
 <p><img class="lightboxed" src="./sessionTimeout.png"/></p>
 
 <h3>Form Submit Shield</h3>
-<p>This will protect the heavy handed crazy clicker to have errors because they have clicked on the same button fifty times in a two seconds. The user will receive a feedback message telling them the request is being processed. It's better for his mouse and the server.</p>
+<p>This will protect the heavy handed crazy clicker to have errors because they have clicked on the same button fifty times in two seconds. The user will receive a feedback message telling them the request is being processed. It's better for his mouse and the server. This is not activated by default, you need to set the <em>nuxeo.jsf.enableDoubleClickShield</em> property to true in <em>nuxeo.conf</em>.</p>
 
 <h3>Tag to Version</h3>
 <p>When a version of a document is created, the tags on the master document are copied to the new version.</p>
@@ -88,10 +88,10 @@
 <p><img class="lightboxed" src="./reassignement.png"/></p>
 
 <h3>MultiTask Workflow Node</h3>
-<p>We have introduced a new option that creates a different task for each assignee of the node.</p>
+<p>We have introduced a new option that creates a different task per assignee.</p>
 
 <h3>Workflow Graph Visualization</h3>
-<p>The show graph button will now show the graph as it has been created in Studio.</p>
+<p>The workflow graph can be visualized as it has been created in Studio.</p>
 <p><img class="lightboxed" src="./workflowGraph.png"/></p>
 
 
