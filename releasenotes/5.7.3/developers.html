@@ -66,11 +66,11 @@
 <li>Users (/nuxeo/api/user/{userId}): to do CRUD on users</li>
 <li>Groups (/nuxeo/api/group/{groupId}): to do CRUD on groups</li>
 <li>Directories (/nuxeo/api/directory/{directoryId}):  to do CRUD on directories</li>
-<li>Automation (/nuxeo/api/automation/{Operation id}): to call a "command", i.e. an operation or chain of operations deployed on the server. This is the main way of exposing the platform services remotely</li>
+<li>Automation (/nuxeo/api/automation/{Operation id}): to call a "command", i.e. an operation or operation chain deployed on the server</li>
 </ul>
 
 <h3>New Adapters</h3>
-<p>You can also use several adapters for ACLs, blob, business objects, document children, operation, page provider, search etc... An adapter is a URL segment that starts with "@" and that transforms the input resource so as to return another resource. For example, using @blob will return the file of a document (the one store on the property given by the next URL segment), and chaining it to @op will call an operation (that takes in input a blob):</p>
+<p>You can also use several adapters for ACLs, blob, business objects, document children, operation, page provider, search etc... An adapter is a URL segment that starts with "@" and that transforms the input resource so as to return another resource. For example, using <em>@blob</em> will return the file of a document (the one store on the property given by the next URL segment), and chaining it to <em>@op</em> will call an operation (that takes in input a blob):</p>
 
 <div class="embededCode"><pre>
 /nuxeo/api/id/{docId}/@blob/file:content/@op/Blob.ToPDF
@@ -82,7 +82,7 @@
 
 <h2><a name="anchor-1"></a>Automation</h2>
 <h3>Trace</h3> 
-<p>You can now enable <a href="http://doc.nuxeo.com/x/FwDk##AutomationException-AutomationTracing">tracing</a> of Content Automation call. Automation chains and operations calls information is collected and logged during their execution by the Automation Trace feature.</p>
+<p>You can now enable <a href="http://doc.nuxeo.com/x/FwDk##AutomationException-AutomationTracing">tracing</a> of Content Automation call. Operation chains and operations calls information are collected and logged during their execution by the Automation Trace feature.</p>
 <h3>Error management</h3> 
 <p>Automation <a href="http://doc.nuxeo.com/x/FwDk#AutomationException-AutomationChainException">exception chain</a> can be added to be executed when an error occurs during an Automation execution. After contributing your custom chains, you can declare your exception chains:</p>
 
