@@ -87,9 +87,8 @@
 <p>Automation <a href="http://doc.nuxeo.com/x/FwDk#AutomationException-AutomationChainException">exception chain</a> can be added to be executed when an error occurs during an Automation execution. After contributing your custom chains, you can declare your exception chains:</p>
 
 <div class="embededCode"><pre>
-&lt;extension point="chainEx
-ception"
-             target="org.nuxeo.ecm.core.operation.OperationServiceComponent"&gt;
+&lt;extension point="chainException"
+  target="org.nuxeo.ecm.core.operation.OperationServiceComponent"&gt;
   
     &lt;catchChain id="catchChainA" onChainId="contributedchain"&gt;
       &lt;run chainId="chainExceptionA" priority="0" rollBack="true" filterId="filterA"/&gt;
@@ -133,7 +132,7 @@ ception"
 
 <h3>Simple Computed Group</h3>
 
-<p>Idea is to simplify the Computed Group manage by a simple contribution here is 2 examples. The first one will create a virtual <em>group grade_companyValue</em> where companyValue is the company value for the user. The second one will create a creator_documentId for each document where the user is the creator.</p>
+<p>The idea is to simplify computed groups management by a simple contribution. Here are two examples. The first one will create a virtual group <em>grade_companyValue</em> where companyValue is the company value for the user. The second one will create a <em>creator_documentId</em> for each document where the user is the creator.</p>
 <div class="embededCode"><pre>
   &lt;extension point="computer" target="org.nuxeo.ecm.platform.computedgroups.ComputedGroupsServiceImpl"&gt;
     &lt;!-- userAttibute --&gt;
@@ -147,7 +146,7 @@ ception"
 <p>Drive improvements are mainly bug fixes. We now handle transparently server-side version restoration. We have switched from PySide to PyQt for the GUI. We've also worked on the error code return by the server. The user will receive a 403 if credentials are wrong and a 401 if he don't have sufficient permission on a document.</p>
 
 <h3>ScanImporter Enhancement</h3>
-<p>We're sitll improving the scan importer. One of the latest enhancement is the support of <a href="http://mvel.codehaus.org/">MVEL</a> in the XML mapping code. This will allow you to setup some business logic during import without writing cutom Java code. Here's an example:</p>
+<p>We're still improving the scan importer. One of the latest enhancement is the support of <a href="http://mvel.codehaus.org/">MVEL</a> in the XML mapping code. This will allow you to setup some business logic during import without writing cutom Java code. Here's an example:</p>
 
 <div class="embededCode"><pre>
 &lt;extension target="org.nuxeo.ecm.platform.importer.xml.parser.XMLImporterComponent"
@@ -171,7 +170,7 @@ ception"
 &lt;/extension&gt;
 </pre></div>
 
-with the following xml fragment:
+With the following xml fragment:
 <div class="embededCode"><pre>
 &lt;html&gt;
   &lt;head&gt;
@@ -181,7 +180,7 @@ with the following xml fragment:
 ...
 </pre></div>
 
-Will be equivalent to this following code ():
+Will be equivalent to the following code snippet:
 
 <div class="embededCode"><pre>
 // This computation is because the parent evaluation with the Fn.mkdir part.
