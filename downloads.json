@@ -1,4 +1,65 @@
 [ { "data" : [ 
+        { "date" : "25-Sep-2013 15:02",
+          "description" : "",
+          "label" : "5.7.3 Release Notes.pdf",
+          "os" : "all",
+          "size" : "1.3M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/5.7.3%20Release%20Notes.pdf"
+        },
+        { "date" : "25-Sep-2013 14:50",
+          "description" : "",
+          "label" : "5.7.3 Upgrade Notes.pdf",
+          "os" : "all",
+          "size" : "72K",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/5.7.3%20Upgrade%20Notes.pdf"
+        },
+        { "date" : "24-Sep-2013 11:30",
+          "description" : "",
+          "label" : "nuxeo-5.7.3-setup.exe",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-setup.exe.md5",
+          "os" : "win",
+          "size" : "216M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-setup.exe"
+        },
+        { "date" : "24-Sep-2013 01:06",
+          "description" : "",
+          "label" : "nuxeo-5.7.3-sources.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-sources.zip.md5",
+          "os" : "all",
+          "size" : "88M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-sources.zip"
+        },
+        { "date" : "24-Sep-2013 12:09",
+          "description" : "",
+          "label" : "nuxeo-5.7.3-vm.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-vm.zip.md5",
+          "os" : "all",
+          "size" : "676M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-vm.zip"
+        },
+        { "date" : "24-Sep-2013 11:11",
+          "description" : "",
+          "label" : "nuxeo-cap-5.7.3-tomcat-sdk.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat-sdk.zip.md5",
+          "os" : "all",
+          "size" : "299M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat-sdk.zip"
+        },
+        { "date" : "24-Sep-2013 11:10",
+          "description" : "",
+          "label" : "nuxeo-cap-5.7.3-tomcat.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat.zip.md5",
+          "os" : "all",
+          "size" : "167M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat.zip"
+        }
+      ],
+    "date" : "2013-09-24",
+    "name" : "5.7.3",
+    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.7.3/"
+  },
+
+ { "data" : [ 
         { "date" : "07-Aug-2013 16:04",
           "description" : "",
           "label" : "5.7.2 Release Notes.pdf",
