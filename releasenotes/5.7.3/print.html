@@ -33,6 +33,10 @@
 
 <style>
 #xnav-footer {margin-top:0px !important;}
+div.breakafter {
+  page-break-after: always;
+}
+
 </style>
 <script src="../../javascripts/jquery-1.7.1.min.js"></script>
 	<!-- Favicons
@@ -65,14 +69,16 @@
 <p>We also introduced new suggestion widgets on directories. They support n-level chained vocabularies out of the box.</p>
 <p>
 
+
+
 <h3>SessionTimeOut Feedback</h3>
 <p>Users see a <em>'session expired'</em> message when their session expires.</p>
 <p><img class="lightboxed" src="./sessionTimeout.png"/></p>
 
 
+<div class="breakafter"></div>
 <h3>Form Submit Shield</h3>
 <p>This will protect the heavy handed crazy clickers to have errors because they have clicked on the same button fifty times in two seconds. The user will receive a feedback message telling them the request is being processed. It's better for his mouse and the server. This is not activated by default, you need to set the <em>nuxeo.jsf.enableDoubleClickShield</em> property to true in <em>nuxeo.conf</em>.</p>
-
 <h3>Tag to Version</h3>
 <p>When a version of a document is created, the tags on the master document are copied to the new version.</p>
 
@@ -87,7 +93,7 @@
 <h3>Task Reassignement</h3>
 <p>Workflow tasks can now be reassigned to someone else.</p>
 <p><img class="lightboxed" src="./reassignement.png"/></p>
-
+<div class="breakafter"></div>
 <h3>MultiTask Workflow Node</h3>
 <p>We have introduced a new option that creates a different task per assignee.</p>
 
@@ -97,7 +103,9 @@
 
 
 
-     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+<div class="breakafter"></div>
+
+<h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
 
 <h2><a name="anchor-0"></a>API</h2>
@@ -126,6 +134,10 @@
 <h2><a name="anchor-1"></a>Automation</h2>
 <h3>Trace</h3> 
 <p>You can now enable <a href="http://doc.nuxeo.com/x/FwDk##AutomationException-AutomationTracing">tracing</a> of Content Automation call. Operation chains and operations calls information are collected and logged during their execution by the Automation Trace feature.</p>
+
+<div class="breakafter"></div>
+
+
 <h3>Error management</h3> 
 <p>Automation <a href="http://doc.nuxeo.com/x/FwDk#AutomationException-AutomationChainException">exception chain</a> can be added to be executed when an error occurs during an Automation execution. After contributing your custom chains, you can declare your exception chains:</p>
 
@@ -222,7 +234,8 @@ With the following xml fragment:
   &lt;/head&gt;
 ...
 </pre></div>
-
+<div class="breakafter"></div>
+<br />
 Will be equivalent to the following code snippet:
 
 <div class="embededCode"><pre>
@@ -256,6 +269,8 @@ doc = session.createDocumentModel(path, name, "Instruction");
 <p><strong>ecm:isLatestMajorVersion</strong>: 1 if this is the latest major version of a document, 0 if not. This can only be compared to 1 or 0.</p>
 
 
+
+<div class="breakafter"></div>
 
 <h1 style="margin-left:-0.5em !important;">For Administrators</h1>
 
