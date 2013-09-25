@@ -47,14 +47,240 @@
 <body>
 
   <div id="mainContainer" class="container">
-
-    <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
     
     <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">5.7.3</span> Release Notes</a></p>
 
     <div id="welcome">
 
+     <div style="clear:both;"></div>
 
+
+    <h1 style="margin-left:-0.5em !important;">For Users</h1>
+
+
+<h2><a name="anchor-0"></a>UI/UX Improvements</h2>
+<h3>Select2 Integration</h3>
+<p>We have replaced the old selection/suggestion JSF widgets by <a href="http://ivaynberg.github.io/select2/index.html">select2</a> based widgets. Not only does it look better but it's also easier to customize. You can easily setup a user suggestion widget that filter search query with a group parameter.</p>
+<p><img class="lightboxed" src="./select2Example.png"/></p>
+<p>We also introduced new suggestion widgets on directories. They support n-level chained vocabularies out of the box.</p>
+<p>
+
+<h3>SessionTimeOut Feedback</h3>
+<p>Users see a <em>'session expired'</em> message when their session expires.</p>
+<p><img class="lightboxed" src="./sessionTimeout.png"/></p>
+
+
+<h3>Form Submit Shield</h3>
+<p>This will protect the heavy handed crazy clickers to have errors because they have clicked on the same button fifty times in two seconds. The user will receive a feedback message telling them the request is being processed. It's better for his mouse and the server. This is not activated by default, you need to set the <em>nuxeo.jsf.enableDoubleClickShield</em> property to true in <em>nuxeo.conf</em>.</p>
+
+<h3>Tag to Version</h3>
+<p>When a version of a document is created, the tags on the master document are copied to the new version.</p>
+
+<h3>Redesigned Error Page</h3>
+<p>We have redesigned the legacy error page to have something cleaner, with a user-understandable error message.</p>
+<p><img class="lightboxed" src="./errorPage.png"/></p>
+
+<h2><a name="anchor-1"></a>Workflow</h2>
+<h3>New Workflow Tab</h3>
+<p>We have a new workflow tab that lets the user see all his assigned tasks at once and filter them.</p>
+
+<h3>Task Reassignement</h3>
+<p>Workflow tasks can now be reassigned to someone else.</p>
+<p><img class="lightboxed" src="./reassignement.png"/></p>
+
+<h3>MultiTask Workflow Node</h3>
+<p>We have introduced a new option that creates a different task per assignee.</p>
+
+<h3>Workflow Graph Visualization</h3>
+<p>The workflow graph can be visualized as it has been created in Studio.</p>
+<p><img class="lightboxed" src="./workflowGraph.png"/></p>
+
+
+
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+
+<h2><a name="anchor-0"></a>API</h2>
+<h3>New Endpoints</h3>
+<p>This is the major improvement of the 5.7.3 release. Nuxeo <a href="http://doc.nuxeo.com/x/WIvZ">REST API</a> is available on a Nuxeo Server at the following URL: http://localhost:8080/nuxeo/api/</p>
+<p>Here's the list of endpoints available at the moment:</p>
+<ul>
+<li>Documents (/nuxeo/api/id/{docId}): to do CRUD on documents (including paginated search)</li>
+<li>Users (/nuxeo/api/user/{userId}): to do CRUD on users</li>
+<li>Groups (/nuxeo/api/group/{groupId}): to do CRUD on groups</li>
+<li>Directories (/nuxeo/api/directory/{directoryId}):  to do CRUD on directories</li>
+<li>Automation (/nuxeo/api/automation/{Operation id}): to call a "command", i.e. an operation or operation chain deployed on the server</li>
+</ul>
+
+<h3>New Adapters</h3>
+<p>You can also use several adapters for ACLs, blob, business objects, document children, operation, page provider, search etc... An adapter is a URL segment that starts with "@" and that transforms the input resource so as to return another resource. For example, using <em>@blob</em> will return the file of a document (the one store on the property given by the next URL segment), and chaining it to <em>@op</em> will call an operation (that takes in input a blob):</p>
+
+<div class="embededCode"><pre>
+/nuxeo/api/id/{docId}/@blob/file:content/@op/Blob.ToPDF
+</pre></div>
+
+<h3>Pluggable Context</h3>
+
+<p>Because it is sometimes useful to optimize the number of requests you send to the server, we provide a mechanism to request more information on the answer, simply by specifying the context you want in the request header. You can activate contributor simply by adding the right header on the request. Those contributors can also be activated using action filter.</p>
+
+<h2><a name="anchor-1"></a>Automation</h2>
+<h3>Trace</h3> 
+<p>You can now enable <a href="http://doc.nuxeo.com/x/FwDk##AutomationException-AutomationTracing">tracing</a> of Content Automation call. Operation chains and operations calls information are collected and logged during their execution by the Automation Trace feature.</p>
+<h3>Error management</h3> 
+<p>Automation <a href="http://doc.nuxeo.com/x/FwDk#AutomationException-AutomationChainException">exception chain</a> can be added to be executed when an error occurs during an Automation execution. After contributing your custom chains, you can declare your exception chains:</p>
+
+<div class="embededCode"><pre>
+&lt;extension point="chainException"
+  target="org.nuxeo.ecm.core.operation.OperationServiceComponent"&gt;
+  
+    &lt;catchChain id="catchChainA" onChainId="contributedchain"&gt;
+      &lt;run chainId="chainExceptionA" priority="0" rollBack="true" filterId="filterA"/&gt;
+      &lt;run chainId="chainExceptionA" priority="0" rollBack="false" filterId="filterA"/&gt;
+      &lt;run chainId="chainExceptionB" priority="10" rollBack="true" filterId="filterB"/&gt;
+    &lt;/catchChain&gt;
+  
+    &lt;catchChain id="catchChainB" onChainId="anothercontributedchain"&gt;
+      &lt;run chainId="chainExceptionA" rollBack="false"/&gt;
+    &lt;/catchChain&gt;
+  
+&lt;/extension&gt;
+</pre></div>
+
+<h3>New Description Parameter for Operation</h3>
+<p>When you write a new operation, you can add a description to your declared parameters. This comes in handy for the API documentation and Nuxeo Studio.</p>
+
+<h2><a name="anchor-2"></a>UI/UX Framework</h2>
+
+<h3>Action Context</h3>
+
+<p>Until now, action filters were using JEXL for resolution instead of the engine used by JSF, and Seam components could be resolved in this context, but using a hack, hence only actions *starting with the seam component name* could be resolved correctly, for instance #{clipboardActions.canCopy}. Others were not resolved correctly, for instance #{!clipboardActions.canCopy}, #{empty clipboardActions.selectedDocuments}, #{clipboardActions.canCopy and clipboardActions.canPaste}, etc...</p>
+
+<p>Now the action context has been changed into an interface, and is responsible for evaluating expressions held by filters (instead of the filter itself) => by implementing this interface, <em>any kind of expression with any kind of variables</em> in context can be resolved using the filters/actions service API. Seam JSF EL are resolved in a native Seam/JSF context.</p>
+
+
+<h3>Action Widget Types</h3>
+
+<p>We've made a pluggable action types library. It means that now you can define your own action type and associated rendering. You can use it within new action widget types (like ToolBar actions, Form actions, Tabs actions etc...).</p>
+
+
+<h3>Runtime Service Seam Injection</h3>
+<p>You can now inject Nuxeo runtime services directly in a Seam bean. Where you use to call <em>Framework.getLocalService(SchemaManager.class)</em> in a method, you can simply inject the service.</p>
+<div class="embededCode"><pre>
+    @In
+    SchemaManager theSchemaManagerService;
+</pre></div>
+
+
+<h2><a name="anchor-3"></a>Miscellaneous</h2>
+
+<h3>Simple Computed Group</h3>
+
+<p>The idea is to simplify computed groups management by a simple contribution. Here are two examples. The first one will create a virtual group <em>grade_companyValue</em> where companyValue is the company value for the user. The second one will create a <em>creator_documentId</em> for each document where the user is the creator.</p>
+<div class="embededCode"><pre>
+  &lt;extension point="computer" target="org.nuxeo.ecm.platform.computedgroups.ComputedGroupsServiceImpl"&gt;
+    &lt;!-- userAttibute --&gt;
+    &lt;userMetadataGroupComputer xpath="company" groupPattern="grade_%s" name="grade_cg"/&gt;
+    &lt;!-- documentMetadata --&gt;
+    &lt;documentMetadataGroupComuter xpath="dc:title" whereClause="dc:creator = '%s'" groupPattern="creator_%s" name="creator_cg"/&gt;
+  &lt;/extension&gt;
+</pre></div>
+
+<h3>Nuxeo Drive</h3>
+<p>Drive improvements are mainly bug fixes. We now handle transparently server-side version restoration. We have switched from PySide to PyQt for the GUI. We've also worked on the error code return by the server. The user will receive a 403 if credentials are wrong and a 401 if he don't have sufficient permission on a document.</p>
+
+<h3>ScanImporter Enhancement</h3>
+<p>We're still improving the scan importer. One of the latest enhancement is the support of <a href="http://mvel.codehaus.org/">MVEL</a> in the XML mapping code. This will allow you to setup some business logic during import without writing cutom Java code. Here's an example:</p>
+
+<div class="embededCode"><pre>
+&lt;extension target="org.nuxeo.ecm.platform.importer.xml.parser.XMLImporterComponent"
+  point="documentMapping"&gt;
+
+  &lt;docConfig tagName="html"&gt;
+    &lt;docType&gt;Instruction&lt;/docType&gt;
+    &lt;parent&gt;&lt;![CDATA[ #{
+      nodes = xml.selectNodes('//meta[@name=\'RCDirection\']/@content');
+      String parent = nodes.get(0).getText();
+      return Fn.mkdir(root, '/', parent ,'StructureFolder');
+    }]]&gt;&lt;/parent&gt;
+    &lt;name&gt;&lt;![CDATA[ #{
+      String valueFound = xml.selectNodes("//meta[@name='RCIdentifiant']/@content")[0].getText();
+      String name = valueFound.replace(' ', '').replace('/', '-');
+      return name;
+    }]]&gt;&lt;/name&gt;
+    &lt;postCreationAutomationChain&gt;testBJA&lt;/postCreationAutomationChain&gt;
+  &lt;/docConfig&gt;
+
+&lt;/extension&gt;
+</pre></div>
+
+With the following xml fragment:
+<div class="embededCode"><pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta name="RCDirection" content="Dir1/Sec1.1" /&gt;
+    &lt;meta name="RCIdentifiant" content="DGAL/C98 - 8010" /&gt;
+  &lt;/head&gt;
+...
+</pre></div>
+
+Will be equivalent to the following code snippet:
+
+<div class="embededCode"><pre>
+// This computation is because the parent evaluation with the Fn.mkdir part.
+// This happends if the Dir1/Sec1.1 documents doesn't exist in root 
+// => see Fn.mkdir description above
+String path = root.pathAsString;
+DocumentModel doc = session.createDocumentModel(path, "Dir1", "StructureFolder");
+doc = session.createDocument(doc);
+
+path = doc.getPathAsString();
+doc = session.createDocumentModel(path, "Sec1.1", "StructureFolder");
+doc = session.createDocument(doc);
+
+// Here is because the document creation activation
+// Parent MVEL expression return the result of the mkdir
+path = doc.getPathAsString();
+// node selected into the xml is "DGAL/C98 - 8010"
+// MVEL expression remove space and replace slash by minus
+String name = "DGA-C98-8010";
+doc = session.createDocumentModel(path, name, "Instruction");
+</pre></div>
+
+<h3>NXQL</h3>
+<p>See the <a href="http://doc.nuxeo.com/x/uItH">NXQL Documentation</a> for the current state of NXQL.</p>
+
+<p><strong>ecm:isCheckedIn</strong>: 1 if the document is checked in and 0 if not (the opposite of DocumentModel.isCheckedOut()). This can only be compared to 1 or 0.</p>
+<p><strong>ecm:isVersion or ecm:isCheckedInVersion</strong>: 1 for versions and 0 for non-version (DocumentModel.isVersion()). This can only be compared to 1 or 0. (The name ecm:isVersion is available since Nuxeo 5.7.3)</p>
+<p><strong>ecm:versionVersionableId</strong>: the id of the versionable document of a version (the versionable document is the one from which the version was created).</p>
+<p><strong>ecm:isLatestVersion</strong>: 1 if this is the latest version of a document, 0 if not. This can only be compared to 1 or 0.</p>
+<p><strong>ecm:isLatestMajorVersion</strong>: 1 if this is the latest major version of a document, 0 if not. This can only be compared to 1 or 0.</p>
+
+
+
+<h1 style="margin-left:-0.5em !important;">For Administrators</h1>
+
+<h2><a name="anchor-0">Nuxeo.conf New Parameters</a></h2>
+<p>We've added Automation Tracing. Automation chains and operations calls information is collected during their execution by the Automation Trace feature. This Automation trace mode can be enabled through the nuxeo.conf file properties:</p>
+
+<table class="release">
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+  <tr><td class="parameter">org.nuxeo.automation.trace</td><td>false</td>
+
+<td>Since Nuxeo 5.7.3, you can enable this mode if you'd like to display automation traces during runtime:
+<ul>
+    <li>You'll benefit from exhaustive logs to debug all automation chain and/or operation execution.</li>
+    <li>The automation trace mode is disabled by default (not suitable for production).</li>
+    <li>It can be activated through JMX via org.nuxeo:TracerFactory MBean during runtime.</li></ul>
+</td></tr>
+  <tr><td class="parameter">org.nuxeo.automation.trace.printable</td><td>*</td><td>Since Nuxeo 5.7.3, by default, all automation executions are 'printable' (appear in logs) when automation trace mode is on.
+
+<ul>
+    <li>You can filter chain and/or operation execution trace printing by setting this property to chain name and/or operation separated by comma.</li>
+    <li>Comment this property to get all automation chains/operations back in printing (by default set to * (star)</li></ul></td></tr>
+  <tr><td class="parameter">nuxeo.jsf.enableDoubleClickShield</td><td>false (unset) </td><td>Enable a shield on forms to prevent users from submitting twice the same form (accidental double-click)</td></tr>
+</table>
     </div>
 
 </div>
