@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo 5.7.3 to 5.8 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo on Github">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../../stylesheets/base.css">
+	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../../stylesheets/layout.css">
+	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+
+  <div id="mainContainer" class="container">
+  <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
+  <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">5.7.3 to 5.8</span> Release Notes</a></p>
+
+    <div id="welcome">
+
+    <div style="clear:both;"></div>
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+<h2><a name="anchor-0"></a>Automation</h2>
+
+<p>We've added new operations to enable/disable automation trace and to get the trace for a given chain/operation or the trace of the latest error.</p>
+
+<h3>Traces.Get</h3>
+<p><strong>Category:</strong> Execution Context</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Traces.Get">Traces.Get</a></p>
+<p>Retrieve trace associated to a Chain or an Operation.</p>
+
+<h3>Traces.ToggleRecording</h3>
+<p><strong>Category:</strong> Execution Context</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Traces.ToggleRecording">Traces.ToggleRecording</a></p>
+<p>Toggle Automation call tracing (you can set the 'enableTrace' parameter if you want to explicitly set the traceEnable value.</p>
+
+<p>We've added new operations to easily add or remove permissions on one or many documents.</p>
+
+<h3>Remove Permission</h3>
+<p><strong>Category:</strong> Document</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Document.RemovePermission">Document.RemovePermission</a></p>
+<p>Remove permissions for a given user on the input document(s). Returns the document(s).</p>
+
+<h3>Add Permission</h3>
+<p><strong>Category:</strong> Document</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Document.AddPermission">Document.AddPermission</a></p>
+<p>Add Permission on the input document(s). Returns the document(s).</p>
+
+<p>We've added an operation concatenate several PDFs together.</p>
+
+<h3>Concatenate PDFs</h3>
+<p><strong>Category:</strong> Conversion</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.ConcatenatePDFs">Blob.ConcatenatePDFs</a></p>
+<p>Given a File document holding a PDF on the file:content property and 2 PDFSs on the files:files property, the following operation will provide a PDF that is the result of the merge of all the PDFs, with the content of the one in file:content property first.</p>
+
+<h2><a name="anchor-1"></a>API</h2>
+
+<p>The document oriented REST API has been move into a separate package to ease maintenance and upgrades.</p>
+<p>We released an <a href="https://github.com/nuxeo/nuxeo-angular-sample">AngularJS sample application</a> to showcase the API.</p>
+<p>We've added pagination support for user and group endpoints.</p>
+<p>We've added support for different version of the API:</p>
+<div class="embededCode"><pre>
+  /api/v1/id/{docId}...
+</pre></div>
+<p>Using the version segment is mandatory. The version is used mostly for giving guarantees to the API user that the JSON entities won't change when migrating to newer version of Nuxeo.</p>
+
+<h2><a name="anchor-2"></a>Redis</h2>
+
+<p>Several components in Nuxeo will make use of Redis as an optional feature. To configure Redis, the following extension point can be used:</p>
+
+<div class="embededCode"><pre>
+
+  &lt;extension target="org.nuxeo.ecm.core.redis.RedisService" point="configuration"&gt;
+    &lt;redis disabled="false"&gt;
+      &lt;prefix&gt;nuxeo:work:&lt;/prefix&gt;
+      &lt;host&gt;localhost&lt;/host&gt;
+      &lt;port&gt;6379&lt;/port&gt;
+      &lt;password&gt;secret&lt;/password&gt;
+      &lt;database&gt;0&lt;/database&gt;
+      &lt;timeout&gt;2000&lt;/timeout&gt;
+    &lt;/redis&gt;
+  &lt;/extension&gt;
+
+</pre></div>
+
+<h3>Redis Service</h3>
+<p>To use the Redis service, do:</p>
+<div class="embededCode"><pre>
+        RedisService redisService = Framework.getLocalService(RedisService.class);
+</pre></div>
+
+<p>This service currently provides two methods:</p>
+
+
+<div class="embededCode"><pre>
+    redisService.getJedisPool();
+    redisService.getPrefix(); // should be used as prefix for any key
+</pre></div>
+
+<p>Standard usage pattern is:</p>
+
+<div class="embededCode"><pre>
+    protected Jedis getJedis() {
+        return redisService.getJedisPool().getResource();
+    }
+
+    protected void closeJedis(Jedis jedis) {
+        redisService.getJedisPool().returnResource(jedis);
+    }
+
+    protected void myMethod() throws IOException {
+        Jedis jedis = getJedis();
+        try {
+            // ... use jedis here ...
+            // ... all keys should be prefixed with redisService.getPrefix()
+        } finally {
+            closeJedis(jedis);
+        }
+    } 
+</pre></div>
+
+<h3>Redis WorkManager</h3>
+
+<p>We added a Redis based WorkManager. This is helpful for:</p>
+<ul>
+    <li>High-Activity work queueing, to avoid saturating memory or blocking,</li>
+    <li>Queue persistence, to avoid lost jobs on shutdown,</li>
+    <li>New feature: node-aware job execution.</li>
+</ul>
+
+<h2><a name="anchor-3"></a>PDF Signing</h2>
+<p>Now you can apply more than one signature to a PDF and configure the position of the signatures following a predefined matrix. Here's a sample contribution:</p>
+
+<div class="embededCode"><pre>
+  &lt;extension target="org.nuxeo.ecm.platform.signature.api.sign.SignatureService"
+    point="signature"&gt;
+    &lt;configuration&gt;
+      &lt;reason&gt;This document signed as an example.
+      &lt;/reason&gt;
+      &lt;layout lines="2" columns="5" startLine="2" startColumn="1" textSize="10"/&gt;
+    &lt;/configuration&gt;
+  &lt;/extension&gt;
+
+</pre></div>
+
+
+
+<h2><a name="anchor-4"></a>UI/UX</h2>
+
+<h3>Layout/Widgets</h3>
+
+<p>Allow defining several action categories to render on action widgets</p>
+
+<p>The select2 widgets code needs to be reviewed to:</p>
+<ul>
+    <li>handled hardcoded values that are actually configurable on the UserManager</li>
+    <li>fix or check CSV and PDF modes</li>
+    <li>make sure widget properties are resolved (currently if they're EL expressions, they will not be resolved</li>
+</ul>
+
+<p>Change Header into layout</p>
+<p>Update action templates to use generic actions by type</p>
+<p>Add fullscreen mode to richtext widget</p>
+
+
+
+<h3>Seam Concurrency</h3>
+<p>As a user of DM, I no more have "ConcurrencyException" errors when clicking twice in a row on an action</p>
+
+<p>Add access key navigation with actions</p>
+<p>Ajax tabs</p>
+<p>Do not shrink JavaScript files when Dev mode is set</p>
+
+
+<h2><a name="anchor-5"></a>Mockito Integration</h2>
+<p>We've added Mockito support to our test framework. Here's an example:</p>
+
+<div class="embededCode"><pre>
+@RunWith(FeaturesRunner.class)
+@Features(RuntimeFeature.class)
+public class CanMockServicesTest {
+
+    @RuntimeService
+    @Mock
+    AFakeService myService;
+
+    @Before
+    public void doBefore() {
+        when(myService.getSomething()).thenReturn("Hello !");
+    }
+
+    @Test
+    public void itShouldBindMocktoAService() throws Exception {
+        AFakeService service = Framework.getService(AFakeService.class);
+        assertNotNull(service);
+        assertEquals("Hello !", service.getSomething());
+    }
+    ...
+}
+</pre></div>
+
+
+  </div>
+</div>
+
+
+	<!-- JS
+	================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+    <script src="../../javascripts/float_menu.js"></script>
+    <script src="../../javascripts/lightbox.js"></script>
+
+</body></html>
+
