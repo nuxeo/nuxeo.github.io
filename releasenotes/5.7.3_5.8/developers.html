@@ -58,40 +58,25 @@
 
 <h2><a name="anchor-0"></a>Automation</h2>
 
-<p>We've added new operations to enable/disable automation trace and to get the trace for a given chain/operation or the trace of the latest error.</p>
-
-<h3>Traces.Get</h3>
-<p><strong>Category:</strong> Execution Context</p>
-<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Traces.Get">Traces.Get</a></p>
+<p>We have added new operations:</p>
+<h3>Traces.Get - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Traces.Get">Traces.Get</a></h3>
 <p>Retrieve trace associated to a Chain or an Operation.</p>
 
-<h3>Traces.ToggleRecording</h3>
-<p><strong>Category:</strong> Execution Context</p>
-<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Traces.ToggleRecording">Traces.ToggleRecording</a></p>
+<h3>Traces.ToggleRecording - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Traces.ToggleRecording">Traces.ToggleRecording</a></h3>
 <p>Toggle Automation call tracing (you can set the 'enableTrace' parameter if you want to explicitly set the traceEnable value.</p>
 
-<p>We've added new operations to easily add or remove permissions on one or many documents.</p>
-
-<h3>Remove Permission</h3>
-<p><strong>Category:</strong> Document</p>
-<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Document.RemovePermission">Document.RemovePermission</a></p>
+<h3>Remove Permission - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Document.RemovePermission">Document.RemovePermission</a></h3>
 <p>Remove permissions for a given user on the input document(s). Returns the document(s).</p>
 
-<h3>Add Permission</h3>
-<p><strong>Category:</strong> Document</p>
-<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Document.AddPermission">Document.AddPermission</a></p>
+<h3>Add Permission - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Document.AddPermission">Document.AddPermission</a></h3>
 <p>Add Permission on the input document(s). Returns the document(s).</p>
 
-<p>We've added an operation concatenate several PDFs together.</p>
-
-<h3>Concatenate PDFs</h3>
-<p><strong>Category:</strong> Conversion</p>
-<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.ConcatenatePDFs">Blob.ConcatenatePDFs</a></p>
-<p>Given a File document holding a PDF on the file:content property and 2 PDFSs on the files:files property, the following operation will provide a PDF that is the result of the merge of all the PDFs, with the content of the one in file:content property first.</p>
+<h3>Concatenate PDFs - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.ConcatenatePDFs">Blob.ConcatenatePDFs</a></h3>
+<p>Given a File document holding a PDF on the file:content property and 2 PDFs on the files:files property, the following operation will provide a PDF that is the result of the merge of all the PDFs, with the content of the one in file:content property first.</p>
 
 <h2><a name="anchor-1"></a>API</h2>
 
-<p>The document oriented REST API has been move into a separate package to ease maintenance and upgrades.</p>
+<p>The document oriented REST API has been moved into a separate package to ease maintenance and upgrades.</p>
 <p>We released an <a href="https://github.com/nuxeo/nuxeo-angular-sample">AngularJS sample application</a> to showcase the API.</p>
 <p>We've added pagination support for user and group endpoints.</p>
 <p>We've added support for different version of the API:</p>
