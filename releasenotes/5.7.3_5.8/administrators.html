@@ -68,8 +68,8 @@ td.parameter {width:36%;}
 </thead>
   <tr><td class="parameter">nuxeo.jsf.useAjaxTabs</td><td>false (unset)</td><td>Enable ajaxified tabs on document views.</td></tr>
   <tr><td class="parameter">org.nuxeo.prod</td><td>false</td><td>Setting this property to "true" will display a quite visible warning message in the Admin Center, stating that this is a production instance. This is useful for administrators who are sometimes confusing their Nuxeo production server with their test server (not to rat anyone out).</td></tr>
-  <tr><td class="parameter">nuxeo.vcs.blocking-timeout-millis</td><td>1O0</td><td></td></tr>
-  <tr><td class="parameter">nuxeo.vcs.idle-timeout-minutes</td><td>10</td><td></td></tr>
+  <tr><td class="parameter">nuxeo.vcs.blocking-timeout-millis</td><td>1O0</td><td>Database maximum wait time to get a connection from the pool when all connections are in use, for Nuxeo repository (VCS).</td></tr>
+  <tr><td class="parameter">nuxeo.vcs.idle-timeout-minutes</td><td>10</td><td>Database timeout after which connections not in use are removed from the pool, for Nuxeo repository (VCS).</td></tr>
   <tr><td class="parameter">nuxeo.vcs.fulltext.disabled</td><td>false</td><td></td></tr>
   <tr><td class="parameter">nuxeo.vcs.noddl</td><td>false</td><td></td></tr>
   <tr><td class="parameter">nuxeo.vcs.idtype</td><td>varchar</td><td></td></tr>
