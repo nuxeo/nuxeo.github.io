@@ -168,30 +168,14 @@
 
 <h2><a name="anchor-4"></a>UI/UX</h2>
 
-<h3>Layout/Widgets</h3>
 
-<p>Allow defining several action categories to render on action widgets</p>
+<p>Nuxeos's header has been rewritten using widgets displaying actions. Basically it means you can override each part of the header easily. Like the links, search box etc...</p>
 
-<p>The select2 widgets code needs to be reviewed to:</p>
-<ul>
-    <li>handled hardcoded values that are actually configurable on the UserManager</li>
-    <li>fix or check CSV and PDF modes</li>
-    <li>make sure widget properties are resolved (currently if they're EL expressions, they will not be resolved</li>
-</ul>
+<p>The double click shield has been activated by default.</p>
 
-<p>Change Header into layout</p>
-<p>Update action templates to use generic actions by type</p>
-<p>Add fullscreen mode to richtext widget</p>
+<p>You can Ajaxify any tab you want using the property <em>nuxeo.jsf.useAjaxTabs</em>. It means that when you click on a tab, only its content will be reloaded instead of the whole page. And the URL is updated automatically so you can have permlink with the selected tab, use the back button to go to a previously selected tab. This option can also be chosen when creating a new tab in Nuxeo Studio.</p>
 
-
-
-<h3>Seam Concurrency</h3>
-<p>As a user of DM, I no more have "ConcurrencyException" errors when clicking twice in a row on an action</p>
-
-<p>Add access key navigation with actions</p>
-<p>Ajax tabs</p>
-<p>Do not shrink JavaScript files when Dev mode is set</p>
-
+<p>When you are in dev mode, the JavaScript files are not minified. This is much better when you need to debug JavaScript.</p>
 
 <h2><a name="anchor-5"></a>Mockito Integration</h2>
 <p>We've added Mockito support to our test framework. Here's an example:</p>
@@ -219,6 +203,16 @@ public class CanMockServicesTest {
     ...
 }
 </pre></div>
+
+<h2><a name="anchor-6"></a>Localization</h2>
+
+<h3>Crowdin</h3>
+<p>Nuxeo has an account on <a href="https://crowdin.net/project/nuxeo">Crowdin</a>. It makes it easier for everyone to help translate Nuxeo in different languages. You can read <a href="http://www.nuxeo.com/blog/development/2013/10/nuxeo-project-crowdin/">this blog</a> for more information.</p>
+
+<p><img class="lightboxed" src="./crowdin.png"/></p>
+
+<h3>Dutch Translation</h3>
+<p>Our partner Capgemini Netherlands has contributed the Dutch translation for Nuxeo.</p>
 
 
   </div>
