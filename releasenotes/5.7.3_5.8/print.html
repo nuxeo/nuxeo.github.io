@@ -59,6 +59,255 @@ div.breakafter {
      <div style="clear:both;"></div>
 
 
+    <h1 style="margin-left:-0.5em !important;">For Users</h1>
+
+
+<h2><a name="anchor-0"></a>Workflow</h2>
+
+<p>We now have a task resolution screen. It's a dedicated screen to solve one of your task and stay focus on the workflow. </p>
+
+<p><img class="lightboxed" src="./taskResolutionScreen.png"/></p>
+
+<p>A workflow can be applied on multiple documents.</p>
+
+<p>We added a parallel review workflow:</p>
+<ul>
+  <li>First step, choose the participants</li>
+  <li>Second step, every participants give their feedback.</li>
+  <li>Third step, we present a summary of the 2nd step and the assignee can validate or reject the document.</li>
+</ul>
+
+<p><img class="lightboxed" src="./parralelReviewWF.png"/></p>
+
+
+<div class="breakafter"></div>
+
+<h2><a name="anchor-1"></a>Drive</h2>
+
+<p>Nuxeo Drive can be used behind a proxy. </p>
+<p><img class="lightboxed" src="./Drive_proxy_settings.png"/></p>
+<p>We also added the unified settings panel:</p>
+<p><img class="lightboxed" src="./Drive_accounts_settings.png"/></p>
+
+
+<div class="breakafter"></div>
+
+<h2><a name="anchor-2"></a>Rich Text Widget</h2>
+
+<p>When using the rich editor and text, xml or markdown, we've added a Toggle Fullscreen button that displays the editing window in a fancybox. It makes it easier to see what you're doing.</p>
+<p><img class="lightboxed" src="./fullScreenNote.png"/></p>
+
+
+<h2><a name="anchor-3"></a>Access Keys</h2>
+
+<p>We have added new access key binded to actions. Try maj-h, you'll see the different access keys available. Use ctrl-maj E to go to the Edit tab for example.</p>
+<p><img class="lightboxed" src="./akHelp.png"/></p>
+
+
+<div class="breakafter"></div>
+
+
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+<h2><a name="anchor-0"></a>Automation</h2>
+
+<p>We have added new operations:</p>
+<h3>Traces.Get - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Traces.Get">Traces.Get</a></h3>
+<p>Retrieve trace associated to a Chain or an Operation.</p>
+
+<h3>Traces.ToggleRecording - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Traces.ToggleRecording">Traces.ToggleRecording</a></h3>
+<p>Toggle Automation call tracing (you can set the 'enableTrace' parameter if you want to explicitly set the traceEnable value.</p>
+
+<h3>Remove Permission - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Document.RemovePermission">Document.RemovePermission</a></h3>
+<p>Remove permissions for a given user on the input document(s). Returns the document(s).</p>
+
+<h3>Add Permission - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Document.AddPermission">Document.AddPermission</a></h3>
+<p>Add Permission on the input document(s). Returns the document(s).</p>
+
+<h3>Concatenate PDFs - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.ConcatenatePDFs">Blob.ConcatenatePDFs</a></h3>
+<p>Given a File document holding a PDF on the file:content property and 2 PDFs on the files:files property, the following operation will provide a PDF that is the result of the merge of all the PDFs, with the content of the one in file:content property first.</p>
+
+<h2><a name="anchor-1"></a>API</h2>
+
+<p>The document oriented REST API has been moved into a separate package to ease maintenance and upgrades.</p>
+<p>We released an <a href="https://github.com/nuxeo/nuxeo-angular-sample">AngularJS sample application</a> to showcase the API.</p>
+<p>We've added pagination support for user and group endpoints.</p>
+<p>We've added support for different version of the API:</p>
+<div class="embededCode"><pre>
+  /api/v1/id/{docId}...
+</pre></div>
+<p>Using the version segment is mandatory. The version is used mostly for giving guarantees to the API user that the JSON entities won't change when migrating to newer version of Nuxeo.</p>
+
+
+<div class="breakafter"></div>
+
+<h2><a name="anchor-2"></a>Redis</h2>
+
+<p>Several components in Nuxeo will make use of Redis as an optional feature. To configure Redis, the following extension point can be used:</p>
+
+<div class="embededCode"><pre>
+
+  &lt;extension target="org.nuxeo.ecm.core.redis.RedisService" point="configuration"&gt;
+    &lt;redis disabled="false"&gt;
+      &lt;prefix&gt;nuxeo:work:&lt;/prefix&gt;
+      &lt;host&gt;localhost&lt;/host&gt;
+      &lt;port&gt;6379&lt;/port&gt;
+      &lt;password&gt;secret&lt;/password&gt;
+      &lt;database&gt;0&lt;/database&gt;
+      &lt;timeout&gt;2000&lt;/timeout&gt;
+    &lt;/redis&gt;
+  &lt;/extension&gt;
+
+</pre></div>
+
+<h3>Redis Service</h3>
+<p>To use the Redis service, do:</p>
+<div class="embededCode"><pre>
+        RedisService redisService = Framework.getLocalService(RedisService.class);
+</pre></div>
+
+<p>This service currently provides two methods:</p>
+
+
+<div class="embededCode"><pre>
+    redisService.getJedisPool();
+    redisService.getPrefix(); // should be used as prefix for any key
+</pre></div>
+
+<p>Standard usage pattern is:</p>
+
+<div class="embededCode"><pre>
+    protected Jedis getJedis() {
+        return redisService.getJedisPool().getResource();
+    }
+
+    protected void closeJedis(Jedis jedis) {
+        redisService.getJedisPool().returnResource(jedis);
+    }
+
+    protected void myMethod() throws IOException {
+        Jedis jedis = getJedis();
+        try {
+            // ... use jedis here ...
+            // ... all keys should be prefixed with redisService.getPrefix()
+        } finally {
+            closeJedis(jedis);
+        }
+    } 
+</pre></div>
+
+<h3>Redis WorkManager</h3>
+
+<p>We added a Redis based WorkManager. This is helpful for:</p>
+<ul>
+    <li>High-Activity work queueing, to avoid saturating memory or blocking,</li>
+    <li>Queue persistence, to avoid lost jobs on shutdown,</li>
+    <li>New feature: node-aware job execution.</li>
+</ul>
+
+<div class="breakafter"></div>
+
+<h2><a name="anchor-3"></a>PDF Signing</h2>
+<p>Now you can apply more than one signature to a PDF and configure the position of the signatures following a predefined matrix. Here's a sample contribution:</p>
+
+<div class="embededCode"><pre>
+  &lt;extension target="org.nuxeo.ecm.platform.signature.api.sign.SignatureService"
+    point="signature"&gt;
+    &lt;configuration&gt;
+      &lt;reason&gt;This document signed as an example.
+      &lt;/reason&gt;
+      &lt;layout lines="2" columns="5" startLine="2" startColumn="1" textSize="10"/&gt;
+    &lt;/configuration&gt;
+  &lt;/extension&gt;
+
+</pre></div>
+
+
+
+<h2><a name="anchor-4"></a>UI/UX</h2>
+
+
+<p>Nuxeos's header has been rewritten using widgets displaying actions. Basically it means you can override each part of the header easily. Like the links, search box etc...</p>
+
+<p>The double click shield has been activated by default.</p>
+
+<p>You can Ajaxify any tab you want using the property <em>nuxeo.jsf.useAjaxTabs</em>. It means that when you click on a tab, only its content will be reloaded instead of the whole page. And the URL is updated automatically so you can have permlink with the selected tab, use the back button to go to a previously selected tab. This option can also be chosen when creating a new tab in Nuxeo Studio.</p>
+
+<p>When you are in dev mode, the JavaScript files are not minified. This is much better when you need to debug JavaScript.</p>
+
+<h2><a name="anchor-5"></a>Mockito Integration</h2>
+<p>We've added Mockito support to our test framework. Here's an example:</p>
+
+<div class="embededCode"><pre>
+@RunWith(FeaturesRunner.class)
+@Features(RuntimeFeature.class)
+public class CanMockServicesTest {
+
+    @RuntimeService
+    @Mock
+    AFakeService myService;
+
+    @Before
+    public void doBefore() {
+        when(myService.getSomething()).thenReturn("Hello !");
+    }
+
+    @Test
+    public void itShouldBindMocktoAService() throws Exception {
+        AFakeService service = Framework.getService(AFakeService.class);
+        assertNotNull(service);
+        assertEquals("Hello !", service.getSomething());
+    }
+    ...
+}
+</pre></div>
+
+<div class="breakafter"></div>
+
+<h2><a name="anchor-6"></a>Localization</h2>
+
+<h3>Crowdin</h3>
+<p>Nuxeo has an account on <a href="https://crowdin.net/project/nuxeo">Crowdin</a>. It makes it easier for everyone to help translate Nuxeo in different languages. You can read <a href="http://www.nuxeo.com/blog/development/2013/10/nuxeo-project-crowdin/">this blog</a> for more information.</p>
+
+<p><img class="lightboxed" src="./crowdin.png"/></p>
+
+<h3>Dutch Translation</h3>
+<p>Our partner Capgemini Netherlands has contributed the Dutch translation for Nuxeo.</p>
+
+
+<div class="breakafter"></div>
+
+
+
+<h1 style="margin-left:-0.5em !important;">For Administrators</h1>
+
+<h2><a name="anchor-0">Nuxeo.conf New Parameters</a></h2>
+
+<table class="release">
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+  <tr><td class="parameter">nuxeo.jsf.useAjaxTabs</td><td>false (unset)</td><td>Enable ajaxified tabs on document views.</td></tr>
+  <tr><td class="parameter">org.nuxeo.prod</td><td>false</td><td>Setting this property to "true" will display a quite visible warning message in the Admin Center, stating that this is a production instance. This is useful for administrators who are sometimes confusing their Nuxeo production server with their test server (not to rat anyone out).</td></tr>
+  <tr><td class="parameter">nuxeo.vcs.blocking-timeout-millis</td><td>1O0</td><td>Database maximum wait time to get a connection from the pool when all connections are in use, for Nuxeo repository (VCS).</td></tr>
+  <tr><td class="parameter">nuxeo.vcs.idle-timeout-minutes</td><td>10</td><td>Database timeout after which connections not in use are removed from the pool, for Nuxeo repository (VCS).</td></tr>
+  <tr><td class="parameter">nuxeo.vcs.fulltext.disabled</td><td>false</td><td></td></tr>
+  <tr><td class="parameter">nuxeo.vcs.noddl</td><td>false</td><td></td></tr>
+  <tr><td class="parameter">nuxeo.vcs.idtype</td><td>varchar</td><td></td></tr>
+</table>
+
+
+<h2><a name="anchor-1">Blogs and Websites Packaging</a></h2>
+
+<p>Blogs and Website have been removed from the DM module and are now independant packages.</p>
+
+<h2><a name="anchor-2">Database Support</a></h2>
+
+<p>We have updated the <a href="http://doc.nuxeo.com/x/EgI7">MS SQL Server documentation</a> with new recommendations.</p>
+<p>PostgreSQL 9.2-1002 JDBC4 driver supports simple connection fail-over useful for high-availability configurations.</p>
+<p>PostgreSQL 9.3 is officialy supported.</p>
+
+
     </div>
 
 </div>
