@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo 5.8 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo on Github">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../../stylesheets/base.css">
+	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../../stylesheets/layout.css">
+	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+td.parameter {width:36%;}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+
+  <div id="mainContainer" class="container">
+  
+  <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
+
+  <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">5.8</span> Release Notes</a></p>
+
+    <div id="welcome">
+
+    <div style="clear:both;"></div>
+ <h6>These release notes are a merge of the previous Fast Track release notes available <a href="../index.html">here</a>.</h6>
+<h1 style="margin-left:-0.5em !important;">For Administrators</h1>
+
+  <h2><a name="anchor-0">Monitoring</a></h2>
+    <p><a href="https://jira.nuxeo.com/browse/NXP-11079">Use Coda Hale Yammer Metrics to instrument Nuxeo</a>, providing lots of internal metrics, accessible from JMX or Graphite. Read more in our <a href="http://doc.nuxeo.com/x/gBDF">documentation</a>.</p>
+
+<p><img class="lightboxed" src="./graphite-reporting.png"/></p>
+
+<p><img class="lightboxed" src="./nuxeo-jmx-metrics.png"/></p>
+
+  <h2><a name="anchor-1">Multi-Tabs Navigation</a></h2>
+  <p>Nuxeo now handles multiple-tabs navigation without having a "cannot restore view" error. A new StateManager has been introduced in order to store ViewStates per conversation. In other words, when a user navigates to a new tab, a new conversation is started and its view states are saved separately. If the user comes back to an old tab, he will not have "view expired" exceptions anymore.</p>
+  <ul>
+    <li>By default, 4 conversation states are saved following a LRU policy (Least Recently Used).</li>
+    <li>Each conversation state still has max 4 saved view states.</li>
+    <li>This means that potentially, a maximum of 16 view states are saved in session.</li>
+  </ul>
+  <p>You can adapt these settings using the apropriate parameters in nuxeo.conf.</p>
+
+
+<h2><a name="anchor-2">Right Audit</a></h2>
+<p>This <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-groups-rights-audit">Marketplace package</a> allows to run an audit on all permissions for all users of a document tree. The result is an XLS matrix for every exported document showing permission for each user, including blocking permissions if any.</p>
+<p>You can also do an excel export of all the users and groups.</p>
+<p><img class="lightboxed" src="permission_csv_export.png"/></p>
+
+<h2><a name="anchor-3">Kerberos Login Module</a></h2>
+<p>A <a href="http://doc.nuxeo.com/x/QxDF">Kerberos module</a> has been contributed by OpenWide, allowing authentication throught the Kerberos protocol.</p>
+<p>You can also <a href="http://www.nuxeo.com/blog/development/2013/03/contributed-openid-authentication-nelson-silva/">login to Nuxeo using your OpenID</a>, thanks to Nelson Silva.</p>
+
+
+<h2><a name="anchor-4">MarketPlace/Update Center</a></h2>
+<h3>nuxectl commands</h3>
+<p><strong>mp-show</strong>: Show Marketplace package(s) information. You must provide the package file(s), name(s) or ID(s) as parameter.</p>
+
+
+
+
+<h2><a name="anchor-5">Blogs and Websites Packaging</a></h2>
+
+<p>Blogs and Website have been removed from the DM module and are now independant packages.</p>
+
+<h2><a name="anchor-6">Database Support</a></h2>
+
+<p>We have updated the <a href="http://doc.nuxeo.com/x/EgI7">MS SQL Server documentation</a> with new recommendations.</p>
+<p>PostgreSQL 9.2-1002 JDBC4 driver supports simple connection fail-over useful for high-availability configurations.</p>
+<p>PostgreSQL 9.3 is officialy supported.</p>
+
+
+
+<h2><a name="anchor-7">Nuxeo.conf New Parameters</a></h2>
+<table class="release">
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+  <tr><td class="parameter">nuxeo.jsf.numberOfConversationsInSession</td><td>4</td><td>Since 5.7.2, Parameter to control the number of conversation states that are saved in session. Each conversation holds a number of view states that is defined by nuxeo.jsf.numberOfViewsInSession</td></tr>
+  <tr><td class="parameter">nuxeo.jsf.numberOfViewsInSession</td><td>4</td><td>Since 5.7.2 (5.6-HF20) Parameter to control the JSF init parameter com.sun.faces.numberOfViewsInSession</td></tr>
+  <tr><td class="parameter">nuxeo.jsf.numberOfLogicalViews</td><td>4</td><td>Since 5.7.2 (5.6-HF20) Parameter to control the JSF init parameter com.sun.faces.numberOfLogicalViews
+</td></tr>
+  <tr><td class="parameter">nuxeo.notification.eMailSigner</td><td>The Nuxeo team</td><td>Signer of the sent e-mail.</td></tr>
+  <tr><td class="parameter">org.nuxeo.automation.trace</td><td>false</td>
+
+<td>Since Nuxeo 5.7.3, you can enable this mode if you'd like to display automation traces during runtime:
+<ul>
+    <li>You'll benefit from exhaustive logs to debug all automation chain and/or operation execution.</li>
+    <li>The automation trace mode is disabled by default (not suitable for production).</li>
+    <li>It can be activated through JMX via org.nuxeo:TracerFactory MBean during runtime.</li></ul>
+</td></tr>
+  <tr><td class="parameter">org.nuxeo.automation.trace.printable</td><td>*</td><td>Since Nuxeo 5.7.3, by default, all automation executions are 'printable' (appear in logs) when automation trace mode is on.
+
+<ul>
+    <li>You can filter chain and/or operation execution trace printing by setting this property to chain name and/or operation separated by comma.</li>
+    <li>Comment this property to get all automation chains/operations back in printing (by default set to * (star)</li></ul></td></tr>
+  <tr><td class="parameter">nuxeo.jsf.enableDoubleClickShield</td><td>false (unset) </td><td>Enable a shield on forms to prevent users from submitting twice the same form (accidental double-click)</td></tr>
+
+<tr><td class="parameter">org.nuxeo.dnd.upload.timeout</td><td>30000</td><td>Maximum time for uploading a file via Drag & Drop to the server.</td></tr>
+<tr><td class="parameter">org.nuxeo.dnd.exec.timeout</td><td>30000</td><td>Maximum time for executing import of files uploaded via Drag & Drop</td></tr>
+<tr><td class="parameter">org.nuxeo.dnd.extendedmode.timeout</td><td>2000</td><td>Mouseover time to switch to extended mode UI (setting to -1 disables the extended mode)</td></tr>
+  <tr><td class="parameter">nuxeo.jsf.useAjaxTabs</td><td>false (unset)</td><td>Enable ajaxified tabs on document views.</td></tr>
+  <tr><td class="parameter">org.nuxeo.prod</td><td>false</td><td>Setting this property to "true" will display a quite visible warning message in the Admin Center, stating that this is a production instance. This is useful for administrators who are sometimes confusing their Nuxeo production server with their test server (not to rat anyone out).</td></tr>
+  <tr><td class="parameter">nuxeo.vcs.blocking-timeout-millis</td><td>1O0</td><td>Database maximum wait time to get a connection from the pool when all connections are in use, for Nuxeo repository (VCS).</td></tr>
+  <tr><td class="parameter">nuxeo.vcs.idle-timeout-minutes</td><td>10</td><td>Database timeout after which connections not in use are removed from the pool, for Nuxeo repository (VCS).</td></tr>
+  <tr><td class="parameter">nuxeo.vcs.fulltext.disabled</td><td>false</td><td></td></tr>
+  <tr><td class="parameter">nuxeo.vcs.noddl</td><td>false</td><td></td></tr>
+  <tr><td class="parameter">nuxeo.vcs.idtype</td><td>varchar</td><td></td></tr>
+</table>
+
+  </div>
+  </div>
+
+</div>
+
+
+	<!-- JS
+	================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+    <script src="../../javascripts/float_menu.js"></script>
+    <script src="../../javascripts/lightbox.js"></script>
+</body></html>
+
