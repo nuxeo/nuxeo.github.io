@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo 5.8 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo on Github">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../../stylesheets/base.css">
+	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../../stylesheets/layout.css">
+	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+
+  <div id="mainContainer" class="container">
+  <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
+  <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">5.8</span> Release Notes</a></p>
+
+    <div id="welcome">
+
+    <div style="clear:both;"></div>
+ <h6>These release notes are a merge of the previous Fast Track release notes available <a href="../index.html">here</a>.</h6>
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+
+
+<h2><a name="anchor-0">Content Automation</a></h2>
+
+
+<p><a href="https://jira.nuxeo.com/browse/NXP-10078">Automation client is fully OSGI, which means you can use it from any OSGI container (Felix, Equinox etc..)</a></p>
+<p>You can fetch dirty properties of a modified document to send only modified properties with automation client</p>
+<p>JSON Marshalling enhancement. You can send POJO in input or parameters.</p>
+
+
+<p>We made a lot of progress on the Content Automation API.</p>
+<p>It's possible to contribute a chain into another chain -> Composite Automation Chain.</p>
+<p>It's possible to add parameters to a chain.</p>
+<p>Chains contributed are displayed into the Automation documentation with operations listing, parameters and input/output.</p>
+<p>An Automation Client Test Suite in Java (or Java Test Compatibility Kit -> TCK) is provided for helping people understanding how Automation is working remotely. You can read our <a href="http://doc.nuxeo.com/x/v4XZ">documentation</a> for the details.</p>
+<p><a href="http://doc.nuxeo.com/x/vwIz#UsingNuxeoAutomationClient-managing-business-objectsManagingBusinessObjects">Managing business objects</a> (Plain Old Java Object client side for mapping Nuxeo Document Model Adapter server side) is now available.</p>
+
+<p>The goal is to manipulate business object and avoid direct DocumentModel manipulation on client side:</p>
+  
+<div class="embededCode"><pre>
+pull : BusinessObject (POJO) <----JSON---- DocumentModelAdapter <---- DocumentModel
+
+push : BusinessObject (POJO) -----JSON---> DocumentModelAdapter ----> DocumentModel
+
+</pre></div>
+
+
+<h3>Trace</h3> 
+<p>You can now enable <a href="http://doc.nuxeo.com/x/FwDk##AutomationException-AutomationTracing">tracing</a> of Content Automation call. Operation chains and operations calls information are collected and logged during their execution by the Automation Trace feature.</p>
+
+
+<h3>Error management</h3> 
+<p>Automation <a href="http://doc.nuxeo.com/x/FwDk#AutomationException-AutomationChainException">exception chain</a> can be added to be executed when an error occurs during an Automation execution. After contributing your custom chains, you can declare your exception chains:</p>
+
+<div class="embededCode"><pre>
+&lt;extension point="chainException"
+  target="org.nuxeo.ecm.core.operation.OperationServiceComponent"&gt;
+  
+    &lt;catchChain id="catchChainA" onChainId="contributedchain"&gt;
+      &lt;run chainId="chainExceptionA" priority="0" rollBack="true" filterId="filterA"/&gt;
+      &lt;run chainId="chainExceptionA" priority="0" rollBack="false" filterId="filterA"/&gt;
+      &lt;run chainId="chainExceptionB" priority="10" rollBack="true" filterId="filterB"/&gt;
+    &lt;/catchChain&gt;
+  
+    &lt;catchChain id="catchChainB" onChainId="anothercontributedchain"&gt;
+      &lt;run chainId="chainExceptionA" rollBack="false"/&gt;
+    &lt;/catchChain&gt;
+  
+&lt;/extension&gt;
+</pre></div>
+
+<h3>New Description Parameter for Operation</h3>
+<p>When you write a new operation, you can add a description to your declared parameters. This comes in handy for the API documentation and Nuxeo Studio.</p>
+
+
+<h2 ><a name="anchor-1">Document Oriented REST API</a></h2>
+<p>We have a new <a href="http://doc.nuxeo.com/x/WIvZ">document oriented API</a> for CRUD operation.</p>
+
+<h3>Create</h3>
+<div class="embededCode"><pre>
+<strong>POST</strong> /nuxeo/site/api/v1/id/{idOfTheDoc}
+{
+    "entity-type": "document",
+    "name":"newName",
+    "type": "File",
+    "properties": {
+        "common:icon": "/icons/domain.gif",
+        "common:icon-expanded": null,
+        "common:size": null
+    }
+}
+</pre></div>
+
+<h3>Read</h3>
+<div class="embededCode"><pre>
+<strong>GET</strong> /nuxeo/api/v1/path/{pathOfTheDoc}
+<strong>GET</strong> /nuxeo/api/v1/id/{idOfTheDoc}
+</pre></div>
+
+<h3>Update</h3>
+<div class="embededCode"><pre>
+<strong>PUT</strong> /nuxeo/api/v1/id/{idOfTheDoc}
+{
+    "entity-type": "document",
+    "repository": "default",
+    "uid": "37b1502b-26ff-430f-9f20-4bd0d803191e",
+    "properties": {
+        "common:icon": "/icons/domain.gif",
+        "common:icon-expanded": null,
+        "common:size": null
+    }
+}
+</pre></div>
+
+<h3>Delete</h3>
+<div class="embededCode"><pre>
+<strong>DELETE</strong> /nuxeo/api/v1/id/{idOfTheDoc}
+</pre></div>
+
+
+<h3> Domain model object and Automation </h3>
+<p>You can use <a href="http://doc.nuxeo.com/x/WIvZ#DocumentorientedRESTAPI-Businessobjectadapters">Business objects with Automation</a>. They are also binded on the REST API and you just have to use the same semantics than for document resources.</p>
+
+<h3 >Updating a business object</h3>
+<div class="embededCode"><pre>
+<strong>PUT</strong>  /nuxeo/api/v1/path/{pathOfTheDoc}/@bo/BusinessBeanAdapter
+{
+    "entity-typee: "BusinessBeanAdapter"
+    "value": {
+        id: "37b1502b-26ff-430f-9f20-4bd0d803191e",
+        "type": "Domain",
+        "title":"Default domain"
+        "description:"My new description"
+     }
+}
+</pre></div>
+
+
+<h3>New Endpoints</h3>
+<p>Here's the list of endpoints available at the moment:</p>
+<ul>
+<li>Documents (/nuxeo/api/v1/id/{docId}): to do CRUD on documents (including paginated search)</li>
+<li>Users (/nuxeo/api/v1/user/{userId}): to do CRUD on users</li>
+<li>Groups (/nuxeo/api/v1/group/{groupId}): to do CRUD on groups</li>
+<li>Directories (/nuxeo/api/v1/directory/{directoryId}):  to do CRUD on directories</li>
+<li>Automation (/nuxeo/api/v1/automation/{Operation id}): to call a "command", i.e. an operation or operation chain deployed on the server</li>
+</ul>
+
+<h3>New Adapters</h3>
+<p>You can also use several adapters for ACLs, blob, business objects, document children, operation, page provider, search etc... An adapter is a URL segment that starts with "@" and that transforms the input resource so as to return another resource. For example, using <em>@blob</em> will return the file of a document (the one store on the property given by the next URL segment), and chaining it to <em>@op</em> will call an operation (that takes in input a blob):</p>
+
+<div class="embededCode"><pre>
+/nuxeo/api/v1/id/{docId}/@blob/file:content/@op/Blob.ToPDF
+</pre></div>
+
+<h3>Pluggable Context</h3>
+
+<p>Because it is sometimes useful to optimize the number of requests you send to the server, we provide a mechanism to request more information on the answer, simply by specifying the context you want in the request header. You can activate contributor simply by adding the right header on the request. Those contributors can also be activated using action filter.</p>
+
+
+<p>The document oriented REST API has been moved into a separate package to ease maintenance and upgrades.</p>
+<p>We released an <a href="https://github.com/nuxeo/nuxeo-angular-sample">AngularJS sample application</a> to showcase the API.</p>
+<p>We've added pagination support for user and group endpoints.</p>
+<p>We've added support for different version of the API:</p>
+<div class="embededCode"><pre>
+  /api/v1/id/{docId}...
+</pre></div>
+<p>Using the version segment is mandatory. The version is used mostly for giving guarantees to the API user that the JSON entities won't change when migrating to newer version of Nuxeo.</p>
+
+
+<h2><a name="anchor-2">CMIS</a></h2>
+
+<p>We've upgraded OpenCMIS to 0.9.0 . This gives us the new CMIS 1.1 browser bindings but we haven't finished implementing all the new features yet.</p>
+
+
+<h2><a name="anchor-3">New operations</a></h2>
+
+<h3>Add Message - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.AddMessage">Seam.AddMessage</a></h3>
+<p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR, INFO being the default. Message parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
+<h3>Add entry into multi-valued metadata - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/AddEntryToMultivaluedProperty">AddEntryToMultivaluedProperty</a></h3>
+<p>Add value to the field expressed by the xpath parameter. This field must be a multivalued metadata.</p>
+<h3>Convert to given mime-type - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.Convert">Blob.Convert</a></h3>
+<p> Convert the input file to a file of the given mime-type and return the new file. </p>
+<h3>Create Asset(s) from file(s) - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Dam.Import">Dam.Import</a></h3>
+<p> Create Asset(s) from Blob(s) using the FileManagerService. </p>
+<h3>Create Proxy Live - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/CreateProxyLive">CreateProxyLive</a></h3>
+<p> This operation will create a proxy that points the given document as input. This is like a symbolic link for File System. The proxy will be created into the destination specified as parameter. </p>
+<h3>Creates directory entries - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.CreateEntries">Directory.CreateEntries</a></h3>
+<p> Creates directory entries. Entries are sent as a JSON array. Returns the created entry ids as a JSON array. </p>
+<h3>Deletes directory entries - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.DeleteEntries">Directory.DeleteEntries</a></h3>
+<p> Deletes directory entries. Entry ids to be delete are sent through a JSON array. Returns the deleted entry ids as a JSON array. </p>
+<h3>Get Live Document - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/GetLiveDocument">GetLiveDocument</a></h3>
+<p> Get the live document even if this is a Proxy or Version Document. </p>
+<h3>Get Nuxeo Principal - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/NuxeoPrincipal.Get">NuxeoPrincipal.Get</a></h3>
+<p> Retrieve Nuxeo principal and export it as a DocumentModel. If login parameter is not set, the operation will return information about the current user, otherwise Directory Administration rights are required. </p>
+<h3>QueryAndFetch - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Resultset.PageProvider">Resultset.PageProvider</a></h3>
+<p> Perform a query or a named provider query on the repository. The result is paginated. The result is returned as a RecordSet (QueryAndFetch) rather than as a List of Document. The query result will become the input for the next operation. If no query or provider name is given, a query returning all the documents that the user has access to will be executed. </p>
+<h3>Raise Seam events - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.RaiseEvents">Seam.RaiseEvents</a></h3>
+<p> Raise Seam events without parameters. This is a void operation - the input object is returned back as the output </p>
+<h3>Reads directory entries - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.ReadEntries">Directory.ReadEntries</a></h3>
+<p> Reads directory entries. Entry ids to be read are sent as a JSON array. Returns the entries as a JSON array of JSON objects containing all fields. </p>
+<h3>Remove Entry Of Multivalued Property - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/RemoveEntryOfMultivaluedProperty">RemoveEntryOfMultivaluedProperty</a></h3>
+<p>Removes the first entry of the giving value in the multivalued xpath, does nothing if does not exist. If 'is Remove All' is checked, all entry instances in the list will be removed.
+if not then just the first one found will be removed.</p>
+<h3>UI Selected documents form list - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.GetDocumentsFromSelectionList">Seam.GetDocumentsFromSelectionList</a></h3>
+<p> Fetch the documents selected in the selection list passed as a parameter. If the list name is empty, the current folder selection list is used. </p>
+<h3>Updates directory entries</h3>
+<p><strong>Category:</strong> Services</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.UpdateEntries">Directory.UpdateEntries</a></p>
+<p> Updates directory entries. Entries to be updated are sent as a JSON array. Returns the updated entry ids as a JSON array of JSON objects containing all fields. </p>
+
+<h3>Get a Directory Projection -  <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.Projection">Directory.Projection</a></h3>
+<p>Executes a query using given filter and return only the column *<b>columnName</b>*. The result is assigned to the context variable *<b>variableName</b>*. The filters are specified as <i>key=value</i> pairs separated by a new line. The key used for a filter is the column name of the directory. To specify multi-line values you can use a \\ character followed by a new line.</p>
+<p>Example:</p>
+<div class="embededCode"><pre>
+firstName=John
+lastName=doe
+</pre></div>
+<p>By default, the search filters use exact match. You can do a fulltext search on some specific columns using the fulltextFields. it's specified as comma separated columnName, for instance:</p><p>Example:</p><div class="embededCode"><pre>firstName,lastName</pre></div></p>
+<h3>Traces.Get - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Traces.Get">Traces.Get</a></h3>
+<p>Retrieve trace associated to a Chain or an Operation.</p>
+
+<h3>Traces.ToggleRecording - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Traces.ToggleRecording">Traces.ToggleRecording</a></h3>
+<p>Toggle Automation call tracing (you can set the 'enableTrace' parameter if you want to explicitly set the traceEnable value.</p>
+
+<h3>Remove Permission - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Document.RemovePermission">Document.RemovePermission</a></h3>
+<p>Remove permissions for a given user on the input document(s). Returns the document(s).</p>
+
+<h3>Add Permission - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Document.AddPermission">Document.AddPermission</a></h3>
+<p>Add Permission on the input document(s). Returns the document(s).</p>
+
+<h3>Concatenate PDFs - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.ConcatenatePDFs">Blob.ConcatenatePDFs</a></h3>
+<p>Given a File document holding a PDF on the file:content property and 2 PDFs on the files:files property, the following operation will provide a PDF that is the result of the merge of all the PDFs, with the content of the one in file:content property first.</p>
+
+<h3>Run For Each in new TX - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Context.RunOperationOnListInNewTx">Context.RunOperationOnListInNewTx</a></h3>
+<p>Run an operation in a new Transaction for each element from the list defined by the 'list' paramter. The 'list' parameter is pointing to context variable that represent the list which will be iterated. The 'item' parameter represent the name of the context varible which will point to the current element in the list at each iteration. You can use the 'isolate' parameter to specify whether or not the evalution context is the same as the parent context or a copy of it. If the isolate is 'true' then a copy of the current contetx is used and so that modifications in this context will not affect the parent context. Any input is accepted. The input is returned back as output when operation terminate. </p>
+
+
+
+<h2><a name="anchor-4">CSS 3 Support in Theme Engine</a></h2>
+<p><a href="https://jira.nuxeo.com/browse/NXP-7672">The flute CSS parser</a> has now been replaced by <a href="https://code.google.com/p/phloc-css/">phloc-css</a>, allowing CSS3 to be used in the Theme engine.</p>
+
+<h2><a name="anchor-5">UI Style Guide</a></h2>
+<p>The <a href="http://showcase.nuxeo.com/nuxeo/styleGuide/">Nuxeo UI Style Guide</a> is an online help to design your content, explore all the available CSS classes for the different elements, and to check the list of icons embedded in the platform.</p>
+
+<h2><a name="anchor-6">UI Framework</a></h2>
+
+<p>Widget Label properties now accept an EL expression. This allows you to have <a href=" https://jira.nuxeo.com/browse/NXP-11040">dynamic labels</a>.</p>
+<p>Every richfaces ajax call use a <a href="https://jira.nuxeo.com/browse/NXP-11136">global default ajax event queue</a>. You can of course still specify your own queue. This results in more stable pages.</p>
+
+<h3>HTML5 PlaceHolder</h3>
+<p>You can use the HTML5 placeHolder attribute on inputtext and textarea. It's available as a widget property. You can put text(that will be translated) or an EL.</p>
+<p><img class="lightboxed" src="placeholder.png"/></p>
+
+
+<h3>New drop zone Widget</h3>
+<p><a href="https://jira.nuxeo.com/browse/NXP-11043">This widget</a> allows you to execute an operation with the files you've dropped as input. </p>
+
+
+<h3>Widget Actions</h3>
+<p>One can use automatic JS confirmation popup. If you add a confirmMessage property in the actions, it generates the appropriate js method. It accepts any EL as parameter. Here's an example:</p>
+<blockquote>
+<pre>
+ &lt;action id="JenkinsReportSendMail"&gt;
+   &lt;properties&gt
+     &lt;property name="confirmMessage"&gt;label.jenkins.sendMail.confirm&lt;/property&gt
+     &lt;propertyList name="confirmMessageArgs"&gt;
+       &lt;value&gt;#{docSuggestionActions.getDocumentWithId(currentSuperSpace.id)
+         .getPropertyValue('jenkinsreports:report_email')}&lt;/value&gt;
+     &lt;/propertyList&gt;
+   &lt;/properties&gt;
+ &lt;/action&gt; 
+messages:
+label.jenkins.sendMail.confirm=This will send an email to {0},
+ are you sure that you would like to continue?
+</pre>
+</blockquote>
+
+<p>You can now include widgets that render actions. This is particularly useful in Nuxeo Studio. This allows us to easily blend different action types like a submit button, an outgoing link and an action that <a href="https://jira.nuxeo.com/browse/NXP-11006">opens a fancybox</a>. You can also <a href="https://jira.nuxeo.com/browse/NXP-11044">merge all of them</a> in any order you want.</p>
+
+<p>We have a better support of <a href="https://jira.nuxeo.com/browse/NXP-9444">form inside fancybox</a> opened by actions. You can submit the associated form without submitting every other form on the page. No need to do nested form anymore.</p>
+
+<p>You can mix any type of action. If one action does not support ajax (like a download), it can be in the same tool bar as an ajax action.</p>
+
+<p>You can associate selected documents of a content view to actions outside the content view. That's how we made bulk edit.</p>
+
+<p><a href="https://jira.nuxeo.com/browse/NXP-11566">We allow resetting of JSF components state when using ajax</a>. JSF action listener <em>#{jsfResetActions.resetComponents}</em> can be used in actions that need to reset all components in the same JSF naming container.</p>
+
+
+<h3>Action Context</h3>
+
+<p>Until now, action filters were using JEXL for resolution instead of the engine used by JSF, and Seam components could be resolved in this context, but using a hack, hence only actions *starting with the seam component name* could be resolved correctly, for instance #{clipboardActions.canCopy}. Others were not resolved correctly, for instance #{!clipboardActions.canCopy}, #{empty clipboardActions.selectedDocuments}, #{clipboardActions.canCopy and clipboardActions.canPaste}, etc...</p>
+
+<p>Now the action context has been changed into an interface, and is responsible for evaluating expressions held by filters (instead of the filter itself) => by implementing this interface, <em>any kind of expression with any kind of variables</em> in context can be resolved using the filters/actions service API. Seam JSF EL are resolved in a native Seam/JSF context.</p>
+
+
+<h3>Action Widget Types</h3>
+
+<p>We've made a pluggable action types library. It means that now you can define your own action type and associated rendering. You can use it within new action widget types (like ToolBar actions, Form actions, Tabs actions etc...).</p>
+
+
+<h3>Runtime Service Seam Injection</h3>
+<p>You can now inject Nuxeo runtime services directly in a Seam bean. Where you use to call <em>Framework.getLocalService(SchemaManager.class)</em> in a method, you can simply inject the service.</p>
+<div class="embededCode"><pre>
+    @In
+    SchemaManager theSchemaManagerService;
+</pre></div>
+
+
+
+<h3>Richfaces Update</h3>
+
+<p>Nuxeo uses a custom version of Richfaces based on 3.3.1 GA, This custom version of Richfaces is now available on <a href="https://github.com/nuxeo/richfaces">GitHub</a> with all Nuxeo's patches.</p>
+
+<h3>New Header</h3>
+<p>Nuxeos's header has been rewritten using widgets displaying actions. Basically it means you can override each part of the header easily. Like the links, search box etc...</p>
+
+
+<h3>Ajax Tabs</h3>
+<p>You can Ajaxify any tab you want using the property <em>nuxeo.jsf.useAjaxTabs</em>. It means that when you click on a tab, only its content will be reloaded instead of the whole page. And the URL is updated automatically so you can have permlink with the selected tab, use the back button to go to a previously selected tab. This option can also be chosen when creating a new tab in Nuxeo Studio.</p>
+
+<h3>Debugging JavaScript</h3>
+<p>When you are in dev mode, the JavaScript files are not minified. This is much better when you need to debug JavaScript.</p>
+
+
+<h2><a name="anchor-7">Content Views</a></h2>
+<p>On Nuxeo side, filter can be shown unfolded by default, and some content view templates have been redefined to ease the customization.</p>
+<p>On Studio side, the "filter unfolded" option is presented for 5.7.2, and events as well as the page provider class and properties can now be configured also.</p>
+
+<h2><a name="anchor-8">CORS support</a></h2>
+<p>If you do cross-domain requests from any JavaScript client to access WebEngine resources or Automation APIs, there's a chance that your browser forbids it. <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> allows you to communicate with Nuxeo from another domain using XMLHttpRequests.</p>
+
+<p>We've added <a href="http://doc.nuxeo.com/x/vIvZ">a new extension point</a> based on Vladimir Dzhuvinov's universal CORS filter, which allows you to configure on which URL cross-origin headers are needed.</p>
+
+
+
+<h2><a name="anchor-9">Scan Importer</a></h2>
+<p>The scan importer has been improved. You can choose if you want to create the import document container each time you launch an import. You can also choose to update an existing document instead of creating a new one.</p>
+
+<h2><a name="anchor-10">Login Page</a></h2>
+
+<p>The login page can now be configured via an extension point, making it easier to upgrade when the login page is customized, and benefit from new features, like <a href="http://www.nuxeo.com/blog/development/2013/03/contributed-openid-authentication-nelson-silva/">OpenID authentication</a> provided by Nelson Silva.</p>
+
+<p>Here is a sample configuration for the login page:</p>
+<div class="embededCode"><pre>
+&lt;extension target="org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService" point="loginScreen"&gt;
+  &lt;loginScreenConfig&gt;
+    &lt;bodyBackgroundStyle&gt;url("${org.nuxeo.ecm.contextPath}/img/my_login_background_img.png") 100px 100px no-repeat black&lt;/bodyBackgroundStyle&gt;
+    &lt;headerStyle&gt;&lt;/headerStyle&gt;
+    &lt;footerStyle&gt;display: none;&lt;/footerStyle&gt;
+    &lt;loginBoxBackgroundStyle&gt;url("${org.nuxeo.ecm.contextPath}/img/my_background_img.png") 0 0 no-repeat green&lt;/loginBoxBackgroundStyle&gt;
+    &lt;loginBoxWidth&gt;100px&lt;/loginBoxWidth&gt;
+    &lt;logoUrl&gt;${org.nuxeo.ecm.contextPath}/img/my_logo.png&lt;/logoUrl&gt;
+    &lt;logoAlt&gt;My logo Alt&lt;/logoAlt&gt;
+    &lt;logoWidth&gt;100px&lt;/logoWidth&gt;
+    &lt;logoHeight&gt;100px&lt;/logoHeight&gt;
+    &lt;newsIframeUrl&gt;https://www.nuxeo.com/embedded/dm-login&lt;/newsIframeUrl&gt;
+  &lt;/loginScreenConfig&gt;
+&lt;/extension&gt;
+</pre></div>
+
+<h2><a name="anchor-11">Long Running Listener</a></h2>
+<p>You can now extend a new abstract class called <strong>AbstractLongRunningListener</strong>. Its purpose is to help building an Asynchronous listeners that will handle a long running process. </p>
+<p>By default, PostCommitEventListener is executed in a Worker that will take care of starting/comitting the transaction.</p>
+<p>If the listener requires a long processing, this will create long transactions which should be avoided. To avoid this behavior, this base class split the processing in 3 steps:</p>
+<ul>
+<li>Pre processing: transactional first step</li>
+<li>Long running: long running processing that should not require transactional resources</li>
+<li>Post processing: transactional final step
+</ul>
+<p>To manage sharing between the 3 steps, a simple Map is provided.</p>
+
+<h2><a name="anchor-12">Move To Tomcat 7</a></h2>
+<p>Tomcat has been upgraded to version 7.0.42. The main improvement is the upgrade to the Servlet 3.0 API. Take a look at the <a href="http://tomcat.apache.org/migration-7.html">details</a>. </p>
+
+
+
+<h2><a name="anchor-13">Nuxeo Visible Content Store (VCS)</a></h2>
+<p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20%3D%20%22Core%20SQL%20Storage%22%20AND%20fixVersion%20%3D%20%225.7.1%22%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
+
+<h3>Enhancements</h3>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10308">Single datasource mode</a>, removes the extra cost of XA transactions when all datasources points to the same database (which is the most common setup). It simplifies configuration and enhances performance.</p>
+
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-11335">Soft delete</a>, more efficient deletion using delayed batching.</p>
+
+<p>    Optimized id generation, using database-native sequences (<a href="https://jira.nuxeo.com/browse/NXP-10894">PostgreSQL</a>, <a href="https://jira.nuxeo.com/browse/NXP-10912">SQL Server</a>) or UUIDs (<a href="https://jira.nuxeo.com/browse/NXP-4803">PostgreSQL</a>). This improves performance and database size.</p>
+
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-11370">Flag to disable proxies</a>, if you don't use proxies, then this removes the extra work at the SQL level and improves performance.</p>
+
+<p>    <a href="https://jira.nuxeo.com/browse/NXP-11562">Allow attaching schemas to proxies</a></p>
+
+<p></p>
+<h3>Database Support</h3>
+<p> <a href="https://jira.nuxeo.com/browse/NXP-10234">Microsoft SQL Server 2012 support</a>, including Azure.</p>
+<p> <a href="https://jira.nuxeo.com/browse/NXP-10270">PostgreSQL 9.2 support</a> for cluster mode (non-clustered mode already worked in Nuxeo 5.6).</p>
+<p> <a href="https://jira.nuxeo.com/browse/NXP-4406">IBM DB2 9.5 preliminary support</a> (non-optimized, therefore only for small databases).</p>
+
+<h3>Misc</h3>
+<p>Various performance enhancements for PostgreSQL, Oracle and SQL Server</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10324">Added "NotFulltextIndexable" facet</a> to avoid indexing documents with this facet.</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10272">Allow clustering</a> for Oracle on Amazon RDS.</p> 
+<p><a href="https://jira.nuxeo.com/browse/NXP-10216">Optimize complex list property update</a> (use UPDATE instead of DELETE + INSERT).</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10219">Support Microsoft's JDBC driver for SQL Server</a>.</p>
+
+
+<h2><a name="anchor-14">Redis</a></h2>
+
+<p>Several components in Nuxeo will make use of Redis as an optional feature. To configure Redis, the following extension point can be used:</p>
+
+<div class="embededCode"><pre>
+
+  &lt;extension target="org.nuxeo.ecm.core.redis.RedisService" point="configuration"&gt;
+    &lt;redis disabled="false"&gt;
+      &lt;prefix&gt;nuxeo:work:&lt;/prefix&gt;
+      &lt;host&gt;localhost&lt;/host&gt;
+      &lt;port&gt;6379&lt;/port&gt;
+      &lt;password&gt;secret&lt;/password&gt;
+      &lt;database&gt;0&lt;/database&gt;
+      &lt;timeout&gt;2000&lt;/timeout&gt;
+    &lt;/redis&gt;
+  &lt;/extension&gt;
+
+</pre></div>
+
+<h3>Redis Service</h3>
+<p>To use the Redis service, do:</p>
+<div class="embededCode"><pre>
+        RedisService redisService = Framework.getLocalService(RedisService.class);
+</pre></div>
+
+<p>This service currently provides two methods:</p>
+
+
+<div class="embededCode"><pre>
+    redisService.getJedisPool();
+    redisService.getPrefix(); // should be used as prefix for any key
+</pre></div>
+
+<p>Standard usage pattern is:</p>
+
+<div class="embededCode"><pre>
+    protected Jedis getJedis() {
+        return redisService.getJedisPool().getResource();
+    }
+
+    protected void closeJedis(Jedis jedis) {
+        redisService.getJedisPool().returnResource(jedis);
+    }
+
+    protected void myMethod() throws IOException {
+        Jedis jedis = getJedis();
+        try {
+            // ... use jedis here ...
+            // ... all keys should be prefixed with redisService.getPrefix()
+        } finally {
+            closeJedis(jedis);
+        }
+    } 
+</pre></div>
+
+<h3>Redis WorkManager</h3>
+
+<p>We added a Redis based WorkManager. This is helpful for:</p>
+<ul>
+    <li>High-Activity work queueing, to avoid saturating memory or blocking,</li>
+    <li>Queue persistence, to avoid lost jobs on shutdown,</li>
+    <li>New feature: node-aware job execution.</li>
+</ul>
+
+<h2><a name="anchor-15">PDF Signing</a></h2>
+<p>Now you can apply more than one signature to a PDF and configure the position of the signatures following a predefined matrix. Here's a sample contribution:</p>
+
+<div class="embededCode"><pre>
+  &lt;extension target="org.nuxeo.ecm.platform.signature.api.sign.SignatureService"
+    point="signature"&gt;
+    &lt;configuration&gt;
+      &lt;reason&gt;This document signed as an example.
+      &lt;/reason&gt;
+      &lt;layout lines="2" columns="5" startLine="2" startColumn="1" textSize="10"/&gt;
+    &lt;/configuration&gt;
+  &lt;/extension&gt;
+
+</pre></div>
+
+<h2><a name="anchor-16">Mockito Integration</a></h2>
+<p>We've added Mockito support to our test framework. Here's an example:</p>
+
+<div class="embededCode"><pre>
+@RunWith(FeaturesRunner.class)
+@Features(RuntimeFeature.class)
+public class CanMockServicesTest {
+
+    @RuntimeService
+    @Mock
+    AFakeService myService;
+
+    @Before
+    public void doBefore() {
+        when(myService.getSomething()).thenReturn("Hello !");
+    }
+
+    @Test
+    public void itShouldBindMocktoAService() throws Exception {
+        AFakeService service = Framework.getService(AFakeService.class);
+        assertNotNull(service);
+        assertEquals("Hello !", service.getSomething());
+    }
+    ...
+}
+</pre></div>
+
+<h2><a name="anchor-17">Localization</a></h2>
+
+<h3>Crowdin</h3>
+<p>Nuxeo has an account on <a href="https://crowdin.net/project/nuxeo">Crowdin</a>. It makes it easier for everyone to help translate Nuxeo in different languages. You can read <a href="http://www.nuxeo.com/blog/development/2013/10/nuxeo-project-crowdin/">this blog</a> for more information.</p>
+
+<p><img class="lightboxed" src="./crowdin.png"/></p>
+
+<h3>Dutch Translation</h3>
+<p>Our partner Capgemini Netherlands has contributed the Dutch translation for Nuxeo.</p>
+
+
+<h2><a name="anchor-18">Miscellaneous</a></h2>
+
+<h3>Simple Computed Group</h3>
+
+<p>The idea is to simplify computed groups management by a simple contribution. Here are two examples. The first one will create a virtual group <em>grade_companyValue</em> where companyValue is the company value for the user. The second one will create a <em>creator_documentId</em> for each document where the user is the creator.</p>
+<div class="embededCode"><pre>
+  &lt;extension point="computer" target="org.nuxeo.ecm.platform.computedgroups.ComputedGroupsServiceImpl"&gt;
+    &lt;!-- userAttibute --&gt;
+    &lt;userMetadataGroupComputer xpath="company" groupPattern="grade_%s" name="grade_cg"/&gt;
+    &lt;!-- documentMetadata --&gt;
+    &lt;documentMetadataGroupComuter xpath="dc:title" whereClause="dc:creator = '%s'" groupPattern="creator_%s" name="creator_cg"/&gt;
+  &lt;/extension&gt;
+</pre></div>
+
+
+<h3>ScanImporter Enhancement</h3>
+<p>We're still improving the scan importer. One of the latest enhancement is the support of <a href="http://mvel.codehaus.org/">MVEL</a> in the XML mapping code. This will allow you to setup some business logic during import without writing cutom Java code. Here's an example:</p>
+
+<div class="embededCode"><pre>
+&lt;extension target="org.nuxeo.ecm.platform.importer.xml.parser.XMLImporterComponent"
+  point="documentMapping"&gt;
+
+  &lt;docConfig tagName="html"&gt;
+    &lt;docType&gt;Instruction&lt;/docType&gt;
+    &lt;parent&gt;&lt;![CDATA[ #{
+      nodes = xml.selectNodes('//meta[@name=\'RCDirection\']/@content');
+      String parent = nodes.get(0).getText();
+      return Fn.mkdir(root, '/', parent ,'StructureFolder');
+    }]]&gt;&lt;/parent&gt;
+    &lt;name&gt;&lt;![CDATA[ #{
+      String valueFound = xml.selectNodes("//meta[@name='RCIdentifiant']/@content")[0].getText();
+      String name = valueFound.replace(' ', '').replace('/', '-');
+      return name;
+    }]]&gt;&lt;/name&gt;
+    &lt;postCreationAutomationChain&gt;testBJA&lt;/postCreationAutomationChain&gt;
+  &lt;/docConfig&gt;
+
+&lt;/extension&gt;
+</pre></div>
+
+With the following xml fragment:
+<div class="embededCode"><pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta name="RCDirection" content="Dir1/Sec1.1" /&gt;
+    &lt;meta name="RCIdentifiant" content="DGAL/C98 - 8010" /&gt;
+  &lt;/head&gt;
+...
+</pre></div>
+<div class="breakafter"></div>
+<br />
+Will be equivalent to the following code snippet:
+
+<div class="embededCode"><pre>
+// This computation is because the parent evaluation with the Fn.mkdir part.
+// This happends if the Dir1/Sec1.1 documents doesn't exist in root 
+// => see Fn.mkdir description above
+String path = root.pathAsString;
+DocumentModel doc = session.createDocumentModel(path, "Dir1", "StructureFolder");
+doc = session.createDocument(doc);
+
+path = doc.getPathAsString();
+doc = session.createDocumentModel(path, "Sec1.1", "StructureFolder");
+doc = session.createDocument(doc);
+
+// Here is because the document creation activation
+// Parent MVEL expression return the result of the mkdir
+path = doc.getPathAsString();
+// node selected into the xml is "DGAL/C98 - 8010"
+// MVEL expression remove space and replace slash by minus
+String name = "DGA-C98-8010";
+doc = session.createDocumentModel(path, name, "Instruction");
+</pre></div>
+
+<h3>NXQL</h3>
+<p>See the <a href="http://doc.nuxeo.com/x/uItH">NXQL Documentation</a> for the current state of NXQL.</p>
+
+<p><strong>ecm:isCheckedIn</strong>: 1 if the document is checked in and 0 if not (the opposite of DocumentModel.isCheckedOut()). This can only be compared to 1 or 0.</p>
+<p><strong>ecm:isVersion or ecm:isCheckedInVersion</strong>: 1 for versions and 0 for non-version (DocumentModel.isVersion()). This can only be compared to 1 or 0. (The name ecm:isVersion is available since Nuxeo 5.7.3)</p>
+<p><strong>ecm:versionVersionableId</strong>: the id of the versionable document of a version (the versionable document is the one from which the version was created).</p>
+<p><strong>ecm:isLatestVersion</strong>: 1 if this is the latest version of a document, 0 if not. This can only be compared to 1 or 0.</p>
+<p><strong>ecm:isLatestMajorVersion</strong>: 1 if this is the latest major version of a document, 0 if not. This can only be compared to 1 or 0.</p>
+<p><strong>ecm:tag</strong>: allows NXQL queries on a document's tags.</p>
+<p><strong>ecm:proxyTargetId</strong>: allows NXQL queries on the id of the target of a proxy.</p>
+<p><strong>ecm:proxyVersionableId</strong>: allows NXQL queries on the id of the versionable document of a proxy (the versionable document is the one from which the version to which the proxy is pointing was created).</p>
+
+
+
+  </div>
+</div>
+
+
+	<!-- JS
+	================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+    <script src="../../javascripts/float_menu.js"></script>
+    <script src="../../javascripts/lightbox.js"></script>
+
+</body></html>
+

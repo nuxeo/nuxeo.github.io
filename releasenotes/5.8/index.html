@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo 5.8 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo 5.8 release notes">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../../stylesheets/base.css">
+	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../../stylesheets/layout.css">
+	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+
+  <div id="mainContainer" class="container">
+    <p class="backbutton"><a href="../index.html">&larr; Back to Index</a></p>
+  <p class="remove-bottom" id="site-title">Nuxeo Platform <span class="version-number">5.8</span> Release Notes</p>
+
+    <div id="welcome">
+    <div class="message">
+<p>Nuxeo Platform 5.8 is now <a href="http://nuxeo.github.io/downloads.html" >available for download</a>. This is the first LTS version, using the <a href="http://www.nuxeo.com/blog/updates/2013/05/release-cycle/">newly launched versioning system</a>, with Fast Track on odd-numbered releases and Long Term Support on even-numbered releases.</p>
+    </div>
+    
+    <div style="clear:both;"></div>
+
+<p>Below you will find the list of new features and improvements included in this new release:</p>
+
+  <ul id="features">
+    <li><a href="users.html">For Users</a>
+      <ul class="second-label">
+        <li><a href="users.html#anchor-0">Nuxeo Drive</a></li>
+        <li><a href="users.html#anchor-1">DAM</a></li>
+        <li><a href="users.html#anchor-2">Workflow</a></li>
+        <li><a href="users.html#anchor-3">Mobile</a></li>
+        <li><a href="users.html#anchor-4">CSV Importer</a></li>
+        <li><a href="users.html#anchor-5">User Experience</a></li>
+        <li><a href="users.html#anchor-6">Search</a></li>
+        <li><a href="users.html#anchor-7">Quota</a></li>
+        <li><a href="users.html#anchor-8">BIRT</a></li>
+        <li><a href="users.html#anchor-9">Jenkins Report Module</a></li>
+        <li><a href="users.html#anchor-10">Video</a></li>
+        <li><a href="users.html#anchor-11">Translations</a></li>
+      </ul>
+
+    </li>
+    <li><a href="administrators.html">For Administrators</a>
+      <ul class="second-label">
+        <li><a href="users.html#anchor-0">Automation</a></li>
+        <li><a href="administrators.html#anchor-0">Monitoring</a></li>
+        <li><a href="administrators.html#anchor-1">Multi-Tabs Navigation</a></li>
+        <li><a href="administrators.html#anchor-2">Right Audit</a></li>
+        <li><a href="administrators.html#anchor-3">Kerberos Login Module</a></li>
+        <li><a href="administrators.html#anchor-4">MarketPlace/Update Center</a></li>
+        <li><a href="administrators.html#anchor-5">Blogs and Websites Packaging</a></li>
+        <li><a href="administrators.html#anchor-6">Database Support</a></li>
+        <li><a href="administrators.html#anchor-7">Nuxeo.conf New Parameters</a></li>
+      </ul>
+   </li>
+    <li><a href="developers.html">For Developers</a>
+      <ul class="second-label">
+        <li><a href="#anchor-0">Content Automation</a></li>
+        <li><a href="#anchor-1">Document Oriented REST API</a></li>
+        <li><a href="#anchor-2">CMIS</a></li>
+        <li><a href="#anchor-3">New operations</a></li>
+        <li><a href="#anchor-4">CSS 3 Support in Theme Engine</a></li>
+        <li><a href="#anchor-5">UI Style Guide</a></li>
+        <li><a href="#anchor-6">UI Framework</a></li>
+        <li><a href="#anchor-7">Content Views</a></li>
+        <li><a href="#anchor-8">CORS support</a></li>
+        <li><a href="#anchor-9">Scan Importer</a></li>
+        <li><a href="#anchor-10">Login Page</a></li>
+        <li><a href="#anchor-11">Long Running Listener</a></li>
+        <li><a href="#anchor-12">Move To Tomcat 7</a></li>
+        <li><a href="#anchor-13">Nuxeo Visible Content Store (VCS)</a></li>
+        <li><a href="#anchor-14">Redis</a></li>
+        <li><a href="#anchor-15">PDF Signing</a></li>
+        <li><a href="#anchor-16">Mockito Integration</a></li>
+        <li><a href="#anchor-17">Localization</a></li>
+        <li><a href="#anchor-18">Miscellaneous</a></li>
+      </ul>
+    </li>
+    <li><a href="upgrade_notes.html">Upgrade Notes</a></li>
+    <li><a href="issues.html">Known Issues</a></li>
+  </ul>
+  </div>
+
+</div>
+
+	<!-- JS
+	================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+</body></html>
+

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo 5.8 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo Platform 5.8 release notes">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../../stylesheets/base.css">
+	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../../stylesheets/layout.css">
+	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+  <div id="mainContainer" class="container">
+
+    <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
+
+  <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">5.8</span> Release Notes</a></p>
+
+
+    <div id="welcome">
+    <div style="clear:both;"></div>
+ <h6>These release notes are a merge of the previous Fast Track release notes available <a href="../index.html">here</a>.</h6>
+    <h1 style="margin-left:-0.5em !important;">For Users</h1>
+
+
+
+
+<h2><a name="anchor-0">Nuxeo Drive</a></h2>
+
+<p>Nuxeo Drive enables bidirectional synchronization of content between the local desktop and the Nuxeo content repository, on premise or in the Cloud. It works with all applications built on the Nuxeo Platform, including Document Management, Digital Asset Management, Case Management, or a custom content-centric application.</p>
+
+<p>Nuxeo Drive can be used behind a proxy. </p>
+<p><img class="lightboxed" src="./Drive_proxy_settings.png"/></p>
+<p>We also added the unified settings panel:</p>
+<p><img class="lightboxed" src="./Drive_accounts_settings.png"/></p>
+
+
+<h2><a name="anchor-1">DAM</a></h2>
+<h3>Customizable with Nuxeo Studio </h3>
+<p>Redesign from the ground up using ContentView, Layouts and widgets. It makes every part of DAM screen (search panel, result panel, asset view) easy to customize using Nuxeo Studio.</p>
+
+<ul>
+    <li>Define the Left Hand Side with your own search layout</li>
+    <li>Define the layout for the fields displayed in the thumbnail</li>
+    <li>Define the Right Hand Side data for the selected asset (view/edit, as toggable layout)</li>
+    <li>Define the Bulk-edit layout</li>
+    <li>Define toolbar buttons, add your own</li>
+    <li>Define the document types DAM can handle</li>
+</ul>
+
+<h3>Browse all Assets from the Repository</h3>
+<p>All the assets of the repository are displayed (not just the one under "Media Library")</p>
+<p><img class="lightboxed" src="dam_example.png"/></p>
+
+<h3>DAM Drag and Drop</h3>
+You can now drag and drop as many assets as you want in the New Asset window:
+<p><img class="lightboxed" src="dam_droped_upload.png"/></p>
+
+<h3>Assets Browsing</h3>
+<ul>
+        <li>"New Asset" button:</li>
+          <ul><li>Choose among appropriate document types with different metadata</li></ul>
+        <li>Import with D&D</li>
+          <ul><li>Also in "List" view</li></ul>
+        <li>New "Items/Page" dropdown</li>
+        <li>New "Refresh" button</li>
+        <li>New "Select all" button</li>
+        <li>New "Copy" button</li>
+        <li>New "Add to worklist" button</li>
+</ul>
+
+<p><img class="lightboxed" src="Bulk Edit DAM .png"/></p>
+
+
+<h3>Asset View</h3>
+<ul>
+ 	<li>New toolbar, with the following buttons:</li>
+        <ul>
+            <li>Like</li>
+            <li>Lock</li>
+            <li>Permanent link</li>
+            <li>Follow</li>
+            <li>Preview</li>
+            <li>Add to worklist</li>
+            <li>Go to DM view</li>
+            <li>Print</li>
+        </ul>
+        <li>New "Tags" feature</li>
+            <ul><li>Multiple tags</li>
+            <li>Click on a tag to display the list of assets using it</li></ul>
+        <li>New "Creator/LifeCycle/Version" display</li>
+        <li>New count of people who liked the document</li>
+        <li>Smart "Comments" group: Displayed only if there is at least one comment</li>
+        <li>Access to workflow actions directly from the DAM UI​​</li>
+</ul>
+
+<h3>Bulk Tagging</h3>
+
+<p>In the bulk edit form, you can now add tags to the selected list of documents.</p>
+<p><img class="lightboxed" src="./bulkTagging.png" /></p>
+
+<h3 >Asset Creation</h3>
+
+<p>When creating a new asset or bulk importing assets, you can choose the location where to import them. Only the folders where the user has the create permission are selectable.</p>
+<p><img class="lightboxed" src="./whereToImport.png" /></p>
+<p><img class="lightboxed" src="./bulkImportDND.png" /></p>
+
+<h3>Assets View</h3>
+
+<p>The view or edit layouts configured on the Document types (the ones you can configure on your own document type on Studio for instance) are displayed in the Metadata section. </p>
+
+<h3 >Single Asset View</h3>
+
+<p>Improve the single asset view of an asset (new layout accessible through the permalink). </p>
+<p><img class="lightboxed" src="./singleAssetView.png" /></p>
+
+<h3>Misc Improvements</h3>
+
+<P>Now you can use the HTML5 DnD on the Bulk import form.</p>
+<P>If your import fails for some reason (for instance, if you forgot to fill a required field), you get an appropriate error message and you don't have to select DnD files to import again.</p>
+
+<h2><a name="anchor-2">Workflow</a></h2>
+
+<p>A main workflow tab can be enabled to list running workflow tasks. This way you can select several tasks, and hence do bulk validation.</p>
+
+<p><a href="https://jira.nuxeo.com/browse/NXP-11340">Content routing prefetch</a> has been made more efficient, which improves performances.</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10049">Redirect user</a> when she has no more rights to read the document after changing the state of the workflow.</p>
+<p><a href="https://jira.nuxeo.com/browse/NXP-10142">Filter system workflow</a> related documents from search.</p>
+<p><img class="lightboxed" src="Workflow tab Bluk process.png"/></p>
+
+<p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20in%20%28%22Content%20Routing%22%2C%20%22Content%20routing%22%29%20AND%20fixVersion%20%3D%20%225.7.1%22%20AND%20status%20in%20%28Resolved%2C%20Closed%29%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
+
+
+
+<h3>Escalation Rules </h3>
+<p>Escalation rules let you run an operation chain when a condition is true. These conditions are evaluated every 5 minutes by a configurable scheduler. They can be executed one time (default behaviour) or multiple times.</p>
+<p><img class="lightboxed" src="./escalation.png"/></p>
+
+<h3>Sub-Workflow</h3>
+<p>We have added a new node called SubWorkflow. As you have already guessed it, it lets you embed sub-workflow into existing one. You can also give them parameters, escalation rules, input and output chains, and transitions, like a regular node. </p>
+<p><img class="lightboxed" src="./subWorkflow.png"/></p>
+
+<h3>Exclusive Node</h3>
+<p>When the workflow engine runs an exclusive node, it evaluates the transitions one by one and stops at the first one evaluated to true.</p>
+<p><img class="lightboxed" src="./exclusiveNode.png"/></p>
+
+<h3>New Workflow Operations</h3>
+
+<p>We've added new operations to cancel a workflow, resume a node, get the opened tasks, and complete a task and also improved the <em>Start Workflow</em> and <em>Set Workflow variable</em> operations.</p>
+
+
+<h3>New Workflow Tab</h3>
+<p>We have a new workflow tab that lets the user see all his assigned tasks at once and filter them.</p>
+
+<h3>Task Reassignement</h3>
+<p>Workflow tasks can now be reassigned to someone else.</p>
+<p><img class="lightboxed" src="./reassignement.png"/></p>
+
+<h3>MultiTask Workflow Node</h3>
+<p>We have introduced a new option that creates a different task per assignee.</p>
+
+<h3>Workflow Graph Visualization</h3>
+<p>The workflow graph can be visualized as it has been created in Studio.</p>
+<p><img class="lightboxed" src="./workflowGraph.png"/></p>
+
+<p>We now have a task resolution screen. It's a dedicated screen to solve one of your task and stay focus on the workflow. </p>
+
+<p><img class="lightboxed" src="./taskResolutionScreen.png"/></p>
+
+<p>A workflow can be applied on multiple documents.</p>
+
+<p>We added a parallel review workflow:</p>
+<ul>
+  <li>First step, choose the participants</li>
+  <li>Second step, every participants give their feedback.</li>
+  <li>Third step, we present a summary of the 2nd step and the assignee can validate or reject the document.</li>
+</ul>
+
+<p><img class="lightboxed" src="./parralelReviewWF.png"/></p>
+
+
+
+<h2><a name="anchor-3">Mobile</a></h2>
+<p>A new application based on <a href="http://cordova.apache.org/">Apache Cordova</a>, bringing multi-OS support. It can be used as a framework to build your own mobile application based on Nuxeo. Using Nuxeo Webengine and JQuery Mobile, it proposes the following features: Saved search, browsing, upload and download of documents, integration with native phone API.
+
+<h2><a name="anchor-4">CSV Importer</a></h2>
+<p>We have a new module allowing import of documents from a CSV file <sup>(1)</sup>. Here's how it works: click on Import a CSV, choose the CSV file, click on import and documents will be created using properties from the CSV (only scalar metadata).</p>
+<p>You can specify a folder in Nuxeo.conf where the importer will look for binaries. Just make sure you put their relative path in the CSV.</p>
+<p><sup>(1)</sup><a href="CSVimportSample.csv">CSV import sample</a></p>
+
+<p><img class="lightboxed" src="CSV Importer Imported.png"/></p>
+
+<h2><a name="anchor-5">User Experience</a></h2>
+<p>The platform screens have been redesigned and improved. More than eighty issues about the user experience, user interface and styles have been resolved.</p>
+
+<h3>Safe Edit: Never loose your Forms</h3>
+<p>When editing a document, if the user tries to exit a page with unsaved changes then a popup window asks him if he really wants to leave the page (and if so discard the changes) or if he wants to stay on the page.</p>
+<p>Where supported (i.e. localstorage available in the browser), a modification in the edited form triggers the autosave mechanism which records the new input values of the form. If the editing is accidentally lost (e.g. system / browser crash, network failure, etc ...), then the next time the user edits the page, the previous modifications will be detected from the local storage and the user will be asked whether to restore them or not.</p>
+
+<h3>Bulk Edit in listing</h3>
+<p>We have enabled <a href="https://jira.nuxeo.com/browse/NXP-11054">Bulk Editing</a> for document listing</a>. It's now easy to show a form in a popup, displaying any layout you want, and that applies to documents you've selected.</p>
+<p><img class="lightboxed" src="Bulk Edit DM 2.png"/></p>
+
+<h3>Content Thumbnails</h3>
+
+<p>Thumbnail can be automatically generated for pdf or image documents using the main file of a  document. It's also possible to contribute a thumbnail adapter for a specific document type or Facet. This is useful mainly for files other than pictures.</p>
+<p>The generation of these thumbs is asynchronous, thanks to the use of workers. There is also a default placeholder showed when the generation isn't finished, or if Nuxeo could not generate the thumb.</p>
+
+<p><img class="lightboxed" src="dm_thumbnails.png"/></p>
+
+<h3>Back Navigation</h3>
+<p>We've enhanced the back navigation of your browser using HTML5 pushState.</p>
+
+<h3>Permlink available for any Asset</h3>
+<p>Every Asset now has an accessible and sharable permlink for you to share.</p>
+
+<h3>Select2 Integration</h3>
+<p>We have replaced the old selection/suggestion JSF widgets by <a href="http://ivaynberg.github.io/select2/index.html">select2</a> based widgets. Not only does it look better but it's also easier to customize. You can easily setup a user suggestion widget that filter search query with a group parameter.</p>
+<p><img class="lightboxed" src="./select2Example.png"/></p>
+<p>We also introduced new suggestion widgets on directories. They support n-level chained vocabularies out of the box.</p>
+<p>
+
+<h3>SessionTimeOut Feedback</h3>
+<p>Users see a <em>'session expired'</em> message when their session expires.</p>
+<p><img class="lightboxed" src="./sessionTimeout.png"/></p>
+
+<h3>Form Submit Shield</h3>
+<p>This will protect the heavy handed crazy clickers to have errors because they have clicked on the same button fifty times in two seconds. The user will receive a feedback message telling them the request is being processed. It's better for his mouse and the server. You can deactivate it through the <em>nuxeo.jsf.enableDoubleClickShield</em> property in <em>nuxeo.conf</em>.</p>
+
+<h3>Tag to Version</h3>
+<p>When a version of a document is created, the tags on the master document are copied to the new version.</p>
+
+<h3>Redesigned Error Page</h3>
+<p>We have redesigned the legacy error page to have something cleaner, with a user-understandable error message.</p>
+<p><img class="lightboxed" src="./errorPage.png"/></p>
+
+
+<h3>Rich Text Widget</h3>
+
+<p>When using the rich editor and text, xml or markdown, we've added a Toggle Fullscreen button that displays the editing window in a fancybox. It makes it easier to see what you're doing.</p>
+<p><img class="lightboxed" src="./fullScreenNote.png"/></p>
+
+<h3>Access Keys</h3>
+
+<p>We have added new access key binded to actions. Try maj-h, you'll see the different access keys available. Use ctrl-maj E to go to the Edit tab for example.</p>
+<p><img class="lightboxed" src="./akHelp.png"/></p>
+
+<h3>New Icons</h3>
+<p>We have updated all the icons throughout the platform.</p>
+<p><img class="lightboxed" src="./newIcons.png"/></p>
+
+<h3>Style Update</h3>
+<p>Tables, forms and layout have been reviewed and simplified. A focus has been added to simplify the fill of inputs and make the document edition smoother.</p>
+
+
+
+<h2><a name="anchor-6">Search</a></h2>
+
+<h3>Use Tags in Searches</h3>
+<p>You can now add tags in your search form. Whether you're using the advanced search form, any faceted search, a content view query or a query operation. It works because we've added tag suppport to NXQL.</p>
+<p><img class="lightboxed" src="tag_search.png"/></p>
+
+
+<h3>Saved Search Managment Tab</h3>
+<p>Every saved search is listed on a home tab, a subtab for dam, a subtab for faceted search. You can share those saved searches with other users using the manage/rights tab.</p>
+
+<p><img class="lightboxed" src="Saved searches 2.png"/></p>
+
+
+<h3>Search Panel</h3>
+
+<ul>
+        <li>Search criteria can be saved</li>
+        <li>Search layout re-organized for better user friendly interface</li>
+        <li>Search is triggered when user clicks "Filter" or "Clear"</li>
+        <li>Rename "Keywords" with "Text Search"</li>
+        <li>Search by location renamed</li>
+        <li>New search by tags</li>
+        <li>New search by creation date</li>
+        <li>New search by author</li>
+        <li>New search by original author</li>
+        <li>Search by subjects with a new, better, interface</li>
+        <li>Search by coverage with a new, better, interface</li>
+</ul>
+
+<p><img class="lightboxed" src="Saved searches 2.png"/></p>
+
+
+<h2><a name="anchor-7">Quota</a></h2>
+
+<p>We've made many improvements in the Quota <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-quota">Marketplace package</a>.</p>
+
+<p><a href="https://jira.nuxeo.com/browse/NXP-10713">Global Quotas Activation</a>, Quotas can be activated in the admin center</p>
+<p>Once it's activated, everything statistical are automatically computed.</p>
+<p><img class="lightboxed" src="quota-admin-statistics.gif"/></p>
+<p>Administrators can see (in Manage &gt; Quotas &gt; Stats) the following statistics :</p>
+<ul class="alternate" type="square">
+	<li>Total volume used  (deleted, live, versions) + "/Available space"</li>
+	<li>Volume used by deleted files (trash)</li>
+	<li>Volume used by archived versions</li>
+</ul>
+<p>A graphical representation of those 3 statistics. </p>
+<p>A content view with the title "Sub Folders"  with the listing of subfolders</p>
+<ul class="alternate" type="square">
+	<li>Columns Title, do:Modified, Last Contributor, and Size</li>
+	<li>Buttons Delete and Add to cart (to cut/paste)</li>
+</ul>
+
+<h3>Return meaningful error message when encountering a Quota error</h3>
+<img class="lightboxed" src="creation_or_modification_impossible.gif" />
+
+<h3>User Workspace Quota Management Activation</h3>
+<p>As the Administrator of the system, you can enable Quota on user workspaces (radio button) with a default value (slider). The value is the same for all the user workspaces.</p>
+
+<p>Quota processing now uses its own work queue.</p>
+
+<a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20fixVersion%20%3D%20%225.7.1%22%20AND%20component%20in%20%28Quota%2C%20Quotas%29%20AND%20resolution%20not%20in%20%28%22Won%27t%20Fix%22%2C%20duplicate%29%20ORDER%20BY%20issuetype%20DESC%2C%20updated%20DESC">Issues List</a>
+
+
+<h2><a name="anchor-8">BIRT</a></h2>
+<a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-birt-integration">Marketplace Package</a>
+<p>The BIRT Connector has been aligned on BIRT 4.2.2. It means that you can create your report in BIRT Designer 4.2.2. We also made some significant ergonomy enhancements on the admin center UI and we've added parameter validation when generating a report.</p>
+
+<img class="lightboxed" src="birt.png" />
+
+<h2><a name="anchor-9">Jenkins Report Module</a></h2>
+We have a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-jenkins-report-mp">new module</a> available in the marketplace. It's an integration between Jenkins and Nuxeo that we use internally. It helps us keep track of our CI, see it's evolution and easily send a report of the state of the CI to our developers.
+Here's an example of the email we receive:
+<blockquote>
+Hello devs!
+
+Here's a status of our CI main jobs on Jenkins.
+
+Current number of failing jobs: 3.
+Current number of unclaimed jobs: 1.
+
+Duty comments:
+
+To see the complete report click here.
+
+Cheers!
+</blockquote>
+
+
+<h2><a name="anchor-10">Video</a></h2>
+<p>The video.js player has been updated to version 4.2.2. This will enable us to benefit from their new plugin architecture. The first plugin we've integrated shows thumbnails of the video while hovering on the progress bar.</p>
+<p><img class="lightboxed" src="./videoThumb.png" /></p>
+
+<h2><a name="anchor-11">Translations</a></h2>
+<p>Some contributions have been integrated to Nuxeo. Thanks to Patrick Turcotte for the French (Canada) translation, to CapGemini Nl for Dutch and to Jordi Mallach for the Catalan translation.</p>
+
+
+    </div>
+
+</div>
+
+	<!-- JS
+	================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+    <script src="../../javascripts/float_menu.js"></script>
+    <script src="../../javascripts/lightbox.js"></script>
+
+</body></html>
