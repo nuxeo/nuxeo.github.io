@@ -48,7 +48,7 @@
           "description" : "",
           "label" : "nuxeo-5.8-vm.zip",
           "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-vm.zip.md5",
-          "os" : "all",
+          "os" : "vm",
           "size" : "679M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-vm.zip"
         },
@@ -120,7 +120,7 @@
           "description" : "",
           "label" : "nuxeo-5.7.3-vm.zip",
           "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-vm.zip.md5",
-          "os" : "all",
+          "os" : "vm",
           "size" : "676M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-vm.zip"
         },
@@ -181,7 +181,7 @@
           "description" : "",
           "label" : "nuxeo-5.7.2-vm.zip",
           "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-vm.zip.md5",
-          "os" : "all",
+          "os" : "vm",
           "size" : "708M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-vm.zip"
         },
@@ -240,7 +240,7 @@
           "description" : "",
           "label" : "nuxeo-5.7.1-vm.zip",
           "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-vm.zip.md5",
-          "os" : "all",
+          "os" : "vm",
           "size" : "709M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-vm.zip"
         },
@@ -299,7 +299,7 @@
           "description" : "",
           "label" : "nuxeo-5.6-vm.zip",
           "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-vm.zip.md5",
-          "os" : "all",
+          "os" : "vm",
           "size" : "649M",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-vm.zip"
         },
