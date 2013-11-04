@@ -1,4 +1,91 @@
-[ { "data" : [ 
+[
+{ "data" : [ 
+        { "date" : "04-Nov-2013 12:43",
+          "description" : "",
+          "label" : "5.8 Release Notes(Since 5.6).pdf",
+          "os" : "all",
+          "size" : "5.4M",
+          "url" : "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Release%20Notes(Since%205.6).pdf"
+        },
+        { "date" : "31-Oct-2013 16:23",
+          "description" : "",
+          "label" : "5.8 Upgrade Notes(Since 5.6).pdf",
+          "os" : "all",
+          "size" : "150K",
+          "url" : "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Upgrade%20Notes(Since%205.6).pdf"
+        },
+        { "date" : "31-Oct-2013 16:23",
+          "description" : "",
+          "label" : "5.8 Release Notes(Since 5.7.3).pdf",
+          "os" : "all",
+          "size" : "889K",
+          "url" : "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Release%20Notes(Since%205.7.3).pdf"
+        },
+        { "date" : "31-Oct-2013 16:28",
+          "description" : "",
+          "label" : "5.8 Upgrade Notes(Since 5.7.3).pdf",
+          "os" : "all",
+          "size" : "77K",
+          "url" : "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Upgrade%20Notes(Since%205.7.3).pdf"
+        },
+        { "date" : "30-Oct-2013 09:29",
+          "description" : "",
+          "label" : "nuxeo-5.8-setup.exe",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-setup.exe.md5",
+          "os" : "win",
+          "size" : "261M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-setup.exe"
+        },
+        { "date" : "30-Oct-2013 12:10",
+          "description" : "",
+          "label" : "nuxeo-5.8-sources.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-sources.zip.md5",
+          "os" : "all",
+          "size" : "64M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-sources.zip"
+        },
+        { "date" : "30-Oct-2013 10:46",
+          "description" : "",
+          "label" : "nuxeo-5.8-vm.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-vm.zip.md5",
+          "os" : "all",
+          "size" : "679M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-vm.zip"
+        },
+        { "date" : "30-Oct-2013 17:41",
+          "description" : "",
+          "label" : "nuxeo-cap-5.8-tomcat-sdk.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat-sdk.zip.md5",
+          "os" : "all",
+          "size" : "300M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat-sdk.zip"
+        },
+        { "date" : "30-Oct-2013 17:40",
+          "description" : "",
+          "label" : "nuxeo-cap-5.8-tomcat.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat.zip.md5",
+          "os" : "all",
+          "size" : "168M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat.zip"
+        },
+        { "date" : "30-Oct-2013 17:45",
+          "description" : "",
+          "label" : "nuxeo-shell-5.8.jar",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-shell-5.8.jar.md5",
+          "os" : "all",
+          "size" : "5.9M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-shell-5.8.jar"
+        }
+      ],
+    "date" : "2013-10-30",
+    "name" : "5.8",
+    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.8/"
+  },
+ { "date" : "2013-10-31",
+    "name" : "5.7.3 to 5.8",
+    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.7.3_5.8/"
+  },
+{ "data" : [ 
         { "date" : "25-Sep-2013 15:02",
           "description" : "",
           "label" : "5.7.3 Release Notes.pdf",

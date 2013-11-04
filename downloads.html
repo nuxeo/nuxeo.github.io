@@ -159,12 +159,14 @@
 
        function addTab(data) {
          version = data[count];
-         if (version.name.length == 3) {
-           LTScount = LTScount + 1;
-         } else {
-           FTcount = FTcount + 1;
+         if (version.data) {
+           if (version.name.length == 3) {
+             LTScount = LTScount + 1;
+           } else {
+             FTcount = FTcount + 1;
+           }
+           fillTab(version.name, version.date, version.data);
          }
-         fillTab(version.name, version.date, version.data);
          count = count + 1;
        }
 
