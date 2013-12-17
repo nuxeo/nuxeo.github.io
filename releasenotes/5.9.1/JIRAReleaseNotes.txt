@@ -1,0 +1,275 @@
+
+Release Notes - Nuxeo Enterprise Platform - Version 5.9.1
+
+
+** User story
+    * [NXP-11159] - As a user, when I remove Read rights from a synchronized folder/workspace, I expect an action on the local folders 
+    * [NXP-12619] - Javascript namespaces should be reviewed in Nuxeo Platform UI
+    * [NXP-13088] - As a User, when I delete on the server, a file that has been modified offline by another user,  what happens
+    * [NXP-13288] - As an iOS dev, i expect a blob cache
+
+
+
+
+** Clean up
+    * [NXP-12991] - Add explicit type on actions using category -> type compatibility mechanism
+    * [NXP-13113] - Clean up use of DocumentModelIterator
+    * [NXP-13285] - Remove unused "Net VCS" code
+    * [NXP-13306] - Remove unused org.nuxeo.ecm.core.url.*
+    * [NXP-13326] - Clean up WebDAV code
+    * [NXP-13354] - RunOperationOnListInNewTransaction should not print errors
+
+
+
+
+** Improvement
+    * [NXP-10107] - Update Unicolor Flavors Set package with the link to the documentation and sources
+    * [NXP-10148] - Allow filtering of exported operations
+    * [NXP-12564] - Add force option to nuxeoctl start
+    * [NXP-12643] - Include optional addons' version alignement in the release process
+    * [NXP-12767] - Allow use of instance roles instead of credentials with S3 storage
+    * [NXP-12787] - Activate SafeEdit on toggleable layout widget
+    * [NXP-12797] - Add tooltip to select2 search results
+    * [NXP-12813] - Add DEBUG logs to action filters resolution
+    * [NXP-12973] - Add webdriver test for the default parallel workflow
+    * [NXP-13006] - Make explorer.nuxeo.org have the same look than site/automation/doc
+    * [NXP-13086] - Increase maximum size of the tests JVM allocation pool
+    * [NXP-13104] - Make the Marketplace package samples more easy to copy
+    * [NXP-13118] - Better error message when pool is full
+    * [NXP-13125] - Automatically retry async listeners if failing due to concurrency
+    * [NXP-13133] - Improve scripts errors logging
+    * [NXP-13134] - Provide a runtime property to globally enable email display in user suggestion
+    * [NXP-13152] - Reorganize Drive tab in User center
+    * [NXP-13156] - Make the release script workaround with existing default maintenance branch
+    * [NXP-13179] - Migrate largetext field to clob field using XSD definition
+    * [NXP-13232] - Update old icons
+    * [NXP-13252] - improve oracle connection closed detection
+    * [NXP-13254] - Allow HTML tags in widget help displayed in tooltips
+    * [NXP-13256] - Use contributed page providers for articles and news gadgets
+    * [NXP-13266] - Improve Automation Trace exception when invalid path has been found
+    * [NXP-13267] - Drive: dynamically find default domain path in tests setup operation
+    * [NXP-13292] - Drive: allow to pass permission to grant to test users on test workspace in tests setup operation
+    * [NXP-13297] - Contributing a component that does not exist should log an error at server startup
+    * [NXP-13313] - Make the package command of release script use branch and tag options
+    * [NXP-13315] - Add Principal Caching in MultiTenantUserManager
+    * [NXP-13316] - UserProfile loading can fetch too much data in some cases
+    * [NXP-13320] - Enfore nuxeoctl Shell script against CRLF line terminators in nuxeo.conf
+    * [NXP-13321] - Avoid fetching more doc than needed in FileManagerUtils
+    * [NXP-13322] - Provide a more flexible way to specify the id to be submitted in Select2 widgets
+    * [NXP-13348] - Package and deploy test code in nuxeo-opencmis-tests
+    * [NXP-13389] - Add more information on layout showcase widget reference
+    * [NXP-13390] - Improve SendMail Operation to expose bcc,replyto,cc
+    * [NXP-13391] - Add information about widget types supported controls
+    * [NXP-13419] - Add loading icon on suggestbox
+    * [NXP-13423] - Make exception handling more objetive c like
+    * [NXP-13424] - Hierarchy cache need to know if everything is done
+    * [NXP-13425] - Drive: don't log 'documentModified' in audit when registering / unregistering a sync root
+    * [NXP-13426] - Apply Git Shell scripts on any directory
+    * [NXP-13434] - Drive: don't send a notification when registering / unregistering a sync root
+
+
+** New Feature
+    * [NXP-12125] - Add a maintenance command to the release script
+    * [NXP-13123] - Allow adding new values to a directory from select2 widgets
+    * [NXP-13172] - Create Session object
+    * [NXP-13174] - Exposes shared session
+    * [NXP-13175] - Create NUXRequest
+    * [NXP-13176] - Request result should be accessible in three ways
+    * [NXP-13217] - Add binary store location in the Framework startup summary if customized
+    * [NXP-13333] - nuxeo-imaging-recompute addon
+
+
+
+
+
+
+** Task
+    * [NXP-11265] - Tree > Remove the open state of icons
+    * [NXP-12204] - Remove deprecated modules in nuxeo-distribution
+    * [NXP-12290] - Add an operation for setting permissions for a given  user or group on a document or a document list
+    * [NXP-12461] - Create WebDriver test on Relation
+    * [NXP-12603] - Add the nuxeo-style-guide as default addon
+    * [NXP-12623] - Minimal upgrade the sample project module for 5.8
+    * [NXP-12655] - Add a webdriver test for manual delegation
+    * [NXP-12656] - Add a webdriver test for task reassignment
+    * [NXP-12893] - Create a webdriver test for Drag and Drop File Import
+    * [NXP-12922] - Synchronize webdriver tests with trial page changes
+    * [NXP-13055] - Update presales ressources (icons etc.)
+    * [NXP-13112] - Upgrade to Richfaces 3.3.1.GA-NX9.01
+    * [NXP-13120] - Drive: allow to relax constraint on a user sync root when adapting a document as a FileSystemItem
+    * [NXP-13142] - Fix nuxeo-marketplace-sample
+    * [NXP-13207] - Drive: persist last synchronization date per pair state
+    * [NXP-13209] - Drive: handle 'unsynchronized' pair state
+    * [NXP-13243] - Drive: test bad mime type detected by the client and sent to the server
+    * [NXP-13307] - Tags > Monospace font not readable
+    * [NXP-13318] - Align on org.nuxeo.connect:nuxeo-connect-client 1.4.13 release
+    * [NXP-13335] - Setup by default nuxeo login token in CAP
+    * [NXP-13346] - Add API to invalidate user profile cache
+    * [NXP-13347] - Drive: invalidate user profile cache at startup and tear down of functional tests
+    * [NXP-13352] - Set nuxeo-template-rendering MP as ready for production
+    * [NXP-13356] - Login screen > Remove negative margin
+    * [NXP-13365] - Drive: add some tests on concurrency issues
+    * [NXP-13404] - Update login screen
+    * [NXP-13405] - Add documentation on how to deal with blobs with the rest API
+    * [NXP-13440] - Upgrade to org.nuxeo:nuxeo-ftest:1.7.11
+
+
+** Sub-task
+    * [NXP-12985] - enable session stoler to proceed and rollback at commit
+    * [NXP-13089] - When a user loses the Read permission on a document, delete it locally except if it has been modified since last synchronization
+    * [NXP-13090] - Specify how we can implement a correct cleanup of documents for which user lost read permission
+    * [NXP-13114] - Update rest-api documentation styles
+    * [NXP-13119] - Take into account a security update in the audit change finder
+    * [NXP-13136] - Fix importer synchronization issues
+    * [NXP-13210] - Provide an Html UI to manage importer
+    * [NXP-13250] - Shorten path length for nuxeo-platform-localconfiguration
+    * [NXP-13268] - Shorten path length for nuxeo-platform-annotations
+    * [NXP-13275] - Shorten path length for nuxeo-platform-document-routing
+    * [NXP-13281] - Shorten path length for nuxeo-social-workspace
+    * [NXP-13289] - Initiate hierarchy
+    * [NXP-13291] - Store document data in the filesystem
+
+
+
+** Bug
+    * [NXP-8162] - Add a window (and tab) title when user is on "Home"
+    * [NXP-9359] - Change date formatter JSF functions to use correct English
+    * [NXP-10279] - Fix deprecated signature in org.eclipse.equinox.common-3.6.0.v20100503.jar
+    * [NXP-10535] - Add mimetype for msg files (Outlook)
+    * [NXP-11146] - Invalidate synchronization roots cache if ACL change
+    * [NXP-11210] - Make select path tree widget handle the "required" property
+    * [NXP-11395] - Clicking "Open Nuxeo Drive folder" when Drive in synchronizing doesn't open the Finder window and makes the Drive icon disappear  
+    * [NXP-12227] - Nuxeo Synchonization Root folders registrations and unregistrations are not propagated to the client
+    * [NXP-12312] - CMIS JOIN Query result set properties not being populated
+    * [NXP-12530] - Update Center : Marketplace package list isn't refreshed correctly after clicking Download
+    * [NXP-12578] - Login > Make background-cover work for IE8
+    * [NXP-12582] - Web mobile iOS doesn't build since XCode upgrade
+    * [NXP-12584] - Make the isCheckedOut information available when document is detached
+    * [NXP-12684] - Don't display 'No Result' when i haven't started to search something
+    * [NXP-12747] - Update Center : Wait icon in Studio tab had scroll bar under IE
+    * [NXP-12793] - "New" and "Import a file" buttons shouldn't be displayed in the Asset Library if user doesn't have rights to create children 
+    * [NXP-12818] - The preview popup should not have 2 scroll bars
+    * [NXP-12867] - Fix random like operation test failure
+    * [NXP-12889] - Fix GSA connector test failure
+    * [NXP-12900] - Randomly failing converter test TestCGCache.testCGTask
+    * [NXP-12955] - Fix random WorkflowEscalationTest failure
+    * [NXP-13025] - Enabled faceted searches are sorted randomly
+    * [NXP-13029] - Tenant administrators can remove themselves from the tenant administrators
+    * [NXP-13032] - Error pages have javascript errors
+    * [NXP-13035] - Error on Local configuration tab after I edited the authorized document types
+    * [NXP-13036] - Error when uploading file with empty mimetype by drag&drop 
+    * [NXP-13038] - Task name filter: task label changes language when user clicks on the Filter button
+    * [NXP-13049] - Fix Studio snapshot last update time when restart needed
+    * [NXP-13059] - NPE when converting a file with bytes that are not encoded in UTF-8 nor in ASCII
+    * [NXP-13061] - Fix nuxeo-flavors-unicolor addon 
+    * [NXP-13062] - Cannot change the dashboard layout
+    * [NXP-13065] - IT-nuxeo-master-tests-dm-tomcat failure on default workflow test
+    * [NXP-13067] - thumbnail factories should be contributed using facets
+    * [NXP-13069] - Bookmark 'new' button do nothing
+    * [NXP-13070] - Fix Oracle node identity detection
+    * [NXP-13071] - Drive: fix "UnboundLocalError: local variable 'local_folder' referenced before assignment" when offline state is notified
+    * [NXP-13072] - Fix new automation logs when trace mode not active with nested chain only
+    * [NXP-13073] - Right-click menu doesn't work with navigation tabs other than default one 
+    * [NXP-13076] - Rest API doesn't support spaces in URLs
+    * [NXP-13079] - MySQL clustered locking test issue
+    * [NXP-13081] - Align nuxeo-platform-indexing on CXF changes
+    * [NXP-13082] - Missing filename when uploading Blob via Automation.
+    * [NXP-13084] - Select2 default selection formatter and suggestion formatter are reversed
+    * [NXP-13091] - Changing the folder after droping files on the bulk import form makes the Import button unavailable
+    * [NXP-13092] - Cannot publish a rendition just after a normal publication
+    * [NXP-13093] - Fix encoding of HTML entities in content view CSV export
+    * [NXP-13094] - Cannot change tab on a empty video document
+    * [NXP-13096] - Fix "My tasks" widget area width
+    * [NXP-13097] - Show explicit error when file upload fails in an ajax form
+    * [NXP-13098] - Welcome CSS class should not be at the same level than the login box
+    * [NXP-13099] - Core-IO import on anonymous types generated for XSD enum
+    * [NXP-13101] - Fix complex property access after schema update
+    * [NXP-13103] - Reset JSF components states when selecting a DAM asset
+    * [NXP-13109] - Possible ACLR cache corruption on SQLServer
+    * [NXP-13110] - Broken URL to services on Explorer
+    * [NXP-13111] - Fix LockingParallelClustered failing unit tests under MSSQL
+    * [NXP-13115] - automation event handler descriptors should be contributable in Java
+    * [NXP-13117] - Drive: HTTPS proxy check is done using an HTTP request 
+    * [NXP-13121] - Fix random waitForSelect2 selenium test failure
+    * [NXP-13122] - Support of uuid idtype on PostgreSQL is broken
+    * [NXP-13126] - Event listener priority override doesn't work
+    * [NXP-13127] - Proper async listener work cleanup
+    * [NXP-13128] - Cannot Drag and Drop Files if local configuration is activated
+    * [NXP-13130] - Correctly remove ACLs for current task assignees when reassiging the task using a widget that adds a prefix to the selected users and groups
+    * [NXP-13135] - Fix display email property on user suggestion widgets
+    * [NXP-13137] - Add a waiting icon on bulk edit form
+    * [NXP-13141] - Fix suggestOne/ManyDirectory language fallback when user locale not available 
+    * [NXP-13145] - Map in Json properties should not have to be strings
+    * [NXP-13146] - Document are not displayed in IE 11
+    * [NXP-13147] - Fix sort actions on ajaxified content views using Firefox
+    * [NXP-13149] - Cannot remove a value from a document's metadata when the vocabulary entry's ID has a space at the end
+    * [NXP-13157] - Fix action widgets configuration
+    * [NXP-13161] - Favicon icon doesn't appear with Internet Explorer
+    * [NXP-13162] - Don't fail versioning if no versioning options are specified
+    * [NXP-13180] - Fix French translation "rejetter" in workflow actions
+    * [NXP-13184] - Fix line height for update icon in header
+    * [NXP-13191] - Add Document Management module to the Digital Signature package dependencies
+    * [NXP-13193] - seam timezone cookie not well initialized on firefox 25
+    * [NXP-13194] - Fix Select2 Suggestion widget in layout demo
+    * [NXP-13195] - Non-SNAPSHOT Marketplace package install should not force other packages upgrade to SNAPSHOT version
+    * [NXP-13199] - Error when I try to sign a JPG file
+    * [NXP-13202] - Fix textarea widget configuration for the "escape" property
+    * [NXP-13206] - Missing French labels for multi tenant addon
+    * [NXP-13212] - overwrite parameter not taken in account in SetDocumentACE operation
+    * [NXP-13215] - core storage should warn when ignoring a requested document for retrieve
+    * [NXP-13220] - As a developer, i want a request to update and create document
+    * [NXP-13221] - Fix Dutch language translations selection
+    * [NXP-13224] - Birt > Hide report models from search results
+    * [NXP-13228] - Drive: investigate on randomly failing IT tests under Windows due to MemoryError in test_synchronize_deep_folders
+    * [NXP-13237] - Relations fail to be added
+    * [NXP-13241] - When I Ctrl+click on DAM Top Menu Bar Link, new conversation is not started
+    * [NXP-13242] - jdoe is present somewhere in nuxeo code (not speaking about tests)
+    * [NXP-13244] - Fix tab cache reset when finished task
+    * [NXP-13248] - Preview JS error
+    * [NXP-13251] - Click on User Menu Action  in the top bar shows the menu but never hide it
+    * [NXP-13262] - Add back document description on title tooltip in listings
+    * [NXP-13271] - Fix workflow variables when validating several tasks in bulk
+    * [NXP-13273] - Fix propagation of widget properties on nxl:widget tag
+    * [NXP-13279] - Prevent error when clicking on Get traces when there is no trace to display
+    * [NXP-13295] - Missing size for document icons in the worklist & clipboard
+    * [NXP-13296] - Document icons are not resized in opensocial gadgets
+    * [NXP-13303] - Ensure backward compatibility for codec contribution refactoring
+    * [NXP-13304] - Fix Tomcat deployment in nightly profile
+    * [NXP-13308] - Fix Tomcat deployment in release profile
+    * [NXP-13309] - Fix invalid DOM after Ajax rerender on Content View listing
+    * [NXP-13310] - Fix EmbeddedAutomationClient suite test
+    * [NXP-13314] - Fix PDF rendition link on PNG file if document path contains a quote
+    * [NXP-13317] - Fix selenium test failure on testVocabulariesManagement by ordering available vocabularies
+    * [NXP-13319] - Fix increment of current conversation id when clicking on tabs on document with a quote in name
+    * [NXP-13323] - Fix leak of -1 sessions on tests using CoreFeature
+    * [NXP-13324] - Social Workspaces icons should not be the old one when folder is open
+    * [NXP-13334] - Fix CMIS qualifier-related query issues
+    * [NXP-13337] - Hide the "Execution type" widget on edit mode on a workflow document
+    * [NXP-13338] - Drive: registering as a sync root a folder for which the path is included in one of the existing sync root's paths has no effect
+    * [NXP-13343] - Fix content view checkboxes refresh after filter
+    * [NXP-13344] - Add missing login-digest module to CAP distribution
+    * [NXP-13349] - Fix "template" widget  type from advanced widget in showcase
+    * [NXP-13359] - Reset 'taskInfo' property when looping on a workflow node
+    * [NXP-13360] - Remove UserCodec unecessary @ quote
+    * [NXP-13362] - Fix wrong label in user center
+    * [NXP-13364] - Drive: metadata update (other than title) on a remote folder should not be considered as a remote modification
+    * [NXP-13366] - Drive: max_loops parameter in Synchronizer.loop() doesn't represent the real number of iterations executed
+    * [NXP-13368] - Drive: locally updating the content of a file and remotely updating some property on the document concurrently causes a conflict
+    * [NXP-13369] - Update to Richfaces NX9.02
+    * [NXP-13373] - IE 11: Import a file pop up too small
+    * [NXP-13374] - Drive: IT job doesn't fail under Windows yet an exception is raised when running the tests
+    * [NXP-13375] - Unfolding navigation tree only displays one item
+    * [NXP-13376] - [IE11] Available document types popup doesn't display clickable content
+    * [NXP-13378] - IE 11: Profile edit form layout is shifted
+    * [NXP-13383] - Draft saved message is displayed on a white background
+    * [NXP-13386] - Fix NPE for suggestion widgets within list widgets
+    * [NXP-13388] - Enable Files tab on video document type
+    * [NXP-13397] - Unable to edit the layout of the dashboard
+    * [NXP-13411] - CSS > Rename iconImage rule
+    * [NXP-13413] - Drive: locally renaming a folder then remotely deleting it doesn't delete the local folder
+    * [NXP-13414] - Fix NPE when trying to add the social facet on a placeless document
+    * [NXP-13415] - Fix crash on NPE when starting the DefaultSerialWorkflow from a custom button
+    * [NXP-13417] - BatchId are not taken into account when using rest API
+    * [NXP-13429] - IE11: Issues with the wizard
+    * [NXP-13435] - Fix validation on cancel in bulk edit and new asset fancy boxes
+
