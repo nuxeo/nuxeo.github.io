@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html style="margin: 0; padding: 0;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>UpgradeNotes591 (Nuxeo Issue Tracker)</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+</head>
+<body id="jira" class="aui-layout aui-theme-default page-type-printable" style="color: #000 !important; font-family: Arial,sans-serif; font-size: 11pt !important; line-height: 1.42857142857143; background-color: #fff !important; min-width: 990px; overflow-y: scroll; margin: 0; padding: 0;" bgcolor="#fff !important">
+<style type="text/css">
+cite:before { content: "\2014 \2009" !important; }
+q:before { content: open-quote !important; }
+q:after { content: close-quote !important; }
+.aui-avatar-project:before { border-radius: 100% !important; border: 1px solid #ccc !important; bottom: -1px !important; content: "" !important; left: -1px !important; position: absolute !important; right: -1px !important; top: -1px !important; }
+.aui-layout #content:before { content: "" !important; clear: both !important; display: table !important; }
+.aui-layout #footer .footer-body>ul>li:after { content: "\b7" !important; margin-left: 10px !important; speak: none !important; }
+.aui-layout #footer .footer-body>ul>li:last-child:after { display: none !important; }
+.aui-theme-default a:focus { text-decoration: underline !important; }
+.aui-theme-default a:hover { text-decoration: underline !important; }
+.aui-theme-default a:active { text-decoration: underline !important; }
+.aui-nav-breadcrumbs:after { clear: both !important; content: " " !important; display: table !important; }
+.aui-nav-pagination:after { clear: both !important; content: " " !important; display: table !important; }
+.aui-nav-horizontal:after { clear: both !important; content: " " !important; display: table !important; }
+.aui-navgroup-horizontal .aui-nav:after { clear: both !important; content: " " !important; display: table !important; }
+.aui-navgroup-horizontal .aui-navgroup-inner:after { clear: both !important; content: " " !important; display: table !important; }
+.aui-nav-breadcrumbs>li+li:before { content: "/" !important; padding-right: 10px !important; }
+.aui-navgroup-vertical .aui-nav>li>a:focus { background: #e6e6e6 !important; text-decoration: none !important; }
+.aui-navgroup-vertical .aui-nav>li>a:hover { background: #e6e6e6 !important; text-decoration: none !important; }
+.aui-nav-vertical>li>a:focus { background: #e6e6e6 !important; text-decoration: none !important; }
+.aui-nav-vertical>li>a:hover { background: #e6e6e6 !important; text-decoration: none !important; }
+.aui-navgroup-horizontal .aui-nav>li a:focus { background: #e6e6e6 !important; text-decoration: none !important; }
+.aui-navgroup-horizontal .aui-nav>li a:hover { background: #e6e6e6 !important; text-decoration: none !important; }
+.aui-navgroup-horizontal .aui-nav>.aui-nav-selected a:before { border: 8px solid transparent !important; border-style: outset outset solid outset !important; border-bottom-color: #ccc !important; bottom: 0 !important; content: "" !important; height: 0 !important; left: 50% !important; margin-left: -8px !important; overflow: hidden !important; position: absolute !important; width: 0 !important; }
+.aui-navgroup-horizontal .aui-nav>.aui-nav-selected a:after { border: 8px solid transparent !important; border-style: outset outset solid outset !important; border-bottom-color: #ccc !important; bottom: 0 !important; content: "" !important; height: 0 !important; left: 50% !important; margin-left: -8px !important; overflow: hidden !important; position: absolute !important; width: 0 !important; }
+.aui-navgroup-horizontal .aui-nav>.aui-nav-selected a:after { background: transparent !important; border-bottom-color: #fff !important; bottom: -1px !important; }
+.aui-navgroup-horizontal .aui-nav>li a.aui-dropdown2-trigger:after { border: 4px solid transparent !important; content: "" !important; height: 0 !important; left: 100% !important; margin-left: -18px !important; margin-top: -3px !important; opacity: .8 !important; position: absolute !important; top: 50% !important; width: 0 !important; }
+.aui-navgroup-horizontal .aui-nav>li a.aui-dropdown2-trigger:after { border-top-color: #8e8e8e !important; }
+.aui-navgroup-horizontal .aui-nav>li a.aui-dropdown2-trigger:hover:after { opacity: 1 !important; }
+.aui-navgroup-horizontal .aui-nav>li a.aui-dropdown2-trigger.active:after { opacity: 1 !important; }
+.aui-navgroup-horizontal .aui-nav-breadcrumbs>li:before { padding: 0 !important; }
+@font-face { font-family: "Atlassian Icons" !important; src: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/5.0.1/_/download/resources/com.atlassian.auiplugin:aui-experimental-iconfont/atlassian-icons.eot?#iefix') format("embedded-opentype"),url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/5.0.1/_/download/resources/com.atlassian.auiplugin:aui-experimental-iconfont/atlassian-icons.woff') format("woff"),url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/5.0.1/_/download/resources/com.atlassian.auiplugin:aui-experimental-iconfont/atlassian-icons.ttf') format("truetype"),url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/5.0.1/_/download/resources/com.atlassian.auiplugin:aui-experimental-iconfont/atlassian-icons.svg#atlassian-icons') format("svg") !important; font-weight: normal !important; font-style: normal !important; }
+.aui-icon-small:before { color: inherit !important; font-family: "Atlassian Icons" !important; font-weight: normal !important; -webkit-font-smoothing: antialiased !important; font-style: normal !important; left: 0 !important; line-height: 1 !important; position: absolute !important; text-indent: 0 !important; speak: none !important; top: 50% !important; }
+.aui-icon-large:before { color: inherit !important; font-family: "Atlassian Icons" !important; font-weight: normal !important; -webkit-font-smoothing: antialiased !important; font-style: normal !important; left: 0 !important; line-height: 1 !important; position: absolute !important; text-indent: 0 !important; speak: none !important; top: 50% !important; }
+.aui-icon-small:before { font-size: 16px !important; margin-top: -9px !important; }
+.aui-icon-large:before { font-size: 32px !important; margin-top: -17px !important; }
+.aui-iconfont-view:before { content: "A" !important; }
+.aui-iconfont-configure:before { content: "B" !important; }
+.aui-iconfont-add:before { content: "C" !important; }
+.aui-iconfont-help:before { content: "D" !important; }
+.aui-iconfont-search:before { content: "E" !important; }
+.aui-iconfont-success:before { content: "F" !important; }
+.aui-iconfont-workbox:before { content: "G" !important; }
+.aui-iconfont-workbox-empty:before { content: "H" !important; }
+.aui-iconfont-email:before { content: "I" !important; }
+.aui-iconfont-appswitcher:before { content: "J" !important; }
+.aui-iconfont-comment:before { content: "K" !important; }
+.aui-iconfont-add-comment:before { content: "L" !important; }
+.aui-iconfont-search-small:before { content: "M" !important; }
+.aui-iconfont-remove:before { content: "N" !important; }
+.aui-iconfont-close-dialog:before { content: "O" !important; }
+.aui-iconfont-remove-label:before { content: "P" !important; }
+.aui-iconfont-time:before { content: "Q" !important; }
+.aui-iconfont-error:before { content: "R" !important; }
+.aui-iconfont-info:before { content: "S" !important; }
+.aui-iconfont-approve:before { content: "T" !important; }
+.aui-iconfont-edit:before { content: "U" !important; }
+.aui-iconfont-share:before { content: "V" !important; }
+.aui-iconfont-build:before { content: "W" !important; }
+.aui-iconfont-user:before { content: "X" !important; }
+.aui-iconfont-jira:before { content: "Y" !important; }
+.aui-header:after { content: "" !important; display: table !important; clear: both !important; }
+.aui-header .aui-header-logo a:after { content: "" !important; display: table !important; clear: both !important; }
+.aui-header a:visited { text-decoration: none !important; }
+.aui-header a:focus { text-decoration: none !important; }
+.aui-header a:hover { text-decoration: none !important; }
+.aui-header a:active { text-decoration: none !important; }
+.aui-header .aui-dropdown2-trigger:after { border: 4px solid transparent !important; border-top-color: #fff !important; content: "" !important; height: 0 !important; margin-left: -18px !important; margin-top: -2px !important; opacity: .8 !important; left: 100% !important; position: absolute !important; text-indent: -99999px !important; top: 50% !important; width: 0 !important; }
+.aui-header .aui-dropdown2-trigger:hover:after { opacity: 1 !important; }
+.aui-header .aui-dropdown2-trigger.active:after { opacity: 1 !important; }
+.aui-header .aui-button.aui-dropdown2-trigger:after { margin-top: 0 !important; top: 12px !important; }
+.aui-header .aui-button.aui-button-primary.aui-style:focus { background: #2D5F9C !important; background-image: linear-gradient(top,#6299D0,#2C5E9B) !important; }
+.aui-header .aui-button.aui-button-primary.aui-style:hover { background: #2D5F9C !important; background-image: linear-gradient(top,#6299D0,#2C5E9B) !important; }
+.aui-header .aui-button.aui-button-primary.aui-style:active { background: #2D5F9C !important; background-image: linear-gradient(top,#6299D0,#2C5E9B) !important; }
+.aui-header a:focus { background-color: #3b73af !important; }
+.aui-header a:hover { background-color: #3b73af !important; }
+.aui-header a:active { background-color: #3b73af !important; }
+.aui-header a:focus .aui-icon { opacity: 1 !important; filter: alpha(opacity=100) !important; }
+.aui-header a:hover .aui-icon { opacity: 1 !important; filter: alpha(opacity=100) !important; }
+.aui-header a:active .aui-icon { opacity: 1 !important; filter: alpha(opacity=100) !important; }
+.aui-header .aui-quicksearch input:focus { background-color: #fff !important; outline: none !important; }
+.aui-header a:active>.aui-badge { background: rgba(255,255,255,.25) !important; color: #fff !important; }
+.aui-dd-parent a.aui-dd-trigger:hover { background: transparent url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/5.0.1/_/download/resources/com.atlassian.auiplugin:ajs-gadgets-base/aui-icon-tools.gif') no-repeat -26px 0 !important; border: none !important; color: #000 !important; }
+.aui-dd-parent a.aui-dd-trigger:active { background: transparent url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/5.0.1/_/download/resources/com.atlassian.auiplugin:ajs-gadgets-base/aui-icon-tools.gif') no-repeat -26px 0 !important; border: none !important; color: #000 !important; }
+.aui-dd-parent a.aui-dd-trigger:focus { background: transparent url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/5.0.1/_/download/resources/com.atlassian.auiplugin:ajs-gadgets-base/aui-icon-tools.gif') no-repeat -26px 0 !important; border: none !important; color: #000 !important; }
+.aui-dd-parent a.aui-dd-trigger-unstyled:hover { background: none !important; border: none !important; color: inherit !important; }
+.aui-dd-parent a.aui-dd-trigger-unstyled:active { background: none !important; border: none !important; color: inherit !important; }
+.aui-dd-parent a.aui-dd-trigger-unstyled:focus { background: none !important; border: none !important; color: inherit !important; }
+.aui-dd-parent .aui-dropdown a.item-link:visited { background: #fff !important; color: #333 !important; }
+.aui-dropdown a.item-link:visited { background: #fff !important; color: #333 !important; }
+.aui-dd-parent .aui-dropdown a.item-link:hover { background: #3B73AF !important; color: #FFF !important; }
+.aui-dd-parent .aui-dropdown a.item-link:active { background: #3B73AF !important; color: #FFF !important; }
+.aui-dd-parent .aui-dropdown a.item-link:focus { background: #3B73AF !important; color: #FFF !important; }
+.aui-dropdown a.item-link:hover { background: #3B73AF !important; color: #FFF !important; }
+.aui-dropdown a.item-link:active { background: #3B73AF !important; color: #FFF !important; }
+.aui-dropdown a.item-link:focus { background: #3B73AF !important; color: #FFF !important; }
+form.aui .field-group:before { content: " " !important; display: table !important; }
+form.aui .field-group:after { content: " " !important; display: table !important; }
+form.aui .group:before { content: " " !important; display: table !important; }
+form.aui .group:after { content: " " !important; display: table !important; }
+form.aui .date-select:before { content: " " !important; display: table !important; }
+form.aui .date-select:after { content: " " !important; display: table !important; }
+form.aui .field-group:after { clear: both !important; }
+form.aui .group:after { clear: both !important; }
+form.aui .date-select:after { clear: both !important; }
+form.aui .button:focus { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+form.aui .button:hover { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+form.aui .button:active { background-image: none !important; background-color: #f2f2f2 !important; box-shadow: inset 0 3px 6px rgba(0,0,0,.1) !important; text-shadow: none !important; text-decoration: none !important; }
+form.aui .button[disabled]:hover { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; color: #999 !important; text-shadow: none !important; }
+form.aui .button[disabled]:focus { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; color: #999 !important; text-shadow: none !important; }
+form.aui .button[disabled]:active { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; color: #999 !important; text-shadow: none !important; }
+.aui-dialog .dialog-page-menu li.page-menu-item button.item-button:hover { background-color: #e6e6e6 !important; }
+.aui-dialog .dialog-page-menu li.page-menu-item button.item-button:focus { background-color: #e6e6e6 !important; }
+.aui-dialog .dialog-page-menu li.page-menu-item button.item-button:active { background-color: #3b73af !important; color: #fff !important; }
+.aui-dialog .dialog-page-menu li.page-menu-item.selected button.item-button:active { background-color: #3b73af !important; color: #fff !important; }
+.aui-dialog .dialog-button-panel button.button-panel-button:focus { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.aui-dialog .dialog-button-panel button.button-panel-button:hover { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.aui-dialog .dialog-button-panel button.button-panel-button:active { background: #f2f2f2 !important; background-image: none !important; background-color: #f2f2f2 !important; box-shadow: inset 0 3px 6px rgba(0,0,0,.1) !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-dialog .dialog-button-panel a.button-panel-link:focus { background: transparent !important; border-color: transparent !important; box-shadow: none !important; text-decoration: underline !important; }
+.aui-dialog .dialog-button-panel a.button-panel-link:hover { background: transparent !important; border-color: transparent !important; box-shadow: none !important; text-decoration: underline !important; }
+.aui-dialog .dialog-button-panel a.button-panel-link:active { background: transparent !important; border-color: transparent !important; box-shadow: none !important; text-decoration: underline !important; }
+.aui-tabs>.tabs-menu .menu-item a:visited { background: #eee !important; color: #333 !important; }
+.aui-tabs>.tabs-menu .menu-item a:focus { background: #e6e6e6 !important; color: #333 !important; }
+.aui-tabs>.tabs-menu .menu-item a:hover { background: #e6e6e6 !important; color: #333 !important; }
+.aui-tabs>.tabs-menu .menu-item.active-tab a:visited { background: #fff !important; color: #333 !important; }
+.aui-tabs>.tabs-menu .menu-item.active-tab a:focus { background: #fff !important; color: #333 !important; }
+.aui-tabs>.tabs-menu .menu-item.active-tab a:hover { background: #fff !important; color: #333 !important; }
+.aui-tabs>.tabs-menu .menu-item.active-tab a:active { background: #fff !important; color: #333 !important; }
+.aui-tabs.aui-tabs-disabled.horizontal-tabs>.tabs-menu>.menu-item>a:focus { display: block !important; border-right: 1px solid #ccc !important; border-top: 1px solid #ccc !important; padding: 4px 10px 3px 10px !important; text-decoration: none !important; }
+.aui-tabs.aui-tabs-disabled.horizontal-tabs>.tabs-menu>.menu-item>a:hover { display: block !important; border-right: 1px solid #ccc !important; border-top: 1px solid #ccc !important; padding: 4px 10px 3px 10px !important; text-decoration: none !important; }
+.aui-tabs.aui-tabs-disabled.horizontal-tabs>.tabs-menu>.menu-item>a:active { display: block !important; border-right: 1px solid #ccc !important; border-top: 1px solid #ccc !important; padding: 4px 10px 3px 10px !important; text-decoration: none !important; }
+.aui-tabs.aui-tabs-disabled.horizontal-tabs>.tabs-menu>.active-tab>a:focus { background: #fff !important; border-bottom: 1px solid #fff !important; margin-bottom: -1px !important; position: relative !important; }
+.aui-tabs.aui-tabs-disabled.horizontal-tabs>.tabs-menu>.active-tab>a:hover { background: #fff !important; border-bottom: 1px solid #fff !important; margin-bottom: -1px !important; position: relative !important; }
+.aui-tabs.aui-tabs-disabled.horizontal-tabs>.tabs-menu>.active-tab>a:active { background: #fff !important; border-bottom: 1px solid #fff !important; margin-bottom: -1px !important; position: relative !important; }
+.aui-toolbar .toolbar-group .toolbar-item-link:hover .toolbar-trigger { text-decoration: underline !important; }
+.aui-toolbar .toolbar-group .toolbar-item-link .toolbar-trigger:focus { text-decoration: underline !important; }
+.aui-toolbar .toolbar-splitbutton:hover .toolbar-trigger { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-width: 1px !important; border-color: #999 !important; margin-left: -1px !important; color: #000 !important; position: relative !important; text-decoration: none !important; }
+.aui-toolbar .toolbar-group .toolbar-trigger:focus { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-width: 1px !important; border-color: #999 !important; margin-left: -1px !important; color: #000 !important; position: relative !important; text-decoration: none !important; }
+.aui-toolbar .toolbar-group .toolbar-trigger:hover { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-width: 1px !important; border-color: #999 !important; margin-left: -1px !important; color: #000 !important; position: relative !important; text-decoration: none !important; }
+.aui-toolbar .toolbar-group button:focus { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-width: 1px !important; border-color: #999 !important; margin-left: -1px !important; color: #000 !important; position: relative !important; text-decoration: none !important; }
+.aui-toolbar .toolbar-group button:hover { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-width: 1px !important; border-color: #999 !important; margin-left: -1px !important; color: #000 !important; position: relative !important; text-decoration: none !important; }
+.aui-toolbar .aui-dd-parent .aui-dd-trigger:focus { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-width: 1px !important; border-color: #999 !important; margin-left: -1px !important; color: #000 !important; position: relative !important; text-decoration: none !important; }
+.aui-toolbar .aui-dd-parent .aui-dd-trigger:hover { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-width: 1px !important; border-color: #999 !important; margin-left: -1px !important; color: #000 !important; position: relative !important; text-decoration: none !important; }
+.aui-toolbar .toolbar-group .active .toolbar-trigger:hover { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-width: 1px !important; border-color: #999 !important; margin-left: -1px !important; color: #000 !important; position: relative !important; text-decoration: none !important; }
+.aui-toolbar .toolbar-item:first-child .toolbar-trigger:hover { margin-left: 0 !important; }
+.aui-toolbar .toolbar-splitbutton:first-child:hover .toolbar-trigger { margin-left: 0 !important; }
+.aui-toolbar .toolbar-item:first-child .toolbar-trigger:focus { margin-left: 0 !important; }
+.aui-toolbar .toolbar-item:first-child .toolbar-trigger:hover { margin-left: 0 !important; }
+.aui-toolbar .toolbar-item:first-child button:focus { margin-left: 0 !important; }
+.aui-toolbar .toolbar-item:first-child button:hover { margin-left: 0 !important; }
+.aui-toolbar .toolbar-item:first-child .aui-dd-parent .aui-dd-trigger:focus { margin-left: 0 !important; }
+.aui-toolbar .toolbar-item:first-child .aui-dd-parent .aui-dd-trigger:hover { margin-left: 0 !important; }
+.aui-toolbar .toolbar-item:first-child.active .toolbar-trigger:hover { margin-left: 0 !important; }
+.aui-toolbar .toolbar-group .toolbar-trigger:active { background: #f2f2f2 !important; background-image: none !important; background-color: #f2f2f2 !important; box-shadow: inset 0 3px 6px rgba(0,0,0,.1) !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-toolbar .toolbar-group .toolbar-item-link .toolbar-trigger:active { background: none !important; box-shadow: none !important; }
+.aui-toolbar .toolbar-splitbutton>.toolbar-trigger:hover { border-right-style: dotted !important; float: left !important; }
+.aui-toolbar .toolbar-splitbutton>.toolbar-trigger:focus { border-right-style: dotted !important; float: left !important; }
+.aui-toolbar .toolbar-splitbutton>.aui-dd-parent>.toolbar-trigger:hover { border-left-width: 0 !important; margin-left: 0 !important; }
+.aui-toolbar .toolbar-splitbutton>.aui-dd-parent>.toolbar-trigger:focus { border-left-width: 0 !important; margin-left: 0 !important; }
+.aui-toolbar .aui-dropdown2-trigger[aria-disabled="true"]:focus { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .aui-dropdown2-trigger[aria-disabled="true"]:hover { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .aui-dropdown2-trigger[aria-disabled="true"]:active { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .disabled .active .toolbar-trigger:hover { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .toolbar-group.disabled .toolbar-trigger:focus { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .toolbar-group.disabled .toolbar-trigger:hover { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .toolbar-group.disabled .toolbar-trigger:active { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .toolbar-group .disabled .toolbar-trigger:focus { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .toolbar-group .disabled .toolbar-trigger:hover { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .toolbar-group .disabled .toolbar-trigger:active { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .toolbar-group .toolbar-trigger.disabled:focus { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .toolbar-group .toolbar-trigger.disabled:hover { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .toolbar-group .toolbar-trigger.disabled:active { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; cursor: default !important; color: #999 !important; }
+.aui-toolbar .aui-dropdown2-trigger[aria-disabled="true"]:focus { border-color: #ccc !important; color: #999 !important; }
+.aui-toolbar .aui-dropdown2-trigger[aria-disabled="true"]:hover { border-color: #ccc !important; color: #999 !important; }
+.aui-toolbar .aui-dropdown2-trigger[aria-disabled="true"]:active { border-color: #ccc !important; color: #999 !important; }
+.icon-pagetop:hover { background-position: -25px -250px !important; }
+.icon-first:hover { background-position: -25px -400px !important; }
+.icon-last:hover { background-position: -25px -450px !important; }
+.icon-back:hover { background-position: -25px -650px !important; }
+.icon-manage:hover { background-position: -25px -1110px !important; }
+.icon-perma:hover { background-position: -25px -950px !important; }
+.icon-download:hover { background-position: -25px -1000px !important; }
+a.icon-watch-on:hover { background-position: -25px -86px !important; }
+a.icon-watch-off:hover { background-position: -25px -70px !important; }
+a.icon-vote-on:hover { background-position: -25px -118px !important; }
+a.icon-vote-off:hover { background-position: -25px -102px !important; }
+.action-details .icon.icon-locked:hover { background-position: -2px -1154px !important; }
+.icon-sort-down:hover { opacity: 0.8 !important; filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)" !important; }
+.icon-sort-up:hover { opacity: 0.8 !important; filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)" !important; }
+.icon-previous:after { content: "" !important; border: 8px solid transparent !important; display: block !important; height: 0 !important; position: relative !important; width: 0 !important; }
+.icon-next:after { content: "" !important; border: 8px solid transparent !important; display: block !important; height: 0 !important; position: relative !important; width: 0 !important; }
+.icon-page-prev:after { content: "" !important; border: 8px solid transparent !important; display: block !important; height: 0 !important; position: relative !important; width: 0 !important; }
+.icon-page-next:after { content: "" !important; border: 8px solid transparent !important; display: block !important; height: 0 !important; position: relative !important; width: 0 !important; }
+.icon-page-prev-deactivated:after { content: "" !important; border: 8px solid transparent !important; display: block !important; height: 0 !important; position: relative !important; width: 0 !important; }
+.icon-page-next-deactivated:after { content: "" !important; border: 8px solid transparent !important; display: block !important; height: 0 !important; position: relative !important; width: 0 !important; }
+.icon-previous:after { border-width: 6px !important; }
+.icon-next:after { border-width: 6px !important; }
+.icon-previous:after { border-right-color: #707070 !important; }
+.icon-next:after { border-left-color: #707070 !important; }
+.icon-page-prev:after { border-bottom-color: #707070 !important; bottom: 4px !important; }
+.icon-page-next:after { border-top-color: #707070 !important; top: 4px !important; }
+.icon-page-prev-deactivated:after { border-bottom-color: #cccccc !important; bottom: 4px !important; }
+.icon-page-next-deactivated:after { border-top-color: #cccccc !important; top: 4px !important; }
+.drop-menu:after { border: 4px solid transparent !important; bottom: -50% !important; content: "" !important; display: block !important; height: 0 !important; position: relative !important; right: -50% !important; width: 0 !important; }
+.drop-menu:after { border-top-color: #707070 !important; margin-top: -2px !important; margin-left: -4px !important; }
+.drop-menu:hover:after { border-top-color: #333333 !important; }
+.disabled .drop-menu:after { border-top-color: #f5f5f5 !important; }
+.cog-dd:hover { background-color: #3c78b5 !important; background-position: 0 -18px !important; }
+.aui-list a:visited { color: #333333 !important; text-decoration: none !important; }
+.aui-list a:hover { text-decoration: none !important; }
+.aui-list a:focus { text-decoration: none !important; }
+.aui-list a.disabled:hover { background: transparent !important; color: #b3b3b3 !important; cursor: default !important; }
+.aui-list a.disabled:focus { background: transparent !important; color: #b3b3b3 !important; cursor: default !important; }
+#issuetable>thead .sortable:hover { background-color: #f5f5f5 !important; }
+.issue-table>thead .sortable:hover { background-color: #f5f5f5 !important; }
+#issuetable>thead .active:hover { background-color: #e6e6e6 !important; }
+.issue-table>thead .active:hover { background-color: #e6e6e6 !important; }
+#issuetable>tbody>tr:hover { background-color: #f5f5f5 !important; }
+.issue-table>tbody>tr:hover { background-color: #f5f5f5 !important; }
+#issuetable.hide-carrot tr.focused:hover { background-color: #f5f5f5 !important; }
+.issue-table.hide-carrot tr.focused:hover { background-color: #f5f5f5 !important; }
+#issuetable .issuerow:hover .streorder div { visibility: visible !important; }
+.issue-table .issuerow:hover .streorder div { visibility: visible !important; }
+#issuetable .issue_actions a.aui-dd-link:hover { background-color: #3b73af !important; color: #fff !important; }
+.issue-table .issue_actions a.aui-dd-link:hover { background-color: #3b73af !important; color: #fff !important; }
+#issuetable .issue_actions a.aui-dd-link:hover.icon-tools-small { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/tools_12_white.png') !important; }
+.issue-table .issue_actions a.aui-dd-link:hover.icon-tools-small { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/tools_12_white.png') !important; }
+#issuetable .issue_actions a.aui-dd-link:hover span { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/menu_indicator_for_dark_backgrounds.gif') !important; }
+.issue-table .issue_actions a.aui-dd-link:hover span { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/menu_indicator_for_dark_backgrounds.gif') !important; }
+#issuetable .issuerow:hover .issue_actions a.aui-dd-link { left: 0 !important; top: 0 !important; }
+.issue-table .issuerow:hover .issue_actions a.aui-dd-link { left: 0 !important; top: 0 !important; }
+.msie-8 #issuetable .issue_actions a.aui-dd-link.icon-tools-small:hover { background-repeat: no-repeat !important; background-position: 4px 2px !important; padding-left: 1.5em !important; }
+.msie-8 .issue-table .issue_actions a.aui-dd-link.icon-tools-small:hover { background-repeat: no-repeat !important; background-position: 4px 2px !important; padding-left: 1.5em !important; }
+.msie-8 #issuetable .issue_actions a.aui-dd-link.icon-tools-small:hover { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/tools_12_white.png') !important; background-color: #3b73af !important; }
+.msie-8 .issue-table .issue_actions a.aui-dd-link.icon-tools-small:hover { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/tools_12_white.png') !important; background-color: #3b73af !important; }
+.queryable-select>.icon.drop-menu:focus { background: linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.queryable-select>.icon.drop-menu:hover { background: linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.queryable-select>.icon.drop-menu:active { background: #f2f2f2 !important; background-image: none !important; background-color: #f2f2f2 !important; box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1) !important; text-shadow: none !important; text-decoration: none !important; }
+.queryable-select>.icon.drop-menu:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.queryable-select>.icon.drop-menu:hover { border-color: #ccc !important; }
+.queryable-select>.icon.drop-menu:after { border-top-color: #707070 !important; }
+.queryable-select>.icon.drop-menu:hover:after { border-top-color: #333333 !important; }
+.queryable-select>.icon.loading:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.queryable-select>.icon.loading.drop-menu:after { background-image: url('data:image/gif;base64,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') !important; background-position: 0 0 !important; background-repeat: no-repeat !important; border: 0 !important; height: 16px !important; margin: 0 auto -8px auto !important; padding: 0 !important; right: 4px !important; width: 16px !important; }
+.queryable-select.aui-disabled>.icon.drop-menu:hover { background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%) !important; border-color: #ddd !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.queryable-select.aui-disabled>.icon.drop-menu:focus { background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%) !important; border-color: #ddd !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.queryable-select.aui-disabled>.icon.drop-menu:active { background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%) !important; border-color: #ddd !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.queryable-select.aui-disabled>.icon.drop-menu:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.queryable-select.aui-disabled>.icon.drop-menu:after { border-top-color: #707070 !important; }
+.queryable-select.aui-disabled>.icon.loading:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.queryable-select.aui-disabled>.icon.loading.drop-menu:after { background-image: url('data:image/gif;base64,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') !important; background-position: 0 0 !important; background-repeat: no-repeat !important; border: 0 !important; height: 16px !important; margin: 0 auto -8px auto !important; padding: 0 !important; right: 4px !important; width: 16px !important; }
+.queryable-select>input.active~.icon.drop-menu:active { background: #ddd !important; background-image: none !important; box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.2) !important; }
+.queryable-select>input.active~.icon.drop-menu:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.queryable-select>input.active~.icon.drop-menu:after { border-top-color: #707070 !important; }
+.queryable-select>input.active~.icon.drop-menu:hover:after { border-top-color: #333333 !important; }
+.queryable-select>input.active~.icon.loading:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.queryable-select>input.active~.icon.loading.drop-menu:after { background-image: url('data:image/gif;base64,R0lGODlhEAAQAMQAAP///+7u7t3d3bu7u6qqqpmZmYiIiHd3d2ZmZlVVVURERDMzMyIiIhEREQARAAAAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFBwAQACwAAAAAEAAQAAAFdyAkQgGJJOWoQgIjBM8jkKsoPEzgyMGsCjPDw7ADpkQBxRDmSCRetpRA6Rj4kFBkgLC4IlUGhbNQIwXOYYWCXDufzYPDMaoKGBoKb886OjAKdgZAAgQkfCwzAgsDBAUCgl8jAQkHEAVkAoA1AgczlyIDczUDA2UhACH5BAUHABAALAAAAAAPABAAAAVjICSO0IGIATkqIiMKDaGKC8Q49jPMYsE0hQdrlABCGgvT45FKiRKQhWA0mPKGPAgBcTjsspBCAoH4gl+FmXNEUEBVAYHToJAVZK/XWoQQDAgBZioHaX8igigFKYYQVlkCjiMhACH5BAUHABAALAAAAAAQAA8AAAVgICSOUGGQqIiIChMESyo6CdQGdRqUENESI8FAdFgAFwqDISYwPB4CVSMnEhSej+FogNhtHyfRQFmIol5owmEta/fcKITB6y4choMBmk7yGgSAEAJ8JAVDgQFmKUCCZnwhACH5BAUHABAALAAAAAAQABAAAAViICSOYkGe4hFAiSImAwotB+si6Co2QxvjAYHIgBAqDoWCK2Bq6A40iA4yYMggNZKwGFgVCAQZotFwwJIF4QnxaC9IsZNgLtAJDKbraJCGzPVSIgEDXVNXA0JdgH6ChoCKKCEAIfkEBQcAEAAsAAAAABAADgAABUkgJI7QcZComIjPw6bs2kINLB5uW9Bo0gyQx8LkKgVHiccKVdyRlqjFSAApOKOtR810StVeU9RAmLqOxi0qRG3LptikAVQEh4UAACH5BAUHABAALAAAAAAQABAAAAVxICSO0DCQKBQQonGIh5AGB2sYkMHIqYAIN0EDRxoQZIaC6bAoMRSiwMAwCIwCggRkwRMJWKSAomBVCc5lUiGRUBjO6FSBwWggwijBooDCdiFfIlBRAlYBZQ0PWRANaSkED1oQYHgjDA8nM3kPfCmejiEAIfkEBQcAEAAsAAAAABAAEAAABWAgJI6QIJCoOIhFwabsSbiFAotGMEMKgZoB3cBUQIgURpFgmEI0EqjACYXwiYJBGAGBgGIDWsVicbiNEgSsGbKCIMCwA4IBCRgXt8bDACkvYQF6U1OADg8mDlaACQtwJCEAIfkEBQcAEAAsAAABABAADwAABV4gJEKCOAwiMa4Q2qIDwq4wiriBmItCCREHUsIwCgh2q8MiyEKODK7ZbHCoqqSjWGKI1d2kRp+RAWGyHg+DQUEmKliGx4HBKECIMwG61AgssAQPKA19EAxRKz4QCVIhACH5BAUHABAALAAAAAAQABAAAAVjICSOUBCQqHhCgiAOKyqcLVvEZOC2geGiK5NpQBAZCilgAYFMogo/J0lgqEpHgoO2+GIMUL6p4vFojhQNg8rxWLgYBQJCASkwEKLC17hYFJtRIwwBfRAJDk4ObwsidEkrWkkhACH5BAUHABAALAAAAQAQAA8AAAVcICSOUGAGAqmKpjis6vmuqSrUxQyPhDEEtpUOgmgYETCCcrB4OBWwQsGHEhQatVFhB/mNAojFVsQgBhgKpSHRTRxEhGwhoRg0CCXYAkKHHPZCZRAKUERZMAYGMCEAIfkEBQcAEAAsAAABABAADwAABV0gJI4kFJToGAilwKLCST6PUcrB8A70844CXenwILRkIoYyBRk4BQlHo3FIOQmvAEGBMpYSop/IgPBCFpCqIuEsIESHgkgoJxwQAjSzwb1DClwwgQhgAVVMIgVyKCEAIfkECQcAEAAsAAAAABAAEAAABWQgJI5kSQ6NYK7Dw6xr8hCw+ELC85hCIAq3Am0U6JUKjkHJNzIsFAqDqShQHRhY6bKqgvgGCZOSFDhAUiWCYQwJSxGHKqGAE/5EqIHBjOgyRQELCBB7EAQHfySDhGYQdDWGQyUhADs=') !important; background-position: 0 0 !important; background-repeat: no-repeat !important; border: 0 !important; height: 16px !important; margin: 0 auto -8px auto !important; padding: 0 !important; right: 4px !important; width: 16px !important; }
+.jira-multi-select>.icon.drop-menu:focus { background: linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.jira-multi-select>.icon.drop-menu:hover { background: linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.jira-multi-select>.icon.drop-menu:active { background: #f2f2f2 !important; background-image: none !important; background-color: #f2f2f2 !important; box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1) !important; text-shadow: none !important; text-decoration: none !important; }
+.jira-multi-select>.icon.drop-menu:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.jira-multi-select>.icon.drop-menu:hover { border-color: #ccc !important; }
+.jira-multi-select>.icon.drop-menu:after { border-top-color: #707070 !important; }
+.jira-multi-select>.icon.drop-menu:hover:after { border-top-color: #333333 !important; }
+.jira-multi-select>.icon.loading:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.jira-multi-select>.icon.loading.drop-menu:after { background-image: url('data:image/gif;base64,R0lGODlhEAAQAMQAAP///+7u7t3d3bu7u6qqqpmZmYiIiHd3d2ZmZlVVVURERDMzMyIiIhEREQARAAAAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFBwAQACwAAAAAEAAQAAAFdyAkQgGJJOWoQgIjBM8jkKsoPEzgyMGsCjPDw7ADpkQBxRDmSCRetpRA6Rj4kFBkgLC4IlUGhbNQIwXOYYWCXDufzYPDMaoKGBoKb886OjAKdgZAAgQkfCwzAgsDBAUCgl8jAQkHEAVkAoA1AgczlyIDczUDA2UhACH5BAUHABAALAAAAAAPABAAAAVjICSO0IGIATkqIiMKDaGKC8Q49jPMYsE0hQdrlABCGgvT45FKiRKQhWA0mPKGPAgBcTjsspBCAoH4gl+FmXNEUEBVAYHToJAVZK/XWoQQDAgBZioHaX8igigFKYYQVlkCjiMhACH5BAUHABAALAAAAAAQAA8AAAVgICSOUGGQqIiIChMESyo6CdQGdRqUENESI8FAdFgAFwqDISYwPB4CVSMnEhSej+FogNhtHyfRQFmIol5owmEta/fcKITB6y4choMBmk7yGgSAEAJ8JAVDgQFmKUCCZnwhACH5BAUHABAALAAAAAAQABAAAAViICSOYkGe4hFAiSImAwotB+si6Co2QxvjAYHIgBAqDoWCK2Bq6A40iA4yYMggNZKwGFgVCAQZotFwwJIF4QnxaC9IsZNgLtAJDKbraJCGzPVSIgEDXVNXA0JdgH6ChoCKKCEAIfkEBQcAEAAsAAAAABAADgAABUkgJI7QcZComIjPw6bs2kINLB5uW9Bo0gyQx8LkKgVHiccKVdyRlqjFSAApOKOtR810StVeU9RAmLqOxi0qRG3LptikAVQEh4UAACH5BAUHABAALAAAAAAQABAAAAVxICSO0DCQKBQQonGIh5AGB2sYkMHIqYAIN0EDRxoQZIaC6bAoMRSiwMAwCIwCggRkwRMJWKSAomBVCc5lUiGRUBjO6FSBwWggwijBooDCdiFfIlBRAlYBZQ0PWRANaSkED1oQYHgjDA8nM3kPfCmejiEAIfkEBQcAEAAsAAAAABAAEAAABWAgJI6QIJCoOIhFwabsSbiFAotGMEMKgZoB3cBUQIgURpFgmEI0EqjACYXwiYJBGAGBgGIDWsVicbiNEgSsGbKCIMCwA4IBCRgXt8bDACkvYQF6U1OADg8mDlaACQtwJCEAIfkEBQcAEAAsAAABABAADwAABV4gJEKCOAwiMa4Q2qIDwq4wiriBmItCCREHUsIwCgh2q8MiyEKODK7ZbHCoqqSjWGKI1d2kRp+RAWGyHg+DQUEmKliGx4HBKECIMwG61AgssAQPKA19EAxRKz4QCVIhACH5BAUHABAALAAAAAAQABAAAAVjICSOUBCQqHhCgiAOKyqcLVvEZOC2geGiK5NpQBAZCilgAYFMogo/J0lgqEpHgoO2+GIMUL6p4vFojhQNg8rxWLgYBQJCASkwEKLC17hYFJtRIwwBfRAJDk4ObwsidEkrWkkhACH5BAUHABAALAAAAQAQAA8AAAVcICSOUGAGAqmKpjis6vmuqSrUxQyPhDEEtpUOgmgYETCCcrB4OBWwQsGHEhQatVFhB/mNAojFVsQgBhgKpSHRTRxEhGwhoRg0CCXYAkKHHPZCZRAKUERZMAYGMCEAIfkEBQcAEAAsAAABABAADwAABV0gJI4kFJToGAilwKLCST6PUcrB8A70844CXenwILRkIoYyBRk4BQlHo3FIOQmvAEGBMpYSop/IgPBCFpCqIuEsIESHgkgoJxwQAjSzwb1DClwwgQhgAVVMIgVyKCEAIfkECQcAEAAsAAAAABAAEAAABWQgJI5kSQ6NYK7Dw6xr8hCw+ELC85hCIAq3Am0U6JUKjkHJNzIsFAqDqShQHRhY6bKqgvgGCZOSFDhAUiWCYQwJSxGHKqGAE/5EqIHBjOgyRQELCBB7EAQHfySDhGYQdDWGQyUhADs=') !important; background-position: 0 0 !important; background-repeat: no-repeat !important; border: 0 !important; height: 16px !important; margin: 0 auto -8px auto !important; padding: 0 !important; right: 4px !important; width: 16px !important; }
+.jira-multi-select>textarea.active~.icon.drop-menu:active { background: #ddd !important; background-image: none !important; box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.2) !important; }
+.jira-multi-select>textarea.active~.icon.drop-menu:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.jira-multi-select>textarea.active~.icon.drop-menu:after { border-top-color: #707070 !important; }
+.jira-multi-select>textarea.active~.icon.drop-menu:hover:after { border-top-color: #333333 !important; }
+.jira-multi-select>textarea.active~.icon.loading:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.jira-multi-select>textarea.active~.icon.loading.drop-menu:after { background-image: url('data:image/gif;base64,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') !important; background-position: 0 0 !important; background-repeat: no-repeat !important; border: 0 !important; height: 16px !important; margin: 0 auto -8px auto !important; padding: 0 !important; right: 4px !important; width: 16px !important; }
+.jira-multi-select>.representation .item-row .item-delete:after { bottom: 0 !important; content: '\00d7' !important; display: inline !important; font-size: 15px !important; line-height: 1 !important; left: 3px !important; padding: 0 1px !important; position: absolute !important; speak: none !important; text-align: center !important; vertical-align: text-bottom !important; }
+.mozilla .jira-multi-select>.representation .item-row .item-delete:after { bottom: 1px !important; left: 2px !important; }
+.webkit .jira-multi-select>.representation .item-row .item-delete:after { bottom: 2px !important; }
+.aui-ss>.aui-ss-icon.drop-menu:focus { background: linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.aui-ss>.aui-ss-icon.drop-menu:hover { background: linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.aui-ss>.aui-ss-icon.drop-menu:active { background: #f2f2f2 !important; background-image: none !important; background-color: #f2f2f2 !important; box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1) !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-ss>.aui-ss-icon.drop-menu:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.aui-ss>.aui-ss-icon.drop-menu:hover { border-color: #ccc !important; }
+.aui-ss>.aui-ss-icon.drop-menu:after { border-top-color: #707070 !important; }
+.aui-ss>.aui-ss-icon.drop-menu:hover:after { border-top-color: #333333 !important; }
+.aui-ss>.aui-ss-icon.loading:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.aui-ss>.aui-ss-icon.loading.drop-menu:after { background-image: url('data:image/gif;base64,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') !important; background-position: 0 0 !important; background-repeat: no-repeat !important; border: 0 !important; height: 16px !important; margin: 0 auto -8px auto !important; padding: 0 !important; right: 4px !important; width: 16px !important; }
+.aui-ss.aui-disabled>.aui-ss-icon.drop-menu:hover { background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%) !important; border-color: #ddd !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.aui-ss.aui-disabled>.aui-ss-icon.drop-menu:focus { background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%) !important; border-color: #ddd !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.aui-ss.aui-disabled>.aui-ss-icon.drop-menu:active { background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%) !important; border-color: #ddd !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.aui-ss.aui-disabled>.aui-ss-icon.drop-menu:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.aui-ss.aui-disabled>.aui-ss-icon.drop-menu:after { border-top-color: #707070 !important; }
+.aui-ss.aui-disabled>.aui-ss-icon.loading:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.aui-ss.aui-disabled>.aui-ss-icon.loading.drop-menu:after { background-image: url('data:image/gif;base64,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') !important; background-position: 0 0 !important; background-repeat: no-repeat !important; border: 0 !important; height: 16px !important; margin: 0 auto -8px auto !important; padding: 0 !important; right: 4px !important; width: 16px !important; }
+.aui-ss>.aui-ss-field.active~.aui-ss-icon.drop-menu:active { background: #ddd !important; background-image: none !important; box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.2) !important; }
+.aui-ss>.aui-ss-field.active~.aui-ss-icon.drop-menu:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.aui-ss>.aui-ss-field.active~.aui-ss-icon.drop-menu:after { border-top-color: #707070 !important; }
+.aui-ss>.aui-ss-field.active~.aui-ss-icon.drop-menu:hover:after { border-top-color: #333333 !important; }
+.aui-ss>.aui-ss-field.active~.aui-ss-icon.loading:after { border: 4px solid transparent !important; bottom: 50% !important; content: "" !important; height: 0 !important; margin-bottom: -5px !important; position: absolute !important; right: 8px !important; width: 0 !important; }
+.aui-ss>.aui-ss-field.active~.aui-ss-icon.loading.drop-menu:after { background-image: url('data:image/gif;base64,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') !important; background-position: 0 0 !important; background-repeat: no-repeat !important; border: 0 !important; height: 16px !important; margin: 0 auto -8px auto !important; padding: 0 !important; right: 4px !important; width: 16px !important; }
+.check-list-select .check-list-group-actions .clear-all:visited { color: #0063c6 !important; }
+.check-list-select .check-list-group-actions .clear-all:hover { color: #0063c6 !important; }
+.check-list-select .check-list-group-actions .clear-all:hover { text-decoration: underline !important; }
+.jira-dialog .dialog-menu-group .dialog-menu-item:hover { background-color: #e6e6e6 !important; }
+.jira-dialog .dialog-menu-group .dialog-menu-item:focus { background-color: #e6e6e6 !important; }
+.jira-dialog .dialog-menu-group .dialog-menu-item:active { background-color: #3b73af !important; color: #ffffff !important; }
+.jira-dialog .dialog-menu-group .dialog-menu-item.selected:active { background-color: #3b73af !important; color: #ffffff !important; }
+.jira-dialog .dialog-menu-group .dialog-menu-item:hover { background-color: #e6e6e6 !important; }
+.jira-dialog .dialog-menu-group .dialog-menu-item:focus { background-color: #e6e6e6 !important; }
+.jira-dialog .dialog-menu-group .dialog-menu-item:active { background-color: #3b73af !important; color: #ffffff !important; }
+.jira-dialog .dialog-menu-group .dialog-menu-item.selected:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-button:visited { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border: 1px solid #ccc !important; border-radius: 3.01px !important; -moz-box-sizing: border-box !important; box-sizing: border-box !important; color: #333 !important; cursor: pointer !important; display: inline-block !important; font-family: inherit !important; font-size: 14px !important; font-variant: normal !important; font-weight: normal !important; height: 2.1428571428571em !important; line-height: 1.4285714285714 !important; margin: 0 !important; padding: 4px 10px !important; text-decoration: none !important; text-shadow: 0 1px 0 white !important; vertical-align: baseline !important; white-space: nowrap !important; }
+a.aui-button:hover { text-decoration: none !important; }
+a.aui-button:active { text-decoration: none !important; }
+a.aui-button:focus { text-decoration: none !important; }
+.aui-button:focus { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.aui-button:hover { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.aui-button-subtle.aui-button:focus { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.aui-button-subtle.aui-button:hover { background: linear-gradient(top,#fff 0,#f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.aui-button:active { background-image: none !important; background-color: #f2f2f2 !important; box-shadow: inset 0 3px 6px rgba(0,0,0,.1) !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-button-subtle.aui-button:active { background-image: none !important; background-color: #f2f2f2 !important; box-shadow: inset 0 3px 6px rgba(0,0,0,.1) !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-button.aui-button-primary:visited { background: linear-gradient(top,#4687ce 0,#3068a2 100%) !important; border-color: #486582 !important; color: #fff !important; font-weight: bold !important; -webkit-font-smoothing: antialiased !important; text-shadow: 0 1px 0 #205081 !important; }
+.aui-button.aui-button-primary:hover { background: linear-gradient(top,#5A94D3 0,#3673B5 100%) !important; border-color: #205081 !important; color: #fff !important; text-shadow: 0 1px 0 #205081 !important; }
+.aui-button.aui-button-primary:focus { background: linear-gradient(top,#5A94D3 0,#3673B5 100%) !important; border-color: #205081 !important; color: #fff !important; text-shadow: 0 1px 0 #205081 !important; }
+.aui-button.aui-button-primary:active { background: #3673B5 !important; background-image: none !important; background-color: #3673B5 !important; box-shadow: inset 0 3px 6px rgba(0,0,0,.1) !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-button.aui-button-link:visited { background: transparent !important; border-color: transparent !important; color: #3b73af !important; padding: 5px 0 !important; text-decoration: none !important; text-shadow: none !important; box-shadow: none !important; }
+.aui-button.aui-button-link:focus { background: transparent !important; border-color: transparent !important; box-shadow: none !important; text-decoration: underline !important; }
+.aui-button.aui-button-link:hover { background: transparent !important; border-color: transparent !important; box-shadow: none !important; text-decoration: underline !important; }
+.aui-button.aui-button-link:active { background: transparent !important; border-color: transparent !important; box-shadow: none !important; text-decoration: underline !important; }
+.aui-buttons .aui-button.aui-button-link:focus { background: transparent !important; border-color: transparent !important; box-shadow: none !important; text-decoration: underline !important; }
+.aui-buttons .aui-button.aui-button-link:hover { background: transparent !important; border-color: transparent !important; box-shadow: none !important; text-decoration: underline !important; }
+.aui-buttons .aui-button.aui-button-link:active { background: transparent !important; border-color: transparent !important; box-shadow: none !important; text-decoration: underline !important; }
+.aui-buttons:after { clear: both !important; content: "" !important; display: table !important; }
+.aui-buttons .aui-button:focus { border-color: #999 !important; }
+.aui-buttons .aui-button:hover { border-color: #999 !important; }
+.aui-buttons .aui-button:active { border-color: #999 !important; }
+.aui-buttons .aui-button[disabled]:hover { border-color: #ccc !important; }
+.aui-buttons .aui-button[disabled]:focus { border-color: #ccc !important; }
+.aui-buttons .aui-button[disabled]:active { border-color: #ccc !important; }
+.aui-buttons .aui-button[aria-disabled="true"]:hover { border-color: #ccc !important; }
+.aui-buttons .aui-button[aria-disabled="true"]:focus { border-color: #ccc !important; }
+.aui-buttons .aui-button[aria-disabled="true"]:active { border-color: #ccc !important; }
+.aui-buttons .aui-button.aui-button-primary:hover { border-color: #999 !important; color: #205081 !important; }
+.aui-buttons .aui-button.aui-button-primary:focus { border-color: #999 !important; color: #205081 !important; }
+.aui-buttons .aui-button.aui-button-primary:active { border-color: #999 !important; color: #205081 !important; }
+.aui-buttons .aui-button ~ .aui-button:hover { border-width: 1px !important; margin-left: -1px !important; position: relative !important; }
+.aui-buttons .aui-button ~ .aui-button:focus { border-width: 1px !important; margin-left: -1px !important; position: relative !important; }
+.aui-buttons .aui-button ~ .aui-button:active { border-width: 1px !important; margin-left: -1px !important; position: relative !important; }
+.aui-buttons .aui-button[aria-pressed="true"]:active { background: #ccc !important; box-shadow: inset 0 3px 6px rgba(0,0,0,.2) !important; }
+.aui-button[disabled]:hover { background: linear-gradient(top,#FFF 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.aui-button[disabled]:focus { background: linear-gradient(top,#FFF 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.aui-button[disabled]:active { background: linear-gradient(top,#FFF 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.aui-button[aria-disabled="true"]:hover { background: linear-gradient(top,#FFF 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.aui-button[aria-disabled="true"]:focus { background: linear-gradient(top,#FFF 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.aui-button[aria-disabled="true"]:active { background: linear-gradient(top,#FFF 0,#f2f2f2 100%) !important; border-color: #ccc !important; box-shadow: none !important; color: #999 !important; cursor: default !important; text-shadow: none !important; }
+.aui-button.aui-button-primary[disabled]:hover { background: linear-gradient(top,#a2c3e6 0,#97b3d0 100%) !important; border-color: #7f9cb9 !important; box-shadow: none !important; color: #fff !important; text-shadow: none !important; }
+.aui-button.aui-button-primary[disabled]:focus { background: linear-gradient(top,#a2c3e6 0,#97b3d0 100%) !important; border-color: #7f9cb9 !important; box-shadow: none !important; color: #fff !important; text-shadow: none !important; }
+.aui-button.aui-button-primary[disabled]:active { background: linear-gradient(top,#a2c3e6 0,#97b3d0 100%) !important; border-color: #7f9cb9 !important; box-shadow: none !important; color: #fff !important; text-shadow: none !important; }
+.aui-button.aui-button-primary[aria-disabled="true"]:hover { background: linear-gradient(top,#a2c3e6 0,#97b3d0 100%) !important; border-color: #7f9cb9 !important; box-shadow: none !important; color: #fff !important; text-shadow: none !important; }
+.aui-button.aui-button-primary[aria-disabled="true"]:focus { background: linear-gradient(top,#a2c3e6 0,#97b3d0 100%) !important; border-color: #7f9cb9 !important; box-shadow: none !important; color: #fff !important; text-shadow: none !important; }
+.aui-button.aui-button-primary[aria-disabled="true"]:active { background: linear-gradient(top,#a2c3e6 0,#97b3d0 100%) !important; border-color: #7f9cb9 !important; box-shadow: none !important; color: #fff !important; text-shadow: none !important; }
+.aui-button.aui-button-link[disabled]:hover { background: transparent !important; border-color: transparent !important; color: #999 !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-button.aui-button-link[disabled]:focus { background: transparent !important; border-color: transparent !important; color: #999 !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-button.aui-button-link[disabled]:active { background: transparent !important; border-color: transparent !important; color: #999 !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-button.aui-button-link[aria-disabled="true"]:hover { background: transparent !important; border-color: transparent !important; color: #999 !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-button.aui-button-link[aria-disabled="true"]:focus { background: transparent !important; border-color: transparent !important; color: #999 !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-button.aui-button-link[aria-disabled="true"]:active { background: transparent !important; border-color: transparent !important; color: #999 !important; text-shadow: none !important; text-decoration: none !important; }
+.aui-buttons .aui-button.aui-button-primary[disabled]:hover { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; color: #9dbbd9 !important; text-shadow: none !important; }
+.aui-buttons .aui-button.aui-button-primary[disabled]:focus { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; color: #9dbbd9 !important; text-shadow: none !important; }
+.aui-buttons .aui-button.aui-button-primary[disabled]:active { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; color: #9dbbd9 !important; text-shadow: none !important; }
+.aui-buttons .aui-button.aui-button-primary[aria-disabled="true"]:hover { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; color: #9dbbd9 !important; text-shadow: none !important; }
+.aui-buttons .aui-button.aui-button-primary[aria-disabled="true"]:focus { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; color: #9dbbd9 !important; text-shadow: none !important; }
+.aui-buttons .aui-button.aui-button-primary[aria-disabled="true"]:active { background: linear-gradient(top,#fff 0,#f2f2f2 100%) !important; border-color: #ccc !important; color: #9dbbd9 !important; text-shadow: none !important; }
+.aui-button.aui-button-subtle.aui-dropdown2-trigger:hover { border-color: #999 !important; }
+.aui-button.aui-dropdown2-trigger:after { border: 4px solid transparent !important; content: "" !important; height: 0 !important; left: 100% !important; margin-left: -18px !important; margin-top: -2px !important; opacity: .8 !important; position: absolute !important; top: 50% !important; width: 0 !important; }
+.aui-button.aui-dropdown2-trigger:after { border-top-color: #333 !important; }
+.aui-buttons .aui-button.aui-button-primary.aui-dropdown2-trigger:after { border-top-color: #333 !important; }
+.aui-button.aui-button-primary.aui-dropdown2-trigger:after { border-top-color: #fff !important; }
+.aui-button.aui-dropdown2-trigger:hover:after { opacity: 1 !important; }
+.aui-button.aui-dropdown2-trigger.active:after { opacity: 1 !important; }
+.aui-button.aui-button.aui-dropdown2-trigger:after { margin-top: 0 !important; top: 12px !important; }
+input.aui-button.aui-dropdown2-trigger:after { display: none !important; }
+.aui-dropdown2.aui-style-default a:focus { text-decoration: none !important; }
+.aui-dropdown2.aui-style-default a:hover { text-decoration: none !important; }
+.aui-dropdown2.aui-dropdown2-tailed:before { border-color: transparent !important; border-style: outset outset solid outset !important; border-width: 8px !important; bottom: 100% !important; content: "" !important; display: block !important; height: 0 !important; position: absolute !important; width: 0 !important; }
+.aui-dropdown2.aui-dropdown2-tailed:after { border-color: transparent !important; border-style: outset outset solid outset !important; border-width: 8px !important; bottom: 100% !important; content: "" !important; display: block !important; height: 0 !important; position: absolute !important; width: 0 !important; }
+.aui-dropdown2.aui-dropdown2-tailed:before { border-bottom-color: #ccc !important; margin-bottom: 1px !important; }
+.aui-dropdown2.aui-dropdown2-tailed:after { border-bottom-color: #fff !important; }
+.aui-dropdown2-tailed[data-dropdown2-alignment="left"]:before { left: 20px !important; }
+.aui-dropdown2-tailed[data-dropdown2-alignment="left"]:after { left: 20px !important; }
+.aui-dropdown2-tailed[data-dropdown2-alignment="right"]:before { right: 20px !important; }
+.aui-dropdown2-tailed[data-dropdown2-alignment="right"]:after { right: 20px !important; }
+.aui-dropdown2-trigger.aui-style-dropdown2triggerlegacy1:hover { background-color: #326ca6 !important; border-radius: 4px !important; color: #fff !important; text-decoration: none !important; }
+.aui-dropdown2-trigger.aui-style-dropdown2triggerlegacy1:focus { background-color: #326ca6 !important; border-radius: 4px !important; color: #fff !important; text-decoration: none !important; }
+.aui-dropdown2-trigger.aui-style-dropdown2triggerlegacy1[aria-disabled="true"]:hover { background: inherit !important; color: #99b6d3 !important; cursor: default !important; }
+.aui-dropdown2-trigger.aui-style-dropdown2triggerlegacy1[aria-disabled="true"]:focus { background: inherit !important; color: #99b6d3 !important; cursor: default !important; }
+.aui-dropdown2-trigger.aui-style-dropdown2triggerlegacy1[aria-disabled="true"]:active { background: inherit !important; color: #99b6d3 !important; cursor: default !important; }
+.aui-dropdown2-sub-trigger:after { border: 5px solid transparent !important; border-left-color: #333 !important; content: "" !important; height: 0 !important; margin-left: -16px !important; margin-top: -5px !important; left: 100% !important; position: absolute !important; top: 50% !important; width: 0 !important; }
+.aui-dropdown2-sub-trigger.active:after { border-left-color: #FFF !important; }
+.aui-dropdown2-sub-trigger.disabled:after { border-left-color: #d3d3d3 !important; }
+.aui-toolbar2:after { clear: both !important; content: "" !important; display: table !important; }
+.aui-toolbar2-group:after { clear: both !important; content: "" !important; display: table !important; }
+.aui-label.aui-label-closeable.aui-label-split:hover { border-color: #707070 !important; text-decoration: none !important; }
+a.aui-label:focus { border-color: #707070 !important; text-decoration: none !important; }
+a.aui-label:hover { border-color: #707070 !important; text-decoration: none !important; }
+a.aui-label:active { border-color: #707070 !important; text-decoration: none !important; }
+.aui-label-split .aui-label-split-main:hover { text-decoration: none !important; }
+.aui-label-split .aui-label-split-main:active { text-decoration: none !important; }
+.aui-label-split .aui-label-split-main:focus { text-decoration: none !important; }
+.aui-theme-default a:hover { color: #0066ff !important; }
+.aui-theme-default a:focus { color: #0066ff !important; }
+.aui-theme-default a:active { color: #0066ff !important; }
+.aui-theme-default .aui-button:hover { color: #333333 !important; }
+.aui-theme-default .aui-button:focus { color: #333333 !important; }
+.aui-theme-default .aui-button:active { color: #333333 !important; }
+.aui-theme-default .aui-button.aui-button-link:hover { color: #0066ff !important; }
+.aui-theme-default .aui-button.aui-button-link:focus { color: #0066ff !important; }
+.aui-theme-default .aui-button.aui-button-link:active { color: #0066ff !important; }
+.aui-theme-default .aui-buttons .aui-button.aui-button-primary:hover { color: #205081 !important; }
+.aui-theme-default .aui-buttons .aui-button.aui-button-primary:focus { color: #205081 !important; }
+.aui-theme-default .aui-buttons .aui-button.aui-button-primary:active { color: #205081 !important; }
+.aui-dropdown li.dropdown-item.active a.item-link:visited { background-color: transparent !important; color: #333333 !important; }
+.aui-dd-parent .aui-dropdown li.dropdown-item.active a.item-link:visited { background-color: transparent !important; color: #333333 !important; }
+.aui-dropdown a.item-link:visited { background-color: transparent !important; color: #333333 !important; }
+.aui-dd-parent .aui-dropdown a.item-link:visited { background-color: transparent !important; color: #333333 !important; }
+.aui-dropdown li.dropdown-item.active a.item-link:hover { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dd-parent .aui-dropdown li.dropdown-item.active a.item-link:hover { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dropdown a.item-link:hover { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dd-parent .aui-dropdown a.item-link:hover { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dropdown li.dropdown-item.active a.item-link:focus { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dd-parent .aui-dropdown li.dropdown-item.active a.item-link:focus { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dropdown a.item-link:focus { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dd-parent .aui-dropdown a.item-link:focus { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dropdown li.dropdown-item.active a.item-link:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dd-parent .aui-dropdown li.dropdown-item.active a.item-link:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dropdown a.item-link:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dd-parent .aui-dropdown a.item-link:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dropdown2.aui-style-default .aui-dropdown2-radio.checked:before { content: '' !important; display: block !important; line-height: 16px !important; position: absolute !important; left: 10px !important; top: 5px !important; height: 16px !important; width: 16px !important; speak: none !important; }
+.aui-dropdown2.aui-style-default .aui-dropdown2-checkbox.checked:before { content: '' !important; display: block !important; line-height: 16px !important; position: absolute !important; left: 10px !important; top: 5px !important; height: 16px !important; width: 16px !important; speak: none !important; }
+.aui-dropdown2.aui-style-default .aui-dropdown2-radio.checked:before { content: "\2022" !important; font-size: 27px !important; }
+.aui-dropdown2.aui-style-default .aui-dropdown2-checkbox.checked:before { content: "\2714" !important; font-size: 14px !important; }
+.aui-theme-default .aui-list a:hover { color: inherit !important; }
+.aui-theme-default .aui-list a:focus { color: inherit !important; }
+.aui-navgroup-horizontal .aui-nav>li a:focus { background-color: #e6e6e6 !important; color: #0063c6 !important; }
+.aui-navgroup-vertical .aui-nav>li>a:focus { background-color: #e6e6e6 !important; color: #0063c6 !important; }
+.aui-nav-vertical>li>a:focus { background-color: #e6e6e6 !important; color: #0063c6 !important; }
+.aui-navgroup-horizontal .aui-nav>li a:hover { background-color: #e6e6e6 !important; color: #0063c6 !important; }
+.aui-navgroup-vertical .aui-nav>li>a:hover { background-color: #e6e6e6 !important; color: #0063c6 !important; }
+.aui-nav-vertical>li>a:hover { background-color: #e6e6e6 !important; color: #0063c6 !important; }
+.aui-navgroup-horizontal .aui-nav>li a:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-navgroup-vertical .aui-nav>li>a:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-nav-vertical>li>a:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-navgroup-horizontal .aui-nav>.aui-nav-selected a:focus { background-color: #e6e6e6 !important; color: #333333 !important; }
+.aui-navgroup-vertical .aui-nav .aui-nav-selected a:focus { background-color: #e6e6e6 !important; color: #333333 !important; }
+.aui-nav-vertical .aui-nav .aui-nav-selected a:focus { background-color: #e6e6e6 !important; color: #333333 !important; }
+.aui-navgroup-horizontal .aui-nav>.aui-nav-selected a:hover { background-color: #e6e6e6 !important; color: #333333 !important; }
+.aui-navgroup-vertical .aui-nav .aui-nav-selected a:hover { background-color: #e6e6e6 !important; color: #333333 !important; }
+.aui-nav-vertical .aui-nav .aui-nav-selected a:hover { background-color: #e6e6e6 !important; color: #333333 !important; }
+.aui-navgroup-horizontal .aui-nav>.aui-nav-selected a:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-navgroup-vertical .aui-nav .aui-nav-selected a:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-nav-vertical .aui-nav .aui-nav-selected a:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dialog .dialog-page-menu li.page-menu-item button.item-button:hover { background-color: #e6e6e6 !important; color: #0063c6 !important; }
+.aui-dialog .dialog-page-menu li.page-menu-item button.item-button:focus { background-color: #e6e6e6 !important; color: #0063c6 !important; }
+.aui-dialog .dialog-page-menu li.page-menu-item.selected button.item-button:hover { background-color: #e6e6e6 !important; color: #333333 !important; }
+.aui-dialog .dialog-page-menu li.page-menu-item.selected button.item-button:focus { background-color: #e6e6e6 !important; color: #333333 !important; }
+.aui-dialog .dialog-page-menu li.page-menu-item button.item-button:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dialog .dialog-page-menu li.page-menu-item.selected button.item-button:active { background-color: #3b73af !important; color: #ffffff !important; }
+.aui-dialog .dialog-button-panel a.button-panel-link:hover { color: #0066ff !important; }
+.aui-dialog .dialog-button-panel a.button-panel-link:focus { color: #0066ff !important; }
+.aui-layout #content>header:before { content: " " !important; display: table !important; }
+.aui-layout .aui-page-panel-main>header:before { content: " " !important; display: table !important; }
+.aui-layout #content>header:after { content: " " !important; display: table !important; }
+.aui-layout .aui-page-panel-main>header:after { content: " " !important; display: table !important; }
+.aui-layout #content>header:after { clear: both !important; }
+.aui-layout .aui-page-panel-main>header:after { clear: both !important; }
+.issue-header-content .aui-nav-breadcrumbs>li+li:before { content: "" !important; display: block !important; background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg08c3ZnIGlkPSJVbnRpdGxlZC1QYWdlJTIwMSIgdmlld0JveD0iMCAwIDQgMTAiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgdmVyc2lvbj0iMS4xIg0JeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSINCXg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNHB4IiBoZWlnaHQ9IjEwcHgiDT4NCTxnIGlkPSJMYXllciUyMDEiPg0JCTxwYXRoIGQ9Ik0gMSAxMCBMIDQgMCBMIDMgMCBMIDAgMTAgTCAxIDEwIEwgMSAxMCBaIiBmaWxsPSIjNzA3MDcwIi8+DQk8L2c+DTwvc3ZnPg==') no-repeat 0 0 !important; padding: 0 !important; width: 4px !important; height: 1em !important; position: absolute !important; top: 3px !important; left: -4px !important; }
+.msie-8 .issue-header-content .aui-nav-breadcrumbs>li+li:before { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAKBAMAAABh1eI9AAAAKlBMVEXt7e3k5OTS0tLJycnAwMC3t7eurq6lpaWcnJyKioqBgYF4eHhwcHD///9pCKBqAAAADnRSTlP/////////////////AEXA3MgAAAAmSURBVAgdY7qrw8Tgw8RgzfSFl4n1LhPzASbjA0x2B5hsGZisGQBqXQa0gxHI5gAAAABJRU5ErkJggg==') !important; }
+.aui-avatar-project:before { border: 0 !important; border-radius: 3px !important; box-shadow: none !important; background-color: transparent !important; }
+#content .aui-page-panel-nav .tabs.vertical a:focus { background: #e6e6e6 !important; color: #0063c6 !important; text-decoration: none !important; }
+#content .aui-page-panel-nav .tabs.vertical a:hover { background: #e6e6e6 !important; color: #0063c6 !important; text-decoration: none !important; }
+#content .aui-page-panel-nav .tabs.vertical a:active { background: #3b73af !important; color: #ffffff !important; }
+#content .aui-page-panel-nav .tabs.vertical .active a:focus { background: #e6e6e6 !important; text-decoration: none !important; color: #333333 !important; }
+#content .aui-page-panel-nav .tabs.vertical .active a:hover { background: #e6e6e6 !important; text-decoration: none !important; color: #333333 !important; }
+#content .aui-page-panel-nav .tabs.vertical .active a:active { background: #3b73af !important; color: #ffffff !important; }
+#content>header:before { content: " " !important; display: table !important; }
+#content>header:after { content: " " !important; display: table !important; }
+#content>header:after { clear: both !important; }
+.module:before { content: " " !important; display: table !important; }
+.module:after { content: " " !important; display: table !important; }
+.module:after { clear: both !important; }
+.module>.mod-header:before { content: " " !important; display: table !important; }
+.module>.mod-header:after { content: " " !important; display: table !important; }
+.module>.mod-header:after { clear: both !important; }
+.module>.mod-content:before { content: " " !important; display: table !important; }
+.module>.mod-content:after { content: " " !important; display: table !important; }
+.module>.mod-content:after { clear: both !important; }
+.property-list .wrap:before { content: " " !important; display: table !important; }
+.property-list .wrap:after { content: " " !important; display: table !important; }
+.property-list .wrap:after { clear: both !important; }
+.property-list.two-cols:before { content: " " !important; display: table !important; }
+.property-list.two-cols:after { content: " " !important; display: table !important; }
+.property-list.two-cols:after { clear: both !important; }
+.module>.mod-content .issues>li .issue:after { content: "." !important; }
+#admin-summary-panel .aui-icon-small:before { font-size: 14px !important; }
+.toolbar a:hover { text-decoration: underline !important; }
+.grabable li:hover { background-color: #d8e4f0 !important; }
+ul.optionslist>li>ul>li:before { content: ", " !important; }
+ul.optionslist>li>ul>li:first-child:before { content: none !important; }
+.recipients li:before { content: " " !important; display: table !important; }
+.recipients li:after { content: " " !important; display: table !important; }
+.recipients li:after { clear: both !important; }
+.recipients li:hover { background-color: #e6e6e6 !important; }
+.recipients li:hover .remove-recipient { visibility: visible !important; }
+table.aui.aui-table-rowhover>tbody tr:hover { background-color: #f0f0f0 !important; }
+table.aui th a:hover { color: #333 !important; text-decoration: none !important; }
+tr.rowSelectable:hover { background-color: #eeb !important; }
+.custom-field-types td:hover { background-color: #f0f0f0 !important; }
+.clickable:hover { background-color: #e2effa !important; cursor: pointer !important; }
+.tabwrap>ul.tabs>li a:visited { background: #eee !important; color: #333 !important; }
+.tabwrap>ul.tabs>li a:focus { background: #e6e6e6 !important; color: #333 !important; }
+.tabwrap>ul.tabs>li a:hover { background: #e6e6e6 !important; color: #333 !important; }
+.tabwrap>ul.tabs>li.active-tab a:visited { background: #fff !important; color: #333 !important; }
+.tabwrap>ul.tabs>li.active-tab a:focus { background: #fff !important; color: #333 !important; }
+.tabwrap>ul.tabs>li.active-tab a:hover { background: #fff !important; color: #333 !important; }
+.tabwrap>ul.tabs>li.active-tab a:active { background: #fff !important; color: #333 !important; }
+.operations>li:focus { background: linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.operations>li:hover { background: linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%) !important; border-color: #999 !important; color: #000 !important; text-decoration: none !important; }
+.operations>li:active { background: #f2f2f2 !important; background-image: none !important; background-color: #f2f2f2 !important; box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.1) !important; text-shadow: none !important; text-decoration: none !important; }
+.operations>li.aui-dropdown2-trigger:hover { border-color: #999 !important; }
+.operations>li>.active:hover { box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1) !important; }
+.operations>li.active:active { background: #ddd !important; background-image: none !important; box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.2) !important; }
+.operations>li>a:hover { text-decoration: none !important; color: inherit !important; }
+.operations>li>a:focus { text-decoration: none !important; color: inherit !important; }
+.operations>li>a:active { text-decoration: none !important; color: inherit !important; }
+.operations>li>a.aui-dd-link:after { border: 4px solid transparent !important; border-top-color: #333333 !important; content: "" !important; height: 0 !important; margin-top: -1px !important; position: absolute !important; right: 8px !important; top: 50% !important; width: 0 !important; }
+.operations-list li+li:before { content: "\b7" !important; padding: 0 0.42857142857142855em 0 0.21428571428571427em !important; color: #707070 !important; }
+.aui-page-header-actions .aui-nav-pagination .aui-nav-previous:before { border-left: 1px solid #cccccc !important; content: "" !important; display: block !important; height: 20px !important; position: absolute !important; right: 0 !important; top: 0 !important; }
+.aui-page-header-actions .aui-nav-pagination .aui-nav-previous a:after { border: 9px solid transparent !important; border-right-color: #707070 !important; content: "" !important; height: 0 !important; position: absolute !important; left: -8px !important; top: 1px !important; width: 0 !important; }
+.aui-page-header-actions .aui-nav-pagination .aui-nav-previous a:hover:after { border-right-color: #0063c6 !important; }
+.aui-page-header-actions .aui-nav-pagination .aui-nav-next:before { border-left: 1px solid #cccccc !important; content: "" !important; display: block !important; height: 20px !important; position: absolute !important; left: 0 !important; top: 0 !important; }
+.aui-page-header-actions .aui-nav-pagination .aui-nav-next a:after { border: 9px solid transparent !important; border-left-color: #707070 !important; content: "" !important; height: 0 !important; position: absolute !important; right: -8px !important; top: 1px !important; width: 0 !important; }
+.aui-page-header-actions .aui-nav-pagination .aui-nav-next a:hover:after { border-left-color: #0063c6 !important; }
+.aui-page-header-actions .aui-nav-pagination .aui-nav-previous+.aui-nav-next:before { display: none !important; }
+.ops li a.button:focus { border-color: #999 !important; text-decoration: none !important; }
+.ops li a.button:hover { border-color: #999 !important; text-decoration: none !important; }
+.ops li a.button:active { background-color: #3c78b5 !important; background-image: none !important; color: #fff !important; text-decoration: none !important; }
+.ops li a.drop-menu.active:hover { background-color: #ccc !important; }
+.ops li a.drop-menu:hover { background-color: #ccc !important; }
+.issue-header .page-navigation li.showing a:hover { text-decoration: underline !important; }
+.issue-header .page-navigation li.return a:hover { text-decoration: underline !important; }
+.shorten .shortener-expand:hover { background-color: #eee !important; text-decoration: none !important; }
+.shorten .shortener-collapse:hover { background-color: #eee !important; text-decoration: none !important; }
+.shorten .shortener-expand:focus { background-color: #eee !important; text-decoration: none !important; }
+.shorten .shortener-collapse:focus { background-color: #eee !important; text-decoration: none !important; }
+.issue-data-block:hover { background-color: #f0f0f0 !important; }
+.issue-data-block:after { content: "." !important; display: block !important; height: 0 !important; clear: both !important; visibility: hidden !important; }
+.issue-data-block:hover .actionContainer .action-links { visibility: visible !important; }
+.issue-links tr:hover .actions .icon { visibility: visible !important; }
+.links-list dd:hover { background-color: #e6e6e6 !important; }
+.links-list dd:hover .delete-link { visibility: visible !important; }
+.item-attachments:after { clear: both !important; content: "." !important; display: block !important; height: 0 !important; visibility: hidden !important; }
+.item-attachments .attachment-content:before { content: " " !important; display: table !important; }
+.item-attachments .attachment-content:after { content: " " !important; display: table !important; }
+.item-attachments .attachment-content:after { clear: both !important; }
+.item-attachments .attachment-content:hover { background-color: #f0f0f0 !important; }
+.item-attachments .attachment-content:after { content: "." !important; display: block !important; height: 0 !important; clear: both !important; visibility: hidden !important; }
+.item-attachments .attachment-content .twixi-block:after { content: "." !important; display: block !important; height: 0 !important; clear: both !important; visibility: hidden !important; }
+.earlier-version a:visited { color: #666 !important; }
+#attachment_thumbnails .attachment-content:hover .blender { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/grad_hover.png') !important; }
+#attachment_thumbnails .attachment-content:hover .blender-delete { right: 10px !important; }
+.attachment-content:hover .attachment-delete { visibility: visible !important; }
+.collapsed-comments:hover { background: #e6e6e6 !important; }
+.collapsed-comments:hover .show-more-comments { background: #e6e6e6 !important; }
+.aui-theme-default .collapsed-comments:hover { text-decoration: none !important; }
+.issue-data-block.collapsed:hover { background: #e6e6e6 !important; }
+#issuetable>thead .sortable:hover { background-color: #f5f5f5 !important; }
+.issue-table>thead .sortable:hover { background-color: #f5f5f5 !important; }
+#issuetable>thead .active:hover { background-color: #e6e6e6 !important; }
+.issue-table>thead .active:hover { background-color: #e6e6e6 !important; }
+#issuetable>tbody>tr:hover { background-color: #f5f5f5 !important; }
+.issue-table>tbody>tr:hover { background-color: #f5f5f5 !important; }
+#issuetable.hide-carrot tr.focused:hover { background-color: #f5f5f5 !important; }
+.issue-table.hide-carrot tr.focused:hover { background-color: #f5f5f5 !important; }
+#issuetable .issuerow:hover .streorder div { visibility: visible !important; }
+.issue-table .issuerow:hover .streorder div { visibility: visible !important; }
+#issuetable .issue_actions a.aui-dd-link:hover { background-color: #3b73af !important; color: #fff !important; }
+.issue-table .issue_actions a.aui-dd-link:hover { background-color: #3b73af !important; color: #fff !important; }
+#issuetable .issue_actions a.aui-dd-link:hover.icon-tools-small { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/tools_12_white.png') !important; }
+.issue-table .issue_actions a.aui-dd-link:hover.icon-tools-small { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/tools_12_white.png') !important; }
+#issuetable .issue_actions a.aui-dd-link:hover span { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/menu_indicator_for_dark_backgrounds.gif') !important; }
+.issue-table .issue_actions a.aui-dd-link:hover span { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/menu_indicator_for_dark_backgrounds.gif') !important; }
+#issuetable .issuerow:hover .issue_actions a.aui-dd-link { left: 0 !important; top: 0 !important; }
+.issue-table .issuerow:hover .issue_actions a.aui-dd-link { left: 0 !important; top: 0 !important; }
+.msie-8 #issuetable .issue_actions a.aui-dd-link.icon-tools-small:hover { background-repeat: no-repeat !important; background-position: 4px 2px !important; padding-left: 1.5em !important; }
+.msie-8 .issue-table .issue_actions a.aui-dd-link.icon-tools-small:hover { background-repeat: no-repeat !important; background-position: 4px 2px !important; padding-left: 1.5em !important; }
+.msie-8 #issuetable .issue_actions a.aui-dd-link.icon-tools-small:hover { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/tools_12_white.png') !important; background-color: #3b73af !important; }
+.msie-8 .issue-table .issue_actions a.aui-dd-link.icon-tools-small:hover { background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/tools_12_white.png') !important; background-color: #3b73af !important; }
+.steps>li:before { background-color: #0063c6 !important; border-radius: 100% !important; content: "" !important; height: 10px !important; left: 0 !important; position: absolute !important; top: 10px !important; width: 10px !important; }
+.steps>.current~li:before { background-color: #ccc !important; }
+.versions-list .version-block-container:before { content: " " !important; display: table !important; }
+.versions-list .version-block-container:after { content: " " !important; display: table !important; }
+.versions-list .version-block-container:after { clear: both !important; }
+.versions-list .version-block-container .version-progress>.percentageGraph:before { content: " " !important; display: table !important; }
+.versions-list .version-block-container .version-progress>.percentageGraph:after { content: " " !important; display: table !important; }
+.versions-list .version-block-container .version-progress>.percentageGraph:after { clear: both !important; }
+#shortcutsmenu:before { content: " " !important; display: table !important; }
+#shortcutsmenu:after { content: " " !important; display: table !important; }
+#shortcutsmenu:after { clear: both !important; }
+ul.labels li .lozengea:hover { border-color: #707070 !important; text-decoration: none !important; }
+ul.labels li .lozengea:focus { border-color: #707070 !important; text-decoration: none !important; }
+ul.labels li .edit-labels.icon-edit-sml:hover { background-position: -22px -698px !important; }
+.user-hover-more.aui-dd-link:after { border: 4px solid transparent !important; border-top-color: #333333 !important; content: "" !important; height: 0 !important; position: absolute !important; right: 8px !important; top: 11px !important; width: 0 !important; }
+.user-hover-more.aui-dd-link:hover.aui-dd-link:after { border-top-color: #cccccc !important; }
+.user-hover-buttons a:hover { background-color: #3b73af !important; color: #ffffff !important; text-decoration: none !important; }
+#up-d-avatar .avatar_link:hover img { opacity: 1 !important; filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=100)" !important; }
+#up-d-avatar .avatar_link:hover strong { background-position: -22px -699px !important; }
+form.aui .security-level .drop .drop-menu:after { margin-top: 0 !important; }
+form.aui .security-level .drop:hover .drop-menu:after { border-top-color: #333333 !important; }
+form.aui .aui-field-wikiedit:before { content: " " !important; display: table !important; }
+form.aui .aui-field-wikiedit:after { content: " " !important; display: table !important; }
+form.aui .aui-field-wikiedit:after { clear: both !important; }
+#previous-view:before { content: " " !important; display: table !important; }
+#previous-view:after { content: " " !important; display: table !important; }
+#previous-view:after { clear: both !important; }
+#stalker.detached:after { display: none !important; }
+.project-details .operations-list>li+li:before { color: #cccccc !important; margin: 0 3px !important; }
+></style>
+<header id="previous-view" style="display: none !important; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #cccccc; width: 100%; background-color: #fff; padding: 16px 8px;"><nav class="aui-toolbar" style="display: inline-block; clear: both; padding-top: 0; position: relative; width: 100%; float: left; background-color: transparent;"><div class="toolbar-split toolbar-split-right" style="display: inline-block; float: right; margin: 0 0 0 10px; padding: 0;">
+            <ul class="toolbar-group" style="display: inline-block; float: left; white-space: nowrap; margin: 0 10px 10px 0; padding: 0;">
+<li class="toolbar-item" style="display: inline-block; float: left; margin: 0; padding: 0;">
+                    <a href="https://jira.nuxeo.com/secure/IssueNavigator.jspa?requestId=15099" class="toolbar-trigger" style="color: #333; text-decoration: none !important; cursor: default; display: inline-block; text-shadow: 0 1px 0 white; vertical-align: baseline; height: auto; text-indent: 0; width: auto; float: left; -webkit-border-top-left-radius: 3px; -webkit-border-bottom-left-radius: 3px; -moz-border-radius-topleft: 3px; -moz-border-radius-bottomleft: 3px; border-top-left-radius: 3px; border-bottom-left-radius: 3px; -webkit-border-top-right-radius: 3px; -webkit-border-bottom-right-radius: 3px; -moz-border-radius-topright: 3px; -moz-border-radius-bottomright: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; background-image: linear-gradient(top,#fff 0,#f2f2f2 100%); margin: 0; padding: 4px 10px; border: 1px solid #ccc;">Back to previous view</a>
+                </li>
+            </ul>
+</div>
+    </nav></header><div id="printable-content" style="margin: 0; padding: 0;">
+<div class="result-header" style="margin: 0; padding: 0;">
+    <h3 style="font-size: 16px; line-height: 1.5625; color: #000000; margin: 0; padding: 0;"><a href="https://jira.nuxeo.com/secure/IssueNavigator.jspa?requestId=15099" style="color: #0063c6; text-decoration: none !important;">UpgradeNotes591 (Nuxeo Issue Tracker)</a></h3>
+            <div class="searcherValue" style="margin: 0; padding: 0;">
+            <label class="fieldLabel" for="fieldJqlQuery">JQL Query:</label>
+            <span id="fieldJqlQuery" class="fieldValue">project in (NXP, NXCM) AND resolution = Fixed AND fixVersion = "5.9.1" AND ("Impact type" = "API change" OR "Upgrade notes" is not EMPTY) ORDER BY component DESC, key DESC</span>
+        </div>
+                <div class="searcherValue" style="margin: 0; padding: 0;">
+            <label class="fieldLabel">Sorted by:</label>
+                            Component/s descending, then
+                            Key descending
+                    </div>
+                    <div class="results-count" style="margin: 0; padding: 0;">
+            <b>1</b>–<b>20</b> of <b>20</b>
+            as at: <b>17/12/13 15:06</b>
+        </div>
+    </div>  
+
+
+
+                                        <table id="issuetable" style="border-collapse: collapse; width: 100%; background-color: #fff; margin: 8px 0;" bgcolor="#fff">
+<thead><tr class="rowHeader" style="background-color: transparent;" bgcolor="transparent">
+<th class="colHeaderLink headerrow-issuekey" style="color: #707070; font-size: 12px; white-space: nowrap; overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; padding: 5px 7px;" align="left" valign="top">
+                            Key
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary" style="color: #707070; font-size: 12px; white-space: nowrap; overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+                            Summary
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10100" style="color: #707070; font-size: 12px; white-space: nowrap; overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+                            Upgrade notes
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-components" style="color: #707070; font-size: 12px; white-space: nowrap; overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+                            Components
+                                                    </th>
+                                                                    </tr></thead>
+<tbody>
+<tr id="issuerow61921" rel="61921" data-issuekey="NXP-13275" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-top-width: 1px; border-top-color: #cccccc; border-top-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13275" href="https://jira.nuxeo.com/browse/NXP-13275" style="color: #0063c6; text-decoration: none !important;">NXP-13275</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-top-width: 1px; border-top-color: #cccccc; border-top-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                        <a class="issue-link parentIssue" data-issue-key="NXP-8659" href="https://jira.nuxeo.com/browse/NXP-8659" title="Reduce source code path length" style="color: #0063c6; text-decoration: none !important; padding-right: 10px; background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/icon_separator.png'); background-attachment: scroll; background-repeat: no-repeat; background-color: transparent; background-position: 100% 2px;">NXP-8659</a>
+                        <a class="issue-link" data-issue-key="NXP-13275" href="https://jira.nuxeo.com/browse/NXP-13275" style="color: #0063c6; text-decoration: none !important;">Shorten path length for nuxeo-platform-document-routing</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-top-width: 1px; border-top-color: #cccccc; border-top-style: solid; padding: 5px 7px;" align="left" valign="top">      The following Maven artifact ids and group ids have changed: 
+<br>
+BEFORE: 
+<br>
+&lt;groupId&gt;org.nuxeo.ecm.platform&lt;/groupId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-document-routing-api&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-document-routing-core&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-document-routing-web&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-document-routing-dm&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-document-routing-dashboard&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-document-routing-default&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-document-routing-test&lt;/artifactId&gt;
+<br>
+AFTER:
+<br>
+&lt;groupId&gt;org.nuxeo.ecm.routing&lt;/groupId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-routing-api&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-routing-core&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-routing-web&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-routing-dm&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-routing-dashboard&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-routing-default&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-routing-test&lt;/artifactId&gt;
+<br>
+</td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-top-width: 1px; border-top-color: #cccccc; border-top-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10170" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Workflow</a>            </td>
+                    </tr>
+<tr id="issuerow62173" rel="62173" data-issuekey="NXP-13326" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13326" href="https://jira.nuxeo.com/browse/NXP-13326" style="color: #0063c6; text-decoration: none !important;">NXP-13326</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13326" href="https://jira.nuxeo.com/browse/NXP-13326" style="color: #0063c6; text-decoration: none !important;">Clean up WebDAV code</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      - nuxeo-platform-wi-backend has been removed.
+<br>
+- nuxeo-generic-wss-handler has been renamed to nuxeo-wss and is now a Nuxeo bundle.
+<br>
+- nuxeo-generic-wss-front has been renamed to nuxeo-wss-front.
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10522" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">WebDAV / WSS</a>            </td>
+                    </tr>
+<tr id="issuerow62252" rel="62252" data-issuekey="NXP-13346" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13346" href="https://jira.nuxeo.com/browse/NXP-13346" style="color: #0063c6; text-decoration: none !important;">NXP-13346</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13346" href="https://jira.nuxeo.com/browse/NXP-13346" style="color: #0063c6; text-decoration: none !important;">Add API to invalidate user profile cache</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      Added UserProfileService#clearCache()
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/13300" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">User preferences/Profile</a>            </td>
+                    </tr>
+<tr id="issuerow60357" rel="60357" data-issuekey="NXP-12603" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-12603" href="https://jira.nuxeo.com/browse/NXP-12603" style="color: #0063c6; text-decoration: none !important;">NXP-12603</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-12603" href="https://jira.nuxeo.com/browse/NXP-12603" style="color: #0063c6; text-decoration: none !important;">Add the nuxeo-style-guide as default addon</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      Renamed org.nuxeo.styleguide:nuxeo-styleguide to org.nuxeo.style:nuxeo-style-guide
+<br>
+</td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/12700" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">UI Style Guide</a>            </td>
+                    </tr>
+<tr id="issuerow62393" rel="62393" data-issuekey="NXP-13411" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13411" href="https://jira.nuxeo.com/browse/NXP-13411" style="color: #0063c6; text-decoration: none !important;">NXP-13411</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13411" href="https://jira.nuxeo.com/browse/NXP-13411" style="color: #0063c6; text-decoration: none !important;">CSS &gt; Rename iconImage rule</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      Removing .iconImage css class. Use .icon instead, + .smallIcon if you need to force a small size (16px).
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/13202" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Style &amp; CSS</a>            </td>
+                    </tr>
+<tr id="issuerow56459" rel="56459" data-issuekey="NXP-11265" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-11265" href="https://jira.nuxeo.com/browse/NXP-11265" style="color: #0063c6; text-decoration: none !important;">NXP-11265</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-11265" href="https://jira.nuxeo.com/browse/NXP-11265" style="color: #0063c6; text-decoration: none !important;">Tree &gt; Remove the open state of icons</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      No "open/expanded state" anymore for icons in the tree. Only one icon represents a folder(ish) type.
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/13202" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Style &amp; CSS</a>            </td>
+                    </tr>
+<tr id="issuerow61809" rel="61809" data-issuekey="NXP-13241" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13241" href="https://jira.nuxeo.com/browse/NXP-13241" style="color: #0063c6; text-decoration: none !important;">NXP-13241</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13241" href="https://jira.nuxeo.com/browse/NXP-13241" style="color: #0063c6; text-decoration: none !important;">When I Ctrl+click on DAM Top Menu Bar Link, new conversation is not started</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      Ctrl+Clik on Dam Top Menu link now starts a new conversation
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/11321" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">DAM</a>,                     <a href="https://jira.nuxeo.com/browse/NXP/component/10158" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Seam/JSF UI</a>            </td>
+                    </tr>
+<tr id="issuerow61544" rel="61544" data-issuekey="NXP-13146" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13146" href="https://jira.nuxeo.com/browse/NXP-13146" style="color: #0063c6; text-decoration: none !important;">NXP-13146</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13146" href="https://jira.nuxeo.com/browse/NXP-13146" style="color: #0063c6; text-decoration: none !important;">Document are not displayed in IE 11</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      Nuxeo now works on IE11
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10158" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Seam/JSF UI</a>            </td>
+                    </tr>
+<tr id="issuerow60756" rel="60756" data-issuekey="NXP-12787" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-12787" href="https://jira.nuxeo.com/browse/NXP-12787" style="color: #0063c6; text-decoration: none !important;">NXP-12787</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-12787" href="https://jira.nuxeo.com/browse/NXP-12787" style="color: #0063c6; text-decoration: none !important;">Activate SafeEdit on toggleable layout widget</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      safeEdit now works on multiple forms in the same page
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10656" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Layouts &amp; Widgets</a>,                     <a href="https://jira.nuxeo.com/browse/NXP/component/10158" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Seam/JSF UI</a>            </td>
+                    </tr>
+<tr id="issuerow61670" rel="61670" data-issuekey="NXP-13195" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13195" href="https://jira.nuxeo.com/browse/NXP-13195" style="color: #0063c6; text-decoration: none !important;">NXP-13195</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13195" href="https://jira.nuxeo.com/browse/NXP-13195" style="color: #0063c6; text-decoration: none !important;">Non-SNAPSHOT Marketplace package install should not force other packages upgrade to SNAPSHOT version</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      Upgraded to org.nuxeo.connect:nuxeo-connect-client:1.4.13
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10467" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Packaging</a>            </td>
+                    </tr>
+<tr id="issuerow62355" rel="62355" data-issuekey="NXP-13390" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13390" href="https://jira.nuxeo.com/browse/NXP-13390" style="color: #0063c6; text-decoration: none !important;">NXP-13390</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13390" href="https://jira.nuxeo.com/browse/NXP-13390" style="color: #0063c6; text-decoration: none !important;">Improve SendMail Operation to expose bcc,replyto,cc</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      SendMail opération parameters list has changed :
+<br><br>
+- "isStrict" see below
+<br>
+- "form" waiting a String. Accepted values: email address, user with prefix, group with prefix, user without prefix (if isStrict is false) group without prefix (if strict is false).
+<br>
+- "to" waiting a StringList object (accept String with values separated by commas, List&lt;String&gt;, String[] in the context of the chain definition using adapters). Accepted values: email address, user with prefix, group with prefix, user without prefix (if isStrict is false) group without prefix (if strict is false).
+<br>
+- "cc" values waited are same as fromList
+<br>
+- "bcc" values waited are same as fromList
+<br>
+- "replyto" values waited are same as fromList
+<br>
+</td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10701" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Automation</a>,                     <a href="https://jira.nuxeo.com/browse/NXP/component/10057" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Notifications</a>            </td>
+                    </tr>
+<tr id="issuerow61840" rel="61840" data-issuekey="NXP-13250" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13250" href="https://jira.nuxeo.com/browse/NXP-13250" style="color: #0063c6; text-decoration: none !important;">NXP-13250</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                        <a class="issue-link parentIssue" data-issue-key="NXP-8659" href="https://jira.nuxeo.com/browse/NXP-8659" title="Reduce source code path length" style="color: #0063c6; text-decoration: none !important; padding-right: 10px; background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/icon_separator.png'); background-attachment: scroll; background-repeat: no-repeat; background-color: transparent; background-position: 100% 2px;">NXP-8659</a>
+                        <a class="issue-link" data-issue-key="NXP-13250" href="https://jira.nuxeo.com/browse/NXP-13250" style="color: #0063c6; text-decoration: none !important;">Shorten path length for nuxeo-platform-localconfiguration</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      The following Maven artifact ids and group ids have changed:
+<br>
+BEFORE:
+<br>
+&lt;groupId&gt;org.nuxeo.ecm.platform&lt;/groupId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-localconfiguration-simple&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-localconfiguration-web&lt;/artifactId&gt;
+<br>
+AFTER:
+<br>
+&lt;groupId&gt;org.nuxeo.ecm.localconf&lt;/groupId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-localconf-simple&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-localconf-web&lt;/artifactId&gt;
+<br><br>
+The Java various classes under the packages:
+<br>
+org.nuxeo.ecm.platform.localconfiguration.simple.*
+<br>
+have been renamed to a flat package:
+<br>
+org.nuxeo.ecm.localconf
+<br><br>
+A few operation classes have been renamed (but their operation id is unchanged):
+<br>
+BEFORE:
+<br>
+org.nuxeo.ecm.platform.localconfiguration.simple.operations.PutSimpleConfigurationParameter
+<br>
+org.nuxeo.ecm.platform.localconfiguration.simple.operations.PutSimpleConfigurationParameters
+<br>
+org.nuxeo.ecm.platform.localconfiguration.simple.operations.SetSimpleConfigurationParameterAsVar
+<br>
+AFTER:
+<br>
+org.nuxeo.ecm.localconf.PutSimpleConfParam
+<br>
+org.nuxeo.ecm.localconf.PutSimpleConfParams
+<br>
+org.nuxeo.ecm.localconf.SetSimpleConfParamVar
+<br>
+</td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/11403" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Local Configuration</a>            </td>
+                    </tr>
+<tr id="issuerow62342" rel="62342" data-issuekey="NXP-13386" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13386" href="https://jira.nuxeo.com/browse/NXP-13386" style="color: #0063c6; text-decoration: none !important;">NXP-13386</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13386" href="https://jira.nuxeo.com/browse/NXP-13386" style="color: #0063c6; text-decoration: none !important;">Fix NPE for suggestion widgets within list widgets</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      suggestion widgets now work in list widgets
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10656" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Layouts &amp; Widgets</a>            </td>
+                    </tr>
+<tr id="issuerow62145" rel="62145" data-issuekey="NXP-13322" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13322" href="https://jira.nuxeo.com/browse/NXP-13322" style="color: #0063c6; text-decoration: none !important;">NXP-13322</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13322" href="https://jira.nuxeo.com/browse/NXP-13322" style="color: #0063c6; text-decoration: none !important;">Provide a more flexible way to specify the id to be submitted in Select2 widgets</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      id submitted by suggestion widgets can now be fully customized
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10656" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Layouts &amp; Widgets</a>            </td>
+                    </tr>
+<tr id="issuerow61451" rel="61451" data-issuekey="NXP-13103" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13103" href="https://jira.nuxeo.com/browse/NXP-13103" style="color: #0063c6; text-decoration: none !important;">NXP-13103</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13103" href="https://jira.nuxeo.com/browse/NXP-13103" style="color: #0063c6; text-decoration: none !important;">Reset JSF components states when selecting a DAM asset</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      JSF action listener #{jsfResetActions.resetComponentsFor} can be used in actions that need to reset all components in a given same JSF naming container, set using #{jsfResetActions#setBaseComponentId}
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/11321" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">DAM</a>,                     <a href="https://jira.nuxeo.com/browse/NXP/component/10656" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Layouts &amp; Widgets</a>            </td>
+                    </tr>
+<tr id="issuerow61510" rel="61510" data-issuekey="NXP-13122" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13122" href="https://jira.nuxeo.com/browse/NXP-13122" style="color: #0063c6; text-decoration: none !important;">NXP-13122</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13122" href="https://jira.nuxeo.com/browse/NXP-13122" style="color: #0063c6; text-decoration: none !important;">Support of uuid idtype on PostgreSQL is broken</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      See documentation <a href="http://doc.nuxeo.com/x/fwQz" style="color: #333333; text-decoration: none !important;">http://doc.nuxeo.com/x/fwQz</a> if you use uuid idType
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10368" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Core SQL Storage</a>            </td>
+                    </tr>
+<tr id="issuerow61632" rel="61632" data-issuekey="NXP-13179" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13179" href="https://jira.nuxeo.com/browse/NXP-13179" style="color: #0063c6; text-decoration: none !important;">NXP-13179</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13179" href="https://jira.nuxeo.com/browse/NXP-13179" style="color: #0063c6; text-decoration: none !important;">Migrate largetext field to clob field using XSD definition</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      - largetext definition removed from default-repository-config.xml
+<br>
+- now used nx:string whose size is 999999999 (=CLOB at database level) for large text fields
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10040" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Core</a>            </td>
+                    </tr>
+<tr id="issuerow61515" rel="61515" data-issuekey="NXP-13125" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13125" href="https://jira.nuxeo.com/browse/NXP-13125" style="color: #0063c6; text-decoration: none !important;">NXP-13125</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-13125" href="https://jira.nuxeo.com/browse/NXP-13125" style="color: #0063c6; text-decoration: none !important;">Automatically retry async listeners if failing due to concurrency</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      A listener can now have a retryCount
+<br><br>
+   &lt;listener ... retryCount="1"&gt;
+<br>
+   &lt;/listener&gt;
+<br><br>
+This is the number of times that the listener will be re-executed if it failed due to a ConcurrentUpdateException raised by the low-level layers.
+<br><br>
+The default is 1.
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10040" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Core</a>            </td>
+                    </tr>
+<tr id="issuerow52706" rel="52706" data-issuekey="NXP-10148" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-10148" href="https://jira.nuxeo.com/browse/NXP-10148" style="color: #0063c6; text-decoration: none !important;">NXP-10148</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                <a class="issue-link" data-issue-key="NXP-10148" href="https://jira.nuxeo.com/browse/NXP-10148" style="color: #0063c6; text-decoration: none !important;">Allow filtering of exported operations</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      Added "deprecatedSince" and "addToStudio" annotations for operations documentation ("since" annotation was already avalailble)
+  </td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10701" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Automation</a>            </td>
+                    </tr>
+<tr id="issuerow61908" rel="61908" data-issuekey="NXP-13268" class="issuerow" style="color: #333333; background-color: #fff;" bgcolor="#fff">
+<td class="nav issuekey" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; border-left-width: 2px; border-left-color: transparent; border-left-style: solid; white-space: nowrap; width: 16px; padding: 5px 7px;" align="left" valign="top">
+
+    <a class="issue-link" data-issue-key="NXP-13268" href="https://jira.nuxeo.com/browse/NXP-13268" style="color: #0063c6; text-decoration: none !important;">NXP-13268</a>
+</td>
+                                                        <td class="nav summary" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">
+<p style="min-width: 300px; max-width: 1400px; white-space: normal; margin: 0; padding: 0;">
+                        <a class="issue-link parentIssue" data-issue-key="NXP-8659" href="https://jira.nuxeo.com/browse/NXP-8659" title="Reduce source code path length" style="color: #0063c6; text-decoration: none !important; padding-right: 10px; background-image: url('https://jira.nuxeo.com/s/en_USqhare8-1988229788/6109/19/1.0/_/images/icons/icon_separator.png'); background-attachment: scroll; background-repeat: no-repeat; background-color: transparent; background-position: 100% 2px;">NXP-8659</a>
+                        <a class="issue-link" data-issue-key="NXP-13268" href="https://jira.nuxeo.com/browse/NXP-13268" style="color: #0063c6; text-decoration: none !important;">Shorten path length for nuxeo-platform-annotations</a>
+    </p>
+</td>
+                                                        <td class="nav customfield_10100" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; padding: 5px 7px;" align="left" valign="top">      The following Maven artifact ids and group ids have changed: 
+<br>
+BEFORE: 
+<br>
+&lt;groupId&gt;org.nuxeo.ecm.platform&lt;/groupId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-annotations-api&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-annotations-core&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-annotations-core-contrib&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-annotations-http&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-annotations-repository-plugin&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-platform-annotations-web&lt;/artifactId&gt;
+<br>
+AFTER: 
+<br>
+&lt;groupId&gt;org.nuxeo.ecm.annot&lt;/groupId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-annot-api&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-annot-core&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-annot-contrib&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-annot-http&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-annot-repo&lt;/artifactId&gt;
+<br>
+&lt;artifactId&gt;nuxeo-annot-gwt&lt;/artifactId&gt;
+<br>
+</td>
+                                                        <td class="nav components" style="overflow: hidden; text-align: left; vertical-align: top; border-bottom-color: #cccccc; border-bottom-width: 1px; border-bottom-style: solid; max-width: 60em; min-width: 80px; padding: 5px 7px;" align="left" valign="top">                        <a href="https://jira.nuxeo.com/browse/NXP/component/10655" class="tinylink" style="color: #333333; text-decoration: none !important; white-space: nowrap;">Annotations</a>            </td>
+                    </tr>
+</tbody>
+</table>
+<div class="end-of-stable-message" style="margin: 0; padding: 0;"></div>
+            </div>
+</body>
+</html>
+
