@@ -1,5 +1,65 @@
 [
 { "data" : [ 
+     { "date" : "18-Dec-2013 18:21",
+          "description" : "",
+          "label" : "5.9.1 Release Notes.pdf",
+          "os" : "all",
+          "size" : "104Ko",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/5.9.1%20Release%20Notes.pdf"
+        },
+        { "date" : "18-Dec-2013 16:59",
+          "description" : "",
+          "label" : "5.9.1 Upgrade Notes.pdf",
+          "os" : "all",
+          "size" : "64K",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/5.9.1%20Upgrade%20Notes.pdf"
+        },
+        { "date" : "18-Dec-2013 16:24",
+          "description" : "",
+          "label" : "nuxeo-5.9.1-setup.exe",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-setup.exe.md5",
+          "os" : "win",
+          "size" : "261M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-setup.exe"
+        },
+        { "date" : "18-Dec-2013 14:22",
+          "description" : "",
+          "label" : "nuxeo-5.9.1-sources.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-sources.zip.md5",
+          "os" : "all",
+          "size" : "63",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-sources.zip"
+        },
+        { "date" : "18-Dec-2013 17:06",
+          "description" : "",
+          "label" : "nuxeo-5.9.1-vm.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-vm.zip.md5",
+          "os" : "vm",
+          "size" : "667M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-vm.zip"
+        },
+        { "date" : "18-Dec-2013 14:24",
+          "description" : "",
+          "label" : "nuxeo-cap-5.9.1-tomcat-sdk.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat-sdk.zip.md5",
+          "os" : "all",
+          "size" : "300M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat-sdk.zip"
+        },
+        { "date" : "18-Dec-2013 14:24",
+          "description" : "",
+          "label" : "nuxeo-cap-5.9.1-tomcat.zip",
+          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat.zip.md5",
+          "os" : "all",
+          "size" : "168M",
+          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat.zip"
+        }
+      ],
+    "date" : "2013-12-18",
+    "name" : "5.9.1",
+    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.9.1/"
+  },
+  { "data" : [ 
         { "date" : "04-Nov-2013 12:43",
           "description" : "",
           "label" : "5.8 Release Notes(Since 5.6).pdf",
