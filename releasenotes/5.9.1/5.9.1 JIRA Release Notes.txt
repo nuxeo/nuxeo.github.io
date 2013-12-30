@@ -60,6 +60,7 @@ Release Notes - Nuxeo Enterprise Platform - Version 5.9.1
     * [NXP-13389] - Add more information on layout showcase widget reference
     * [NXP-13390] - Improve SendMail Operation to expose bcc,replyto,cc
     * [NXP-13391] - Add information about widget types supported controls
+    * [NXP-13402] - Improve Suggestion Document default formatter
     * [NXP-13419] - Add loading icon on suggestbox
     * [NXP-13423] - Make exception handling more objetive c like
     * [NXP-13424] - Hierarchy cache need to know if everything is done
@@ -265,6 +266,7 @@ Release Notes - Nuxeo Enterprise Platform - Version 5.9.1
     * [NXP-13386] - Fix NPE for suggestion widgets within list widgets
     * [NXP-13388] - Enable Files tab on video document type
     * [NXP-13397] - Unable to edit the layout of the dashboard
+    * [NXP-13410] - Fix update of current document when calling the "Refresh UI" operation
     * [NXP-13411] - CSS > Rename iconImage rule
     * [NXP-13413] - Drive: locally renaming a folder then remotely deleting it doesn't delete the local folder
     * [NXP-13414] - Fix NPE when trying to add the social facet on a placeless document
