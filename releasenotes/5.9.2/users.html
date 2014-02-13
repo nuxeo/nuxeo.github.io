@@ -69,8 +69,22 @@
 <p>Binary installer for Mac OS and Windows are all signed. See <a href="https://jira.nuxeo.com/browse/NXP-12981">NXP-12981</a> for details.
 </p>
 
-
-    </div>
+    <h2><a name="anchor-2"></a>Suggestion widgets</h2>
+<p>
+Select2-based suggestion widgets introduced in 5.7.3 received a couple of bug fixes. New widgets properties have been introduced (available in Studio):
+</p>
+	<ul>
+		<li>
+			<strong>All single suggestion widgets:</strong> a new widget property <em>dropdownOnArrow</em> dropdowns suggestions when clicking on the right side arrow of the select2 box instead of the whole container. This is handy when you use custom formatters containing links or other actions (See <a href="https://jira.nuxeo.com/browse/NXP-13715">NXP-13715</a> and <a href="http://doc.nuxeo.com/x/LIQZAQ">documentation</a>).
+		</li>
+		<li>
+			<strong>All multiple suggestion widgets:</strong> new property to change the separator used by select2 to handle multiple selection. The default separator is a comma and could be an issue when handled references contains a comma (See <a href="https://jira.nuxeo.com/browse/NXP-13713">NXP-13713</a>).
+		</li>
+		<li>
+			<strong>Directory suggestion widgets:</strong> new property to fetch the suggestions, 'contains' instead of 'starts with' (See <a href="https://jira.nuxeo.com/browse/NXP-13586">NXP-13586</a>).
+		</li>
+	</ul>
+</div>
 
 </div>
 
