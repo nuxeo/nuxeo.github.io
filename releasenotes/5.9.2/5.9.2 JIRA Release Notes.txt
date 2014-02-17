@@ -143,6 +143,7 @@ Release Notes - Nuxeo Enterprise Platform - Version 5.9.2
     * [NXP-13755] - Fix query for Unicity check in FileManagerService
     * [NXP-13756] - Failing default boolean value in a Directory schema with Oracle / MSSql
     * [NXP-13769] - Drive: investigate on randomly failing test_changes_root_registrations
+    * [NXP-13780] - Workflow task screen is not usable
 
 ** Clean up
     * [NXP-13548] - Remove dependency on webengine-sites
