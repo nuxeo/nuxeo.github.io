@@ -57,59 +57,88 @@ div.breakafter {
     <div id="welcome">
 
      <div style="clear:both;"></div>
+
     <h1 style="margin-left:-0.5em !important;">For Users</h1>
 
-    <h2><a name="anchor-0"></a>Mule Connector</h2>
-<p>Thierry wrote a Nuxeo <a href="https://github.com/tiry/nuxeo-mule-connector">connector</a> for <a href="http://www.mulesoft.org/">Mule</a> that is based on HTTP (Automation) API.</p>
-<p><blockquote>Mule ESB is a lightweight Java-based enterprise service bus (ESB) and integration platform that allows developers to connect applications together quickly and easily, enabling them to exchange data.</blockquote></p>
-<p>Using this connector, you can build Mule Flows that will use services exposed by Nuxeo Platform.</p>
-<p>This connector exposes:</p>
-<ul>
-    <li>A predefined set of Operations(getDocument, createDocument, updateDocument, query ...)</li>
-    <li>A generic runOperation to allow call to any Operation or Chain defined on the Nuxeo server</li>
-    <li>some converters from Nuxeo objects (Document, Documents, Blob) to raw types (Maps, List of Maps, File ...)</li>
-</ul>
-<p>I invite you to read the <a href="https://github.com/tiry/nuxeo-mule-connector/blob/master/doc/sample.md">sample and documentation</a> that Alain started writing to get a good grasp on the possibilities offer by this module.</p>
-<p><img class="lightboxed" src="./SetFileInThePayload.png"/></p>
+    <h2><a name="anchor-0"></a>DAM Enhancement</h2>
+      <p>We added some minor features on DAM like enabling CSV export on DAM listing or reseting thumbnails and video conversions when updating the main file of the document.</p>
 
-<div class="breakafter"></div>
-    <h2><a name="anchor-1"></a>SafeEdit Enhancement</h2>
-      <p><a href="https://jira.nuxeo.com/browse/NXP-12787">SafeEdit</a> was only activated on the edit tab. Now it is also activated on toggleable layout widget (which means it's activated on DAM).</p>
-     <h2><a name="anchor-2"></a>IE11</h2>
-     <p>Nuxeo JSF interface now fully works on Internet Explorer 11 released last October. Few bugs have also been fixed for IE9 Compatibilty Mode.</p>
+    <h2><a name="anchor-1"></a>Nuxeo Drive</h2>
 
+<p>Nuxeo Drive upgrade will now be transparent. Meaning you won't have to open a terminal, delete <em>.nuxeo drive</em> folder, and than install the new version. See <a href="https://jira.nuxeo.com/browse/NXP-13083">NXP-13083</a> for details.
+</p>
+<p>Binary installer for Mac OS and Windows are all signed. See <a href="https://jira.nuxeo.com/browse/NXP-12981">NXP-12981</a> for details.
+</p>
 
-
-     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
-
-
-    <h2><a name="anchor-0"></a>iOS SDK</h2>
-<p>We started to provide <a href="https://github.com/nuxeo/nuxeo-sdk-ios">a SDK</a> to start building your iOS application connected to Nuxeo through the REST API. We already have some very cool features like a blob offline cache.</p>
-
-    <h2><a name="anchor-1"></a>Select2</h2>
-
-
-<p>Anahide and Guillaume are still improving our Select2 widgets. There are two noticable new features.</p>
-<ul>
-  <li>Select2 widgets can be <a href="https://jira.nuxeo.com/browse/NXP-13123">configured</a> to let the user add entries to its binded directory. Take a look at <a href="https://github.com/nuxeo/nuxeo-jsf/commit/d79e9340aa05539d72bf754f67a2f99169e70a56">this example</a>.</li>
-  <li>You can now provide a <a href="https://jira.nuxeo.com/browse/NXP-13322">JavaScript function</a> that will be in charge of choosing the id (from serialized entry's fields) that will be submitted by the widget.</li>
-</ul>
-
-<h2><a name="anchor-2"></a>Cleanup and Refactoring</h2>
-
-<p>We have been doing a lot of cleanup and refactoring. Some of this will impact developers as we have renamed several modules. Take a look at the <a href="https://jira.nuxeo.com/browse/NXP-8659">umbrella jira ticker</a> for the details.</p>
+    <h2><a name="anchor-2"></a>Suggestion widgets</h2>
+<p>
+Select2-based suggestion widgets introduced in 5.7.3 received a couple of bug fixes. New widgets properties have been introduced (available in Studio):
+</p>
+	<ul>
+		<li>
+			<strong>All single suggestion widgets:</strong> a new widget property <em>dropdownOnArrow</em> dropdowns suggestions when clicking on the right side arrow of the select2 box instead of the whole container. This is handy when you use custom formatters containing links or other actions (See <a href="https://jira.nuxeo.com/browse/NXP-13715">NXP-13715</a> and <a href="http://doc.nuxeo.com/x/LIQZAQ">documentation</a>).
+		</li>
+		<li>
+			<strong>All multiple suggestion widgets:</strong> new property to change the separator used by select2 to handle multiple selection. The default separator is a comma and could be an issue when handled references contains a comma (See <a href="https://jira.nuxeo.com/browse/NXP-13713">NXP-13713</a>).
+		</li>
+		<li>
+			<strong>Directory suggestion widgets:</strong> new property to fetch the suggestions, 'contains' instead of 'starts with' (See <a href="https://jira.nuxeo.com/browse/NXP-13586">NXP-13586</a>).
+		</li>
+	</ul>
 
 
 <div class="breakafter"></div>
+
      <h1  style="margin-left:-0.5em !important;">For Administrators</h1>
 
 
-    <h2><a name="anchor-0"></a>Largetext Field to CLOB Migration</h2>
-<p><a href="https://jira.nuxeo.com/browse/NXP-13179">Migrate largetext field to clob field using XSD definition</a></p>
+    <h2><a name="anchor-0"></a>Marketplace Private Channel</h2>
+
+<p>Users are able to upload their own marketplace packages on Connect so as to make them visible and available in the admin center. This solution allows (at least Nuxeo team) to “share” a marketplace package to several customers using ACL system so as to be able to have a marketplace package visible strictly to a set of “Connect Customers” that would be for exemple the customers of a partner. First implementation offers a REST interface and a python script, a web UI would be implemented in the future.</p>
+
+
+    <h2><a name="anchor-1"></a>Nuxeo.conf New Parameters</h2>
+
+<table class="release">
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+  <tr><td class="parameter">nuxeo.vcs.use-nulls-last-on-desc</td><td>true (unset)</td><td>Since 5.9.2. Ask the database to use "NULLS LAST" when sorting DESC. True by default to get the same result order between different databases. Also turning this option to false enable PostgreSQL and Oracle to use an index on the sorted column which can be huge performance improvement.</td></tr>
+ 
+</table>
+
+
+<div class="breakafter"></div>
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+
+    <h2><a name="anchor-0"></a>Migration to MAVEN 3</h2>
+<p>As of this new release, Nuxuo Platform is built using Maven 3. This has been made possible because we have written a new version of our assembly plugin compatible with Maven3. See <a href="https://jira.nuxeo.com/browse/NXP-13555">NXP-13555</a>.</p>
+
+    <h2><a name="anchor-1"></a>Token Based Authentication Management & oAuth 2.0 Support</h2>
+
+<p>Exploding demand of API use makes it necessary to provide easy means for developers to manage authentication of the applications they develop, let it be on JavaScript based app, iOS, python (with Drive)… The token based authentication service, implemented initially for the requirements of Nuxeo Drive is extracted and generalized, made available to the Nuxeo Platform developers. In the same time, oAuth 2.0 support is added, so as to provide as an option a very secured way of handling the authentication process.</p>
+
+
+
+    <h2><a name="anchor-2"></a>JSF State and HTTP Session Debug</h2>
+<p>We have added new debugging tools to inspect the JSF state and the HTTP session.</p>
 <ul>
-<li>Largetext definition removed from default-repository-config.xml</li>
-<li>Now used nx:string whose size is 999999999 (=CLOB at database level) for large text fields</li>
+	<li>
+		<a href="https://github.com/nuxeo/nuxeo-session-inspector">nuxeo-session-inspector</a>
+	</li>
 </ul>
+<p>This module provides a webengine access to inspect the JSF state of a faces view. It is useful to figure out the size of the http session and the complexity of implemented view.</p>
+
+    <h2><a name="anchor-3"></a>Java 8 Support</h2>
+<p>This new release has been tested with Java 8. You can see the list of changes on <a href="https://jira.nuxeo.com/browse/NXP-13570">NXP-13570</a>.
+</p>
+
+    <h2><a name="anchor-4"></a>NXQL Query and Fetch</h2>
+
+<p>Using the <em>queryAndFetch</em> method you can now use COUNT, AVG, SUM, MIN and MAX in your NXQL queries. Again, this only work when using <em>queryAndFetch</em>. See <a href="https://jira.nuxeo.com/browse/NXP-13708">NXP-13708</a> for reference.</p>
+
+
 
   </div>
 
