@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo 5.9.3 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo Platform 5.9.3 release notes">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../../stylesheets/base.css">
+	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../../stylesheets/layout.css">
+	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+div.breakafter {
+  page-break-after: always;
+}
+
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+  <div id="mainContainer" class="container">
+    
+    <p class="remove-bottom" id="site-title"><a href="./index.html">Nuxeo Platform <span class="version-number">5.9.3</span> Release Notes</a></p>
+
+    <div id="welcome">
+
+     <div style="clear:both;"></div>
+
+    <h1 style="margin-left:-0.5em !important;">For Users</h1>
+
+    <h2><a name="anchor-0"></a>DAM Enhancement</h2>
+      <p>We added some minor features on DAM like enabling CSV export on DAM listing or reseting thumbnails and video conversions when updating the main file of the document.</p>
+
+    <h2><a name="anchor-1"></a>Nuxeo Drive</h2>
+
+<p>Nuxeo Drive upgrade will now be transparent. Meaning you won't have to open a terminal, delete <em>.nuxeo drive</em> folder, and then install the new version anymore. See <a href="https://jira.nuxeo.com/browse/NXP-13083">NXP-13083</a> for details.
+</p>
+<p>Binary installer for OS X and Windows are all signed. See <a href="https://jira.nuxeo.com/browse/NXP-12981">NXP-12981</a> for details.
+</p>
+
+    <h2><a name="anchor-2"></a>Suggestion widgets</h2>
+<p>
+Select2-based suggestion widgets introduced in 5.7.3 received a couple of bug fixes. New widgets properties have been introduced (available in Studio):
+</p>
+	<ul>
+		<li>
+			<strong>All single suggestion widgets:</strong> a new widget property <em>dropdownOnArrow</em> dropdowns suggestions when clicking on the right side arrow of the select2 box instead of the whole container. This is handy when you use custom formatters containing links or other actions (See <a href="https://jira.nuxeo.com/browse/NXP-13715">NXP-13715</a> and <a href="http://doc.nuxeo.com/x/LIQZAQ">documentation</a>).
+		</li>
+		<li>
+			<strong>All multiple suggestion widgets:</strong> new property to change the separator used by select2 to handle multiple selection. The default separator is a comma and could be an issue when handled references contains a comma (See <a href="https://jira.nuxeo.com/browse/NXP-13713">NXP-13713</a>).
+		</li>
+		<li>
+			<strong>Directory suggestion widgets:</strong> new property to fetch the suggestions, 'contains' instead of 'starts with' (See <a href="https://jira.nuxeo.com/browse/NXP-13586">NXP-13586</a>).
+		</li>
+	</ul>
+
+
+<div class="breakafter"></div>
+
+     <h1  style="margin-left:-0.5em !important;">For Administrators</h1>
+
+
+    <h2><a name="anchor-0"></a>Private Marketplace Channel</h2>
+
+<p>Users are able to upload their own marketplace packages on Connect so as to make them visible and available in the admin center. The first implementation offers a web UI for upload/update only. REST endpoints are available for upload/update and delete.</p>
+
+    <h2><a name="anchor-1"></a>New Parameters for Nuxeo.conf</h2>
+
+<table class="release">
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+  <tr><td class="parameter">nuxeo.vcs.use-nulls-last-on-desc</td><td>true (unset)</td><td>Since 5.9.3. Ask the database to use "NULLS LAST" when sorting DESC. True by default to get the same result order between different databases. Also turning this option to false enable PostgreSQL and Oracle to use an index on the sorted column which can be huge performance improvement.</td></tr>
+ 
+</table>
+
+
+<div class="breakafter"></div>
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+   <h2><a name="anchor-0"></a>JavaScript SDK</h2>
+
+<p>The <a href="https://github.com/nuxeo/nuxeo-js-client">JavaScript Client SDK</a> is fully part of the Nuxeo Platform. Two implementations are provided. One uses node.js primitives, one is based on JQuery XHR. The client exposes:</p>
+<ul><li>Wrappers for resources oriented REST API (at least documents)</li>
+<li>Utilities for automation calls</li>
+<li>Utilities for other resources oriented endpoints REST calls</li>
+<li>Batch upload helper</li>
+<li>Basic and token based authentications.</li></ul>
+<p>Client is packaged using bower for the JQuery implementation, and NPM for the node implementation. Clients are under continuous integration using phantom.js.</p>
+
+    <h2><a name="anchor-1"></a>Migration to Maven 3</h2>
+<p>As of this new release, Nuxuo Platform is built using Maven 3. This has been made possible because we have written a new version of our assembly plugin compatible with Maven3. See <a href="https://jira.nuxeo.com/browse/NXP-13555">NXP-13555</a>.</p>
+
+    <h2><a name="anchor-2"></a>Token Based Authentication Management & OAuth 2.0 Support</h2>
+
+<p>Exploding demand of API use makes it necessary to provide easy means for developers to manage authentication of the applications they develop, let it be on JavaScript based app, iOS, Python (with Drive)… The token based authentication service, implemented initially for the requirements of Nuxeo Drive is extracted and generalized, made available to the Nuxeo Platform developers. In the same time, OAuth 2.0 support is added, so as to provide as an option a very secured way of handling the authentication process.</p>
+
+
+
+    <h2><a name="anchor-3"></a>JSF State and HTTP Session Debug</h2>
+<p>We have added new debugging tools to inspect the JSF state and the HTTP session.</p>
+<ul>
+	<li>
+		<a href="https://github.com/nuxeo/nuxeo-session-inspector">nuxeo-session-inspector</a>
+	</li>
+</ul>
+<p>This module provides a WebEngine access to inspect the JSF state of a faces view. It is useful to figure out the size of the http session and the complexity of implemented view.</p>
+
+    <h2><a name="anchor-4"></a>Java 8 Support</h2>
+<p>This new release has been tested with Java 8. You can see the list of changes on <a href="https://jira.nuxeo.com/browse/NXP-13570">NXP-13570</a>.
+</p>
+<div class="breakafter"></div>
+    <h2><a name="anchor-5"></a>NXQL Query and Fetch</h2>
+
+<p>Using the <em>queryAndFetch</em> method you can now use COUNT, AVG, SUM, MIN and MAX in your NXQL queries. Again, this only work when using <em>queryAndFetch</em>. See <a href="https://jira.nuxeo.com/browse/NXP-13708">NXP-13708</a> for reference.</p>
+
+
+
+  </div>
+
+</div>
+
+	<!-- JS
+	================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+
+</body></html>
