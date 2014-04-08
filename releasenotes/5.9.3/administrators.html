@@ -57,11 +57,25 @@
      <h1  style="margin-left:-0.5em !important;">For Administrators</h1>
 
 
-    <h2><a name="anchor-0"></a>Elastic Search Query Engine</h2>
+    <h2><a name="anchor-0"></a>Elasticsearch Query Engine</h2>
 
+<p>We've added support for documents indexation with Elasticsearch. When you install this module, all the commons page providers will query Elasticsearch instead of your RDBMS.</p>
 
+<p>Another interesting use of Elasticsearch is to do a bit of reporting on your instance use with Kibana.</p>
 
+<p><img class="lightboxed" src="./kibana.png"/></p>
 
+<p>If you <a href="https://github.com/nuxeo/marketplace-elasticsearch">install</a> it, be careful to switch to PGSQL (or an other external database). For now the package removes the old lucene libraries required for the default embedded H2 database to run.</p>
+<p>The default configuration uses an embed Elasticsearch but you can configure Nuxeo Platform to use another one.</p>
+
+<h2><a name="anchor-1"></a>Nuxeo.conf New Parameters</h2>
+<table class="release">
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+  <tr><td class="parameter">nuxeo.path.segment.maxsize</td><td>24</td><td>Define the max length of the document name, which is mainly used to build the document path.</td></tr>
+  <tr><td class="parameter">nuxeo.http.proxy.pac.url</td><td></td><td>Proxy auto-config (PAC) file URL.</td></tr>
+</table>
 
   </div>
 </div>
