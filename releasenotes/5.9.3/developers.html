@@ -56,10 +56,38 @@
     <div style="clear:both;"></div>
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
-    <h2><a name="anchor-0"></a>Calendar Facet</h2>
-<p>We have added a calendar facet that allows to easily set Calendar objects in the repository. They themselves display events in a calendar style, with ability to bind documents to calendars and events. This feature is very useful on Case Management projects, where one wants to review cases on specific events. Thanks to this roadmap item, it is a matter of a few minutes to setup some calendars in your application! The feature is made available in the already existing nuxeo-agenda module.</p>	
 
-    <h2><a name="anchor-1"></a>Facilitators for escalation rules configuration</h2>
+    <h2><a name="anchor-0"></a>Elasticsearch Page Provider</h2>
+<p>We've added support for documents indexation with Elasticsearch. When you install this module, all the commons page providers will query Elasticsearch instead of your RDBMS. When choosing this design (that remains optional), you'll benefit of a greater scalability (as being able to answer to more concurrent requests thanks to Elasticsearch scalability).</p>
+
+<p></p>
+    <h2><a name="anchor-1"></a>Box.net API Implementation</h2>
+
+<p>The Nuxeo addon <a href="https://github.com/nuxeo/nuxeo-box-api">nuxeo-box-api</a> is an implementation of the Box API on top of the Nuxeo Platform repository. It transforms the Nuxeo content repository into a Box compliant storage backend. Use cases of such an approach are:</p>
+<ul>
+    <li>Light integration on continuous integration chain for your Box development</li>
+    <li>On-premise setup of Box stored content</li>
+</ul>
+<p>Don't hesitate to read our CTO Thierry Delprat's <a href="http://www.nuxeo.com/blog/development/2014/03/introducing-open-source-box-api/">interview</a> to get a better idea.</p>
+<p>Here are some examples:</p>
+<p><strong>Folders:</strong></p>
+<div class="embededCode"><pre>
+    GET http://localhost:8080/nuxeo/box/2.0/folders/{folder_id}
+</pre></div>
+<p>looks like</p>
+<div class="embededCode"><pre>
+    GET https://api.box.com/**2.0/folders/{folder id}**
+</pre></div>
+<p><strong>Files:</strong></p>
+<div class="embededCode"><pre>
+    GET http://localhost:8080/nuxeo/box/2.0/files/{file_id}
+</pre></div>
+<p>looks like</p>
+<div class="embededCode"><pre>
+    GET https://api.box.com/**2.0/files/{file_id}**
+</pre></div>
+
+    <h2><a name="anchor-2"></a>Facilitators for Escalation Rules Configuration</h2>
 <p>Simplify frequent escalation rules use cases by providing some functions usable in the conditional expression:</p>
 <ul><li>timeSinceWorkflowWasStarted()</li><li>timeSinceTaskWasStarted()</li><li>timeSinceDueDateIsOver()</li><li>timeSinceRuleHasBeenFalse()</li></ul> <p>That way, the following current condition</p>
 <div class="embededCode"><pre>
@@ -75,10 +103,14 @@
 </pre></div>
 <p>without having to deal with adding a custom node variable etc... </p>
 
-    <h2><a name="anchor-2"></a>REST API Endpoint for Types and Schemas</h2>
+
+    <h2><a name="anchor-3"></a>Calendar Facet</h2>
+<p>We have added a calendar facet that allows to easily set Calendar objects in the repository. They themselves display events in a calendar style, with ability to bind documents to calendars and events. This feature is very useful on Case Management projects, where one wants to review cases on specific events. Thanks to this roadmap item, it is a matter of a few minutes to setup some calendars in your application! The feature is made available in the already existing nuxeo-agenda module.</p>	
+
+    <h2><a name="anchor-4"></a>REST API Endpoint for Types and Schemas</h2>
 <p>We added a new REST API endpoint for document types and schemas. It can be useful when implementing something like a connector. See <a href="https://jira.nuxeo.com/browse/NXP-14114">NXP-14114</a> for details.</p>
 
-    <h2><a name="anchor-3"></a>Improve File Download with the REST API</h2>
+    <h2><a name="anchor-5"></a>Improve File Download with the REST API</h2>
 
 
 <p>We've work on the Blob property JSON representation. See <a href="https://jira.nuxeo.com/browse/NXP-13616">NXP-13616</a> for details.</p>
@@ -109,8 +141,15 @@
         }, 
 </pre></div>
 
-    <h2><a name="anchor-4"></a>Nuxeo API Sandbox</h2>
-<p>TBA</p>
+
+<h2><a name="anchor-6"></a>Giving a Comment When following a Transition</h2>
+<p>This is something we should have done a long time ago but it's finally here. You can now pass a comment when following a transition. To do this you simply add a comment in the document's context map like this: </p>
+
+<div class="embededCode"><pre>
+        doc = session.createDocument(doc);
+        doc.putContextData("comment", "a comment");
+        session.followTransition(doc, "approve");
+</pre></div>
 
   </div>
 </div>
