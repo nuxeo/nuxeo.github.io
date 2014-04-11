@@ -60,92 +60,211 @@ div.breakafter {
 
     <h1 style="margin-left:-0.5em !important;">For Users</h1>
 
-    <h2><a name="anchor-0"></a>DAM Enhancement</h2>
-      <p>We added some minor features on DAM like enabling CSV export on DAM listing or reseting thumbnails and video conversions when updating the main file of the document.</p>
+    <h2><a name="anchor-0"></a>Assets, Cases and Documents Collections</h2>
 
-    <h2><a name="anchor-1"></a>Nuxeo Drive</h2>
+<p><a href="http://doc.nuxeo.com/x/o4wZAQ">Collections</a> are a folder-like document in which you can classify existing documents. Documents are not actually copied or moved into the collection, which only holds a link to the document in its original location.</p>
+<p><img class="lightboxed" src="./createCollection.png"/></p>
+<p>Collections are persisted, per user, sharable and are a great to provide bulk features such as:</p>
+<ul><li>Bulk validation</li><li>Bulk publishing</li><li>Bulk download</li><li>ZIP export</li><li>PDF export</li></ul>
 
-<p>Nuxeo Drive upgrade will now be transparent. Meaning you won't have to open a terminal, delete <em>.nuxeo drive</em> folder, and then install the new version anymore. See <a href="https://jira.nuxeo.com/browse/NXP-13083">NXP-13083</a> for details.
-</p>
-<p>Binary installer for OS X and Windows are all signed. See <a href="https://jira.nuxeo.com/browse/NXP-12981">NXP-12981</a> for details.
-</p>
+<p><img class="lightboxed" src="./collection-personal-workspace.png"/></p>
+<p><img class="lightboxed" src="./collection-home-tab.png"/></p>
 
-    <h2><a name="anchor-2"></a>Suggestion widgets</h2>
-<p>
-Select2-based suggestion widgets introduced in 5.7.3 received a couple of bug fixes. New widgets properties have been introduced (available in Studio):
-</p>
-	<ul>
-		<li>
-			<strong>All single suggestion widgets:</strong> a new widget property <em>dropdownOnArrow</em> dropdowns suggestions when clicking on the right side arrow of the select2 box instead of the whole container. This is handy when you use custom formatters containing links or other actions (See <a href="https://jira.nuxeo.com/browse/NXP-13715">NXP-13715</a> and <a href="http://doc.nuxeo.com/x/LIQZAQ">documentation</a>).
-		</li>
-		<li>
-			<strong>All multiple suggestion widgets:</strong> new property to change the separator used by select2 to handle multiple selection. The default separator is a comma and could be an issue when handled references contains a comma (See <a href="https://jira.nuxeo.com/browse/NXP-13713">NXP-13713</a>).
-		</li>
-		<li>
-			<strong>Directory suggestion widgets:</strong> new property to fetch the suggestions, 'contains' instead of 'starts with' (See <a href="https://jira.nuxeo.com/browse/NXP-13586">NXP-13586</a>).
-		</li>
-	</ul>
+<p>Collections are a natural way of working among thousands of assets and documents.</p>
+
+    <h2><a name="anchor-1"></a>Nuxeo Drive iOS Edition</h2>
+
+<p>An iOS app, that can be installed on iPad (for now) and that allows the user to browse online or to take on the road the documents that belong to folders that have been selected by the user for Drive synchronisation. Typical use case is sales kit synchronisation for offline access. The application is read only, it doesn't allow to edit the documents.</p>
+<p><img class="lightboxed" src="./driveiOS2.png"/></p>
+<p><img class="lightboxed" src="./driveiOS1.png"/></p>
 
 
 <div class="breakafter"></div>
+    <h2><a name="anchor-2"></a>Full Screen Mode</h2>
+
+<p>You can now navigate through a document list in full screen mode.</p>
+
+<p><img class="lightboxed" src="./jungleBertrand.png"/></p>
+
+    <h2><a name="anchor-3"></a>User Invitation</h2>
+<p>To enforce the security around user creation process, the default mode is now to invite users via email, and user is created in the system only when she fills complementary information, including her password. That way, password do not have to be transferred via email or parallel channels.</p>
+
+<p><img class="lightboxed" src="./invitation-password-creation.jpg"/></p>
+<p><img class="lightboxed" src="./invitation-form.png"/></p>
+
+<div class="breakafter"></div>
+
+    <h2><a name="anchor-4"></a>Nuxeo Drive</h2>
+
+<p>The Nuxeo Drive folder can be configured. Currently it is:</p>
+<ul>
+    <li>Under OS X and Linux in the user home: ~</li>
+    <li>Under Windows: in ~/Documents (Windows 7) or ~/My Documents (XP)</li>
+</ul>
+<p>You can now choose its location during installation.</p>
+<p>We also added the possibility to suspend/resume the synchronization.</p>
+<p><img class="lightboxed" src="./driveSuspend.png"/></p>
+<p>And Nuxeo Drive is now available on the installation wizard of the Nuxeo Platform.</p>
+
+
+    <h2><a name="anchor-5"></a>UI/UX</h2>
+<p>We change the way we display tooltips by using the jQuery library tipsy.</p>
+
+<p><img class="lightboxed" src="./tipsyExample.png"/></p>
+
+<div class="breakafter"></div>
+
+
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+
+    <h2><a name="anchor-0"></a>Elasticsearch Page Provider</h2>
+<p>We've added support for documents indexation with Elasticsearch. When you install this module, all the commons page providers will query Elasticsearch instead of your RDBMS. When choosing this design (that remains optional), you'll benefit of a greater scalability (as being able to answer to more concurrent requests thanks to Elasticsearch scalability).</p>
+
+<p></p>
+    <h2><a name="anchor-1"></a>Box.net API Implementation</h2>
+
+<p>The Nuxeo addon <a href="https://github.com/nuxeo/nuxeo-box-api">nuxeo-box-api</a> is an implementation of the Box API on top of the Nuxeo Platform repository. It transforms the Nuxeo content repository into a Box compliant storage backend. Use cases of such an approach are:</p>
+<ul>
+    <li>Light integration on continuous integration chain for your Box development</li>
+    <li>On-premise setup of Box stored content</li>
+</ul>
+<p>Don't hesitate to read our CTO Thierry Delprat's <a href="http://www.nuxeo.com/blog/development/2014/03/introducing-open-source-box-api/">interview</a> to get a better idea.</p>
+<p>Here are some examples:</p>
+<p><strong>Folders:</strong></p>
+<div class="embededCode"><pre>
+    GET http://localhost:8080/nuxeo/box/2.0/folders/{folder_id}
+</pre></div>
+<p>looks like</p>
+<div class="embededCode"><pre>
+    GET https://api.box.com/**2.0/folders/{folder id}**
+</pre></div>
+<p><strong>Files:</strong></p>
+<div class="embededCode"><pre>
+    GET http://localhost:8080/nuxeo/box/2.0/files/{file_id}
+</pre></div>
+<p>looks like</p>
+<div class="embededCode"><pre>
+    GET https://api.box.com/**2.0/files/{file_id}**
+</pre></div>
+
+<div class="breakafter"></div>
+
+    <h2><a name="anchor-2"></a>Facilitators for Escalation Rules Configuration</h2>
+<p>Simplify frequent escalation rules use cases by providing some functions usable in the conditional expression:</p>
+<ul><li>timeSinceWorkflowWasStarted()</li><li>timeSinceTaskWasStarted()</li><li>timeSinceDueDateIsOver()</li><li>timeSinceRuleHasBeenFalse()</li></ul> <p>That way, the following current condition</p>
+<div class="embededCode"><pre>
+
+@{!(NodeVariables["last_reminder"] == empty) &amp;&amp;
+ Context["taskDueTime"].compareTo(CurrentDate.calendar) &lt; 0 &amp;&amp;
+ Fn.date(NodeVariables["last_reminder"]).days(1).calendar.compareTo(CurrentDate.calendar) &lt; 0}
+
+</pre></div>
+<p>would be replaced by:</p>
+<div class="embededCode"><pre>
+ @{timeSinceDueDateIsOver() &gt; 0 &amp;&amp; timeSinceRuleHasBeenFalse(86400000) }
+</pre></div>
+<p>without having to deal with adding a custom node variable etc... </p>
+
+
+    <h2><a name="anchor-3"></a>Calendar Facet</h2>
+<p>We have added a calendar facet that allows to easily set Calendar objects in the repository. They themselves display events in a calendar style, with ability to bind documents to calendars and events. This feature is very useful on Case Management projects, where one wants to review cases on specific events. Thanks to this roadmap item, it is a matter of a few minutes to setup some calendars in your application! The feature is made available in the already existing nuxeo-agenda module.</p>	
+
+    <h2><a name="anchor-4"></a>REST API Endpoint for Types and Schemas</h2>
+<p>We added a new REST API endpoint for document types and schemas. It can be useful when implementing something like a connector. See <a href="https://jira.nuxeo.com/browse/NXP-14114">NXP-14114</a> for details.</p>
+
+<div class="breakafter"></div>
+
+    <h2><a name="anchor-5"></a>Improve File Download with the REST API</h2>
+
+
+<p>We've work on the Blob property JSON representation. See <a href="https://jira.nuxeo.com/browse/NXP-13616">NXP-13616</a> for details.</p>
+<p>Before:</p>
+
+<div class="embededCode"><pre>
+"file:content": { 
+            "name": "Nuxeo_Platform_5.8_administration_documentation.pdf", 
+            "mime-type": "application/pdf", 
+            "encoding": null, 
+            "digest": "4faa1208dbd8dce54db9174dabdec7db", 
+            "length": "11485973", 
+            "data": "files/80438e3b-48bb-42d1-9e08-9a0f54b8f945?path=%2Fcontent" 
+        }, 
+</pre></div>
+
+<p>Now:</p>
+
+
+<div class="embededCode"><pre>
+"file:content": { 
+            "name": "Meetup Docker.pdf", 
+            "mime-type": "application/pdf", 
+            "encoding": null, 
+            "digest": "f829ff57c289b60be5dd2c57adcf1d51", 
+            "length": "5980167", 
+            "data": "http://localhost:8080/nuxeo/nxbigfile/default/e596bd67-aaa5-4a43-a84c-bcf4850c4834/file%3Acontent" 
+        }, 
+</pre></div>
+
+
+<h2><a name="anchor-6"></a>Giving a Comment When following a Transition</h2>
+<p>This is something we should have done a long time ago but it's finally here. You can now pass a comment when following a transition. To do this you simply add a comment in the document's context map like this: </p>
+
+<div class="embededCode"><pre>
+        doc = session.createDocument(doc);
+        doc.putContextData("comment", "a comment");
+        session.followTransition(doc, "approve");
+</pre></div>
+
+<div class="breakafter"></div>
+
 
      <h1  style="margin-left:-0.5em !important;">For Administrators</h1>
 
 
-    <h2><a name="anchor-0"></a>Private Marketplace Channel</h2>
+    <h2><a name="anchor-0"></a>Elasticsearch Query Engine</h2>
 
-<p>Users are able to upload their own marketplace packages on Connect so as to make them visible and available in the admin center. The first implementation offers a web UI for upload/update only. REST endpoints are available for upload/update and delete.</p>
+<p>We've added support for documents indexation with Elasticsearch. When you install this module, all the commons page providers will query Elasticsearch instead of your RDBMS.</p>
 
-    <h2><a name="anchor-1"></a>New Parameters for Nuxeo.conf</h2>
+<p>Another interesting use of Elasticsearch is to do a bit of reporting on your instance use with Kibana.</p>
 
+<p><img class="lightboxed" src="./kibana.png"/></p>
+
+<p>If you <a href="https://github.com/nuxeo/marketplace-elasticsearch">install</a> it, be careful to switch to PGSQL (or an other external database). For now the package removes the old lucene libraries required for the default embedded H2 database to run.</p>
+<p>The default configuration uses an embed Elasticsearch but you can configure Nuxeo Platform to use another one.</p>
 <table class="release">
 <thead>
 <tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
 </thead>
-  <tr><td class="parameter">nuxeo.vcs.use-nulls-last-on-desc</td><td>true (unset)</td><td>Since 5.9.3. Ask the database to use "NULLS LAST" when sorting DESC. True by default to get the same result order between different databases. Also turning this option to false enable PostgreSQL and Oracle to use an index on the sorted column which can be huge performance improvement.</td></tr>
- 
+  <tr><td class="parameter">elasticsearch.addressList</td><td>localhost:9300,anothernode:9300</td><td>point to one or many elasticsearch nodes.</td></tr>
+  <tr><td class="parameter">elasticsearch.clusterName</td><td>elasticsearch</td><td>The cluster name to join.</td></tr>
 </table>
 
+<h2><a name="anchor-1"></a>Store Password Hash in LDAP User Directory</h2>
+<p>Now you can store password hash in LDAP User Directories (it was already possible with SQL directories). You just have to use the <em>passwordHashAlgorithm</em> option as in this configuration sample:</p>
+
+
+<div class="embededCode"><pre>
+  &lt;directory name="userLdapDirectory"&gt;
+      &lt;server&gt;default&lt;/server&gt;
+      &lt;schema&gt;user&lt;/schema&gt;
+      &lt;idField&gt;username&lt;/idField&gt;
+      &lt;passwordField&gt;password&lt;/passwordField&gt;
+      &lt;passwordHashAlgorithm&gt;SSHA&lt;/passwordHashAlgorithm&gt;
+      ...
+</pre></div>
+
 
 <div class="breakafter"></div>
-     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
-   <h2><a name="anchor-0"></a>JavaScript SDK</h2>
-
-<p>The <a href="https://github.com/nuxeo/nuxeo-js-client">JavaScript Client SDK</a> is fully part of the Nuxeo Platform. Two implementations are provided. One uses node.js primitives, one is based on JQuery XHR. The client exposes:</p>
-<ul><li>Wrappers for resources oriented REST API (at least documents)</li>
-<li>Utilities for automation calls</li>
-<li>Utilities for other resources oriented endpoints REST calls</li>
-<li>Batch upload helper</li>
-<li>Basic and token based authentications.</li></ul>
-<p>Client is packaged using bower for the JQuery implementation, and NPM for the node implementation. Clients are under continuous integration using phantom.js.</p>
-
-    <h2><a name="anchor-1"></a>Migration to Maven 3</h2>
-<p>As of this new release, Nuxuo Platform is built using Maven 3. This has been made possible because we have written a new version of our assembly plugin compatible with Maven3. See <a href="https://jira.nuxeo.com/browse/NXP-13555">NXP-13555</a>.</p>
-
-    <h2><a name="anchor-2"></a>Token Based Authentication Management & OAuth 2.0 Support</h2>
-
-<p>Exploding demand of API use makes it necessary to provide easy means for developers to manage authentication of the applications they develop, let it be on JavaScript based app, iOS, Python (with Drive)… The token based authentication service, implemented initially for the requirements of Nuxeo Drive is extracted and generalized, made available to the Nuxeo Platform developers. In the same time, OAuth 2.0 support is added, so as to provide as an option a very secured way of handling the authentication process.</p>
-
-
-
-    <h2><a name="anchor-3"></a>JSF State and HTTP Session Debug</h2>
-<p>We have added new debugging tools to inspect the JSF state and the HTTP session.</p>
-<ul>
-	<li>
-		<a href="https://github.com/nuxeo/nuxeo-session-inspector">nuxeo-session-inspector</a>
-	</li>
-</ul>
-<p>This module provides a WebEngine access to inspect the JSF state of a faces view. It is useful to figure out the size of the http session and the complexity of implemented view.</p>
-
-    <h2><a name="anchor-4"></a>Java 8 Support</h2>
-<p>This new release has been tested with Java 8. You can see the list of changes on <a href="https://jira.nuxeo.com/browse/NXP-13570">NXP-13570</a>.
-</p>
-<div class="breakafter"></div>
-    <h2><a name="anchor-5"></a>NXQL Query and Fetch</h2>
-
-<p>Using the <em>queryAndFetch</em> method you can now use COUNT, AVG, SUM, MIN and MAX in your NXQL queries. Again, this only work when using <em>queryAndFetch</em>. See <a href="https://jira.nuxeo.com/browse/NXP-13708">NXP-13708</a> for reference.</p>
-
+<h2><a name="anchor-2"></a>Nuxeo.conf New Parameters</h2>
+<table class="release">
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+  <tr><td class="parameter">nuxeo.path.segment.maxsize</td><td>24</td><td>Define the max length of the document name, which is mainly used to build the document path.</td></tr>
+  <tr><td class="parameter">nuxeo.http.proxy.pac.url</td><td></td><td>Proxy auto-config (PAC) file URL.</td></tr>
+</table>
 
 
   </div>
