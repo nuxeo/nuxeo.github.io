@@ -1,0 +1,278 @@
+Release Notes - Nuxeo Enterprise Platform - Version 5.9.3
+
+** Sub-task
+    * [NXP-13214] - Use a default library for tooltips
+    * [NXP-13841] - Tooltips > Use new tooltips on comment / annotate / like widget
+    * [NXP-13844] - Tooltips > Possibility to change the orientation
+    * [NXP-13855] - Tooltips > Add a delay to display them
+    * [NXP-13859] - Tooltips > Use the first version of tipsy by default in the platform
+    * [NXP-13999] - Review style and adapt with new logos/colors 
+    * [NXP-14008] - Provide a Nuxeo Service to encapsulate elasticsearch 
+    * [NXP-14009] - Index Nuxeo Documents in ElasticSearch 
+    * [NXP-14010] - Allow to define indexing configuration
+    * [NXP-14011] - Deduplicate Indexing jobs targeting  the same Document
+    * [NXP-14012] - Convert NXQL to elasticsearch Query DSL
+    * [NXP-14013] - Provide PageProviders to do queries on elasticsearch
+    * [NXP-14025] - Provide scripts to dump and import existing Nuxeo instance
+    * [NXP-14053] - Integrate Security
+    * [NXP-14066] - Mapping of the user creation form
+    * [NXP-14068] - Plug the user invitation mechanism to the form
+    * [NXP-14069] - Update functional tests
+    * [NXP-14077] - Patch magnific popup for Nuxeo
+    * [NXP-14113] - Extract the fulltext fields for indexing
+    * [NXP-14114] - Add RestAPI endpoint for types and schemas
+    * [NXP-14117] - pool datasource through the mean of the geronimo connector
+    * [NXP-14119] - enable datasource pool monitoring
+    * [NXP-14128] - Integrate ElasticSearch inside the Admin Center
+    * [NXP-14133] - ElasticSearch MarketPlace package
+    * [NXP-14137] - Manage Synchronous indexing for WebApp user actions
+
+
+
+** Bug
+    * [NXP-7117] - Fix sort on coverage directory when using an accentuated character as first letter
+    * [NXP-10254] - Bad filter coding in AbstractSession.getFolders() method
+    * [NXP-11660] - Windows, adding a .jpg picture in Nuxeo Drive folder does not create a Picture doc. type
+    * [NXP-12147] - Fix routing random test failures 
+    * [NXP-12176] - Error in CSV Importer tests
+    * [NXP-12247] - Fix randomly failing test TestTagService.testTags
+    * [NXP-12727] - Fix random test failures under Windows due to carriage return ("\r") and extra line feed ("\n") characters in compared strings
+    * [NXP-12737] - Fix random Drive versioning unit test failure
+    * [NXP-12867] - Fix random like operation test failure
+    * [NXP-12881] - Fix random quota test failure
+    * [NXP-13017] - Fix TestPollService.shouldChangeStatusToClosedIfDateAfterEndDate
+    * [NXP-13177] - Fix error at shutdown on DocumentModelStatusPersister
+    * [NXP-13227] - Drive: investigate on randomly failing IT tests due to org.h2.jdbc.JdbcSQLException: Deadlock detected
+    * [NXP-13418] - Drive: investigate on randomly failing IT builds under Windows due to timeout in test_synchronize_deep_folders
+    * [NXP-13438] - Investigate random Selenium failure on test multipleVersionPublication using Oracle
+    * [NXP-13454] - Fix potential NPE in Automation Trace
+    * [NXP-13639] - Drive: sometimes fails with "AttributeError: 'NoneType' object has no attribute..." in LocalClient._abspath()
+    * [NXP-13710] - Drive: SQLite thread-safety issue when running the tests
+    * [NXP-13729] - NuxeoCtl pack fails since tomcat 7 upgrade
+    * [NXP-13744] - Missing class org.apache.xerces.parsers.SAXParser
+    * [NXP-13758] - Property for managing pre-fixed users is just ignored in view mode and missing in studio
+    * [NXP-13763] - Fix automation trace
+    * [NXP-13767] - Workflow delegation labels
+    * [NXP-13770] - Fix default value for display action in select users/groups widget type
+    * [NXP-13771] - Fix suggest directory widgets to display full path of hierarchical vocabulary
+    * [NXP-13790] - Add localize widgetTypeConf to view mode for directory suggestion
+    * [NXP-13791] - Fix document name display in Nuxeo Shell
+    * [NXP-13797] - Fix pom files in nuxeo-javaagent and nuxeo-session-inspector
+    * [NXP-13798] - Fix dependency cycle introduced with OAuth tests
+    * [NXP-13801] - Power users shouldn't be able to delete the administrators group
+    * [NXP-13803] - Fix selenium test error ToCommentOnTopicWithoutModeration -> Element username not found
+    * [NXP-13804] - bulk-importer not working after MP installation
+    * [NXP-13811] - Fix random failure on drive test TestAuditFileSystemChangeFinder#testFindChanges
+    * [NXP-13819] - Fix file download through nxbigfile servlet when using a crypted binary store
+    * [NXP-13828] - Fix Selenium Social-Collaboration minimessages/testAddMiniMessageButton.html
+    * [NXP-13829] - Investigate random failure on webdriver workflow tests on windows
+    * [NXP-13830] - Fix selenium timeout after login
+    * [NXP-13831] - Fix bulk publication when quota is installed
+    * [NXP-13843] - Displaying filename with extension in DAM listing does not work
+    * [NXP-13845] - Adding Quota facet asynchronously may lead to NPE
+    * [NXP-13854] - Fix Trash service to allow placeless documents deletion
+    * [NXP-13865] - Fix CMIS getContentChanges with hidden documents
+    * [NXP-13866] - Fix XSS issue in error page
+    * [NXP-13873] - Drive: fix broken FileSystemItem retro-compatibility
+    * [NXP-13879] - Fix manual launch of Selenium tests from nuxeo-distribution-dm/ftest/selenium
+    * [NXP-13882] - Tag cloud is broken
+    * [NXP-13884] - Synchronously add the Thumbnail facet
+    * [NXP-13886] - Fix widget for "Can add new entry" option on directory suggestion
+    * [NXP-13897] - Error in logs when I install Resources Compatibility add-on
+    * [NXP-13914] - I can filter by collection on faceted searches
+    * [NXP-13919] - Fix suggestion widget in pdf mode
+    * [NXP-13921] - Fix cluster invalidation retrieval on SQL Server
+    * [NXP-13925] - Fix duplicate documents due to aclr_user duplicate rows
+    * [NXP-13928] - Fix schema-based property column size specification
+    * [NXP-13936] - Ignore blob properties when generating the content view state in JSON format from the search document 
+    * [NXP-13939] - Fix empty Blob when returned by Blob.CreateZip operation
+    * [NXP-13941] - Cleanup temporary files created in ConcatenatePDFs
+    * [NXP-13973] - Fix override of Studio templates by template rendering addon
+    * [NXP-13977] - Detach session from document comment before closing it
+    * [NXP-13981] - Fix deletion of not found entry in suggest directory widget
+    * [NXP-13989] - Fix 'Store Upload Files'  button refresh after clicking on 'Clear All' in 'Files' tab and after remove already uploaded file
+    * [NXP-13991] - Fix layout tooltips after ajax re-render
+    * [NXP-14015] - Fix fulltext indexing for binaries when multiple indexes are defined
+    * [NXP-14030] - Fix select2 onchange event called multiple time
+    * [NXP-14034] - Fix form initialization for D&D smart import with metadata
+    * [NXP-14038] - Fix tasks cache invalidation with summary task widget display
+    * [NXP-14039] - Drive: handle unkown state: local_state=u'deleted', remote_state=u'unknown'
+    * [NXP-14047] - Fix crash when processing a task created by a workflow started in 5.6
+    * [NXP-14059] - Tomcat distribution must be built before functional tests
+    * [NXP-14063] - Home > Collections > 'Manage' Icon must be clickable
+    * [NXP-14067] - Fix ordering of directory items
+    * [NXP-14070] - Allow passing json data when setting workflow variables in StartWorkflowOperation
+    * [NXP-14072] - Improve concurrent update detection on removal
+    * [NXP-14078] - Fix copy of 1-document collection
+    * [NXP-14079] - Adding a document to a collection shouldn't make you a contributor to the document
+    * [NXP-14080] - It should be possible to create collections outside collection root documents
+    * [NXP-14083] - Add document url in context parameters when resolving documents for initializing multiple document suggestion widget
+    * [NXP-14100] - Add refresh after "Share in Easy Share folder"
+    * [NXP-14116] - Better handling HTTP code with login token
+    * [NXP-14118] - Make sure the junit tests are run with user 'system'
+    * [NXP-14120] - Fix complex type url serialization in REST API
+    * [NXP-14125] - Duplicate properties for select2WidgetMultiple
+    * [NXP-14131] - Fix DAM collections suggest box
+    * [NXP-14143] - Fix URL to operations export for Studio from automation debug page
+    * [NXP-14145] - Login 5.9.3 
+    * [NXP-14146] - [iOS] Unable to execute Automation operation with DocumentModel as input
+    * [NXP-14152] - Drive: prevent DocumentSecurityException from marking transaction as rollbacked when adapting a document as a FileSystemItem
+    * [NXP-14153] - Transaction is marked for rollback when CoreSession#getParentDocument throws an exception
+    * [NXP-14166] - Fix typo in JsonDocumentListWriter and EntityListWriter when writting PageProvider information
+    * [NXP-14169] - Fix lightbox date localization
+    * [NXP-14174] - Fix random error on ITVocabularyTest
+    * [NXP-14175] - Fix random error at first login, collections related errors in logs 
+    * [NXP-14176] - Fix NPE retrieving currentDocumentVersionInfo when current document is not set
+    * [NXP-14179] - Error after 1st login after validating invitation
+    * [NXP-14184] - If the invitation is already processed, the password form should not be displayed
+    * [NXP-14186] - Fix lightbox on content views loaded from studio
+    * [NXP-14189] - Fix display of regular document in Lightbox
+    * [NXP-14191] - Fix list widget when inside a complex sub widget
+    * [NXP-14193] - Allow user to create a Collection via facet and not inheritance document type
+    * [NXP-14201] - Fix Box Search Test
+    * [NXP-14206] - Drive: fix HTTP 400 issue related to token revocation at tests tear down
+    * [NXP-14216] - Application crash when token is revoked on server
+
+** Clean up
+    * [NXP-13148] - Clean up session management
+    * [NXP-13286] - Clean up use of CoreInstance.getSession(sid) and DocumentModel.getSessionId()
+    * [NXP-13881] - Remove useless Seam component errorPageActionListener
+    * [NXP-13972] - Avoid static use in PublisherServiceImpl
+    * [NXP-13988] - Clean up BusinessAdapter
+    * [NXP-14033] - Clean up unused service remoting code
+    * [NXP-14122] - Make EventService deal with tx end, not CoreSession
+
+** Contribution
+    * [NXP-12608] - Fix for import crash when arbitrary queue length of GenericMultiThreadedImporter.importTP exceeded
+
+
+
+** Improvement
+    * [NXP-11103] - Allow use of other Hunspell dictionaries in the RandomTextGenerator
+    * [NXP-12361] - Nuxeo CMIS content streams should support HTTP cache and last modified headers
+    * [NXP-13471] - BlobStore should holds blob filename
+    * [NXP-13531] - Skin Easy Share module
+    * [NXP-13608] - JSP Error page should never crash !
+    * [NXP-13649] - Configure PathSegmentServiceDefault maxSize through property
+    * [NXP-13784] - Routing > Improve NRD-PR-TasksInfo template
+    * [NXP-13838] - Make Seam context restoration (on select2) conditional via a widget property
+    * [NXP-13860] - Allow to pass comment when following a transition
+    * [NXP-13862] - Take into account the sort contribution in the UserTaskPageProvider
+    * [NXP-13876] - Wizard > Change Message at restart (when user downloaded Drive)
+    * [NXP-13877] - Admin Center > Update connect icons and listing colors
+    * [NXP-13878] - Allow to do some PUT without id in the JSON payload
+    * [NXP-13937] - Add a widget template for sub images
+    * [NXP-14031] - Ease release_mp script usage
+    * [NXP-14032] - Allow Nuxeo virtual hosting for CMIS
+    * [NXP-14049] - Allow setting perDocumentQuery=false through type service
+    * [NXP-14093] - Load the JSON serialization of an asset through REST API and display more document metadata in the lightbox
+    * [NXP-14134] - Improve Loading in DAM
+    * [NXP-14140] - Make CoreSession thread-safe
+    * [NXP-14162] - Upgrade some marketplaces build mecanism
+    * [NXP-14181] - Make the remove action (x) from collection widget more visible
+
+
+** New Feature
+    * [NXP-10182] - Optionally use SQL arrays to store lists on PostgreSQL
+    * [NXP-11551] - Allow merged contributions for the repository config
+    * [NXP-13151] - Create CocoaPods repository
+    * [NXP-13223] - REST Response object injection
+    * [NXP-13734] - The Complete Task automation operation should handle task form data
+    * [NXP-13800] - VCS: auto-generated integer ids on Oracle
+    * [NXP-13868] - Make OpenID Connector more compliant 
+    * [NXP-13894] - Store Password Hash in user directories (both SQL and LDAP implementation)
+    * [NXP-14016] - Add new module handling target platforms
+
+
+
+
+
+
+** Task
+    * [NXP-10947] - Make IT Jenkins jobs rely on nuxeo-ftest instead of a Python script
+    * [NXP-12066] - Improve the use of tooltips
+    * [NXP-12832] - Make Drive IT jobs generic (not depending on a specific nuxeo-distribution version)
+    * [NXP-13610] - Technical specification of collections
+    * [NXP-13655] - Validate external search engine capabilities
+    * [NXP-13721] - Add Drive module in the list of modules that can be installed right at the set up time
+    * [NXP-13726] - Favorites feature > mockups
+    * [NXP-13733] - Make accessible user id every where first name last name is displayed
+    * [NXP-13793] - Create a new collection
+    * [NXP-13816] - Drive: add an operation to fetch server version and update site URL
+    * [NXP-13826] - Improve release scripts with commit message and unique build
+    * [NXP-13848] - Use nuxeo-connect-client 1.4.15
+    * [NXP-13864] - Update README referencing nuxeo-distribution-tools
+    * [NXP-13870] - Update StyleGuide
+    * [NXP-13880] - Upgrade to ant-maven-assembly-plugin 2.0.1
+    * [NXP-13896] - Upgrade GSON dependency
+    * [NXP-13922] - Add functional tests for collections
+    * [NXP-13923] - Collections > Review UI
+    * [NXP-13924] - Merge collections in CAP
+    * [NXP-13926] - Remove testFailureIgnore=true on Funkload and CMIS tests
+    * [NXP-13927] - Collections > review Mockups
+    * [NXP-13984] - Nuxeo Identity > Nuxeo Drive iOS Edition
+    * [NXP-13987] - Migrate selenium vocabulary tests on webdriver
+    * [NXP-13992] - Add webdriver tests on rich fileupload
+    * [NXP-13995] - Migrate RSS/Atom selenium tests to web driver
+    * [NXP-14000] - Publish nuxeo-box-api and add to addons
+    * [NXP-14007] - Integrate ElasticSearch Index with Nuxeo Repository
+    * [NXP-14018] - Review registration screen
+    * [NXP-14050] - Login screen
+    * [NXP-14051] - Project structure
+    * [NXP-14061] - Review UI and style of the lightbox
+    * [NXP-14062] - Merge user registration addon branch
+    * [NXP-14115] - Include REST API in CoreServer
+    * [NXP-14132] - update crowdin translations for 5.9.3
+    * [NXP-14177] - Start all selenium tests with a simple login/logout
+    * [NXP-14196] - Improuve UI with new brand
+
+
+** User story
+    * [NXP-12657] - Drive: allow to configure the Nuxeo Drive folder
+    * [NXP-13077] - Drive: allow to suspend / resume synchronization
+    * [NXP-13513] - Adding documents to a collection
+    * [NXP-13515] - Browsing list of existing collections
+    * [NXP-13516] - Removing assets from a collection
+    * [NXP-13612] - I should be able to manage client Id
+    * [NXP-13613] - Create Authorization endpoint
+    * [NXP-13614] - Create Token endpoint 
+    * [NXP-13616] - Improve file download on nuxeo api
+    * [NXP-13628] - Contribute our OAuth2 provider to https://oauth.io/
+    * [NXP-13705] - Create a JS repo
+    * [NXP-13706] - Align JS API for Node and jQuery
+    * [NXP-13842] - Tooltips > Replace jquery tooltips by tipsy tooltips
+    * [NXP-13891] - Inviting some users to Nuxeo Platform
+    * [NXP-13892] - Registration validation
+    * [NXP-13893] - Creating a user without registration process
+    * [NXP-13913] - Browsing content of a content view via a lightbox
+    * [NXP-13943] - I can authenticate to the application which will store an oAuth token
+    * [NXP-13944] - I can revoke my token from preferences screen
+    * [NXP-13945] - I can browse the repository online
+    * [NXP-13946] - I can preview and open with a file 
+    * [NXP-13947] - I can browse back using the logo
+    * [NXP-13948] - I can see basic metadata of a document
+    * [NXP-13949] - Seeing synchronized content
+    * [NXP-13950] - I can add a new synced folder clicking on "Save on device"
+    * [NXP-13951] - Seeing the path of the document on top
+    * [NXP-13952] - Forcing update of a root folder
+    * [NXP-13953] - Updating all root folers at once
+    * [NXP-13954] - Resuming binaries fetch
+    * [NXP-13955] - Polling evolution in list of synced folders
+    * [NXP-13956] - Not fetching binaries on celullar data
+    * [NXP-13957] - Editing max size of binary content stored locally
+    * [NXP-13958] - Purging binary store when app is started
+    * [NXP-13959] - Seing list of pinned documents
+    * [NXP-13960] - Pinning a document or a folder
+    * [NXP-13961] - Browsing the about screen
+    * [NXP-13962] - I can search a document  by its title
+    * [NXP-13963] - Browsing the app in local language
+    * [NXP-13964] - Installing the application from the App Store
+    * [NXP-13974] - Nuxeo Drive iOS > Review User stories and update mockups 
+    * [NXP-14003] - Collections > Add a widget on summary view for "Collected in"
+    * [NXP-14037] - Make it possible to override mimetype of response
+    * [NXP-14040] - Drive: use PostgreSQL for IT Tests
+    * [NXP-14041] - I can authenticate to the application using Nuxeo in-house token system
+    * [NXP-14065] - Make "Manage Listing" Widget generic 
+    * [NXP-14111] - Drive ios: Remove from device
+
+

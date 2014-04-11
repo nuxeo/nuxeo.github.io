@@ -67,7 +67,13 @@
 
 <p>If you <a href="https://github.com/nuxeo/marketplace-elasticsearch">install</a> it, be careful to switch to PGSQL (or an other external database). For now the package removes the old lucene libraries required for the default embedded H2 database to run.</p>
 <p>The default configuration uses an embed Elasticsearch but you can configure Nuxeo Platform to use another one.</p>
-
+<table class="release">
+<thead>
+<tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>
+</thead>
+  <tr><td class="parameter">elasticsearch.addressList</td><td>localhost:9300,anothernode:9300</td><td>point to one or many elasticsearch nodes.</td></tr>
+  <tr><td class="parameter">elasticsearch.clusterName</td><td>elasticsearch</td><td>The cluster name to join.</td></tr>
+</table>
 
 <h2><a name="anchor-1"></a>Store Password Hash in LDAP User Directory</h2>
 <p>Now you can store password hash in LDAP User Directories (it was already possible with SQL directories). You just have to use the <em>passwordHashAlgorithm</em> option as in this configuration sample:</p>
