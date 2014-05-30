@@ -1,0 +1,22 @@
+<polymer-element name="ui-sidebar">
+  <template>
+    <link rel="stylesheet"  href="../semantic/elements/button.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/modules/sidebar.min.css" no-shim>
+    <style>
+      /* Add enough space for the header */
+      .ui.sidebar {
+        margin-top: 50px !important;
+      }
+    </style>
+    <!-- Sidebar -->
+    <div class="ui wide vertical sidebar">
+        <content></content>
+    </div>
+    <!-- Button -->
+    <div class="ui launch right attached button" style="color:white;background-color:#888;width:50px" on-click="{{toggleSidebar}}">
+        <i class="icon list layout"></i>
+    </div>
+  </template>
+  <script type="application/dart" src="ui_sidebar.dart"></script>
+</polymer-element>
