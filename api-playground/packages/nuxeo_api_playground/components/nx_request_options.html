@@ -1,0 +1,37 @@
+<polymer-element name="nx-request-options">
+  <template>
+    <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/collections/form.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../css/style.css" no-shim>
+
+    <div class="ui form">
+        <div class="two fields">
+          <div class="field"><label>Nuxeo-Transaction-Timeout</label></div>
+          <div class="field"><input type="text" value="{{timeout | inSeconds}}"></div>
+        </div>
+        <div class="two fields">
+            <div class="field"><label>X-NXDocumentProperties</label></div>
+            <div class="field"><input type="text" value="{{schemas | asCSV}}"></div>
+        </div>
+        <div class="two fields">
+            <div class="field"><label>X-NXRepository</label></div>
+            <div class="field"><input type="text" value="{{repository}}"></div>
+        </div>
+        <div class="two fields">
+            <div class="field">
+              <label style="display:inline">
+              X-NXContext-Category
+              <a target="_blank" style="text-decoration:none" href="http://www.nuxeo.com/blog/development/2013/09/qa-friday-video-storyboard-rest-api/">
+                <i class="help icon"></i>
+              </a>
+              </label>
+            </div>
+            <div class="field"><input type="text" value="{{restContributors}}"></div>
+        </div>
+    </div>
+  </template>
+  <script type="application/dart" src="nx_request_options.dart"></script>
+</polymer-element>

@@ -1,0 +1,126 @@
+<link rel="import" href="nx_request_monitor.html">
+<link rel="import" href="nx_request_options.html">
+<link rel="import" href="nx_widget.html">
+<polymer-element name="nx-operation">
+<template>
+
+  <link rel="stylesheet"  href="../semantic/elements/button.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/elements/header.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/elements/label.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
+
+  <link rel="stylesheet"  href="../semantic/collections/form.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/collections/message.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/collections/table.min.css" no-shim>
+  
+  <link rel="stylesheet"  href="../semantic/modules/accordion.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/modules/dropdown.min.css" no-shim>
+  
+  <link rel="stylesheet"  href="../css/style.css" no-shim>
+
+  <div class="ui huge header">POST /api/automation/{{name}}</div>
+  <div class="ui white label">{{label}}</div>
+  <div class="ui description segment">
+    <p>{{description}}</p>
+  </div>
+
+  <!-- Input -->
+  <div id="input">
+  <template if="{{method != null && method.inputType != 'void'}}">
+    <div class="ui medium blue header">Input</div>
+    <table class="ui large table">
+      <tbody>
+        <tr>
+          <td>
+            <select class="ui dropdown selection" value="{{method.inputType}}">
+              <option template repeat="{{method in methods}}">{{method.inputType}}</option>
+            </select>
+            <!--            
+            <div class="ui dropdown selection">
+              <div class="default text">Choose</div>
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <template repeat="{{m in methods}}">
+                  <div class="item" data-value="{{m.inputType}}">{{m.inputType}}</div>
+                </template>
+              </div>
+            </div>
+            -->
+          </td>
+          <td>
+            <nx-widget
+              type="{{method.inputType}}"
+              datatype="{{method.inputType}}"
+              required="{{true}}"
+              value="{{method.input}}">
+              </nx-widget>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </template>
+  </div>
+       
+  <div class="ui form">   
+    
+    <!-- Parameters -->
+    <template if="{{params.length > 0}}">
+      <div class="ui medium blue header">Parameters</div>
+      
+      <table class="ui large blue basic table">
+        <thead>
+          <tr><th>Name</th>
+          <th>Value</th>
+        </tr></thead>
+        <tbody>
+          <tr template repeat="{{param in params}}">
+            <td>{{param.name}}</td>
+            <td>
+              <div class="field">
+                <nx-widget
+                type="{{param.widget}}"
+                datatype="{{param.dataType}}"
+                required="{{param.required}}"
+                value="{{param.value}}"
+                options="{{param.options}}">
+                </nx-widget>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </template>
+  </div>
+
+  <!-- Run with options -->
+  <div id="options" class="ui fluid accordion">                        
+    <div class="title" style="text-align: right;">
+        <i class="settings icon"></i>
+        <!-- Submit button -->
+      <div class="ui red submit button" on-click="{{callOp}}">Run</div>
+    </div>
+
+    <div class="content">
+      <nx-request-options connectionId="{{connectionId}}"></nx-request-options>
+    </div>
+  </div>
+
+  <template if="{{errors.isNotEmpty}}">
+    <div class="ui bottom attached error message">
+      <template repeat="{{error in errors}}">
+        <p><i class="icon warning"></i>{{error}}</p>
+      </template>
+    </div>
+  </template>
+
+  <br/>
+  
+  <!-- Output -->
+  <nx-request-monitor request="{{opRequest}}" response="{{opResponse}}"></nx-request-monitor>
+
+</template>
+<script type="application/dart" src="nx_operation.dart"></script>
+</polymer-element>

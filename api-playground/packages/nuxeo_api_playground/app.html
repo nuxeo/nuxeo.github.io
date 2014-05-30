@@ -1,0 +1,44 @@
+<link rel="import" href="components/nx_connection.html">
+<link rel="import" href="components/nx_repository_browser.html">
+<link rel="import" href="components/nx_structures_browser.html">
+<link rel="import" href="components/nx_resource_endpoints.html">
+<link rel="import" href="components/nx_command_endpoints.html">
+<polymer-element name="nx-sandbox-app">
+<template>
+  <link rel="stylesheet"  href="semantic/collections/grid.min.css" no-shim>
+  <link rel="stylesheet"  href="semantic/elements/button.min.css" no-shim>
+  <link rel="stylesheet"  href="semantic/elements/header.min.css" no-shim>
+  <link rel="stylesheet"  href="semantic/elements/image.min.css" no-shim>
+  <link rel="stylesheet"  href="semantic/elements/segment.min.css" no-shim>
+  <link rel="stylesheet"  href="css/style.css" no-shim>
+  <!-- Home -->
+  <template if="{{module == null}}">
+    <div class="ui two column stackable page grid">
+      <template repeat="{{key in modules.keys}}">
+        <div class="column">
+          <div class="ui raised segment">
+            <h3 class="ui blue header">{{modules[key].title}}</h3>
+            <div class="ui grid">
+              <div class="four wide column"><img class="ui medium image" src="images/{{modules[key].icon}}"></div>
+              <div class="twelve wide column">
+                <p class="description">{{modules[key].description}}</p>
+                <template if="{{connection.isConnected}}">
+                  <div class="ui right floated red button" on-click="{{navigate}}" data-target="{{key}}">{{modules[key].action}}</div>
+                </template>
+                <template if="{{!connection.isConnected}}">
+                  <div class="ui right floated disabled button">{{modules[key].action}}</div>
+                </template>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </template>
+  
+  <!-- Module -->
+  <div id="module"></div>
+
+</template>
+<script type="application/dart" src="app.dart"></script>
+</polymer-element>

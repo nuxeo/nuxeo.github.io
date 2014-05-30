@@ -1,0 +1,175 @@
+<link rel="import" href="nx_request_monitor.html">
+<link rel="import" href="nx_request_options.html">
+<link rel="import" href="nx_widget.html">
+<link rel="import" href="ui_sidebar.html">
+<polymer-element name="nx-resource-endpoints">
+
+  <template>
+    <link rel="stylesheet"  href="../semantic/elements/button.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/header.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/image.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/label.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
+  
+    <link rel="stylesheet"  href="../semantic/collections/breadcrumb.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/form.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/grid.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/menu.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/message.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/table.min.css" no-shim>
+    
+    <link rel="stylesheet"  href="../semantic/modules/accordion.min.css" no-shim>
+    
+    <link rel="stylesheet"  href="../semantic/views/list.min.css" no-shim>
+    
+    <link rel="stylesheet"  href="../css/style.css" no-shim>
+
+    <!-- Sidebar -->
+    <ui-sidebar>
+      <div class="ui fluid vertical menu">
+        <!-- Navigation -->
+        <a class="ui red inverted header item" on-click="{{goHome}}">
+          <i class="circle left icon"></i>
+          {{title}}
+        </a>
+        <!-- TODO(nfgs): Search -->
+        <!-- div class="item">
+          <div class="ui icon input">
+            <input type="search" class="form-control" value="{{searchTerm}}" placeholder="Search...">
+            <i class="search icon"></i>
+          </div>
+        </div-->
+
+        <!-- Endpoints -->
+        <div id="endpoints" class="ui fluid blue accordion" style="overflow:hidden">
+
+          <template repeat="{{key in endpoints.keys}}">
+            <div class="title">
+              <i class="dropdown icon"></i>
+              {{key | capitalize}}
+            </div>
+            <div class="content" style="padding:0">
+              <div class="ui small animated list">
+                <template repeat="{{resource in endpoints[key] | enumerate}}">
+                <template repeat="{{operation in resource.value.operations}}">
+                    <div class="item">
+                      <div class="content">
+                        <div on-click="{{select}}" data-target="{{key}}/{{resource.index}}/{{operation.method}}">
+                          <span class="ui left corner {{methodColors[operation.method]}} label">{{operation.method}}</span> {{resource.value.path}}
+                        </div>
+                      </div>
+                    </div>
+                </template>
+                </template>
+              </div>
+            </div>
+          </template>
+
+          </div>
+      </div>
+    </ui-sidebar>
+    
+    <!-- Main page -->
+    <div class="ui page grid">
+      <div id="main" class="column">
+        
+        <!-- Breadcrumb -->
+        <div class="ui segment">
+         <div class="ui breadcrumb">
+          <a class="section" on-click="{{goHome}}"><i class="ui home icon"></i></a>
+          <div class="divider"> / </div>
+          <a class="section" on-click="{{goRoot}}">{{title}}</a>
+          <template if="{{endpoint}}">
+            <div class="divider"> / </div>
+            <div class="active section">{{endpointKey | capitalize}}</div>
+            <div class="divider"> / </div>
+            <div class="active section">{{operation.method}}</div>
+          </template>
+        </div>
+       </div>
+        
+        <template if="{{endpoint == null}}">
+          <div class="ui raised segment">
+            <h3 class="ui blue header">{{title}}</h3>
+            <div class="ui grid">
+              <div class="four wide column"><img class="ui medium image" src="../images/{{icon}}"></div>
+              <div class="twelve wide column">
+                <p class="description">{{description}}</p>
+              </div>
+            </div>
+          </div>
+        </template>  
+        
+        <template if="{{endpoint}}">
+          <div class="ui huge header">{{operation.method}} /api/v1{{endpoint.path}}</div> 
+          <div class="ui description segment">{{operation.summary}}</div>
+          <div class="ui medium blue header">Parameters</div>
+          <div class="ui form">
+
+            <table class="ui large blue basic table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Value</th>
+                  <th>Description</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr template repeat="{{param in params}}">
+                  <td>{{param.name}}</td>
+                  <td>
+                    <div class="field">
+                      <!-- NOTE: We use the type to specify the field of the document we want to use -->
+                      <nx-widget
+                      datatype="{{(param.name == 'docPath' || param.name == 'docId') ? 'document' : 'string'}}"
+                      type="{{param.widget}}"
+                      required="{{param.required}}"
+                      value="{{param.value}}">
+                      </nx-widget>
+                    </div>
+                  </td>
+                  <td>{{param.description}}</td>
+                  <td>{{param.dataType}}<span class="ui small label" style="float:right">{{param.type}}</span></td>
+                </tr>
+              </tbody>
+           </table>
+        
+          </div>
+          
+          <!-- Run with options -->
+          <div id="options" class="ui fluid accordion">                        
+            <div class="title" style="text-align: right;">
+              <i class="settings icon"></i>
+              <!-- Submit button -->
+              <div class="ui red submit button" on-click="{{runRequest}}">Run</div>
+            </div>
+            
+            <div class="content">
+              <nx-request-options connectionId="{{connectionId}}"></nx-request-options>
+            </div>
+          </div>
+          
+           <template if="{{errors.isNotEmpty}}">
+            <div class="ui bottom attached error message">
+              <template repeat="{{error in errors}}">
+                <p><i class="icon warning"></i>{{error}}</p>
+              </template>
+            </div>
+          </template>
+            
+          <br/>
+          
+          <!-- Output -->
+          <nx-request-monitor request="{{request}}" response="{{response}}"></nx-request-monitor>
+          
+        </template>           
+      </div>
+    </div>
+    
+  </template>
+  <script type="application/dart" src="nx_resource_endpoints.dart"></script>
+
+</polymer-element>

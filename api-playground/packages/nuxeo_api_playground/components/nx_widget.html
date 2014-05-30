@@ -1,0 +1,89 @@
+<link rel="import" href="tree/nx_tree.html">
+<polymer-element name="nx-widget">
+
+  <template>
+
+      <link rel="stylesheet"  href="../semantic/collections/form.min.css" no-shim>
+      
+      <link rel="stylesheet"  href="../semantic/elements/button.min.css" no-shim>
+      <link rel="stylesheet"  href="../semantic/elements/header.min.css" no-shim>
+      <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+      <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
+      <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
+      
+      <link rel="stylesheet"  href="../semantic/modules/checkbox.min.css" no-shim>
+      <link rel="stylesheet"  href="../semantic/modules/dropdown.min.css" no-shim>
+      <link rel="stylesheet"  href="../semantic/modules/modal.min.css" no-shim>
+      <link rel="stylesheet"  href="../semantic/modules/dimmer.min.css" no-shim>
+      <link rel="stylesheet"  href="../semantic/modules/transition.min.css" no-shim>
+      
+      <link rel="stylesheet"  href="../css/style.css" no-shim>
+      <div class="ui form">
+        <!-- Document(s) -->
+        <!-- Note: type is normally 'text' but we also use it to specify the field of the document we want (uid, path, ...) -->
+        <template if="{{datatype == 'document' || datatype == 'documents'}}">
+          <div class="ui action input">
+            <input id="widget" type="text" value="{{value}}" required?="{{required}}"/>
+            <div class="ui icon button" on-click="{{showModal}}"><i class="open folder outline icon"></i></div>
+          </div>
+          <div class="ui modal">
+            <i class="close icon"></i>
+            <div class="small header">
+              Pick {{datatype}}:
+            </div>
+            <div class="content">
+              <!-- TODO(nfgs): Do not hardcode max-height -->
+              <div class="ui segment" style="max-height:300px;overflow:auto;width:100%">
+              <!-- TODO(nfgs): Do not hardcode connectionId -->
+              <nx-tree root="/"
+                       key="{{(type == 'text') ? 'uid' : type}}"
+                       multipleSelection="{{datatype == 'documents'}}"
+                       selected="{{value}}"
+                       connectionId="connection"></nx-tree>
+              </div>
+            </div>
+            <div class="actions">
+              <div class="ui button">Cancel</div>
+              <div class="ui button">OK</div>
+            </div>
+          </div>
+
+        </template>
+        
+        <template if="{{type == 'text'}}">
+          
+          <!-- Checkbox -->
+          <template if="{{datatype == 'boolean'}}"> 
+            <div class="ui checkbox">
+              <input id="widget" type="checkbox" checked="{{value}}" required?="{{required}}"/>
+              <label for="widget"></label>
+            </div>
+          </template>
+          <!-- Text input -->
+          <!-- datatype == 'string' || 'integer' || ... -->
+          <template if="{{datatype != 'boolean' && datatype != 'document' && datatype != 'documents'}}">
+            <input id="widget" type="text" value="{{value}}" required?="{{required}}"/>
+          </template>
+        </template>
+
+        <template if="{{type == 'Option'}}">
+          <select class="ui dropdown selection" value="{{value}}">
+            <option template repeat="{{option in options}}">{{option}}</option>
+          </select>
+        </template>
+        
+        <template if="{{type == 'textarea'}}">
+          <textarea class="ui textarea" id="widget" value="{{value}}"></textarea>
+        </template>
+        
+        <!-- Blob -->
+        <template if="{{type == 'blob'}}">
+          <input id="widget" type="file" name="file" on-change="{{onFileSelected}}" required?="{{required}}">
+          <div hidden?="{{value == null}}">
+            <div>Size: {{value.length | asFileSize}}.</div>
+          </div>
+        </template>
+      </div>
+  </template>
+  <script type="application/dart" src="nx_widget.dart"></script>
+</polymer-element>

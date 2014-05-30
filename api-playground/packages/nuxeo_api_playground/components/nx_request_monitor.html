@@ -1,0 +1,55 @@
+<polymer-element name="nx-request-monitor">
+<template>
+
+  <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/elements/label.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
+
+  <link rel="stylesheet"  href="../semantic/collections/breadcrumb.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/collections/menu.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/modules/tab.min.css" no-shim>
+
+  <link rel="stylesheet"  href="../css/highlight/default.css" no-shim>
+  <link rel="stylesheet"  href="../css/style.css" no-shim>
+  <template if="{{request}}">
+  <div class="ui top attached tabular menu">
+    <a class="item active" data-tab="response">Response</a>
+    <a class="item" data-tab="headers">Headers</a>
+    <a class="item" data-tab="curl">CURL request</a>
+  </div>
+  <div class="ui bottom attached segment">
+    <template if="{{currentTab == 'response'}}">
+      <!-- Status code and text -->
+      <template if="{{response.status != 0}}">
+        <div class="ui top right attached label"><div class="detail">{{response.status}}</div> {{response.statusText}}</div>
+      </template>  
+      <!-- Content Type -->
+      <div class="ui ribbon label">{{contentType}} <a href="{{downloadUrl}}" title="Download"><i class="download disk icon"></i></a></div>
+      <!-- Body -->
+      <template if="{{contentType.startsWith('application/json') || contentType == 'text/plain'}}">
+        <pre><code>{{body}}</code></pre>
+      </template>
+    </template>
+    <template if="{{currentTab == 'headers'}}">
+      <div class="ui ribbon label">Request Headers</div>
+      <code class="json">
+      <template repeat="{{key in request.headers.keys}}">
+        <p>"{{key}}": "{{request.headers[key]}}"</p>
+      </template>
+      </code>
+      
+      <div class="ui ribbon label">Response Headers</div>
+      <code class="json">
+      <template repeat="{{key in response.headers.keys}}">
+        <p>"{{key}}": "{{response.headers[key]}}"</p>
+      </template>
+      </code>
+    </template>
+    <template if="{{currentTab == 'curl'}}">
+      <code>{{CURLRequest}}</code>
+    </template>
+  </div>
+  </template>
+</template>
+<script type="application/dart" src="nx_request_monitor.dart"></script>
+</polymer-element>
