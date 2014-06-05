@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo 5.9.4 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo on Github">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../../stylesheets/base.css">
+	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../../stylesheets/layout.css">
+	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+
+  <div id="mainContainer" class="container">
+  <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
+  <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">5.9.4</span> Release Notes</a></p>
+
+    <div id="welcome">
+
+    <div style="clear:both;"></div>
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+
+    <h2><a name="anchor-0"></a>MongoDB Support</h2>
+<p>Florent has been working for a while on MondoB Support. But as were talking about Nuxeo it's not just MongoDB support. With the 5.9.4 you actually get DBS, a Document-Based Storage abstraction. And the first implementation will be MongoDB.</p>
+
+<h3>Document-Based Storage</h3>
+ <p>DBS comes with the following features:</p>
+<ul>
+    <li>DBSRepository CRUD with query abstraction</li>
+    <li>Infrastructure for transactional state before commit (transient/saved)</li>
+    <li>Implementation of Session API and delegate to DBSRepository after checking transient state</li>
+    <li>Proxies: generic implementation using a <em>ecm:proxyIds</em> field in the docs and a copy mechanism</li>
+    <li>ACLs: compute and store merged read acls</li>
+    <li>Paths: store ancestors in an ecm:ancestorIds field</li>
+    <li>XA binding and handle for transaction sharing of state</li>
+</ul>
+<h3>MongoDB</h3>
+  <p>For our first DBS implementation we've chosen MongoDB. The first things we worked on are:</p>
+  <ul>
+    <li>CRUD</li>
+    <li>Key/value query</li>
+    <li>Implement NXQL query</li>
+  </ul>
+
+
+<p><img class="lightboxed" src="./mongodb.png"/></p> 
+
+   <h2><a name="anchor-1"></a>Content Automation</h2>
+
+<h3>Parameterised automation chains and other productivity improvements on Automation</h3>
+    <h3>New Operations for Collections Management</h3>
+<p>We have added new operations dedicated to Collections management. You can now use AddToCollection, RemoveFromCollection, CreateACollection and GetAllDocumentsFromCollection. Their name speak for themselves.</p>
+
+<h3>Implement a YAML converter for Automation Chains</h3>
+
+<p>YAML representation of chains visible in the platform. Here is a example for validateDocument chain:</p>
+
+<div class="embededCode"><pre>
+http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
+
+- Context.FetchDocument
+- Document.SetLifeCycle:
+    value: approve
+- Document.CheckIn:
+    version: minor
+    comment: Automatic checkin after validation
+
+</pre></div>
+
+
+    <h2><a name="anchor-2"></a>CMIS</h2>
+
+<h3>CMIS Rendition</h3>
+<p>Renditions from the RenditionService are now exposed as CMIS renditions of kind "nuxeo:rendition" with a name that's based on the Rendition name, for example "nuxeo:rendition:pdf" for the "pdf" rendition.</p>A &lt;renditionDefinition&gt; must now define a &lt;contentType&gt; element if it wants to see it exposed to CMIS.<p>
+<h3>CMIS Content Streams</h3>
+<p>Nuxeo CMIS content streams should support HTTP cache and last modified headers</p>
+
+
+    <h2><a name="anchor-3"></a>Mail Folder</h2>
+
+<p>If used extensively, the Mailbox Folder could present some performance issues. We have added some new system properties to help fine tune the IMAP configuration.</p>
+
+<p>Force IMAP lib to do a Copy of the message(default to false): org.nuxeo.mail.imap.copy = false</p>
+<p>Debug info(default to false): org.nuxeo.mail.imap.debug = false</p>
+
+<p>We have also added locking at 2 levels:</p>
+
+<ul>
+    <li>Inside the scheduled listener: avoid re-entrency</li>
+    <li>Inside the MailCoreHelper: avoid 2 threads to fetch the same mailbox</li>
+</ul>
+
+
+
+
+
+  </div>
+</div>
+
+
+	<!-- JS
+	================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+    <script src="../../javascripts/float_menu.js"></script>
+    <script src="../../javascripts/lightbox.js"></script>
+
+</body></html>
+
