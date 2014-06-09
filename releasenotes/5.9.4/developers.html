@@ -68,8 +68,8 @@
     <li>Infrastructure for transactional state before commit (transient/saved)</li>
     <li>Implementation of Session API and delegate to DBSRepository after checking transient state</li>
     <li>Proxies: generic implementation using a <em>ecm:proxyIds</em> field in the docs and a copy mechanism</li>
-    <li>ACLs: compute and store merged read acls</li>
-    <li>Paths: store ancestors in an ecm:ancestorIds field</li>
+    <li>ACLs: compute and store merged read ACLs</li>
+    <li>Paths: store ancestors in an <em>ecm:ancestorIds</em> field</li>
     <li>XA binding and handle for transaction sharing of state</li>
 </ul>
 <h3>MongoDB</h3>
@@ -84,13 +84,13 @@
 
    <h2><a name="anchor-1"></a>Content Automation</h2>
 
-<h3>Parameterised automation chains and other productivity improvements on Automation</h3>
+<h3>Parameterised Automation Chains and Other Productivity Improvements on Automation</h3>
     <h3>New Operations for Collections Management</h3>
-<p>We have added new operations dedicated to Collections management. You can now use AddToCollection, RemoveFromCollection, CreateACollection and GetAllDocumentsFromCollection. Their name speak for themselves.</p>
+<p>We have added new operations dedicated to collections management. You can now use AddToCollection, RemoveFromCollection, CreateACollection and GetAllDocumentsFromCollection. Their name speak for themselves.</p>
 
-<h3>Implement a YAML converter for Automation Chains</h3>
+<h3>Implement a YAML Converter for Automation Chains</h3>
 
-<p>YAML representation of chains visible in the platform. Here is a example for validateDocument chain:</p>
+<p>YAML representation of chains is now visible in the platform. Here is a example for validateDocument chain:</p>
 
 <div class="embededCode"><pre>
 http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
@@ -108,23 +108,23 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
     <h2><a name="anchor-2"></a>CMIS</h2>
 
 <h3>CMIS Rendition</h3>
-<p>Renditions from the RenditionService are now exposed as CMIS renditions of kind "nuxeo:rendition" with a name that's based on the Rendition name, for example "nuxeo:rendition:pdf" for the "pdf" rendition.</p>A &lt;renditionDefinition&gt; must now define a &lt;contentType&gt; element if it wants to see it exposed to CMIS.<p>
+<p>Renditions from the RenditionService are now exposed as CMIS renditions of kind "nuxeo:rendition" with a name that's based on the Rendition name, for example "nuxeo:rendition:pdf" for the "pdf" rendition.</p><p>A &lt;renditionDefinition&gt; must now define a &lt;contentType&gt; element if it wants to see it exposed to CMIS.</p>
 <h3>CMIS Content Streams</h3>
-<p>Nuxeo CMIS content streams should support HTTP cache and last modified headers</p>
+<p>Nuxeo CMIS content streams support HTTP cache and last modified headers.</p>
 
 
     <h2><a name="anchor-3"></a>Mail Folder</h2>
 
 <p>If used extensively, the Mailbox Folder could present some performance issues. We have added some new system properties to help fine tune the IMAP configuration.</p>
 
-<p>Force IMAP lib to do a Copy of the message(default to false): org.nuxeo.mail.imap.copy = false</p>
-<p>Debug info(default to false): org.nuxeo.mail.imap.debug = false</p>
+<p>Force IMAP lib to do a Copy of the message (default to false): org.nuxeo.mail.imap.copy = false</p>
+<p>Debug info (default to false): org.nuxeo.mail.imap.debug = false</p>
 
 <p>We have also added locking at 2 levels:</p>
 
 <ul>
-    <li>Inside the scheduled listener: avoid re-entrency</li>
-    <li>Inside the MailCoreHelper: avoid 2 threads to fetch the same mailbox</li>
+    <li>Inside the scheduled listener: avoids re-entrency</li>
+    <li>Inside the MailCoreHelper: avoids 2 threads to fetch the same mailbox</li>
 </ul>
 
 
