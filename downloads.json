@@ -1,16 +1,16 @@
 [{ "data" : [ 
-     { "date" : "09-Jun-2014 11:39",
+     { "date" : "11-Jun-2014 11:39",
           "description" : "",
           "label" : "5.9.4 Release Notes.pdf",
           "os" : "all",
-          "size" : "1.0M",
+          "size" : "98Ko",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.9.4/5.9.4%20Release%20Notes.pdf"
         },
-        { "date" : "09-Jun-2014 11:39",
+        { "date" : "11-Jun-2014 11:39",
           "description" : "",
           "label" : "5.9.4 Upgrade Notes.pdf",
           "os" : "all",
-          "size" : "68Ko",
+          "size" : "57Ko",
           "url" : "http://cdn.nuxeo.com/nuxeo-5.9.4/5.9.4%20Upgrade%20Notes.pdf"
         },
         { "date" : "09-Jun-2014 11:08",
