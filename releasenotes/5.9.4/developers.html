@@ -56,35 +56,16 @@
     <div style="clear:both;"></div>
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
-
-    <h2><a name="anchor-0"></a>MongoDB Support</h2>
-<p><img class="lightboxed" style="float:right;width:20%;height:20%;" src="./mongodb.png"/>Florent has been working for a while on MondoDB Support. But since we're talking about Nuxeo, it's not just MongoDB support. With FT 5.9.4, you actually get DBS, a Document-Based Storage abstraction. The first implementation will be MongoDB.</p>
-
-
-<h3>Document-Based Storage</h3>
- <p>DBS comes with the following features:</p>
-<ul>
-    <li>DBSRepository CRUD with query abstraction</li>
-    <li>Infrastructure for transactional state before commit (transient/saved)</li>
-    <li>Implementation of Session API and delegate to DBSRepository after checking transient state</li>
-    <li>Proxies: generic implementation using a <em>ecm:proxyIds</em> field in the docs and a copy mechanism</li>
-    <li>ACLs: compute and store merged read ACLs</li>
-    <li>Paths: store ancestors in an <em>ecm:ancestorIds</em> field</li>
-    <li>XA binding and handling for transaction sharing of state</li>
-</ul>
-<h3>MongoDB</h3>
-  <p>For our first DBS implementation we've chosen MongoDB. The first things we worked on were:</p>
-  <ul>
-    <li>CRUD</li>
-    <li>Key/value query</li>
-    <li>Implement NXQL query</li>
-  </ul>
-
-
-
-   <h2><a name="anchor-1"></a>Content Automation</h2>
+   <h2><a name="anchor-0"></a>Content Automation</h2>
 
 <h3>Parameterised Automation Chains and Other Productivity Improvements on Automation</h3>
+<p>Users can design automation chains with parameters, saving a great number of chains whose structure is repeated with only a few changes in operations parameters.</p>
+
+<p>The readability of an automation chain is improved with a better visibility of arguments values.</p>
+
+<p>Finally, we provide a text mode for automation chain edition, that will facilitate some refactoring, and also make it easy to transfer to support a chain definition, or to build new documentation samples.</p>
+
+
     <h3>New Operations for Collections Management</h3>
 <p>We have added new operations dedicated to collections management. You can now use AddToCollection, RemoveFromCollection, CreateACollection and GetAllDocumentsFromCollection. Their name speak for themselves.</p>
 
@@ -105,7 +86,7 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 </pre></div>
 
 
-    <h2><a name="anchor-2"></a>CMIS</h2>
+    <h2><a name="anchor-1"></a>CMIS</h2>
 
 <h3>CMIS Rendition</h3>
 <p>Renditions from the RenditionService are now exposed as CMIS renditions of kind "nuxeo:rendition", with a name that's based on Rendition name. For example "nuxeo:rendition:pdf" for the "pdf" rendition.</p><p>A &lt;renditionDefinition&gt; must now define a &lt;contentType&gt; element if it wants to be exposed to CMIS.</p>
@@ -113,7 +94,7 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 <p>Nuxeo CMIS content streams support HTTP cache and last modified headers.</p>
 
 
-    <h2><a name="anchor-3"></a>Mail Folder</h2>
+    <h2><a name="anchor-2"></a>Mail Folder</h2>
 
 <p>If used extensively, the Mailbox Folder could present some performance issues. We have added some new system properties to help fine tune the IMAP configuration.</p>
 
