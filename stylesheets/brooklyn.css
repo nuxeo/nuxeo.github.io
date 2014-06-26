@@ -47,7 +47,7 @@ font-style: normal;
 
 body {
   background: #f4fbfe url(../images/background-x.png) top right repeat-y;
-  font-family: Aregular;
+/*  font-family: Aregular, Avenir Next, Arial, Helvetica, sans-serif;*/
 }
 
 #welcome {
