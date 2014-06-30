@@ -1,0 +1,30 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<polymer-element name="nx-schema">
+  <template>
+    <link rel="stylesheet"  href="../semantic/collections/table.min.css" no-shim>
+    <link rel="stylesheet"  href="../css/style.css" no-shim>
+
+    <table class="ui large basic blue table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr template repeat="{{field in schema.fields | sort('name')}}">
+          <td>{{field.name}}</td>
+          <td>
+            <template if="{{field.isComplex}}">
+              <nx-schema schema="{{field.type}}"></nx-schema>
+            </template>
+            <template if="{{!field.isComplex}}">
+            {{field.type}}
+            </template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </template>
+  <script type="application/dart" src="nx_schema.dart"></script>
+</polymer-element>

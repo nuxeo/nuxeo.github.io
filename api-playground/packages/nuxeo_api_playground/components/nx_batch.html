@@ -1,0 +1,60 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="nx_widget.html">
+<polymer-element name="nx-batch">
+  <template>
+    <link rel="stylesheet"  href="../semantic/elements/button.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/label.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/collections/form.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/modules/transition.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/views/list.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../css/style.css" no-shim>
+
+    <style>
+      .icon {
+        display: block;
+        float: left;
+        margin-right: 1em !important;
+        padding-top: .1em;
+      }
+      .header {
+        font-weight: 700;
+      }
+      .content {
+        display: inline-block;
+      }
+    </style>
+
+    <i class="big upload icon"></i>
+    <!-- Extra actions go here -->
+    <content select=".action"></content>
+    <div class="content">
+      <div class="header">
+        <template if="{{!wasUploaded && !readonly}}">
+          <div class="ui form"><input type="text" value="{{batchId}}" required></div>
+        </template>
+        <template if="{{wasUploaded || readonly}}">{{batchId}}</template>
+      </div>
+      <template if="{{!readonly}}">
+        <nx-widget type="bloblist" required="true" value="{{blobs}}"></nx-widget>
+        <!-- Upload action -->
+        <div class="ui red submit button {{blobs.isEmpty ? 'disabled' : ''}}" on-click="{{upload}}">Upload</div>
+      </template>
+      <br/>
+      <div class="ui horizontal bulleted list">
+        <template repeat="{{filename in filenames}}">
+        <div class="item">
+          {{filename}}
+        </div>
+        </template>
+      </div>
+    </div>
+  </template>
+<script type="application/dart" src="nx_batch.dart"></script>
+</polymer-element>

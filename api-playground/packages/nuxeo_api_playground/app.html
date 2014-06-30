@@ -1,8 +1,10 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
 <link rel="import" href="components/nx_connection.html">
 <link rel="import" href="components/nx_repository_browser.html">
 <link rel="import" href="components/nx_structures_browser.html">
 <link rel="import" href="components/nx_resource_endpoints.html">
 <link rel="import" href="components/nx_command_endpoints.html">
+<link rel="import" href="components/nx_batch_upload.html">
 <polymer-element name="nx-sandbox-app">
 <template>
   <link rel="stylesheet"  href="semantic/collections/grid.min.css" no-shim>
@@ -13,7 +15,7 @@
   <link rel="stylesheet"  href="css/style.css" no-shim>
   <!-- Home -->
   <template if="{{module == null}}">
-    <div class="ui two column stackable page grid">
+    <div class="ui two column stackable page grid" id="modules">
       <template repeat="{{key in modules.keys}}">
         <div class="column">
           <div class="ui raised segment">
@@ -23,19 +25,89 @@
               <div class="twelve wide column">
                 <p class="description">{{modules[key].description}}</p>
                 <template if="{{connection.isConnected}}">
-                  <div class="ui right floated red button" on-click="{{navigate}}" data-target="{{key}}">{{modules[key].action}}</div>
+                  <div class="ui right floated blue button" on-click="{{navigate}}" data-target="{{key}}">{{modules[key].action}}</div>
                 </template>
                 <template if="{{!connection.isConnected}}">
                   <div class="ui right floated disabled button">{{modules[key].action}}</div>
-                </template>                
+                </template>
               </div>
             </div>
           </div>
         </div>
       </template>
     </div>
+
+    <div class="ui page grid site-footer">
+       <div class="ui five stackable column grid">
+         <div class="row">
+          <div class="column">
+             <ul>
+                <li><a href="http://www.nuxeo.com/products/">Products</a></li>
+                <ul class="sub">
+                   <li><a href="http://www.nuxeo.com/products/content-management-platform/">Nuxeo Platform</a></li>
+                   <li><a href="http://www.nuxeo.com/products/nuxeo-cloud/">Nuxeo Cloud</a></li>
+                   <li><a href="http://www.nuxeo.com/products/document-management/">Document Management</a></li>
+                   <li><a href="http://www.nuxeo.com/products/digital-asset-management/">Digital Asset Management</a></li>
+                   <li><a href="http://www.nuxeo.com/products/case-management/">Case Management</a></li>
+                   <li><a href="http://www.nuxeo.com/products/pricing/">Pricing</a></li>
+                </ul>
+             </ul>
+             <div id="copyright">@ 2014 Nuxeo</div>
+          </div>
+          <div class="column">
+             <ul>
+                <li><a href="http://www.nuxeo.com/services/">Services</a></li>
+                <ul class="sub">
+                   <li><a href="http://www.nuxeo.com/services/support/">Support</a></li>
+                   <li><a href="http://www.nuxeo.com/services/training/">Training</a></li>
+                   <li><a href="http://www.nuxeo.com/services/consulting/">Consulting</a></li>
+                </ul>
+             </ul>
+          </div>
+          <div class="column">
+             <ul>
+                <li><a href="http://www.nuxeo.com/customers/">Customers</a></li>
+                <li><a href="http://www.nuxeo.com/partners/">Partners</a></li>
+             </ul>
+          </div>
+          <div class="column">
+             <ul>
+                <li><a href="/resources">Learning</a></li>
+                <ul class="sub">
+                   <li><a href="http://www.nuxeo.com/resources/">Resources</a></li>
+                   <li><a href="http://www.nuxeo.com/events/">Events</a></li>
+                   <li><a href="http://www.nuxeo.com/blog/">Blogs</a></li>
+                   <li><a href="http://doc.nuxeo.com/display/MAIN/Nuxeo+Documentation+Center+Home">Documentation</a></li>
+                   <li><a href="http://answers.nuxeo.com/">Answers</a></li>
+                   <li><a href="http://nuxeo.github.io/">GitHub</a></li>
+                </ul>
+             </ul>
+          </div>
+          <div class="column">
+             <ul>
+                <li><a href="http://www.nuxeo.com/about/">About Us</a></li>
+                <ul class="sub">
+                   <li><a href="http://www.nuxeo.com/about/leadership/">Leadership</a></li>
+                   <li><a href="http://www.nuxeo.com/media-center/">Media Center</a></li>
+                   <li><a href="http://www.nuxeo.com/careers/">Careers</a></li>
+                   <li><a href="http://www.nuxeo.com/about/contact/">Contact</a></li>
+                </ul>
+                <li><a href="http://connect.nuxeo.com">My Connect</a></li>
+             </ul>
+             <div id="copyright">
+                <ul class="icons f-right">
+                   <li><a href="https://www.facebook.com/Nuxeo"><img alt="facebook" title="facebook" src="http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/imgs/footer-icon-fb.png" width="30" height="30"></a></li>
+                   <li><a href="http://www.linkedin.com/groups/Nuxeo-Community-43314?home=&amp;gid=43314&amp;trk=anet_ug_hm"><img alt="linkedin" title="linkedin" src="http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/imgs/footer-icon-ln.png" width="30" height="30"></a></li>
+                   <li><a href="https://twitter.com/nuxeo"><img alt="twitter" title="twitter" src="http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/imgs/footer-icon-tw.png" width="30" height="30"></a></li>
+                   <li><a href="https://plus.google.com/u/0/+nuxeo/posts"><img alt="google+" title="google+" src="http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/imgs/footer-icon-gp.png" width="30" height="30"></a></li>
+                </ul>
+             </div>
+          </div>
+       </div>
+     </div>
+    </div>
   </template>
-  
+
   <!-- Module -->
   <div id="module"></div>
 

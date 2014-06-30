@@ -4,8 +4,8 @@
 
 :host {
   height: 100%;
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  color: #555555;
+  font-family: "Aregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
   text-rendering: optimizeLegibility;
 }
 
@@ -27,14 +27,140 @@ a {
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-radius: 0px;
+  border-radius: 0;
   color: gray;
-  padding: 0px;
+  padding: 0;
 }
+
+.ui.raised.segment {
+-webkit-box-shadow: 0 0 0 1px #d9d9d9;
+box-shadow: 0 0 0 1px #d9d9d9;
+}
+
+/* Home */
+
+.connection {
+  margin: 0em;
+  overflow: hidden;
+  background: url(../../images/segment_bg.png) no-repeat center left #00adff;
+  color: white;
+}
+
+.connectblock {
+  margin: 1rem 0 2rem;
+}
+
+.connectblock .ui.segment.attached {
+  box-shadow: none;
+  background-color: rgba(255,255,255,0.5);
+}
+.connection a{
+  color:white;
+}
+
+/* Modules */
+#modules {
+  padding: 3% 8% 5%;
+}
+
+#main-page {
+  min-height: 800px;
+}
+
+.ui.segment.brdcrmb {
+  background-color: transparent;
+  border: none 0;
+  box-shadow: none;
+}
+
+.ui.gutter.label  {
+  margin: 0 0 1em;
+}
+
+/* Left menu */
+.ui.vertical.menu.fluid {
+  overflow-y: auto;
+  padding-bottom: 80px;
+}
+
+.vertical.menu .left.attached.label {
+  border-top-left-radius: 0;
+  padding: .2em .4em 0 .2em;
+  font-size: .8em;
+  line-height: initial;
+}
+
+.vertical.menu div[on-click]:hover {
+  cursor: pointer;
+}
+
+.vertical.menu .ui.tree.accordion,
+.vertical.menu .ui.tree.accordion .accordion {
+  width: auto;
+  max-width: inherit;
+}
+
+#endpoints .ui.list .item>.content,
+#operations .ui.list .item>.content,
+#datastructures .ui.list .item>.content {
+  display: block;
+  padding: 0;
+}
+
+#endpoints .ui.list a,
+#operations .ui.list a,
+#datastructures .ui.list a {
+  display: block;
+  color: #203f7d;
+  padding: 1.3em 1em;
+}
+
+#batches>nx-batch {
+  display: block;
+  border-top: 1px solid rgba(0,0,0,.1);
+  cursor: pointer;
+  color: rgba(0,0,0,.4);
+  padding: .5em;
+}
+
+#batches>nx-batch:hover {
+  background-color: rgba(0,0,0,.02);
+  color: rgba(0,0,0,.7);
+}
+
+/* Footer */
+.site-footer {
+  background:#404040;
+  line-height:24px;
+  color:#fff }
+
+.ui.grid.site-footer>.column,
+.ui.grid.site-footer>.row>.column {
+  font-size:85%;
+}
+
+.site-footer ul{padding: 1em 0 0;list-style:none;margin:0}
+.site-footer ul.sub{padding: 0}
+.site-footer ul li a{font-weight:bold}
+.site-footer ul.sub li a{font-weight:400}
+.site-footer ul a{text-decoration:none;color:#fff;font-size: 85%;}
+.site-footer ul a:hover{color:#00adff}
+.site-footer ul.icons{margin:0}
+.site-footer ul.icons li{float:left;margin-right:14px}
+.site-footer #copyright{font-size:12px;line-height:22px;margin:20px 0}
+.site-footer #copyright:before,
+.site-footer #copyright:after{content:" ";display:table}
+.site-footer #copyright:after{clear:both}
+
 
 /*******************************
           UI Overrides
 *******************************/
+
+.ui.button,
+.ui.segment {
+  border-radius: 0;
+}
 
 .ui.red.button {
   background-color: #ff452a;
@@ -55,17 +181,24 @@ a {
 }
 
 .ui.table thead th:first-child {
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .ui.table thead th:last-child {
-  border-radius: 0px;
+  border-radius: 0;
 }
 
-.ui.blue.table th {
+.ui.blue.table th,
+.ui.blue.button,
+.ui.blue.buttons .button  {
   background-color: #00adff;
+  box-shadow:none;
   color: white;
 }
+
+.ui.blue.button:hover,
+.ui.blue.buttons .button:hover  {
+  background-color: #0075af; }
 
 .ui.white.label {
   background-color: white !important;
@@ -75,7 +208,7 @@ a {
 }
 
 .ui.vertical.menu {
-    height: 100%;
+  height: 100%;
 }
 
 .ui.vertical.menu > .item:first-child {
@@ -86,14 +219,19 @@ a {
   float: left;
 }
 
-.ui.blue.accordion .title,
-.ui.blue.accordion .accordion .title {
+ui-sidebar .ui.accordion,
+ui-sidebar .ui.accordion .accordion {
+  border-radius: 0;
+}
+
+.ui.accordion .title,
+.ui.accordion .accordion .title {
   color: #203f7d;
 }
 
 .ui.blue.accordion .active.title,
 .ui.blue.accordion .title:hover,
-.ui.blue.accordion .accordion .active.title 
+.ui.blue.accordion .accordion .active.title
 .ui.blue.accordion .accordion .title:hover {
   background-color: #203f7d;
   color: white;
@@ -112,7 +250,7 @@ a {
 .ui.modal>.content {
   background-color: white;
 }
-  
+
 input:required:invalid, input:focus:invalid {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC');
   background-position: right top;

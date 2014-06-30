@@ -1,3 +1,5 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="nx_batch_upload.html">
 <link rel="import" href="nx_request_monitor.html">
 <link rel="import" href="nx_request_options.html">
 <link rel="import" href="nx_widget.html">
@@ -12,18 +14,21 @@
     <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/elements/label.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
-  
+
     <link rel="stylesheet"  href="../semantic/collections/breadcrumb.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/form.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/grid.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/menu.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/message.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/table.min.css" no-shim>
-    
+
     <link rel="stylesheet"  href="../semantic/modules/accordion.min.css" no-shim>
-    
+    <link rel="stylesheet"  href="../semantic/modules/dimmer.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/modules/modal.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/modules/transition.min.css" no-shim>
+
     <link rel="stylesheet"  href="../semantic/views/list.min.css" no-shim>
-    
+
     <link rel="stylesheet"  href="../css/style.css" no-shim>
 
     <!-- Sidebar -->
@@ -56,9 +61,9 @@
                 <template repeat="{{operation in resource.value.operations}}">
                     <div class="item">
                       <div class="content">
-                        <div on-click="{{select}}" data-target="{{key}}/{{resource.index}}/{{operation.method}}">
-                          <span class="ui left corner {{methodColors[operation.method]}} label">{{operation.method}}</span> {{resource.value.path}}
-                        </div>
+                        <a on-click="{{select}}" data-target="{{key}}/{{resource.index}}/{{operation.method}}">
+                          <span class="ui top left attached {{methodColors[operation.method]}} label">{{operation.method}}</span> {{resource.value.path}}
+                        </a>
                       </div>
                     </div>
                 </template>
@@ -70,13 +75,13 @@
           </div>
       </div>
     </ui-sidebar>
-    
+
     <!-- Main page -->
-    <div class="ui page grid">
+    <div class="ui page grid" id="main-page">
       <div id="main" class="column">
-        
+
         <!-- Breadcrumb -->
-        <div class="ui segment">
+        <div class="ui segment brdcrmb">
          <div class="ui breadcrumb">
           <a class="section" on-click="{{goHome}}"><i class="ui home icon"></i></a>
           <div class="divider"> / </div>
@@ -89,7 +94,7 @@
           </template>
         </div>
        </div>
-        
+
         <template if="{{endpoint == null}}">
           <div class="ui raised segment">
             <h3 class="ui blue header">{{title}}</h3>
@@ -100,10 +105,10 @@
               </div>
             </div>
           </div>
-        </template>  
-        
+        </template>
+
         <template if="{{endpoint}}">
-          <div class="ui huge header">{{operation.method}} /api/v1{{endpoint.path}}</div> 
+          <div class="ui huge header">{{operation.method}} /api/v1{{endpoint.path}}</div>
           <div class="ui description segment">{{operation.summary}}</div>
           <div class="ui medium blue header">Parameters</div>
           <div class="ui form">
@@ -130,28 +135,67 @@
                       value="{{param.value}}">
                       </nx-widget>
                     </div>
+                    <!-- Copy default body -->
+                    <template if="{{operation.method == 'PUT' && param.isBodyParam}}">
+                      <div class="ui right floated button" on-click="{{setDefaultBody}}">Fetch {{param.name}}</div>
+                    </template>
+                    <!-- Reference a batch -->
+                    <template if="{{param.name == 'document' && (endpointKey == 'id' || endpointKey == 'path') && (operation.method == 'POST' || operation.method == 'PUT')}}">
+                       <div class="ui right floated button" on-click="{{referenceBatch}}">Reference a Batch</div>
+                       <div class="ui modal" style="width: auto;">
+                        <i class="close icon"></i>
+                        <div class="header">
+                          Select a batch. 
+                        </div>
+                        <div class="content">
+                          <template if="{{batch}}">
+                          <div class="field">Copy past the JSON string below and report it on the document object you want to create<br/> or update, for the file property for which you want to upload a file, ex:<br/>
+                        <pre>{"entity-type":"document","repository":"default",
+                        "uid":"73083c4b-9f06-43ef-b26d-7b05bc845473",...,
+                        "properties":{
+                        "dc:title":"Headquarters",...
+                        "file:content":
+                        <b>{"upload-batch":"batch-1404143791155-30210","upload-fileId":"0"}</b>
+                        ,...}</pre></div>
+                            <div class="ui ribbon label">{{batch.batchId}}</div>
+                            <textarea>{{batch.asJson}}</textarea>
+                         </template>
+                          <nx-batch-reference connectionId="{{connectionId}}" readonly="true" selected="{{batch}}"></nx-batch-reference>
+                        </div>
+                      </div>
+                    </template>
                   </td>
                   <td>{{param.description}}</td>
-                  <td>{{param.dataType}}<span class="ui small label" style="float:right">{{param.type}}</span></td>
+                  <td>
+                  <template if="{{param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group'}}">
+                  <a target="alt" href="http://doc.nuxeo.com/display/public/NXDOC/REST+API+Entity+Types#RESTAPIEntityTypes-{{param.dataType}}">{{param.dataType}}</a>
+                  </template>
+                  <template if="{{!(param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group')}}">
+                  {{param.dataType}}
+                  </template>
+                  <span class="ui small label" style="float:right">{{param.type}}</span></td>
                 </tr>
               </tbody>
            </table>
-        
           </div>
-          
+
           <!-- Run with options -->
-          <div id="options" class="ui fluid accordion">                        
+          <div id="options" class="ui fluid accordion">
             <div class="title" style="text-align: right;">
+            <div class="ui clearing">
+             <i class="">Click on Run for executing the request. You can also click on the "settings" icon for adding custom headers to your request. Then click on the "CURL request" tab for seeing the details of the request. </i>
+             </div>
               <i class="settings icon"></i>
+
               <!-- Submit button -->
               <div class="ui red submit button" on-click="{{runRequest}}">Run</div>
             </div>
-            
+
             <div class="content">
               <nx-request-options connectionId="{{connectionId}}"></nx-request-options>
             </div>
           </div>
-          
+
            <template if="{{errors.isNotEmpty}}">
             <div class="ui bottom attached error message">
               <template repeat="{{error in errors}}">
@@ -159,16 +203,15 @@
               </template>
             </div>
           </template>
-            
           <br/>
-          
+
           <!-- Output -->
           <nx-request-monitor request="{{request}}" response="{{response}}"></nx-request-monitor>
-          
-        </template>           
+
+        </template>
       </div>
     </div>
-    
+
   </template>
   <script type="application/dart" src="nx_resource_endpoints.dart"></script>
 

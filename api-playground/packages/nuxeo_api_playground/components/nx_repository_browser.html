@@ -1,3 +1,4 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
 <link rel="import" href="tree/nx_tree.html">
 <link rel="import" href="ui_sidebar.html">
 <polymer-element name="nx-repository-browser">
@@ -6,12 +7,12 @@
     <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/elements/image.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
-  
+
     <link rel="stylesheet"  href="../semantic/collections/breadcrumb.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/grid.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/menu.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/table.min.css" no-shim>
-    
+
     <link rel="stylesheet"  href="../css/style.css" no-shim>
 
     <ui-sidebar>
@@ -21,7 +22,7 @@
             <i class="circle left icon"></i>
             {{title}}
           </a>
-          <div class="item" style="overflow:auto">
+          <div class="item">
             <!-- Endpoints -->
             <nx-tree root="/" connectionId="{{connectionId}}" selected="{{documentId}}"></nx-tree>
           </div>
@@ -30,20 +31,20 @@
 
     <div class="ui page grid">
       <div class="column">
-      
-        <!--  Breadcrum -->
-        <div class="ui segment">
+
+        <!--  Breadcrumb -->
+        <div class="ui segment brdcrmb">
           <div class="ui breadcrumb">
             <a class="section" on-click="{{goHome}}"><i class="ui home icon"></i></a>
             <div class="divider"> / </div>
-             <span class="active section" style="color:#00adff">{{title}}</span>
+             <span class="active section">{{title}}</span>
              <template if="{{document}}">
               <div class="divider"> / </div>
               <div class="active section">{{document.title}}</div>
              </template>
           </div>
        </div>
-        
+
         <template if="{{document == null}}">
           <div class="ui raised segment">
             <h3 class="ui blue header">{{title}}</h3>
@@ -54,12 +55,11 @@
               </div>
             </div>
           </div>
-        </template>  
-        
+        </template>
+
         <template if="{{document}}">
           <div class="ui vertical segment">
             <div class="ui huge header">{{document.type}}</div>
-            <p>Description of the document type. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
             <div class="ui medium header">Properties</div>
             <table class="ui large basic blue table">
               <thead>
@@ -73,13 +73,13 @@
                 </tr>
               </tbody>
             </table>
-  
+
          </div>
         </template>
-        
+
       </div>
     </div>
-    
+
   </template>
   <script type="application/dart" src="nx_repository_browser.dart"></script>
 

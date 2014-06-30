@@ -1,0 +1,67 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="nx_batch_reference.html">
+<link rel="import" href="nx_batch.html">
+<polymer-element name="nx-batch-upload">
+  <template>
+    <link rel="stylesheet"  href="../semantic/elements/button.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/header.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/image.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/label.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/collections/breadcrumb.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/form.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/grid.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../css/style.css" no-shim>
+
+    <!-- Main page -->
+    <div class="ui page grid">
+      <div id="main" class="column">
+
+        <!-- Breadcrumb -->
+        <div class="ui segment">
+         <div class="ui breadcrumb">
+          <a class="section" on-click="{{goHome}}"><i class="ui home icon"></i></a>
+          <div class="divider"> / </div>
+          <a class="section" on-click="{{goRoot}}">{{title}}</a>
+          </div>
+        </div>
+
+        <!-- Help -->
+        <div class="ui basic segment">
+          <img class="ui small left floated image" src="../images/{{icon}}">
+          <p>{{description}}</p>
+          <p>
+          The default way Resources and Command (Automation) APIs deal with Blobs is to use the standard HTTP MultiPart Encoding.
+This strategy can not fit when:
+<ul>
+<li>Your client does not natively support multipart encoding; 
+Ex: JavaScript (without using a Form), Android SDK 2.x.</li>
+<li>You have several files to send, but prefer to send them as separated chunk;Ex: You have an HTTP proxy that will limit POST size.</li>
+<li>You want to upload files as soon as possible and then run the operation when everything has been uploaded on the server; 
+Ex: You upload pictures you select from a mobile device.</li>
+</ul>
+In those situations, the Batch endpoint provides you a way for first uploading a set of files, then be able to reference that set of files from the API.
+You should read the <a target="alt" href="http://doc.nuxeo.com/x/OYLZ">dedicated documentation page</a> for understanding more about this endpoint. In this API playground, we allow you to upload multiple batches (you just need to change the id), and then to reference those batches both in the Resources section and in the Command one (for operations that accepts blob/blobs in input).
+</p>
+        </div>
+
+        <!-- Create -->
+        <h4 class="ui top attached header">
+          New Batch
+        </h4>
+        <div id="batch" class="ui form segment attached">
+        </div>
+
+        <!-- Uploads list -->
+        <nx-batch-reference id="batches" connectionId="{{connectionId}}"></nx-batch-reference>
+
+      </div>
+    </div>
+
+  </template>
+  <script type="application/dart" src="nx_batch_upload.dart"></script>
+</polymer-element>
