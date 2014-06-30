@@ -1,0 +1,42 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<polymer-element name="nx-xpath">
+  <template>
+    <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/views/list.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../css/style.css" no-shim>
+    <style>
+      #suggestions {
+        border: 1px solid gray;
+        margin: 0;
+        width: 100%;
+        z-index: 9999;
+        position: absolute;
+        background-color: white;
+        max-height: 150px;
+        overflow:auto;
+      }
+
+
+      .selecting {
+        background-color: #CCC;
+      }
+    </style>
+    <div class="ui icon input">
+      <input id="search" type="search" class="form-control" value="{{searchTerm}}" on-keyup="{{keyup}}" required?="{{required}}">
+      <i class="search icon"></i>
+    </div>
+    <template if="{{results.isNotEmpty}}">
+      <div id="suggestions" class="ui selection list">
+        <template repeat="{{field in results}}">
+        <div class="item" on-click="{{select}}" data-field="{{field}}">
+          <div class="content">{{field}}</div>
+        </div>
+        </template>
+      </div>
+    </template>
+  </template>
+  <script type="application/dart" src="nx_xpath.dart"></script>
+</polymer-element>

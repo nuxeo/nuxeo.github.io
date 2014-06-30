@@ -1,10 +1,14 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="nx_batch_upload.html">
 <link rel="import" href="nx_request_monitor.html">
 <link rel="import" href="nx_request_options.html">
 <link rel="import" href="nx_widget.html">
+<link rel="import" href="nx_xpath.html">
 <polymer-element name="nx-operation">
 <template>
 
   <link rel="stylesheet"  href="../semantic/elements/button.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/elements/divider.min.css" no-shim>
   <link rel="stylesheet"  href="../semantic/elements/header.min.css" no-shim>
   <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
   <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
@@ -14,10 +18,13 @@
   <link rel="stylesheet"  href="../semantic/collections/form.min.css" no-shim>
   <link rel="stylesheet"  href="../semantic/collections/message.min.css" no-shim>
   <link rel="stylesheet"  href="../semantic/collections/table.min.css" no-shim>
-  
+
   <link rel="stylesheet"  href="../semantic/modules/accordion.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/modules/dimmer.min.css" no-shim>
   <link rel="stylesheet"  href="../semantic/modules/dropdown.min.css" no-shim>
-  
+  <link rel="stylesheet"  href="../semantic/modules/modal.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/modules/transition.min.css" no-shim>
+
   <link rel="stylesheet"  href="../css/style.css" no-shim>
 
   <div class="ui huge header">POST /api/automation/{{name}}</div>
@@ -37,38 +44,46 @@
             <select class="ui dropdown selection" value="{{method.inputType}}">
               <option template repeat="{{method in methods}}">{{method.inputType}}</option>
             </select>
-            <!--            
-            <div class="ui dropdown selection">
-              <div class="default text">Choose</div>
-              <i class="dropdown icon"></i>
-              <div class="menu">
-                <template repeat="{{m in methods}}">
-                  <div class="item" data-value="{{m.inputType}}">{{m.inputType}}</div>
-                </template>
-              </div>
-            </div>
-            -->
           </td>
           <td>
-            <nx-widget
-              type="{{method.inputType}}"
-              datatype="{{method.inputType}}"
-              required="{{true}}"
-              value="{{method.input}}">
-              </nx-widget>
+            <template if="{{batch == null}}">
+              <nx-widget
+                type="{{method.inputType}}"
+                datatype="{{method.inputType}}"
+                required="{{true}}"
+                value="{{method.input}}">
+                </nx-widget>
+            </template>
+            <template if="{{method.inputType == 'blob' || method.inputType == 'bloblist'}}">
+              <template if="{{batch == null}}"><div class="ui horizontal divider">Or</div></template>
+              <!-- Reference a batch -->
+             <div class="ui button" on-click="{{referenceBatch}}">
+              Reference {{ (batch == null) ? "a Batch" : batch.batchId}}
+              <template if="{{batch}}"><i class="close icon" on-click="{{clearBatch}}"></i></template>
+             </div>
+             <div class="ui modal" style="width: auto;">
+              <i class="close icon"></i>
+              <div class="header">
+                Select a batch
+              </div>
+              <div class="content">
+                <nx-batch-reference connectionId="{{connectionId}}" readonly="true" selected="{{batch}}"></nx-batch-reference>
+              </div>
+            </div>
+            </template>
           </td>
         </tr>
       </tbody>
     </table>
   </template>
   </div>
-       
-  <div class="ui form">   
-    
+
+  <div class="ui form">
+
     <!-- Parameters -->
     <template if="{{params.length > 0}}">
       <div class="ui medium blue header">Parameters</div>
-      
+
       <table class="ui large blue basic table">
         <thead>
           <tr><th>Name</th>
@@ -91,13 +106,16 @@
           </tr>
         </tbody>
       </table>
-      
+
     </template>
   </div>
 
   <!-- Run with options -->
-  <div id="options" class="ui fluid accordion">                        
+  <div id="options" class="ui fluid accordion">
     <div class="title" style="text-align: right;">
+     <div class="ui clearing">
+             <i class="">Click on Run for executing the request. You can also click on the "settings" icon for adding custom headers to your request. Then click on the "CURL request" tab for seeing the details of the request. </i>
+             </div>
         <i class="settings icon"></i>
         <!-- Submit button -->
       <div class="ui red submit button" on-click="{{callOp}}">Run</div>
@@ -117,7 +135,7 @@
   </template>
 
   <br/>
-  
+
   <!-- Output -->
   <nx-request-monitor request="{{opRequest}}" response="{{opResponse}}"></nx-request-monitor>
 

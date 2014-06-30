@@ -1,0 +1,37 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="nx_batch.html">
+<polymer-element name="nx-batch-reference">
+  <template>
+    <link rel="stylesheet"  href="../semantic/collections/message.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/elements/button.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/header.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/label.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/modules/transition.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/views/list.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../css/style.css" no-shim>
+
+    <div id="batches">
+    <template if="{{batches.isEmpty}}">
+      <div class="ui warning message">
+        No batches created yet.
+      </div>
+    </template>
+    <template repeat="{{batchId in batches}}">
+      <nx-batch readonly="{{readonly}}" batchId="{{batchId}}" connectionId="{{connectionId}}" on-click="{{select}}">
+        <template if="{{!readonly}}">
+          <i class="big trash action icon" style="float: right;" on-click="{{delete}}" data-id="{{batchId}}"></i>
+        </template>
+      </nx-batch>
+    </template>
+    </div>
+
+  </template>
+<script type="application/dart" src="nx_batch_reference.dart"></script>
+</polymer-element>

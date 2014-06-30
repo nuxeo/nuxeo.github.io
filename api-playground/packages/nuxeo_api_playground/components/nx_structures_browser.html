@@ -1,3 +1,5 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="nx_schema.html">
 <link rel="import" href="ui_sidebar.html">
 <polymer-element name="nx-structures-browser">
   <template>
@@ -7,17 +9,17 @@
     <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/elements/label.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
-  
+
     <link rel="stylesheet"  href="../semantic/collections/breadcrumb.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/grid.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/menu.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/table.min.css" no-shim>
-    
+
     <link rel="stylesheet"  href="../semantic/modules/accordion.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/modules/transition.min.css" no-shim>
-    
+
     <link rel="stylesheet"  href="../semantic/views/list.min.css" no-shim>
-    
+
     <link rel="stylesheet"  href="../css/style.css" no-shim>
     <!-- Sidebar -->
     <ui-sidebar>
@@ -36,7 +38,7 @@
         </div>
 
         <!-- Schemas, Facets and Doctypes -->
-        <div class="ui fluid blue accordion" style="overflow:hidden">
+        <div id="datastructures" class="ui fluid blue accordion" style="overflow:hidden">
 
           <template repeat="{{type in items.keys}}">
             <template if="{{(items[type] | filter(searchFilter)).isNotEmpty}}">
@@ -62,11 +64,11 @@
     </ui-sidebar>
 
     <!-- Main page -->
-    <div class="ui page grid">
+    <div class="ui page grid" id="main-page">
       <div id="main" class="column">
 
         <!-- Breadcrumb -->
-        <div class="ui segment">
+        <div class="ui segment brdcrmb">
          <div class="ui breadcrumb">
           <a class="section" on-click="{{goHome}}"><i class="ui home icon"></i></a>
           <div class="divider"> / </div>
@@ -94,7 +96,7 @@
 
         <template if="{{selectedItem}}">
           <div class="ui huge header">{{selectedItem.name}}</div>
-          
+
           <template if="{{selectedItem != null && selectedType != 'schemas'}}">
             <i class="sitemap icon link" on-click="{{showDiagram}}"></i>
           </template>
@@ -103,27 +105,12 @@
           <template if="{{selectedType == 'schemas'}}">
 
             <template if="{{selectedItem.prefix.isNotEmpty}}">
-              <div class="ui label">
+              <div class="ui gutter label">
                 PREFIX: {{selectedItem.prefix}}
               </div>
             </template>
 
-            <br/>
-
-            <table class="ui large basic blue table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Type</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr template repeat="{{field in selectedItem.fields | sort('name')}}">
-                  <td>{{field.name}}</td>
-                  <td>{{field.type}}</td>
-                </tr>
-              </tbody>
-            </table>
+            <nx-schema schema="{{selectedItem}}"></nx-schema>
 
          </template>
 
@@ -144,7 +131,7 @@
 
             <template if="{{selectedItem.parent}}">
               <div class="ui label">
-                EXTENDS: <a style="color:#00adff;" on-click="{{select}}" data-id="types-{{selectedItem.parent}}">{{selectedItem.parent}}</a>
+                EXTENDS: <a on-click="{{select}}" data-id="types-{{selectedItem.parent}}">{{selectedItem.parent}}</a>
               </div>
             </template>
 
@@ -165,11 +152,11 @@
             </template>
 
          </template>
-          
+
         </template>
       </div>
     </div>
-    
+
   </template>
   <script type="application/dart" src="nx_structures_browser.dart"></script>
 

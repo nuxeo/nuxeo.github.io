@@ -1,9 +1,10 @@
+<link rel="import" href="../../../../packages/polymer/polymer.html">
 <polymer-element name="nx-tree-node">
   <template>
     <link rel="stylesheet"  href="../../semantic/elements/icon.min.css" no-shim>
     <link rel="stylesheet"  href="../../semantic/elements/image.min.css" no-shim>
     <link rel="stylesheet"  href="../../semantic/elements/label.min.css" no-shim>
-    
+
     <link rel="stylesheet"  href="../../semantic/modules/accordion.min.css" no-shim>
     <style>
       .ui.tree.accordion {
@@ -11,19 +12,20 @@
       -webkit-box-shadow: none;
       box-shadow: none;
       max-width: none;
+      width: auto;
       }
 
       .ui.tree.accordion .title,
       .ui.tree.accordion .accordion .title {
       background-color: transparent;
       border-top: none;
-      padding-left: 0em;
-      padding-right: 0em;
+      padding: .3em 0;
+      color: #203f7d;
       }
 
       .ui.tree.accordion .content,
       .ui.tree.accordion .accordion .content {
-      padding: 0em 2em;
+      padding: 0 .3em 0 .6em;
       }
 
       .ui.tree.accordion .active.title,
@@ -31,24 +33,24 @@
       background-color: transparent;
       }
 
-      .ui.tree.accordion .selected:after {
-      content: "\2713";
+      .ui.tree.accordion .selected {
+      color: #00adff;
       }
     </style>
-    
-    <div class="ui tree accordion">                        
+
+    <div class="ui tree accordion">
       <div class="title">
         <template if="{{isFolderish}}"><i class="icon" on-click="{{toggle}}"></i></template>
         <span class="label" on-click="{{toggleSelection}}"><img class="tiny image" src="{{icon}}"> {{doc.title}}</span>
       </div>
-      
+
       <div class="content">
         <template repeat="{{child in children}}">
             <nx-tree-node connectionId="{{connectionId}}" docId="{{child.uid}}"></nx-tree-node>
         </template>
       </div>
     </div>
-    
+
   </template>
   <script type="application/dart" src="tree_node.dart"></script>
 </polymer-element>

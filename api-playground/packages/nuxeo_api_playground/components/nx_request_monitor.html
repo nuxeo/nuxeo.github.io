@@ -1,3 +1,4 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
 <polymer-element name="nx-request-monitor">
 <template>
 
@@ -22,9 +23,9 @@
       <!-- Status code and text -->
       <template if="{{response.status != 0}}">
         <div class="ui top right attached label"><div class="detail">{{response.status}}</div> {{response.statusText}}</div>
-      </template>  
+      </template>
       <!-- Content Type -->
-      <div class="ui ribbon label">{{contentType}} <a href="{{downloadUrl}}" title="Download"><i class="download disk icon"></i></a></div>
+      <div class="ui ribbon label">{{contentType}} <a target="_blank" href="{{downloadUrl}}" title="Download"><i class="download disk icon"></i></a></div>
       <!-- Body -->
       <template if="{{contentType.startsWith('application/json') || contentType == 'text/plain'}}">
         <pre><code>{{body}}</code></pre>
@@ -37,7 +38,7 @@
         <p>"{{key}}": "{{request.headers[key]}}"</p>
       </template>
       </code>
-      
+
       <div class="ui ribbon label">Response Headers</div>
       <code class="json">
       <template repeat="{{key in response.headers.keys}}">
