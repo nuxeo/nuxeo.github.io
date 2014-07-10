@@ -10,27 +10,18 @@
 
     <div class="ui form">
         <div class="two fields">
-          <div class="field"><label>Nuxeo-Transaction-Timeout <i class="help icon" title="This header can be used when you want to control the transaction duration. As an example, if you want to inject a large blob 
-in the repository, the default transaction timeout may be not enough. You can specify a 5 minutes timeout for the chain you're executing :
-Nuxeo-Transaction-Timeout: 300"></i></label> </div>
+          <div class="field"><label>Nuxeo-Transaction-Timeout</label></div>
           <div class="field"><input type="text" value="{{timeout | inSeconds}}"></div>
         </div>
         <div class="two fields">
-            <div class="field"><label>X-NXDocumentProperties <i class="help icon" title="This header can be used whenever a Document will be returned by the server.
-The header is forcing the server to fill up the returned document with data from schemas that matches the X-NXDocumentProperties filter.
-If you don't use the header only the minimal required properties of the document are returned.
-To have more properties in the returned document, you can specify a list of document schema names:
-X-NXDocumentProperties: dublincore, file
-or to have all the document content, you can use the '*' character as the filter value:
-X-NXDocumentProperties: *"></i></label></div>
+            <div class="field"><label>X-NXDocumentProperties</label></div>
             <div class="field"><input type="text" value="{{schemas | asCSV}}"></div>
         </div>
         <div class="two fields">
-            <div class="field"><label>X-NXRepository<i class="help icon" title="This header can be used to when you need to access a specific repository. The default value is 'default', as it's the default repository name in Nuxeo. This is handy if you have change the default name or if you have multiple repositories.
-X-NXRepository: myCustomRepositoryName"></i></label></div>
+            <div class="field"><label>X-NXRepository</label></div>
             <div class="field"><input type="text" value="{{repository}}"></div>
         </div>
-          <div class="two fields">
+        <div class="two fields">
             <div class="field">
               <label style="display:inline">
               X-NXContext-Category
