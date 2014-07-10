@@ -19,9 +19,7 @@
 
     <div id="batches">
     <template if="{{batches.isEmpty}}">
-      <div class="ui warning message">
-        No batches created yet.
-      </div>
+      <content select=".empty"></content>
     </template>
     <template repeat="{{batchId in batches}}">
       <nx-batch readonly="{{readonly}}" batchId="{{batchId}}" connectionId="{{connectionId}}" on-click="{{select}}">

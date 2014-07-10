@@ -55,6 +55,10 @@ box-shadow: 0 0 0 1px #d9d9d9;
   background-color: rgba(255,255,255,0.5);
 }
 
+.connection a{
+  color:white;
+}
+
 /* Modules */
 #modules {
   padding: 3% 8% 5%;
