@@ -21,9 +21,9 @@
 
           <!-- Not connected -->
           <template if="{{!isConnected}}">
-            <h1>Discover Nuxeo Platform API</h1>
+            <h1>Browse your platform API</h1>
 
-            <p>Connect the playground with a Nuxeo Platform server and browse the repository, the data structures, as well as the resources and command endpoints. Understand which attributes are expected, as well as which headers can be used by performing real tests.</p>
+            <p>Connect the playground with your server and browse repository, data structures, resources and command endpoints, adapters, REST contributors and business objects.</p>
 
             <div class="ui form attached segment">
               <div class="ui grid">
@@ -61,7 +61,11 @@
           <template if="{{isConnected}}">
 
             <div style="float:right">
-             {{username}}, connected to <a href="{{nuxeoUrl}}" target="alt">{{nuxeoUrl}}</a>
+
+                {{nuxeoUrl}}
+                <img class="ui avatar image" src="{{avatar}}">
+                {{username}}
+
               <div class="ui red button" on-click="{{disconnect}}">Sign out</div>
 
             </div>

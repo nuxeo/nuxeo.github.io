@@ -145,19 +145,11 @@
                        <div class="ui modal" style="width: auto;">
                         <i class="close icon"></i>
                         <div class="header">
-                          Select a batch. 
+                          Select a batch
                         </div>
                         <div class="content">
                           <template if="{{batch}}">
-                          <div class="field">Copy past the JSON string below and report it on the document object you want to create<br/> or update, for the file property for which you want to upload a file, ex:<br/>
-                        <pre>{"entity-type":"document","repository":"default",
-                        "uid":"73083c4b-9f06-43ef-b26d-7b05bc845473",...,
-                        "properties":{
-                        "dc:title":"Headquarters",...
-                        "file:content":
-                        <b>{"upload-batch":"batch-1404143791155-30210","upload-fileId":"0"}</b>
-                        ,...}</pre></div>
-                            <div class="ui ribbon label">{{batch.batchId}}</div>
+                            <div class="ui ribbon label">{{batch.id}}</div>
                             <textarea>{{batch.asJson}}</textarea>
                          </template>
                           <nx-batch-reference connectionId="{{connectionId}}" readonly="true" selected="{{batch}}"></nx-batch-reference>
@@ -166,14 +158,7 @@
                     </template>
                   </td>
                   <td>{{param.description}}</td>
-                  <td>
-                  <template if="{{param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group'}}">
-                  <a target="alt" href="http://doc.nuxeo.com/display/public/NXDOC/REST+API+Entity+Types#RESTAPIEntityTypes-{{param.dataType}}">{{param.dataType}}</a>
-                  </template>
-                  <template if="{{!(param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group')}}">
-                  {{param.dataType}}
-                  </template>
-                  <span class="ui small label" style="float:right">{{param.type}}</span></td>
+                  <td>{{param.dataType}}<span class="ui small label" style="float:right">{{param.type}}</span></td>
                 </tr>
               </tbody>
            </table>
@@ -182,9 +167,6 @@
           <!-- Run with options -->
           <div id="options" class="ui fluid accordion">
             <div class="title" style="text-align: right;">
-            <div class="ui clearing">
-             <i class="">Click on Run for executing the request. You can also click on the "settings" icon for adding custom headers to your request. Then click on the "CURL request" tab for seeing the details of the request. </i>
-             </div>
               <i class="settings icon"></i>
 
               <!-- Submit button -->
@@ -203,6 +185,7 @@
               </template>
             </div>
           </template>
+
           <br/>
 
           <!-- Output -->

@@ -90,7 +90,6 @@
         }
     </style><script src="packages/web_components/platform.js"></script>
 
-
 <!-- unminfied for debugging:
 <link rel="import" href="src/js/polymer/layout.html">
 <script src="src/js/polymer/polymer.concat.js"></script>
@@ -329,7 +328,7 @@ html /deep/ [block] {
 
 /* ie support for hidden */
 html /deep/ [hidden] {
-  display: none !important;
+  display: none;
 }
 
 html /deep/ [relative] {
@@ -367,10 +366,7 @@ html /deep/ [segment], html /deep/ segment {
   border-radius: 5px 5px 5px 5px;
 }
 
-</style><script src="packages/polymer/src/js/polymer/polymer.js"></script><script>
-// TODO(sigmund): remove this script tag (dartbug.com/19650). This empty
-// script tag is necessary to work around a bug in Chrome 36.
-</script>
+</style><script src="packages/polymer/src/js/polymer/polymer.js"></script>
 
 
 
@@ -549,9 +545,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
 .connectblock .ui.segment.attached {
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
-}
-.connection a{
-  color:white;
 }
 
 /* Modules */
@@ -771,9 +764,9 @@ input:required:valid:after {
 
           <!-- Not connected -->
           <template if="{{!isConnected}}">
-            <h1>Discover Nuxeo Platform API</h1>
+            <h1>Browse your platform API</h1>
 
-            <p>Connect the playground with a Nuxeo Platform server and browse the repository, the data structures, as well as the resources and command endpoints. Understand which attributes are expected, as well as which headers can be used by performing real tests.</p>
+            <p>Connect the playground with your server and browse repository, data structures, resources and command endpoints, adapters, REST contributors and business objects.</p>
 
             <div class="ui form attached segment">
               <div class="ui grid">
@@ -811,7 +804,11 @@ input:required:valid:after {
           <template if="{{isConnected}}">
 
             <div style="float:right">
-             {{username}}, connected to <a href="{{nuxeoUrl}}" target="alt">{{nuxeoUrl}}</a>
+
+                {{nuxeoUrl}}
+                <img class="ui avatar image" src="{{avatar}}">
+                {{username}}
+
               <div class="ui red button" on-click="{{disconnect}}">Sign out</div>
 
             </div>
@@ -1187,9 +1184,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -1445,6 +1439,7 @@ input:required:valid:after {
         <template if="{{document}}">
           <div class="ui vertical segment">
             <div class="ui huge header">{{document.type}}</div>
+            <p>Description of the document type. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
             <div class="ui medium header">Properties</div>
             <table class="ui large basic blue table">
               <thead>
@@ -1544,9 +1539,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
 .connectblock .ui.segment.attached {
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
-}
-.connection a{
-  color:white;
 }
 
 /* Modules */
@@ -2025,9 +2017,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -2496,9 +2485,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -2958,9 +2944,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -3414,9 +3397,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -3857,9 +3837,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -4288,9 +4265,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -4518,19 +4492,6 @@ input:required:valid:after {
         <div class="ui basic segment">
           <img class="ui small left floated image" src="packages/nuxeo_api_playground/images/{{icon}}">
           <p>{{description}}</p>
-          <p>
-          The default way Resources and Command (Automation) APIs deal with Blobs is to use the standard HTTP MultiPart Encoding.
-This strategy can not fit when:
-</p><ul>
-<li>Your client does not natively support multipart encoding; 
-Ex: JavaScript (without using a Form), Android SDK 2.x.</li>
-<li>You have several files to send, but prefer to send them as separated chunk;Ex: You have an HTTP proxy that will limit POST size.</li>
-<li>You want to upload files as soon as possible and then run the operation when everything has been uploaded on the server; 
-Ex: You upload pictures you select from a mobile device.</li>
-</ul>
-In those situations, the Batch endpoint provides you a way for first uploading a set of files, then be able to reference that set of files from the API.
-You should read the <a target="alt" href="http://doc.nuxeo.com/x/OYLZ">dedicated documentation page</a> for understanding more about this endpoint. In this API playground, we allow you to upload multiple batches (you just need to change the id), and then to reference those batches both in the Resources section and in the Command one (for operations that accepts blob/blobs in input).
-<p></p>
         </div>
 
         <!-- Create -->
@@ -4848,9 +4809,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
 .connectblock .ui.segment.attached {
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
-}
-.connection a{
-  color:white;
 }
 
 /* Modules */
@@ -5206,9 +5164,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -5421,27 +5376,18 @@ input:required:valid:after {
 
     <div class="ui form">
         <div class="two fields">
-          <div class="field"><label>Nuxeo-Transaction-Timeout <i class="help icon" title="This header can be used when you want to control the transaction duration. As an example, if you want to inject a large blob 
-in the repository, the default transaction timeout may be not enough. You can specify a 5 minutes timeout for the chain you're executing :
-Nuxeo-Transaction-Timeout: 300"></i></label> </div>
+          <div class="field"><label>Nuxeo-Transaction-Timeout</label></div>
           <div class="field"><input type="text" value="{{timeout | inSeconds}}"></div>
         </div>
         <div class="two fields">
-            <div class="field"><label>X-NXDocumentProperties <i class="help icon" title="This header can be used whenever a Document will be returned by the server.
-The header is forcing the server to fill up the returned document with data from schemas that matches the X-NXDocumentProperties filter.
-If you don't use the header only the minimal required properties of the document are returned.
-To have more properties in the returned document, you can specify a list of document schema names:
-X-NXDocumentProperties: dublincore, file
-or to have all the document content, you can use the '*' character as the filter value:
-X-NXDocumentProperties: *"></i></label></div>
+            <div class="field"><label>X-NXDocumentProperties</label></div>
             <div class="field"><input type="text" value="{{schemas | asCSV}}"></div>
         </div>
         <div class="two fields">
-            <div class="field"><label>X-NXRepository<i class="help icon" title="This header can be used to when you need to access a specific repository. The default value is 'default', as it's the default repository name in Nuxeo. This is handy if you have change the default name or if you have multiple repositories.
-X-NXRepository: myCustomRepositoryName"></i></label></div>
+            <div class="field"><label>X-NXRepository</label></div>
             <div class="field"><input type="text" value="{{repository}}"></div>
         </div>
-          <div class="two fields">
+        <div class="two fields">
             <div class="field">
               <label style="display:inline">
               X-NXContext-Category
@@ -5770,9 +5716,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -6093,19 +6036,11 @@ input:required:valid:after {
                        <div class="ui modal" style="width: auto;">
                         <i class="close icon"></i>
                         <div class="header">
-                          Select a batch. 
+                          Select a batch
                         </div>
                         <div class="content">
                           <template if="{{batch}}">
-                          <div class="field">Copy past the JSON string below and report it on the document object you want to create<br> or update, for the file property for which you want to upload a file, ex:<br>
-                        <pre>{"entity-type":"document","repository":"default",
-                        "uid":"73083c4b-9f06-43ef-b26d-7b05bc845473",...,
-                        "properties":{
-                        "dc:title":"Headquarters",...
-                        "file:content":
-                        <b>{"upload-batch":"batch-1404143791155-30210","upload-fileId":"0"}</b>
-                        ,...}</pre></div>
-                            <div class="ui ribbon label">{{batch.batchId}}</div>
+                            <div class="ui ribbon label">{{batch.id}}</div>
                             <textarea>{{batch.asJson}}</textarea>
                          </template>
                           <nx-batch-reference connectionid="{{connectionId}}" readonly="true" selected="{{batch}}"></nx-batch-reference>
@@ -6114,14 +6049,7 @@ input:required:valid:after {
                     </template>
                   </td>
                   <td>{{param.description}}</td>
-                  <td>
-                  <template if="{{param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group'}}">
-                  <a target="alt" href="http://doc.nuxeo.com/display/public/NXDOC/REST+API+Entity+Types#RESTAPIEntityTypes-{{param.dataType}}">{{param.dataType}}</a>
-                  </template>
-                  <template if="{{!(param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group')}}">
-                  {{param.dataType}}
-                  </template>
-                  <span class="ui small label" style="float:right">{{param.type}}</span></td>
+                  <td>{{param.dataType}}<span class="ui small label" style="float:right">{{param.type}}</span></td>
                 </tr>
               </tbody>
            </table>
@@ -6130,9 +6058,6 @@ input:required:valid:after {
           <!-- Run with options -->
           <div id="options" class="ui fluid accordion">
             <div class="title" style="text-align: right;">
-            <div class="ui clearing">
-             <i class="">Click on Run for executing the request. You can also click on the "settings" icon for adding custom headers to your request. Then click on the "CURL request" tab for seeing the details of the request. </i>
-             </div>
               <i class="settings icon"></i>
 
               <!-- Submit button -->
@@ -6151,6 +6076,7 @@ input:required:valid:after {
               </template>
             </div>
           </template>
+
           <br>
 
           <!-- Output -->
@@ -6445,9 +6371,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -6735,9 +6658,6 @@ input:required:valid:after {
   <!-- Run with options -->
   <div id="options" class="ui fluid accordion">
     <div class="title" style="text-align: right;">
-     <div class="ui clearing">
-             <i class="">Click on Run for executing the request. You can also click on the "settings" icon for adding custom headers to your request. Then click on the "CURL request" tab for seeing the details of the request. </i>
-             </div>
         <i class="settings icon"></i>
         <!-- Submit button -->
       <div class="ui red submit button" on-click="{{callOp}}">Run</div>
@@ -7021,9 +6941,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
 .connectblock .ui.segment.attached {
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
-}
-.connection a{
-  color:white;
 }
 
 /* Modules */
@@ -7440,9 +7357,6 @@ box-shadow: 0 0 0 1px #d9d9d9;
   box-shadow: none;
   background-color: rgba(255,255,255,0.5);
 }
-.connection a{
-  color:white;
-}
 
 /* Modules */
 #modules {
@@ -7764,4 +7678,4 @@ input:required:valid:after {
     <nx-sandbox-app connectionid="connection"></nx-sandbox-app>
   
 
-<script src="index.html_bootstrap.dart.js" async=""></script></body></html>
+<script src="index.html_bootstrap.dart.js"></script></body></html>
