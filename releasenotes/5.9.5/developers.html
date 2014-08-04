@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo 5.9.5 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo on Github">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../../stylesheets/base.css">
+	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../../stylesheets/layout.css">
+	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+
+  <div id="mainContainer" class="container">
+  <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
+  <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">5.9.5</span> Release Notes</a></p>
+
+    <div id="welcome">
+
+    <div style="clear:both;"></div>
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+   <h2><a name="anchor-0"></a>MongoDB Backend</h2>
+<p>MongoDB support is now built-in, you don't need to install a marketplace package. A deep refactoring of low layers happened in Nuxeo so as to be able to support a non-transactionnal repository such as MongoDB. This refactoring was made so as to be able to implement other NoSQL backends in the future, as known as "Document-Based-Storage" inside the platform.</p>
+
+    <h2><a name="anchor-1"></a>REST API improvements</h2>
+
+<h3>Content Enricher</h3>
+<p>Former Rest Providers have been renamed "Content Enricher" for more clarity. The corresponding necessary contribution was also changed, see upgrade notes.</p><p> Two content enrichers were added to the platform:
+<ul>
+<li>
+ACL: This adds ACLs of the document to the response. It was previously doable using the @ACL web adaptor. Having a Content Enricher for this allows to get in one same call the doucment and its ACLs.
+</li>
+<li>
+Thumbnail: This one adds url of the Thumbnail Picture to the response. You can use it when doing client slide applications.
+</li>
+</ul>
+<p>The Content Enricher <a href="http://doc.nuxeo.com/x/5wUuAQ" target="_blanck">documentation </a> has been updated.</p>
+<h3>New Versionning Header</h3>
+<p>You can now controle whether a minor or marjor version is created when creating or updating a document via the REST API, using the new "X-Versioning-Option" header, with "MAJOR" or "MINOR" as a value./p>
+
+
+<h2><a name="anchor-2"></a>Elasticsearch</h2>
+
+<p>The Elasticseach integration has been improved. More fields are indexed, following the feebdack of first usecases. Furthermore, the documents are now fetched directly from the Elasticsearch index, instead of only fetching the reference then loading the document from the database. This saves many database queries in the result set construction and thus improves peformances.</p>
+
+<h2><a name="anchor-3"></a>Business Days Management</h2>
+
+<p>A plugin implemented at first for a customer project has been generically re-branded as it can be useful in many situations: "Business Days Management" module allows to compute a date given a delay and the list of holidays for the year. The delay will be added to the start date without counting the week ends and those holidays. See the <a href= "https://github.com/nuxeo/nuxeo-business-days-management" alt="_blank">github repository</a>, we will come up soon with a post around this topic.</p>
+
+ <h2><a name="anchor-4"></a>Generic Video Class Converter</h2>
+
+<p>Thanks to this new Video converter, you can add new video conversion formats without having to write custom java classes. A sample contribution of a new video converter would be:</p>
+<div class="embededCode"><pre>
+&lt;converter name=&quot;convertToMOV&quot;
+  class=&quot;org.nuxeo.ecm.platform.video.convert.VideoConversionConverter&quot;&gt;
+ &lt;sourceMimeType&gt;video/mpeg&lt;/sourceMimeType&gt;
+  &lt;sourceMimeType&gt;video/webm&lt;/sourceMimeType&gt;
+  &lt;sourceMimeType&gt;video/quicktime&lt;/sourceMimeType&gt;
+  &lt;sourceMimeType&gt;video/ogg&lt;/sourceMimeType&gt;
+  &lt;sourceMimeType&gt;video/x-ms-asf&lt;/sourceMimeType&gt;
+  &lt;sourceMimeType&gt;video/x-msvideo&lt;/sourceMimeType&gt;
+  &lt;sourceMimeType&gt;video/flv&lt;/sourceMimeType&gt;
+  &lt;destinationMimeType&gt;video/mov&lt;/destinationMimeType&gt;
+  &lt;parameters&gt;
+    &lt;parameter name=&quot;CommandLineName&quot;&gt;ffmpeg-tomov&lt;/parameter&gt;
+    &lt;parameter name=&quot;videoMimeType&quot;&gt;video/mov&lt;/parameter&gt;
+    &lt;parameter name=&quot;videoExtension&quot;&gt;mov&lt;/parameter&gt;
+    &lt;parameter name=&quot;tmpDirectoryPrefix&quot;&gt;convertToMOV&lt;/parameter&gt;
+  &lt;/parameters&gt;
+&lt;/converter&gt;
+</pre>
+</div>
+
+  </div>
+</div>
+
+
+	<!-- JS
+	================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+    <script src="../../javascripts/float_menu.js"></script>
+    <script src="../../javascripts/lightbox.js"></script>
+
+</body></html>
+
