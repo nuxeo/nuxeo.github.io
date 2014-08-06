@@ -88,22 +88,21 @@ Thumbnail: This one adds url of the Thumbnail Picture to the response. You can u
 
 <p>Thanks to this new Video converter, you can add new video conversion formats without having to write custom Java classes. A sample contribution of a new video converter would be:</p>
 <div class="embededCode"><pre>
-&lt;converter name=&quot;convertToMOV&quot;
-  class=&quot;org.nuxeo.ecm.platform.video.convert.VideoConversionConverter&quot;&gt;
- &lt;sourceMimeType&gt;video/mpeg&lt;/sourceMimeType&gt;
-  &lt;sourceMimeType&gt;video/webm&lt;/sourceMimeType&gt;
-  &lt;sourceMimeType&gt;video/quicktime&lt;/sourceMimeType&gt;
-  &lt;sourceMimeType&gt;video/ogg&lt;/sourceMimeType&gt;
-  &lt;sourceMimeType&gt;video/x-ms-asf&lt;/sourceMimeType&gt;
-  &lt;sourceMimeType&gt;video/x-msvideo&lt;/sourceMimeType&gt;
-  &lt;sourceMimeType&gt;video/flv&lt;/sourceMimeType&gt;
-  &lt;destinationMimeType&gt;video/mov&lt;/destinationMimeType&gt;
-  &lt;parameters&gt;
-    &lt;parameter name=&quot;CommandLineName&quot;&gt;ffmpeg-tomov&lt;/parameter&gt;
-    &lt;parameter name=&quot;videoMimeType&quot;&gt;video/mov&lt;/parameter&gt;
-    &lt;parameter name=&quot;videoExtension&quot;&gt;mov&lt;/parameter&gt;
-    &lt;parameter name=&quot;tmpDirectoryPrefix&quot;&gt;convertToMOV&lt;/parameter&gt;
-  &lt;/parameters&gt;
+&lt;converter name=&quot;convertToMOV&quot; class=&quot;org.nuxeo.ecm.platform.video.convert.VideoConversionConverter&quot;&gt;
+    &lt;sourceMimeType&gt;video/mpeg&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/webm&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/quicktime&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/ogg&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/x-ms-asf&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/x-msvideo&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/flv&lt;/sourceMimeType&gt;
+    &lt;destinationMimeType&gt;video/mov&lt;/destinationMimeType&gt;
+    &lt;parameters&gt;
+        &lt;parameter name=&quot;CommandLineName&quot;&gt;ffmpeg-tomov&lt;/parameter&gt;
+        &lt;parameter name=&quot;videoMimeType&quot;&gt;video/mov&lt;/parameter&gt;
+        &lt;parameter name=&quot;videoExtension&quot;&gt;mov&lt;/parameter&gt;
+        &lt;parameter name=&quot;tmpDirectoryPrefix&quot;&gt;convertToMOV&lt;/parameter&gt;
+    &lt;/parameters&gt;
 &lt;/converter&gt;
 </pre>
 </div>
