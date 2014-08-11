@@ -37,8 +37,8 @@
             },
             {
                 "date": "06-Aug-2014 14:18",
-                "description": "Nuxeo Platform 5.9.5 Virtual Machine image (OVF: VirtualBox, RHEV, VMware ESX). Based on Ubuntu OS, including PostgreSQL, Tomcat and all the third-party dependencies.",
-                "label": "nuxeo-5.9.5-vm.zip",
+                "description": "Nuxeo Platform 5.9.5 Virtual Machine image (VirtualBox, RHEV, VMware ESX). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+                "label": "nuxeo-5.9.5-vm.zip (includes OVF and VMX)",
                 "md5": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-5.9.5-vm.zip.md5",
                 "os": "vm",
                 "size": "709M",
