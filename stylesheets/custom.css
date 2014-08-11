@@ -96,7 +96,7 @@ div.current {
   color: #348DB6 !important;
 }
 
-.os div.vm {
+.os div.vm, .os div.deb {
   background: -moz-linear-gradient(center top, #FFCB8C 0%, #FFB660 100%) repeat
     scroll 0 0 transparent;
   border: 1px solid #DB9C51;
