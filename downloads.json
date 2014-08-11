@@ -2,6 +2,74 @@
     {
         "data": [
             {
+                "date": "11-Aug-2014 14:14",
+                "description": "",
+                "label": "5.9.5 Release Notes.pdf",
+                "os": "all",
+                "size": "61Ko",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.5/5.9.5%20Release%20Notes.pdf"
+            },
+            {
+                "date": "11-Aug-2014 14:14",
+                "description": "",
+                "label": "5.9.5 Upgrade Notes.pdf",
+                "os": "all",
+                "size": "100Ko",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.5/5.9.5%20Upgrade%20Notes.pdf"
+            },
+            {
+                "date": "06-Aug-2014 13:07",
+                "description": "",
+                "label": "nuxeo-5.9.5-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-5.9.5-setup.exe.md5",
+                "os": "win",
+                "size": "273M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-5.9.5-setup.exe"
+            },
+            {
+                "date": "06-Aug-2014 12:06",
+                "description": "",
+                "label": "nuxeo-5.9.5-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-5.9.5-sources.zip.md5",
+                "os": "all",
+                "size": "63M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-5.9.5-sources.zip"
+            },
+            {
+                "date": "06-Aug-2014 14:18",
+                "description": "",
+                "label": "nuxeo-5.9.5-vm.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-5.9.5-vm.zip.md5",
+                "os": "vm",
+                "size": "709M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-5.9.5-vm.zip"
+            },
+            {
+                "date": "07-Aug-2014 17:23",
+                "description": "",
+                "label": "nuxeo-cap-5.9.5-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-cap-5.9.5-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "346M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-cap-5.9.5-tomcat-sdk.zip"
+            },
+            {
+                "date": "07-Aug-2014 17:23",
+                "description": "",
+                "label": "nuxeo-cap-5.9.5-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-cap-5.9.5-tomcat.zip.md5",
+                "os": "all",
+                "size": "180M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-cap-5.9.5-tomcat.zip"
+            }
+        ],
+        "date": "2014-08-06",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.9.5/",
+        "name": "5.9.5"
+    },
+    {
+        "data": [
+            {
                 "date": "11-Jun-2014 11:57",
                 "description": "",
                 "label": "5.9.4 Release Notes.pdf",
