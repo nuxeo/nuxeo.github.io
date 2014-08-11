@@ -1,1491 +1,1702 @@
-[{ "data" : [ 
-     { "date" : "11-Jun-2014 11:57",
-          "description" : "",
-          "label" : "5.9.4 Release Notes.pdf",
-          "os" : "all",
-          "size" : "89Ko",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.4/5.9.4%20Release%20Notes.pdf"
-        },
-        { "date" : "11-Jun-2014 16:32",
-          "description" : "",
-          "label" : "5.9.4 Upgrade Notes.pdf",
-          "os" : "all",
-          "size" : "60Ko",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.4/5.9.4%20Upgrade%20Notes.pdf"
-        },
-        { "date" : "09-Jun-2014 11:08",
-          "description" : "",
-          "label" : "nuxeo-5.9.4-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-setup.exe.md5",
-          "os" : "win",
-          "size" : "273M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-setup.exe"
-        },
-        { "date" : "06-Jun-2014 12:45",
-          "description" : "",
-          "label" : "nuxeo-5.9.4-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-sources.zip.md5",
-          "os" : "all",
-          "size" : "63M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-sources.zip"
-        },
-        { "date" : "09-Jun-2014 11:34",
-          "description" : "",
-          "label" : "nuxeo-5.9.4-vm.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-vm.zip.md5",
-          "os" : "vm",
-          "size" : "706M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-vm.zip"
-        },
-        { "date" : "06-Jun-2014 14:29",
-          "description" : "",
-          "label" : "nuxeo-cap-5.9.4-tomcat-sdk.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-cap-5.9.4-tomcat-sdk.zip.md5",
-          "os" : "all",
-          "size" : "253M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-cap-5.9.4-tomcat-sdk.zip"
-        },
-        { "date" : "06-Jun-2014 14:29",
-          "description" : "",
-          "label" : "nuxeo-cap-5.9.4-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-cap-5.9.4-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "179M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-cap-5.9.4-tomcat.zip"
-        }
-      ],
-    "date" : "2014-06-09",
-    "name" : "5.9.4",
-    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.9.4/"
-  },{ "data" : [ 
-     { "date" : "16-Apr-2014 11:39",
-          "description" : "",
-          "label" : "5.9.3 Release Notes.pdf",
-          "os" : "all",
-          "size" : "1.0M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.3/5.9.3%20Release%20Notes.pdf"
-        },
-        { "date" : "16-Apr-2014 11:39",
-          "description" : "",
-          "label" : "5.9.3 Upgrade Notes.pdf",
-          "os" : "all",
-          "size" : "68Ko",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.3/5.9.3%20Upgrade%20Notes.pdf"
-        },
-        { "date" : "14-Apr-2014 17:37",
-          "description" : "",
-          "label" : "nuxeo-5.9.3-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-setup.exe.md5",
-          "os" : "win",
-          "size" : "273M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-setup.exe"
-        },
-        { "date" : "10-Apr-2014 21:24",
-          "description" : "",
-          "label" : "nuxeo-5.9.3-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-sources.zip.md5",
-          "os" : "all",
-          "size" : "63M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-sources.zip"
-        },
-        { "date" : "14-Apr-2014 17:58",
-          "description" : "",
-          "label" : "nuxeo-5.9.3-vm.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-vm.zip.md5",
-          "os" : "vm",
-          "size" : "703M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-vm.zip"
-        },
-        { "date" : "11-Apr-2014 10:24",
-          "description" : "",
-          "label" : "nuxeo-cap-5.9.3-tomcat-sdk.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-cap-5.9.3-tomcat-sdk.zip.md5",
-          "os" : "all",
-          "size" : "248M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-cap-5.9.3-tomcat-sdk.zip"
-        },
-        { "date" : "11-Apr-2014 10:23",
-          "description" : "",
-          "label" : "nuxeo-cap-5.9.3-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-cap-5.9.3-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "180M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-cap-5.9.3-tomcat.zip"
-        }
-      ],
-    "date" : "2014-04-16",
-    "name" : "5.9.3",
-    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.9.3/"
-  },
-{ "data" : [ 
-     { "date" : "19-Feb-2014 15:39",
-          "description" : "",
-          "label" : "5.9.2 Release Notes.pdf",
-          "os" : "all",
-          "size" : "34Ko",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.2/5.9.2%20Release%20Notes.pdf"
-        },
-        { "date" : "17-Feb-2014 14:00",
-          "description" : "",
-          "label" : "5.9.2 Upgrade Notes.pdf",
-          "os" : "all",
-          "size" : "77Ko",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.2/5.9.2%20Upgrade%20Notes.pdf"
-        },
-        { "date" : "18-Feb-2014 12:42",
-          "description" : "",
-          "label" : "nuxeo-5.9.2-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-setup.exe.md5",
-          "os" : "win",
-          "size" : "268M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-setup.exe"
-        },
-        { "date" : "17-Feb-2014 18:05",
-          "description" : "",
-          "label" : "nuxeo-5.9.2-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-sources.zip.md5",
-          "os" : "all",
-          "size" : "63M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-sources.zip"
-        },
-        { "date" : "18-Feb-2014 13:01",
-          "description" : "",
-          "label" : "nuxeo-5.9.2-vm.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-vm.zip.md5",
-          "os" : "vm",
-          "size" : "687M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-vm.zip"
-        },
-        { "date" : "17-Feb-2014 18:46",
-          "description" : "",
-          "label" : "nuxeo-cap-5.9.2-tomcat-sdk.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-cap-5.9.2-tomcat-sdk.zip.md5",
-          "os" : "all",
-          "size" : "243M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-cap-5.9.2-tomcat-sdk.zip"
-        },
-        { "date" : "17-Feb-2014 18:46",
-          "description" : "",
-          "label" : "nuxeo-cap-5.9.2-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-cap-5.9.2-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "174M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-cap-5.9.2-tomcat.zip"
-        }
-      ],
-    "date" : "2014-02-18",
-    "name" : "5.9.2",
-    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.9.2/"
-  },
-{ "data" : [ 
-     { "date" : "18-Dec-2013 18:21",
-          "description" : "",
-          "label" : "5.9.1 Release Notes.pdf",
-          "os" : "all",
-          "size" : "104Ko",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/5.9.1%20Release%20Notes.pdf"
-        },
-        { "date" : "18-Dec-2013 16:59",
-          "description" : "",
-          "label" : "5.9.1 Upgrade Notes.pdf",
-          "os" : "all",
-          "size" : "64K",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/5.9.1%20Upgrade%20Notes.pdf"
-        },
-        { "date" : "18-Dec-2013 16:24",
-          "description" : "",
-          "label" : "nuxeo-5.9.1-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-setup.exe.md5",
-          "os" : "win",
-          "size" : "261M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-setup.exe"
-        },
-        { "date" : "18-Dec-2013 14:22",
-          "description" : "",
-          "label" : "nuxeo-5.9.1-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-sources.zip.md5",
-          "os" : "all",
-          "size" : "63",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-sources.zip"
-        },
-        { "date" : "18-Dec-2013 17:06",
-          "description" : "",
-          "label" : "nuxeo-5.9.1-vm.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-vm.zip.md5",
-          "os" : "vm",
-          "size" : "667M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-vm.zip"
-        },
-        { "date" : "18-Dec-2013 14:24",
-          "description" : "",
-          "label" : "nuxeo-cap-5.9.1-tomcat-sdk.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat-sdk.zip.md5",
-          "os" : "all",
-          "size" : "300M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat-sdk.zip"
-        },
-        { "date" : "18-Dec-2013 14:24",
-          "description" : "",
-          "label" : "nuxeo-cap-5.9.1-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "168M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat.zip"
-        }
-      ],
-    "date" : "2013-12-18",
-    "name" : "5.9.1",
-    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.9.1/"
-  },
-  { "data" : [ 
-        { "date" : "04-Nov-2013 12:43",
-          "description" : "",
-          "label" : "5.8 Release Notes(Since 5.6).pdf",
-          "os" : "all",
-          "size" : "5.4M",
-          "url" : "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Release%20Notes(Since%205.6).pdf"
-        },
-        { "date" : "31-Oct-2013 16:23",
-          "description" : "",
-          "label" : "5.8 Upgrade Notes(Since 5.6).pdf",
-          "os" : "all",
-          "size" : "150K",
-          "url" : "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Upgrade%20Notes(Since%205.6).pdf"
-        },
-        { "date" : "31-Oct-2013 16:23",
-          "description" : "",
-          "label" : "5.8 Release Notes(Since 5.7.3).pdf",
-          "os" : "all",
-          "size" : "889K",
-          "url" : "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Release%20Notes(Since%205.7.3).pdf"
-        },
-        { "date" : "31-Oct-2013 16:28",
-          "description" : "",
-          "label" : "5.8 Upgrade Notes(Since 5.7.3).pdf",
-          "os" : "all",
-          "size" : "77K",
-          "url" : "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Upgrade%20Notes(Since%205.7.3).pdf"
-        },
-        { "date" : "30-Oct-2013 09:29",
-          "description" : "",
-          "label" : "nuxeo-5.8-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-setup.exe.md5",
-          "os" : "win",
-          "size" : "261M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-setup.exe"
-        },
-        { "date" : "30-Oct-2013 12:10",
-          "description" : "",
-          "label" : "nuxeo-5.8-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-sources.zip.md5",
-          "os" : "all",
-          "size" : "64M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-sources.zip"
-        },
-        { "date" : "30-Oct-2013 10:46",
-          "description" : "",
-          "label" : "nuxeo-5.8-vm.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-vm.zip.md5",
-          "os" : "vm",
-          "size" : "679M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-vm.zip"
-        },
-        { "date" : "30-Oct-2013 17:41",
-          "description" : "",
-          "label" : "nuxeo-cap-5.8-tomcat-sdk.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat-sdk.zip.md5",
-          "os" : "all",
-          "size" : "300M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat-sdk.zip"
-        },
-        { "date" : "30-Oct-2013 17:40",
-          "description" : "",
-          "label" : "nuxeo-cap-5.8-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "168M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat.zip"
-        },
-        { "date" : "30-Oct-2013 17:45",
-          "description" : "",
-          "label" : "nuxeo-shell-5.8.jar",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-shell-5.8.jar.md5",
-          "os" : "all",
-          "size" : "5.9M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-shell-5.8.jar"
-        }
-      ],
-    "date" : "2013-10-30",
-    "name" : "5.8",
-    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.8/"
-  },
- { "date" : "2013-10-31",
-    "name" : "5.7.3 to 5.8",
-    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.7.3_5.8/"
-  },
-{ "data" : [ 
-        { "date" : "25-Sep-2013 15:02",
-          "description" : "",
-          "label" : "5.7.3 Release Notes.pdf",
-          "os" : "all",
-          "size" : "1.3M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/5.7.3%20Release%20Notes.pdf"
-        },
-        { "date" : "25-Sep-2013 14:50",
-          "description" : "",
-          "label" : "5.7.3 Upgrade Notes.pdf",
-          "os" : "all",
-          "size" : "72K",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/5.7.3%20Upgrade%20Notes.pdf"
-        },
-        { "date" : "24-Sep-2013 11:30",
-          "description" : "",
-          "label" : "nuxeo-5.7.3-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-setup.exe.md5",
-          "os" : "win",
-          "size" : "216M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-setup.exe"
-        },
-        { "date" : "24-Sep-2013 01:06",
-          "description" : "",
-          "label" : "nuxeo-5.7.3-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-sources.zip.md5",
-          "os" : "all",
-          "size" : "88M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-sources.zip"
-        },
-        { "date" : "24-Sep-2013 12:09",
-          "description" : "",
-          "label" : "nuxeo-5.7.3-vm.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-vm.zip.md5",
-          "os" : "vm",
-          "size" : "676M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-vm.zip"
-        },
-        { "date" : "24-Sep-2013 11:11",
-          "description" : "",
-          "label" : "nuxeo-cap-5.7.3-tomcat-sdk.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat-sdk.zip.md5",
-          "os" : "all",
-          "size" : "299M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat-sdk.zip"
-        },
-        { "date" : "24-Sep-2013 11:10",
-          "description" : "",
-          "label" : "nuxeo-cap-5.7.3-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "167M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat.zip"
-        }
-      ],
-    "date" : "2013-09-24",
-    "name" : "5.7.3",
-    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.7.3/"
-  },
-
- { "data" : [ 
-        { "date" : "07-Aug-2013 16:04",
-          "description" : "",
-          "label" : "5.7.2 Release Notes.pdf",
-          "os" : "all",
-          "size" : "964K",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.2/5.7.2%20Release%20Notes.pdf"
-        },
-        { "date" : "07-Aug-2013 16:04",
-          "description" : "",
-          "label" : "5.7.2 Upgrade Notes.pdf",
-          "os" : "all",
-          "size" : "131K",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.2/5.7.2%20Upgrade%20Notes.pdf"
-        },
-        { "date" : "03-Aug-2013 05:20",
-          "description" : "",
-          "label" : "nuxeo-5.7.2-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-setup.exe.md5",
-          "os" : "win",
-          "size" : "275M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-setup.exe"
-        },
-        { "date" : "03-Aug-2013 01:03",
-          "description" : "",
-          "label" : "nuxeo-5.7.2-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-sources.zip.md5",
-          "os" : "all",
-          "size" : "87M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-sources.zip"
-        },
-        { "date" : "03-Aug-2013 05:53",
-          "description" : "",
-          "label" : "nuxeo-5.7.2-vm.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-vm.zip.md5",
-          "os" : "vm",
-          "size" : "708M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-vm.zip"
-        },
-        { "date" : "03-Aug-2013 05:12",
-          "description" : "",
-          "label" : "nuxeo-cap-5.7.2-tomcat-sdk.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-cap-5.7.2-tomcat-sdk.zip.md5",
-          "os" : "all",
-          "size" : "328M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-cap-5.7.2-tomcat-sdk.zip"
-        },
-        { "date" : "03-Aug-2013 05:11",
-          "description" : "",
-          "label" : "nuxeo-cap-5.7.2-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-cap-5.7.2-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "198M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-cap-5.7.2-tomcat.zip"
-        }
-      ],
-    "date" : "2013-08-03",
-    "name" : "5.7.2",
-    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.7.2"
-  },
-  { "data" : [ { "date" : "19-Jun-2013 17:09",
-          "description" : "",
-          "label" : "5.7.1 Release Notes.pdf",
-          "os" : "all",
-          "size" : "2.0M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.1/5.7.1%20Release%20Notes.pdf"
-        },
-        { "date" : "19-Jun-2013 16:30",
-          "description" : "",
-          "label" : "5.7.1 Upgrade Notes.pdf",
-          "os" : "all",
-          "size" : "149K",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.1/5.7.1%20Upgrade%20Notes.pdf"
-        },
-        { "date" : "18-Jun-2013 16:36",
-          "description" : "",
-          "label" : "nuxeo-5.7.1-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-setup.exe.md5",
-          "os" : "win",
-          "size" : "276M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-setup.exe"
-        },
-        { "date" : "18-Jun-2013 15:19",
-          "description" : "",
-          "label" : "nuxeo-5.7.1-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-sources.zip.md5",
-          "os" : "all",
-          "size" : "86M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-sources.zip"
-        },
-        { "date" : "18-Jun-2013 17:50",
-          "description" : "",
-          "label" : "nuxeo-5.7.1-vm.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-vm.zip.md5",
-          "os" : "vm",
-          "size" : "709M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-vm.zip"
-        },
-        { "date" : "18-Jun-2013 15:21",
-          "description" : "",
-          "label" : "nuxeo-cap-5.7.1-tomcat-sdk.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-cap-5.7.1-tomcat-sdk.zip.md5",
-          "os" : "all",
-          "size" : "320M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-cap-5.7.1-tomcat-sdk.zip"
-        },
-        { "date" : "18-Jun-2013 15:21",
-          "description" : "",
-          "label" : "nuxeo-cap-5.7.1-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-cap-5.7.1-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "199M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-cap-5.7.1-tomcat.zip"
-        }
-      ],
-    "date" : "2013-06-18",
-    "name" : "5.7.1",
-    "htmlReleaseNotes" : "http://nuxeo.github.io/releasenotes/5.7.1"
-  },
-  { "data" : [ { "date" : "11-Sep-2012 16:23",
-          "description" : "",
-          "label" : "5.6 Release Notes.pdf",
-          "os" : "all",
-          "size" : "101K",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.6/5.6%20Release%20Notes.pdf"
-        },
-        { "date" : "11-Sep-2012 16:54",
-          "description" : "",
-          "label" : "5.6 Upgrade Notes.pdf",
-          "os" : "all",
-          "size" : "77K",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.6/5.6%20Upgrade%20Notes.pdf"
-        },
-        { "date" : "31-Aug-2012 17:49",
-          "description" : "",
-          "label" : "nuxeo-5.6-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-setup.exe.md5",
-          "os" : "win",
-          "size" : "248M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-setup.exe"
-        },
-        { "date" : "31-Aug-2012 17:17",
-          "description" : "",
-          "label" : "nuxeo-5.6-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip.md5",
-          "os" : "all",
-          "size" : "83M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip"
-        },
-        { "date" : "31-Aug-2012 18:09",
-          "description" : "",
-          "label" : "nuxeo-5.6-vm.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-vm.zip.md5",
-          "os" : "vm",
-          "size" : "649M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-vm.zip"
-        },
-        { "date" : "07-Sep-2012 17:05",
-          "description" : "",
-          "label" : "nuxeo-cap-5.6-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "158M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-jboss-ear.zip"
-        },
-        { "date" : "31-Aug-2012 17:19",
-          "description" : "",
-          "label" : "nuxeo-cap-5.6-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-jboss.zip.md5",
-          "os" : "all",
-          "size" : "231M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-jboss.zip"
-        },
-        { "date" : "31-Aug-2012 16:42",
-          "description" : "",
-          "label" : "nuxeo-cap-5.6-tomcat-sdk.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat-sdk.zip.md5",
-          "os" : "all",
-          "size" : "282M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat-sdk.zip"
-        },
-        { "date" : "31-Aug-2012 16:42",
-          "description" : "",
-          "label" : "nuxeo-cap-5.6-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "171M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat.zip"
-        }
-      ],
-    "date" : "2012-09-05",
-    "name" : "5.6",
-    "htmlReleaseNotes" : "http://cdn.nuxeo.com/nuxeo-5.6/5.6%20Release%20Notes.pdf"
-  },
-  { "data" : [ { "date" : "15-Dec-2011 16:09",
-          "description" : "",
-          "label" : "nuxeo-5.5-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-setup.exe.md5",
-          "os" : "win",
-          "size" : "246M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-setup.exe"
-        },
-        { "date" : "10-Jan-2012 15:11",
-          "description" : "",
-          "label" : "nuxeo-5.5-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip.md5",
-          "os" : "all",
-          "size" : "82M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip"
-        },
-        { "date" : "13-Dec-2011 17:18",
-          "description" : "",
-          "label" : "nuxeo-5.5-vm-ovf.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-ovf.zip.md5",
-          "os" : "vm",
-          "size" : "701M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-ovf.zip"
-        },
-        { "date" : "13-Dec-2011 17:31",
-          "description" : "",
-          "label" : "nuxeo-5.5-vm-vmx.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-vmx.zip.md5",
-          "os" : "vm",
-          "size" : "665M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-vmx.zip"
-        },
-        { "date" : "13-Dec-2011 14:49",
-          "description" : "",
-          "label" : "nuxeo-cap-5.5-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "102M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-jboss-ear.zip"
-        },
-        { "date" : "15-Dec-2011 12:17",
-          "description" : "",
-          "label" : "nuxeo-cap-5.5-tomcat-offline.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-offline.zip.md5",
-          "os" : "all",
-          "size" : "168M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-offline.zip"
-        },
-        { "date" : "13-Dec-2011 16:00",
-          "description" : "",
-          "label" : "nuxeo-cap-5.5-tomcat-online.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-online.zip.md5",
-          "os" : "all",
-          "size" : "114M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-online.zip"
-        },
-        { "date" : "15-Dec-2011 12:49",
-          "description" : "",
-          "label" : "nuxeo-cap-5.5-tomcat-sdk.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-sdk.zip.md5",
-          "os" : "all",
-          "size" : "258M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-sdk.zip"
-        },
-        { "date" : "13-Dec-2011 14:50",
-          "description" : "",
-          "label" : "nuxeo-dm-5.5-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-dm-5.5-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "132M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-dm-5.5-jboss-ear.zip"
-        }
-      ],
-    "date" : "2011-12-13",
-    "name" : "5.5"
-  },
-  { "data" : [ { "date" : "31-May-2011 22:48",
-          "description" : "",
-          "label" : "nuxeo-5.4.2-sources.zip",
-          "os" : "all",
-          "size" : "84M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-5.4.2-sources.zip"
-        },
-        { "date" : "31-May-2011 22:50",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.2-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "108M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss-ear.zip"
-        },
-        { "date" : "31-May-2011 22:53",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.2-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss.zip.md5",
-          "os" : "all",
-          "size" : "183M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss.zip"
-        },
-        { "date" : "31-May-2011 22:55",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.2-jetty.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jetty.zip.md5",
-          "os" : "all",
-          "size" : "132M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jetty.zip"
-        },
-        { "date" : "02-Jun-2011 01:08",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.2-tomcat-izpack-installer.app.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.app.zip.md5",
-          "os" : "all",
-          "size" : "204M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.app.zip"
-        },
-        { "date" : "01-Jun-2011 02:30",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.2-tomcat-izpack-installer.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.exe.md5",
-          "os" : "win",
-          "size" : "205M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.exe"
-        },
-        { "date" : "01-Jun-2011 02:19",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.2-tomcat-izpack-installer.jar",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.jar.md5",
-          "os" : "all",
-          "size" : "205M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.jar"
-        },
-        { "date" : "31-May-2011 22:57",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.2-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "128M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat.zip"
-        },
-        { "date" : "02-Jun-2011 01:11",
-          "description" : "",
-          "label" : "nuxeo-coreserver-5.4.2-tomcat-izpack-installer.app.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.app.zip.md5",
-          "os" : "all",
-          "size" : "194M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.app.zip"
-        },
-        { "date" : "01-Jun-2011 02:33",
-          "description" : "",
-          "label" : "nuxeo-coreserver-5.4.2-tomcat-izpack-installer.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.exe.md5",
-          "os" : "win",
-          "size" : "194M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.exe"
-        },
-        { "date" : "01-Jun-2011 02:23",
-          "description" : "",
-          "label" : "nuxeo-coreserver-5.4.2-tomcat-izpack-installer.jar",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.jar.md5",
-          "os" : "all",
-          "size" : "194M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.jar"
-        },
-        { "date" : "31-May-2011 23:41",
-          "description" : "",
-          "label" : "nuxeo-coreserver-5.4.2-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "117M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat.zip"
-        },
-        { "date" : "31-May-2011 23:01",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.2-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "136M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss-ear.zip"
-        },
-        { "date" : "31-May-2011 23:53",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.2-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss.zip.md5",
-          "os" : "all",
-          "size" : "212M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss.zip"
-        },
-        { "date" : "31-May-2011 23:08",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.2-jetty.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jetty.zip.md5",
-          "os" : "all",
-          "size" : "146M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jetty.zip"
-        },
-        { "date" : "02-Jun-2011 01:15",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.2-tomcat-izpack-installer.app.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.app.zip.md5",
-          "os" : "all",
-          "size" : "233M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.app.zip"
-        },
-        { "date" : "01-Jun-2011 02:37",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.2-tomcat-izpack-installer.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.exe.md5",
-          "os" : "win",
-          "size" : "233M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.exe"
-        },
-        { "date" : "01-Jun-2011 02:27",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.2-tomcat-izpack-installer.jar",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.jar.md5",
-          "os" : "all",
-          "size" : "233M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.jar"
-        },
-        { "date" : "02-Jun-2011 20:23",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.2-tomcat-setup.exe",
-          "os" : "win",
-          "size" : "165M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-setup.exe"
-        },
-        { "date" : "02-Jun-2011 10:00",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.2-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "156M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat.zip"
-        },
-        { "date" : "01-Jun-2011 00:38",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.2-vm-ovf.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-ovf.zip.md5",
-          "os" : "vm",
-          "size" : "673M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-ovf.zip"
-        },
-        { "date" : "01-Jun-2011 00:48",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.2-vm-vmx.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-vmx.zip.md5",
-          "os" : "vm",
-          "size" : "636M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-vmx.zip"
-        }
-      ],
-    "date" : "2011-06-01",
-    "name" : "5.4.2"
-  },
-  { "data" : [ { "date" : "23-Mar-2011 04:15",
-          "description" : "",
-          "label" : "nuxeo-5.4.1-sources.zip",
-          "os" : "all",
-          "size" : "61M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-5.4.1-sources.zip"
-        },
-        { "date" : "06-Apr-2011 16:34",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.1-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "93M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss-ear.zip"
-        },
-        { "date" : "06-Apr-2011 16:34",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.1-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss.zip.md5",
-          "os" : "all",
-          "size" : "168M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss.zip"
-        },
-        { "date" : "06-Apr-2011 16:34",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.1-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "115M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-tomcat.zip"
-        },
-        { "date" : "06-Apr-2011 16:34",
-          "description" : "",
-          "label" : "nuxeo-coreserver-5.4.1-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-coreserver-5.4.1-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "107M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-coreserver-5.4.1-tomcat.zip"
-        },
-        { "date" : "06-Apr-2011 16:35",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.1-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "127M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss-ear.zip"
-        },
-        { "date" : "06-Apr-2011 16:35",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.1-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss.zip.md5",
-          "os" : "all",
-          "size" : "202M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss.zip"
-        },
-        { "date" : "30-Mar-2011 17:22",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.1-tomcat-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat-setup.exe.md5",
-          "os" : "win",
-          "size" : "155M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat-setup.exe"
-        },
-        { "date" : "06-Apr-2011 16:35",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.1-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "149M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat.zip"
-        },
-        { "date" : "30-Mar-2011 18:12",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.1-vm-ovf.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-ovf.zip.md5",
-          "os" : "vm",
-          "size" : "857M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-ovf.zip"
-        },
-        { "date" : "31-Mar-2011 11:51",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.1-vm-vmx.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-vmx.zip.md5",
-          "os" : "vm",
-          "size" : "658M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-vmx.zip"
-        },
-        { "date" : "07-Apr-2011 12:33",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.1_01-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "127M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss-ear.zip"
-        },
-        { "date" : "07-Apr-2011 12:32",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.1_01-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss.zip.md5",
-          "os" : "all",
-          "size" : "202M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss.zip"
-        },
-        { "date" : "29-Mar-2011 21:57",
-          "description" : "",
-          "label" : "nuxeo-shell-5.4.1.jar",
-          "os" : "all",
-          "size" : "2.6M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-shell-5.4.1.jar"
-        }
-      ],
-    "date" : "2011-04-06",
-    "name" : "5.4.1"
-  },
-  { "data" : [ { "date" : "09-Nov-2010 21:11",
-          "description" : "",
-          "label" : "nuxeo-5.4.0-sources.zip",
-          "os" : "all",
-          "size" : "63M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0-sources.zip"
-        },
-        { "date" : "24-Nov-2010 19:37",
-          "description" : "",
-          "label" : "nuxeo-5.4.0.1-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip.md5",
-          "os" : "all",
-          "size" : "64M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip"
-        },
-        { "date" : "09-Nov-2010 18:06",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.0-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "90M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-jboss-ear.zip"
-        },
-        { "date" : "10-Nov-2010 16:38",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.0-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "111M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-tomcat.zip"
-        },
-        { "date" : "24-Nov-2010 19:12",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.0_01-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "131M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss-ear.zip"
-        },
-        { "date" : "24-Nov-2010 19:15",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.0_01-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss.zip.md5",
-          "os" : "all",
-          "size" : "164M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss.zip"
-        },
-        { "date" : "24-Nov-2010 19:12",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.0_01-jetty.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jetty.zip.md5",
-          "os" : "all",
-          "size" : "113M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jetty.zip"
-        },
-        { "date" : "24-Nov-2010 19:12",
-          "description" : "",
-          "label" : "nuxeo-cap-5.4.0_01-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "152M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-tomcat.zip"
-        },
-        { "date" : "10-Nov-2010 16:39",
-          "description" : "",
-          "label" : "nuxeo-coreserver-5.4.0-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "103M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0-tomcat.zip"
-        },
-        { "date" : "24-Nov-2010 19:12",
-          "description" : "",
-          "label" : "nuxeo-coreserver-5.4.0_01-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0_01-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "144M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0_01-tomcat.zip"
-        },
-        { "date" : "09-Nov-2010 18:13",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "123M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jboss-ear.zip"
-        },
-        { "date" : "09-Nov-2010 18:16",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0-jetty.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jetty.zip.md5",
-          "os" : "all",
-          "size" : "135M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jetty.zip"
-        },
-        { "date" : "09-Nov-2010 21:23",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0-tomcat-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat-setup.exe.md5",
-          "os" : "win",
-          "size" : "137M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat-setup.exe"
-        },
-        { "date" : "10-Nov-2010 16:40",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "145M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat.zip"
-        },
-        { "date" : "22-Nov-2010 19:07",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0-vm-ovf.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-ovf.zip.md5",
-          "os" : "vm",
-          "size" : "770M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-ovf.zip"
-        },
-        { "date" : "22-Nov-2010 19:31",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0-vm-vmx.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-vmx.zip.md5",
-          "os" : "vm",
-          "size" : "715M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-vmx.zip"
-        },
-        { "date" : "24-Nov-2010 19:12",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0_01-jboss-ear.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss-ear.zip.md5",
-          "os" : "all",
-          "size" : "164M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss-ear.zip"
-        },
-        { "date" : "24-Nov-2010 19:12",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0_01-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss.zip.md5",
-          "os" : "all",
-          "size" : "240M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss.zip"
-        },
-        { "date" : "24-Nov-2010 19:12",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0_01-jetty.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jetty.zip.md5",
-          "os" : "all",
-          "size" : "132M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jetty.zip"
-        },
-        { "date" : "26-Nov-2010 18:24",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0_01-tomcat-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat-setup.exe.md5",
-          "os" : "win",
-          "size" : "149M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat-setup.exe"
-        },
-        { "date" : "24-Nov-2010 19:12",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0_01-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "186M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat.zip"
-        },
-        { "date" : "24-Nov-2010 20:12",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0_01-vm-ovf.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-ovf.zip.md5",
-          "os" : "vm",
-          "size" : "811M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-ovf.zip"
-        },
-        { "date" : "24-Nov-2010 20:48",
-          "description" : "",
-          "label" : "nuxeo-dm-5.4.0_01-vm-vmx.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-vmx.zip.md5",
-          "os" : "vm",
-          "size" : "753M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-vmx.zip"
-        },
-        { "date" : "09-Nov-2010 18:20",
-          "description" : "",
-          "label" : "nuxeo-shell-5.4.0.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0.zip.md5",
-          "os" : "all",
-          "size" : "43M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0.zip"
-        },
-        { "date" : "24-Nov-2010 19:25",
-          "description" : "",
-          "label" : "nuxeo-shell-5.4.0_01.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0_01.zip.md5",
-          "os" : "all",
-          "size" : "43M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0_01.zip"
-        }
-      ],
-    "date" : "2010-11-10",
-    "name" : "5.4.0"
-  },
-  { "data" : [ { "date" : "20-Jul-2010 21:55",
-          "description" : "",
-          "label" : "NuxeoDM-5.3.2-VM-ovf.zip",
-          "os" : "vm",
-          "size" : "688M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-VM-ovf.zip"
-        },
-        { "date" : "20-Jul-2010 23:38",
-          "description" : "",
-          "label" : "NuxeoDM-5.3.2-VM-vmx.zip",
-          "os" : "vm",
-          "size" : "644M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-VM-vmx.zip"
-        },
-        { "date" : "20-Jul-2010 19:20",
-          "description" : "",
-          "label" : "NuxeoDM-5.3.2-jboss-setup.exe",
-          "os" : "win",
-          "size" : "179M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-jboss-setup.exe"
-        },
-        { "date" : "20-Jul-2010 19:42",
-          "description" : "",
-          "label" : "NuxeoDM-5.3.2-tomcat-setup.exe",
-          "os" : "win",
-          "size" : "135M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-tomcat-setup.exe"
-        },
-        { "date" : "19-Jul-2010 18:45",
-          "description" : "",
-          "label" : "nuxeo-5.3.2-sources.zip",
-          "os" : "all",
-          "size" : "53M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-5.3.2-sources.zip"
-        },
-        { "date" : "19-Jul-2010 17:55",
-          "description" : "",
-          "label" : "nuxeo-coreserver-5.3.2-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-coreserver-5.3.2-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "98M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-coreserver-5.3.2-tomcat.zip"
-        },
-        { "date" : "20-Jul-2010 19:25",
-          "description" : "",
-          "label" : "nuxeo-distribution-shell-5.3.2.zip",
-          "os" : "all",
-          "size" : "28M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-distribution-shell-5.3.2.zip"
-        },
-        { "date" : "19-Jul-2010 18:28",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.2-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jboss.zip.md5",
-          "os" : "all",
-          "size" : "186M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jboss.zip"
-        },
-        { "date" : "19-Jul-2010 20:07",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.2-jetty.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jetty.zip.md5",
-          "os" : "all",
-          "size" : "135M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jetty.zip"
-        },
-        { "date" : "19-Jul-2010 18:45",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.2-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "135M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-tomcat.zip"
-        }
-      ],
-    "date" : "2010-07-20 ",
-    "name" : "5.3.2"
-  },
-  { "data" : [ { "date" : "23-Mar-2010 15:24",
-          "description" : "",
-          "label" : "nuxeo-coreserver-5.3.1-tomcat_02.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-coreserver-5.3.1-tomcat_02.zip.md5",
-          "os" : "all",
-          "size" : "85M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-coreserver-5.3.1-tomcat_02.zip"
-        },
-        { "date" : "23-Mar-2010 15:18",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.1-jboss_02.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jboss_02.zip.md5",
-          "os" : "all",
-          "size" : "152M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jboss_02.zip"
-        },
-        { "date" : "18-Mar-2010 18:32",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.1-jetty.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jetty.zip.md5",
-          "os" : "all",
-          "size" : "117M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jetty.zip"
-        },
-        { "date" : "23-Mar-2010 15:24",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.1-tomcat_02.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-tomcat_02.zip.md5",
-          "os" : "all",
-          "size" : "120M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-tomcat_02.zip"
-        },
-        { "date" : "23-Mar-2010 10:41",
-          "description" : "",
-          "label" : "nuxeo-dm-windows-installer-5.3.1.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1.exe.md5",
-          "os" : "win",
-          "size" : "157M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1.exe"
-        },
-        { "date" : "23-Mar-2010 10:42",
-          "description" : "",
-          "label" : "nuxeo-dm-windows-installer-5.3.1_64.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1_64.exe.md5",
-          "os" : "win",
-          "size" : "157M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1_64.exe"
-        },
-        { "date" : "25-Mar-2010 09:11",
-          "description" : "",
-          "label" : "nuxeo-ep-5.3.1-src.zip",
-          "os" : "all",
-          "size" : "50M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-ep-5.3.1-src.zip"
-        },
-        { "date" : "18-Mar-2010 18:34",
-          "description" : "",
-          "label" : "nuxeo-shell-5.3.1.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-shell-5.3.1.zip.md5",
-          "os" : "all",
-          "size" : "17M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-shell-5.3.1.zip"
-        }
-      ],
-    "date" : "2010-03-22 ",
-    "name" : "5.3.1"
-  },
-  { "data" : [ { "date" : "16-Nov-2009 11:59",
-          "description" : "",
-          "label" : "nuxeo-5.3.0-sources.zip",
-          "os" : "all",
-          "size" : "48M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-5.3.0-sources.zip"
-        },
-        { "date" : "16-Nov-2009 12:12",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.0-GA-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jboss.zip.md5",
-          "os" : "all",
-          "size" : "150M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jboss.zip"
-        },
-        { "date" : "16-Nov-2009 12:14",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.0-GA-jetty.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jetty.zip.md5",
-          "os" : "all",
-          "size" : "117M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jetty.zip"
-        },
-        { "date" : "29-Oct-2009 02:46",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.0-GA-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-setup.exe.md5",
-          "os" : "win",
-          "size" : "157M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-setup.exe"
-        },
-        { "date" : "16-Nov-2009 12:08",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.0-GA-tomcat.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-tomcat.zip.md5",
-          "os" : "all",
-          "size" : "127M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-tomcat.zip"
-        },
-        { "date" : "29-Oct-2009 03:25",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.0-GA_64-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA_64-setup.exe.md5",
-          "os" : "win",
-          "size" : "159M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA_64-setup.exe"
-        },
-        { "date" : "15-Oct-2009 14:25",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.0-RC1-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1-jboss.zip.md5",
-          "os" : "all",
-          "size" : "203M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1-jboss.zip"
-        },
-        { "date" : "15-Oct-2009 15:25",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.0-RC1_02-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_02-setup.exe.md5",
-          "os" : "win",
-          "size" : "156M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_02-setup.exe"
-        },
-        { "date" : "15-Oct-2009 15:25",
-          "description" : "",
-          "label" : "nuxeo-dm-5.3.0-RC1_64_02-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_64_02-setup.exe.md5",
-          "os" : "win",
-          "size" : "158M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_64_02-setup.exe"
-        },
-        { "date" : "27-Oct-2009 18:59",
-          "description" : "",
-          "label" : "nuxeo-shell-5.3.0.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-shell-5.3.0.zip.md5",
-          "os" : "all",
-          "size" : "17M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-shell-5.3.0.zip"
-        }
-      ],
-    "date" : "2009-10-27 ",
-    "name" : "5.3.0"
-  },
-  { "data" : [ { "date" : "22-May-2009 19:04",
-          "description" : "",
-          "label" : "nuxeo-5.2.0-sources.zip",
-          "os" : "all",
-          "size" : "35M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-5.2.0-sources.zip"
-        },
-        { "date" : "20-May-2009 18:52",
-          "description" : "",
-          "label" : "nuxeo-dm-5.2.0-jboss.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-jboss.zip.md5",
-          "os" : "all",
-          "size" : "177M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-jboss.zip"
-        },
-        { "date" : "19-May-2009 21:11",
-          "description" : "",
-          "label" : "nuxeo-dm-5.2.0-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-setup.exe.md5",
-          "os" : "win",
-          "size" : "165M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-setup.exe"
-        },
-        { "date" : "19-May-2009 20:27",
-          "description" : "",
-          "label" : "nuxeo-dm-5.2.0_64-setup.exe",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0_64-setup.exe.md5",
-          "os" : "win",
-          "size" : "168M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0_64-setup.exe"
-        }
-      ],
-    "date" : "2009-05-18",
-    "name" : "5.2.0"
-  },
-  { "data" : [ { "date" : "31-Aug-2012 17:17",
-          "description" : "description",
-          "label" : "nuxeo-5.6-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip.md5",
-          "os" : "all",
-          "size" : "83M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip"
-        },
-        { "date" : "10-Jan-2012 15:11",
-          "description" : "description",
-          "label" : "nuxeo-5.5-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip.md5",
-          "os" : "all",
-          "size" : "82M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip"
-        },
-        { "date" : "31-May-2011 22:48",
-          "description" : "description",
-          "label" : "nuxeo-5.4.2-sources.zip",
-          "os" : "all",
-          "size" : "84M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-5.4.2-sources.zip"
-        },
-        { "date" : "23-Mar-2011 04:15",
-          "description" : "description",
-          "label" : "nuxeo-5.4.1-sources.zip",
-          "os" : "all",
-          "size" : "61M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-5.4.1-sources.zip"
-        },
-        { "date" : "09-Nov-2010 21:11",
-          "description" : "description",
-          "label" : "nuxeo-5.4.0-sources.zip",
-          "os" : "all",
-          "size" : "63M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0-sources.zip"
-        },
-        { "date" : "24-Nov-2010 19:37",
-          "description" : "description",
-          "label" : "nuxeo-5.4.0.1-sources.zip",
-          "md5" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip.md5",
-          "os" : "all",
-          "size" : "64M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip"
-        },
-        { "date" : "19-Jul-2010 18:45",
-          "description" : "Nuxeo Platform 5.3.1 sources",
-          "label" : "nuxeo-5.3.2-sources.zip",
-          "os" : "all",
-          "size" : "53M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-5.3.2-sources.zip"
-        },
-        { "date" : "25-Mar-2010 09:11",
-          "description" : "Nuxeo Platform 5.3.1 sources",
-          "label" : "nuxeo-ep-5.3.1-src.zip",
-          "os" : "all",
-          "size" : "50M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-ep-5.3.1-src.zip"
-        },
-        { "date" : "16-Nov-2009 11:59  ",
-          "description" : "Nuxeo DM 5.3.0 sources",
-          "label" : "nuxeo-5.3.0-sources.zip",
-          "os" : "all",
-          "size" : "48M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-5.3.0-sources.zip"
-        },
-        { "date" : "22-May-2009 19:04",
-          "description" : "Nuxeo DM 5.2 sources",
-          "label" : "nuxeo-5.2.0-sources.zip",
-          "os" : "all",
-          "size" : "35M",
-          "url" : "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-5.2.0-sources.zip"
-        }
-      ],
-    "name" : "SourceCode"
-  }
+[
+    {
+        "data": [
+            {
+                "date": "11-Jun-2014 11:57",
+                "description": "",
+                "label": "5.9.4 Release Notes.pdf",
+                "os": "all",
+                "size": "89Ko",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.4/5.9.4%20Release%20Notes.pdf"
+            },
+            {
+                "date": "11-Jun-2014 16:32",
+                "description": "",
+                "label": "5.9.4 Upgrade Notes.pdf",
+                "os": "all",
+                "size": "60Ko",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.4/5.9.4%20Upgrade%20Notes.pdf"
+            },
+            {
+                "date": "09-Jun-2014 11:08",
+                "description": "",
+                "label": "nuxeo-5.9.4-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-setup.exe.md5",
+                "os": "win",
+                "size": "273M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-setup.exe"
+            },
+            {
+                "date": "06-Jun-2014 12:45",
+                "description": "",
+                "label": "nuxeo-5.9.4-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-sources.zip.md5",
+                "os": "all",
+                "size": "63M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-sources.zip"
+            },
+            {
+                "date": "09-Jun-2014 11:34",
+                "description": "",
+                "label": "nuxeo-5.9.4-vm.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-vm.zip.md5",
+                "os": "vm",
+                "size": "706M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-vm.zip"
+            },
+            {
+                "date": "06-Jun-2014 14:29",
+                "description": "",
+                "label": "nuxeo-cap-5.9.4-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-cap-5.9.4-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "253M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-cap-5.9.4-tomcat-sdk.zip"
+            },
+            {
+                "date": "06-Jun-2014 14:29",
+                "description": "",
+                "label": "nuxeo-cap-5.9.4-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-cap-5.9.4-tomcat.zip.md5",
+                "os": "all",
+                "size": "179M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-cap-5.9.4-tomcat.zip"
+            }
+        ],
+        "date": "2014-06-09",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.9.4/",
+        "name": "5.9.4"
+    },
+    {
+        "data": [
+            {
+                "date": "16-Apr-2014 11:39",
+                "description": "",
+                "label": "5.9.3 Release Notes.pdf",
+                "os": "all",
+                "size": "1.0M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.3/5.9.3%20Release%20Notes.pdf"
+            },
+            {
+                "date": "16-Apr-2014 11:39",
+                "description": "",
+                "label": "5.9.3 Upgrade Notes.pdf",
+                "os": "all",
+                "size": "68Ko",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.3/5.9.3%20Upgrade%20Notes.pdf"
+            },
+            {
+                "date": "14-Apr-2014 17:37",
+                "description": "",
+                "label": "nuxeo-5.9.3-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-setup.exe.md5",
+                "os": "win",
+                "size": "273M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-setup.exe"
+            },
+            {
+                "date": "10-Apr-2014 21:24",
+                "description": "",
+                "label": "nuxeo-5.9.3-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-sources.zip.md5",
+                "os": "all",
+                "size": "63M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-sources.zip"
+            },
+            {
+                "date": "14-Apr-2014 17:58",
+                "description": "",
+                "label": "nuxeo-5.9.3-vm.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-vm.zip.md5",
+                "os": "vm",
+                "size": "703M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-vm.zip"
+            },
+            {
+                "date": "11-Apr-2014 10:24",
+                "description": "",
+                "label": "nuxeo-cap-5.9.3-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-cap-5.9.3-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "248M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-cap-5.9.3-tomcat-sdk.zip"
+            },
+            {
+                "date": "11-Apr-2014 10:23",
+                "description": "",
+                "label": "nuxeo-cap-5.9.3-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-cap-5.9.3-tomcat.zip.md5",
+                "os": "all",
+                "size": "180M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-cap-5.9.3-tomcat.zip"
+            }
+        ],
+        "date": "2014-04-16",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.9.3/",
+        "name": "5.9.3"
+    },
+    {
+        "data": [
+            {
+                "date": "19-Feb-2014 15:39",
+                "description": "",
+                "label": "5.9.2 Release Notes.pdf",
+                "os": "all",
+                "size": "34Ko",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.2/5.9.2%20Release%20Notes.pdf"
+            },
+            {
+                "date": "17-Feb-2014 14:00",
+                "description": "",
+                "label": "5.9.2 Upgrade Notes.pdf",
+                "os": "all",
+                "size": "77Ko",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.2/5.9.2%20Upgrade%20Notes.pdf"
+            },
+            {
+                "date": "18-Feb-2014 12:42",
+                "description": "",
+                "label": "nuxeo-5.9.2-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-setup.exe.md5",
+                "os": "win",
+                "size": "268M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-setup.exe"
+            },
+            {
+                "date": "17-Feb-2014 18:05",
+                "description": "",
+                "label": "nuxeo-5.9.2-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-sources.zip.md5",
+                "os": "all",
+                "size": "63M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-sources.zip"
+            },
+            {
+                "date": "18-Feb-2014 13:01",
+                "description": "",
+                "label": "nuxeo-5.9.2-vm.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-vm.zip.md5",
+                "os": "vm",
+                "size": "687M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-vm.zip"
+            },
+            {
+                "date": "17-Feb-2014 18:46",
+                "description": "",
+                "label": "nuxeo-cap-5.9.2-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-cap-5.9.2-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "243M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-cap-5.9.2-tomcat-sdk.zip"
+            },
+            {
+                "date": "17-Feb-2014 18:46",
+                "description": "",
+                "label": "nuxeo-cap-5.9.2-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-cap-5.9.2-tomcat.zip.md5",
+                "os": "all",
+                "size": "174M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-cap-5.9.2-tomcat.zip"
+            }
+        ],
+        "date": "2014-02-18",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.9.2/",
+        "name": "5.9.2"
+    },
+    {
+        "data": [
+            {
+                "date": "18-Dec-2013 18:21",
+                "description": "",
+                "label": "5.9.1 Release Notes.pdf",
+                "os": "all",
+                "size": "104Ko",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.1/5.9.1%20Release%20Notes.pdf"
+            },
+            {
+                "date": "18-Dec-2013 16:59",
+                "description": "",
+                "label": "5.9.1 Upgrade Notes.pdf",
+                "os": "all",
+                "size": "64K",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.1/5.9.1%20Upgrade%20Notes.pdf"
+            },
+            {
+                "date": "18-Dec-2013 16:24",
+                "description": "",
+                "label": "nuxeo-5.9.1-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-setup.exe.md5",
+                "os": "win",
+                "size": "261M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-setup.exe"
+            },
+            {
+                "date": "18-Dec-2013 14:22",
+                "description": "",
+                "label": "nuxeo-5.9.1-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-sources.zip.md5",
+                "os": "all",
+                "size": "63",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-sources.zip"
+            },
+            {
+                "date": "18-Dec-2013 17:06",
+                "description": "",
+                "label": "nuxeo-5.9.1-vm.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-vm.zip.md5",
+                "os": "vm",
+                "size": "667M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-vm.zip"
+            },
+            {
+                "date": "18-Dec-2013 14:24",
+                "description": "",
+                "label": "nuxeo-cap-5.9.1-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "300M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat-sdk.zip"
+            },
+            {
+                "date": "18-Dec-2013 14:24",
+                "description": "",
+                "label": "nuxeo-cap-5.9.1-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat.zip.md5",
+                "os": "all",
+                "size": "168M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-cap-5.9.1-tomcat.zip"
+            }
+        ],
+        "date": "2013-12-18",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.9.1/",
+        "name": "5.9.1"
+    },
+    {
+        "data": [
+            {
+                "date": "04-Nov-2013 12:43",
+                "description": "",
+                "label": "5.8 Release Notes(Since 5.6).pdf",
+                "os": "all",
+                "size": "5.4M",
+                "url": "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Release%20Notes(Since%205.6).pdf"
+            },
+            {
+                "date": "31-Oct-2013 16:23",
+                "description": "",
+                "label": "5.8 Upgrade Notes(Since 5.6).pdf",
+                "os": "all",
+                "size": "150K",
+                "url": "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Upgrade%20Notes(Since%205.6).pdf"
+            },
+            {
+                "date": "31-Oct-2013 16:23",
+                "description": "",
+                "label": "5.8 Release Notes(Since 5.7.3).pdf",
+                "os": "all",
+                "size": "889K",
+                "url": "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Release%20Notes(Since%205.7.3).pdf"
+            },
+            {
+                "date": "31-Oct-2013 16:28",
+                "description": "",
+                "label": "5.8 Upgrade Notes(Since 5.7.3).pdf",
+                "os": "all",
+                "size": "77K",
+                "url": "http://community.nuxeo.com/static/releases/nuxeo-5.8/5.8%20Upgrade%20Notes(Since%205.7.3).pdf"
+            },
+            {
+                "date": "30-Oct-2013 09:29",
+                "description": "",
+                "label": "nuxeo-5.8-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-setup.exe.md5",
+                "os": "win",
+                "size": "261M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-setup.exe"
+            },
+            {
+                "date": "30-Oct-2013 12:10",
+                "description": "",
+                "label": "nuxeo-5.8-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-sources.zip.md5",
+                "os": "all",
+                "size": "64M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-sources.zip"
+            },
+            {
+                "date": "30-Oct-2013 10:46",
+                "description": "",
+                "label": "nuxeo-5.8-vm.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-vm.zip.md5",
+                "os": "vm",
+                "size": "679M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-vm.zip"
+            },
+            {
+                "date": "30-Oct-2013 17:41",
+                "description": "",
+                "label": "nuxeo-cap-5.8-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "300M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat-sdk.zip"
+            },
+            {
+                "date": "30-Oct-2013 17:40",
+                "description": "",
+                "label": "nuxeo-cap-5.8-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat.zip.md5",
+                "os": "all",
+                "size": "168M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-cap-5.8-tomcat.zip"
+            },
+            {
+                "date": "30-Oct-2013 17:45",
+                "description": "",
+                "label": "nuxeo-shell-5.8.jar",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-shell-5.8.jar.md5",
+                "os": "all",
+                "size": "5.9M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-shell-5.8.jar"
+            }
+        ],
+        "date": "2013-10-30",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.8/",
+        "name": "5.8"
+    },
+    {
+        "date": "2013-10-31",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.7.3_5.8/",
+        "name": "5.7.3 to 5.8"
+    },
+    {
+        "data": [
+            {
+                "date": "25-Sep-2013 15:02",
+                "description": "",
+                "label": "5.7.3 Release Notes.pdf",
+                "os": "all",
+                "size": "1.3M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.3/5.7.3%20Release%20Notes.pdf"
+            },
+            {
+                "date": "25-Sep-2013 14:50",
+                "description": "",
+                "label": "5.7.3 Upgrade Notes.pdf",
+                "os": "all",
+                "size": "72K",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.3/5.7.3%20Upgrade%20Notes.pdf"
+            },
+            {
+                "date": "24-Sep-2013 11:30",
+                "description": "",
+                "label": "nuxeo-5.7.3-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-setup.exe.md5",
+                "os": "win",
+                "size": "216M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-setup.exe"
+            },
+            {
+                "date": "24-Sep-2013 01:06",
+                "description": "",
+                "label": "nuxeo-5.7.3-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-sources.zip.md5",
+                "os": "all",
+                "size": "88M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-sources.zip"
+            },
+            {
+                "date": "24-Sep-2013 12:09",
+                "description": "",
+                "label": "nuxeo-5.7.3-vm.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-vm.zip.md5",
+                "os": "vm",
+                "size": "676M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-vm.zip"
+            },
+            {
+                "date": "24-Sep-2013 11:11",
+                "description": "",
+                "label": "nuxeo-cap-5.7.3-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "299M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat-sdk.zip"
+            },
+            {
+                "date": "24-Sep-2013 11:10",
+                "description": "",
+                "label": "nuxeo-cap-5.7.3-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat.zip.md5",
+                "os": "all",
+                "size": "167M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-cap-5.7.3-tomcat.zip"
+            }
+        ],
+        "date": "2013-09-24",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.7.3/",
+        "name": "5.7.3"
+    },
+    {
+        "data": [
+            {
+                "date": "07-Aug-2013 16:04",
+                "description": "",
+                "label": "5.7.2 Release Notes.pdf",
+                "os": "all",
+                "size": "964K",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.2/5.7.2%20Release%20Notes.pdf"
+            },
+            {
+                "date": "07-Aug-2013 16:04",
+                "description": "",
+                "label": "5.7.2 Upgrade Notes.pdf",
+                "os": "all",
+                "size": "131K",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.2/5.7.2%20Upgrade%20Notes.pdf"
+            },
+            {
+                "date": "03-Aug-2013 05:20",
+                "description": "",
+                "label": "nuxeo-5.7.2-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-setup.exe.md5",
+                "os": "win",
+                "size": "275M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-setup.exe"
+            },
+            {
+                "date": "03-Aug-2013 01:03",
+                "description": "",
+                "label": "nuxeo-5.7.2-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-sources.zip.md5",
+                "os": "all",
+                "size": "87M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-sources.zip"
+            },
+            {
+                "date": "03-Aug-2013 05:53",
+                "description": "",
+                "label": "nuxeo-5.7.2-vm.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-vm.zip.md5",
+                "os": "vm",
+                "size": "708M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-vm.zip"
+            },
+            {
+                "date": "03-Aug-2013 05:12",
+                "description": "",
+                "label": "nuxeo-cap-5.7.2-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-cap-5.7.2-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "328M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-cap-5.7.2-tomcat-sdk.zip"
+            },
+            {
+                "date": "03-Aug-2013 05:11",
+                "description": "",
+                "label": "nuxeo-cap-5.7.2-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-cap-5.7.2-tomcat.zip.md5",
+                "os": "all",
+                "size": "198M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-cap-5.7.2-tomcat.zip"
+            }
+        ],
+        "date": "2013-08-03",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.7.2",
+        "name": "5.7.2"
+    },
+    {
+        "data": [
+            {
+                "date": "19-Jun-2013 17:09",
+                "description": "",
+                "label": "5.7.1 Release Notes.pdf",
+                "os": "all",
+                "size": "2.0M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.1/5.7.1%20Release%20Notes.pdf"
+            },
+            {
+                "date": "19-Jun-2013 16:30",
+                "description": "",
+                "label": "5.7.1 Upgrade Notes.pdf",
+                "os": "all",
+                "size": "149K",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.1/5.7.1%20Upgrade%20Notes.pdf"
+            },
+            {
+                "date": "18-Jun-2013 16:36",
+                "description": "",
+                "label": "nuxeo-5.7.1-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-setup.exe.md5",
+                "os": "win",
+                "size": "276M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-setup.exe"
+            },
+            {
+                "date": "18-Jun-2013 15:19",
+                "description": "",
+                "label": "nuxeo-5.7.1-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-sources.zip.md5",
+                "os": "all",
+                "size": "86M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-sources.zip"
+            },
+            {
+                "date": "18-Jun-2013 17:50",
+                "description": "",
+                "label": "nuxeo-5.7.1-vm.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-vm.zip.md5",
+                "os": "vm",
+                "size": "709M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-vm.zip"
+            },
+            {
+                "date": "18-Jun-2013 15:21",
+                "description": "",
+                "label": "nuxeo-cap-5.7.1-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-cap-5.7.1-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "320M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-cap-5.7.1-tomcat-sdk.zip"
+            },
+            {
+                "date": "18-Jun-2013 15:21",
+                "description": "",
+                "label": "nuxeo-cap-5.7.1-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-cap-5.7.1-tomcat.zip.md5",
+                "os": "all",
+                "size": "199M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-cap-5.7.1-tomcat.zip"
+            }
+        ],
+        "date": "2013-06-18",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.7.1",
+        "name": "5.7.1"
+    },
+    {
+        "data": [
+            {
+                "date": "11-Sep-2012 16:23",
+                "description": "",
+                "label": "5.6 Release Notes.pdf",
+                "os": "all",
+                "size": "101K",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.6/5.6%20Release%20Notes.pdf"
+            },
+            {
+                "date": "11-Sep-2012 16:54",
+                "description": "",
+                "label": "5.6 Upgrade Notes.pdf",
+                "os": "all",
+                "size": "77K",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.6/5.6%20Upgrade%20Notes.pdf"
+            },
+            {
+                "date": "31-Aug-2012 17:49",
+                "description": "",
+                "label": "nuxeo-5.6-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-setup.exe.md5",
+                "os": "win",
+                "size": "248M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-setup.exe"
+            },
+            {
+                "date": "31-Aug-2012 17:17",
+                "description": "",
+                "label": "nuxeo-5.6-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip.md5",
+                "os": "all",
+                "size": "83M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip"
+            },
+            {
+                "date": "31-Aug-2012 18:09",
+                "description": "",
+                "label": "nuxeo-5.6-vm.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-vm.zip.md5",
+                "os": "vm",
+                "size": "649M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-vm.zip"
+            },
+            {
+                "date": "07-Sep-2012 17:05",
+                "description": "",
+                "label": "nuxeo-cap-5.6-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "158M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-jboss-ear.zip"
+            },
+            {
+                "date": "31-Aug-2012 17:19",
+                "description": "",
+                "label": "nuxeo-cap-5.6-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-jboss.zip.md5",
+                "os": "all",
+                "size": "231M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-jboss.zip"
+            },
+            {
+                "date": "31-Aug-2012 16:42",
+                "description": "",
+                "label": "nuxeo-cap-5.6-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "282M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat-sdk.zip"
+            },
+            {
+                "date": "31-Aug-2012 16:42",
+                "description": "",
+                "label": "nuxeo-cap-5.6-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat.zip.md5",
+                "os": "all",
+                "size": "171M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-cap-5.6-tomcat.zip"
+            }
+        ],
+        "date": "2012-09-05",
+        "htmlReleaseNotes": "http://cdn.nuxeo.com/nuxeo-5.6/5.6%20Release%20Notes.pdf",
+        "name": "5.6"
+    },
+    {
+        "data": [
+            {
+                "date": "15-Dec-2011 16:09",
+                "description": "",
+                "label": "nuxeo-5.5-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-setup.exe.md5",
+                "os": "win",
+                "size": "246M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-setup.exe"
+            },
+            {
+                "date": "10-Jan-2012 15:11",
+                "description": "",
+                "label": "nuxeo-5.5-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip.md5",
+                "os": "all",
+                "size": "82M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip"
+            },
+            {
+                "date": "13-Dec-2011 17:18",
+                "description": "",
+                "label": "nuxeo-5.5-vm-ovf.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-ovf.zip.md5",
+                "os": "vm",
+                "size": "701M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-ovf.zip"
+            },
+            {
+                "date": "13-Dec-2011 17:31",
+                "description": "",
+                "label": "nuxeo-5.5-vm-vmx.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-vmx.zip.md5",
+                "os": "vm",
+                "size": "665M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-vm-vmx.zip"
+            },
+            {
+                "date": "13-Dec-2011 14:49",
+                "description": "",
+                "label": "nuxeo-cap-5.5-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "102M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-jboss-ear.zip"
+            },
+            {
+                "date": "15-Dec-2011 12:17",
+                "description": "",
+                "label": "nuxeo-cap-5.5-tomcat-offline.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-offline.zip.md5",
+                "os": "all",
+                "size": "168M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-offline.zip"
+            },
+            {
+                "date": "13-Dec-2011 16:00",
+                "description": "",
+                "label": "nuxeo-cap-5.5-tomcat-online.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-online.zip.md5",
+                "os": "all",
+                "size": "114M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-online.zip"
+            },
+            {
+                "date": "15-Dec-2011 12:49",
+                "description": "",
+                "label": "nuxeo-cap-5.5-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "258M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-cap-5.5-tomcat-sdk.zip"
+            },
+            {
+                "date": "13-Dec-2011 14:50",
+                "description": "",
+                "label": "nuxeo-dm-5.5-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-dm-5.5-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "132M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-dm-5.5-jboss-ear.zip"
+            }
+        ],
+        "date": "2011-12-13",
+        "name": "5.5"
+    },
+    {
+        "data": [
+            {
+                "date": "31-May-2011 22:48",
+                "description": "",
+                "label": "nuxeo-5.4.2-sources.zip",
+                "os": "all",
+                "size": "84M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-5.4.2-sources.zip"
+            },
+            {
+                "date": "31-May-2011 22:50",
+                "description": "",
+                "label": "nuxeo-cap-5.4.2-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "108M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss-ear.zip"
+            },
+            {
+                "date": "31-May-2011 22:53",
+                "description": "",
+                "label": "nuxeo-cap-5.4.2-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss.zip.md5",
+                "os": "all",
+                "size": "183M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jboss.zip"
+            },
+            {
+                "date": "31-May-2011 22:55",
+                "description": "",
+                "label": "nuxeo-cap-5.4.2-jetty.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jetty.zip.md5",
+                "os": "all",
+                "size": "132M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-jetty.zip"
+            },
+            {
+                "date": "02-Jun-2011 01:08",
+                "description": "",
+                "label": "nuxeo-cap-5.4.2-tomcat-izpack-installer.app.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.app.zip.md5",
+                "os": "all",
+                "size": "204M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.app.zip"
+            },
+            {
+                "date": "01-Jun-2011 02:30",
+                "description": "",
+                "label": "nuxeo-cap-5.4.2-tomcat-izpack-installer.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.exe.md5",
+                "os": "win",
+                "size": "205M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.exe"
+            },
+            {
+                "date": "01-Jun-2011 02:19",
+                "description": "",
+                "label": "nuxeo-cap-5.4.2-tomcat-izpack-installer.jar",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.jar.md5",
+                "os": "all",
+                "size": "205M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat-izpack-installer.jar"
+            },
+            {
+                "date": "31-May-2011 22:57",
+                "description": "",
+                "label": "nuxeo-cap-5.4.2-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat.zip.md5",
+                "os": "all",
+                "size": "128M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-cap-5.4.2-tomcat.zip"
+            },
+            {
+                "date": "02-Jun-2011 01:11",
+                "description": "",
+                "label": "nuxeo-coreserver-5.4.2-tomcat-izpack-installer.app.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.app.zip.md5",
+                "os": "all",
+                "size": "194M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.app.zip"
+            },
+            {
+                "date": "01-Jun-2011 02:33",
+                "description": "",
+                "label": "nuxeo-coreserver-5.4.2-tomcat-izpack-installer.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.exe.md5",
+                "os": "win",
+                "size": "194M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.exe"
+            },
+            {
+                "date": "01-Jun-2011 02:23",
+                "description": "",
+                "label": "nuxeo-coreserver-5.4.2-tomcat-izpack-installer.jar",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.jar.md5",
+                "os": "all",
+                "size": "194M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat-izpack-installer.jar"
+            },
+            {
+                "date": "31-May-2011 23:41",
+                "description": "",
+                "label": "nuxeo-coreserver-5.4.2-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat.zip.md5",
+                "os": "all",
+                "size": "117M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-coreserver-5.4.2-tomcat.zip"
+            },
+            {
+                "date": "31-May-2011 23:01",
+                "description": "",
+                "label": "nuxeo-dm-5.4.2-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "136M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss-ear.zip"
+            },
+            {
+                "date": "31-May-2011 23:53",
+                "description": "",
+                "label": "nuxeo-dm-5.4.2-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss.zip.md5",
+                "os": "all",
+                "size": "212M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jboss.zip"
+            },
+            {
+                "date": "31-May-2011 23:08",
+                "description": "",
+                "label": "nuxeo-dm-5.4.2-jetty.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jetty.zip.md5",
+                "os": "all",
+                "size": "146M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-jetty.zip"
+            },
+            {
+                "date": "02-Jun-2011 01:15",
+                "description": "",
+                "label": "nuxeo-dm-5.4.2-tomcat-izpack-installer.app.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.app.zip.md5",
+                "os": "all",
+                "size": "233M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.app.zip"
+            },
+            {
+                "date": "01-Jun-2011 02:37",
+                "description": "",
+                "label": "nuxeo-dm-5.4.2-tomcat-izpack-installer.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.exe.md5",
+                "os": "win",
+                "size": "233M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.exe"
+            },
+            {
+                "date": "01-Jun-2011 02:27",
+                "description": "",
+                "label": "nuxeo-dm-5.4.2-tomcat-izpack-installer.jar",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.jar.md5",
+                "os": "all",
+                "size": "233M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-izpack-installer.jar"
+            },
+            {
+                "date": "02-Jun-2011 20:23",
+                "description": "",
+                "label": "nuxeo-dm-5.4.2-tomcat-setup.exe",
+                "os": "win",
+                "size": "165M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat-setup.exe"
+            },
+            {
+                "date": "02-Jun-2011 10:00",
+                "description": "",
+                "label": "nuxeo-dm-5.4.2-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat.zip.md5",
+                "os": "all",
+                "size": "156M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-tomcat.zip"
+            },
+            {
+                "date": "01-Jun-2011 00:38",
+                "description": "",
+                "label": "nuxeo-dm-5.4.2-vm-ovf.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-ovf.zip.md5",
+                "os": "vm",
+                "size": "673M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-ovf.zip"
+            },
+            {
+                "date": "01-Jun-2011 00:48",
+                "description": "",
+                "label": "nuxeo-dm-5.4.2-vm-vmx.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-vmx.zip.md5",
+                "os": "vm",
+                "size": "636M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-dm-5.4.2-vm-vmx.zip"
+            }
+        ],
+        "date": "2011-06-01",
+        "name": "5.4.2"
+    },
+    {
+        "data": [
+            {
+                "date": "23-Mar-2011 04:15",
+                "description": "",
+                "label": "nuxeo-5.4.1-sources.zip",
+                "os": "all",
+                "size": "61M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-5.4.1-sources.zip"
+            },
+            {
+                "date": "06-Apr-2011 16:34",
+                "description": "",
+                "label": "nuxeo-cap-5.4.1-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "93M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss-ear.zip"
+            },
+            {
+                "date": "06-Apr-2011 16:34",
+                "description": "",
+                "label": "nuxeo-cap-5.4.1-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss.zip.md5",
+                "os": "all",
+                "size": "168M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-jboss.zip"
+            },
+            {
+                "date": "06-Apr-2011 16:34",
+                "description": "",
+                "label": "nuxeo-cap-5.4.1-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-tomcat.zip.md5",
+                "os": "all",
+                "size": "115M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-cap-5.4.1-tomcat.zip"
+            },
+            {
+                "date": "06-Apr-2011 16:34",
+                "description": "",
+                "label": "nuxeo-coreserver-5.4.1-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-coreserver-5.4.1-tomcat.zip.md5",
+                "os": "all",
+                "size": "107M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-coreserver-5.4.1-tomcat.zip"
+            },
+            {
+                "date": "06-Apr-2011 16:35",
+                "description": "",
+                "label": "nuxeo-dm-5.4.1-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "127M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss-ear.zip"
+            },
+            {
+                "date": "06-Apr-2011 16:35",
+                "description": "",
+                "label": "nuxeo-dm-5.4.1-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss.zip.md5",
+                "os": "all",
+                "size": "202M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-jboss.zip"
+            },
+            {
+                "date": "30-Mar-2011 17:22",
+                "description": "",
+                "label": "nuxeo-dm-5.4.1-tomcat-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat-setup.exe.md5",
+                "os": "win",
+                "size": "155M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat-setup.exe"
+            },
+            {
+                "date": "06-Apr-2011 16:35",
+                "description": "",
+                "label": "nuxeo-dm-5.4.1-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat.zip.md5",
+                "os": "all",
+                "size": "149M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-tomcat.zip"
+            },
+            {
+                "date": "30-Mar-2011 18:12",
+                "description": "",
+                "label": "nuxeo-dm-5.4.1-vm-ovf.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-ovf.zip.md5",
+                "os": "vm",
+                "size": "857M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-ovf.zip"
+            },
+            {
+                "date": "31-Mar-2011 11:51",
+                "description": "",
+                "label": "nuxeo-dm-5.4.1-vm-vmx.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-vmx.zip.md5",
+                "os": "vm",
+                "size": "658M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1-vm-vmx.zip"
+            },
+            {
+                "date": "07-Apr-2011 12:33",
+                "description": "",
+                "label": "nuxeo-dm-5.4.1_01-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "127M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss-ear.zip"
+            },
+            {
+                "date": "07-Apr-2011 12:32",
+                "description": "",
+                "label": "nuxeo-dm-5.4.1_01-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss.zip.md5",
+                "os": "all",
+                "size": "202M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-dm-5.4.1_01-jboss.zip"
+            },
+            {
+                "date": "29-Mar-2011 21:57",
+                "description": "",
+                "label": "nuxeo-shell-5.4.1.jar",
+                "os": "all",
+                "size": "2.6M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-shell-5.4.1.jar"
+            }
+        ],
+        "date": "2011-04-06",
+        "name": "5.4.1"
+    },
+    {
+        "data": [
+            {
+                "date": "09-Nov-2010 21:11",
+                "description": "",
+                "label": "nuxeo-5.4.0-sources.zip",
+                "os": "all",
+                "size": "63M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0-sources.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:37",
+                "description": "",
+                "label": "nuxeo-5.4.0.1-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip.md5",
+                "os": "all",
+                "size": "64M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip"
+            },
+            {
+                "date": "09-Nov-2010 18:06",
+                "description": "",
+                "label": "nuxeo-cap-5.4.0-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "90M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-jboss-ear.zip"
+            },
+            {
+                "date": "10-Nov-2010 16:38",
+                "description": "",
+                "label": "nuxeo-cap-5.4.0-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-tomcat.zip.md5",
+                "os": "all",
+                "size": "111M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0-tomcat.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:12",
+                "description": "",
+                "label": "nuxeo-cap-5.4.0_01-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "131M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss-ear.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:15",
+                "description": "",
+                "label": "nuxeo-cap-5.4.0_01-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss.zip.md5",
+                "os": "all",
+                "size": "164M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jboss.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:12",
+                "description": "",
+                "label": "nuxeo-cap-5.4.0_01-jetty.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jetty.zip.md5",
+                "os": "all",
+                "size": "113M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-jetty.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:12",
+                "description": "",
+                "label": "nuxeo-cap-5.4.0_01-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-tomcat.zip.md5",
+                "os": "all",
+                "size": "152M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-cap-5.4.0_01-tomcat.zip"
+            },
+            {
+                "date": "10-Nov-2010 16:39",
+                "description": "",
+                "label": "nuxeo-coreserver-5.4.0-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0-tomcat.zip.md5",
+                "os": "all",
+                "size": "103M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0-tomcat.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:12",
+                "description": "",
+                "label": "nuxeo-coreserver-5.4.0_01-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0_01-tomcat.zip.md5",
+                "os": "all",
+                "size": "144M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-coreserver-5.4.0_01-tomcat.zip"
+            },
+            {
+                "date": "09-Nov-2010 18:13",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "123M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jboss-ear.zip"
+            },
+            {
+                "date": "09-Nov-2010 18:16",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0-jetty.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jetty.zip.md5",
+                "os": "all",
+                "size": "135M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-jetty.zip"
+            },
+            {
+                "date": "09-Nov-2010 21:23",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0-tomcat-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat-setup.exe.md5",
+                "os": "win",
+                "size": "137M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat-setup.exe"
+            },
+            {
+                "date": "10-Nov-2010 16:40",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat.zip.md5",
+                "os": "all",
+                "size": "145M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-tomcat.zip"
+            },
+            {
+                "date": "22-Nov-2010 19:07",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0-vm-ovf.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-ovf.zip.md5",
+                "os": "vm",
+                "size": "770M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-ovf.zip"
+            },
+            {
+                "date": "22-Nov-2010 19:31",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0-vm-vmx.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-vmx.zip.md5",
+                "os": "vm",
+                "size": "715M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0-vm-vmx.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:12",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0_01-jboss-ear.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss-ear.zip.md5",
+                "os": "all",
+                "size": "164M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss-ear.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:12",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0_01-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss.zip.md5",
+                "os": "all",
+                "size": "240M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jboss.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:12",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0_01-jetty.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jetty.zip.md5",
+                "os": "all",
+                "size": "132M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-jetty.zip"
+            },
+            {
+                "date": "26-Nov-2010 18:24",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0_01-tomcat-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat-setup.exe.md5",
+                "os": "win",
+                "size": "149M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat-setup.exe"
+            },
+            {
+                "date": "24-Nov-2010 19:12",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0_01-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat.zip.md5",
+                "os": "all",
+                "size": "186M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-tomcat.zip"
+            },
+            {
+                "date": "24-Nov-2010 20:12",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0_01-vm-ovf.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-ovf.zip.md5",
+                "os": "vm",
+                "size": "811M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-ovf.zip"
+            },
+            {
+                "date": "24-Nov-2010 20:48",
+                "description": "",
+                "label": "nuxeo-dm-5.4.0_01-vm-vmx.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-vmx.zip.md5",
+                "os": "vm",
+                "size": "753M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-dm-5.4.0_01-vm-vmx.zip"
+            },
+            {
+                "date": "09-Nov-2010 18:20",
+                "description": "",
+                "label": "nuxeo-shell-5.4.0.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0.zip.md5",
+                "os": "all",
+                "size": "43M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:25",
+                "description": "",
+                "label": "nuxeo-shell-5.4.0_01.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0_01.zip.md5",
+                "os": "all",
+                "size": "43M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-shell-5.4.0_01.zip"
+            }
+        ],
+        "date": "2010-11-10",
+        "name": "5.4.0"
+    },
+    {
+        "data": [
+            {
+                "date": "20-Jul-2010 21:55",
+                "description": "",
+                "label": "NuxeoDM-5.3.2-VM-ovf.zip",
+                "os": "vm",
+                "size": "688M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-VM-ovf.zip"
+            },
+            {
+                "date": "20-Jul-2010 23:38",
+                "description": "",
+                "label": "NuxeoDM-5.3.2-VM-vmx.zip",
+                "os": "vm",
+                "size": "644M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-VM-vmx.zip"
+            },
+            {
+                "date": "20-Jul-2010 19:20",
+                "description": "",
+                "label": "NuxeoDM-5.3.2-jboss-setup.exe",
+                "os": "win",
+                "size": "179M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-jboss-setup.exe"
+            },
+            {
+                "date": "20-Jul-2010 19:42",
+                "description": "",
+                "label": "NuxeoDM-5.3.2-tomcat-setup.exe",
+                "os": "win",
+                "size": "135M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/NuxeoDM-5.3.2-tomcat-setup.exe"
+            },
+            {
+                "date": "19-Jul-2010 18:45",
+                "description": "",
+                "label": "nuxeo-5.3.2-sources.zip",
+                "os": "all",
+                "size": "53M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-5.3.2-sources.zip"
+            },
+            {
+                "date": "19-Jul-2010 17:55",
+                "description": "",
+                "label": "nuxeo-coreserver-5.3.2-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-coreserver-5.3.2-tomcat.zip.md5",
+                "os": "all",
+                "size": "98M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-coreserver-5.3.2-tomcat.zip"
+            },
+            {
+                "date": "20-Jul-2010 19:25",
+                "description": "",
+                "label": "nuxeo-distribution-shell-5.3.2.zip",
+                "os": "all",
+                "size": "28M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-distribution-shell-5.3.2.zip"
+            },
+            {
+                "date": "19-Jul-2010 18:28",
+                "description": "",
+                "label": "nuxeo-dm-5.3.2-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jboss.zip.md5",
+                "os": "all",
+                "size": "186M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jboss.zip"
+            },
+            {
+                "date": "19-Jul-2010 20:07",
+                "description": "",
+                "label": "nuxeo-dm-5.3.2-jetty.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jetty.zip.md5",
+                "os": "all",
+                "size": "135M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-jetty.zip"
+            },
+            {
+                "date": "19-Jul-2010 18:45",
+                "description": "",
+                "label": "nuxeo-dm-5.3.2-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-tomcat.zip.md5",
+                "os": "all",
+                "size": "135M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-dm-5.3.2-tomcat.zip"
+            }
+        ],
+        "date": "2010-07-20 ",
+        "name": "5.3.2"
+    },
+    {
+        "data": [
+            {
+                "date": "23-Mar-2010 15:24",
+                "description": "",
+                "label": "nuxeo-coreserver-5.3.1-tomcat_02.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-coreserver-5.3.1-tomcat_02.zip.md5",
+                "os": "all",
+                "size": "85M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-coreserver-5.3.1-tomcat_02.zip"
+            },
+            {
+                "date": "23-Mar-2010 15:18",
+                "description": "",
+                "label": "nuxeo-dm-5.3.1-jboss_02.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jboss_02.zip.md5",
+                "os": "all",
+                "size": "152M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jboss_02.zip"
+            },
+            {
+                "date": "18-Mar-2010 18:32",
+                "description": "",
+                "label": "nuxeo-dm-5.3.1-jetty.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jetty.zip.md5",
+                "os": "all",
+                "size": "117M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-jetty.zip"
+            },
+            {
+                "date": "23-Mar-2010 15:24",
+                "description": "",
+                "label": "nuxeo-dm-5.3.1-tomcat_02.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-tomcat_02.zip.md5",
+                "os": "all",
+                "size": "120M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-5.3.1-tomcat_02.zip"
+            },
+            {
+                "date": "23-Mar-2010 10:41",
+                "description": "",
+                "label": "nuxeo-dm-windows-installer-5.3.1.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1.exe.md5",
+                "os": "win",
+                "size": "157M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1.exe"
+            },
+            {
+                "date": "23-Mar-2010 10:42",
+                "description": "",
+                "label": "nuxeo-dm-windows-installer-5.3.1_64.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1_64.exe.md5",
+                "os": "win",
+                "size": "157M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-dm-windows-installer-5.3.1_64.exe"
+            },
+            {
+                "date": "25-Mar-2010 09:11",
+                "description": "",
+                "label": "nuxeo-ep-5.3.1-src.zip",
+                "os": "all",
+                "size": "50M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-ep-5.3.1-src.zip"
+            },
+            {
+                "date": "18-Mar-2010 18:34",
+                "description": "",
+                "label": "nuxeo-shell-5.3.1.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-shell-5.3.1.zip.md5",
+                "os": "all",
+                "size": "17M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-shell-5.3.1.zip"
+            }
+        ],
+        "date": "2010-03-22 ",
+        "name": "5.3.1"
+    },
+    {
+        "data": [
+            {
+                "date": "16-Nov-2009 11:59",
+                "description": "",
+                "label": "nuxeo-5.3.0-sources.zip",
+                "os": "all",
+                "size": "48M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-5.3.0-sources.zip"
+            },
+            {
+                "date": "16-Nov-2009 12:12",
+                "description": "",
+                "label": "nuxeo-dm-5.3.0-GA-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jboss.zip.md5",
+                "os": "all",
+                "size": "150M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jboss.zip"
+            },
+            {
+                "date": "16-Nov-2009 12:14",
+                "description": "",
+                "label": "nuxeo-dm-5.3.0-GA-jetty.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jetty.zip.md5",
+                "os": "all",
+                "size": "117M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-jetty.zip"
+            },
+            {
+                "date": "29-Oct-2009 02:46",
+                "description": "",
+                "label": "nuxeo-dm-5.3.0-GA-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-setup.exe.md5",
+                "os": "win",
+                "size": "157M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-setup.exe"
+            },
+            {
+                "date": "16-Nov-2009 12:08",
+                "description": "",
+                "label": "nuxeo-dm-5.3.0-GA-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-tomcat.zip.md5",
+                "os": "all",
+                "size": "127M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA-tomcat.zip"
+            },
+            {
+                "date": "29-Oct-2009 03:25",
+                "description": "",
+                "label": "nuxeo-dm-5.3.0-GA_64-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA_64-setup.exe.md5",
+                "os": "win",
+                "size": "159M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-GA_64-setup.exe"
+            },
+            {
+                "date": "15-Oct-2009 14:25",
+                "description": "",
+                "label": "nuxeo-dm-5.3.0-RC1-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1-jboss.zip.md5",
+                "os": "all",
+                "size": "203M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1-jboss.zip"
+            },
+            {
+                "date": "15-Oct-2009 15:25",
+                "description": "",
+                "label": "nuxeo-dm-5.3.0-RC1_02-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_02-setup.exe.md5",
+                "os": "win",
+                "size": "156M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_02-setup.exe"
+            },
+            {
+                "date": "15-Oct-2009 15:25",
+                "description": "",
+                "label": "nuxeo-dm-5.3.0-RC1_64_02-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_64_02-setup.exe.md5",
+                "os": "win",
+                "size": "158M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-dm-5.3.0-RC1_64_02-setup.exe"
+            },
+            {
+                "date": "27-Oct-2009 18:59",
+                "description": "",
+                "label": "nuxeo-shell-5.3.0.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-shell-5.3.0.zip.md5",
+                "os": "all",
+                "size": "17M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-shell-5.3.0.zip"
+            }
+        ],
+        "date": "2009-10-27 ",
+        "name": "5.3.0"
+    },
+    {
+        "data": [
+            {
+                "date": "22-May-2009 19:04",
+                "description": "",
+                "label": "nuxeo-5.2.0-sources.zip",
+                "os": "all",
+                "size": "35M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-5.2.0-sources.zip"
+            },
+            {
+                "date": "20-May-2009 18:52",
+                "description": "",
+                "label": "nuxeo-dm-5.2.0-jboss.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-jboss.zip.md5",
+                "os": "all",
+                "size": "177M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-jboss.zip"
+            },
+            {
+                "date": "19-May-2009 21:11",
+                "description": "",
+                "label": "nuxeo-dm-5.2.0-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-setup.exe.md5",
+                "os": "win",
+                "size": "165M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0-setup.exe"
+            },
+            {
+                "date": "19-May-2009 20:27",
+                "description": "",
+                "label": "nuxeo-dm-5.2.0_64-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0_64-setup.exe.md5",
+                "os": "win",
+                "size": "168M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-dm-5.2.0_64-setup.exe"
+            }
+        ],
+        "date": "2009-05-18",
+        "name": "5.2.0"
+    },
+    {
+        "data": [
+            {
+                "date": "31-Aug-2012 17:17",
+                "description": "description",
+                "label": "nuxeo-5.6-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip.md5",
+                "os": "all",
+                "size": "83M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip"
+            },
+            {
+                "date": "10-Jan-2012 15:11",
+                "description": "description",
+                "label": "nuxeo-5.5-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip.md5",
+                "os": "all",
+                "size": "82M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip"
+            },
+            {
+                "date": "31-May-2011 22:48",
+                "description": "description",
+                "label": "nuxeo-5.4.2-sources.zip",
+                "os": "all",
+                "size": "84M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-5.4.2-sources.zip"
+            },
+            {
+                "date": "23-Mar-2011 04:15",
+                "description": "description",
+                "label": "nuxeo-5.4.1-sources.zip",
+                "os": "all",
+                "size": "61M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-5.4.1-sources.zip"
+            },
+            {
+                "date": "09-Nov-2010 21:11",
+                "description": "description",
+                "label": "nuxeo-5.4.0-sources.zip",
+                "os": "all",
+                "size": "63M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0-sources.zip"
+            },
+            {
+                "date": "24-Nov-2010 19:37",
+                "description": "description",
+                "label": "nuxeo-5.4.0.1-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip.md5",
+                "os": "all",
+                "size": "64M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip"
+            },
+            {
+                "date": "19-Jul-2010 18:45",
+                "description": "Nuxeo Platform 5.3.1 sources",
+                "label": "nuxeo-5.3.2-sources.zip",
+                "os": "all",
+                "size": "53M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-5.3.2-sources.zip"
+            },
+            {
+                "date": "25-Mar-2010 09:11",
+                "description": "Nuxeo Platform 5.3.1 sources",
+                "label": "nuxeo-ep-5.3.1-src.zip",
+                "os": "all",
+                "size": "50M",
+                "url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-ep-5.3.1-src.zip"
+            },
+            {
+                "date": "16-Nov-2009 11:59  ",
+                "description": "Nuxeo DM 5.3.0 sources",
+                "label": "nuxeo-5.3.0-sources.zip",
+                "os": "all",
+                "size": "48M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-5.3.0-sources.zip"
+            },
+            {
+                "date": "22-May-2009 19:04",
+                "description": "Nuxeo DM 5.2 sources",
+                "label": "nuxeo-5.2.0-sources.zip",
+                "os": "all",
+                "size": "35M",
+                "url": "http://cdn.nuxeo.com/nuxeo-dm-5.2.0/nuxeo-5.2.0-sources.zip"
+            }
+        ],
+        "name": "SourceCode"
+    }
 ]
