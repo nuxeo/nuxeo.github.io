@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>From Nuxeo 5.9.5 to 6.0 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo on Github">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../../stylesheets/base.css">
+	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../../stylesheets/layout.css">
+	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.nuxeo.com/extension/nuxeo_design/design/nuxeo/javascript/xnav_get.js" charset="utf-8"></script>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+
+  <div id="mainContainer" class="container">
+  <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
+  <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">From 5.9.5 to 6.0</span> Release Notes</a></p>
+
+    <div id="welcome">
+
+    <div style="clear:both;"></div>
+     <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+   <h2><a name="anchor-0"></a>Elasticsearch Integration to the Core Distribution</h2>
+<p>Previously distributed as an additional package, Elasticsearch is integrated to the core distribution. By default it starts in an embedded mode, and can also be configured so as to dialog with an external Elasticsearch cluster. All documents are indexed with Elasticsearch. It is possible to disable the service. Only Search tab leverages Elasticsearch index in the default distribution, but you can activate it on any page provider by modifying a property in nuxeo.conf, ex: 
+<div class="embededCode">
+elasticsearch.override.pageproviders=default_search,tree_children</p>
+</div>
+
+<h2><a name="anchor-1"></a>Audit Service Based on Elasticsearch</h2>
+<p>A new implementation of the audit service has been made on top of an elastic search index. This provides greater performances which was necessary when audit has millions of entries, and more power in terms of defining what fields are stored.</p>
+
+<h2><a name="anchor-2"></a>Support of Facets and Other Kind of Aggregates on Page Providers and Content Views</h2>
+<p>Page Provider now integrates aggregates support and content view leveraging such kind of page providers can be configured via Nuxeo Studio easily. That way you can build search interfaces with terms, ranges and histograms filters. Many use cases have been taken into account: support of dates, specific widgets for users, directories, documents.</p>
+
+<h2><a name="anchor-3"></a>New Download Servlet</h2>
+<p>A new download servlet is available for documents that are not bound to a specific document. This new servlet is used by the Download File operation so as to get this operation working even with big files.</p>
+
+
+<h2><a name="anchor-4"></a>Collection Synchronisation</h2>
+<p>A new download servlet is available for documents that are not bound to a specific document. This new servlet is used by the Download File operation so as to get this operation working even with big files.</p>
+
+    <h2><a name="anchor-5"></a>REST API</h2>
+
+<h3>ParentId Ref</h3>
+<p>parentRef id has been added to the json response.</p>
+
+<h3>Parameters for Content Enricher contribution </h3>
+<p>Content enricher extension point now accepts parameters. Some new content enricher classes were added that makes use of this new capability: UserPermissions and Vocabulary.
+<div class="embededCode">
+<pre>
+
+&lt;enricher name=&quot;permissions&quot; class=&quot;org.nuxeo.ecm.automation.io.services.enricher.UserPermissionsContentEnricher&quot; &gt;
+&lt;category&gt;permissions&lt;/category&gt;
+&lt;parameter name="permissions"&gt;Read,Write,Everything&lt;/parameter&gt;
+
+&lt;/enricher&gt; 
+</pre></div> </p>
+
+<h2><a name="anchor-6"></a>CMIS Implementation Evolutions</h2>
+
+<p><ul>
+<li>ACLs are now implemented</li>
+<li>Rendition filters</li>
+<li>ecm:pos is exposed in CMISQL, so as to handle correctly ordered folders </li>
+</ul>
+</p>
+
+<h2><a name="anchor-7"></a>Automation: Execution Flow Operations </h2>
+
+<p>The list of operations allowing to launch other chains for loops (loop on blobs, loop on documents, loop on arbitrary lists) has been cleaned up. Idea is to have on all those operations support for transaction management, so as to be able to easily design scalable and robusts automation chains.</p>
+
+
+<h2><a name="anchor-8"></a>Improvement of Content Views Configurability</h2>
+
+<p>You can now control the display of the slideshow , the spreadsheet and the edit columns menu at the result layout level. Even better, this area is now a category of action that has access to the content view and properties configured in it for displaying it.</p>
+
+
+ <h2><a name="anchor-9"></a>Typed Layout</h2>
+
+<p>Layouts now have a type, which allows to define properties that  can be used to define on a per instance basis if some given features are supported. We currently use it for result layouts, with two types: listingTable and listingThumbnail</p>
+
+ <h2><a name="anchor-10"></a>Widget Definition Alias</h2>
+
+<p>
+It is possible to define aliases for a widget definition, so as to override former widget definitions with a newer one without having to duplicate that definition.
+Ex: 
+- document_listing_ajax -> table_listing 
+- search_listing_ajax -> table_listing</p>
+
+ <h2><a name="anchor-11"></a>documentMode with Fallback on Toggleable layouts widget</h2>
+ <p>
+Toggleable document layout widget now handles a document mode, since modes for documents are not restricted to "create" or "edit" or "view" and can gather layouts for different rendering use cases (like the drive edit screen), and still need to use "edit" or "view" mode for render. Furthermore, a logic of fallback has been added when the given mode has not been contributed.</p>
+
+
+ <h2><a name="anchor-12"></a>Dev Mode: Display of Page Structure</h2>
+
+<p>
+In Development mode, you can display the structure of your page : layouts, widgets, actions, just select the object and display its properties. This makes it a great tool for getting inspiration from the default application for your own project.</p>
+
+<h2><a name="anchor-13"></a>Multi-navigation Category of Actions</h2>
+
+<p>
+The placeholder for adding virtual navigations is now part of Nuxeo CAP. You don’t need to depend of Virtual navigation for adding elements there.</p>
+
+
+<h2><a name="anchor-14"></a>UserWorkspace Improvements</h2>
+
+<p>
+It is now possible to override the behaviour of workspace creation.</p>
+
+<h2><a name="anchor-15"></a>Incremental Update for Integer fields</h2>
+
+<p>
+Some document fields can now be updated at the storage level using atomic increment/decrement operations. This is needed for instance to allow concurrent delta updates of fields without losing information. A typical use case is the quotas. See http://jira.nuxeo.com/browse/NXP-15103 for more details.</p>
+
+  </div>
+</div>
+
+
+	<!-- JS
+	================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+    <script src="../../javascripts/float_menu.js"></script>
+    <script src="../../javascripts/lightbox.js"></script>
+
+</body></html>
+
