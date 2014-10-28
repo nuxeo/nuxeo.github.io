@@ -105,17 +105,20 @@ elasticsearch.override.pageproviders=default_search,tree_children</p>
 
 <p>The list of operations allowing to launch other chains for loops (loop on blobs, loop on documents, loop on arbitrary lists) has been cleaned up. Idea is to have on all those operations support for transaction management, so as to be able to easily design scalable and robusts automation chains.</p>
 
+<h2><a name="anchor-8"></a>JSF2</h2>
 
-<h2><a name="anchor-8"></a>Improvement of Content Views Configurability</h2>
+<p>Content Application Platform (CAP) and all the plugins have been migrated from JSF 1.2 to JSF 2 and the latest stable release of Richfaces: 4.5. A migration tool has been implemented for helping you migrate your custom code base. That will be necessary when you plan to upgrade your Nuxeo Platform instance to 6.0.</p>
+
+<h2><a name="anchor-9"></a>Improvement of Content Views Configurability</h2>
 
 <p>You can now control the display of the slideshow , the spreadsheet and the edit columns menu at the result layout level. Even better, this area is now a category of action that has access to the content view and properties configured in it for displaying it.</p>
 
 
- <h2><a name="anchor-9"></a>Typed Layout</h2>
+ <h2><a name="anchor-10"></a>Typed Layout</h2>
 
 <p>Layouts now have a type, which allows to define properties that  can be used to define on a per instance basis if some given features are supported. We currently use it for result layouts, with two types: listingTable and listingThumbnail</p>
 
- <h2><a name="anchor-10"></a>Widget Definition Alias</h2>
+ <h2><a name="anchor-11"></a>Widget Definition Alias</h2>
 
 <p>
 It is possible to define aliases for a widget definition, so as to override former widget definitions with a newer one without having to duplicate that definition.
@@ -123,28 +126,28 @@ Ex:
 - document_listing_ajax -> table_listing 
 - search_listing_ajax -> table_listing</p>
 
- <h2><a name="anchor-11"></a>documentMode with Fallback on Toggleable layouts widget</h2>
+ <h2><a name="anchor-12"></a>documentMode with Fallback on Toggleable layouts widget</h2>
  <p>
 Toggleable document layout widget now handles a document mode, since modes for documents are not restricted to "create" or "edit" or "view" and can gather layouts for different rendering use cases (like the drive edit screen), and still need to use "edit" or "view" mode for render. Furthermore, a logic of fallback has been added when the given mode has not been contributed.</p>
 
 
- <h2><a name="anchor-12"></a>Dev Mode: Display of Page Structure</h2>
+ <h2><a name="anchor-13"></a>Dev Mode: Display of Page Structure</h2>
 
 <p>
 In Development mode, you can display the structure of your page : layouts, widgets, actions, just select the object and display its properties. This makes it a great tool for getting inspiration from the default application for your own project.</p>
 
-<h2><a name="anchor-13"></a>Multi-navigation Category of Actions</h2>
+<h2><a name="anchor-14"></a>Multi-navigation Category of Actions</h2>
 
 <p>
 The placeholder for adding virtual navigations is now part of Nuxeo CAP. You don’t need to depend of Virtual navigation for adding elements there.</p>
 
 
-<h2><a name="anchor-14"></a>UserWorkspace Improvements</h2>
+<h2><a name="anchor-15"></a>UserWorkspace Improvements</h2>
 
 <p>
 It is now possible to override the behaviour of workspace creation.</p>
 
-<h2><a name="anchor-15"></a>Incremental Update for Integer fields</h2>
+<h2><a name="anchor-16"></a>Incremental Update for Integer fields</h2>
 
 <p>
 Some document fields can now be updated at the storage level using atomic increment/decrement operations. This is needed for instance to allow concurrent delta updates of fields without losing information. A typical use case is the quotas. See http://jira.nuxeo.com/browse/NXP-15103 for more details.</p>
