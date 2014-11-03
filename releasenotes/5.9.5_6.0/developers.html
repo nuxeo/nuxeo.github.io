@@ -80,6 +80,9 @@ elasticsearch.override.pageproviders=default_search,tree_children</p>
 <h3>ParentId Ref</h3>
 <p>parentRef id has been added to the json response.</p>
 
+<h3>Use Elasticsearch index on Query Endpoint</h3>
+<p>The query endpoint now uses a named page provider who can be configured to hit Elastiscsearch index.</p>
+
 <h3>Parameters for Content Enricher contribution </h3>
 <p>Content enricher extension point now accepts parameters. Some new content enricher classes were added that makes use of this new capability: UserPermissions and Vocabulary.
 <div class="embededCode">
@@ -141,6 +144,12 @@ In Development mode, you can display the structure of your page : layouts, widge
 <p>
 The placeholder for adding virtual navigations is now part of Nuxeo CAP. You don’t need to depend of Virtual navigation for adding elements there.</p>
 
+<h2><a name="anchor-14"></a>Custom Headers in the Webapp</h2>
+
+<p>
+A custom header has been added: "X-UA-Compatible" with the value "IE=10; IE=11" so as to better control behaviour on Internet Explorer on supported versions. The way this header has been added benefits from a new extension point that allows to contribute additionnal headers.
+</p>
+
 
 <h2><a name="anchor-15"></a>UserWorkspace Improvements</h2>
 
@@ -152,7 +161,22 @@ It is now possible to override the behaviour of workspace creation.</p>
 <p>
 Some document fields can now be updated at the storage level using atomic increment/decrement operations. This is needed for instance to allow concurrent delta updates of fields without losing information. A typical use case is the quotas. See http://jira.nuxeo.com/browse/NXP-15103 for more details.</p>
 
-  </div>
+<h2><a name="anchor-16"></a>Directory Access Low Level Restriction</h2>
+
+<p>
+When contributing a directory declaration, it is now possible to add READ and WRITE restrictions to specific groups.</p>
+
+<h2><a name="anchor-16"></a>Configure Mail Creation with Automation</h2>
+
+<p>
+The Nuxeo Platform Mail module has been moved out of the default product and now lives as a marketplace package called "Nuxeo Imap Connector". Additionnaly, its configurability has been improved as there is now a way to customise the mail creation logic just using an automation chain.</p>
+
+<h2><a name="anchor-16"></a>Changes in Features Layout/h2>
+
+<p>
+There were some big changes in the way features are distributed. Nuxeo DM is a deprecated assembly. You shoud now start systematically from Nuxeo CAP and add addition packages. Faceted Search has been deprecated and exists as a separated  package. Virtual Navigation is in a separated package. Tags support has been integrated to Nuxeo CAP. Open Social is deprecated and exits now in a separate marektplace pacakge. DAM package contains all the imaging-* addons, and brings Picture, Video and Sound types.</p>
+</div>
+
 </div>
 
 
