@@ -73,9 +73,9 @@ elasticsearch.override.pageproviders=default_search,tree_children</p>
 
 
 <h2><a name="anchor-4"></a>Collection Synchronisation</h2>
-<p>A new download servlet is available for documents that are not bound to a specific document. This new servlet is used by the Download File operation so as to get this operation working even with big files.</p>
+<p>You can synchronize collections with Drive. Feature is not yet enabled for the user by default. You still need to add the action by contribution, as we are experimenting the feature before making it generally available.</p>
 
-    <h2><a name="anchor-5"></a>REST API</h2>
+<h2><a name="anchor-5"></a>REST API</h2>
 
 <h3>ParentId Ref</h3>
 <p>parentRef id has been added to the json response.</p>
@@ -119,7 +119,7 @@ elasticsearch.override.pageproviders=default_search,tree_children</p>
 
  <h2><a name="anchor-10"></a>Typed Layout</h2>
 
-<p>Layouts now have a type, which allows to define properties that  can be used to define on a per instance basis if some given features are supported. We currently use it for result layouts, with two types: listingTable and listingThumbnail</p>
+<p>Layouts now have a type, which allows to define properties that can be used to define on a per instance basis if some given features are supported. We currently use it for result layouts, with two types: listingTable and listingThumbnail</p>
 
  <h2><a name="anchor-11"></a>Widget Definition Alias</h2>
 
@@ -135,6 +135,7 @@ Toggleable document layout widget now handles a document mode, since modes for d
 
 
  <h2><a name="anchor-13"></a>Dev Mode: Display of Page Structure</h2>
+ <p><img class="lightboxed" src="./nuxeo_ui_development_mode.png"/></p>
 
 <p>
 In Development mode, you can display the structure of your page : layouts, widgets, actions, just select the object and display its properties. This makes it a great tool for getting inspiration from the default application for your own project.</p>
@@ -154,14 +155,14 @@ A custom header has been added: "X-UA-Compatible" with the value "IE=10; IE=11" 
 <h2><a name="anchor-16"></a>UserWorkspace Improvements</h2>
 
 <p>
-It is now possible to override the behaviour of workspace creation.</p>
+It is now possible to override the behaviour of user workspace creation.</p>
 
 <h2><a name="anchor-17"></a>Incremental Update for Integer fields</h2>
 
 <p>
 Some document fields can now be updated at the storage level using atomic increment/decrement operations. This is needed for instance to allow concurrent delta updates of fields without losing information. A typical use case is the quotas. See http://jira.nuxeo.com/browse/NXP-15103 for more details.</p>
 
-<h2><a name="anchor-18"></a>Directory Access Low Level Restriction</h2>
+<h2><a name="anchor-18"></a>Directory Low Level Access Restriction</h2>
 
 <p>
 When contributing a directory declaration, it is now possible to add READ and WRITE restrictions to specific groups.</p>
@@ -171,7 +172,7 @@ When contributing a directory declaration, it is now possible to add READ and WR
 <p>
 The Nuxeo Platform Mail module has been moved out of the default product and now lives as a marketplace package called "Nuxeo Imap Connector". Additionnaly, its configurability has been improved as there is now a way to customise the mail creation logic just using an automation chain.</p>
 
-<h2><a name="anchor-20"></a>Changes in Features Layout/h2>
+<h2><a name="anchor-20"></a>Changes in Features Layout</h2>
 
 <p>
 There were some big changes in the way features are distributed. Nuxeo DM is a deprecated assembly. You shoud now start systematically from Nuxeo CAP and add addition packages. Faceted Search has been deprecated and exists as a separated  package. Virtual Navigation is in a separated package. Tags support has been integrated to Nuxeo CAP. Open Social is deprecated and exits now in a separate marektplace pacakge. DAM package contains all the imaging-* addons, and brings Picture, Video and Sound types.</p>
