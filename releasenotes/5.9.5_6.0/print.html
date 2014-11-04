@@ -8,8 +8,8 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>Nuxeo 5.9.5 - New and Noteworthy</title>
-	<meta name="description" content="Nuxeo Platform 5.9.5 release notes">
+	<title>Nuxeo Platform 6.0 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo Platform 6.0 release notes">
 	<meta name="author" content="nuxeo">
 
 	<!-- Mobile Specific Metas
@@ -52,111 +52,198 @@ div.breakafter {
 
   <div id="mainContainer" class="container">
     
-    <p class="remove-bottom" id="site-title"><a href="./index.html">Nuxeo Platform <span class="version-number">5.9.5</span> Release Notes</a></p>
+    <p class="remove-bottom" id="site-title"><a href="./index.html">Nuxeo Platform <span class="version-number">6.0</span> Release Notes</a></p>
 
     <div id="welcome">
 
      <div style="clear:both;"></div>
 
     <h1 style="margin-left:-0.5em !important;">For Users</h1>
-    <h2><a name="anchor-0"></a>Insert a Video in a Note</h2>
+     <h2><a name="anchor-0"></a>New search tab</h2>
 
-<p>Users can now reference a video inside a Note document type. The HTML5 player is used to play the video.</p>
+<p>All the search experience has been grouped in a new tab called “search”, for which the thumbnail mode has been greatly improved and that provides a nice search experience, with aggregates support, ability to edit columns of the result and then to save searches the search. It is possible to provide multiple search filters, and they can be hidden or displayed depending on the profile of the user.</p>
+<p><img class="lightboxed" src="./nuxeo_new_search_tab.png"/></p>
 
-    <h2><a name="anchor-1"></a>Photoshop Mime-types Correctly Detected</h2>
+    <h2><a name="anchor-1"></a>Facets and Other Aggregates Support</h2>
 
-<p>Missing mime-types for Photoshop were added, improving detection and image processing of those kind of files.</p>
+<p>Results of searches are now categorised into facets that help the user to quickly focus on what she is looking for. It is also possible to display count of documents that fit preselected ranges of values. </p>
+<p><img class="lightboxed" src="./nuxeo_facets_and_other_aggregates_support.png"/></p>
+
+ <h2><a name="anchor-2"></a>Faster Quick Search</h2>
+
+<p>Quick search now relies on select2, providing a much better feeling!</p>
 
 
-<div class="breakafter"></div>
+ <h2><a name="anchor-3"></a>Bulk Creation</h2>
+
+<p>You now have a bulk import action in the main interface, with ability to set metadata, tags and collections right at the import time for all the documents that are dropped. The bulk edit also now supports the collections and tags interface. </p>
+<p><img class="lightboxed" src="./nuxeo_bulk_import.png"/></p>
+
+
+ <h2><a name="anchor-4"></a>Spreadsheet Edit</h2>
+
+<p>A new add-on “Spreadsheet” allows to have a spreadsheet like user interface for bulk-editing the metadata, with ability to select and drag the values. </p>
+<p><img class="lightboxed" src="./nuxeo_spreadsheet_edit.png"/></p>
+
+ <h2><a name="anchor-5"></a>Drive Edit</h2>
+
+<p>Nuxeo Drive can be used for “live editing” a document, in replacement of Nuxeo Live Edit, which is deprecated. Documents being live edited are going to a special Drive folder called Lively Edited.</p>
+
+ <h2><a name="anchor-6"></a>Metadata Edit from Nuxeo Drive</h2>
+
+<p>It is possible to edit a metadata from the Desktop interface on Windows, by clicking on a right click “Nuxeo Drive” action that displays a pop up so as to allow editing of metadata associated to the type of the document that holds the binary. A few other actions are also made available: link to the document in the web application, locking, following. </p>
+
+
+ <h2><a name="anchor-7"></a>Updated Picture Generation Resolution</h2>
+
+<p>Default picture transformations sizes have been increased to 1200 max for medium, 350px for small, 150 px max for thumbnail, following evolution of the digital industry!</p>
+
+ <h2><a name="anchor-8"></a>Simplified ACLs</h2>
+
+<p>Negative permission has been removed beside the action of blocking inheritance (Deny Everything Everyone). This important change of behaviour can be set back with a property (TODO), but pay attention that negative permissions are not compatible with using Elasticsearch or MongoDB. </p>
+
+ <h2><a name="anchor-9"></a>Look & Feel</h2>
+
+<p>A huge work has been done on the look&feel. Beside the global appearance that has been totally reviewed many details has been taken care of. It now uses background images for a better rendering. Buttons on content views are hidden as long as nothing is selected. Main action of most of the forms has a different caller for making it easy to be found. </p>
+    
+
+    <div class="breakafter"></div>
 
 
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
-
-  <h2><a name="anchor-0"></a>MongoDB Backend</h2>
-<p>MongoDB support is now built-in, you don't need to install a marketplace package. A deep refactoring of low layers happened in Nuxeo so as to be able to support a non-transactionnal repository such as MongoDB. This refactoring was made so as to be able to implement other NoSQL backends in the future, as known as "Document-Based-Storage" inside the platform.</p>
-
-    <h2><a name="anchor-1"></a>REST API improvements</h2>
-
-<h3>Content Enricher</h3>
-<p>Former Rest Providers have been renamed "Content Enricher" for more clarity. The corresponding necessary contribution was also changed, see upgrade notes.</p><p> Two content enrichers were added to the platform:
-<ul>
-<li>
-ACL: This adds ACLs of the document to the response. It was previously doable using the @ACL web adaptor. Having a Content Enricher for this allows to get in one same call the document and its ACLs.
-</li>
-<li>
-Thumbnail: This one adds url of the Thumbnail Picture to the response. You can use it when doing client slide applications.
-</li>
-</ul>
-<p>The Content Enricher <a href="http://doc.nuxeo.com/x/5wUuAQ" target="_blanck">documentation </a> has been updated.</p>
-<h3>New Versioning Header</h3>
-<p>You can now control whether a minor or major version is created when creating or updating a document via the REST API, using the new "X-Versioning-Option" header, with "MAJOR" or "MINOR" as a value.</p>
-
-
-<h2><a name="anchor-2"></a>Elasticsearch</h2>
-
-<p>The Elasticseach integration has been improved. More fields are indexed, following the feebdack of first usecases. Furthermore, the documents are now fetched directly from the Elasticsearch index, instead of only fetching the reference then loading the document from the database. This saves many database queries in the result set construction and thus improves peformances.</p>
-
-<h2><a name="anchor-3"></a>Business Days Management</h2>
-
-<p>A plugin implemented at first for a customer project has been generically re-branded as it can be useful in many situations: "Business Days Management" module allows to compute a date given a delay and the list of holidays for the year. The delay will be added to the start date without counting the week ends and those holidays. See the <a href= "https://github.com/nuxeo/nuxeo-business-days-management" alt="_blank"> nuxeo-business-day-management GitHub repository</a>, we will come up soon with a post around this topic.</p>
-
- <h2><a name="anchor-4"></a>Generic Video Class Converter</h2>
-
-<p>Thanks to this new Video converter, you can add new video conversion formats without having to write custom Java classes. A sample contribution of a new video converter would be:</p>
-<div class="embededCode"><pre>
-&lt;converter name=&quot;convertToMOV&quot; class=&quot;org.nuxeo.ecm.platform.video.convert.VideoConversionConverter&quot;&gt;
-    &lt;sourceMimeType&gt;video/mpeg&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/webm&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/quicktime&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/ogg&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/x-ms-asf&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/x-msvideo&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/flv&lt;/sourceMimeType&gt;
-    &lt;destinationMimeType&gt;video/mov&lt;/destinationMimeType&gt;
-    &lt;parameters&gt;
-        &lt;parameter name=&quot;CommandLineName&quot;&gt;ffmpeg-tomov&lt;/parameter&gt;
-        &lt;parameter name=&quot;videoMimeType&quot;&gt;video/mov&lt;/parameter&gt;
-        &lt;parameter name=&quot;videoExtension&quot;&gt;mov&lt;/parameter&gt;
-        &lt;parameter name=&quot;tmpDirectoryPrefix&quot;&gt;convertToMOV&lt;/parameter&gt;
-    &lt;/parameters&gt;
-&lt;/converter&gt;
-</pre>
+      <h2><a name="anchor-0"></a>Elasticsearch Integration to the Core Distribution</h2>
+<p>Previously distributed as an additional package, Elasticsearch is integrated to the core distribution. By default it starts in an embedded mode, and can also be configured so as to dialog with an external Elasticsearch cluster. All documents are indexed with Elasticsearch. It is possible to disable the service. Only Search tab leverages Elasticsearch index in the default distribution, but you can activate it on any page provider by modifying a property in nuxeo.conf, ex: 
+<div class="embededCode">
+elasticsearch.override.pageproviders=default_search,tree_children</p>
 </div>
 
- <h2><a name="anchor-5"></a>SCIM 1.1 Implementation</h2>
-A <a href="https://github.com/tiry/nuxeo-scim-server">new scim-server plugin</a> provides a RESTFUL implementation of <a href="http://www.simplecloud.info/">SCIM 1.1</a> interface, that allows to provision users and groups using a commonly accepted API. This API is used for instance by third party IDMs like Okta.
+<h2><a name="anchor-1"></a>Audit Service Based on Elasticsearch</h2>
+<p>A new implementation of the audit service has been made on top of an elastic search index. This provides greater performances which was necessary when audit has millions of entries, and more power in terms of defining what fields are stored.</p>
 
- <h2><a name="anchor-6"></a>Okta SSO</h2>
-A <a href="https://github.com/nuxeo/nuxeo-platform-login/tree/feature-NXP-14596-Okta-integration/nuxeo-platform-login-okta">new login-okta plugin</a> allows to use Okta IDP for managing users and authentication.
+<h2><a name="anchor-2"></a>Support of Facets and Other Kind of Aggregates on Page Providers and Content Views</h2>
+<p>Page Provider now integrates aggregates support and content view leveraging such kind of page providers can be configured via Nuxeo Studio easily. That way you can build search interfaces with terms, ranges and histograms filters. Many use cases have been taken into account: support of dates, specific widgets for users, directories, documents.</p>
 
- <h2><a name="anchor-7"></a>Duo Web Two Factors authentication plugin</h2>
-A <a href="https://github.com/nuxeo/marketplace-duoweb-authentication">new duoweb-authentication plugin</a> allows to set up a two factors authentication for Nuxeo using Duo Web online sercices.
+<h2><a name="anchor-3"></a>New Download Servlet</h2>
+<p>A new download servlet is available for documents that are not bound to a specific document. This new servlet is used by the Download File operation so as to get this operation working even with big files.</p>
 
+
+<h2><a name="anchor-4"></a>Collection Synchronisation</h2>
+<p>You can synchronize collections with Drive. Feature is not yet enabled for the user by default. You still need to add the action by contribution, as we are experimenting the feature before making it generally available.</p>
+
+<h2><a name="anchor-5"></a>REST API</h2>
+
+<h3>ParentId Ref</h3>
+<p>parentRef id has been added to the json response.</p>
+
+<h3>Use Elasticsearch index on Query Endpoint</h3>
+<p>The query endpoint now uses a named page provider who can be configured to hit Elastiscsearch index.</p>
+
+<h3>Parameters for Content Enricher contribution </h3>
+<p>Content enricher extension point now accepts parameters. Some new content enricher classes were added that makes use of this new capability: UserPermissions and Vocabulary.
+<div class="embededCode">
+<pre>
+
+&lt;enricher name=&quot;permissions&quot; class=&quot;org.nuxeo.ecm.automation.io.services.enricher.UserPermissionsContentEnricher&quot; &gt;
+&lt;category&gt;permissions&lt;/category&gt;
+&lt;parameter name="permissions"&gt;Read,Write,Everything&lt;/parameter&gt;
+
+&lt;/enricher&gt; 
+</pre></div> </p>
+
+<h2><a name="anchor-6"></a>CMIS Implementation Evolutions</h2>
+
+<p><ul>
+<li>ACLs are now implemented</li>
+<li>Rendition filters</li>
+<li>ecm:pos is exposed in CMISQL, so as to handle correctly ordered folders </li>
+</ul>
+</p>
+
+<h2><a name="anchor-7"></a>Automation: Execution Flow Operations </h2>
+
+<p>The list of operations allowing to launch other chains for loops (loop on blobs, loop on documents, loop on arbitrary lists) has been cleaned up. Idea is to have on all those operations support for transaction management, so as to be able to easily design scalable and robusts automation chains.</p>
+
+<h2><a name="anchor-8"></a>JSF2</h2>
+
+<p>Content Application Platform (CAP) and all the plugins have been migrated from JSF 1.2 to JSF 2 and the latest stable release of Richfaces: 4.5. A migration tool has been implemented for helping you migrate your custom code base. That will be necessary when you plan to upgrade your Nuxeo Platform instance to 6.0.</p>
+
+<h2><a name="anchor-9"></a>Improvement of Content Views Configurability</h2>
+
+<p>You can now control the display of the slideshow , the spreadsheet and the edit columns menu at the result layout level. Even better, this area is now a category of action that has access to the content view and properties configured in it for displaying it.</p>
+
+
+ <h2><a name="anchor-10"></a>Typed Layout</h2>
+
+<p>Layouts now have a type, which allows to define properties that can be used to define on a per instance basis if some given features are supported. We currently use it for result layouts, with two types: listingTable and listingThumbnail</p>
+
+ <h2><a name="anchor-11"></a>Widget Definition Alias</h2>
+
+<p>
+It is possible to define aliases for a widget definition, so as to override former widget definitions with a newer one without having to duplicate that definition.
+Ex: 
+- document_listing_ajax -> table_listing 
+- search_listing_ajax -> table_listing</p>
+
+ <h2><a name="anchor-12"></a>documentMode with Fallback on Toggleable layouts widget</h2>
+ <p>
+Toggleable document layout widget now handles a document mode, since modes for documents are not restricted to "create" or "edit" or "view" and can gather layouts for different rendering use cases (like the drive edit screen), and still need to use "edit" or "view" mode for render. Furthermore, a logic of fallback has been added when the given mode has not been contributed.</p>
+
+
+ <h2><a name="anchor-13"></a>Dev Mode: Display of Page Structure</h2>
+ <p><img class="lightboxed" src="./nuxeo_ui_development_mode.png"/></p>
+
+<p>
+In Development mode, you can display the structure of your page : layouts, widgets, actions, just select the object and display its properties. This makes it a great tool for getting inspiration from the default application for your own project.</p>
+
+<h2><a name="anchor-14"></a>Multi-navigation Category of Actions</h2>
+
+<p>
+The placeholder for adding virtual navigations is now part of Nuxeo CAP. You don’t need to depend of Virtual navigation for adding elements there.</p>
+
+<h2><a name="anchor-15"></a>Custom Headers in the Webapp</h2>
+
+<p>
+A custom header has been added: "X-UA-Compatible" with the value "IE=10; IE=11" so as to better control behaviour on Internet Explorer on supported versions. The way this header has been added benefits from a new extension point that allows to contribute additionnal headers.
+</p>
+
+
+<h2><a name="anchor-16"></a>UserWorkspace Improvements</h2>
+
+<p>
+It is now possible to override the behaviour of user workspace creation.</p>
+
+<h2><a name="anchor-17"></a>Incremental Update for Integer fields</h2>
+
+<p>
+Some document fields can now be updated at the storage level using atomic increment/decrement operations. This is needed for instance to allow concurrent delta updates of fields without losing information. A typical use case is the quotas. See http://jira.nuxeo.com/browse/NXP-15103 for more details.</p>
+
+<h2><a name="anchor-18"></a>Directory Low Level Access Restriction</h2>
+
+<p>
+When contributing a directory declaration, it is now possible to add READ and WRITE restrictions to specific groups.</p>
+
+<h2><a name="anchor-19"></a>Configure Mail Creation with Automation</h2>
+
+<p>
+The Nuxeo Platform Mail module has been moved out of the default product and now lives as a marketplace package called "Nuxeo Imap Connector". Additionnaly, its configurability has been improved as there is now a way to customise the mail creation logic just using an automation chain.</p>
+
+<h2><a name="anchor-20"></a>Changes in Features Layout</h2>
+
+<p>
+There were some big changes in the way features are distributed. Nuxeo DM is a deprecated assembly. You shoud now start systematically from Nuxeo CAP and add addition packages. Faceted Search has been deprecated and exists as a separated  package. Virtual Navigation is in a separated package. Tags support has been integrated to Nuxeo CAP. Open Social is deprecated and exits now in a separate marektplace pacakge. DAM package contains all the imaging-* addons, and brings Picture, Video and Sound types.</p>
+
+  
 
 
 <div class="breakafter"></div>
      <h1  style="margin-left:-0.5em !important;">For Administrators</h1>
 
+<h2><a name="anchor-0"></a>User and Groups Providers and Authentication Mode Configuration</h2>
+<p>A wizard is available both at  set up time and in the Admin Center. This wizard allows to configure the way Nuxeo Platform will fetch users and groups: in an ldap directory, active directory or a SQL database. It also enables to configure the user attribute mapping. </p>
 
-
-<h2><a name="anchor-0"></a>Logging Slow Queries</h2>
-<p>To trace all NXQL queries that take more than 100ms, activate the log for <i>org.nuxeo.ecm.core.storage.sql</i> at the INFO level and add in the nuxeo.conf:
-<div class="embededCode">
-  org.nuxeo.vcs.query.log_min_duration_ms=100
-</div></p>
-
-<h2><a name="anchor-1"></a>Java version is checked at server startup</h2>
-<p>The check on the Java version (greater or equal to 1.7) is done in nuxeoctl and nuxeoctl.bat scripts. If the correct version is not found, a comprehensive message is displayed: "ERROR: Nuxeo requires Java 1.7+ (detected 1.6.0_38)".
+<h2><a name="anchor-1"></a>AES Binary Store Encryption Mode</h2>
+<p>It is possible to use an AES algorithm to encrypt binaries before storing them in the binary store. See <a href="http://doc.nuxeo.com/x/UoIlAQ">Configuring Encryption Documentation page</a>.
 </p>
-
-<h2><a name="anchor-2"></a>Elasticsearch</h2>
-<p>The Admin Center tab for Elasticsearch has been improved. A clear status is dispayed so as to know if there are indexing tasks running or pending.
-Administrator can also find some information on the total number of documents in ES and a dynamically updated average rate of indexing.
-</p>
-
-
-
 
   </div>
 
