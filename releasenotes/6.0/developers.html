@@ -75,8 +75,8 @@
 						<p>
 							Elasticsearch engine and wrapping java service is embedded in Nuxeo CAP distribution, with a dedicated tab in the Admincenter for monitoring the activity. An embedded server is started by default. In production, Nuxeo Plaform is connected to an Elasticsearch cluster. Elasticsearch offers an amazing ability to scale the repository queries while being very easy to set up. The graph below compares number of requests served per second with the number of concurrent users increasing on a given same hardware. In blue dabase queries versus in red Elasticsearch queries.
 							<div>
-							<img class="lightboxed" src="./elasticsearch_scales.png"/>
-						</div>
+								<img class="lightboxed" src="./elasticsearch_scales.png"/>
+							</div>
 							All documents are indexed with Elasticsearch. It is possible to disable the service. Only Search tab leverages Elasticsearch index in the default distribution, but you can activate it on any page provider by modifying a property in nuxeo.conf, ex:
 							<div class="embededCode">
 								elasticsearch.override.pageproviders=default_search,tree_children
@@ -88,7 +88,11 @@
 							MongoDB Backend
 						</h2>
 						<p>
-							A deep refactoring of low layers happened in Nuxeo Platform so as to be able to support a non-transactionnal JSON-based storage engines for the repository, such as MongoDB. This refactoring was made so as to be able to implement other NoSQL backends in the future. MongoDB is a perfect candidate when expectations in concurrent writes and high availability are high. Any application existing on top of Nuxeo Platform can benefit form this new persistence option as it is completely transparant to the Content Management model exposed by tree_children Nuxeo Platform. More information on <a href="http://doc.nuxeo.com/x/vRM5AQ" target="_blank"> Mongo DB storage</a> and <a href="http://doc.nuxeo.com/x/yAEuAQ" target="_blank"> how to set it up</a>.
+							A deep refactoring of low layers happened in Nuxeo Platform so as to be able to support a non-transactionnal JSON-based storage engines for the repository, such as MongoDB. This refactoring was made so as to be able to implement other NoSQL backends in the future. MongoDB is a perfect candidate when expectations in concurrent writes and high availability are high. Any application existing on top of Nuxeo Platform can benefit form this new persistence option as it is completely transparant to the Content Management model exposed by tree_children Nuxeo Platform. More information on
+							<a href="http://doc.nuxeo.com/x/vRM5AQ" target="_blank">Mongo DB storage</a>
+							and
+							<a href="http://doc.nuxeo.com/x/yAEuAQ" target="_blank">how to set it up</a>
+							.
 						</p>
 						<h2>
 							<a name="anchor-2"></a>
@@ -142,7 +146,9 @@
 
 							<h3>Query Endpoint</h3>
 							<p>
-								A Query endpoint has been added. It allows to execute NXQL queries (with ability to control if it hits Elasticsearch or the database) and to fetch page providers. More information on the <a target="_blank" href="http://doc.nuxeo.com/x/qAc5AQ">documentation page</a>.
+								A Query endpoint has been added. It allows to execute NXQL queries (with ability to control if it hits Elasticsearch or the database) and to fetch page providers. More information on the
+								<a target="_blank" href="http://doc.nuxeo.com/x/qAc5AQ">documentation page</a>
+								.
 							</p>
 
 							<h3>Endpoint for Types and Schemas</h3>
@@ -340,7 +346,9 @@
 						</h2>
 						<h3>JSF2</h3>
 						<p>
-							Content Application Platform (CAP) and all the plugins have been migrated from JSF 1.2 to JSF 2 and the latest stable release of Richfaces: 4.5. A migration tool has been implemented for helping you migrate your custom code base. That will be necessary when you plan to upgrade your Nuxeo Platform Instance to 6.0. More information can be found on <a href="http://doc.nuxeo.com/x/3Q45AQ" target="_blank">JSF code migration to JSF2</a>.
+							Content Application Platform (CAP) and all the plugins have been migrated from JSF 1.2 to JSF 2 and the latest stable release of Richfaces: 4.5. A migration tool has been implemented for helping you migrate your custom code base. That will be necessary when you plan to upgrade your Nuxeo Platform Instance to 6.0. More information can be found on
+							<a href="http://doc.nuxeo.com/x/3Q45AQ" target="_blank">JSF code migration to JSF2</a>
+							.
 						</p>
 
 						<h3>Improvement of Content Views Configurability</h3>
@@ -375,7 +383,11 @@ Ex:
 						</p>
 
 						<p>
-							In Development mode, you can display the structure of your page : layouts, widgets, actions, just select the object and display its properties. This makes it a great tool for getting inspiration from the default application for your own project, or for knowing which id should be used for <a href="http://doc.nuxeo.com/x/mBQ5AQ" target="_blank" >removing or hide conditionnaly a link, a button or any other UI object</a>.
+							In Development mode, you can display the structure of your page : layouts, widgets, actions, just select the object and display its properties. This makes it a great tool for getting inspiration from the default application for your own project, or for knowing which id should be used for
+							<a href="http://doc.nuxeo.com/x/mBQ5AQ" target="_blank" >
+								removing or hide conditionnaly a link, a button or any other UI object
+							</a>
+							.
 						</p>
 
 						<h3>Multi-navigation Category of Actions</h3>
@@ -421,8 +433,6 @@ Ex:
 								that will be in charge of choosing the id (from serialized entry's fields) that will be submitted by the widget.
 							</li>
 						</ul>
-
-
 
 						<h2>
 							<a name="anchor-8"></a>
@@ -481,38 +491,27 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 						<p>
 							We have added operations dedicated to collections management. You can use AddToCollection, RemoveFromCollection, CreateACollection and GetAllDocumentsFromCollection. Their name speak for themselves.
 						</p>
-<h2>
+						<h2>
 							<a name="anchor-10"></a>
 							Authentication and Other User Management Evolutions
 						</h2>
 
-						<h3>
-							
-							Token Based Authentication Management & OAuth 2.0 Support
-						</h3>
+						<h3>Token Based Authentication Management & OAuth 2.0 Support</h3>
 
 						<p>
 							Exploding demand of API use makes it necessary to provide easy means for developers to manage authentication of the applications they develop, let it be on JavaScript based app, iOS, Python (with Drive)… The token based authentication service, implemented initially for the requirements of Nuxeo Drive is extracted and generalized, made available to the Nuxeo Platform developers. In the same time, OAuth 2.0 support is added, so as to provide as an option a very secured way of handling the authentication process.
 						</p>
-						<h3>
-						
-							SCIM 1.1 Implementation
-						</h3>
+						<h3>SCIM 1.1 Implementation</h3>
 						A
 						<a href="https://github.com/tiry/nuxeo-scim-server">new scim-server plugin</a>
 						provides a RESTFUL implementation of
 						<a href="http://www.simplecloud.info/">SCIM 1.1</a>
 						interface, that allows to provision users and groups using a commonly accepted API. This API is used for instance by third party IDMs like Okta.
-						<h3>
-							Okta SSO
-						</h3>
+						<h3>Okta SSO</h3>
 						A
 						<a href="https://github.com/nuxeo/nuxeo-platform-login/tree/feature-NXP-14596-Okta-integration/nuxeo-platform-login-okta">new login-okta plugin</a>
 						allows to use Okta IDP for managing users and authentication.
-						<h3>
-						
-							Duo Web Two Factors authentication plugin
-						</h3>
+						<h3>Duo Web Two Factors authentication plugin</h3>
 						A
 						<a href="https://github.com/nuxeo/marketplace-duoweb-authentication">new duoweb-authentication plugin</a>
 						allows to set up a two factors authentication for Nuxeo using Duo Web online sercices.
@@ -549,20 +548,14 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 							When contributing a directory declaration, it is now possible to add READ and WRITE restrictions to specific groups.
 						</p>
 
-						<h3>
-						
-							Java 8 Support
-						</h3>
+						<h3>Java 8 Support</h3>
 						<p>
 							This new release has been tested with Java 8. You can see the list of changes on
 							<a href="https://jira.nuxeo.com/browse/NXP-13570">NXP-13570</a>
 							.
 						</p>
 
-						<h3>
-						
-							NXQL Query and Fetch
-						</h3>
+						<h3>NXQL Query and Fetch</h3>
 
 						<p>
 							Using the <em>queryAndFetch</em>
@@ -572,10 +565,7 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 							for reference.
 						</p>
 
-						<h3>
-						
-							Facilitators for Escalation Rules Configuration
-						</h3>
+						<h3>Facilitators for Escalation Rules Configuration</h3>
 						<p>
 							Simplify frequent escalation rules use cases by providing some functions usable in the conditional expression:
 						</p>
@@ -605,18 +595,12 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 							without having to deal with adding a custom node variable etc...
 						</p>
 
-						<h3>
-						
-							Calendar Facet
-						</h3>
+						<h3>Calendar Facet</h3>
 						<p>
 							We have added a calendar facet that allows to easily set Calendar objects in the repository. They themselves display events in a calendar style, with ability to bind documents to calendars and events. This feature is very useful on Case Management projects, where one wants to review cases on specific events. Thanks to this roadmap item, it is a matter of a few minutes to setup some calendars in your application! The feature is made available in the already existing nuxeo-agenda module.
 						</p>
 
-						<h3>
-							
-							Giving a Comment When following a Transition
-						</h3>
+						<h3>Giving a Comment When following a Transition</h3>
 						<p>
 							This is something we should have done a long time ago but it's finally here. You can now pass a comment when following a transition. To do this you simply add a comment in the document's context map like this:
 						</p>
@@ -629,10 +613,7 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 </pre>
 						</div>
 
-						<h3>
-					
-							Business Days Management
-						</h3>
+						<h3>Business Days Management</h3>
 
 						<p>
 							A plugin implemented at first for a customer project has been generically re-branded as it can be useful in many situations: "Business Days Management" module allows to compute a date given a delay and the list of holidays for the year. The delay will be added to the start date without counting the week ends and those holidays. See the
@@ -640,10 +621,7 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 							, we will come up soon with a post around this topic.
 						</p>
 
-						<h3>
-							
-							Generic Video Class Converter
-						</h3>
+						<h3>Generic Video Class Converter</h3>
 
 						<p>
 							Thanks to this new Video converter, you can add new video conversion formats without having to write custom Java classes. A sample contribution of a new video converter would be:
@@ -668,7 +646,6 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 &lt;/converter&gt;
 </pre>
 						</div>
-						
 
 					</div>
 
