@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="en">
+	<![endif]-->
+	<!--[if IE 7 ]>
+	<html class="ie ie7" lang="en">
+		<![endif]-->
+		<!--[if IE 8 ]>
+		<html class="ie ie8" lang="en">
+			<![endif]-->
+			<!--[if (gte IE 9)|!(IE)]>
+			<!-->
+			<html lang="en">
+				<!--<![endif]-->
+<head>
+
+				<!-- Basic Page Needs
+  ================================================== -->
+				<meta charset="utf-8">
+				<title>Nuxeo Platform 6.0 - New and Noteworthy</title>
+				<meta name="description" content="Nuxeo on Github">
+				<meta name="author" content="nuxeo">
+
+				<!-- Mobile Specific Metas
+  ================================================== -->
+				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+				<!-- CSS
+  ================================================== -->
+				<link rel="stylesheet" href="../../stylesheets/base.css">
+				<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+				<link rel="stylesheet" href="../../stylesheets/layout.css">
+				<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+				<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+
+				<!--[if lt IE 9]>
+				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+				<![endif]-->
+
+				<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+				<style>#xnav-footer {margin-top:0px !important;}</style>
+				<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+				<script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+				<!-- Favicons
+	================================================== -->
+				<link rel="shortcut icon" href="images/favicon.ico">
+				<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+				<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+				<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"></head>
+
+<body>
+
+				<div id="mainContainer" class="container">
+					<p class="backbutton">
+						<a href="./index.html">&larr; Back to Index</a>
+					</p>
+					<p class="remove-bottom" id="site-title">
+						<a href="./index.html">
+							Nuxeo Platform
+							<span class="version-number">6.0</span>
+							Release Notes
+						</a>
+					</p>
+
+					<div id="welcome">
+
+						<div style="clear:both;"></div>
+						<h1  style="margin-left:-0.5em !important;">For Developers</h1>
+						<h2>
+							<a name="anchor-0"></a>
+							Elasticsearch in the Platform
+						</h2>
+
+						<p>
+							Elasticsearch engine and wrapping java service is embedded in Nuxeo CAP distribution, with a dedicated tab in the Admincenter for monitoring the activity. An embedded server is started by default. In production, Nuxeo Plaform is connected to an Elasticsearch cluster. Elasticsearch offers an amazing ability to scale the repository queries while being very easy to set up. The graph below compares number of requests served per second with the number of concurrent users increasing on a given same hardware. In blue dabase queries versus in red Elasticsearch queries.
+							<div>
+							<img class="lightboxed" src="./elasticsearch_scales.png"/>
+						</div>
+							All documents are indexed with Elasticsearch. It is possible to disable the service. Only Search tab leverages Elasticsearch index in the default distribution, but you can activate it on any page provider by modifying a property in nuxeo.conf, ex:
+							<div class="embededCode">
+								elasticsearch.override.pageproviders=default_search,tree_children
+							</div>
+							<a href="http://doc.nuxeo.com/display/NXDOC/Indexing+and+Query#IndexingandQuery-ElasticsearchConfigurationElasticsearchConfiguration" target="_blank">More information on configuring Elasticsearch</a>
+						</p>
+						<h2>
+							<a name="anchor-1"></a>
+							MongoDB Backend
+						</h2>
+						<p>
+							A deep refactoring of low layers happened in Nuxeo Platform so as to be able to support a non-transactionnal JSON-based storage engines for the repository, such as MongoDB. This refactoring was made so as to be able to implement other NoSQL backends in the future. MongoDB is a perfect candidate when expectations in concurrent writes and high availability are high. Any application existing on top of Nuxeo Platform can benefit form this new persistence option as it is completely transparant to the Content Management model exposed by tree_children Nuxeo Platform. More information on <a href="http://doc.nuxeo.com/x/vRM5AQ" target="_blank"> Mongo DB storage</a> and <a href="http://doc.nuxeo.com/x/yAEuAQ" target="_blank"> how to set it up</a>.
+						</p>
+						<h2>
+							<a name="anchor-2"></a>
+							REST API
+						</h2>
+
+						<h3>Rest API playground</h3>
+						<p>
+							We built a
+							<a href="http://nuxeo.github.io/api-playground/#/">Playground</a>
+							so as to be able to test the REST API and learn how it works.
+						</p>
+
+						<h3>Content Enricher</h3>
+						<p>
+							Former Rest Providers have been renamed "Content Enricher" for more clarity. The corresponding necessary contribution was also changed. Furthermore, we added the possibility to use parameters when contributing a new content enricher.
+							<div class="embededCode">
+								<pre>
+
+&lt;enricher name=&quot;permissions&quot; class=&quot;org.nuxeo.ecm.automation.io.services.enricher.UserPermissionsContentEnricher&quot; &gt;
+&lt;category&gt;permissions&lt;/category&gt;
+&lt;parameter name="permissions"&gt;Read,Write,Everything&lt;/parameter&gt;
+
+&lt;/enricher&gt; 
+</pre>
+							</div>
+						</p>
+
+						<p>
+							Various content enrichers were added to the platform:
+							<ul>
+								<li>
+									ACL: This adds ACLs of the document to the response. It was previously doable using the @ACL web adaptor. Having a Content Enricher for this allows to get in one same call the document and its ACLs.
+								</li>
+								<li>
+									Permission: This one returns the list of permissions the user has on each documents. Useful when building a client side screen, to know if an update button should be displayed.
+								</li>
+								<li>
+									Thumbnail: This one adds url of the Thumbnail Picture to the response. You can use it when doing client slide applications.
+								</li>
+								<li>Preview: This one adds url of the preview.</li>
+								<li>
+									l10nsubjects, l10ncoverage: Exemples of the use of the parameterized enricher based on the VocabularyEnricher class, that returns all the labels of values of the documents that are linked to directories. Useful when you want to make client-side listings of documents and to resolve server-side the values to display (including internationaliation).
+								</li>
+							</ul>
+							<p>
+								The Content Enricher
+								<a href="http://doc.nuxeo.com/x/5wUuAQ" target="_blank">documentation</a>
+								has been updated accordingly.
+							</p>
+
+							<h3>Query Endpoint</h3>
+							<p>
+								A Query endpoint has been added. It allows to execute NXQL queries (with ability to control if it hits Elasticsearch or the database) and to fetch page providers. More information on the <a target="_blank" href="http://doc.nuxeo.com/x/qAc5AQ">documentation page</a>.
+							</p>
+
+							<h3>Endpoint for Types and Schemas</h3>
+							<p>
+								We added a new REST API endpoint for document types and schemas. It can be useful when implementing something like a connector. See
+								<a href="https://jira.nuxeo.com/browse/NXP-14114">NXP-14114</a>
+								for details.
+							</p>
+
+							<h3>ParentId Ref</h3>
+							<p>parentRef id has been added to the json response.</p>
+							<h3>Improved File Download with the REST API</h3>
+
+							<p>
+								We've worked on the Blob property JSON representation. See
+								<a href="https://jira.nuxeo.com/browse/NXP-13616">NXP-13616</a>
+								for details.
+							</p>
+							<p>Before:</p>
+
+							<div class="embededCode">
+								<pre>
+"file:content": { 
+            "name": "Nuxeo_Platform_5.8_administration_documentation.pdf", 
+            "mime-type": "application/pdf", 
+            "encoding": null, 
+            "digest": "4faa1208dbd8dce54db9174dabdec7db", 
+            "length": "11485973", 
+            "data": "files/80438e3b-48bb-42d1-9e08-9a0f54b8f945?path=%2Fcontent" 
+        }, 
+</pre>
+							</div>
+
+							<p>Now:</p>
+
+							<div class="embededCode">
+								<pre>
+"file:content": { 
+            "name": "Meetup Docker.pdf", 
+            "mime-type": "application/pdf", 
+            "encoding": null, 
+            "digest": "f829ff57c289b60be5dd2c57adcf1d51", 
+            "length": "5980167", 
+            "data": "http://localhost:8080/nuxeo/nxbigfile/default/e596bd67-aaa5-4a43-a84c-bcf4850c4834/file%3Acontent" 
+        }, 
+</pre>
+							</div>
+
+							<h3>New Versioning Header</h3>
+							<p>
+								You can now control whether a minor or major version is created when creating or updating a document via the REST API, using the new "X-Versioning-Option" header, with "MAJOR" or "MINOR" as a value.
+							</p>
+
+							<h2>
+								<a name="anchor-3"></a>
+								iOS SDK
+							</h2>
+							<p>
+								We started to provide
+								<a href="https://github.com/nuxeo/nuxeo-sdk-ios">a SDK</a>
+								to start building your iOS application connected to the Nuxeo Platform through the REST API. We already have some very cool features like a blob offline cache.
+							</p>
+							<h2>
+								<a name="anchor-4"></a>
+								JavaScript SDK
+							</h2>
+
+							<p>
+								The
+								<a href="https://github.com/nuxeo/nuxeo-js-client">JavaScript Client SDK</a>
+								is fully part of the Nuxeo Platform. Two implementations are provided. One uses node.js primitives, one is based on JQuery XHR. The client exposes:
+							</p>
+							<ul>
+								<li>
+									Wrappers for resources oriented REST API (at least documents)
+								</li>
+								<li>Utilities for automation calls</li>
+								<li>Utilities for other resources oriented endpoints REST calls</li>
+								<li>Batch upload helper</li>
+								<li>Basic and token based authentications.</li>
+							</ul>
+							<p>
+								Client is packaged using bower for the JQuery implementation, and NPM for the node implementation. Clients are under continuous integration using phantom.js.
+							</p>
+
+							<h2>
+								<a name="anchor-5"></a>
+								Box, Mule, CMIS: great new integration capabilities
+							</h2>
+
+							<h3>CMIS Implementation Evolutions</h3>
+
+							<p>
+								<ul>
+									<li>ACLs are now implemented</li>
+									<li>
+										Renditions from the RenditionService are now exposed as CMIS renditions of kind "nuxeo:rendition", with a name that's based on Rendition name. For example "nuxeo:rendition:pdf" for the "pdf" rendition.
+									</li>
+									<li>
+										ecm:pos is exposed in CMISQL, so as to handle correctly ordered folders
+									</li>
+									<li>
+										Nuxeo CMIS content streams support HTTP cache and last modified headers.
+									</li>
+
+								</ul>
+							</p>
+							<h3>Box API Implementation</h3>
+
+							<p>
+								The Nuxeo addon
+								<a href="https://github.com/nuxeo/nuxeo-box-api">nuxeo-box-api</a>
+								is an implementation of the Box API on top of the Nuxeo Platform repository. It transforms the Nuxeo content repository into a Box compliant storage backend. Use cases of such an approach are:
+							</p>
+							<ul>
+								<li>
+									Light integration on continuous integration chain for your Box development
+								</li>
+								<li>On-premise setup of Box stored content</li>
+							</ul>
+							<p>
+								Don't hesitate to read our CTO Thierry Delprat's
+								<a href="http://www.nuxeo.com/blog/development/2014/03/introducing-open-source-box-api/">interview</a>
+								to get a better idea.
+							</p>
+							<p>Here are some examples:</p>
+							<p> <strong>Folders:</strong>
+							</p>
+							<div class="embededCode">
+								<pre>GET http://localhost:8080/nuxeo/box/2.0/folders/{folder_id}</pre>
+							</div>
+							<p>looks like</p>
+							<div class="embededCode">
+								<pre>GET https://api.box.com/**2.0/folders/{folder id}**</pre>
+							</div>
+							<p> <strong>Files:</strong>
+							</p>
+							<div class="embededCode">
+								<pre>GET http://localhost:8080/nuxeo/box/2.0/files/{file_id}</pre>
+							</div>
+							<p>looks like</p>
+							<div class="embededCode">
+								<pre>GET https://api.box.com/**2.0/files/{file_id}**</pre>
+							</div>
+
+							<h3>Mule Connector</h3>
+							<p>
+								We wrote a
+								<a href="https://github.com/tiry/nuxeo-mule-connector">connector</a>
+								for
+								<a href="http://www.mulesoft.org/">Mule</a>
+								that is based on HTTP (Automation) API.
+							</p>
+							<p>
+								<blockquote>
+									Mule ESB is a lightweight Java-based enterprise service bus (ESB) and integration platform that allows developers to connect applications together quickly and easily, enabling them to exchange data.
+								</blockquote>
+							</p>
+							<p>
+								Using this connector, you can build Mule Flows that will use services exposed by Nuxeo Platform.
+							</p>
+							<p>This connector exposes:</p>
+							<ul>
+								<li>
+									A predefined set of Operations (getDocument, createDocument, updateDocument, query, ...)
+								</li>
+								<li>
+									A generic runOperation to allow call to any operation or chain defined on the Nuxeo server
+								</li>
+								<li>
+									Some converters from Nuxeo objects (Document, Documents, Blob) to raw types (Maps, List of Maps, File ...)
+								</li>
+							</ul>
+							<p>
+								We invite you to read the
+								<a href="https://github.com/tiry/nuxeo-mule-connector/blob/master/doc/sample.md">sample and documentation</a>
+								to get a good grasp on the possibilities offered by this module.
+							</p>
+							<p>
+								<img class="lightboxed" src="./SetFileInThePayload.png"/>
+							</p>
+						</p>
+
+						<h2>
+							<a name="anchor-6"></a>
+							Support of Facets and Other Kind of Aggregates on Page Providers and Content Views
+						</h2>
+						<p>
+							Page Provider now integrates aggregates support and content view leveraging such kind of page providers can be configured via Nuxeo Studio easily. That way you can build search interfaces with terms, ranges and histograms filters. Many use cases have been taken into account: support of dates, specific widgets for users, directories, documents.
+						</p>
+
+						<h2>
+							<a name="anchor-7"></a>
+							JSF2, New User Actions Placeholders, Result Layouts and Other Evolutions of the UI Framework and CAP Web Application
+						</h2>
+						<h3>JSF2</h3>
+						<p>
+							Content Application Platform (CAP) and all the plugins have been migrated from JSF 1.2 to JSF 2 and the latest stable release of Richfaces: 4.5. A migration tool has been implemented for helping you migrate your custom code base. That will be necessary when you plan to upgrade your Nuxeo Platform Instance to 6.0. More information can be found on <a href="http://doc.nuxeo.com/x/3Q45AQ" target="_blank">JSF code migration to JSF2</a>.
+						</p>
+
+						<h3>Improvement of Content Views Configurability</h3>
+
+						<p>
+							You can now control the display of the slideshow, the spreadsheet and the edit columns actions at the result layout level. Even better, this area of user actions is now a category of actions. It means that it is easy to contribute new actions there. To evaluate the visibility of such an action, the current content view is made available in the filter context.
+						</p>
+
+						<h3>Typed Layout</h3>
+
+						<p>
+							Layouts now have a type, which allows to define properties that can be used to define on a per instance basis if some given features are supported. We currently use it for result layouts, with two types: listingTable and listingThumbnail
+						</p>
+
+						<h3>Widget Definition Alias</h3>
+
+						<p>
+							It is possible to define aliases for a widget definition, so as to override former widget definitions with a newer one without having to duplicate that definition.
+Ex: 
+- document_listing_ajax -> table_listing 
+- search_listing_ajax -> table_listing
+						</p>
+
+						<h3>Document mode with Fallback on Toggleable layouts widget</h3>
+						<p>
+							Toggleable document layout widget now handles a document mode, since modes for documents are not restricted to "create" or "edit" or "view" and can gather layouts for different rendering use cases (like the drive edit screen), and still need to use "edit" or "view" mode for render. Furthermore, a logic of fallback has been added when the given mode has not been contributed.
+						</p>
+
+						<h3>Dev Mode: Display of Page Structure</h3>
+						<p>
+							<img class="lightboxed" src="./nuxeo_ui_development_mode.png"/>
+						</p>
+
+						<p>
+							In Development mode, you can display the structure of your page : layouts, widgets, actions, just select the object and display its properties. This makes it a great tool for getting inspiration from the default application for your own project, or for knowing which id should be used for <a href="http://doc.nuxeo.com/x/mBQ5AQ" target="_blank" >removing or hide conditionnaly a link, a button or any other UI object</a>.
+						</p>
+
+						<h3>Multi-navigation Category of Actions</h3>
+
+						<p>
+							The placeholder for adding virtual navigations is now part of Nuxeo CAP. You don’t need to depend of Virtual navigation for adding elements there.
+						</p>
+						<h3>JSF State and HTTP Session Debug</h3>
+						<p>
+							We have added new debugging tools to inspect the JSF state and the HTTP session.
+						</p>
+						<ul>
+							<li>
+								<a href="https://github.com/nuxeo/nuxeo-session-inspector">nuxeo-session-inspector</a>
+							</li>
+						</ul>
+						<p>
+							This module provides a WebEngine access to inspect the JSF state of a faces view. It is useful to figure out the size of the http session and the complexity of implemented view.
+						</p>
+
+						<h3>Custom Headers in the Webapp</h3>
+
+						<p>
+							A custom header has been added: "X-UA-Compatible" with the value "IE=10; IE=11" so as to better control behaviour on Internet Explorer on supported versions. The way this header has been added benefits from a new extension point that allows to contribute additionnal headers.
+						</p>
+
+						<h3>Select2</h3>
+
+						<p>
+							Select2 widgets have been improved. There are two noticable new features.
+						</p>
+						<ul>
+							<li>
+								Select2 widgets can be
+								<a href="https://jira.nuxeo.com/browse/NXP-13123">configured</a>
+								to let the user add entries to its binded directory. Take a look at
+								<a href="https://github.com/nuxeo/nuxeo-jsf/commit/d79e9340aa05539d72bf754f67a2f99169e70a56">this example</a>
+								.
+							</li>
+							<li>
+								You can now provide a
+								<a href="https://jira.nuxeo.com/browse/NXP-13322">JavaScript function</a>
+								that will be in charge of choosing the id (from serialized entry's fields) that will be submitted by the widget.
+							</li>
+						</ul>
+
+
+
+						<h2>
+							<a name="anchor-8"></a>
+							Changes in Features Layout, Migration to Maven 3
+						</h2>
+
+						<p>
+							The build now relies on Maven 3 (Maven 2 previously). There were some big changes in the way features are distributed. Nuxeo DM is a deprecated assembly. You shoud now start systematically from Nuxeo CAP and add addition packages. Faceted Search has been deprecated and exists as a separated package. Virtual Navigation is in a separated package. Tags support has been integrated to Nuxeo CAP. Open Social is deprecated and exits now in a separate marektplace pacakge. Social Collab addon is also deprecated. DAM package contains all the imaging-* addons, and brings Picture, Video and Sound types.
+						</p>
+						<h2>
+							<a name="anchor-9"></a>
+							Content Automation
+						</h2>
+
+						<h3>
+							Parameterised Automation Chains and Other Productivity Improvements on Automation
+						</h3>
+						<p>
+							Users can design automation chains with parameters, saving a great number of chains whose structure is repeated with only a few changes in operations parameters.
+						</p>
+
+						<p>
+							The readability of an automation chain is improved with a better visibility of arguments values.
+						</p>
+
+						<p>
+							Finally, we provide a text mode for automation chain edition, that will facilitate some refactoring, and also make it easy to transfer to support a chain definition, or to build new documentation samples.
+						</p>
+						<h3>Automation: Execution Flow Operations</h3>
+
+						<p>
+							The list of operations allowing to launch other chains for loops (loop on blobs, loop on documents, loop on arbitrary lists) has been cleaned up. Idea is to have on all those operations support for transaction management, so as to be able to easily design scalable and robusts automation chains.
+						</p>
+
+						<h3>YAML Converter for Automation Chains</h3>
+
+						<p>
+							YAML representation of chains is now visible in the platform. Here is an example for the validateDocument chain:
+						</p>
+
+						<div class="embededCode">
+							<pre>
+http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
+
+- Context.FetchDocument
+- Document.SetLifeCycle:
+    value: approve
+- Document.CheckIn:
+    version: minor
+    comment: Automatic checkin after validation
+
+</pre>
+
+						</div>
+						<h3>New Operations for Collections Management</h3>
+						<p>
+							We have added operations dedicated to collections management. You can use AddToCollection, RemoveFromCollection, CreateACollection and GetAllDocumentsFromCollection. Their name speak for themselves.
+						</p>
+<h2>
+							<a name="anchor-10"></a>
+							Authentication and Other User Management Evolutions
+						</h2>
+
+						<h3>
+							
+							Token Based Authentication Management & OAuth 2.0 Support
+						</h3>
+
+						<p>
+							Exploding demand of API use makes it necessary to provide easy means for developers to manage authentication of the applications they develop, let it be on JavaScript based app, iOS, Python (with Drive)… The token based authentication service, implemented initially for the requirements of Nuxeo Drive is extracted and generalized, made available to the Nuxeo Platform developers. In the same time, OAuth 2.0 support is added, so as to provide as an option a very secured way of handling the authentication process.
+						</p>
+						<h3>
+						
+							SCIM 1.1 Implementation
+						</h3>
+						A
+						<a href="https://github.com/tiry/nuxeo-scim-server">new scim-server plugin</a>
+						provides a RESTFUL implementation of
+						<a href="http://www.simplecloud.info/">SCIM 1.1</a>
+						interface, that allows to provision users and groups using a commonly accepted API. This API is used for instance by third party IDMs like Okta.
+						<h3>
+							Okta SSO
+						</h3>
+						A
+						<a href="https://github.com/nuxeo/nuxeo-platform-login/tree/feature-NXP-14596-Okta-integration/nuxeo-platform-login-okta">new login-okta plugin</a>
+						allows to use Okta IDP for managing users and authentication.
+						<h3>
+						
+							Duo Web Two Factors authentication plugin
+						</h3>
+						A
+						<a href="https://github.com/nuxeo/marketplace-duoweb-authentication">new duoweb-authentication plugin</a>
+						allows to set up a two factors authentication for Nuxeo using Duo Web online sercices.
+						<h2>
+							<a name="anchor-11"></a>
+							Audit Service Based on Elasticsearch
+						</h2>
+						<p>
+							A new implementation of the audit service has been made on top of an elastic search index. This provides greater performances which was necessary when audit has millions of entries, and more power in terms of defining what fields are stored.
+						</p>
+						<h2>
+							<a name="anchor-12"></a>
+							Various
+						</h2>
+
+						<h3>New Download Servlet</h3>
+						<p>
+							A new download servlet is available for documents that are not bound to a specific document. This new servlet is used by the Download File operation so as to get this operation working even with big files.
+						</p>
+
+						<h3>UserWorkspace Improvements</h3>
+						<p>
+							It is now possible to override the behaviour of user workspace creation.
+						</p>
+						<h3>Incremental Update for Integer fields</h3>
+
+						<p>
+							Some document fields can now be updated at the storage level using atomic increment/decrement operations. This is needed for instance to allow concurrent delta updates of fields without losing information. A typical use case is the quotas. See http://jira.nuxeo.com/browse/NXP-15103 for more details.
+						</p>
+
+						<h3>Directory Low Level Access Restriction</h3>
+
+						<p>
+							When contributing a directory declaration, it is now possible to add READ and WRITE restrictions to specific groups.
+						</p>
+
+						<h3>
+						
+							Java 8 Support
+						</h3>
+						<p>
+							This new release has been tested with Java 8. You can see the list of changes on
+							<a href="https://jira.nuxeo.com/browse/NXP-13570">NXP-13570</a>
+							.
+						</p>
+
+						<h3>
+						
+							NXQL Query and Fetch
+						</h3>
+
+						<p>
+							Using the <em>queryAndFetch</em>
+							method you can now use COUNT, AVG, SUM, MIN and MAX in your NXQL queries. Again, this only work when using <em>queryAndFetch</em>
+							. See
+							<a href="https://jira.nuxeo.com/browse/NXP-13708">NXP-13708</a>
+							for reference.
+						</p>
+
+						<h3>
+						
+							Facilitators for Escalation Rules Configuration
+						</h3>
+						<p>
+							Simplify frequent escalation rules use cases by providing some functions usable in the conditional expression:
+						</p>
+						<ul>
+							<li>timeSinceWorkflowWasStarted()</li>
+							<li>timeSinceTaskWasStarted()</li>
+							<li>timeSinceDueDateIsOver()</li>
+							<li>timeSinceRuleHasBeenFalse()</li>
+						</ul>
+						<p>That way, the following current condition</p>
+						<div class="embededCode">
+							<pre>
+
+@{!(NodeVariables["last_reminder"] == empty) &amp;&amp;
+ Context["taskDueTime"].compareTo(CurrentDate.calendar) &lt; 0 &amp;&amp;
+ Fn.date(NodeVariables["last_reminder"]).days(1).calendar.compareTo(CurrentDate.calendar) &lt; 0}
+
+</pre>
+						</div>
+						<p>would be replaced by:</p>
+						<div class="embededCode">
+							<pre>
+ @{timeSinceDueDateIsOver() &gt; 0 &amp;&amp; timeSinceRuleHasBeenFalse(86400000) }
+</pre>
+						</div>
+						<p>
+							without having to deal with adding a custom node variable etc...
+						</p>
+
+						<h3>
+						
+							Calendar Facet
+						</h3>
+						<p>
+							We have added a calendar facet that allows to easily set Calendar objects in the repository. They themselves display events in a calendar style, with ability to bind documents to calendars and events. This feature is very useful on Case Management projects, where one wants to review cases on specific events. Thanks to this roadmap item, it is a matter of a few minutes to setup some calendars in your application! The feature is made available in the already existing nuxeo-agenda module.
+						</p>
+
+						<h3>
+							
+							Giving a Comment When following a Transition
+						</h3>
+						<p>
+							This is something we should have done a long time ago but it's finally here. You can now pass a comment when following a transition. To do this you simply add a comment in the document's context map like this:
+						</p>
+
+						<div class="embededCode">
+							<pre>
+        doc = session.createDocument(doc);
+        doc.putContextData("comment", "a comment");
+        session.followTransition(doc, "approve");
+</pre>
+						</div>
+
+						<h3>
+					
+							Business Days Management
+						</h3>
+
+						<p>
+							A plugin implemented at first for a customer project has been generically re-branded as it can be useful in many situations: "Business Days Management" module allows to compute a date given a delay and the list of holidays for the year. The delay will be added to the start date without counting the week ends and those holidays. See the
+							<a href= "https://github.com/nuxeo/nuxeo-business-days-management" alt="_blank">nuxeo-business-day-management GitHub repository</a>
+							, we will come up soon with a post around this topic.
+						</p>
+
+						<h3>
+							
+							Generic Video Class Converter
+						</h3>
+
+						<p>
+							Thanks to this new Video converter, you can add new video conversion formats without having to write custom Java classes. A sample contribution of a new video converter would be:
+						</p>
+						<div class="embededCode">
+							<pre>
+&lt;converter name=&quot;convertToMOV&quot; class=&quot;org.nuxeo.ecm.platform.video.convert.VideoConversionConverter&quot;&gt;
+    &lt;sourceMimeType&gt;video/mpeg&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/webm&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/quicktime&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/ogg&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/x-ms-asf&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/x-msvideo&lt;/sourceMimeType&gt;
+    &lt;sourceMimeType&gt;video/flv&lt;/sourceMimeType&gt;
+    &lt;destinationMimeType&gt;video/mov&lt;/destinationMimeType&gt;
+    &lt;parameters&gt;
+        &lt;parameter name=&quot;CommandLineName&quot;&gt;ffmpeg-tomov&lt;/parameter&gt;
+        &lt;parameter name=&quot;videoMimeType&quot;&gt;video/mov&lt;/parameter&gt;
+        &lt;parameter name=&quot;videoExtension&quot;&gt;mov&lt;/parameter&gt;
+        &lt;parameter name=&quot;tmpDirectoryPrefix&quot;&gt;convertToMOV&lt;/parameter&gt;
+    &lt;/parameters&gt;
+&lt;/converter&gt;
+</pre>
+						</div>
+						
+
+					</div>
+
+				</div>
+
+				<!-- JS
+	================================================== -->
+				<script src="../../javascripts/strftime.js"></script>
+				<script src="../../javascripts/tabs.js"></script>
+				<script src="../../javascripts/float_menu.js"></script>
+				<script src="../../javascripts/lightbox.js"></script>
+
+</body>
+			</html>
