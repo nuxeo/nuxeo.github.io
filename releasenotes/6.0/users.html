@@ -62,8 +62,8 @@
                     <li>We also added the possibility to suspend/resume the synchronization. <div><img class="lightboxed" src="./driveSuspend.png"/></div></li>
                     <li>It is now also possible to filter out some folders from the Drive desktop interface so that they are not synchronized.</li>
                     <li>Nuxeo Drive has an automatic, silent update, that works with an update site. The user will be notified when a new version is available and when it has been installed. Update site can be local to the company.</li>
-                    <li>Nuxeo Drive can be used for “live editing” a document, in replacement of Nuxeo Live Edit, which is deprecated. Documents being live edited are going to a special Drive folder called Lively Edited.</li>
-                    <li>It is also possible to edit a metadata from the Desktop interface on Windows, by clicking on a right click “Nuxeo Drive” action that displays a pop up so as to allow editing of metadata associated to the type of the document that holds the binary. A few other actions are also made available: link to the document in the web application, locking, following. </li>
+                    <li>Nuxeo Drive can be used for “live editing” a document, in replacement to the deprecated Nuxeo Live Edit. Documents being live edited are going to a special Drive folder called Lively Edited.</li>
+                    <li>It is possible to edit metadata from the Desktop interface on Windows. Right-click on a document, click on the Nuxeo Drive action. In the popup you can edit the metadata associated to the type of the document that holds the binary. A few other actions are also made available: link to the document in the web application, locking, following. </li>
                 </ul>
                 </p>
                 <h2><a name="anchor-1"></a>Collections</h2>
@@ -82,18 +82,18 @@
                 	<li>In this tab, the thumbnail view has been greatly improved.</li>
                 	<li> Search filter handles <b>facets</b>, that enable to quickly focus on interesting documents. It is possible to edit columns of the result and to save searches. </li>
                 	<li>Multiple search filters can be contributed, and they can be hidden or displayed depending on the profile of the user. </li>
-                	<li>Finally, the quick search has been rewritten using Select2 component, providing a much better feeling.</li>
+                	<li>Finally, the Quick search now relies on select2, providing a much better feeling!</li>
                 </ul></p>
 
                 <p><img class="lightboxed" src="./nuxeo_new_search_tab.png"/></p>
                <p><img class="lightboxed" src="./nuxeo_facets_and_other_aggregates_support.png"/></p>
 
                <h2><a name="anchor-3"></a>Spreadsheet Edit</h2>
-                <p>A new add-on “Spreadsheet” allows to have a spreadsheet like user interface for bulk-editing the metadata, with ability to select and drag the values. </p>
+                <p>A new add-on called “Spreadsheet" allows to display a spreadsheet like the user interface. You can bulk-edit metadata from this spreadsheet view and select and drag values. </p>
                 <p><img class="lightboxed" src="./nuxeo_spreadsheet_edit.png"/></p>
 
                  <h2><a name="anchor-4"></a>Bulk Creation</h2>
-                <p>You now have a bulk import action in the main interface, with ability to set metadata, tags and collections right at the import time for all the documents that are dropped. The bulk edit also now supports the collections and tags interface. </p>
+                <p>You now have a bulk import action in the main interface. You can set metadata, tags and collections right at the import time for all the documents that are dropped. The bulk edit also now supports the collections and tags interface </p>
                 <p><img class="lightboxed" src="./nuxeo_bulk_import.png"/></p>
                 
 
@@ -135,14 +135,14 @@
                
 
                 <h2><a name="anchor-12"></a>Updated Picture Generation Resolution</h2>
-                <p>Default picture transformations sizes have been increased to 1200 max for medium, 350px for small, 150 px max for thumbnail, following evolution of the digital industry!</p>
+                <p>We increased default picture transformations sizes, following the evolution of the digital industry. Sizes are now 1200 px max for medium, 350 px for small, 150 px max for thumbnail.</p>
 
                 <h2><a name="anchor-13"></a>Simplified ACLs</h2>
-                <p>Negative permission has been removed beside the action of blocking inheritance (Deny Everything Everyone). This important change of behaviour can be set back with a property 
+                <p>We removed negative permission except for the action of blocking inheritance (Deny Everything Everyone). This important change of behavior can be set back with a property
                 
                 nuxeo.security.allowNegativeACL=true
 
-                But pay attention that negative permissions are not compatible with using Elasticsearch or MongoDB. </p>
+                Note that negative permissions are not compatible with using Elasticsearch or MongoDB. </p>
 
 
                 <h2><a name="anchor-14"></a>Suggestion Widgets</h2>
