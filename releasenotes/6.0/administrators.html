@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Nuxeo Platform 6.0 - New and Noteworthy</title>
+	<meta name="description" content="Nuxeo on Github">
+	<meta name="author" content="nuxeo">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="../../stylesheets/base.css">
+	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+	<link rel="stylesheet" href="../../stylesheets/layout.css">
+	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {margin-top:0px !important;}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+
+  <div id="mainContainer" class="container">
+  <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
+  <p class="remove-bottom" id="site-title"><a href="./index.html">Nuxeo Platform<span class="version-number">6.0</span> Release Notes</a></p>
+
+    <div id="welcome">
+
+    <div style="clear:both;"></div>
+     <h1  style="margin-left:-0.5em !important;">For Administrators</h1>
+
+
+<h2><a name="anchor-0"></a>User and Groups Providers and Authentication Mode Configuration Wizard</h2>
+<p>A wizard is available both at  set up time and in the Admin Center. This wizard allows to configure the way Nuxeo Platform will fetch users and groups: in an ldap directory, active directory or a SQL database. It also enables to configure the user attribute mapping. </p>
+
+<h2><a name="anchor-1"></a>AES Binary Store Encryption Mode</h2>
+<p>It is possible to use an AES algorithm to encrypt binaries before storing them in the binary store. See <a href="http://doc.nuxeo.com/x/UoIlAQ">Configuring Encryption Documentation page</a>.
+</p>
+
+   <h2><a name="anchor-2"></a>Private Marketplace Channel</h2>
+
+<p>Users are able to upload their own marketplace packages on Connect so as to make them visible and available in the admin center. The first implementation offers a web UI for upload/update only. REST endpoints are available for upload/update and delete.</p>
+
+<h2><a name="anchor-3"></a>Store Password Hash in LDAP User Directory</h2>
+<p>Now you can store password hash in LDAP User Directories (it was already possible with SQL directories). You just have to use the <em>passwordHashAlgorithm</em> option as in this configuration sample:</p>
+
+
+<div class="embededCode"><pre>
+  &lt;directory name="userLdapDirectory"&gt;
+      &lt;server&gt;default&lt;/server&gt;
+      &lt;schema&gt;user&lt;/schema&gt;
+      &lt;idField&gt;username&lt;/idField&gt;
+      &lt;passwordField&gt;password&lt;/passwordField&gt;
+      &lt;passwordHashAlgorithm&gt;SSHA&lt;/passwordHashAlgorithm&gt;
+      ...
+</pre></div>
+
+<h2><a name="anchor-4"></a>Packages Directory Out of the Data Directory</h2>
+<p>The Marketplace packages used to be stored in the Nuxeo data directory. This is not really their place so now instead of being stored in "nxserver/data/packages/", they'll be stored in "packages/". You can also change this location using the new property "nuxeo.mp.dir".</p>
+<h2><a name="anchor-5"></a>Logging Slow Queries</h2>
+<p>To trace all NXQL queries that take more than 100ms, activate the log for <i>org.nuxeo.ecm.core.storage.sql</i> at the INFO level and add in the nuxeo.conf:
+<div class="embededCode">
+	org.nuxeo.vcs.query.log_min_duration_ms=100
+</div></p>
+
+<h2><a name="anchor-6"></a>Java version is checked at server startup</h2>
+<p>The check on the Java version (greater or equal to 1.7) is done in nuxeoctl and nuxeoctl.bat scripts. If the correct version is not found, a comprehensive message is displayed: "ERROR: Nuxeo requires Java 1.7+ (detected 1.6.0_38)".
+</p>
+
+
+
+
+ </div>
+</div>
+
+
+
+
+	<!-- JS
+	================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+    <script src="../../javascripts/float_menu.js"></script>
+    <script src="../../javascripts/lightbox.js"></script>
+</body></html>
+
+	

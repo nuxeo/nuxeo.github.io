@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Nuxeo 6.0 - New and Noteworthy</title>
+    <meta name="description" content="Nuxeo Platform 6.0 release notes">
+    <meta name="author" content="nuxeo">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../../stylesheets/base.css">
+    <link rel="stylesheet" href="../../stylesheets/skeleton.css">
+    <link rel="stylesheet" href="../../stylesheets/layout.css">
+    <link rel="stylesheet" href="../../stylesheets/release_notes.css">
+    <link rel="stylesheet" href="../../stylesheets/lightbox.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+        <style>
+                #xnav-footer {margin-top:0px !important;}
+        </style>
+        <script src="../../javascripts/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+        <!-- Favicons
+        ================================================== -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    </head>
+    <body>
+        <div id="mainContainer" class="container">
+            <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
+            <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">6.0</span> Release Notes</a></p>
+            <div id="welcome">
+                <div style="clear:both;"></div>
+                <h1 style="margin-left:-0.5em !important;">For Users</h1>
+                
+            <h2><a name="anchor-0"></a>Nuxeo Drive</h2>
+
+            <p>Nuxeo Drive was greatly improved this year, it is now much easier to install, use an dupdate.
+            <ul>
+                <li>Binary installer for OS X and Windows are all signed. See <a href="https://jira.nuxeo.com/browse/NXP-12981">NXP-12981</a> for details.</li>
+                <li>
+                    The Nuxeo Drive folder can be configured. Currently it is:
+                    <ul>
+                        <li>Under OS X and Linux in the user home: ~</li>
+                        <li>Under Windows: in ~/Documents (Windows 7) or ~/My Documents (XP)</li>
+                    </ul>
+
+                    <li>You can choose its location during installation.</li>
+                    <li>It has an automatic, silent update. This makes everything much smoother. The user will be notified when a new version is available and when it has been installed. </li>
+                    <li>Synchronization algorytghm has been optimized and made more robust.</li>
+                    <li>We also added the possibility to suspend/resume the synchronization. <div><img class="lightboxed" src="./driveSuspend.png"/></div></li>
+                    <li>It is now also possible to filter out some folders from the Drive desktop interface so that they are not synchronized.</li>
+                    <li>Nuxeo Drive has an automatic, silent update, that works with an update site. The user will be notified when a new version is available and when it has been installed. Update site can be local to the company.</li>
+                    <li>Nuxeo Drive can be used for “live editing” a document, in replacement of Nuxeo Live Edit, which is deprecated. Documents being live edited are going to a special Drive folder called Lively Edited.</li>
+                    <li>It is also possible to edit a metadata from the Desktop interface on Windows, by clicking on a right click “Nuxeo Drive” action that displays a pop up so as to allow editing of metadata associated to the type of the document that holds the binary. A few other actions are also made available: link to the document in the web application, locking, following. </li>
+                </ul>
+                </p>
+                <h2><a name="anchor-1"></a>Collections</h2>
+                <p><a href="http://doc.nuxeo.com/x/o4wZAQ">A collection</a> issue a folder-like document in which you can file existing documents. Documents are not actually copied or moved into the collection, which only holds a link to the document in its original location.</p>
+                <p><img class="lightboxed" src="./createCollection.png"/></p>
+                <p>Collections are persisted, per user, sharable and are a great to provide bulk features such as:</p>
+                <ul><li>Bulk validation</li><li>Bulk publishing</li><li>Bulk download</li><li>ZIP export</li><li>PDF export</li></ul>
+                <p><img class="lightboxed" src="./collection-personal-workspace.png"/></p>
+                <p><img class="lightboxed" src="./collection-home-tab.png"/></p>
+                <p>Collections are a natural way of working among thousands of assets and documents. You can search for documents belonging to a given collection, you can import a set of files and make them automatically belonging to a collection. It is even possible with some additional configuration to get a collection content synchronized with Nuxeo Drive.</p> 
+
+                <h2><a name="anchor-2"></a>Search Experience - Rebooted</h2>
+                <p>The search experience has been consolidated:
+                <ul>
+                	<li>All the search features have been grouped in a new tab called “search”. </li>
+                	<li>In this tab, the thumbnail view has been greatly improved.</li>
+                	<li> Search filter handles <b>facets</b>, that enable to quickly focus on interesting documents. It is possible to edit columns of the result and to save searches. </li>
+                	<li>Multiple search filters can be contributed, and they can be hidden or displayed depending on the profile of the user. </li>
+                	<li>Finally, the quick search has been rewritten using Select2 component, providing a much better feeling.</li>
+                </ul></p>
+
+                <p><img class="lightboxed" src="./nuxeo_new_search_tab.png"/></p>
+               <p><img class="lightboxed" src="./nuxeo_facets_and_other_aggregates_support.png"/></p>
+
+               <h2><a name="anchor-3"></a>Spreadsheet Edit</h2>
+                <p>A new add-on “Spreadsheet” allows to have a spreadsheet like user interface for bulk-editing the metadata, with ability to select and drag the values. </p>
+                <p><img class="lightboxed" src="./nuxeo_spreadsheet_edit.png"/></p>
+
+                 <h2><a name="anchor-4"></a>Bulk Creation</h2>
+                <p>You now have a bulk import action in the main interface, with ability to set metadata, tags and collections right at the import time for all the documents that are dropped. The bulk edit also now supports the collections and tags interface. </p>
+                <p><img class="lightboxed" src="./nuxeo_bulk_import.png"/></p>
+                
+
+               
+
+                <h2><a name="anchor-5"></a>Nuxeo Drive iOS Edition</h2>
+                <p>An iOS app, that can be installed on iPad (for now) and that allows the user to browse online or to take on the road the documents that belong to folders that have been selected by the user for Drive synchronisation. Typical use case is sales kit synchronisation for offline access. The application is read only, it doesn't allow to edit the documents.</p>
+                <p><img class="lightboxed" src="./driveiOS2.png"/></p>
+                <p><img class="lightboxed" src="./driveiOS1.png"/></p>
+                <h2><a name="anchor-6"></a>Full Screen Mode</h2>
+                <p>You can now navigate through a document list in full screen mode.</p>
+                <p><img class="lightboxed" src="./jungleBertrand.png"/></p>
+                <h2><a name="anchor-7"></a>User Invitation</h2>
+                <p>To enforce the security around user creation process, the default mode is now to invite users via email, and user is created in the system only when she fills complementary information, including her password. That way, password do not have to be transferred via email or parallel channels.</p>
+                <p><img class="lightboxed" src="./invitation-password-creation.jpg"/></p>
+                <p><img class="lightboxed" src="./invitation-form.png"/></p>
+
+                <h2><a name="anchor-8"></a>UI/UX</h2>
+                <p></p>
+                <p>A huge work has been done on the look&feel. Beside the global appearance that has been totally reviewed many details have been taken care of. 
+                <ul>
+                	<li>It now uses background images for a better rendering.</li>
+                	<li>Buttons on content views are hidden as long as nothing is selected.</li>
+                	<li> Main action of most of the forms has a different caller for making it easy to be found.</li>
+                	<li>We changed the way we display tooltips by using the jQuery library tipsy.</li>
+                	<li> IE11 is supported. Safe Edit,the feature that automatically saves your work even if you didn't submit your form, has been also implemented on toggleable forms. </li>
+
+            </ul><img class="lightboxed" src="./tipsyExample.png"/></p>
+              
+                <h2><a name="anchor-9"></a>Favorites</h2>
+                <p>Users are able to pin documents. These documents are then in their "Favorites" collection, which is automatically created. When a document is pinned, the icon changes so that the user knows it is pinned. Clicking on the new icon "unpins" the document.</p>
+
+
+                <h2><a name="anchor-10"></a>Insert a Video in a Note</h2>
+                <p>Users can now reference a video inside a Note document type. The HTML5 player is used to play the video.</p>
+                <h2><a name="anchor-11"></a>Photoshop Mime-types Correctly Detected</h2>
+                <p>Missing mime-types for Photoshop were added, improving detection and image processing of those kind of files.</p>
+                
+               
+
+                <h2><a name="anchor-12"></a>Updated Picture Generation Resolution</h2>
+                <p>Default picture transformations sizes have been increased to 1200 max for medium, 350px for small, 150 px max for thumbnail, following evolution of the digital industry!</p>
+
+                <h2><a name="anchor-13"></a>Simplified ACLs</h2>
+                <p>Negative permission has been removed beside the action of blocking inheritance (Deny Everything Everyone). This important change of behaviour can be set back with a property 
+                
+                nuxeo.security.allowNegativeACL=true
+
+                But pay attention that negative permissions are not compatible with using Elasticsearch or MongoDB. </p>
+
+
+                <h2><a name="anchor-14"></a>Suggestion Widgets</h2>
+                <p>
+                Select2-based suggestion widgets introduced in 5.7.3 received a couple of bug fixes. New widgets properties have been introduced (available in Studio):
+                </p>
+                <ul>
+                    <li>
+                        <strong>All single suggestion widgets:</strong> a new widget property <em>dropdownOnArrow</em> dropdowns suggestions when clicking on the right side arrow of the select2 box instead of the whole container. This is handy when you use custom formatters containing links or other actions (See <a href="https://jira.nuxeo.com/browse/NXP-13715">NXP-13715</a> and <a href="http://doc.nuxeo.com/x/LIQZAQ">documentation</a>).
+                    </li>
+                    <li>
+                        <strong>All multiple suggestion widgets:</strong> new property to change the separator used by select2 to handle multiple selection. The default separator is a comma and could be an issue when handled references contains a comma (See <a href="https://jira.nuxeo.com/browse/NXP-13713">NXP-13713</a>).
+                    </li>
+                    <li>
+                        <strong>Directory suggestion widgets:</strong> new property to fetch the suggestions, 'contains' instead of 'starts with' (See <a href="https://jira.nuxeo.com/browse/NXP-13586">NXP-13586</a>).
+                    </li>
+                </ul>
+
+               
+            </div>
+        </div>
+        <!-- JS
+        ================================================== -->
+        <script src="../../javascripts/strftime.js"></script>
+        <script src="../../javascripts/tabs.js"></script>
+        <script src="../../javascripts/float_menu.js"></script>
+        <script src="../../javascripts/lightbox.js"></script>
+    </body></html>
