@@ -1,4 +1,81 @@
 [
+{
+    "data": [
+        {
+            "date": "07-Nov-2014 17:56",
+            "description": "Nuxeo Platform 6.0 release notes",
+            "label": "6.0 Release Notes.pdf",
+            "os": "all",
+            "size": "1.3M",
+            "url": "http://cdn.nuxeo.com/nuxeo-6.0/6.0%20Release%20Notes.pdf"
+        },
+        {
+            "date": "07-Nov-2014 17:56",
+            "description": "Nuxeo Platform 6.0 upgrade notes",
+            "label": "6.0 Upgrade Notes.pdf",
+            "os": "all",
+            "size": "239Ko",
+            "url": "http://cdn.nuxeo.com/nuxeo-6.0/6.0%20Upgrade%20Notes.pdf"
+        },
+        {
+            "date": "05-Nov-2014 17:20",
+            "description": "Nuxeo Platform 6.0 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
+            "label": "nuxeo-6.0-setup.exe",
+            "md5": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-setup.exe.md5",
+            "os": "win",
+            "size": "271M",
+            "url": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-setup.exe"
+        },
+        {
+            "date": "05-Nov-2014 17:08",
+            "description": "Nuxeo Platform 6.0 Debian installer. Based on Tomcat, it also installs all the third-party dependencies if necessary.",
+            "label": "nuxeo_6.0-01_all.deb",
+            "md5": "",
+            "os": "deb",
+            "size": "172M",
+            "url": "http://apt.nuxeo.org/pool/releases/nuxeo_6.0-01_all.deb"
+        },
+        {
+            "date": "05-Nov-2014 16:52",
+            "description": "Nuxeo Platform 6.0 Virtual Machine image (VirtualBox, RHEV, VMware ESX). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+            "label": "nuxeo-6.0-vm.zip (includes OVF and VMX)",
+            "md5": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-vm.zip.md5",
+            "os": "vm",
+            "size": "956M",
+            "url": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-vm.zip"
+        },
+        {
+            "date": "18-Nov-2014 17:12",
+            "description": "Nuxeo Platform 6.0 multi-OS package. Based on Tomcat, for Linux, Mac, Windows.",
+            "label": "nuxeo-cap-6.0-tomcat.zip",
+            "md5": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-cap-6.0-tomcat.zip.md5",
+            "os": "all",
+            "size": "178M",
+            "url": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-cap-6.0-tomcat.zip"
+        },
+        {
+            "date": "05-Nov-2014 11:45",
+            "description": "Nuxeo Platform 6.0 SDK package. For use with Nuxeo IDE.",
+            "label": "nuxeo-cap-6.0-tomcat-sdk.zip",
+            "md5": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-cap-6.0-tomcat-sdk.zip.md5",
+            "os": "all",
+            "size": "414M",
+            "url": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-cap-6.0-tomcat-sdk.zip"
+        },
+        {
+            "date": "05-Nov-2014 11:41",
+            "description": "Nuxeo Platform 6.0 sources",
+            "label": "nuxeo-6.0-sources.zip",
+            "md5": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip.md5",
+            "os": "all",
+            "size": "60M",
+            "url": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip"
+        }
+    ],
+    "date": "2014-11-05",
+    "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/6.0/",
+    "name": "6.0"
+    },
     {
         "data": [
             {
