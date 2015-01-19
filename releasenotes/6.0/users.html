@@ -46,9 +46,9 @@
                 
             <h2><a name="anchor-0"></a>Nuxeo Drive</h2>
 
-            <p>Nuxeo Drive was greatly improved this year, it is now much easier to install, use an dupdate.
+            <p>Nuxeo Drive was greatly improved this year, it is now much easier to install, use and update.
             <ul>
-                <li>Binary installer for OS X and Windows are all signed. See <a href="https://jira.nuxeo.com/browse/NXP-12981">NXP-12981</a> for details.</li>
+                <li>Binary installers for OS X and Windows are all signed. See <a href="https://jira.nuxeo.com/browse/NXP-12981">NXP-12981</a> for details. Yet there is an <a href="https://jira.nuxeo.com/browse/NXDRIVE-136">issue</a> on latest versions of OS X Mavericks (> 10.9.4) and Yosemite.</li>
                 <li>
                     The Nuxeo Drive folder can be configured. Currently it is:
                     <ul>
@@ -57,19 +57,18 @@
                     </ul>
 
                     <li>You can choose its location during installation.</li>
-                    <li>It has an automatic, silent update. This makes everything much smoother. The user will be notified when a new version is available and when it has been installed. </li>
+                    <li>Nuxeo Drive has an automatic, silent update, that works with an update site. This makes everything much smoother. The user will be notified when a new version is available and when it has been installed. Update site can be local to the company.</li>
                     <li>Synchronization algorytghm has been optimized and made more robust.</li>
                     <li>We also added the possibility to suspend/resume the synchronization. <div><img class="lightboxed" src="./driveSuspend.png"/></div></li>
-                    <li>It is now also possible to filter out some folders from the Drive desktop interface so that they are not synchronized.</li>
-                    <li>Nuxeo Drive has an automatic, silent update, that works with an update site. The user will be notified when a new version is available and when it has been installed. Update site can be local to the company.</li>
-                    <li>Nuxeo Drive can be used for “live editing” a document, in replacement to the deprecated Nuxeo Live Edit. Documents being live edited are going to a special Drive folder called Lively Edited.</li>
+                    <li>It is now also possible to filter out some folders from the Nuxeo Drive Desktop interface so that they are not synchronized.</li>
+                    <li>Nuxeo Drive can be used for “live editing” a document, in replacement of the deprecated Nuxeo Live Edit. Documents being live edited are going to a special Nuxeo Drive folder called Locally Edited.</li>
                     <li>It is possible to edit metadata from the Desktop interface on Windows. Right-click on a document, click on the Nuxeo Drive action. In the popup you can edit the metadata associated to the type of the document that holds the binary. A few other actions are also made available: link to the document in the web application, locking, following. </li>
                 </ul>
                 </p>
                 <h2><a name="anchor-1"></a>Collections</h2>
                 <p><a href="http://doc.nuxeo.com/x/o4wZAQ">A collection</a> issue a folder-like document in which you can file existing documents. Documents are not actually copied or moved into the collection, which only holds a link to the document in its original location.</p>
                 <p><img class="lightboxed" src="./createCollection.png"/></p>
-                <p>Collections are persisted, per user, sharable and are a great to provide bulk features such as:</p>
+                <p>Collections are persisted, per user, sharable and are a great way to provide bulk features such as:</p>
                 <ul><li>Bulk validation</li><li>Bulk publishing</li><li>Bulk download</li><li>ZIP export</li><li>PDF export</li></ul>
                 <p><img class="lightboxed" src="./collection-personal-workspace.png"/></p>
                 <p><img class="lightboxed" src="./collection-home-tab.png"/></p>
@@ -78,7 +77,7 @@
                 <h2><a name="anchor-2"></a>Search Experience - Rebooted</h2>
                 <p>The search experience has been consolidated:
                 <ul>
-                	<li>All the search features have been grouped in a new tab called “search”. </li>
+                	<li>All the search features have been grouped in a new tab called “Search”. </li>
                 	<li>In this tab, the thumbnail view has been greatly improved.</li>
                 	<li> Search filter handles <b>facets</b>, that enable to quickly focus on interesting documents. It is possible to edit columns of the result and to save searches. </li>
                 	<li>Multiple search filters can be contributed, and they can be hidden or displayed depending on the profile of the user. </li>
@@ -93,7 +92,7 @@
                 <p><img class="lightboxed" src="./nuxeo_spreadsheet_edit.png"/></p>
 
                  <h2><a name="anchor-4"></a>Bulk Creation</h2>
-                <p>You now have a bulk import action in the main interface. You can set metadata, tags and collections right at the import time for all the documents that are dropped. The bulk edit also now supports the collections and tags interface </p>
+                <p>You now have a bulk import action in the main interface. You can set metadata, tags and collections right at the import time for all the documents that are dropped. The bulk edit also now supports the collections and tags interface. </p>
                 <p><img class="lightboxed" src="./nuxeo_bulk_import.png"/></p>
                 
 
@@ -117,9 +116,9 @@
                 <ul>
                 	<li>It now uses background images for a better rendering.</li>
                 	<li>Buttons on content views are hidden as long as nothing is selected.</li>
-                	<li> Main action of most of the forms has a different caller for making it easy to be found.</li>
+                	<li> Main action of most of the forms has a different caller to make it easier to found.</li>
                 	<li>We changed the way we display tooltips by using the jQuery library tipsy.</li>
-                	<li> IE11 is supported. Safe Edit,the feature that automatically saves your work even if you didn't submit your form, has been also implemented on toggleable forms. </li>
+                	<li> IE11 is supported. Safe Edit, the feature that automatically saves your work even if you didn't submit your form, has been also implemented on toggleable forms. </li>
 
             </ul><img class="lightboxed" src="./tipsyExample.png"/></p>
               
@@ -143,6 +142,8 @@
                 nuxeo.security.allowNegativeACL=true
 
                 Note that negative permissions are not compatible with using Elasticsearch or MongoDB. </p>
+                
+                <p>The permission "Can ask for publishing" was also taken out of the "Read" permission in sections. It is now explicitely given to members at the root of sections instead of being implicitely granted with the inherited Read permission.</p>
 
 
                 <h2><a name="anchor-14"></a>Suggestion Widgets</h2>
