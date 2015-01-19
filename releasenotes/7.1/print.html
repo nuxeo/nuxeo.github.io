@@ -8,8 +8,7 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>Nuxeo 5.9.5 - New and Noteworthy</title>
-	<meta name="description" content="Nuxeo Platform 5.9.5 release notes">
+	<title>Nuxeo Platform 7.1 Release notes - New and Noteworthy</title>
 	<meta name="author" content="nuxeo">
 
 	<!-- Mobile Specific Metas
@@ -52,20 +51,25 @@ div.breakafter {
 
   <div id="mainContainer" class="container">
     
-    <p class="remove-bottom" id="site-title"><a href="./index.html">Nuxeo Platform <span class="version-number">5.9.5</span> Release Notes</a></p>
+    <p class="remove-bottom" id="site-title"><a href="./index.html">Nuxeo Platform <span class="version-number">7.1</span> Release Notes</a></p>
 
     <div id="welcome">
 
      <div style="clear:both;"></div>
 
     <h1 style="margin-left:-0.5em !important;">For Users</h1>
-    <h2><a name="anchor-0"></a>Insert a Video in a Note</h2>
+     <h2><a name="anchor-0"></a>New Tab for Pictures</h2>
 
-<p>Users can now reference a video inside a Note document type. The HTML5 player is used to play the video.</p>
+<p>The default summary tab for pictures have been revamped, with actions for rotation straight from there, and a new list of picture views with ability to download them and display the technical details of the views. </p>
+    
 
-    <h2><a name="anchor-1"></a>Photoshop Mime-types Correctly Detected</h2>
+    <h2><a name="anchor-1"></a> HTML5 drag'n drop now works for IE 11 users</h2>
 
-<p>Missing mime-types for Photoshop were added, improving detection and image processing of those kind of files.</p>
+<p>Some old limitations were removed and Internet Explorer users can now benefit from drag'n drop. This change was backported in 6.0.</p>
+
+    <h2><a name="anchor-2"></a>Empty Trash Button</h2>
+
+<p>A button has been added to empty the trash of a specific folder.</p>
 
 
 <div class="breakafter"></div>
@@ -73,65 +77,91 @@ div.breakafter {
 
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
-  <h2><a name="anchor-0"></a>MongoDB Backend</h2>
-<p>MongoDB support is now built-in, you don't need to install a marketplace package. A deep refactoring of low layers happened in Nuxeo so as to be able to support a non-transactionnal repository such as MongoDB. This refactoring was made so as to be able to implement other NoSQL backends in the future, as known as "Document-Based-Storage" inside the platform.</p>
+  <h2><a name="anchor-0"></a>Constraints</h2>
+<p>Nuxeo Core Repository now accepts the definition of xsd constraints on document properties. Those constraints can be for exemple number and text formats, text length, list of accepted values, numeric range. They are based on XML Schema facets. A sample constraint for expressing the fact the field value should be an email would be:
+  <div class="embededCode"><pre>
+    
+&lt;xs:element name=&quot;email&quot;&gt;
+  &lt;xs:simpleType&gt;
+    &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+      &lt;xs:pattern value=&quot;[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?*&quot; /&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+&lt;/xs:element&gt;
 
-    <h2><a name="anchor-1"></a>REST API improvements</h2>
-
-<h3>Content Enricher</h3>
-<p>Former Rest Providers have been renamed "Content Enricher" for more clarity. The corresponding necessary contribution was also changed, see upgrade notes.</p><p> Two content enrichers were added to the platform:
-<ul>
-<li>
-ACL: This adds ACLs of the document to the response. It was previously doable using the @ACL web adaptor. Having a Content Enricher for this allows to get in one same call the document and its ACLs.
-</li>
-<li>
-Thumbnail: This one adds url of the Thumbnail Picture to the response. You can use it when doing client slide applications.
-</li>
-</ul>
-<p>The Content Enricher <a href="http://doc.nuxeo.com/x/5wUuAQ" target="_blanck">documentation </a> has been updated.</p>
-<h3>New Versioning Header</h3>
-<p>You can now control whether a minor or major version is created when creating or updating a document via the REST API, using the new "X-Versioning-Option" header, with "MAJOR" or "MINOR" as a value.</p>
-
-
-<h2><a name="anchor-2"></a>Elasticsearch</h2>
-
-<p>The Elasticseach integration has been improved. More fields are indexed, following the feebdack of first usecases. Furthermore, the documents are now fetched directly from the Elasticsearch index, instead of only fetching the reference then loading the document from the database. This saves many database queries in the result set construction and thus improves peformances.</p>
-
-<h2><a name="anchor-3"></a>Business Days Management</h2>
-
-<p>A plugin implemented at first for a customer project has been generically re-branded as it can be useful in many situations: "Business Days Management" module allows to compute a date given a delay and the list of holidays for the year. The delay will be added to the start date without counting the week ends and those holidays. See the <a href= "https://github.com/nuxeo/nuxeo-business-days-management" alt="_blank"> nuxeo-business-day-management GitHub repository</a>, we will come up soon with a post around this topic.</p>
-
- <h2><a name="anchor-4"></a>Generic Video Class Converter</h2>
-
-<p>Thanks to this new Video converter, you can add new video conversion formats without having to write custom Java classes. A sample contribution of a new video converter would be:</p>
+  </pre></div>
+Once constraints are defined, validation can be enabled/disabled at different level by means of the extension point activations of the org.nuxeo.ecm.core.api.DocumentValidationService component.
+Nuxeo Studio will in the future allow constraints definition.
+<h2><a name="anchor-1"></a>Field Reference</h2>
+A reference system has been added. It allows to define a field (usually  a string field) as a reference to an other object. A resolver is used to be able to load the referenced object when needed.
+Here is the way to define a constraint:
 <div class="embededCode"><pre>
-&lt;converter name=&quot;convertToMOV&quot; class=&quot;org.nuxeo.ecm.platform.video.convert.VideoConversionConverter&quot;&gt;
-    &lt;sourceMimeType&gt;video/mpeg&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/webm&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/quicktime&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/ogg&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/x-ms-asf&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/x-msvideo&lt;/sourceMimeType&gt;
-    &lt;sourceMimeType&gt;video/flv&lt;/sourceMimeType&gt;
-    &lt;destinationMimeType&gt;video/mov&lt;/destinationMimeType&gt;
-    &lt;parameters&gt;
-        &lt;parameter name=&quot;CommandLineName&quot;&gt;ffmpeg-tomov&lt;/parameter&gt;
-        &lt;parameter name=&quot;videoMimeType&quot;&gt;video/mov&lt;/parameter&gt;
-        &lt;parameter name=&quot;videoExtension&quot;&gt;mov&lt;/parameter&gt;
-        &lt;parameter name=&quot;tmpDirectoryPrefix&quot;&gt;convertToMOV&lt;/parameter&gt;
-    &lt;/parameters&gt;
-&lt;/converter&gt;
-</pre>
-</div>
+&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+           xmlns:ref=&quot;http://www.nuxeo.org/ecm/schemas/core/external-references/&quot;
+           xmlns:nxs=&quot;http://www.nuxeo.org/ecm/schemas/example&quot;
+           targetNamespace=&quot;http://www.nuxeo.org/ecm/schemas/example&quot;&gt;
+  &lt;xs:element name=&quot;favorite&quot;&gt;
+    &lt;xs:simpleType&gt;
+      &lt;xs:restriction base=&quot;xs:string&quot; ref:resolver=&quot;documentResolver&quot; ref:store=&quot;id&quot; /&gt;
+    &lt;/xs:simpleType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+</pre></div>
 
- <h2><a name="anchor-5"></a>SCIM 1.1 Implementation</h2>
-A <a href="https://github.com/tiry/nuxeo-scim-server">new scim-server plugin</a> provides a RESTFUL implementation of <a href="http://www.simplecloud.info/">SCIM 1.1</a> interface, that allows to provision users and groups using a commonly accepted API. This API is used for instance by third party IDMs like Okta.
+And here is a way to get the referenced obejct.
+<div class="embededCode"><pre>
+DocumentModel referenced = document.getObjectResolver("schema:favorite").fetch(DocumentModel.class);
 
- <h2><a name="anchor-6"></a>Okta SSO</h2>
-A <a href="https://github.com/nuxeo/nuxeo-platform-login/tree/feature-NXP-14596-Okta-integration/nuxeo-platform-login-okta">new login-okta plugin</a> allows to use Okta IDP for managing users and authentication.
+</pre></div>
 
- <h2><a name="anchor-7"></a>Duo Web Two Factors authentication plugin</h2>
-A <a href="https://github.com/nuxeo/marketplace-duoweb-authentication">new duoweb-authentication plugin</a> allows to set up a two factors authentication for Nuxeo using Duo Web online sercices.
+<h2><a name="anchor-2"></a>CMIS 1.1 Secondary Types Support</h2>
+<p>
+  Dynamical facets are now exposed as <a href="http://docs.oasis-open.org/cmis/CMIS/v1.1/os/CMIS-v1.1-os.html#x1-690009" target ="_blanck"> CMIS secondary types.</a>
+</p>
+
+<h2><a name="anchor-3"></a>Workflow Module Improvements</h2>
+ <p>A lot of work has been done on the workflow module for improving graph readability: designer in Nuxeo Studio now benefits from grid snapping for positionning the nodes. It is also possible to edit the position of the transitions, while in the past it was 100% controled by Studio. This is specifically interesting in situations where there are many transitions coming out from one node, with looping, etc ...  We also changed the look and feel, with rounded corners and new set of colors. We hope you will like it! 
+ Finally, we changed the position of the "exclusive node" checkbox, it is now displayed in the transition tab, for more consistency.</p>
+
+<h2><a name="anchor-4"></a>File Metadata Read-Write</h2>
+<p>
+A new module in the Nuxeo Platform (nuxeo-platform-binary-metadata)is dedicated to reading and writing metadata on files, like Office metadata, XMP metadata, EXIF, PDF, etc. This new addon provides a configurable service that makes it very easy to map metadata of the files to metadata of the document, and let Nuxeo Platform maintain this mapping when the data is updated. The service also providers several helpers and operations to use it in different manner, you can read <a href ="http://doc.nuxeo.com/x/w4JkAQ" target="_blank">the documentation </a>to discover more of this great new platform feature.</a>
+</p>
+
+<h2><a name="anchor-5"></a>Computed Picture Views</h2>
+<p>
+The Picture Views definition, ie the list of resolutions/format that are systematically computed when uploading a Picture is no more hardcoded. It is now easy to add new views to a picture, depending on the document type, the user properties, etc...  An <a target="_black" href="http://doc.nuxeo.com/x/4Bs5AQ">how-to</a> has been writen to let you discover how to contribute your own views.</a>
+</p>
+
+ <h2><a name="anchor-6"></a>Aliases for Automation Operations</h2>
+<p>It is now possible to rename an operation while not breaking the compatibility using the alias system.</p>
+
+<h2><a name="anchor-7"></a>MVEL Expressions Debugging</h2>
+
+
+<p>MVEL expressions are now evaluated in automation traces while only the object name was appearing before. This makes it easier to debug some complex chains.</p>
+
+<h2><a name="anchor-8"></a>Page Provider Name is Part of the Content View State</h2>
+
+<p>The serialized state of a content view now holds the page provider name, which can be useful for building and running the query associated to a given content view in a client application.</p>
+
+ <h2><a name="anchor-9"></a>Command Line Converter and Converter Operation</h2>
+ 
+<p>A command line converter has been added to the platform. This converter allows to reference a declared command line (contributed to the comand line extension point) for doing a conversion. An operation has also been added so as to call any converters and convey parameters. That way, in two contributions you can operate from automation advanced transformations very easily.</p>
+
+ <h2><a name="anchor-10"></a>PDF Signing Operation</h2>
+ <p>A new operation makes it possible to sign a pdf directly from an automation chain. This operation is part of the nuxeo-platform-digital-signature module.</p>
+
+  <h2><a name="anchor-11"></a>Tagging Operations</h2>
+ <p>A set of operations has been added for being able to tag or remove tags on a document.</p>
+
+ 
+
+ <h2><a name="anchor-12"></a>Possibility to Brand Home and Admin Tabs</h2>
+ <p>You now can from Studio easily brand Home and Admin tabs.</p>
+
+ <h2><a name="anchor-13"></a>InfoView Action Category and Other New UI Elements</h2>
+ <p>Some new UI elements were added in 6.0 and are now available in studio for configuration, like the INFO_VIEW actions category (the popup form the search tab) and some new widgets that are used on that view. </p>
 
 
 
@@ -140,23 +170,28 @@ A <a href="https://github.com/nuxeo/marketplace-duoweb-authentication">new duowe
 
 
 
-<h2><a name="anchor-0"></a>Logging Slow Queries</h2>
-<p>To trace all NXQL queries that take more than 100ms, activate the log for <i>org.nuxeo.ecm.core.storage.sql</i> at the INFO level and add in the nuxeo.conf:
-<div class="embededCode">
-  org.nuxeo.vcs.query.log_min_duration_ms=100
-</div></p>
+<h2><a name="anchor-0"></a>More Resiliant LDAP Directory</h2>
+<p>When LDAP Directory is slow or network is bad, some requests where issuing timeouts. A new system where ldap directory is cached in an SQL directory makes the experience much better in those situations.</p>
 
-<h2><a name="anchor-1"></a>Java version is checked at server startup</h2>
-<p>The check on the Java version (greater or equal to 1.7) is done in nuxeoctl and nuxeoctl.bat scripts. If the correct version is not found, a comprehensive message is displayed: "ERROR: Nuxeo requires Java 1.7+ (detected 1.6.0_38)".
+<h2><a name="anchor-1"></a>Elastic Search: Re-indexing Actions</h2>
+<p>A set of re-indexing actions are provided from the Admin Center, for re-indexing everything starting from one node (and the children iteratively) or for re-indexing a list of documents corresponding to an NXQL request. Also, indexing the repository has been made faster.
 </p>
 
-<h2><a name="anchor-2"></a>Elasticsearch</h2>
-<p>The Admin Center tab for Elasticsearch has been improved. A clear status is dispayed so as to know if there are indexing tasks running or pending.
-Administrator can also find some information on the total number of documents in ES and a dynamically updated average rate of indexing.
+<h2><a name="anchor-2"></a>Elasticsearch: Configuring The Indexing Pool From nuxeo.conf</h2>
+<p>Some options are available in nuxeo.conf directly for configuring Elasticsearch service:
+
+# Reindexing option, number of documents to process per worker
+elasticsearch.reindex.bucketReadSize=500
+# Reindexing option, number of documents to submit to Elasticsearch per bulk command
+elasticsearch.reindex.bucketWriteSize=50
+# Maximum size of the indexing thread pool
+elasticsearch.indexing.maxThreads=4
+# Time to keep the completed indexing worker states
+elasticsearch.indexing.clearCompletedAfterSeconds=90
 </p>
 
-
-
+<h2><a name="anchor-3"></a>Tasks Do Not Hold A Dynamical Facet Anymore</h2>
+<p>Tasks now hold only statical facets, which makes queries on tasks more efficient</p>
 
   </div>
 
