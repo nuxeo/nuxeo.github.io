@@ -2,19 +2,19 @@
     {
         "data": [
             {
-                "date": "TODO",
+                "date": "20-Jan-2015 11:21",
                 "description": "Nuxeo Platform 7.1 release notes",
                 "label": "7.1 Release Notes.pdf",
                 "os": "all",
-                "size": "TODO",
+                "size": "63K",
                 "url": "http://cdn.nuxeo.com/nuxeo-7.1/7.1%20Release%20Notes.pdf"
             },
             {
-                "date": "TODO",
+                "date": "20-Jan-2015 11:21",
                 "description": "Nuxeo Platform 7.1 upgrade notes",
                 "label": "7.1 Upgrade Notes.pdf",
                 "os": "all",
-                "size": "TODO",
+                "size": "151K",
                 "url": "http://cdn.nuxeo.com/nuxeo-7.1/7.1%20Upgrade%20Notes.pdf"
             },
             {
