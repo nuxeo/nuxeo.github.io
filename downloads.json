@@ -33,7 +33,7 @@
                 "md5": "http://cdn.nuxeo.com/nuxeo-7.1/nuxeo_7.1-01_all.deb.md5",
                 "os": "deb",
                 "size": "172M",
-                "url": "http://apt.nuxeo.org/pool/releases/nuxeo_7.1-01_all.deb"
+                "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_7.1-01_all.deb"
             },
             {
                 "date": "14-Jan-2015 16:12",
