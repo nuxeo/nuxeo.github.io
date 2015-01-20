@@ -45,7 +45,7 @@
                 "url": "http://cdn.nuxeo.com/nuxeo-7.1/nuxeo-7.1-vm.zip"
             },
             {
-                "date": "14-Jan-2015 14:52",
+                "date": "20-Jan-2015 10:46",
                 "description": "Nuxeo Platform 7.1 multi-OS package. Based on Tomcat, for Linux, Mac, Windows.",
                 "label": "nuxeo-cap-7.1-tomcat.zip",
                 "md5": "http://cdn.nuxeo.com/nuxeo-7.1/nuxeo-cap-7.1-tomcat.zip.md5",
@@ -54,7 +54,7 @@
                 "url": "http://cdn.nuxeo.com/nuxeo-7.1/nuxeo-cap-7.1-tomcat.zip"
             },
             {
-                "date": "14-Jan-2015 14:51",
+                "date": "20-Jan-2015 10:47",
                 "description": "Nuxeo Platform 7.1 SDK package. For use with Nuxeo IDE.",
                 "label": "nuxeo-cap-7.1-tomcat-sdk.zip",
                 "md5": "http://cdn.nuxeo.com/nuxeo-7.1/nuxeo-cap-7.1-tomcat-sdk.zip.md5",
