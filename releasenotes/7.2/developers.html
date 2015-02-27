@@ -80,22 +80,14 @@
 
       <h2>
         <a name="anchor-1"></a>
-        Sample title
+        Picture Document Type
       </h2>
-      <p>Sample Description</p>
-      <div class="embededCode">
-        <pre>
-
-        &lt;xs:element name=&quot;email&quot;&gt;
-        &lt;xs:simpleType&gt;
-        &lt;xs:restriction base=&quot;xs:string&quot;&gt;
-        &lt;xs:pattern value=&quot;[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?*&quot; /&gt;
-        &lt;/xs:restriction&gt;
-        &lt;/xs:simpleType&gt;
-        &lt;/xs:element&gt;
-
-      </pre>
-      </div>
+      <p>Schemas and Layouts Updates</p>
+      <p>- The following <a href="http://doc.nuxeo.com/x/w4JkAQ" target="_blank">documentation</a> provides the new default contribution for binaries metadata extraction in Nuxeo.</p>
+      <p>- Exif mapping remains identical.</p>
+      <p>- Widget "summary_picture_iptc" has been removed from document summary.</p>
+      <p>- Mistral engine is removed. Use Binary Metadata feature to extract metadata with custom engine. (default one is exiftool since 7.1)</p>
+      <p>- IPTC metadata are extracted and stored on dublincore schema: the iptc schema is no more used. We should map a limited number of metadata: source, copyrights ( > dc:rights ), legend (> dc:description ).</p>
       <h2>
         <a name="anchor-2"></a>
         Sample 2 title
