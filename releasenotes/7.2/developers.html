@@ -94,6 +94,28 @@
       </h2>
       <p>New Identifiers and Aliases Introduction</p>
       <p>The following <a href="http://doc.nuxeo.com/x/7gIz" target="_blank">documentation</a> lists renamed operations. Compatibility has been kept with aliases.</p>
+      <h2>
+        <a name="anchor-3"></a>
+        Exports and Renditions
+      </h2>
+      <p>Rendition definitions can now also be contributed through a class implementing the inferface <pre>RenditionDefinitionProvider</pre>. When asked for the list of rendition definitions for a document, all matching RenditionDefinitionProviders are called to compute dynamic rendition definitions</p>.
+      <p><pre>RenditionDefinition</pre>s and <pre>RenditionDefinitionProvider</pre>s can be filtered through standard filters.</p>
+      <p>Video transcoded videos are exposed as renditions (but not visible in the UI).</p>
+      <p>Picture conversions are also exposed as renditions (but not visible in the UI).</p>
+      <p>The default exports (XML export, ZIP Tree Export, ...) has been migrated to be exposed as standard renditions, thanks to the new <pre>ExportDocument</pre> operation.</p>
+
+      <h2>
+        <a name="anchor-4"></a>
+        Nuxeo JavaScript Client
+      </h2>
+      <p>Some improvements has been done to hte JS client during this release:</p>
+      <ul>
+        <li>Added <pre>Document.copy</pre> and <pre>Document.move</pre> methods.</li>
+        <li>Added proxy and portal authentication to Node.js client.</li>
+        <li>Increased default timeout from 3000 to 30000 ms.</li>
+        <li>Fixed <pre>delete</pre> request.</li>
+      </ul>
+      <p>Note that the authentication configuration has changed, see <a href="https://github.com/nuxeo/nuxeo-js-client#migrating-from-03x" target="_blank">Migrating from 0.3.x</a> part.</p>
     </div>
   </div>
 
