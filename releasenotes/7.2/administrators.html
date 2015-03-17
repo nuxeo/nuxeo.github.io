@@ -103,6 +103,17 @@
         Nuxeo Drive beta channel
       </h2>
       <p>As Nuxeo Drive can now be configured to be updated through a beta channel, the beta update site URL is set in the Nuxeo server by the org.nuxeo.drive.beta.update.site.url property, whose default value is set to <a href="http://community.nuxeo.com/static/drive-tests/" target="_blank">http://community.nuxeo.com/static/drive-tests/</a> in the nuxeo-drive marketplace package. As any other Framework property it can be overridden in nuxeo.conf</p>
+      
+      <h2><a name="anchor-6"></a>Elasticsearch reindexing refactoring</h2>
+        <p>The reindexing operations are now faster because of better parallelisation and improved usage of the Elasticsearch bulk mode, See <a href="http://doc.nuxeo.com/x/UBY5AQ#ElasticsearchSetup-RebuildingtheIndex" target="_blank">the tuning options</a> available</p>
+        <p>The new Admin center/Elasticsearch/Admin tab now display much more option to reindex:</p>
+        <ul>
+          <li>Support for multi repositories</li>
+          <li>Re-indexing the entire repository, now it drops the index first.</li>
+          <li>Re-indexing documents that match a NXQL query, there is no recursive indexation of children nor deletion of spurious documents from the index. </li>
+          <li>Re-indexing a document and its children recursively. Before indexing, the document and its children are removed from Elasticsearch, this operation can be used to remove spurious documents from the index. You may experience incomplete search results during the re-indexing. </li>
+          <li>Optimize all Elasticsearch indexes: The optimize process basically optimizes the index for faster search operations (and relates to the number of segments a Lucene index holds within each shard). The optimize operation allows to reduce the number of segments by merging them. Ask for a full optimization to a single segment. Note that this can potentially be a very heavy operation. </li>
+        </ul>
     </div>
   </div>
 
