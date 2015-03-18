@@ -83,11 +83,11 @@
         Picture Document Type
       </h2>
       <p>Schemas and Layouts Updates</p>
-      <p>- The following <a href="http://doc.nuxeo.com/x/w4JkAQ" target="_blank">documentation</a> provides the new default contribution for binaries metadata extraction in Nuxeo.</p>
+      <p>- The following <a href="http://doc.nuxeo.com/x/w4JkAQ" target="_blank">documentation</a> provides the new default contribution for binaries metadata extraction in the Nuxeo Platform.</p>
       <p>- Exif mapping remains identical.</p>
-      <p>- Widget "summary_picture_iptc" has been removed from document summary.</p>
-      <p>- Mistral engine is removed. Use Binary Metadata feature to extract metadata with custom engine. (default one is exiftool since 7.1)</p>
-      <p>- IPTC metadata are extracted and stored on dublincore schema: the iptc schema is no more used. We should map a limited number of metadata: source, copyrights ( > dc:rights ), legend (> dc:description ).</p>
+      <p>- The widget "summary_picture_iptc" has been removed from document Summary.</p>
+      <p>- Mistral engine is removed. Use the Binary Metadata feature to extract metadata with custom engine. (The default one is ExifTool since 7.1)</p>
+      <p>- IPTC metadata are extracted and stored on dublincore schema: the iptc schema is no more used. We should map a limited number of metadata: source, copyrights (> dc:rights), legend (> dc:description).</p>
       <h2>
         <a name="anchor-2"></a>
         Global Automation Renaming
@@ -98,34 +98,34 @@
         <a name="anchor-3"></a>
         Exports and Renditions
       </h2>
-      <p>Rendition definitions can now also be contributed through a class implementing the inferface <pre>RenditionDefinitionProvider</pre>. When asked for the list of rendition definitions for a document, all matching RenditionDefinitionProviders are called to compute dynamic rendition definitions</p>.
+      <p>Rendition definitions can now also be contributed through a class implementing the inferface <pre>RenditionDefinitionProvider</pre>. When asked for the list of rendition definitions for a document, all matching <pre>RenditionDefinitionProviders</pre> are called to compute dynamic rendition definitions.</p>
       <p><pre>RenditionDefinition</pre>s and <pre>RenditionDefinitionProvider</pre>s can be filtered through standard filters.</p>
-      <p>Video transcoded videos are exposed as renditions (but not visible in the UI).</p>
+      <p>Transcoded videos are exposed as renditions (but not visible in the UI).</p>
       <p>Picture conversions are also exposed as renditions (but not visible in the UI).</p>
-      <p>The default exports (XML export, ZIP Tree Export, ...) has been migrated to be exposed as standard renditions, thanks to the new <pre>ExportDocument</pre> operation.</p>
+      <p>The default exports (XML export, ZIP Tree Export, ...) have been migrated to be exposed as standard renditions, thanks to the new <pre>ExportDocument</pre> operation.</p>
 
       <h2>
         <a name="anchor-4"></a>
         Nuxeo JavaScript Client
       </h2>
-      <p>Some improvements has been done to hte JS client during this release:</p>
+      <p>Some improvements have been done to the JS client during this release:</p>
       <ul>
-        <li>Added <pre>Document.copy</pre> and <pre>Document.move</pre> methods.</li>
-        <li>Added proxy and portal authentication to Node.js client.</li>
-        <li>Increased default timeout from 3000 to 30000 ms.</li>
-        <li>Fixed <pre>delete</pre> request.</li>
+        <li>Added <pre>Document.copy</pre> and <pre>Document.move</pre> methods</li>
+        <li>Added proxy and portal authentication to Node.js client</li>
+        <li>Increased default timeout from 3000 to 30000 ms</li>
+        <li>Fixed <pre>delete</pre> request</li>
       </ul>
-      <p>Note that the authentication configuration has changed, see <a href="https://github.com/nuxeo/nuxeo-js-client#migrating-from-03x" target="_blank">Migrating from 0.3.x</a> part.</p>
+      <p>Note that the authentication configuration has changed, see the <a href="https://github.com/nuxeo/nuxeo-js-client#migrating-from-03x" target="_blank">Migrating from 0.3.x</a> part.</p>
 
-      <h2><a name="anchor-5"></a>New Elasticsearch admin API to wait for indexing completion</h2>
+      <h2><a name="anchor-5"></a>New Elasticsearch Admin API to Wait for Indexing Completion</h2>
       <p>The following <a href="http://doc.nuxeo.com/x/F4tkAQ" target="_blank">documentation</a> explains how to migrate code from VCS to DB using this new API.</p>
 
-      <h2><a name="anchor-6"></a>Supports properties on select clause using Elasticsearch</h2>
+      <h2><a name="anchor-6"></a>Support Properties on Select Clause Using Elasticsearch</h2>
       <p>It is now possible to select scalar fields instead of documents from Elasticsearch API. Note that aggregate (COUNT, MAX, MIN, SUM, AVG) are not yet supported.</p>
-      <p>Visit the following <a href="http://doc.nuxeo.com/x/F4tkAQ#MovingLoadfromDatabasetoElasticsearch-MigratingaqueryAndFetchrequest" target="_blank">documentation</a> for more information</p>
+      <p>Visit the following <a href="http://doc.nuxeo.com/x/F4tkAQ#MovingLoadfromDatabasetoElasticsearch-MigratingaqueryAndFetchrequest" target="_blank">documentation</a> for more information.</p>
 
       <h2><a name="anchor-7"></a>Field Constraints & Validation</h2>
-      <p>It is now possible to set field constraints on the schema XSD definition, this validation is performed when submitting a document form.</p>
+      <p>It is now possible to set field constraints on the schema XSD definition. This validation is performed when submitting a document form.</p>
       <p>Visit the <a href="http://doc.nuxeo.com/x/yIBkAQ" target="_blank">developer documentation</a> for more information and the 
       <a href="http://showcase.nuxeo.com/nuxeo/layoutDemo/testDocumentValidation" target="_blank">layout showcase for a small demo</a>.</p>
 
