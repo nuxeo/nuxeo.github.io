@@ -32,14 +32,14 @@
       <template repeat="{{blob in downloads | enumerate}}">
         <template if="{{blob.index == 0}}">
           <div class="ui ribbon label">
-            {{blob.value.mimetype}}&nbsp;<a target="_blank" href="{{blob.value | asBlobUrl}}" title="Download"><i class="download disk icon"></i></a>
+            {{blob.value.mimetype}}&nbsp;<a target="_blank" _href="{{blob.value | asBlobUrl}}" title="Download"><i class="download disk icon"></i></a>
           </div>
         </template>
         <template if="{{blob.index > 0}}">
           <div class="item">
             <i class="download disk icon"></i>
             <div class="content">
-            <a class="header" target="_blank" href="{{blob.value | asBlobUrl}}" title="Download {{blob.value.filename}}">{{blob.value.filename}}</a>
+            <a class="header" target="_blank" _href="{{blob.value | asBlobUrl}}" title="Download {{blob.value.filename}}">{{blob.value.filename}}</a>
             </div>
           </div>
         </template>

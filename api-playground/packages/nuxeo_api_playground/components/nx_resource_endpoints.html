@@ -50,7 +50,7 @@
         <!-- Endpoints -->
         <div id="endpoints" class="ui fluid blue accordion" style="overflow:hidden">
 
-          <template repeat="{{key in endpoints.keys}}">
+          <template repeat="{{key in endpoints.keys | alphabetically}}">
             <div class="title">
               <i class="dropdown icon"></i>
               {{key | capitalize}}
@@ -99,7 +99,7 @@
           <div class="ui raised segment">
             <h3 class="ui blue header">{{title}}</h3>
             <div class="ui grid">
-              <div class="four wide column"><img class="ui medium image" src="../images/{{icon}}"></div>
+              <div class="four wide column"><img class="ui medium image" _src="../images/{{icon}}"></div>
               <div class="twelve wide column">
                 <p class="description">{{description}}</p>
               </div>
@@ -177,7 +177,7 @@
                   <td>{{param.description}}</td>
                   <td>
                   <template if="{{param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group'}}">
-                  <a target="alt" href="http://doc.nuxeo.com/display/public/NXDOC/REST+API+Entity+Types#RESTAPIEntityTypes-{{param.dataType}}">{{param.dataType}}</a>
+                  <a target="alt" _href="http://doc.nuxeo.com/display/public/NXDOC/REST+API+Entity+Types#RESTAPIEntityTypes-{{param.dataType}}">{{param.dataType}}</a>
                   </template>
                   <template if="{{!(param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group')}}">
                   {{param.dataType}}
