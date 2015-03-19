@@ -10,7 +10,7 @@
 
     <div class="ui form">
         <div class="two fields">
-          <div class="field"><label>Nuxeo-Transaction-Timeout <i class="help icon" title="This header can be used when you want to control the transaction duration. As an example, if you want to inject a large blob 
+          <div class="field"><label>Nuxeo-Transaction-Timeout <i class="help icon" title="This header can be used when you want to control the transaction duration. As an example, if you want to inject a large blob
 in the repository, the default transaction timeout may be not enough. You can specify a 5 minutes timeout for the chain you're executing :
 Nuxeo-Transaction-Timeout: 300"></i></label> </div>
           <div class="field"><input type="text" value="{{timeout | inSeconds}}"></div>
@@ -34,12 +34,21 @@ X-NXRepository: myCustomRepositoryName"></i></label></div>
             <div class="field">
               <label style="display:inline">
               X-NXContext-Category
-              <a target="_blank" style="text-decoration:none" href="http://www.nuxeo.com/blog/development/2013/09/qa-friday-video-storyboard-rest-api/">
+              <a target="_blank" style="text-decoration:none" href="http://doc.nuxeo.com/x/5wUuAQ">
                 <i class="help icon"></i>
               </a>
               </label>
             </div>
-            <div class="field"><input type="text" value="{{restContributors}}"></div>
+            <div class="field grouped inline fields">
+              <template repeat="{{key in contentEnrichers.keys}}">
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="checkbox" checked="{{contentEnrichers[key]}}">
+                    <label>{{key}}</label>
+                  </div>
+                </div>
+              </template>
+            </div>
         </div>
     </div>
   </template>

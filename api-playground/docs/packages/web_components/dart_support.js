@@ -2,11 +2,14 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+// Teaches dart2js about the wrapping that is done by the Shadow DOM polyfill.
 (function() {
   var ShadowDOMPolyfill = window.ShadowDOMPolyfill;
   if (!ShadowDOMPolyfill) return;
 
-  if (navigator.userAgent.indexOf('(Dart)') !== -1) {
+  // TODO(sigmund): remove the userAgent check once 1.6 rolls as stable.
+  // See: dartbug.com/18463
+  if (navigator.dartEnabled || (navigator.userAgent.indexOf('(Dart)') !== -1)) {
     console.error("ShadowDOMPolyfill polyfill was loaded in Dartium. This " +
         "will not work. This indicates that Dartium's Chrome version is " +
         "not compatible with this version of web_components.");
