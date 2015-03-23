@@ -72,7 +72,7 @@
       </h2>
       <p>
         Java 8 update 25+ is required for building Nuxeo and the constraint has been set as an enforcement in the root
-        Nuxeo POM
+        Nuxeo POM.
         <code>org.nuxeo:nuxeo-ecm</code>
         .<br /> Some products like the Automation Client will still be compiled with Java 7 compliance (source and
         target) for being usable in Java 7 runtime environments but Java 8 is still required to perform their build.
@@ -80,22 +80,16 @@
 
       <h2>
         <a name="anchor-1"></a>
-        Picture Document Type
+        Picture Document Type Evolutions
       </h2>
       <p>Schemas and Layouts Updates</p>
-      <p>- The following <a href="http://doc.nuxeo.com/x/w4JkAQ" target="_blank">documentation</a> provides the new default contribution for binaries metadata extraction in the Nuxeo Platform.</p>
+      <p>- The following <a href="http://doc.nuxeo.com/x/w4JkAQ" target="_blank">documentation</a> provides the new default contribution for binaries metadata extraction in the Nuxeo Platform. Main changes are that IPTC binary metadatas are mapped to Dublin Core schema (source, copyrights (>&nbsp;dc:rights), legend (>&nbsp;dc:description)), as an exemple of what can be done configuring the metadata extractor.</p>
       <p>- Exif mapping remains identical.</p>
       <p>- The widget "summary_picture_iptc" has been removed from document Summary.</p>
       <p>- Mistral engine is removed. Use the Binary Metadata feature to extract metadata with custom engine. (The default one is ExifTool since 7.1)</p>
-      <p>- IPTC metadata are extracted and stored on dublincore schema: the iptc schema is no more used. We should map a limited number of metadata: source, copyrights (>&nbsp;dc:rights), legend (>&nbsp;dc:description).</p>
+     
       <h2>
         <a name="anchor-2"></a>
-        Global Automation Renaming
-      </h2>
-      <p>New Identifiers and Aliases Introduction</p>
-      <p>The following <a href="http://doc.nuxeo.com/x/7gIz" target="_blank">documentation</a> lists renamed operations. Compatibility has been kept with aliases.</p>
-      <h2>
-        <a name="anchor-3"></a>
         Exports and Renditions
       </h2>
       <p>Rendition definitions can now also be contributed through a class implementing the inferface <i>RenditionDefinitionProvider</i>. When asked for the list of rendition definitions for a document, all matching <i>RenditionDefinitionProviders</i> are called to compute dynamic rendition definitions.</p>
@@ -104,6 +98,17 @@
       <p>Picture conversions are also exposed as renditions (but not visible in the UI).</p>
       <p>The default exports (XML export, ZIP Tree Export, ...) have been migrated to be exposed as standard renditions, thanks to the new <pre>ExportDocument</pre> operation.</p>
       <p><img class="lightboxed" src="./Renditions.png"/></p>
+
+      <h2>
+        <a name="anchor-3"></a>
+        Automation: Scripting and Major Renaming.
+      </h2>
+      <h3>Global Renaming</h3>
+      <p>New Identifiers and Aliases Introduction</p>
+      <p> We have renamed most of the operations so as to provider better readability. The label is now equal to the id of the operation in most of the cases. The following <a href="http://doc.nuxeo.com/x/7gIz" target="_blank">documentation</a> lists renamed operations. Compatibility has been kept with aliases.</p>
+
+      <h3>Automation Scripting</h3>
+      <p><a href="http://doc.nuxeo.com/x/z4dkAQ" target="alt">Automation scripting</a> is a new platform service that allows to deploy at runtime new operations defined via a JavaScript script. Those scripts are executed serverside with Nashorn. In those scripts, developer has access to all automation operations. Scripts can be edited in Nuxeo Studio.</p>
 
       <h2>
         <a name="anchor-4"></a>
@@ -118,7 +123,8 @@
       </ul>
       <p>Note that the authentication configuration has changed, see the <a href="https://github.com/nuxeo/nuxeo-js-client#migrating-from-03x" target="_blank">Migrating from 0.3.x</a> part.</p>
 
-      <h2><a name="anchor-5"></a>New Elasticsearch Admin API to Wait for Indexing Completion</h2>
+      <h2> Elasticsearch</h2>
+      <h3><a name="anchor-5"></a>New Elasticsearch Admin API to Wait for Indexing Completion</h2>
       <p>The following <a href="http://doc.nuxeo.com/x/F4tkAQ" target="_blank">documentation</a> explains how to migrate code from VCS to DB using this new API.</p>
 
       <h2><a name="anchor-6"></a>Support Properties on Select Clause Using Elasticsearch</h2>
