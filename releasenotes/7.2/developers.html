@@ -102,7 +102,7 @@
       <p><i>RenditionDefinition</i>s and <i>RenditionDefinitionProvider</i>s can be filtered through standard filters.</p>
       <p>Transcoded videos are exposed as renditions (but not visible in the UI).</p>
       <p>Picture conversions are also exposed as renditions (but not visible in the UI).</p>
-      <p>The default exports (XML export, ZIP Tree Export, ...) have been migrated to be exposed as standard renditions, thanks to the new <i>ExportDocument</i> operation.</p>
+      <p>The default exports (XML export, ZIP Tree Export, ...) have been migrated to be exposed as standard renditions, thanks to the new <pre>ExportDocument</pre> operation.</p>
       <p><img class="lightboxed" src="./Renditions.png"/></p>
 
       <h2>
@@ -125,23 +125,22 @@
       <p>It is now possible to select scalar fields instead of documents from Elasticsearch API. Note that aggregate (COUNT, MAX, MIN, SUM, AVG) are not yet supported.</p>
       <p>Visit the following <a href="http://doc.nuxeo.com/x/F4tkAQ#MovingLoadfromDatabasetoElasticsearch-MigratingaqueryAndFetchrequest" target="_blank">documentation</a> for more information.</p>
 
-      <h2><a name="anchor-7"></a>Field Constraints & Validation</h2>
-      <p>It is now possible to set field constraints on the schema XSD definition. This validation is performed when submitting a document form.</p>
-      <p>Visit the <a href="http://doc.nuxeo.com/x/yIBkAQ" target="_blank">developer documentation</a> for more information and the 
+      <h2><a name="anchor-7"></a>Field Constraints, Extended fields and Validation</h2>
+      <p>It is now possible to set field constraints and define references on the schema XSD definition. This validation is performed when submitting a document form.</p>
+      <p>Visit the <a href="http://doc.nuxeo.com/x/yIBkAQ" target="_blank">"Field Constraints and Validation" documentation</a> and the <a href="http://doc.nuxeo.com/x/rINkAQ">"How to Customize Document Validation" documentation</a> for more information and the 
       <a href="http://showcase.nuxeo.com/nuxeo/layoutDemo/testDocumentValidation" target="_blank">layout showcase for a small demo</a>.</p>
       <p><img class="lightboxed" src="./WebUI-Validation.png"/></p>
 
-      <h2><a name="anchor-8"></a>Workflow REST API</h2>
-      <p>Workflow can now be managed via a REST API. See new endpoints documentation on the <a href="http://nuxeo.github.io/api-playground/#/resources">api-playground</a>:</p>
-      <ul>
-        <li>workflow endpoint</li>
-        <li>workflowModel endpoint</li>
-        <li>task endpoint</li>
-      </ul>
+      <h2><a name="anchor-8"></a>Plugable JSON Marshalling</h2>
+      <p>Nuxeo provides a way to define reusable Marshallers. Each registered marshaller can be used and aggregated. Nuxeo provides built-in and reusable marshallers for many Nuxeo based objects. All marshallers can be used in a web context or in a server side context (for example, JSON could be logged in audit or used with non HTTP connectors).</p>
+      <p>Visit the following <a href="http://doc.nuxeo.com/x/RJBkAQ" target="_blank">documentation</a> for more information.</p>
 
-      <h2><a name="anchor-9"></a>Updated Graph Transition Rendering</h2>
-      <p>The ordering of the transitions on a given workflow node are now reflected in its graph rendering. Transitions are now displayed according to their order, from left to right, with the first being the left-most.</p>
-      <p>This follows changes done to Nuxeo Studio which now also updates the graph rendering when the ordering of transitions changes.</p>
+      <h2><a name="anchor-9"></a>Management of Document's Updates</h2>
+      <p>The dirty flag of document's properties is now more accurate. A property is dirty only if its value has changed. When a document has version 1.0, a 1.0+ version is created while editing only if some property changed. The update's date and the list of contributors are updated only if there were changes (Previously, simply save the document caused the updates, even with identical values).</p>
+
+      <h2><a name="anchor-10"></a>Dublincore's Extended Fields</h2>
+      <p>"dc:creator", "dc:lastContributor" and "dc:contributors" are now defined as references to Nuxeo users. "dc:subjects", "dc:nature" and "dc:coverage" are now defined as references to the corresponding directories. This provides all benefits from the validation and from the plugable JSON marshalling.</p>
+
     </div>
   </div>
 
