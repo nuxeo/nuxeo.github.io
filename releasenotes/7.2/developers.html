@@ -77,7 +77,7 @@
                         <h3>Global Renaming</h3>
                         <p>We have renamed most of the operations so as to provide better readability. The label is now equal to the id of the operation in most of the cases. The following <a href="http://doc.nuxeo.com/x/7gIz" target="_blank">documentation</a> lists renamed operations. Compatibility has been kept with aliases.</p>
                         <h2><a name="anchor-2"></a>Workflow REST API</h2>
-                        <p>Endpoints have been added for controlling workflow engine remotely: start workflow instances, complete tasks, query opened tasks and much more. A <a href="https://github.com/nuxeo/nuxeo-travel-expenses" target="alt">sample javascript application </a>has been implemented for demonstrating the use of this API. This application is also provided as <a href="https://github.com/nuxeo/marketplace-travel-expenses" target="alt">marketplace package</a></p>
+                        <p>Endpoints have been added for controlling workflow engine remotely: start workflow instances, complete tasks, query opened tasks and much more. A <a href="https://github.com/nuxeo/nuxeo-travel-expenses" target="alt">sample javascript application </a>has been implemented for demonstrating the use of this API. This application is also provided as <a href="https://github.com/nuxeo/marketplace-travel-expenses" target="alt">marketplace package</a>.</p>
                     <h2>
                     <a name="anchor-3"></a>
                     Nuxeo JavaScript Client
@@ -114,7 +114,7 @@
                         <p>The current JSF file upload widget (based on UIInputFile code) has been made pluggable in order to be able to create blobs not only based on an HTML file upload from the user's desktop but also based on other kinds of blob creation (for example using an existing file in Google Drive). See <a href="https://jira.nuxeo.com/browse/NXP-16551">NXP-16551</a> for details on how to contribute an additional file picker.</p>
                     <h2><a name="anchor-12"></a>ACL Related Queries</h2>
                         <p>It is now possible to fetch documents depending on acls that are set on it thanks to a new NXQL system field: "ecm:acl". For instance:
-                        "SELECT * FROM Document WHERE ecm:acl/*/principal = 'bob'"</p>
+                        "SELECT * FROM Document WHERE ecm:acl/*/principal = 'bob'".</p>
                     <h2><a name="anchor-13"></a>Transiant Store</h2>
                         <p>A new service `TransientStoreService` has been added to `nuxeo-core-cache`.
                         The goal is to provide a way to handle storage of temporary objects and streams.  `TransientStoreService` can be seen as a high level and cluster compliant interface on top of a 2 levels Cache and Filesystem storage. This very first version was build to accommodate the requirements of asynchronous renditions, but we expect to have much more use cases soon.</p>
@@ -126,7 +126,7 @@
                         <li>The following <a href="http://doc.nuxeo.com/x/w4JkAQ" target="_blank">documentation</a> provides the new default contribution for binaries metadata extraction in the Nuxeo Platform. Main changes are that IPTC binary metadatas are mapped to Dublin Core schema (source, copyrights (>&nbsp;dc:rights), legend (>&nbsp;dc:description)), as an exemple of what can be done configuring the metadata extractor.</li>
                         <li>Exif mapping remains identical.</li>
                         <li>The widget "summary_picture_iptc" has been removed from document Summary.</li>
-                        <li>Mistral engine is removed. Use the Binary Metadata feature to extract metadata with custom engine. (The default one is ExifTool since 7.1)</li>
+                        <li>Mistral engine is removed. Use the Binary Metadata feature to extract metadata with custom engine. (The default one is ExifTool since 7.1).</li>
                         </ul>
                     <h2>
                     <a name="anchor-15"></a>
