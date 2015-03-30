@@ -66,30 +66,31 @@
                         <li>Transcoded videos are exposed as renditions (but not visible in the UI).</li>
                         <li>Picture conversions are also exposed as renditions (but not visible in the UI).</li>
                         <li>The default exports (XML export, ZIP Tree Export, ...) have been migrated to be exposed as standard renditions, thanks to the new <i>ExportDocument</i> operation.</li>
-                        <img class="lightboxed" src="./Renditions.png"/></p>
-                        <h2>
-                        <a name="anchor-1"></a>
-                        Automation: Scripting and Major Renaming.
-                        </h2>
+                        <img class="lightboxed" src="./Renditions.png"/>
+                    </ul>
+                    <h2>
+                    <a name="anchor-1"></a>
+                    Automation: Scripting and Major Renaming.
+                    </h2>
                         <h3>Automation Scripting</h3>
                         <p><a href="http://doc.nuxeo.com/x/z4dkAQ" target="alt">Automation scripting</a> is a new platform service that allows to deploy at runtime new operations defined via a JavaScript script. Those scripts are executed serverside with Nashorn. In those scripts, developer has access to all automation operations. Scripts can be edited in Nuxeo Studio.</p>
                         <h3>Global Renaming</h3>
                         <p>We have renamed most of the operations so as to provider better readability. The label is now equal to the id of the operation in most of the cases. The following <a href="http://doc.nuxeo.com/x/7gIz" target="_blank">documentation</a> lists renamed operations. Compatibility has been kept with aliases.</p>
                         <h2><a name="anchor-2"></a>Workflow REST API</h2>
                         <p>Endpoints have been added for controlling workflow engine remotely: start workflow instances, complete tasks, query opened tasks and much more. A <a href="https://github.com/nuxeo/nuxeo-travel-expenses" target="alt">sample javascript application </a>has been implemented for demonstrating the use of this API. This application is also provided as <a href="https://github.com/nuxeo/marketplace-travel-expenses" target="alt">marketplace package</a></p>
-                        <h2>
-                        <a name="anchor-3"></a>
-                        Nuxeo JavaScript Client
-                        </h2>
-                        <p>Some improvements have been done to the JS client during this release:</p>
-                        <ul>
-                            <li>Added <i>Document.copy</i> and <i>Document.move</i> methods</li>
-                            <li>Added proxy and portal authentication to Node.js client</li>
-                            <li>Increased default timeout from 3000 to 30000 ms</li>
-                            <li>Fixed <i>delete</i> request</li>
-                        </ul>
-                        <p>Note that the authentication configuration has changed, see the <a href="https://github.com/nuxeo/nuxeo-js-client#migrating-from-03x" target="_blank">Migrating from 0.3.x</a> part.</p>
-                        <h2> Elasticsearch</h2>
+                    <h2>
+                    <a name="anchor-3"></a>
+                    Nuxeo JavaScript Client
+                    </h2>
+                    <p>Some improvements have been done to the JS client during this release:</p>
+                    <ul>
+                        <li>Added <i>Document.copy</i> and <i>Document.move</i> methods</li>
+                        <li>Added proxy and portal authentication to Node.js client</li>
+                        <li>Increased default timeout from 3000 to 30000 ms</li>
+                        <li>Fixed <i>delete</i> request</li>
+                    </ul>
+                    <p>Note that the authentication configuration has changed, see the <a href="https://github.com/nuxeo/nuxeo-js-client#migrating-from-03x" target="_blank">Migrating from 0.3.x</a> part.</p>
+                    <h2> Elasticsearch</h2>
                         <h3><a name="anchor-4"></a>New Elasticsearch Admin API to Wait for Indexing Completion</h2>
                         <p>The following <a href="http://doc.nuxeo.com/x/F4tkAQ" target="_blank">documentation</a> explains how to migrate code from VCS to DB using this new API.</p>
                         <h3><a name="anchor-5"></a>Support Properties on Select Clause Using Elasticsearch</h3>
