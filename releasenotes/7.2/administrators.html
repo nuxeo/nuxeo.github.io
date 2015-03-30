@@ -68,7 +68,9 @@
                     Bridge CMISQL to Elasticsearch
                     </h2>
                     <p>To send the CMISQL queries to Elasticsearch, you can set the following property:
-                    org.nuxeo.cmis.elasticsearch=true</p>
+                    <div class="embededCode">
+                        org.nuxeo.cmis.elasticsearch=true
+                    </div></p>
                     <p>This will make your CMIS integration benefit from the scalability of the Elasticsearch engine.</p>
                     <h2><a name="anchor-3"></a>Elasticsearch Reindexing Refactoring</h2>
                     <p>The reindexing operations are now faster because of better parallelisation and improved usage of the Elasticsearch bulk mode. See <a href="http://doc.nuxeo.com/x/UBY5AQ#ElasticsearchSetup-RebuildingtheIndex" target="_blank">the tuning options</a> available.</p>
@@ -90,7 +92,7 @@
                     <a name="anchor-5"></a>
                     Nuxeo Drive Beta Channel
                     </h2>
-                    <p>As Nuxeo Drive can now be configured to be updated through a beta channel, the beta update site URL is set in the Nuxeo server by the org.nuxeo.drive.beta.update.site.url property, whose default value is set to <a href="http://community.nuxeo.com/static/drive-tests/" target="_blank">http://community.nuxeo.com/static/drive-tests/</a> in the nuxeo-drive Marketplace package. As any other Framework property it can be overridden in nuxeo.conf.</p>
+                    <p>As Nuxeo Drive can now be configured to be updated through a beta channel, the beta update site URL is set in the Nuxeo server by the <i>org.nuxeo.drive.beta.update.site.url</i> property, whose default value is set to <a href="http://community.nuxeo.com/static/drive-tests/" target="_blank">http://community.nuxeo.com/static/drive-tests/</a> in the nuxeo-drive Marketplace package. As any other Framework property it can be overridden in nuxeo.conf.</p>
                     <h2>
                     <a name="anchor-6"></a>
                     Recompute Picture Views
