@@ -59,7 +59,7 @@
                     </h2>
                     <p>A lot of work has been done around renditions so as to make the rendition concept the standard way to handle binary transformations of documents.
                     <ul>
-                        <li>Rendition definitions can now also be contributed through a class implementing the inferface <i>RenditionDefinitionProvider</i>. When asked for the list of rendition definitions for a document, all matching <i>RenditionDefinitionProviders</i> are called to compute dynamic rendition definitions.</li>
+                        <li>Rendition definitions can now also be contributed through a class implementing the interface <i>RenditionDefinitionProvider</i>. When asked for the list of rendition definitions for a document, all matching <i>RenditionDefinitionProviders</i> are called to compute dynamic rendition definitions.</li>
 
                         <li><i>RenditionDefinition</i>s and <i>RenditionDefinitionProvider</i>s can be filtered through standard filters.
                         </li>
@@ -77,7 +77,7 @@
                         <h3>Global Renaming</h3>
                         <p>We have renamed most of the operations so as to provide better readability. The label is now equal to the id of the operation in most of the cases. The following <a href="http://doc.nuxeo.com/x/7gIz" target="_blank">documentation</a> lists renamed operations. Compatibility has been kept with aliases.</p>
                         <h2><a name="anchor-2"></a>Workflow REST API</h2>
-                        <p>Endpoints have been added for controlling workflow engine remotely: start workflow instances, complete tasks, query opened tasks and much more. A <a href="https://github.com/nuxeo/nuxeo-travel-expenses" target="alt">sample javascript application </a>has been implemented for demonstrating the use of this API. This application is also provided as <a href="https://github.com/nuxeo/marketplace-travel-expenses" target="alt">marketplace package</a>.</p>
+                        <p>Endpoints have been added for controlling workflow engine remotely: start workflow instances, complete tasks, query opened tasks and much more. A <a href="https://github.com/nuxeo/nuxeo-travel-expenses" target="alt">sample JavaScript application </a>has been implemented for demonstrating the use of this API. This application is also provided as <a href="https://github.com/nuxeo/marketplace-travel-expenses" target="alt">Marketplace package</a>.</p>
                     <h2>
                     <a name="anchor-3"></a>
                     Nuxeo JavaScript Client
@@ -102,28 +102,28 @@
                         <a href="http://showcase.nuxeo.com/nuxeo/layoutDemo/testDocumentValidation" target="_blank">layout showcase for a small demo</a>.</p>
                         <p><img class="lightboxed" src="./WebUI-Validation.png"/></p>
                     <h2><a name="anchor-7"></a>Plugable JSON Marshalling</h2>
-                        <p>Nuxeo provides a way to define reusable Marshallers. Each registered marshaller can be used and aggregated. Nuxeo provides built-in and reusable marshallers for many Nuxeo based objects. All marshallers can be used in a web context or in a server side context (for example, JSON could be logged in audit or used with non HTTP connectors).</p>
+                        <p>Nuxeo provides a way to define reusable Marshallers. Each registered marshaller can be used and aggregated. Nuxeo provides built-in and reusable marshallers for many Nuxeo based objects. All marshallers can be used in a web context or in a server-side context (for example, JSON could be logged in audit or used with non HTTP connectors).</p>
                         <p>Visit the following <a href="http://doc.nuxeo.com/x/RJBkAQ" target="_blank">documentation</a> for more information.</p>
                     <h2><a name="anchor-8"></a>Management of Document's Updates</h2>
-                        <p>The dirty flag of document's properties is now more accurate. A property is dirty only if its value has changed. When a document has version 1.0, a 1.0+ version is created while editing only if some property changed. The update's date and the list of contributors are updated only if there were changes (Previously, simply save the document caused the updates, even with identical values).</p>
+                        <p>The dirty flag of document's properties is now more accurate. A property is dirty only if its value has changed. When a document has version 1.0, a 1.0+ version is created while editing only if some property changed. The update date and the list of contributors are updated only if there were changes (Previously, simply saving the document caused the updates, even with identical values).</p>
                     <h2><a name="anchor-9"></a>Dublincore's Extended Fields</h2>
-                        <p>"dc:creator", "dc:lastContributor" and "dc:contributors" are now defined as references to Nuxeo users. "dc:subjects", "dc:nature" and "dc:coverage" are now defined as references to the corresponding directories. This provides all benefits from the validation and from the plugable JSON marshalling.</p>
+                        <p>"dc:creator", "dc:lastContributor" and "dc:contributors" are now defined as references to Nuxeo users. "dc:subjects", "dc:nature" and "dc:coverage" are now defined as references to the corresponding directories. This provides all benefits from the validation and from the pluggable JSON marshalling.</p>
                     <h2><a name="anchor-10"></a>Blob Manager Service</h2>
-                        <p>Blob Access in lower layers is now made through a new service, Blob Manager, that provides pluggable implementations. This can be used for fetching blobs from remote storage services, like Google Drive or One Drive, or for handling smarter storage policies.</p>
-                    <h2><a name="anchor-11"></a>File Upload Widget Has Been made Extensible</h2>
+                        <p>Blob access in lower layers is now made through a new service, Blob Manager, that provides pluggable implementations. This can be used for fetching blobs from remote storage services, like Google Drive or One Drive, or for handling smarter storage policies.</p>
+                    <h2><a name="anchor-11"></a>File Upload Widget Has Been Made Extensible</h2>
                         <p>The current JSF file upload widget (based on UIInputFile code) has been made pluggable in order to be able to create blobs not only based on an HTML file upload from the user's desktop but also based on other kinds of blob creation (for example using an existing file in Google Drive). See <a href="https://jira.nuxeo.com/browse/NXP-16551">NXP-16551</a> for details on how to contribute an additional file picker.</p>
                     <h2><a name="anchor-12"></a>ACL Related Queries</h2>
-                        <p>It is now possible to fetch documents depending on acls that are set on it thanks to a new NXQL system field: "ecm:acl". For instance:
+                        <p>It is now possible to fetch documents depending on ACLs that are set on it thanks to a new NXQL system field: "ecm:acl". For instance:
                         "SELECT * FROM Document WHERE ecm:acl/*/principal = 'bob'".</p>
-                    <h2><a name="anchor-13"></a>Transiant Store</h2>
+                    <h2><a name="anchor-13"></a>Transient Store</h2>
                         <p>A new service `TransientStoreService` has been added to `nuxeo-core-cache`.
-                        The goal is to provide a way to handle storage of temporary objects and streams.  `TransientStoreService` can be seen as a high level and cluster compliant interface on top of a 2 levels Cache and Filesystem storage. This very first version was build to accommodate the requirements of asynchronous renditions, but we expect to have much more use cases soon.</p>
+                        The goal is to provide a way to handle storage of temporary objects and streams.  `TransientStoreService` can be seen as a high level and cluster compliant interface on top of a 2 level Cache and Filesystem storage. This very first version was build to accommodate the requirements of asynchronous renditions, but we expect to have much more use cases soon.</p>
                     <h2>
                     <a name="anchor-14"></a>
                     Picture Document Type Evolutions
                     </h2>
                         <ul>
-                        <li>The following <a href="http://doc.nuxeo.com/x/w4JkAQ" target="_blank">documentation</a> provides the new default contribution for binaries metadata extraction in the Nuxeo Platform. Main changes are that IPTC binary metadatas are mapped to Dublin Core schema (source, copyrights (>&nbsp;dc:rights), legend (>&nbsp;dc:description)), as an exemple of what can be done configuring the metadata extractor.</li>
+                        <li>The following <a href="http://doc.nuxeo.com/x/w4JkAQ" target="_blank">documentation</a> provides the new default contribution for binaries metadata extraction in the Nuxeo Platform. Main changes are that IPTC binary metadata are mapped to Dublin Core schema (source, copyrights (>&nbsp;dc:rights), legend (>&nbsp;dc:description)), as an exemple of what can be done configuring the metadata extractor.</li>
                         <li>Exif mapping remains identical.</li>
                         <li>The widget "summary_picture_iptc" has been removed from document Summary.</li>
                         <li>Mistral engine is removed. Use the Binary Metadata feature to extract metadata with custom engine. (The default one is ExifTool since 7.1).</li>
@@ -134,9 +134,7 @@
                     </h2>
                         <p>
                         Java 8 update 25+ is required for building Nuxeo and the constraint has been set as an enforcement in the root
-                        Nuxeo POM.
-                        <code>org.nuxeo:nuxeo-ecm</code>
-                        .<br /> Some products like the Automation Client will still be compiled with Java 7 compliance (source and
+                        Nuxeo POM `org.nuxeo:nuxeo-ecm`.<br /> Some products like the Automation Client will still be compiled with Java 7 compliance (source and
                         target) for being usable in Java 7 runtime environments but Java 8 is still required to perform their build.
                         </p>
                     </div>
