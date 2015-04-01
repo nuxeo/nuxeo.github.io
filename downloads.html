@@ -5,27 +5,27 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
 
-	<!-- Basic Page Needs
+  <!-- Basic Page Needs
   ================================================== -->
-	<meta charset="utf-8">
-	<title>Download Nuxeo Platform</title>
-	<meta name="description" content="Download Nuxeo">
-	<meta name="author" content="nuxeo">
+  <meta charset="utf-8">
+  <title>Download Nuxeo Platform</title>
+  <meta name="description" content="Download Nuxeo">
+  <meta name="author" content="nuxeo">
 
-	<!-- Mobile Specific Metas
+  <!-- Mobile Specific Metas
   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- CSS
+  <!-- CSS
   ================================================== -->
-	<link rel="stylesheet" href="stylesheets/base.css">
-	<link rel="stylesheet" href="stylesheets/skeleton.css">
-	<link rel="stylesheet" href="stylesheets/layout.css">
-	<link rel="stylesheet" href="stylesheets/custom.css">
+  <link rel="stylesheet" href="stylesheets/base.css">
+  <link rel="stylesheet" href="stylesheets/skeleton.css">
+  <link rel="stylesheet" href="stylesheets/layout.css">
+  <link rel="stylesheet" href="stylesheets/custom.css">
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 
@@ -33,18 +33,18 @@
 #xnav-footer {margin-top:0px !important;}
 </style>
 <script src="javascripts/jquery-1.7.1.min.js"></script>
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <!-- Favicons
+  ================================================== -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
 </head>
 <body>
 
-	<!-- Primary Page Layout
-	================================================== -->
+  <!-- Primary Page Layout
+  ================================================== -->
 <h1 class="remove-bottom" id="site-title" style="margin-top: 40px">nuxeo<span class="separator">/</span><span class="nxsexion">Download</span></h1>
   <div id="mainContainer" class="container">
 
@@ -58,14 +58,14 @@
 
   </div>
 
-	<!-- JS
-	================================================== -->
+  <!-- JS
+  ================================================== -->
     <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
     <script src="javascripts/jquery-1.7.1.min.js"></script>
     <script src="javascripts/strftime.js"></script>
     <script src="javascripts/tabs.js"></script>
 
-    
+
     <script type="text/javascript">
     $(document).ready(function () {
 
@@ -135,7 +135,7 @@
             var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("class", "button launch");
             $dowloadLink.append($("<span>").text("Download"));
             var $permaLink = $("<a>").attr("href", dlItem.url).attr("class", "button permalink").click(
-              function(){ 
+              function(){
                 window.prompt("Copy to clipboard: Ctrl+C",  dlItem.url);
                 return false;
               }
@@ -153,7 +153,7 @@
             return $tr;
        }
 
-       function jq(myid) { 
+       function jq(myid) {
          return '#' + myid.replace(/(:|\.)/g,'\\$1');
        }
 
