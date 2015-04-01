@@ -160,7 +160,9 @@
        function addTab(data) {
          version = data[count];
          if (version.data) {
-           if (version.name.length == 3) {
+           var name = version.name;
+           var major = name.substring(0, name.indexOf("."));
+           if (major == parseInt(major) && (major % 2 == 0)) {
              LTScount = LTScount + 1;
            } else {
              FTcount = FTcount + 1;
