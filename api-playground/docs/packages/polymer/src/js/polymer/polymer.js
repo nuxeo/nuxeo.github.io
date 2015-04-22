@@ -939,7 +939,7 @@ window.PolymerGestures = {};
   };
 })(window.PolymerGestures);
 
-(function(scope) {
+(function (scope) {
   var dispatcher = scope.dispatcher;
   var pointermap = dispatcher.pointermap;
   // radius around touchend that swallows mouse events
@@ -948,22 +948,10 @@ window.PolymerGestures = {};
   var WHICH_TO_BUTTONS = [0, 1, 4, 2];
 
   var CURRENT_BUTTONS = 0;
-
-  var FIREFOX_LINUX = /Linux.*Firefox\//i;
-
-  var HAS_BUTTONS = (function() {
-    // firefox on linux returns spec-incorrect values for mouseup.buttons
-    // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent.buttons#See_also
-    // https://codereview.chromium.org/727593003/#msg16
-    if (FIREFOX_LINUX.test(navigator.userAgent)) {
-      return false;
-    }
-    try {
-      return new MouseEvent('test', {buttons: 1}).buttons === 1;
-    } catch (e) {
-      return false;
-    }
-  })();
+  var HAS_BUTTONS = false;
+  try {
+    HAS_BUTTONS = new MouseEvent('test', {buttons: 1}).buttons === 1;
+  } catch (e) {}
 
   // handler block for native mouse events
   var mouseEvents = {
@@ -1285,7 +1273,7 @@ window.PolymerGestures = {};
         d.forEach(function(p) {
           this.cancel(p);
           pointermap.delete(p.pointerId);
-        }, this);
+        });
       }
     },
     touchstart: function(inEvent) {
@@ -2059,9 +2047,7 @@ window.PolymerGestures = {};
       'cancel'
     ],
     exposes: [
-      'pinchstart',
       'pinch',
-      'pinchend',
       'rotate'
     ],
     defaultActions: {
@@ -2079,19 +2065,11 @@ window.PolymerGestures = {};
           diameter: points.diameter,
           target: scope.targetFinding.LCA(points.a.target, points.b.target)
         };
-
-        this.firePinch('pinchstart', points.diameter, points);
       }
     },
     up: function(inEvent) {
       var p = pointermap.get(inEvent.pointerId);
-      var num = pointermap.pointers();
       if (p) {
-        if (num === 2) {
-          // fire 'pinchend' before deleting pointer
-          var points = this.calcChord();
-          this.firePinch('pinchend', points.diameter, points);
-        }
         pointermap.delete(inEvent.pointerId);
       }
     },
@@ -2106,9 +2084,9 @@ window.PolymerGestures = {};
     cancel: function(inEvent) {
         this.up(inEvent);
     },
-    firePinch: function(type, diameter, points) {
+    firePinch: function(diameter, points) {
       var zoom = diameter / this.reference.diameter;
-      var e = eventFactory.makeGestureEvent(type, {
+      var e = eventFactory.makeGestureEvent('pinch', {
         bubbles: true,
         cancelable: true,
         scale: zoom,
@@ -2135,7 +2113,7 @@ window.PolymerGestures = {};
       var diameter = points.diameter;
       var angle = this.calcAngle(points);
       if (diameter != this.reference.diameter) {
-        this.firePinch('pinch', diameter, points);
+        this.firePinch(diameter, points);
       }
       if (angle != this.reference.angle) {
         this.fireRotate(angle, points);
@@ -3280,7 +3258,7 @@ window.PolymerGestures = {};
     },
 
     setValue: function(model, newValue) {
-      if (this.path.length == 1)
+      if (this.path.length == 1);
         model = findScope(model, this.path[0]);
 
       return this.path.setValueFrom(model, newValue);
@@ -6353,8 +6331,7 @@ scope.isIE = isIE;
     'template': true,
     'repeat': true,
     'bind': true,
-    'ref': true,
-    'if': true
+    'ref': true
   };
 
   var semanticTemplateElements = {
@@ -8155,7 +8132,7 @@ head.insertBefore(style, head.firstChild);
 /**
  * Force any pending data changes to be observed before 
  * the next task. Data changes are processed asynchronously but are guaranteed
- * to be processed, for example, before painting. This method should rarely be 
+ * to be processed, for example, before paintin. This method should rarely be 
  * needed. It does nothing when Object.observe is available; 
  * when Object.observe is not available, Polymer automatically flushes data 
  * changes approximately every 1/10 second. 

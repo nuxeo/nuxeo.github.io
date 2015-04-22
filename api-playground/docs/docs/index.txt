@@ -151,7 +151,6 @@ dart:core.IndexError.end getter
 dart:core.IndexError.indexable property
 dart:core.IndexError.length property
 dart:core.IndexError.start getter
-dart:core.IndexError.toString method
 dart:core.IntegerDivisionByZeroException class
 dart:core.IntegerDivisionByZeroException.IntegerDivisionByZeroException- constructor
 dart:core.IntegerDivisionByZeroException.toString method
@@ -314,9 +313,12 @@ dart:core.RangeError.RangeError- constructor
 dart:core.RangeError.RangeError-index constructor
 dart:core.RangeError.RangeError-range constructor
 dart:core.RangeError.RangeError-value constructor
+dart:core.RangeError.checkNotNegative method
+dart:core.RangeError.checkValidIndex method
+dart:core.RangeError.checkValidRange method
+dart:core.RangeError.checkValueInInterval method
 dart:core.RangeError.end property
 dart:core.RangeError.start property
-dart:core.RangeError.toString method
 dart:core.RegExp class
 dart:core.RegExp.RegExp- constructor
 dart:core.RegExp.allMatches method
@@ -410,6 +412,8 @@ dart:core.String.padRight method
 dart:core.String.replaceAll method
 dart:core.String.replaceAllMapped method
 dart:core.String.replaceFirst method
+dart:core.String.replaceFirstMapped method
+dart:core.String.replaceRange method
 dart:core.String.runes getter
 dart:core.String.split method
 dart:core.String.splitMapJoin method
@@ -535,6 +539,7 @@ dart:core.int.floorToDouble method
 dart:core.int.int-fromEnvironment constructor
 dart:core.int.isEven getter
 dart:core.int.isOdd getter
+dart:core.int.modPow method
 dart:core.int.parse method
 dart:core.int.round method
 dart:core.int.roundToDouble method
@@ -658,6 +663,7 @@ nuxeo_api_playground/app.Element.clientTop getter
 nuxeo_api_playground/app.Element.clientWidth getter
 nuxeo_api_playground/app.Element.contentEdge getter
 nuxeo_api_playground/app.Element.contentEditable property
+nuxeo_api_playground/app.Element.contextMenu property
 nuxeo_api_playground/app.Element.contextMenuEvent property
 nuxeo_api_playground/app.Element.copyEvent property
 nuxeo_api_playground/app.Element.createFragment method
@@ -1037,7 +1043,6 @@ nuxeo_api_playground/app.Observable.notifyChange method
 nuxeo_api_playground/app.Observable.notifyPropertyChange method
 nuxeo_api_playground/app.ParentNode class
 nuxeo_api_playground/app.ParentNode.querySelector method
-nuxeo_api_playground/app.ParentNode.querySelectorAll method
 nuxeo_api_playground/app.Polymer class
 nuxeo_api_playground/app.Polymer.$ property
 nuxeo_api_playground/app.Polymer.addHostListeners method
@@ -1250,6 +1255,7 @@ nuxeo_api_playground/module.Element.clientTop getter
 nuxeo_api_playground/module.Element.clientWidth getter
 nuxeo_api_playground/module.Element.contentEdge getter
 nuxeo_api_playground/module.Element.contentEditable property
+nuxeo_api_playground/module.Element.contextMenu property
 nuxeo_api_playground/module.Element.contextMenuEvent property
 nuxeo_api_playground/module.Element.copyEvent property
 nuxeo_api_playground/module.Element.createFragment method
@@ -1653,7 +1659,6 @@ nuxeo_api_playground/module.Observable.notifyChange method
 nuxeo_api_playground/module.Observable.notifyPropertyChange method
 nuxeo_api_playground/module.ParentNode class
 nuxeo_api_playground/module.ParentNode.querySelector method
-nuxeo_api_playground/module.ParentNode.querySelectorAll method
 nuxeo_api_playground/module.Polymer class
 nuxeo_api_playground/module.Polymer.$ property
 nuxeo_api_playground/module.Polymer.addHostListeners method
@@ -1915,6 +1920,7 @@ nuxeo_api_playground/nx_batch.Element.clientTop getter
 nuxeo_api_playground/nx_batch.Element.clientWidth getter
 nuxeo_api_playground/nx_batch.Element.contentEdge getter
 nuxeo_api_playground/nx_batch.Element.contentEditable property
+nuxeo_api_playground/nx_batch.Element.contextMenu property
 nuxeo_api_playground/nx_batch.Element.contextMenuEvent property
 nuxeo_api_playground/nx_batch.Element.copyEvent property
 nuxeo_api_playground/nx_batch.Element.createFragment method
@@ -2305,7 +2311,6 @@ nuxeo_api_playground/nx_batch.Observable.notifyChange method
 nuxeo_api_playground/nx_batch.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_batch.ParentNode class
 nuxeo_api_playground/nx_batch.ParentNode.querySelector method
-nuxeo_api_playground/nx_batch.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_batch.Polymer class
 nuxeo_api_playground/nx_batch.Polymer.$ property
 nuxeo_api_playground/nx_batch.Polymer.addHostListeners method
@@ -2463,6 +2468,7 @@ nuxeo_api_playground/nx_batch_reference.Element.clientTop getter
 nuxeo_api_playground/nx_batch_reference.Element.clientWidth getter
 nuxeo_api_playground/nx_batch_reference.Element.contentEdge getter
 nuxeo_api_playground/nx_batch_reference.Element.contentEditable property
+nuxeo_api_playground/nx_batch_reference.Element.contextMenu property
 nuxeo_api_playground/nx_batch_reference.Element.contextMenuEvent property
 nuxeo_api_playground/nx_batch_reference.Element.copyEvent property
 nuxeo_api_playground/nx_batch_reference.Element.createFragment method
@@ -2850,7 +2856,6 @@ nuxeo_api_playground/nx_batch_reference.Observable.notifyChange method
 nuxeo_api_playground/nx_batch_reference.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_batch_reference.ParentNode class
 nuxeo_api_playground/nx_batch_reference.ParentNode.querySelector method
-nuxeo_api_playground/nx_batch_reference.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_batch_reference.Polymer class
 nuxeo_api_playground/nx_batch_reference.Polymer.$ property
 nuxeo_api_playground/nx_batch_reference.Polymer.addHostListeners method
@@ -3014,6 +3019,7 @@ nuxeo_api_playground/nx_batch_upload.Element.clientTop getter
 nuxeo_api_playground/nx_batch_upload.Element.clientWidth getter
 nuxeo_api_playground/nx_batch_upload.Element.contentEdge getter
 nuxeo_api_playground/nx_batch_upload.Element.contentEditable property
+nuxeo_api_playground/nx_batch_upload.Element.contextMenu property
 nuxeo_api_playground/nx_batch_upload.Element.contextMenuEvent property
 nuxeo_api_playground/nx_batch_upload.Element.copyEvent property
 nuxeo_api_playground/nx_batch_upload.Element.createFragment method
@@ -3423,7 +3429,6 @@ nuxeo_api_playground/nx_batch_upload.Observable.notifyChange method
 nuxeo_api_playground/nx_batch_upload.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_batch_upload.ParentNode class
 nuxeo_api_playground/nx_batch_upload.ParentNode.querySelector method
-nuxeo_api_playground/nx_batch_upload.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_batch_upload.Polymer class
 nuxeo_api_playground/nx_batch_upload.Polymer.$ property
 nuxeo_api_playground/nx_batch_upload.Polymer.addHostListeners method
@@ -3597,6 +3602,7 @@ nuxeo_api_playground/nx_command_endpoints.Element.clientTop getter
 nuxeo_api_playground/nx_command_endpoints.Element.clientWidth getter
 nuxeo_api_playground/nx_command_endpoints.Element.contentEdge getter
 nuxeo_api_playground/nx_command_endpoints.Element.contentEditable property
+nuxeo_api_playground/nx_command_endpoints.Element.contextMenu property
 nuxeo_api_playground/nx_command_endpoints.Element.contextMenuEvent property
 nuxeo_api_playground/nx_command_endpoints.Element.copyEvent property
 nuxeo_api_playground/nx_command_endpoints.Element.createFragment method
@@ -4016,7 +4022,6 @@ nuxeo_api_playground/nx_command_endpoints.Observable.notifyChange method
 nuxeo_api_playground/nx_command_endpoints.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_command_endpoints.ParentNode class
 nuxeo_api_playground/nx_command_endpoints.ParentNode.querySelector method
-nuxeo_api_playground/nx_command_endpoints.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_command_endpoints.Polymer class
 nuxeo_api_playground/nx_command_endpoints.Polymer.$ property
 nuxeo_api_playground/nx_command_endpoints.Polymer.addHostListeners method
@@ -4194,6 +4199,7 @@ nuxeo_api_playground/nx_connection.Element.clientTop getter
 nuxeo_api_playground/nx_connection.Element.clientWidth getter
 nuxeo_api_playground/nx_connection.Element.contentEdge getter
 nuxeo_api_playground/nx_connection.Element.contentEditable property
+nuxeo_api_playground/nx_connection.Element.contextMenu property
 nuxeo_api_playground/nx_connection.Element.contextMenuEvent property
 nuxeo_api_playground/nx_connection.Element.copyEvent property
 nuxeo_api_playground/nx_connection.Element.createFragment method
@@ -4583,7 +4589,6 @@ nuxeo_api_playground/nx_connection.Observable.notifyChange method
 nuxeo_api_playground/nx_connection.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_connection.ParentNode class
 nuxeo_api_playground/nx_connection.ParentNode.querySelector method
-nuxeo_api_playground/nx_connection.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_connection.Polymer class
 nuxeo_api_playground/nx_connection.Polymer.$ property
 nuxeo_api_playground/nx_connection.Polymer.addHostListeners method
@@ -4749,6 +4754,7 @@ nuxeo_api_playground/nx_operation.Element.clientTop getter
 nuxeo_api_playground/nx_operation.Element.clientWidth getter
 nuxeo_api_playground/nx_operation.Element.contentEdge getter
 nuxeo_api_playground/nx_operation.Element.contentEditable property
+nuxeo_api_playground/nx_operation.Element.contextMenu property
 nuxeo_api_playground/nx_operation.Element.contextMenuEvent property
 nuxeo_api_playground/nx_operation.Element.copyEvent property
 nuxeo_api_playground/nx_operation.Element.createFragment method
@@ -5161,7 +5167,6 @@ nuxeo_api_playground/nx_operation.Observable.notifyChange method
 nuxeo_api_playground/nx_operation.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_operation.ParentNode class
 nuxeo_api_playground/nx_operation.ParentNode.querySelector method
-nuxeo_api_playground/nx_operation.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_operation.Polymer class
 nuxeo_api_playground/nx_operation.Polymer.$ property
 nuxeo_api_playground/nx_operation.Polymer.addHostListeners method
@@ -5327,6 +5332,7 @@ nuxeo_api_playground/nx_repository_browser.Element.clientTop getter
 nuxeo_api_playground/nx_repository_browser.Element.clientWidth getter
 nuxeo_api_playground/nx_repository_browser.Element.contentEdge getter
 nuxeo_api_playground/nx_repository_browser.Element.contentEditable property
+nuxeo_api_playground/nx_repository_browser.Element.contextMenu property
 nuxeo_api_playground/nx_repository_browser.Element.contextMenuEvent property
 nuxeo_api_playground/nx_repository_browser.Element.copyEvent property
 nuxeo_api_playground/nx_repository_browser.Element.createFragment method
@@ -5736,7 +5742,6 @@ nuxeo_api_playground/nx_repository_browser.Observable.notifyChange method
 nuxeo_api_playground/nx_repository_browser.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_repository_browser.ParentNode class
 nuxeo_api_playground/nx_repository_browser.ParentNode.querySelector method
-nuxeo_api_playground/nx_repository_browser.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_repository_browser.Polymer class
 nuxeo_api_playground/nx_repository_browser.Polymer.$ property
 nuxeo_api_playground/nx_repository_browser.Polymer.addHostListeners method
@@ -5912,6 +5917,7 @@ nuxeo_api_playground/nx_request_monitor.Element.clientTop getter
 nuxeo_api_playground/nx_request_monitor.Element.clientWidth getter
 nuxeo_api_playground/nx_request_monitor.Element.contentEdge getter
 nuxeo_api_playground/nx_request_monitor.Element.contentEditable property
+nuxeo_api_playground/nx_request_monitor.Element.contextMenu property
 nuxeo_api_playground/nx_request_monitor.Element.contextMenuEvent property
 nuxeo_api_playground/nx_request_monitor.Element.copyEvent property
 nuxeo_api_playground/nx_request_monitor.Element.createFragment method
@@ -6303,7 +6309,6 @@ nuxeo_api_playground/nx_request_monitor.Observable.notifyChange method
 nuxeo_api_playground/nx_request_monitor.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_request_monitor.ParentNode class
 nuxeo_api_playground/nx_request_monitor.ParentNode.querySelector method
-nuxeo_api_playground/nx_request_monitor.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_request_monitor.Polymer class
 nuxeo_api_playground/nx_request_monitor.Polymer.$ property
 nuxeo_api_playground/nx_request_monitor.Polymer.addHostListeners method
@@ -6469,6 +6474,7 @@ nuxeo_api_playground/nx_request_options.Element.clientTop getter
 nuxeo_api_playground/nx_request_options.Element.clientWidth getter
 nuxeo_api_playground/nx_request_options.Element.contentEdge getter
 nuxeo_api_playground/nx_request_options.Element.contentEditable property
+nuxeo_api_playground/nx_request_options.Element.contextMenu property
 nuxeo_api_playground/nx_request_options.Element.contextMenuEvent property
 nuxeo_api_playground/nx_request_options.Element.copyEvent property
 nuxeo_api_playground/nx_request_options.Element.createFragment method
@@ -6862,7 +6868,6 @@ nuxeo_api_playground/nx_request_options.Observable.notifyChange method
 nuxeo_api_playground/nx_request_options.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_request_options.ParentNode class
 nuxeo_api_playground/nx_request_options.ParentNode.querySelector method
-nuxeo_api_playground/nx_request_options.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_request_options.Polymer class
 nuxeo_api_playground/nx_request_options.Polymer.$ property
 nuxeo_api_playground/nx_request_options.Polymer.addHostListeners method
@@ -7024,6 +7029,7 @@ nuxeo_api_playground/nx_resource_endpoints.Element.clientTop getter
 nuxeo_api_playground/nx_resource_endpoints.Element.clientWidth getter
 nuxeo_api_playground/nx_resource_endpoints.Element.contentEdge getter
 nuxeo_api_playground/nx_resource_endpoints.Element.contentEditable property
+nuxeo_api_playground/nx_resource_endpoints.Element.contextMenu property
 nuxeo_api_playground/nx_resource_endpoints.Element.contextMenuEvent property
 nuxeo_api_playground/nx_resource_endpoints.Element.copyEvent property
 nuxeo_api_playground/nx_resource_endpoints.Element.createFragment method
@@ -7464,7 +7470,6 @@ nuxeo_api_playground/nx_resource_endpoints.Observable.notifyChange method
 nuxeo_api_playground/nx_resource_endpoints.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_resource_endpoints.ParentNode class
 nuxeo_api_playground/nx_resource_endpoints.ParentNode.querySelector method
-nuxeo_api_playground/nx_resource_endpoints.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_resource_endpoints.Polymer class
 nuxeo_api_playground/nx_resource_endpoints.Polymer.$ property
 nuxeo_api_playground/nx_resource_endpoints.Polymer.addHostListeners method
@@ -7647,6 +7652,7 @@ nuxeo_api_playground/nx_schema.Element.clientTop getter
 nuxeo_api_playground/nx_schema.Element.clientWidth getter
 nuxeo_api_playground/nx_schema.Element.contentEdge getter
 nuxeo_api_playground/nx_schema.Element.contentEditable property
+nuxeo_api_playground/nx_schema.Element.contextMenu property
 nuxeo_api_playground/nx_schema.Element.contextMenuEvent property
 nuxeo_api_playground/nx_schema.Element.copyEvent property
 nuxeo_api_playground/nx_schema.Element.createFragment method
@@ -8018,7 +8024,6 @@ nuxeo_api_playground/nx_schema.Observable.notifyChange method
 nuxeo_api_playground/nx_schema.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_schema.ParentNode class
 nuxeo_api_playground/nx_schema.ParentNode.querySelector method
-nuxeo_api_playground/nx_schema.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_schema.Polymer class
 nuxeo_api_playground/nx_schema.Polymer.$ property
 nuxeo_api_playground/nx_schema.Polymer.addHostListeners method
@@ -8184,6 +8189,7 @@ nuxeo_api_playground/nx_structures_browser.Element.clientTop getter
 nuxeo_api_playground/nx_structures_browser.Element.clientWidth getter
 nuxeo_api_playground/nx_structures_browser.Element.contentEdge getter
 nuxeo_api_playground/nx_structures_browser.Element.contentEditable property
+nuxeo_api_playground/nx_structures_browser.Element.contextMenu property
 nuxeo_api_playground/nx_structures_browser.Element.contextMenuEvent property
 nuxeo_api_playground/nx_structures_browser.Element.copyEvent property
 nuxeo_api_playground/nx_structures_browser.Element.createFragment method
@@ -8608,7 +8614,6 @@ nuxeo_api_playground/nx_structures_browser.Observable.notifyChange method
 nuxeo_api_playground/nx_structures_browser.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_structures_browser.ParentNode class
 nuxeo_api_playground/nx_structures_browser.ParentNode.querySelector method
-nuxeo_api_playground/nx_structures_browser.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_structures_browser.Polymer class
 nuxeo_api_playground/nx_structures_browser.Polymer.$ property
 nuxeo_api_playground/nx_structures_browser.Polymer.addHostListeners method
@@ -8791,6 +8796,7 @@ nuxeo_api_playground/nx_widget.Element.clientTop getter
 nuxeo_api_playground/nx_widget.Element.clientWidth getter
 nuxeo_api_playground/nx_widget.Element.contentEdge getter
 nuxeo_api_playground/nx_widget.Element.contentEditable property
+nuxeo_api_playground/nx_widget.Element.contextMenu property
 nuxeo_api_playground/nx_widget.Element.contextMenuEvent property
 nuxeo_api_playground/nx_widget.Element.copyEvent property
 nuxeo_api_playground/nx_widget.Element.createFragment method
@@ -9173,7 +9179,6 @@ nuxeo_api_playground/nx_widget.Observable.notifyChange method
 nuxeo_api_playground/nx_widget.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_widget.ParentNode class
 nuxeo_api_playground/nx_widget.ParentNode.querySelector method
-nuxeo_api_playground/nx_widget.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_widget.Polymer class
 nuxeo_api_playground/nx_widget.Polymer.$ property
 nuxeo_api_playground/nx_widget.Polymer.addHostListeners method
@@ -9331,6 +9336,7 @@ nuxeo_api_playground/nx_xpath.Element.clientTop getter
 nuxeo_api_playground/nx_xpath.Element.clientWidth getter
 nuxeo_api_playground/nx_xpath.Element.contentEdge getter
 nuxeo_api_playground/nx_xpath.Element.contentEditable property
+nuxeo_api_playground/nx_xpath.Element.contextMenu property
 nuxeo_api_playground/nx_xpath.Element.contextMenuEvent property
 nuxeo_api_playground/nx_xpath.Element.copyEvent property
 nuxeo_api_playground/nx_xpath.Element.createFragment method
@@ -9723,7 +9729,6 @@ nuxeo_api_playground/nx_xpath.Observable.notifyChange method
 nuxeo_api_playground/nx_xpath.Observable.notifyPropertyChange method
 nuxeo_api_playground/nx_xpath.ParentNode class
 nuxeo_api_playground/nx_xpath.ParentNode.querySelector method
-nuxeo_api_playground/nx_xpath.ParentNode.querySelectorAll method
 nuxeo_api_playground/nx_xpath.Polymer class
 nuxeo_api_playground/nx_xpath.Polymer.$ property
 nuxeo_api_playground/nx_xpath.Polymer.addHostListeners method
@@ -9889,6 +9894,7 @@ nuxeo_api_playground/semantic.Element.clientTop getter
 nuxeo_api_playground/semantic.Element.clientWidth getter
 nuxeo_api_playground/semantic.Element.contentEdge getter
 nuxeo_api_playground/semantic.Element.contentEditable property
+nuxeo_api_playground/semantic.Element.contextMenu property
 nuxeo_api_playground/semantic.Element.contextMenuEvent property
 nuxeo_api_playground/semantic.Element.copyEvent property
 nuxeo_api_playground/semantic.Element.createFragment method
@@ -10241,7 +10247,6 @@ nuxeo_api_playground/semantic.Node.text property
 nuxeo_api_playground/semantic.Node.toString method
 nuxeo_api_playground/semantic.ParentNode class
 nuxeo_api_playground/semantic.ParentNode.querySelector method
-nuxeo_api_playground/semantic.ParentNode.querySelectorAll method
 nuxeo_api_playground/semantic.SemanticUI class
 nuxeo_api_playground/semantic.SemanticUI.accordion method
 nuxeo_api_playground/semantic.SemanticUI.dropdown method
@@ -10352,6 +10357,7 @@ nuxeo_api_playground/ui_sidebar.Element.clientTop getter
 nuxeo_api_playground/ui_sidebar.Element.clientWidth getter
 nuxeo_api_playground/ui_sidebar.Element.contentEdge getter
 nuxeo_api_playground/ui_sidebar.Element.contentEditable property
+nuxeo_api_playground/ui_sidebar.Element.contextMenu property
 nuxeo_api_playground/ui_sidebar.Element.contextMenuEvent property
 nuxeo_api_playground/ui_sidebar.Element.copyEvent property
 nuxeo_api_playground/ui_sidebar.Element.createFragment method
@@ -10720,7 +10726,6 @@ nuxeo_api_playground/ui_sidebar.Observable.notifyChange method
 nuxeo_api_playground/ui_sidebar.Observable.notifyPropertyChange method
 nuxeo_api_playground/ui_sidebar.ParentNode class
 nuxeo_api_playground/ui_sidebar.ParentNode.querySelector method
-nuxeo_api_playground/ui_sidebar.ParentNode.querySelectorAll method
 nuxeo_api_playground/ui_sidebar.Polymer class
 nuxeo_api_playground/ui_sidebar.Polymer.$ property
 nuxeo_api_playground/ui_sidebar.Polymer.addHostListeners method

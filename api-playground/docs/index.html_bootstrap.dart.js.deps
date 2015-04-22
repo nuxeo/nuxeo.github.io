@@ -9,6 +9,7 @@ file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/interceptors.dar
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/internal_patch.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/isolate_helper.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/isolate_patch.dart
+file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/isolate_serialization.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/js_array.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/js_helper.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/js_mirrors.dart
@@ -17,13 +18,14 @@ file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/js_number.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/js_primitives.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/js_rti.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/js_string.dart
+file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/linked_hash_map.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/math_patch.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/mirrors_patch.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/native_helper.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/native_typed_data.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/regexp_helper.dart
+file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/shared/async_await_error_codes.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/shared/embedded_names.dart
-file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/shared/runtime_data.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/string_helper.dart
 file:///home/ubuntu/dart/dart-sdk/lib/_internal/compiler/js_lib/typed_data_patch.dart
 file:///home/ubuntu/dart/dart-sdk/lib/async/async.dart
