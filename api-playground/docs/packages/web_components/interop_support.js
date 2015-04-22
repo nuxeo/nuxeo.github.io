@@ -35,7 +35,7 @@
 
     var original = proto.createdCallback;
     var newCallback = function() {
-      if (original) original.call(this);
+      original.call(this);
       var name = (this.getAttribute('is') || this.localName).toLowerCase();
       var upgrader = upgraders[name];
       if (upgrader) {

@@ -1,4 +1,6 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html><html><head><script src="packages/web_components/webcomponents.min.js"></script>
+<script src="packages/web_components/dart_support.js"></script>
+
     <title>Nuxeo API Playground</title>
 
     <meta charset="utf-8">
@@ -81,9 +83,6 @@
     </style>
 
     <!-- Load Polymer -->
-    <script src="packages/web_components/webcomponents.min.js"></script>
-<script src="packages/web_components/dart_support.js"></script>
-
     
     
     
@@ -6188,7 +6187,7 @@ input:required:valid:after {
                   <td>{{param.description}}</td>
                   <td>
                   <template if="{{param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group'}}">
-                  <a target="alt" _href="http://doc.nuxeo.com/display/public/NXDOC/REST+API+Entity+Types#RESTAPIEntityTypes-{{param.dataType}}">{{param.dataType}}</a>
+                  <a target="alt" _href="http://doc.nuxeo.com/display/NXDOC/REST+API+Entity+Types#{{param.dataType}}">{{param.dataType}}</a>
                   </template>
                   <template if="{{!(param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group')}}">
                   {{param.dataType}}
