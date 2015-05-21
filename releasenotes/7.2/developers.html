@@ -137,6 +137,13 @@
                         Nuxeo POM `org.nuxeo:nuxeo-ecm`.<br /> Some products like the Automation Client will still be compiled with Java 7 compliance (source and
                         target) for being usable in Java 7 runtime environments but Java 8 is still required to perform their build.
                         </p>
+                    <h2>
+                    <a name="anchor-16"></a>
+                    Deactivation of DoubleClickShield
+                    </h2>
+                        <p>
+                        The Double Click Shield prevents a form from being submitted twice. It is set by default on every action defined in the platform. In some use cases, in the case of a download for example, the DoubleClickShield does not allow another click on the action because the marker for request completion is still present. A new property "disableDoubleClickShield" has been introduced in the action contribution. By default, this property is defined to false.
+                        </p>
                     </div>
                 </div>
                 <!-- JS
