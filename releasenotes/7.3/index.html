@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+
+<!-- Basic Page Needs
+    ================================================== -->
+<meta charset="utf-8">
+<title>Nuxeo 7.3 - New and Noteworthy</title>
+<meta name="description" content="Nuxeo 7.3 release notes">
+<meta name="author" content="nuxeo">
+
+<!-- Mobile Specific Metas
+    ================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+    ================================================== -->
+<link rel="stylesheet" href="../../stylesheets/base.css">
+<link rel="stylesheet" href="../../stylesheets/skeleton.css">
+<link rel="stylesheet" href="../../stylesheets/layout.css">
+<link rel="stylesheet" href="../../stylesheets/release_notes.css">
+
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+<style>
+#xnav-footer {
+  margin-top: 0px !important;
+}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+<!-- Favicons
+    ================================================== -->
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+
+  <div id="mainContainer" class="container">
+    <p class="backbutton">
+      <a href="../index.html">&larr; Back to Index</a>
+    </p>
+    <p class="remove-bottom" id="site-title">
+      Nuxeo Platform <span class="version-number">7.3</span> Release Notes
+    </p>
+
+    <div id="welcome">
+      <div class="message">
+        <p>
+          Nuxeo Platform 7.3 is now
+          <a href="http://nuxeo.github.io/downloads.html">available for download</a>. This is the second Fast Track for the next LTS release, using the
+          <a href="http://www.nuxeo.com/blog/updates/2013/05/release-cycle/"> versioning system</a>.
+        </p>
+      </div>
+
+      <div style="clear: both;"></div>
+
+      <p>Below you will find the list of new features and improvements included in this new release:</p>
+
+      <ul id="features">
+        <li><a href="users.html">For Users</a>
+          <ul class="second-label">
+            <li><a href="users.html#anchor-0">Improved Breadcrumb</a></li>
+            <li><a href="users.html#anchor-1">Exports and Renditions</a></li>
+            <li><a href="users.html#anchor-2">Picture Document Type</a></li>
+            <li><a href="users.html#anchor-3">CSV Import</a></li>
+            <li><a href="users.html#anchor-4">Agenda</a></li>
+            <li><a href="users.html#anchor-5">JavaScript List Widge</a></li>
+            <li><a href="users.html#anchor-6">Chained Vocabulary Widget Error on First Selection</a></li>
+            <li><a href="users.html#anchor-7">Template Rendering Parameters</a></li>
+            <li><a href="users.html#anchor-8">Thumbnails Are Generated For Videos</a></li>
+            <li><a href="users.html#anchor-9">User Creation/Invitation Page | UI Ergonomy Improvements</a></li>
+          </ul></li>
+
+        <li><a href="administrators.html">For Administrators</a>
+          <ul class="second-label">
+            <li><a href="administrators.html#anchor-0">JDK 1.8+ is required (version 8u25 minimum)</a></li>
+            <li><a href="administrators.html#anchor-1">ExifTool Setup | Third Party Software Requirement</a></li>
+            <li><a href="administrators.html#anchor-2">Bridge CMISQL to Elasticsearch</a></li>
+            <li><a href="administrators.html#anchor-3">Elasticsearch Reindexing Refactoring</a></li>
+            <li><a href="administrators.html#anchor-4"> Mongodb HA Configuration</a></li>
+            <li><a href="administrators.html#anchor-5">Nuxeo Drive Beta Channel</a></li>
+            <li><a href="administrators.html#anchor-6">Recompute Picture Views</a></li>
+            <li><a href="administrators.html#anchor-7">S3 BinaryManager and Big Files</a></li>
+            <li><a href="administrators.html#anchor-8">Oracle 12 Support</a></li>
+            <li><a href="administrators.html#anchor-9">Escaping Configuration Variables</a></li>
+            <li><a href="administrators.html#anchor-10">Social Collaboration Migration</a></li>
+          </ul></li>
+        <li><a href="developers.html">For Developers</a>
+          <ul class="second-label">
+            <li><a href="developers.html#anchor-0">Exports and Renditions</a></li>
+            <li><a href="developers.html#anchor-1">Automation: Scripting and Major Renaming</a></li>
+            <li><a href="developers.html#anchor-2">Workflow REST API</a></li>
+            <li><a href="developers.html#anchor-3">Nuxeo JavaScript Client</a></li>
+            <li><a href="developers.html#anchor-4">New Elasticsearch Admin API to Wait for Indexing Completion</a></li>
+            <li><a href="developers.html#anchor-5">Support Properties on Select Clause Using Elasticsearch</a></li>
+            <li><a href="developers.html#anchor-6">Field Constraints, Extended fields and Validation</a></li>
+            <li><a href="developers.html#anchor-7">Plugable JSON Marshalling</a></li>
+            <li><a href="developers.html#anchor-8">Dirty Fields Detection</a></li>
+            <li><a href="developers.html#anchor-9">Dublincore's Extended Fields</a></li>
+            <li><a href="developers.html#anchor-10">Blob Manager Service</a></li>
+            <li><a href="developers.html#anchor-11">File Upload Widget Has Been made Extensible</a></li>
+            <li><a href="developers.html#anchor-12">ACL Related Queries</a></li>
+            <li><a href="developers.html#anchor-13">Transiant Store</a></li>
+            <li><a href="developers.html#anchor-14">Picture Document Type Evolutions</a></li>
+            <li><a href="developers.html#anchor-15">JDK 1.8+ is required (version 8u25 minimum)</a></li>
+            <li><a href="developers.html#anchor-16">Deactivation of DoubleClickShield</a></li>
+          </ul></li>
+        <li><a href="upgrade_notes.html">Upgrade Notes</a></li>
+        <li><a href="issues.html">Known Issues</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- JS
+    ================================================== -->
+  <script src="../../javascripts/strftime.js"></script>
+  <script src="../../javascripts/tabs.js"></script>
+</body>
+</html>
