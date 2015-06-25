@@ -57,18 +57,18 @@
                     <a name="anchor-0"></a>
                    Changing Tomcat Admin Host</h2>
                    <p>
-                    A new parameter in nuxeo.conf allows to customize the address on which the server waits for a shutdown command. 
+                    A new parameter in nuxeo.conf allows you to customize the address for which the server waits for a shutdown command. 
                     <div class="embededCode">
                          nuxeo.server.tomcat_admin.host
                     </div>
                     </p>
 
                     <h2><a name="anchor-1"></a>VCS Full Text Search Enablement and Configuration</h2>
-                    <p>Most of the production set up will now rely on Elasticsearch for full-text search. In that case you can disable the VCS full-text index computation by setting the following flag set to true.
+                    <p>Most of the production set up will now rely on Elasticsearch for full-text search. In that case you can disable the VCS full-text index computation by setting the following flag set to true:
                         <div class="embededCode"><i>nuxeo.vcs.fulltext.search.disabled</i></div></p>
                         <p>
                          
-                         On the contrary, if you want to use it, it is now easy to configure the analyzer language thanks to the following property: <div class="embededCode">nuxeo.vcs.fulltext.analyzer.language</div>. 
+                         Alternatively, if you do want to use it, it is now easy to configure the analyzer language thanks to the following property: <div class="embededCode">nuxeo.vcs.fulltext.analyzer.language</div>. 
                     </p>
                     <h2>
                     <a name="anchor-2"></a>
@@ -78,7 +78,7 @@
                     <a name="anchor-3"></a>
                     Reindexing Optimization and Reindexing on Startup
                     </h2>
-                    <p>Recursive indexing has been made much quicker thanks to a change in the algorithm. We now propose a flag for automatizing it on startup when index is empty:
+                    <p>Recursive indexing has been made much quicker thanks to a change in the algorithm. We now propose a flag for automatizing it on startup when the index is empty:
                     <div class ="embededCode">elastcisearch.reindex.onStartup=true</div>
                     </p>
 
@@ -88,7 +88,7 @@
                     Audit is Stored in Elasticsearch
                     </h2>
                     <p>
-                    The default backend for the audit is now Elasticsearch. This improves scalability when using Nuxeo Drive on a large set of users. It also allows to store more information on each audit entries, like the complete serialisation of the document. That new capability will be leveraged in up-coming versions of Nuxeo Platform.
+                    The default backend for the audit is now Elasticsearch. This improves scalability when using Nuxeo Drive for a large set of users. It also allows you to store more information on each audit entries, such as the complete serialisation of the document. This new capability will be leveraged in upcoming versions of Nuxeo Platform.
                     </p>
 
                 </div>
