@@ -48,7 +48,7 @@
                 PDF Viewer
                 </h2>
                 <p>
-                A PDF viewer has been integrated, based on the pdf.js lib. It provides ability to zoom, rotate, access to a specific page, as well as support the streaming of the pdf when the file is big, starting displaying first pages as soon as they are downloaded. The preview chain for office document now goes through pdf format for being able to use this viewer for viewing any Office file. This pdf viewer is made available via a simple URL that accepts url of the file to preview as a parameter.
+                A PDF viewer has been integrated, based on the pdf.js lib. It provides the ability to zoom, rotate, and access a specific page, as well as support the streaming of the PDF when the file is large, starting the display of the first pages as soon as they are downloaded. The preview chain for office documents now goes through PDF formatting in order to use this viewer for viewing any Office file. This PDF viewer is made available via a simple URL that accepts the URL of the file to preview as a parameter.
                 </p>
 
                   <h2>
@@ -56,12 +56,12 @@
                 File Dispatching
                 </h2>
                 <p>
-                An abstract base class of Blob Manager is made available for implementing a storage policy and decide that some blobs are stored on S3 or locally, or on different on premise storage systems. The policy can take into account:
+                An abstract base class of BLOB Manager is made available for implementing a storage policy and decide that some BLOBs are stored on S3 or locally, or on different on premise storage systems. The policy can take into account:
                 <ul>
-                    <li>The metadata of the document (ex: a flag "confidential" set to true, blobs are on premise, otherwise on S3)</li>
+                    <li>The metadata of the document (example: if a "confidential" flag is set to true, then store the BLOB on premise, otherwise store on S3)</li>
                     <li>The lifecycle state of the document</li>
-                    <li>The characteristics of the binary (ex: videos are stored on S3, other files on premise)</li>
-This allows to implement for instance hierarchical file system policies.
+                    <li>The characteristics of the binary (example: store video files on S3, and store other files on premise)</li>
+This allows you to implement the right storage policy for your business rules, including setting hierarchical file system (HFS) policies.
     </ul>
                 </p>
 
@@ -70,15 +70,15 @@ This allows to implement for instance hierarchical file system policies.
                Media Content Publishing
                 </h2>
                 <p>
-               A new  plugin has been added that allows to publish content on the cloud. Plugin is made to provide multiple target implementations. Currently, Youtube and Wistia are provided on. User can publish a video on one of those sites, get a link to the published asset, as well as get the html snippet for embedding it. User can also view from Nuxeo Platform the statistics of the videos (nbr of views). This is great for using Nuxeo Platform as a DAM repository and from there easily push your content online. One could also add for instance Slideshare, Vimeo, etc.. Do not hesitate to contribute !
+               A new plugin has been added that allows for publishing content on the cloud. This plugin can provide multiple target implementations. Currently, implementations for YouTube and Wistia are provided. User can publish a video either to the YouTube or Wistia site, get a link to the published asset and also get the HTML snippet for embedding it. User can also view from Nuxeo Platform the statistics of the videos, such as the number of views. This is great for using Nuxeo Platform as a DAM repository and then easily push your content online. One could also add implementations for other online publishing sites, such as Slideshare, Vimeo, and many more. Please do not hesitate to contribute!
                 </p>
 
                 <h2>
                 <a name="anchor-3"></a>
-               Cloud Services management screen in Home and Admin Center.
+               Cloud Services management screen in Home and Admin Center
                 </h2>
                 <p>
-               User is able to manage  its oAuth tokens via the Cloud Services section from where he can connect to different Cloud services, such as Dropbox, Googleplus, Google Drive.  It is also possible to share a token with other groups of users. This can be useful for instance with the Media Content Publishing, if you want to share a you tube or Wistia account with multiple users in your department.
+               Users are able to manage their oAuth tokens via the Cloud Services section from where they can connect to different Cloud Services, such as Dropbox, GooglePlus and Google Drive. It is also possible to share a token with other groups of users. This can be useful, for example, with Media Content Publishing, if you want to share a YouTube or Wistia account with multiple users in your department.
                 </p>
 
                 <h2>
@@ -86,7 +86,7 @@ This allows to implement for instance hierarchical file system policies.
                Web Authentication for Drive
                 </h2>
                 <p>
-               A web window is now used the first time a user authenticates with Nuxeo Drive against a Nuxeo Platform server. This allows to use the same authentication protocoles than the one configured on the Nuxeo Platform Web UI, may it be an SSO system, SAML, Shibboleth, etc..
+               A web window is now used the first time a user authenticates with Nuxeo Drive against a Nuxeo Platform server. This allows to use the same authentication protocols than the one configured on the Nuxeo Platform Web UI, such as an SSO system, SAML, Shibboleth, etc..
                 </p>
 
                   <h2>
@@ -94,7 +94,7 @@ This allows to implement for instance hierarchical file system policies.
              Logging of File Download
                 </h2>
                 <p>
-              All file downloads now happen in the same component that tracks the downloads and log them in the audit trail. This is the beginning of a series of improvements that will happen around downloads.
+              All file downloads now take place in the same component that tracks the downloads and logs them in the audit trail. This is the beginning of a series of improvements we have planned pertaining to downloads.
                 </p>
 
 
@@ -108,23 +108,23 @@ This allows to implement for instance hierarchical file system policies.
 
                    <h2>
                 <a name="anchor-7"></a>
-             Full path is visible on the the root selector of publishing tab
+             Full path is visible on the the root selector of publishing tab.
                 </h2>
                 <p>
-            On the publishing tab, users can set publishing target preferences. We used to display only the name of the selected folder, we now display the path so as to know which folder it is exactly in case they all have the same name.
+            On the publishing tab, users can set publishing target preferences. Previously, only the name of the selected folder was displayed. The path is now also displayed, to ensure the target folder is the correct one as intended by the user, and not a different folder elsewhere that has the same folder name.
                 </p>
 
                     <h2>
                 <a name="anchor-8"></a>
-             Allow to set lifecycle state when using csv import
+             Allows you to set lifecycle state when using csv import.
                 </h2>
                 <p>
-           In the csv importer, it is possible to define the lifecycle state in which the imported document should be.
+           In the CSV importer, it is now possible to define the lifecycle state the imported document should have.
                 </p>
 
                 <h2>
                 <a name="anchor-9"></a>
-            Video Player can be used with any property
+            Video Player can be used with any property.
                 </h2>
                 <p>
           You can use the native video player with any binary property your configured with Nuxeo Studio on your content type.
