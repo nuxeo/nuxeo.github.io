@@ -9,7 +9,7 @@
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
-        <title>Nuxeo 7.2 - New and Noteworthy</title>
+        <title>Nuxeo 7.3 - New and Noteworthy</title>
         <meta name="description" content="Nuxeo on Github">
         <meta name="author" content="nuxeo">
         <!-- Mobile Specific Metas
@@ -47,7 +47,7 @@
                 </p>
                 <p class="remove-bottom" id="site-title">
                 <a href="./index.html">
-                <span class="version-number">7.2</span> Release Notes
+                <span class="version-number">7.3</span> Release Notes
                 </a>
                 </p>
                 <div id="welcome">
@@ -55,72 +55,41 @@
                     <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
                     <h2>
                     <a name="anchor-0"></a>
-                    JDK 1.8+ is required (version 8u25 minimum)
-                    </h2>
-                    <h2>
-                    <a name="anchor-1"></a>
-                    ExifTool Setup | Third Party Software Requirement
-                    </h2>
-                    <p>The following <a href="http://doc.nuxeo.com/x/zgJc" target="_blank">documentation</a> provides guidelines to download/setup ExifTool program.
-                    This tool is replacing Mistral for binaries metadata extraction.</p>
+                   Changing Tomcat Admin Host</h2>
+                   <p>
+                    A new parameter in nuxeo.conf allows to customize the address on which the server waits for a shutdown command. 
+                    <div class="embededCode">
+                         nuxeo.server.tomcat_admin.host
+                    </div>
+                    </p>
+
+                    <h2><a name="anchor-1"></a>VCS Full Text Search Enablement and Configuration</h2>
+                    <p>Most of the production set up will now rely on Elasticsearch for full-text search. In that case you can disable the VCS full-text index computation by setting the following flag set to true.
+                        <div class="embededCode"><i>nuxeo.vcs.fulltext.search.disabled</i></div></p>
+                        <p>
+                         
+                         On the contrary, if you want to use it, it is now easy to configure the analyzer language thanks to the following property: <div class="embededCode">nuxeo.vcs.fulltext.analyzer.language</div>. 
+                    </p>
                     <h2>
                     <a name="anchor-2"></a>
-                    Bridge CMISQL to Elasticsearch
+                    Elasticsearch Server Version Recommended is Now Elasticsearch 1.5.2
                     </h2>
-                    <p>To send the CMISQL queries to Elasticsearch, you can set the following property:
-                    <div class="embededCode">
-                        org.nuxeo.cmis.elasticsearch=true
-                    </div></p>
-                    <p>This will make your CMIS integration benefit from the scalability of the Elasticsearch engine.</p>
-                    <h2><a name="anchor-3"></a>Elasticsearch Reindexing Refactoring</h2>
-                    <p>The reindexing operations are now faster because of better parallelisation and improved usage of the Elasticsearch bulk mode. See <a href="http://doc.nuxeo.com/x/UBY5AQ#ElasticsearchSetup-RebuildingtheIndex" target="_blank">the tuning options</a> available.</p>
-                    <p>The new Admin > Elasticsearch > Admin tab now displays much more options to reindex:</p>
-                    <ul>
-                        <li>Support for multi-repositories.</li>
-                        <li>Re-indexing the entire repository: Now it drops the index first.</li>
-                        <li>Re-indexing documents that match a NXQL query: There is no recursive indexation of children nor deletion of spurious documents from the index.</li>
-                        <li>Re-indexing a document and its children recursively: Before indexing, the document and its children are removed from Elasticsearch. This operation can be used to remove spurious documents from the index. You may experience incomplete search results during the re-indexing.</li>
-                        <li>Optimize all Elasticsearch indexes: The optimize process basically optimizes the index for faster search operations (and relates to the number of segments a Lucene index holds within each shard). The optimize operation allows to reduce the number of segments by merging them. Ask for a full optimization to a single segment. Note that this can potentially be a very heavy operation.</li>
-                    </ul>
                     <h2>
-                    <a name="anchor-4"></a>
-                    MongoDB HA Configuration
+                    <a name="anchor-3"></a>
+                    Reindexing Optimization and Reindexing on Startup
                     </h2>
-                    <p>It is now possible to configure the db name, as well as the replica sets, the credentials and other options.</p>
-                    <p>Property nuxeo.mongodb.dbname can be used to define the database name. The default is "nuxeo". Property nuxeo.mongodb.server can be used for credentials, replica sets, and options, as described in <a href="http://docs.mongodb.org/manual/reference/connection-string/" target="alt">MongoDB documentation</a>.</p>
-                    <h2>
-                    <a name="anchor-5"></a>
-                    Nuxeo Drive Beta Channel
-                    </h2>
-                    <p>As Nuxeo Drive can now be configured to be updated through a beta channel, the beta update site URL is set in the Nuxeo server by the <em>org.nuxeo.drive.beta.update.site.url</em> property, whose default value is set to <a href="http://community.nuxeo.com/static/drive-tests/" target="_blank">http://community.nuxeo.com/static/drive-tests/</a> in the nuxeo-drive Marketplace package. As any other Framework property it can be overridden in nuxeo.conf.</p>
-                    <h2>
-                    <a name="anchor-6"></a>
-                    Recompute Picture Views
-                    </h2>
-                    <p>Recomputation of picture views can now be asynchronously launched in Admin > Imaging, through a NXQL
-                    query.</p>
-                    <p><img class="lightboxed" src="./Admin Picture Conversions.png"/></p>
-                    <h2>
-                    <a name="anchor-7"></a>
-                    S3 BinaryManager and Big Files
-                    </h2>
-                    <p>AWS S3 connector has been improved for dealing with multi-part upload of big files, which allows to go over the previous limitation of 5 gigabits files.</p>
-                    <h2>
-                    <a name="anchor-8"></a>
-                    Oracle 12 Support
-                    </h2>
-                    <p>Support of Oracle 12 has been validated.</p>
-                    
-                    <h2><a name="anchor-9"></a>Escaping Configuration Variables</h2>
-                    <p>The Nuxeo Platform now enables you to generate extensions containing variables resolved at runtime through the templating system.
-                    You can read more about it on <a href="https://jira.nuxeo.com/browse/NXP-16318">JIRA</a> and
-                    in the <a href="http://doc.nuxeo.com/x/0AB9">documentation</a>.</p>
+                    <p>Recursive indexing has been made much quicker thanks to a change in the algorithm. We now propose a flag for automatizing it on startup when index is empty:
+                    <div class ="embededCode">elastcisearch.reindex.onStartup=true</div>
+                    </p>
+
 
                     <h2>
-                    <a name="anchor-10"></a>
-                    Social Collaboration Migration
+                    <a name="anchor-4"></a>
+                    Audit is Stored in Elasticsearch
                     </h2>
-                    <p>We wrote a SQL script to update data created with the Social Collaboration addon to be usable in a default Nuxeo Platform. The script can be found in the <a href="https://github.com/nuxeo/nuxeo-social-collaboration/tree/7.2/migration" target="_blank">Social Collaboration GitHub reporsitory</a>.</p>
+                    <p>
+                    The default backend for the audit is now Elasticsearch. This improves scalability when using Nuxeo Drive on a large set of users. It also allows to store more information on each audit entries, like the complete serialisation of the document. That new capability will be leveraged in up-coming versions of Nuxeo Platform.
+                    </p>
 
                 </div>
             </div>
