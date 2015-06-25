@@ -7,8 +7,8 @@
     <!-- Basic Page Needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Nuxeo 7.2 - New and Noteworthy</title>
-    <meta name="description" content="Nuxeo Platform 7.2 release notes">
+    <title>Nuxeo 7.3 - New and Noteworthy</title>
+    <meta name="description" content="Nuxeo Platform 7.3 release notes">
     <meta name="author" content="nuxeo">
     <!-- Mobile Specific Metas
     ================================================== -->
@@ -39,73 +39,98 @@
     <body>
         <div id="mainContainer" class="container">
             <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
-            <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">7.2</span> Release Notes</a></p>
+            <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">7.3</span> Release Notes</a></p>
             <div id="welcome">
                 <div style="clear:both;"></div>
                 <h1 style="margin-left:-0.5em !important;">For Users</h1>
                 <h2>
                 <a name="anchor-0"></a>
-                Improved Breadcrumb
+                PDF Viewer
                 </h2>
                 <p>
-                Breadcrumb behaviour has been greately improved. User can switch from the breadcrumb to another domain or another repository. And it is possible to go to the top hierarchy in one click.
+                A PDF viewer has been integrated, based on the pdf.js lib. It provides ability to zoom, rotate, access to a specific page, as well as support the streaming of the pdf when the file is big, starting displaying first pages as soon as they are downloaded. The preview chain for office document now goes through pdf format for being able to use this viewer for viewing any Office file. This pdf viewer is made available via a simple URL that accepts url of the file to preview as a parameter.
                 </p>
-                <h2>
+
+                  <h2>
                 <a name="anchor-1"></a>
-                Exports and Renditions
+                File Dispatching
                 </h2>
-                <p>The "Export Options" action and view has been removed. It is replaced with the "Export" action on a document.</p>
-                <p>The Export action lists all available renditions on a document, including the default exports.</p>
-                <h2><a name="anchor-2"></a>Picture Document Type</h2>
-                <p>IPTC metadata are extracted and stored on the dublincore schema: source, copyrights (> dc:rights), legend (> dc:description) instead of on a dedicated schema.</p>
+                <p>
+                An abstract base class of Blob Manager is made available for implementing a storage policy and decide that some blobs are stored on S3 or locally, or on different on premise storage systems. The policy can take into account:
+                <ul>
+                    <li>The metadata of the document (ex: a flag "confidential" set to true, blobs are on premise, otherwise on S3)</li>
+                    <li>The lifecycle state of the document</li>
+                    <li>The characteristics of the binary (ex: videos are stored on S3, other files on premise)</li>
+This allows to implement for instance hierarchical file system policies.
+    </ul>
+                </p>
+
+<h2>
+                <a name="anchor-2"></a>
+               Media Content Publishing
+                </h2>
+                <p>
+               A new  plugin has been added that allows to publish content on the cloud. Plugin is made to provide multiple target implementations. Currently, Youtube and Wistia are provided on. User can publish a video on one of those sites, get a link to the published asset, as well as get the html snippet for embedding it. User can also view from Nuxeo Platform the statistics of the videos (nbr of views). This is great for using Nuxeo Platform as a DAM repository and from there easily push your content online. One could also add for instance Slideshare, Vimeo, etc.. Do not hesitate to contribute !
+                </p>
+
                 <h2>
                 <a name="anchor-3"></a>
-                CSV Import
+               Cloud Services management screen in Home and Admin Center.
                 </h2>
-                <p>Importing documents through a CSV file now supports JSON-encoded complex properties.</p>
+                <p>
+               User is able to manage  its oAuth tokens via the Cloud Services section from where he can connect to different Cloud services, such as Dropbox, Googleplus, Google Drive.  It is also possible to share a token with other groups of users. This can be useful for instance with the Media Content Publishing, if you want to share a you tube or Wistia account with multiple users in your department.
+                </p>
+
                 <h2>
                 <a name="anchor-4"></a>
-                Agenda
+               Web Authentication for Drive
                 </h2>
-                <p>The Agenda addon now works on a default Nuxeo Platform, the OpenSocial dependency has been removed.</p>
-                <h2>
+                <p>
+               A web window is now used the first time a user authenticates with Nuxeo Drive against a Nuxeo Platform server. This allows to use the same authentication protocoles than the one configured on the Nuxeo Platform Web UI, may it be an SSO system, SAML, Shibboleth, etc..
+                </p>
+
+                  <h2>
                 <a name="anchor-5"></a>
-                JavaScript List Widget
+             Logging of File Download
                 </h2>
                 <p>
-                The List widget is now using JavaScript calls to add/remove elements, making it more user friendly. It also allows to keep an uploading file path when a file widget is used inside the list.
+              All file downloads now happen in the same component that tracks the downloads and log them in the audit trail. This is the beginning of a series of improvements that will happen around downloads.
                 </p>
-                <h2>
+
+
+                  <h2>
                 <a name="anchor-6"></a>
-                Chained Vocabulary Widget Error on First Selection
+             Saved Search
                 </h2>
                 <p>
-                The Chained vocabulary widget used to display an error "Incomplete Selections are not allowed"
-                when selecting the first element (and before submitting the form). This bug is now fixed.
+             Saved searches sort criteria is now saved. In next release, it will also be possible to edit it.
                 </p>
-                <h2>
+
+                   <h2>
                 <a name="anchor-7"></a>
-                Template Rendering Parameters
+             Full path is visible on the the root selector of publishing tab
                 </h2>
                 <p>
-                The steps to add and edit parameters in a template have been simplified and completed.
-                In the Parameters configuration box, user is guided to know explicitely what she can
-                add, edit and update. The form has been updated to make user more confident in her edits.
+            On the publishing tab, users can set publishing target preferences. We used to display only the name of the selected folder, we now display the path so as to know which folder it is exactly in case they all have the same name.
                 </p>
-                <h2>
+
+                    <h2>
                 <a name="anchor-8"></a>
-                Thumbnails Are Generated for Videos
+             Allow to set lifecycle state when using csv import
                 </h2>
                 <p>
-                Instead of the full resolution picture which was long to load, a thumbnail adapted resolution is now used for displaying video content in thumbnails view.
+           In the csv importer, it is possible to define the lifecycle state in which the imported document should be.
                 </p>
+
                 <h2>
                 <a name="anchor-9"></a>
-                User Creation/Invitation Page | UI Ergonomy Improvements
+            Video Player can be used with any property
                 </h2>
-                <p>The user creation/invitation page has been improved to now use smarter Ajax refresh to not clean all the form when switching between invitation or creation. Also the set of buttons is now less confusing, using only two buttons, 'create' or 'cancel', and a checkbox if you want to
-                create another user/group.</p>
-                <p><img class="lightboxed" src="./user-creation-form.png"/></p>
+                <p>
+          You can use the native video player with any binary property your configured with Nuxeo Studio on your content type.
+                </p>
+
+
             </div>
         </div>
         <!-- JS
