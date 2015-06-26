@@ -2,6 +2,83 @@
     {
         "data": [
             {
+                "date": "26-Apr-2015 10:34",
+                "description": "Nuxeo Platform 7.3 release notes",
+                "label": "7.3 Release Notes.pdf",
+                "os": "all",
+                "size": "66K",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.3/7.3%20Release%20Notes.pdf"
+            },
+            {
+                "date": "26-Jun-2015 10:34",
+                "description": "Nuxeo Platform 7.3 upgrade notes",
+                "label": "7.3 Upgrade Notes.pdf",
+                "os": "all",
+                "size": "117K",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.3/7.3%20Upgrade%20Notes.pdf"
+            },
+            {
+                "date": "24-Jun-2015 02:20",
+                "description": "Nuxeo Platform 7.3 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
+                "label": "nuxeo-7.3-setup.exe",
+                "md5": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-7.3-setup.exe.md5",
+                "os": "win",
+                "size": "299M",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-7.3-setup.exe"
+            },
+            {
+                "date": "24-Jun-2015 02:14",
+                "description": "Nuxeo Platform 7.3 Debian installer. Based on Tomcat, it also installs all the third-party dependencies if necessary.",
+                "label": "nuxeo_7.3-01_all.deb",
+                "md5": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo_7.3-01_all.deb.md5",
+                "os": "deb",
+                "size": "195M",
+                "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_7.3-01_all.deb"
+            },
+            {
+                "date": "24-Jun-2015 03:09",
+                "description": "Nuxeo Platform 7.3 Virtual Machine image (VirtualBox, RHEV, VMware ESX). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+                "label": "nuxeo-7.3-vm.zip (includes OVF and VMX)",
+                "md5": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-7.3-vm.zip.md5",
+                "os": "vm",
+                "size": "1.1G",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-7.3-vm.zip"
+            },
+            {
+                "date": "22-Jun-2015 17:51",
+                "description": "Nuxeo Platform 7.3 multi-OS package. Based on Tomcat, for Linux, Mac, Windows.",
+                "label": "nuxeo-cap-7.3-tomcat.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-cap-7.3-tomcat.zip.md5",
+                "os": "all",
+                "size": "201M",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-cap-7.3-tomcat.zip"
+            },
+            {
+                "date": "22-Jun-2015 17:49",
+                "description": "Nuxeo Platform 7.3 SDK package. For use with Nuxeo IDE.",
+                "label": "nuxeo-cap-7.3-tomcat-sdk.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-cap-7.3-tomcat-sdk.zip.md5",
+                "os": "all",
+                "size": "449M",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-cap-7.3-tomcat-sdk.zip"
+            },
+            {
+                "date": "22-Jun-2015 17:45",
+                "description": "Nuxeo Platform 7.3 sources",
+                "label": "nuxeo-7.3-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-7.3-sources.zip.md5",
+                "os": "all",
+                "size": "71M",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-7.3-sources.zip"
+            }
+        ],
+        "date": "2015-06-25",
+        "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/7.3/",
+        "name": "7.3"
+    },
+    {
+        "data": [
+            {
                 "date": "01-Apr-2015 10:10",
                 "description": "Nuxeo Platform 7.2 release notes",
                 "label": "7.2 Release Notes.pdf",
