@@ -90,6 +90,14 @@
                     <p>
                     The default backend for the audit is now Elasticsearch. This improves scalability when using Nuxeo Drive for a large set of users. It also allows you to store more information on each audit entries, such as the complete serialisation of the document. This new capability will be leveraged in upcoming versions of Nuxeo Platform.
                     </p>
+                    <p>Using Elasticsearch as a backend for audit logs is enabled by the following property in nuxeo.conf:</p>
+                    <div class ="embededCode">audit.elasticsearch.enabled=true</div>
+                    <p>This is an <strong>important change</strong> that implies:</p>
+                    <ul>
+                        <li>Data migration from the SQL database to an Elasticsearch index, so please make sure you read the <a href="https://doc.nuxeo.com/x/UBY5AQ#ElasticsearchSetup-TriggeringSQLtoElasticsearchAuditLogsMigration">Triggering SQL to Elasticsearch Audit Logs Migration</a> section.</li>
+                        <li>Taking into account the audit related Elasticsearch indexes when backing up / restoring a Nuxeo instance, so please make sure you read the <a href="https://doc.nuxeo.com/x/IoAO#BackupandRestore-BackingUpandRestoringtheAuditElasticsearchIndex">Backing Up and Restoring the Audit Elasticsearch Index</a> section.</li>
+                    </ul>
+                    <p>In order to disable this behaviour and keep the SQL storage, please read the <a href="https://doc.nuxeo.com/x/UBY5AQ#ElasticsearchSetup-DisablingElasticsearchforAuditLogs">Disabling Elasticsearch for Audit Logs</a> section.</p>
 
                 </div>
             </div>
