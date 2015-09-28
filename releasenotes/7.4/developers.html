@@ -1,0 +1,186 @@
+        <!DOCTYPE html>
+        <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+        <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+        <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+        <!--[if (gte IE 9)|!(IE)]><!-->
+        <html lang="en">
+            <!--<![endif]-->
+            <head>
+                <!-- Basic Page Needs
+                ================================================== -->
+                <meta charset="utf-8">
+                <title>Nuxeo 7.4 - New and Noteworthy</title>
+                <meta name="description" content="Nuxeo on Github">
+                <meta name="author" content="nuxeo">
+                <!-- Mobile Specific Metas
+                ================================================== -->
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                <!-- CSS
+                ================================================== -->
+                <link rel="stylesheet" href="../../stylesheets/base.css">
+                <link rel="stylesheet" href="../../stylesheets/skeleton.css">
+                <link rel="stylesheet" href="../../stylesheets/layout.css">
+                <link rel="stylesheet" href="../../stylesheets/release_notes.css">
+                <link rel="stylesheet" href="../../stylesheets/lightbox.css">
+                <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+                <![endif]-->
+                <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+                    <style>
+                                #xnav-footer {
+                                    margin-top: 0px !important;
+                                }
+                    </style>
+                    <script src="../../Javascripts/jquery-1.7.1.min.js"></script>
+                    <script type="text/Javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+                    <!-- Favicons
+                    ================================================== -->
+                    <link rel="shortcut icon" href="images/favicon.ico">
+                    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+                    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+                    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+                </head>
+                <body>
+                    <div id="mainContainer" class="container">
+                        <p class="backbutton">
+                        <a href="./index.html">&larr; Back to Index</a>
+                        </p>
+                        <p class="remove-bottom" id="site-title">
+                        <a href="./index.html">
+                        <span class="version-number">7.4</span> Release Notes
+                        </a>
+                        </p>
+                        <div id="welcome">
+                            <div style="clear: both;"></div>
+                            <h1 style="margin-left: -0.5em !important;">For Developers</h1>
+                            <h2>
+                            Theme Removal and Styling Methods Evolutions
+                           
+                            </h2>
+                            <h3><a name="anchor-0"></a>Former Theme Framework has been Removed</h3>
+                            <p>
+                                Todo </p>
+                            <h3><a name="anchor-1"></a>From .css to Sass .scss
+                            </h3>
+                            <p>The styles framework is now using Sass. Thanks to this major step in the history of Nuxeo's styles, the styles will be updated in the next versions of the product to have a cleaner structure, a neat logic, and have a better maintenability. The variables customizable by Studio are contained in one file, default_variable.scss. The old variables used by the Theme engine are now obsolete and will be moved to theme-webapp-compat.
+                        </p>
+                        <h3><a name="anchor-2"></a>DIV instead of Tables</h3>
+                        The container widget used in Nuxeo Studio has been lightened and display now a div instead of a table. The left column is now independant from the main area, allowing user to scroll only in the required area.
+                            
+                        <h2>ACLs and Security Framework</h2>
+                        <h3><a name ="anchor-2"></a> New Methods on Java ACL object</h3>
+                        <p>
+
+ New methods were added on ACL object:
+<ul>
+    <li>blockInheritance(String username)</li>
+    <li>unblockInheritance()</li>
+    </ul>
+
+The ACL#addACE method implementation was modified to take care of the ACLs order:  method take care of the ACLs order:
+    <ul><li>inherited ACL always at the end</li>
+        <li>local ACL at the end, but before inherited if present</li>
+        <li>any other ACL before local and inherited</li>
+    </ul>
+</p>
+    <h3><a name="anchor3"></a>Allowed Permissions Content Enricher</h3>
+    <p>A new enricher "AllowedPermissions" allows to fetch accepted UI Permissions for the given document according to the <a target="alt" href="http://explorer.nuxeo.com/nuxeo/site/distribution/current/viewExtensionPoint/org.nuxeo.ecm.core.security.SecurityService--permissionsVisibility">permission</a> extension point.
+    </p>
+    <h2> New and Enriched Audit Events</h2>
+    <h3><a name="anchor3"></a>Search Events</h3>
+A new parameter on the page provider allows to enable audit on page providers, thanks to an implementation in the AbstractPageProvider class that logs:
+    <ul><li>the PageProvider name</li>
+        <li>PageProvider class</li>
+        <li>Parameters of the query</li>
+        <li>Search document model if any</li>
+        <li>Resulting query (NXQL or native)</li>
+    </ul>
+    <p>Tracking can be enable at the Pageprovider level at the XML Contribution level, by just adding :
+    <div class="embededCode">
+      &lt;trackUsage&gt;true&lt;/trackUsage&gt; 
+  </div>
+ or in nuxeo.conf with the property: 
+<div class="embededCode">
+ nuxeo.pageprovider.track
+   </div>
+   <h2><a name="anchor4"></a>New Insert Zone on Content Views</h2>
+    A new include zone "bottom_buttons" has been added on content views. It can be easily overriden by JSF Templating composition.
+    <h2><a name="anchor5"></a>New API to Compare Pictures</h2>
+    <p>The org.nuxeo.diff.pictures.DiffPictures class allows to compare two pictures (must be same format and same dimensions), either from two Documents or two Blobs, and returns the image (as Blob) of the difference. Parameters can be used to setup the fuzz and the highlight colors. It requires ImageMagick.</p>
+
+    <h2><a name="anchor-6"></a>Use \ to escape wildcards in NXQL LIKE</h2>
+    <p>Possibility has been added to escape _ and % wildcards using a \ in a LIKE query:
+        <div class="embdededCode">
+            SELECT ... WHERE dc:title LIKE 'foo\_'
+        </div>This will only match foo_ but not for instance foo1. Without the \ it matches foo_ and foo1. This is now true for all backends that make use of NXQL Queries: VCS, MongoDB, Elasticsearch.</p>
+
+    <h2>CMIS</h2>
+    <h3><a name="anchor5"</a> ETag for CMIS Renditions</h3>
+    <p>
+        CMIS renditions now support an ETag like regular CMIS streams. </p>
+        <h3><a name="anchor-9"></a>Flag to allow computation of CMIS renditions info</h3>
+        <p>
+           Set framework property org.nuxeo.cmis.computeRenditionInfo to true to have *all* renditions return a width, height, length and MIME type.</p>
+
+
+
+        <h2><a name="anchor-5"></a>Template Rendering Samples</h2>
+            <p>Installing Nuxeo Template Rendering package won't install samples anymore, which avoids you to have undesired documents in the repository.
+            </p>
+
+            <h2>Cluster Invalidator Made Pluggable</h2>
+            <p>To customize the cluster invalidation mechanism for VCS, you can now define in the repository descriptor:
+<div class="embededCode">
+  &lt;clusterInvalidatorClass&gt;some.class.name&lt;/clusterInvalidatorClass&gt;
+  </div>
+  here the class implements org.nuxeo.ecm.core.storage.sql.ClusterInvalidator. The default is org.nuxeo.ecm.core.storage.sql.jdbc.JDBCClusterInvalidator </p>
+
+
+  <h2><a name="anchor-6"></a>Core-IO tooling For Transtypage</h2>
+
+<p>
+core-io can now be used to handle a migration between 2 Nuxeo repositories where there are some changes in the doc types or other kind of transformations. Several "transformers" have been added:
+
+    DoctypeToFacetTranslator(String docType, String newDocType, String facet)
+    FacetRemover(String docType, String facet)
+    FieldMapper(String srcSchemaName, String srcField, String dstSchemaName, String dstField) {
+    SchemaRemover(String docType, String schema)
+    SchemaRenamer(String srcSchema, String dstSchema, String dstPrefix). 
+    Ex:
+    <div class="embededCode">final ExtensibleDocumentTreeReader reader = new ExtensibleDocumentTreeReader(root.getCoreSession(), root);
+        XMLDirectoryWriter writer = new XMLDirectoryWriter(destination);
+        writer.setSkipBlobs(skipBlobs);
+
+        // register extensions !
+        reader.registerExtension(new VersionInfoExportExtension());
+        reader.registerExtension(new LockExporterExtension());
+
+        DocumentPipe pipe = new TransactionBatchingDocumentPipeImpl(10);
+
+        pipe.setReader(reader);
+        pipe.setWriter(writer);
+
+        pipe.addTransformer(new DoctypeToFacetTranslator("Invoice", "File", "Invoice"));
+        pipe.addTransformer(new FacetRemover(null, "IOnlyExistsInV1"));
+        pipe.addTransformer(new FacetRemover(null, "Immutable"));
+        pipe.addTransformer(new FieldMapper("deprecated", "dep:fieldA", "invoice", "inv:A"));
+        pipe.addTransformer(new FieldMapper("deprecated", "dep:fieldB", "invoice", "inv:B"));
+        pipe.addTransformer(new FieldMapper("deprecated", "dep:fieldC", "new", "nw:Y"));
+        pipe.addTransformer(new SchemaRemover(null, "deprecated"));
+        pipe.addTransformer(new SchemaRenamer("invoice", "invoiceNew", "iv"));
+
+        pipe.run();</div>
+    </p>
+
+ 
+
+                               </div>
+                        </div>
+                        <!-- JS
+                        ================================================== -->
+                        <script src="../../Javascripts/strftime.js"></script>
+                        <script src="../../Javascripts/tabs.js"></script>
+                        <script src="../../Javascripts/float_menu.js"></script>
+                        <script src="../../Javascripts/lightbox.js"></script>
+                    </body>
+                </html>
