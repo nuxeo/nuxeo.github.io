@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Nuxeo 7.4 - New and Noteworthy</title>
+    <meta name="description" content="Nuxeo Platform 7.4 release notes">
+    <meta name="author" content="nuxeo">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../../stylesheets/base.css">
+    <link rel="stylesheet" href="../../stylesheets/skeleton.css">
+    <link rel="stylesheet" href="../../stylesheets/layout.css">
+    <link rel="stylesheet" href="../../stylesheets/release_notes.css">
+    <link rel="stylesheet" href="../../stylesheets/lightbox.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+        <style>
+                #xnav-footer {margin-top:0px !important;}
+        </style>
+        <script src="../../javascripts/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+        <!-- Favicons
+        ================================================== -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    </head>
+    <body>
+        <div id="mainContainer" class="container">
+            <p class="backbutton"><a href="./index.html">&larr; Back to Index</a></p>
+            <p class="remove-bottom" id="site-title"><a href="./index.html"><span class="version-number">7.4</span> Release Notes</a></p>
+            <div id="welcome">
+                <div style="clear:both;"></div>
+                <h1 style="margin-left:-0.5em !important;">For Users</h1>
+                <h2>
+                    <a name="anchor-0"></a>Drive Edit Link on documents listings</h2>
+                    For each document that has a file on the main listing view, it is now possible to directly edit it with the Drive Edit feature.
+
+                    <h2>Search Improvements</h2>
+                    <h3><a name="anchor-0"></a>Quick Search Now Uses Elasticsearch</h3>
+                   Elasticsearch is used for the quicksearch, which offers better performances and allows to use specific search behaviors such as phrase search, ngrams, etc..
+                   <h3>Better Management of Accents</h3>
+                <p>Default fulltext analyzer now can search on accented word with wildcard déj* and support HTML tags convertion(Indexing real accents and not the strings that produces the accents in HTML).</p>
+                <h3>Less Noise</h3>
+                <p>Irrelevant field that add noise to index are now removed, ex:thumb:thumbnail, picture:views, common:icons).</p>
+                <h2>
+
+                <a name="anchor-0"></a>
+                Look'n Feel Refresh
+                </h2>
+                <p>
+                The Nuxeo Platform UI has been refreshed and updated in the mean time for a better experience and a smoother feeling. In addition we increased the adaptiveness and reactiveness of the forms, and the readability of tables.</p>
+                <h2>
+                <a name="anchor-1"></a>
+                Default Filename for Renditions
+                </h2>
+                <p>
+               Rendition filenames are now computed in the Automation Renderer class, with the following logic: if the blob has a filename it uses it otherwise it uses the document title. If the blob has an extension, it uses it, or it looks for the mime-type, or it chooses ".bin". 
+                </p>
+                
+                <h2><a name="anchor-2"></a>New Search Events Logged</h2>
+                <p>
+                Audit Trail is enriched with new type of events: search events. It is possible on a per search filter basis to enable search tracking.
+            </p>
+                <h2> <a name="anchor-3"></a>New Samples for Template Rendering</h2>
+                <p>
+                A set of new samples have been implemented for letting you discover the best of what you can do with Nuxeo Platform Rendering. Have a look at them by installing the corresponding package!
+            </p>
+                <h2><a name = "anchor-4"></a>Unpublish a media from Nuxeo Platform Web UI</h2>
+                <p>
+                A button has been added to be able to un-publish a video from Wistia or YouTube directly from Nuxeo Platform Web UI.
+            </p>
+                <h2><a name = "anchor-4"></a>Labels Have Been Capitalized</h2>
+                <P>We did an effort for correctly capitalizing most of the labels of the default application.</P>
+                <h2><a name="anchor-5"></a>Compare Images</h2>
+                <p>
+                    The Nuxeo Diff plug-in now works with pictures, and displays a dialog where the user can spot the differences between two pictures (must be of the same format and same dimensions). The dialog also lets the user set-up a "Fuzzy" comparison parameter (to remove noise when comparing JPEGs for example), and to choose the colors used for to highlight the differences.</p>
+
+                    <h2><a name="anchor-5"></a>Preview screenshot and storyboard generation can be configured</h2>
+                    <p>Preview screenshot and storyboard can now be configured on the VideoService:
+
+                     <ul><li> When to take the preview screenshot (percentage of the video duration)</li>
+                        <li>Storyboard thumbnails count</li>
+                        <li>Minimum duration of the video to generate storyboard (0 means always, < 0 means never)</li>
+                    </ul>
+
+The default contribution is (same as before the possibility to configure it):
+    <div class="embededCode">
+        &lt;extension target=&quot;org.nuxeo.ecm.platform.video.service.VideoService&quot;
+  point=&quot;configuration&quot;&gt;
+
+  &lt;configuration&gt;
+    &lt;previewScreenshotInDurationPercent&gt;10.0&lt;/previewScreenshotInDurationPercent&gt;
+    &lt;storyboardMinDuration&gt;10&lt;/storyboardMinDuration&gt;
+    &lt;storyboardThumbnailCount&gt;9&lt;/storyboardThumbnailCount&gt;
+  &lt;/configuration&gt;
+
+&lt;/extension&gt;
+    </div>
+
+</p>
+
+            </div>
+        </div>
+        <!-- JS
+        ================================================== -->
+        <script src="../../javascripts/strftime.js"></script>
+        <script src="../../javascripts/tabs.js"></script>
+        <script src="../../javascripts/float_menu.js"></script>
+        <script src="../../javascripts/lightbox.js"></script>
+    </body></html>
