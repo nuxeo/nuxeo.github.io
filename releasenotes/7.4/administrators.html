@@ -27,9 +27,9 @@
         <![endif]-->
         <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
             <style>
-            #xnav-footer {
-            margin-top: 0px !important;
-            }
+                        #xnav-footer {
+                        margin-top: 0px !important;
+                        }
             </style>
             <script src="../../javascripts/jquery-1.7.1.min.js"></script>
             <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
@@ -53,80 +53,72 @@
                 <div id="welcome">
                     <div style="clear: both;"></div>
                     <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
+                    <h2><a name="anchor-0"></a>Redirect Downloads to a Content Delivery Network</h2>
+                    <p>The S3 Binary Manager has evolved so that it is possible to let the user download blobs directly from S3 without having the blob go through Nuxeo Platform server. The security has been taken care of thanks to signe URLs mechanism. With the same approach it is possible to extend default binary manager and plug to any CDN (CloudFront, Akamai, ...).To enable, use:
+                    <div class="embededCode">nuxeo.s3storage.downloadfroms3=true</div>
+                    To configure the expiration (in seconds) for the redirect URLs, use:
+                    <div class="embededCode">
+                    nuxeo.s3storage.downloadfroms3.expire=3600 </div> You should also configure S3.</p>
                     <h2>
                     <a name="anchor-0"></a>
-                  nuxeoctl --strict start</h2>
-                   <p>
-                   nuxeoctl --stric start will abort with an error code when a component is not started or when there is a server already running. This allows you to ensure that the server was started correctly. For instance when elasticsearch.enabled is set to true, start will abort if Elasticsearch is not available. 
+                    nuxeoctl --strict start</h2>
+                    <p>
+                    nuxeoctl --stric start will abort with an error code when a component is not started or when there is a server already running. This allows you to ensure that the server was started correctly. For instance when elasticsearch.enabled is set to true, start will abort if Elasticsearch is not available.
                     </p>
-
                     <h2>
                     <a name="anchor-0"></a>
-                  Workflow Optimisations</h2>
-                   <p>
-                   Several queries that list tasks and workflow models in user's views have been optmised, leading to a quicker display when a lot of tasks are in the repository and a reduced load for the database.
+                    Workflow Optimisations</h2>
+                    <p>
+                    Several queries that list tasks and workflow models in user's views have been optmised, leading to a quicker display when a lot of tasks are in the repository and a reduced load for the database.
                     </p>
-
-                        <h2>
+                    <h2>
                     <a name="anchor-1"></a>
-                  Live Connect Configuration Improvements</h2>
-                   <p>
-                   <ul><li>
-                  Cloud Services providers' file pickers no longer open if not properly configured in the admin center and a proper error message in the UI is now displayed.
-              </li>
-              <li>File widget no longer displays an upload button for Cloud Services providers that are not enabled.</li>
+                    Live Connect Configuration Improvements</h2>
+                    <p>
+                    <ul><li>
+                        Cloud Services providers' file pickers no longer open if not properly configured in the admin center and a proper error message in the UI is now displayed.
+                    </li>
+                    <li>File widget no longer displays an upload button for Cloud Services providers that are not enabled.</li>
                     </p>
-
                     <h2>
-                        <a name="achor-2"></a> Groups Defined Both on SQL Locally and in LDAP Directory</h2>
-
-
-For directories that are only read, it's sometimes useful to have a reference field that has several definitions to external directories.
-
-For instance the "groups" information of the user directory could come from two different ways of defining groups.
-
-This is something that works only for read though, because on write we wouldn't be able to know to which reference the write should be done.
-
-So with this feature a directory field can have several references:
-
-<div class="embededCode">
-&lt;references&gt;
-  &lt;!-- we define two references for the &quot;groups&quot; field --&gt;
-  &lt;tableReference field=&quot;groups&quot; directory=&quot;groupDirectory&quot;
-    table=&quot;user2group&quot; sourceColumn=&quot;userId&quot; targetColumn=&quot;groupId&quot;
-    dataFile=&quot;test-user2group.csv&quot; /&gt;
-  &lt;tableReference field=&quot;groups&quot; directory=&quot;otherGroupDirectory&quot;
-    table=&quot;user2othergroup&quot; sourceColumn=&quot;userId&quot; targetColumn=&quot;groupId&quot;
-    dataFile=&quot;test-user2othergroup.csv&quot; /&gt;
-&lt;/references&gt;
-    </div>
-
-    <h2>New Marketplace Packages</h2>
-    <ul><li>nuxeo-diff-pictures: This package requires nuxeo-dam, installs nuxeo-diff (if not already installed), and uses ImageMagick.</li></ul>
-
-    <h2>Annotations Make Use Of VCS Relation Graph</h2>
-    <p>Relations are now by default stored as core relation objects with document type AnnotationRelation. It is possible to switch back to Jena storage, see detailed Upgrade Notes.</p>
-    <h2>Redis Implementation Of Cluster Invalidation Logic</h2>
-    <p>ClusterInvalidator implementation based on Redis replacing the SQL one. To use it edit the repository contrib and add:
-        <div class="embededCode">
-            &lt;clusterInvalidatorClass&gt;org.nuxeo.ecm.core.redis.contribs.RedisClusterInvalidator&lt;/clusterInvalidatorClass&gt;
-        </div>
-        Invalidations are sent and received using the Redis pubsub messaging on the channel: nuxeo:inval:default:channel.
-        (default being the name of the repository). There is a Redis HSET created for each Nuxeo node with the following key: nuxeo:inval:default:nodes: <i>nodeId</i>
-    </p>
-
-    <h2>Redis Based Implementation Of The UIDSequencer</h2>
-    <p>A Redis implementation of the UID Sequencer is available. In this implementation, the counter for key FOO is stored under nuxeo:counters:FOO. Such a sequencer can be contributed with the following extension:
-        <div class="embededCode"> &lt;extension target=&quot;org.nuxeo.ecm.core.uidgen.UIDGeneratorService&quot; point=&quot;sequencers&quot;&gt;
-    &lt;sequencer name=&quot;mySequencer&quot; class=&quot;org.nuxeo.ecm.core.redis.contribs.RedisUIDSequencer&quot;/&gt;
-  &lt;/extension&gt; </div>
-    </p>
-    <h2>Redis Queue Optimisation</h2>
-    <p>The Redis queue implementation generates less requests to Redis and improve performance by prioritizing local worker with potentially warm cache. Also Redis commands are now pipelined reducing the number of Redis roundtrip.</p>
-    <h2><a name="anchor-8"></a>Support of LibreOffice 5</h2>
-    <p>LibreOffice 5 support has been added for conversions by adding detection of path for that version</p>
-
-
+                    <a name="achor-2"></a> Groups Defined Both on SQL Locally and in LDAP Directory</h2>
+                    For directories that are only read, it's sometimes useful to have a reference field that has several definitions to external directories.
+                    For instance the "groups" information of the user directory could come from two different ways of defining groups.
+                    This is something that works only for read though, because on write we wouldn't be able to know to which reference the write should be done.
+                    So with this feature a directory field can have several references:
+                    <div class="embededCode">
+                        &lt;references&gt;
+                        &lt;!-- we define two references for the &quot;groups&quot; field --&gt;
+                        &lt;tableReference field=&quot;groups&quot; directory=&quot;groupDirectory&quot;
+                        table=&quot;user2group&quot; sourceColumn=&quot;userId&quot; targetColumn=&quot;groupId&quot;
+                        dataFile=&quot;test-user2group.csv&quot; /&gt;
+                        &lt;tableReference field=&quot;groups&quot; directory=&quot;otherGroupDirectory&quot;
+                        table=&quot;user2othergroup&quot; sourceColumn=&quot;userId&quot; targetColumn=&quot;groupId&quot;
+                        dataFile=&quot;test-user2othergroup.csv&quot; /&gt;
+                        &lt;/references&gt;
+                    </div>
+                    <h2>New Marketplace Packages</h2>
+                    <ul><li>nuxeo-diff-pictures: This package requires nuxeo-dam, installs nuxeo-diff (if not already installed), and uses ImageMagick.</li></ul>
+                    <h2>Annotations Make Use Of VCS Relation Graph</h2>
+                    <p>Relations are now by default stored as core relation objects with document type AnnotationRelation. It is possible to switch back to Jena storage, see detailed Upgrade Notes.</p>
+                    <h2>Redis Implementation Of Cluster Invalidation Logic</h2>
+                    <p>ClusterInvalidator implementation based on Redis replacing the SQL one. To use it edit the repository contrib and add:
+                    <div class="embededCode">
+                        &lt;clusterInvalidatorClass&gt;org.nuxeo.ecm.core.redis.contribs.RedisClusterInvalidator&lt;/clusterInvalidatorClass&gt;
+                    </div>
+                    Invalidations are sent and received using the Redis pubsub messaging on the channel: nuxeo:inval:default:channel.
+                    (default being the name of the repository). There is a Redis HSET created for each Nuxeo node with the following key: nuxeo:inval:default:nodes: <i>nodeId</i>
+                    </p>
+                    <h2>Redis Based Implementation Of The UIDSequencer</h2>
+                    <p>A Redis implementation of the UID Sequencer is available. In this implementation, the counter for key FOO is stored under nuxeo:counters:FOO. Such a sequencer can be contributed with the following extension:
+                    <div class="embededCode"> &lt;extension target=&quot;org.nuxeo.ecm.core.uidgen.UIDGeneratorService&quot; point=&quot;sequencers&quot;&gt;
+                        &lt;sequencer name=&quot;mySequencer&quot; class=&quot;org.nuxeo.ecm.core.redis.contribs.RedisUIDSequencer&quot;/&gt;
+                    &lt;/extension&gt; </div>
+                    </p>
+                    <h2>Redis Queue Optimisation</h2>
+                    <p>The Redis queue implementation generates less requests to Redis and improve performance by prioritizing local worker with potentially warm cache. Also Redis commands are now pipelined reducing the number of Redis roundtrip.</p>
+                    <h2><a name="anchor-8"></a>Support of LibreOffice 5</h2>
+                    <p>LibreOffice 5 support has been added for conversions by adding detection of path for that version</p>
                 </div>
             </div>
             <!-- JS
