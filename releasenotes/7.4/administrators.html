@@ -119,6 +119,9 @@
                     <p>The Redis queue implementation generates less requests to Redis and improve performance by prioritizing local worker with potentially warm cache. Also Redis commands are now pipelined reducing the number of Redis roundtrip.</p>
                     <h2><a name="anchor-8"></a>Support of LibreOffice 5</h2>
                     <p>LibreOffice 5 support has been added for conversions by adding detection of path for that version</p>
+                    <h2><a name="anchor-8"></a>Default SAML Binding</h2>
+                    Introduced new configuration property 'nuxeo.saml2.loginBindings' that allows configuring available SAML login bindings.
+Default is 'HTTP-Redirect,HTTP-POST'. First binding will be flagged as default in the metadata export.
                 </div>
             </div>
             <!-- JS
