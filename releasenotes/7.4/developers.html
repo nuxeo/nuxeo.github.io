@@ -103,22 +103,22 @@
             <li>Bulk import</li>
             <li>JS client</li></ul>
             </p>
-            <h2><a name="anchor-0"></a></h2><p>Now the BatchManager relies on the TransientStore to allow several implementations among which the Redis one that is cluster aware.</p>
+            <h2><a name="anchor-1"></a></h2><p>Now the BatchManager relies on the TransientStore to allow several implementations among which the Redis one that is cluster aware.</p>
             <h2>
             Theme Removal and Styling Methods Evolutions
             </h2>
-            <h3><a name="anchor-0"></a>Former Theme Framework has been Removed</h3>
+            <h3><a name="anchor-2"></a>Former Theme Framework has been Removed</h3>
             <p>
             Todo </p>
-            <h3><a name="anchor-1"></a>From .css to Sass .scss
+            <h3><a name="anchor-3"></a>From .css to Sass .scss
             </h3>
             <p>The styles framework is now using Sass. Thanks to this major step in the history of Nuxeo's styles, the styles will be updated in the next versions of the product to have a cleaner structure, a neat logic, and have a better maintenability. The variables customizable by Studio are contained in one file, default_variable.scss. The old variables used by the Theme engine are now obsolete and will be moved to theme-webapp-compat.
             </p>
-            <h3><a name="anchor-2"></a>DIV Instead of Tables</h3>
+            <h3><a name="anchor-4"></a>DIV Instead of Tables</h3>
             <p>
                 The container widget used in Nuxeo Studio has been lightened and display now a div instead of a table. The left column is now independant from the main area, allowing user to scroll only in the required area.</p>
             <h2>ACLs and Security Framework</h2>
-            <h3><a name ="anchor-3"></a> New Methods on Java ACL object</h3>
+            <h3><a name ="anchor-5"></a> New Methods on Java ACL object</h3>
             <p>
             New methods were added on ACL object:
             <ul>
@@ -131,11 +131,11 @@
             <li>any other ACL before local and inherited</li>
         </ul>
         </p>
-        <h3><a name="anchor-4"></a>Allowed Permissions Content Enricher</h3>
+        <h3><a name="anchor-6"></a>Allowed Permissions Content Enricher</h3>
         <p>A new enricher "AllowedPermissions" allows to fetch accepted UI Permissions for the given document according to the <a target="alt" href="http://explorer.nuxeo.com/nuxeo/site/distribution/current/viewExtensionPoint/org.nuxeo.ecm.core.security.SecurityService--permissionsVisibility">permission</a> extension point.
         </p>
         <h2> New and Enriched Audit Events</h2>
-        <h3><a name="anchor-5"></a>Search Events</h3>
+        <h3><a name="anchor-7"></a>Search Events</h3>
         A new parameter on the page provider allows to enable audit on page providers, thanks to an implementation in the AbstractPageProvider class that logs:
         <ul><li>the PageProvider name</li>
         <li>PageProvider class</li>
@@ -151,27 +151,27 @@
     <div class="embededCode">
         nuxeo.pageprovider.track
     </div>
-    <h3><a name="anchor-6"></a>Workflow Events</h3>
+    <h3><a name="anchor-8"></a>Workflow Events</h3>
     <p>Information logged on workflow events has been greatly extended and more events are looged. You can find the details in the <a href="https://doc.nuxeo.com/x/tY_RAQ">documentation</a>.</p>
     <h2>Automation Scripting: Documents are Returned as DocumentWrappers</h2>
     <p>Documents (input, output, etc...) are now DocumentWrappers like in Automation Chains, allowing to use same sytnax such as Document["dc:title"].</p>
-    <h2><a name="anchor-7"></a>New Insert Zone on Content Views</h2>
+    <h2><a name="anchor-9"></a>New Insert Zone on Content Views</h2>
     A new include zone "bottom_buttons" has been added on content views. It can be easily overriden by JSF Templating composition.
-    <h2><a name="anchor-8"></a>New API to Compare Pictures</h2>
+    <h2><a name="anchor-10"></a>New API to Compare Pictures</h2>
     <p>The org.nuxeo.diff.pictures.DiffPictures class allows to compare two pictures (must be same format and same dimensions), either from two Documents or two Blobs, and returns the image (as Blob) of the difference. Parameters can be used to setup the fuzz and the highlight colors. It requires ImageMagick.</p>
-    <h2><a name="anchor--9"></a>Use \ to escape wildcards in NXQL LIKE</h2>
+    <h2><a name="anchor--11"></a>Use \ to escape wildcards in NXQL LIKE</h2>
     <p>Possibility has been added to escape _ and % wildcards using a \ in a LIKE query:
     <div class="embdededCode">
         SELECT ... WHERE dc:title LIKE 'foo\_'
     </div>This will only match foo_ but not for instance foo1. Without the \ it matches foo_ and foo1. This is now true for all backends that make use of NXQL Queries: VCS, MongoDB, Elasticsearch.</p>
     <h2>CMIS</h2>
-    <h3><a name="anchor-10"></a> ETag for CMIS Renditions</h3>
+    <h3><a name="anchor-12"></a> ETag for CMIS Renditions</h3>
     <p>
     CMIS renditions now support an ETag like regular CMIS streams. </p>
-    <h3><a name="anchor-11"></a>Flag to allow computation of CMIS renditions info</h3>
+    <h3><a name="anchor-13"></a>Flag to allow computation of CMIS renditions info</h3>
     <p>
     Set framework property org.nuxeo.cmis.computeRenditionInfo to true to have *all* renditions return a width, height, length and MIME type.</p>
-    <h2><a name="anchor-12"></a>Template Rendering Samples</h2>
+    <h2><a name="anchor-14"></a>Template Rendering Samples</h2>
     <p>Installing Nuxeo Template Rendering package won't install samples anymore, which avoids you to have undesired documents in the repository.
     </p>
     <h2>Cluster Invalidator Made Pluggable</h2>
@@ -180,7 +180,7 @@
         &lt;clusterInvalidatorClass&gt;some.class.name&lt;/clusterInvalidatorClass&gt;
     </div>
     here the class implements org.nuxeo.ecm.core.storage.sql.ClusterInvalidator. The default is org.nuxeo.ecm.core.storage.sql.jdbc.JDBCClusterInvalidator </p>
-    <h2><a name="anchor-13"></a>Core-IO tooling For Transtypage</h2>
+    <h2><a name="anchor-15"></a>Core-IO tooling For Transtypage</h2>
     <p>
     Core-io can now be used to handle a migration between 2 Nuxeo repositories where there are some changes in the doc types or other kind of transformations. Several "transformers" have been added:
     <ul><li>DoctypeToFacetTranslator(String docType, String newDocType, String facet)</li>
