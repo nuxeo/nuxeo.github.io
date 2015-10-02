@@ -27,9 +27,9 @@
         <![endif]-->
         <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
             <style>
-                                                                                #xnav-footer {
-                                                                                    margin-top: 0px !important;
-                                                                                }
+                                                                                            #xnav-footer {
+                                                                                                margin-top: 0px !important;
+                                                                                            }
             </style>
             <script src="../../Javascripts/jquery-1.7.1.min.js"></script>
             <script type="text/Javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
@@ -76,7 +76,7 @@
                         data=&quot;{{amountPerUserPerDay}}&quot;&gt;<br/>
                         &lt;/nuxeo-workflow-data&gt;<br/>
                     </div>
-                   
+
                     </p>
                     <p>
                     <a href ="https://doc.nuxeo.com/x/WZCRAQ" target="blank">More information</a> can be found in the Nuxeo documentation.</p>
@@ -131,7 +131,7 @@
             <li>JS client</li></ul>
             </p>
             <h2><a name="anchor-3"></a>Elasticsearch Passthrough: Audit Index and Contribuable Filters</h2>
-            <p>The Elasticsearch api passthrough now allows to hit different indexes, like the audit one. Also, an extension point has been added for being able to plug different logics of filtring depending on the index name that is hit. For instance for the "workflow" index, a logic has been added for returning only audit events that concerns workflow models on which the user has the permission "Data Visualization". Here is an exemple of such a contribution:
+            <p>The Elasticsearch api passthrough now allows to hit different indexes, like the audit one. Also, an extension point has been added for being able to plug different logics of filtering depending on the index name that is hit. For instance for the "workflow" index, a logic has been added for returning only audit events that are related to the workflow instances for which the workflow model is one on which the user has the permission "Data Visualization". Here is an exemple of such a contribution:
             <div class="embededCode">
                 &lt;?xml version=&quot;1.0&quot;?&gt;<br/>
                 &lt;component name=&quot;org.nuxeo.elasticsearch.http.readonly.audit.filter&quot; version=&quot;1.0&quot;&gt;<br/>
@@ -145,7 +145,7 @@
             </div>
             <a href="https://doc.nuxeo.com/x/5Y_RAQ">More information</a> on the Nuxeo documentation.
             </p>
-            <h2><a name="anchor-4"></a>Batchmanager Uses the Transiantstore</h2><p>Now the BatchManager relies on the TransientStore to allow several implementations among which the Redis one that is cluster aware.</p>
+            <h2><a name="anchor-4"></a>Batch Manager Uses the Transiant Store</h2><p>Now the Batch Manager relies on the Transient Store to allow several implementations among which the Redis one that is cluster aware.</p>
             <h2>
             Theme Removal and Styling Methods Evolutions
             </h2>
@@ -157,11 +157,11 @@
             <a href="https://doc.nuxeo.com/x/N4AO">Updated documentation</a> and <a href="https://doc.nuxeo.com/x/toORAQ">migration instructions</a> are available. </p>
             <h3><a name="anchor-6"></a>From .css to Sass .scss
             </h3>
-            <p>The styles framework is now using Sass. Thanks to this major step in the history of Nuxeo's styles, the styles will be updated in the next versions of the product to have a cleaner structure, a neat logic, and have a better maintenability. The variables customizable by Studio are contained in one file, default_variable.scss. The old variables used by the Theme engine are now obsolete and will be moved to theme-webapp-compat.
+            <p>The styles framework is now using Sass. Thanks to this major evolution of Nuxeo's styles framework, the styles will be updated in the next versions of the product to have a cleaner structure, a neat logic, and have a better maintenability. The variables customizable by Studio are contained in one file, default_variable.scss. The old variables used by the Theme engine are now obsolete and will be moved to theme-webapp-compat.
             </p>
             <h3><a name="anchor-7"></a>DIV Instead of Tables</h3>
             <p>
-            The container widget used in Nuxeo Studio has been lightened and displays now a div instead of a table. The left column is now independant from the main area, allowing user to scroll only in the required area.</p>
+            The container widget used in Nuxeo Studio has been lightened and displays now a div instead of a table on some cases. The main left column is now independant from the main area, allowing user to scroll only in the required area.</p>
             <h2>ACLs and Security Framework</h2>
             <h3><a name ="anchor-8"></a> New Methods on Java ACL Object</h3>
             <p>
@@ -198,32 +198,22 @@
         In the JavaScript context, access is provided when relevant to the Document, the XPath where the file is stored, the rendition name, the current user, the blob itself, and more contextual information.</p>
         <h2><a name="anchor-11"></a>Nuxeo Elements</h2>
         <p>
-        The Nuxeo team has started implementing some Web Components, i.e. custom HTML elements that you can include in your HTML page, wherever that one is hosted. This set of custom elements allows to fetch data from Nuxeo Platform: documents, directories, users. It also allows to easilyexecute some rest calls as well as some Nuxeo Automation operations calls. Those elements are a way to build an integration very quickly between a portal and Nuxeo Plaform, or any tierce application and Nuxeo Plaform. That's what was used for implementing the Salesforce connector. See <a href="http://nuxeo.github.io/nuxeo-elements/components/nuxeo-elements/" target="blank">the list of existing elements</a>.</p>
+        The Nuxeo team has started implementing some Web Components, i.e. custom HTML elements that you can include in your HTML page, wherever that one is hosted. This set of custom elements allows to fetch data from Nuxeo Platform: documents, directories, users. It also allows to easilyexecute some rest calls as well as some Nuxeo Automation operations calls. Those elements are a way to build an integration very quickly between a portal and Nuxeo Plaform, or any tierce application and Nuxeo Plaform. That's what was used for implementing the Salesforce connector. See <a href="http://nuxeo.github.io/nuxeo-elements/components/nuxeo-elements/" target="blank">the list of existing elements</a> as well as a <a href="https://doc.nuxeo.com/x/yJCRAQ" target="blank">quick start</a>.</p>
         <h2><a name="anchor-12"></a>Runtime Configuration Service</h2>
-
         <p>A new extension point has been added to define configuration properties to be checked by application code.
-This allows to tweak some of the application behaviours thanks to standard runtime contributions, in particular from a Studio project.
-
-Here is a sample contribution to use ajaxified tabs:
-<div class="embededCode">
-&lt;component name=&quot;org.nuxeo.ecm.platform.ajaxified.tabs&quot;&gt;<br/>
-
- &lt;extension target=&quot;org.nuxeo.runtime.ConfigurationService&quot;<br/>
-   point=&quot;configuration&quot;&gt;<br/>
-
-     &lt;property name=&quot;nuxeo.jsf.useAjaxTabs&quot;&gt;true&lt;/property&gt;<br/>
-
- &lt;/extension&gt;<br/>
-
-&lt;/component&gt;<br/>
-
-    </div>
-    </p>
-    <p>
-
-        Those configuration properties aims at being at application level while the nuxeo.conf properties will be assigned to deployment level.</p>
-
-
+        This allows to tweak some of the application behaviours thanks to standard runtime contributions, in particular from a Studio project.
+        Here is a sample contribution to use ajaxified tabs:
+        <div class="embededCode">
+            &lt;component name=&quot;org.nuxeo.ecm.platform.ajaxified.tabs&quot;&gt;<br/>
+            &lt;extension target=&quot;org.nuxeo.runtime.ConfigurationService&quot;<br/>
+            point=&quot;configuration&quot;&gt;<br/>
+            &lt;property name=&quot;nuxeo.jsf.useAjaxTabs&quot;&gt;true&lt;/property&gt;<br/>
+            &lt;/extension&gt;<br/>
+            &lt;/component&gt;<br/>
+        </div>
+        </p>
+        <p>
+        Those configuration properties aim at being at application level while the nuxeo.conf properties will be assigned to deployment level.</p>
         <h2> New and Enriched Audit Events</h2>
         <h3><a name="anchor-13"></a>Search Events</h3>
         A new parameter on the page provider allows to enable audit on page providers, thanks to an implementation in the AbstractPageProvider class that logs:
@@ -247,45 +237,34 @@ Here is a sample contribution to use ajaxified tabs:
     <p>Documents (input, output, etc...) are now DocumentWrappers like in Automation Chains, allowing to use same sytnax such as Document["dc:title"].</p>
     <h2><a name="anchor-15"></a>New Insert Zone on Content Views</h2>
     <p>
-        A new include zone "bottom_buttons" has been added on content views. It can be easily overriden by JSF Templating composition.</p>
+    A new include zone, "bottom_buttons", has been added on content views. It can be easily overriden by JSF Templating composition.</p>
     <h2><a name="anchor-16"></a>New API to Compare Pictures</h2>
     <p>The org.nuxeo.diff.pictures.DiffPictures class allows to compare two pictures (must be same format and same dimensions), either from two Documents or two Blobs, and returns the image (as Blob) of the difference. Parameters can be used to setup the fuzz and the highlight colors. It requires ImageMagick.</p>
     <h2><a name="anchor-17"></a>Use \ to escape wildcards in NXQL LIKE</h2>
     <p>Possibility has been added to escape _ and % wildcards using a \ in a LIKE query:
-
     <div class="embededCode">
         SELECT ... WHERE dc:title LIKE 'foo\_'
     </div></p><p>
     This will only match foo_ but not for instance foo1. Without the \ it matches foo_ and foo1. This is now true for all backends that make use of NXQL Queries: VCS, MongoDB, Elasticsearch.</p>
-    
+
     <h2><a name="anchor-18"></a>No Search On First Display</h2>
     <p>
-
-When accessing the search tab for the first time, the rendering of results trigger a search that presents all documents.
-Some users would rather wait for the search filter form to be submitted at least once for this search to be triggered.
-
-This can be handled by detecting if user has already clicked on "filter" at least once. Display of results should also be adapted when search has not been performed yet.
-
-The content view accepts a boolean property for this behaviour, as well as a customizable sentence to display when no result is shown because of this setting:
-
-<div class="embededCode">
-
-&lt;component name=&quot;org.nuxeo.ecm.platform.ajaxified.tabs&quot;&gt;<br/>
-
- &lt;extension target=&quot;org.nuxeo.runtime.ConfigurationService&quot;<br/>
-   point=&quot;configuration&quot;&gt;<br/>
-
-     &lt;property name=&quot;nuxeo.jsf.useAjaxTabs&quot;&gt;true&lt;/property&gt;<br/>
-
- &lt;/extension&gt;<br/>
-
-&lt;/component&gt;<br/>
+    When accessing the search tab for the first time, the rendering of results trigger a search that presents all documents.
+    Some users would rather wait for the search filter form to be submitted at least once for this search to be triggered.
+    This can be handled by detecting if user has already clicked on "filter" at least once. Display of results should also be adapted when search has not been performed yet.
+    The content view accepts a boolean property for this behaviour, as well as a customizable sentence to display when no result is shown because of this setting:
+    <div class="embededCode">
+        &lt;component name=&quot;org.nuxeo.ecm.platform.ajaxified.tabs&quot;&gt;<br/>
+        &lt;extension target=&quot;org.nuxeo.runtime.ConfigurationService&quot;<br/>
+        point=&quot;configuration&quot;&gt;<br/>
+        &lt;property name=&quot;nuxeo.jsf.useAjaxTabs&quot;&gt;true&lt;/property&gt;<br/>
+        &lt;/extension&gt;<br/>
+        &lt;/component&gt;<br/>
     </div>
     </p><p>
-New Java API can be used to adapt display:
+    New Java API can be used to adapt display:
     <ul> <li>ContentView#isWaitForExecution()</li><li> ContentView#isExecuted()</li><li> ContentView#getWaitForExecutionSentence() </li></ul>
     </p>
-
     <h2>CMIS</h2>
     <h3><a name="anchor-19"></a> ETag for CMIS Renditions</h3>
     <p>
@@ -310,7 +289,7 @@ New Java API can be used to adapt display:
     <li>FieldMapper(String srcSchemaName, String srcField, String dstSchemaName, String dstField)</li>
     <li>SchemaRemover(String docType, String schema)</li>
     <li>SchemaRenamer(String srcSchema, String dstSchema, String dstPrefix).</li>
-    </ul></p>
+</ul></p>
 <p>
 Ex:
 <div class="embededCode">final ExtensibleDocumentTreeReader reader = new ExtensibleDocumentTreeReader(root.getCoreSession(), root); <br/>
