@@ -25,7 +25,7 @@
     <![endif]-->
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
         <style>
-                        #xnav-footer {margin-top:0px !important;}
+                                #xnav-footer {margin-top:0px !important;}
         </style>
         <script src="../../javascripts/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
@@ -44,44 +44,51 @@
                 <div style="clear:both;"></div>
                 <h1 style="margin-left:-0.5em !important;">For Users</h1>
                 <h2><a name="anchor-0"></a>ACLs</h2>
-                <p><ul><li>Permissions can be time based (from ... to ...)</li>
+                <p>The Permissions Tab (former Right Management Tab) has been rewritten to add new features and improve global user experience. A new tab also has been added in the Admin Center for offering new ACLs management capabilities. <ul><li>Permissions can be time based (from ... to ...)</li>
                 <li>User who is assigned a permission on a document can be notified when the permission becomes effective.
                 </li>
                 <li>Permissions tab is available in read only for everybody makeing it easy to know who has access to what.</li>
-                <li>In Admin Center, it is possible to search for any permission that was assigned to anybody anywhere.</li>
+                <li>In the Admin Center, it is possible to search for any permission that was assigned to anybody anywhere.</li>
                 <li>It is also possible to purge permissions given to a specific user in a specific place (or everywhere).</li></ul></p>
                 <h2>
-                <a name="anchor-0"></a>Drive Edit Link on documents listings</h2>
-                For each document that has a file on the main listing view, it is now possible to directly edit it with the Drive Edit feature.
+                <a name="anchor-0"></a>Drive Edit Link on Documents Listings</h2>
+                <p>
+                For each document that has a file on the main listing view, it is now possible to directly edit it with the Drive Edit feature.</p>
+                <h2><a name="anchor-1"></a>Data Visualization</h2>
+                <p>A new addon deploys dashboards accessible from workflow models in Admin Center. Those dashboards provide information about the workflows like average execution length, top assignees, etc.. They are samples of what can be done on workflow data processing thanks to our new data visualization kit.</p>
+                <p>Furthermore a new permission has been added and can be used on workflow models for determining who has access to the workflow related information aggregation.</p>
                 <h2>Search Improvements</h2>
-                <h3><a name="anchor-1"></a>Quick Search Now Uses Elasticsearch</h3>
-                Elasticsearch is used for the quicksearch, which offers better performances and allows to use specific search behaviors such as phrase search, ngrams, etc..
-                <h3><a name="anchor-2"></a>Better Management of Accents</h3>
+                <h3><a name="anchor-2"></a>Quick Search Now Uses Elasticsearch</h3>
+                <p>Elasticsearch is used for the quick search, which offers better performances and allows to use specific search behaviors such as phrase search, ngrams, etc..</p>
+                <h3><a name="anchor-3"></a>Better Management of Accents</h3>
                 <p>Default fulltext analyzer now can search on accented word with wildcard déj* and support HTML tags convertion(Indexing real accents and not the strings that produces the accents in HTML).</p>
-                <h3><a name="anchor-3"></a>Less Noise</h3>
+                <h3><a name="anchor-4"></a>Less Noise</h3>
                 <p>Irrelevant field that add noise to index are now removed, ex:thumb:thumbnail, picture:views, common:icons).</p>
-                <h3><a name="anchor-4"></a>Search Events Logged</h3>
+                <h3><a name="anchor-5"></a>Search Events Logged</h3>
                 <p>
                 Audit Trail is enriched with new type of events: search events. It is possible on a per search filter basis to enable search tracking.
                 </p>
+                <h3><a name="anchor-6"></a>Do Not Display Search Result First</h3>
+                <p>An option is available on content views now so that search is not run the first time the search page is displayed.</p>
                 <h2>
-                <a name="anchor-5"></a>
+                <a name="anchor-7"></a>
                 Look'n Feel Refresh
                 </h2>
                 <p>
-                The Nuxeo Platform UI has been refreshed and updated in the mean time for a better experience and a smoother feeling. In addition we increased the adaptiveness and reactiveness of the forms, and the readability of tables.</p>
-                <h2><a name = "anchor-6"></a>Labels Have Been Capitalized</h2>
+                The Nuxeo Platform UI has been refreshed and updated in the mean time for a better experience and a smoother feeling. In addition we increased the adaptiveness and reactiveness of the forms, and the readability of tables. The login page layout has been updated. No more top bar, no more links, just the essential. The page layout has been reviewed to improve responsiveness. Left columns and main area are now independant, you can browse and scroll the part you need without disturbing the rest of the layout. The footer is now only visible at the end of the scroll, to let you focus on your tasks and things that matters in your workflow.
+                </p>
+                <h2><a name = "anchor-8"></a>Labels Have Been Capitalized</h2>
                 <P>We did an effort for correctly capitalizing most of the labels of the default application.</P>
-                <h2><a name = "anchor-7"></a>Unpublish a Media from Nuxeo Platform Web UI</h2>
+                <h2><a name = "anchor-9"></a>Unpublish a Media from Nuxeo Platform Web UI</h2>
                 <p>
                 A button has been added to be able to un-publish a video from Wistia or YouTube directly from Nuxeo Platform Web UI.
                 </p>
-                
-                <h2><a name="anchor-8"></a>Compare Images</h2>
+
+                <h2><a name="anchor-10"></a>Compare Images</h2>
                 <p>
                 The Nuxeo Diff plug-in now works with pictures, and displays a dialog where the user can spot the differences between two pictures (must be of the same format and same dimensions). The dialog also lets the user set-up a "Fuzzy" comparison parameter (to remove noise when comparing JPEGs for example), and to choose the colors used for to highlight the differences.</p>
-                
-                <h2><a name="anchor-9"></a>Preview Screenshot and Storyboard Generation Can Be Configured</h2>
+
+                <h2><a name="anchor-11"></a>Preview Screenshot and Storyboard Generation Can Be Configured</h2>
                 <p>Preview screenshot and storyboard can now be configured on the VideoService:
                 <ul><li> When to take the preview screenshot (percentage of the video duration)</li>
                 <li>Storyboard thumbnails count</li>
@@ -99,22 +106,23 @@
                 &lt;/extension&gt;
             </div>
             </p>
-                <h2>
-                <a name="anchor-10"></a>
-                Default Filename for Renditions
-                </h2>
-                <p>
-                Rendition filenames are now computed in the Automation Renderer class, with the following logic: if the blob has a filename it uses it otherwise it uses the document title. If the blob has an extension, it uses it, or it looks for the mime-type, or it chooses ".bin".
-                </p>
+            <h2><a name="anchor-12"></a>Nuxeo For Salesforce</h2>
+            <p>A new Addon is available, as well as plugin on the Salesforce AppExchange marketplace for integrating Nuxeo Platform and Salesforce. Ability is provided to drag'n drop documents from Salesforce UI in Nuxeo Platform, with automated information linking (customer name, opportunity ID, ...). From Salesforce user can browse sf objects related documents, see their history, use Direct Edit link, metadata, etc..</p>
+            <h2>
+            <a name="anchor-13"></a>
+            Default Filename for Renditions
+            </h2>
+            <p>
+            Rendition filenames are now computed in the Automation Renderer class, with the following logic: if the blob has a filename it uses it otherwise it uses the document title. If the blob has an extension, it uses it, or it looks for the mime-type, or it chooses ".bin".
+            </p>
 
-                
-                <h2> <a name="anchor-11"></a>New Samples for Template Rendering</h2>
-                <p>
-                A set of new samples have been implemented for letting you discover the best of what you can do with Nuxeo Platform Rendering. Have a look at them by installing the corresponding package!
-                </p>
-        <h2><a name="anchor-12">No More Limit CMIS Upload</h2>
+            <h2> <a name="anchor-14"></a>New Samples for Template Rendering</h2>
+            <p>
+            A set of new samples have been implemented for letting you discover the best of what you can do with Nuxeo Platform Rendering. Have a look at them by installing the corresponding package!
+            </p>
+            <h2><a name="anchor-15"></a>No More Limit CMIS Upload</h2>
             <p>The 4GB limit has been removed.</p>
-            <h2><a name="anchor-13"> Invite a User With Email Only</h2>
+            <h2><a name="anchor-16"></a>Invite a User With Email Only</h2>
             <p>It is possible to specify only the email when inviting a user, in that case email will be used as the username. With Shibboleth plugin, it will be changed at first logging, depending on the configuration.</p>
         </div>
     </div>
