@@ -61,12 +61,12 @@
                     <div class="embededCode">
                     nuxeo.s3storage.downloadfroms3.expire=3600 </div> </p><p>You should also configure S3.</p>
                     <h2>
-                    <a name="anchor-0"></a>
+                    <a name="anchor-1"></a>
                     nuxeoctl --strict start</h2>
                     <p>
                     nuxeoctl --stric start will abort with an error code when a component is not started or when there is a server already running. This allows you to ensure that the server was started correctly. For instance when elasticsearch.enabled is set to true, start will abort if Elasticsearch is not available.
                     </p>
-                    <h2> <a name="anchor-1"></a>nuxeo.conf password encryption</h2>
+                    <h2> <a name="anchor-2"></a>nuxeo.conf password encryption</h2>
                     <p>
 
                     Sensitive configuration data can be encrypted to avoid clear data in the configuration files, especially nuxeo.conf.
@@ -92,13 +92,13 @@
                     <p>See "nuxeoctl help" and <a href="https://doc.nuxeo.com/x/4YeRAQ" target="blank">online documentation</a>.
                     </p>
                     <h2>
-                    <a name="anchor-2"></a>
+                    <a name="anchor-3"></a>
                     Workflow Optimisations</h2>
                     <p>
                     Several queries that list tasks and workflow models in user's views have been optmised, leading to a quicker display when a lot of tasks are in the repository and a reduced load for the database.
                     </p>
                     <h2>
-                    <a name="anchor-3"></a>
+                    <a name="anchor-4"></a>
                     Live Connect Configuration Improvements</h2>
                   
                     <p>Cloud Services providers' file pickers no longer open if not properly configured in the admin center and a proper error message in the UI is now displayed.</p>
@@ -106,7 +106,7 @@
                     <p>File widget no longer displays an upload button for Cloud Services providers that are not enabled.</p>
 
                     <h2>
-                    <a name="achor-4"></a> Groups Defined Both on SQL Locally and in LDAP Directory</h2>
+                    <a name="achor-5"></a> Groups Defined Both on SQL Locally and in LDAP Directory</h2>
                     <p>For directories that are only read, it's sometimes useful to have a reference field that has several definitions to external directories.
                     For instance the "groups" information of the user directory could come from two different ways of defining groups.
                     This is something that works only for read though, because on write we wouldn't be able to know to which reference the write should be done.
@@ -124,9 +124,9 @@
                     </div></p>
                     <h2>New Marketplace Packages</h2>
                     <ul><li>nuxeo-diff-pictures: This package requires nuxeo-dam, installs nuxeo-diff (if not already installed), and uses ImageMagick.</li></ul>
-                    <h2>Annotations Make Use Of VCS Relation Graph</h2>
+                    <h2><a name="achor-6"></a>Annotations Make Use Of VCS Relation Graph</h2>
                     <p>Relations are now by default stored as core relation objects with document type AnnotationRelation. It is possible to switch back to Jena storage, see detailed Upgrade Notes.</p>
-                    <h2>Redis Implementation of Cluster Invalidation Logic</h2>
+                    <h2><a name="achor-7"></a>Redis Implementation of Cluster Invalidation Logic</h2>
                     <p>ClusterInvalidator implementation based on Redis replacing the SQL one. To use it edit the repository contrib and add:
                     <div class="embededCode">
                         &lt;clusterInvalidatorClass&gt;org.nuxeo.ecm.core.redis.contribs.RedisClusterInvalidator&lt;/clusterInvalidatorClass&gt;
@@ -134,17 +134,17 @@
                     Invalidations are sent and received using the Redis pubsub messaging on the channel: nuxeo:inval:default:channel.
                     (default being the name of the repository). There is a Redis HSET created for each Nuxeo node with the following key: nuxeo:inval:default:nodes: <i>nodeId</i>
                     </p>
-                    <h2>Redis Based Implementation Of The UIDSequencer</h2>
+                    <h2><a name="achor-8"></a>Redis Based Implementation Of The UIDSequencer</h2>
                     <p>A Redis implementation of the UID Sequencer is available. In this implementation, the counter for key FOO is stored under nuxeo:counters:FOO. Such a sequencer can be contributed with the following extension:
                     <div class="embededCode"> &lt;extension target=&quot;org.nuxeo.ecm.core.uidgen.UIDGeneratorService&quot; point=&quot;sequencers&quot;&gt;
                         &lt;sequencer name=&quot;mySequencer&quot; class=&quot;org.nuxeo.ecm.core.redis.contribs.RedisUIDSequencer&quot;/&gt;
                     &lt;/extension&gt; </div>
                     </p>
-                    <h2>Redis Queue Optimisation</h2>
+                    <h2><a name="achor-9"></a>Redis Queue Optimisation</h2>
                     <p>The Redis queue implementation generates less requests to Redis and improve performance by prioritizing local worker with potentially warm cache. Also Redis commands are now pipelined reducing the number of Redis roundtrip.</p>
-                    <h2><a name="anchor-5"></a>Support of LibreOffice 5</h2>
+                    <h2><a name="anchor-10"></a>Support of LibreOffice 5</h2>
                     <p>LibreOffice 5 support has been added for conversions by adding detection of path for that version</p>
-                    <h2><a name="anchor-6"></a>Default SAML Binding</h2>
+                    <h2><a name="anchor-11"></a>Default SAML Binding</h2>
                     <p>Introduced new configuration property 'nuxeo.saml2.loginBindings' that allows configuring available SAML login bindings.
                         Default is 'HTTP-Redirect,HTTP-POST'. First binding will be flagged as default in the metadata export.</p>
                 </div>
