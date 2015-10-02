@@ -25,7 +25,7 @@
     <![endif]-->
     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
         <style>
-                                #xnav-footer {margin-top:0px !important;}
+                                        #xnav-footer {margin-top:0px !important;}
         </style>
         <script src="../../javascripts/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
@@ -49,16 +49,19 @@
                 </li>
                 <li>Permissions tab is available in read only for everybody makeing it easy to know who has access to what.</li>
                 <li>In the Admin Center, it is possible to search for any permission that was assigned to anybody anywhere.</li>
-                <li>It is also possible to purge permissions given to a specific user in a specific place (or everywhere).</li></ul></p>
-                <img class="lightboxed" src="./ACLsAdd.png"/>
-                <img class="lightboxed" src="./ACLsPurge.png"/>
+                <li>It is also possible to purge permissions given to a specific user in a specific place (or everywhere).</li></ul></p><p>
+                <img class="lightboxed" src="./ACLsAdd.png"/></p><p>
+                <img class="lightboxed" src="./ACLsPurge.png"/></p>
                 <h2>
                 <a name="anchor-1"></a>Drive Edit Link on Documents Listings</h2>
                 <p>
-                For each document that has a file on the main listing view, it is now possible to directly edit it with the Drive Edit feature.</p>
+                For each document that has a file on the main listing view, it is now possible to directly edit it with the Drive Edit feature.</p><p> <img class="lightboxed" src="./DriveEditContentView.png"/></p>
                 <h2><a name="anchor-2"></a>Data Visualization</h2>
                 <p>A new addon deploys dashboards accessible from workflow models in Admin Center. Those dashboards provide information about the workflows like average execution length, top assignees, etc.. They are samples of what can be done on workflow data processing thanks to our new data visualization kit.</p>
-                <p>Furthermore a new permission has been added and can be used on workflow models for determining who has access to the workflow related information aggregation.</p>
+                <p>Furthermore a new permission has been added and can be used on workflow models for determining who has access to the workflow related information aggregation.</p><p>
+                <img class="lightboxed" src="./dataviz1.png"/></p>
+                <p>
+                <img class="lightboxed" src="./dataviz2.png"/></p>
                 <h2>Search Improvements</h2>
                 <h3><a name="anchor-3"></a>Quick Search Now Uses Elasticsearch</h3>
                 <p>Elasticsearch is used for the quick search, which offers better performances and allows to use specific search behaviors such as phrase search, ngrams, etc..</p>
@@ -85,11 +88,10 @@
                 <p>
                 A button has been added to be able to un-publish a video from Wistia or YouTube directly from Nuxeo Platform Web UI.
                 </p>
-
                 <h2><a name="anchor-11"></a>Compare Images</h2>
                 <p>
                 The Nuxeo Diff plug-in now works with pictures, and displays a dialog where the user can spot the differences between two pictures (must be of the same format and same dimensions). The dialog also lets the user set-up a "Fuzzy" comparison parameter (to remove noise when comparing JPEGs for example), and to choose the colors used for to highlight the differences.</p>
-
+                <p><img class="lightboxed" src="./PictureDiff.png"/></p>
                 <h2><a name="anchor-12"></a>Preview Screenshot and Storyboard Generation Can Be Configured</h2>
                 <p>Preview screenshot and storyboard can now be configured on the VideoService:
                 <ul><li> When to take the preview screenshot (percentage of the video duration)</li>
@@ -117,7 +119,6 @@
             <p>
             Rendition filenames are now computed in the Automation Renderer class, with the following logic: if the blob has a filename it uses it otherwise it uses the document title. If the blob has an extension, it uses it, or it looks for the mime-type, or it chooses ".bin".
             </p>
-
             <h2> <a name="anchor-15"></a>New Samples for Template Rendering</h2>
             <p>
             A set of new samples have been implemented for letting you discover the best of what you can do with Nuxeo Platform Rendering. Have a look at them by installing the corresponding package!
@@ -126,6 +127,8 @@
             <p>The 4GB limit has been removed.</p>
             <h2><a name="anchor-17"></a>Invite a User With Email Only</h2>
             <p>It is possible to specify only the email when inviting a user, in that case email will be used as the username. With Shibboleth plugin, it will be changed at first logging, depending on the configuration.</p>
+            <p>
+            <img class="lightboxed" src="./invitation.png"/></p>
         </div>
     </div>
     <!-- JS
