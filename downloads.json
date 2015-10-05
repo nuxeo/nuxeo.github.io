@@ -2,19 +2,19 @@
     {
         "data": [
             {
-                "date": "TODO",
+                "date": "05-Oct-2015 12:37",
                 "description": "Nuxeo Platform 7.4 release notes",
                 "label": "7.4 Release Notes.pdf",
                 "os": "all",
-                "size": "TODO",
+                "size": "1.2M",
                 "url": "http://cdn.nuxeo.com/nuxeo-7.4/7.4%20Release%20Notes.pdf"
             },
             {
-                "date": "TODO",
+                "date": "05-Oct-2015 12:37",
                 "description": "Nuxeo Platform 7.4 upgrade notes",
                 "label": "7.4 Upgrade Notes.pdf",
                 "os": "all",
-                "size": "TODO",
+                "size": "165K",
                 "url": "http://cdn.nuxeo.com/nuxeo-7.4/7.4%20Upgrade%20Notes.pdf"
             },
             {
@@ -74,7 +74,8 @@
         ],
         "date": "2015-10-05",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/7.4/",
-        "name": "7.4"
+        "name": "7.4",
+        "kind": "FT"
     },
     {
         "data": [
@@ -151,7 +152,8 @@
         ],
         "date": "2015-06-25",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/7.3/",
-        "name": "7.3"
+        "name": "7.3",
+        "kind": "FT"
     },
     {
         "data": [
@@ -228,7 +230,8 @@
         ],
         "date": "2015-03-18",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/7.2/",
-        "name": "7.2"
+        "name": "7.2",
+        "kind": "FT"
     },
     {
         "data": [
@@ -305,7 +308,8 @@
         ],
         "date": "2015-01-16",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/7.1/",
-        "name": "7.1"
+        "name": "7.1",
+        "kind": "FT"
     },
     {
         "data": [
@@ -382,7 +386,8 @@
         ],
         "date": "2014-11-05",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/6.0/",
-        "name": "6.0"
+        "name": "6.0",
+        "kind": "LTS"
     },
     {
         "data": [
@@ -459,7 +464,8 @@
         ],
         "date": "2014-08-06",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.9.5/",
-        "name": "5.9.5"
+        "name": "5.9.5",
+        "kind": "FT"
     },
     {
         "data": [
@@ -527,7 +533,8 @@
         ],
         "date": "2014-06-09",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.9.4/",
-        "name": "5.9.4"
+        "name": "5.9.4",
+        "kind": "FT"
     },
     {
         "data": [
@@ -595,7 +602,8 @@
         ],
         "date": "2014-04-16",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.9.3/",
-        "name": "5.9.3"
+        "name": "5.9.3",
+        "kind": "FT"
     },
     {
         "data": [
@@ -663,7 +671,8 @@
         ],
         "date": "2014-02-18",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.9.2/",
-        "name": "5.9.2"
+        "name": "5.9.2",
+        "kind": "FT"
     },
     {
         "data": [
@@ -731,7 +740,8 @@
         ],
         "date": "2013-12-18",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.9.1/",
-        "name": "5.9.1"
+        "name": "5.9.1",
+        "kind": "FT"
     },
     {
         "data": [
@@ -824,7 +834,8 @@
         ],
         "date": "2013-10-30",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.8/",
-        "name": "5.8"
+        "name": "5.8",
+        "kind": "LTS"
     },
     {
         "date": "2013-10-31",
@@ -897,7 +908,8 @@
         ],
         "date": "2013-09-24",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.7.3/",
-        "name": "5.7.3"
+        "name": "5.7.3",
+        "kind": "FT"
     },
     {
         "data": [
@@ -965,7 +977,8 @@
         ],
         "date": "2013-08-03",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.7.2",
-        "name": "5.7.2"
+        "name": "5.7.2",
+        "kind": "FT"
     },
     {
         "data": [
@@ -1033,7 +1046,8 @@
         ],
         "date": "2013-06-18",
         "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/5.7.1",
-        "name": "5.7.1"
+        "name": "5.7.1",
+        "kind": "FT"
     },
     {
         "data": [
@@ -1119,7 +1133,8 @@
         ],
         "date": "2012-09-05",
         "htmlReleaseNotes": "http://cdn.nuxeo.com/nuxeo-5.6/5.6%20Release%20Notes.pdf",
-        "name": "5.6"
+        "name": "5.6",
+        "kind": "LTS"
     },
     {
         "data": [
@@ -1206,7 +1221,8 @@
             }
         ],
         "date": "2011-12-13",
-        "name": "5.5"
+        "name": "5.5",
+        "kind": "FT"
     },
     {
         "data": [
@@ -1408,7 +1424,8 @@
             }
         ],
         "date": "2011-06-01",
-        "name": "5.4.2"
+        "name": "5.4.2",
+        "kind": "LTS"
     },
     {
         "data": [
@@ -1538,7 +1555,8 @@
             }
         ],
         "date": "2011-04-06",
-        "name": "5.4.1"
+        "name": "5.4.1",
+        "kind": "FT"
     },
     {
         "data": [
@@ -1768,7 +1786,8 @@
             }
         ],
         "date": "2010-11-10",
-        "name": "5.4.0"
+        "name": "5.4.0",
+        "kind": "FT"
     },
     {
         "data": [
@@ -1858,7 +1877,8 @@
             }
         ],
         "date": "2010-07-20 ",
-        "name": "5.3.2"
+        "name": "5.3.2",
+        "kind": "FT"
     },
     {
         "data": [
@@ -1935,7 +1955,8 @@
             }
         ],
         "date": "2010-03-22 ",
-        "name": "5.3.1"
+        "name": "5.3.1",
+        "kind": "FT"
     },
     {
         "data": [
@@ -2030,7 +2051,8 @@
             }
         ],
         "date": "2009-10-27 ",
-        "name": "5.3.0"
+        "name": "5.3.0",
+        "kind": "FT"
     },
     {
         "data": [
@@ -2071,10 +2093,56 @@
             }
         ],
         "date": "2009-05-18",
-        "name": "5.2.0"
+        "name": "5.2.0",
+        "kind": "FT"
     },
     {
         "data": [
+            {
+                "date": "01-Oct-2015 21:59",
+                "description": "Nuxeo Platform 7.4 sources",
+                "label": "nuxeo-7.4-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-7.4/nuxeo-7.4-sources.zip.md5",
+                "os": "all",
+                "size": "71M",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.4/nuxeo-7.4-sources.zip"
+            },
+            {
+                "date": "22-Jun-2015 17:45",
+                "description": "Nuxeo Platform 7.3 sources",
+                "label": "nuxeo-7.3-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-7.3-sources.zip.md5",
+                "os": "all",
+                "size": "70M",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-7.3-sources.zip"
+            },
+            {
+                "date": "18-Mar-2015 09:40",
+                "description": "Nuxeo Platform 7.2 sources",
+                "label": "nuxeo-7.2-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-7.2/nuxeo-7.2-sources.zip.md5",
+                "os": "all",
+                "size": "71M",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.2/nuxeo-7.2-sources.zip"
+            },
+            {
+                "date": "14-Jan-2015 14:47",
+                "description": "Nuxeo Platform 7.1 sources",
+                "label": "nuxeo-7.1-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-7.1/nuxeo-7.1-sources.zip.md5",
+                "os": "all",
+                "size": "70M",
+                "url": "http://cdn.nuxeo.com/nuxeo-7.1/nuxeo-7.1-sources.zip"
+            },
+            {
+                "date": "05-Nov-2014 10:41",
+                "description": "Nuxeo Platform 6.0 sources",
+                "label": "nuxeo-6.0-sources.zip",
+                "md5": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip.md5",
+                "os": "all",
+                "size": "60M",
+                "url": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip"
+            },
             {
                 "date": "06-Aug-2014 12:06",
                 "description": "Nuxeo Platform 5.9.5 sources",
