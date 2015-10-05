@@ -5,28 +5,28 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
 
-	<!-- Basic Page Needs
+  <!-- Basic Page Needs
   ================================================== -->
-	<meta charset="utf-8">
-	<title>Nuxeo Release Notes</title>
-	<meta name="description" content="Nuxeo release notes index">
-	<meta name="author" content="nuxeo">
+  <meta charset="utf-8">
+  <title>Nuxeo Release Notes</title>
+  <meta name="description" content="Nuxeo release notes index">
+  <meta name="author" content="nuxeo">
 
-	<!-- Mobile Specific Metas
+  <!-- Mobile Specific Metas
   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- CSS
+  <!-- CSS
   ================================================== -->
-	<link rel="stylesheet" href="../stylesheets/base.css">
-	<link rel="stylesheet" href="../stylesheets/skeleton.css">
-	<link rel="stylesheet" href="../stylesheets/layout.css">
-	<link rel="stylesheet" href="../stylesheets/release_notes.css">
+  <link rel="stylesheet" href="../stylesheets/base.css">
+  <link rel="stylesheet" href="../stylesheets/skeleton.css">
+  <link rel="stylesheet" href="../stylesheets/layout.css">
+  <link rel="stylesheet" href="../stylesheets/release_notes.css">
 
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 <style>
 #xnav-footer {margin-top:0px !important;}
 </style>
@@ -37,12 +37,12 @@
 <style>
 #xnav-footer {margin-top:0px !important;}
 </style>
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <!-- Favicons
+  ================================================== -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
 </head>
 <body>
@@ -57,13 +57,13 @@
 </div>
 
 
-	<!-- JS
-	================================================== -->
+  <!-- JS
+  ================================================== -->
     <script src="../javascripts/strftime.js"></script>
     <script src="../javascripts/tabs.js"></script>
 
 
-    
+
     <script type="text/javascript">
     $(document).ready(function () {
 
@@ -113,28 +113,31 @@
             return $linkTd;
        }
 
-       function jq(myid) { 
+       function jq(myid) {
          return '#' + myid.replace(/(:|\.)/g,'\\$1');
        }
 
        function addTab(data) {
          version = data[count];
-         if (version.name.length == 3) {
-           LTScount = LTScount + 1;
-         } else {
-           FTcount = FTcount + 1;
+         if (version.data) {
+           var kind = version.kind
+           if (kind == "LTS") {
+               LTScount = LTScount + 1;
+           } else if (kind == "FT") {
+               FTcount = FTcount + 1;
+           }
+           if (version.htmlReleaseNotes) {
+               fillTab(version.name, version.date, version.htmlReleaseNotes);
+           }
          }
-         if (version.htmlReleaseNotes) {
-           fillTab(version.name, version.date, version.htmlReleaseNotes);
-           count = count + 1;
-         }
+         count = count + 1;
        }
+
        $.getJSON("../downloads.json", function(data) {
          $.each(data, function () {
            addTab(data);
          });
        });
-
 
 });
 </script>
