@@ -10,7 +10,7 @@
   margin-top:2em;
   line-height: 50px;
     margin-bottom: 14px;
-  font-size: 28px;  
+  font-size: 28px;
 }
 
 p#site-title {
@@ -178,11 +178,11 @@ a:hover, a:focus {
 .index h2 {
   line-height: 30px;
   }
-  
+
 .index .date {
   color:#757575;
   padding-right:0.5em;
-}  
+}
 
 .index span a {
   background: url(../images/document.png) transparent top left no-repeat;
@@ -304,37 +304,37 @@ th {
   font-weight: bold;
 }
 
-#floatMenu {  
-    position:absolute;  
-    top:22px;  
-    left:10%;  
-    width:15%;  
-}  
-#floatMenu ul {  
-  margin-bottom:20px;  
-}  
+#floatMenu {
+    position:absolute;
+    top:22px;
+    left:10%;
+    width:15%;
+}
+#floatMenu ul {
+  margin-bottom:20px;
+}
 
 #floatMenu ul li {
   margin-bottom: 0;
-}  
+}
 
-#floatMenu ul li a {  
-    display:block;  
-    border-bottom:1px solid rgb(132,174,203);  
-    border-right:1px solid #E8EFF5;  
-    text-decoration:none;   
-    padding:4px 8px;  
+#floatMenu ul li a {
+    display:block;
+    border-bottom:1px solid rgb(132,174,203);
+    border-right:1px solid #E8EFF5;
+    text-decoration:none;
+    padding:4px 8px;
     background-color: white;
     font-size: 12px;
-}  
+}
 
-#floatMenu ul li:last-child a {  
+#floatMenu ul li:last-child a {
   border-bottom: none;
 }
 
-#floatMenu ul li a:hover {  
-    background-color:#E8EFF5; 
-}  
+#floatMenu ul li a:hover {
+    background-color:#E8EFF5;
+}
 
 table.release {
   table-layout: fixed;
@@ -364,6 +364,16 @@ blockquote, blockquote p {
   overflow-x:auto;
 }
 
+code {
+  background-color: #E8EFF5;
+  border: 1px dashed #3670B9;
+  color: black;
+/*   line-height: 1.1em; */
+/*   padding: 1em; */
+  font-family: Consolas,Courier,monospace;
+  overflow-x:auto;
+}
+
 #site-title .version-number {
   display:inline-block;
   background: url(../images/empty-version-tag.png) transparent top left no-repeat;
@@ -386,9 +396,9 @@ blockquote, blockquote p {
 font-family: 'Aregular';
 src: url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot');
 src: url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot?#iefix') format('embedded-opentype'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.woff') format('woff'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf') format('truetype'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.svg#Aregular') format('svg');
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.woff') format('woff'),
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf') format('truetype'),
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.svg#Aregular') format('svg');
 font-weight: normal;
 font-style: normal;
 }
@@ -396,9 +406,9 @@ font-style: normal;
 font-family: 'Ademi';
 src: url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.eot');
 src: url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.eot?#iefix') format('embedded-opentype'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.woff') format('woff'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.ttf') format('truetype'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.svg#Ademi') format('svg');
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.woff') format('woff'),
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.ttf') format('truetype'),
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.svg#Ademi') format('svg');
 font-weight: normal;
 font-style: normal;
 }
@@ -407,9 +417,9 @@ font-style: normal;
 font-family: 'Abold';
 src: url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Bold.eot');
 src: url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Bold.eot?#iefix') format('embedded-opentype'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Bold.woff') format('woff'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Bold.ttf') format('truetype'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Bold.svg#Abold') format('svg');
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Bold.woff') format('woff'),
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Bold.ttf') format('truetype'),
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Bold.svg#Abold') format('svg');
 font-weight: normal;
 font-style: normal;
 }
@@ -417,9 +427,9 @@ font-style: normal;
 font-family: 'Ademic';
 src: url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-DemiCn.eot');
 src: url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-DemiCn.eot?#iefix') format('embedded-opentype'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-DemiCn.woff') format('woff'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-DemiCn.ttf') format('truetype'),
-	 url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-DemiCn.svg#Ademic') format('svg');
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-DemiCn.woff') format('woff'),
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-DemiCn.ttf') format('truetype'),
+  url('http://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-DemiCn.svg#Ademic') format('svg');
 font-weight: normal;
 font-style: normal;
 }
@@ -455,7 +465,7 @@ body {
   text-decoration: underline;
 }
 
-.message a:hover { 
+.message a:hover {
   color:white;
 }
 
@@ -502,7 +512,7 @@ body {
 
 .container {
   min-width: 1% !important;
-}  
+}
 
 p#site-title {
   padding:0 25px;

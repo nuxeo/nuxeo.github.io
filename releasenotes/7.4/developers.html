@@ -79,8 +79,8 @@
 
                     </p>
                     <p>More information can be found in the <a href ="https://doc.nuxeo.com/x/WZCRAQ" target="blank">Nuxeo Data Visualization documentation</a>.</p>
-                    <h2><a name ="anchor-1"></a>Asynchroneous Conversions</h2>
-                    <p>The Conversion service has been improved to handle asynchroneous conversions. This new feature has also been exposed on the REST API, with new endpoints. Launch an asynchronous conversion by doing a POST on the @convert adapter, with the parameter async to true:
+                    <h2><a name ="anchor-1"></a>Asynchronous Conversions</h2>
+                    <p>The Conversion service has been improved to handle asynchronous conversions. This new feature has also been exposed on the REST API, with new endpoints. Launch an asynchronous conversion by doing a POST on the @convert adapter, with the parameter async to true:
                     <div class="embededCode">POST http://localhost:8080/nuxeo/api/v1/path/to/file/@convert?async=true</div></p>
                     <p>
                     This returns a JSON object with the following data:
@@ -174,7 +174,7 @@
             <li>local ACL at the end, but before inherited if present</li>
             <li>any other ACL before local and inherited</li>
         </ul>
-        
+
         <h3><a name="anchor-9"></a>New Content Enricher: Allowed Permissions </h3>
         <p>A new enricher "AllowedPermissions" allows to fetch accepted UI Permissions for the given document according to the <a target="alt" href="http://explorer.nuxeo.com/nuxeo/site/distribution/current/viewExtensionPoint/org.nuxeo.ecm.core.security.SecurityService--permissionsVisibility">permission</a> extension point.
         </p>
