@@ -53,64 +53,65 @@
                 <div id="welcome">
                     <div style="clear: both;"></div>
                     <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
-                    <h2><a name="anchor-0"></a>Redirect Downloads to a Content Delivery Network</h2>
+                    <h2><a id="anchor-0"></a>Redirect Downloads to a Content Delivery Network</h2>
                     <p>The S3 Binary Manager has evolved so that it is possible to let the user download blobs directly from S3 without having the blob go through the Nuxeo Platform server. The security has been taken care of thanks to signed URLs mechanism. With the same approach it is possible to extend the default binary manager and plug to any CDN (CloudFront, Akamai, ...). To enable, use:
                     <div class="embededCode">nuxeo.s3storage.downloadfroms3=true</div>
-                </p><p>
-                    To configure the expiration (in seconds) for the redirect URLs, use:
-                    <div class="embededCode">
-                    nuxeo.s3storage.downloadfroms3.expire=3600 </div> </p><p>You should also configure S3.</p>
+                    <p>To configure the expiration (in seconds) for the redirect URLs, use:
+                    <div class="embededCode">nuxeo.s3storage.downloadfroms3.expire=3600</div>
+                    <p>You should also configure S3.</p>
+
                     <h2>
-                    <a name="anchor-1"></a>
+                    <a id="anchor-1"></a>
                     nuxeoctl --strict start</h2>
                     <p>
-                    nuxeoctl --stric start will abort with an error code when a component is not started or when there is a server already running. This allows you to ensure that the server was started correctly. For instance when elasticsearch.enabled is set to true, start will abort if Elasticsearch is not available.
+                    <code>nuxeoctl --strict start</code> will abort with an error code when a component cannot be activated or when a server is already running.
+                    This allows you to ensure that the server was started correctly.
+                    For instance when <code>elasticsearch.enabled</code> is set to true, the server start will abort if Elasticsearch is not available.
                     </p>
-                    <h2> <a name="anchor-2"></a>nuxeo.conf Password Encryption</h2>
-                    <p>
-
-                    Sensitive configuration data can be encrypted to avoid clear data in the configuration files, especially nuxeo.conf.
-                    New commands usage:
+                    <h2> <a id="anchor-2"></a>nuxeo.conf Password Encryption</h2>
+                    <p>Sensitive configuration data can be encrypted to avoid clear data in the configuration files, especially nuxeo.conf.
+                    New commands usage:</p>
                     <div class="embededCode">
                         nuxeoctl encrypt [--encrypt &lt;algorithm&gt;] [&lt;clearValue&gt;..] [-d [&lt;categories&gt;]|-q]<br/>
-                        Output encrypted value for &lt;clearValue&gt;.<br/>
-                        If &lt;clearValue&gt; is not provided, it is read from stdin.<br/>
-                        <br/> nuxeoctl decrypt &#39;&lt;cryptedValue&gt;&#39;.. [-d [&lt;categories&gt;]|-q]<br/>
-                        Output decrypted value for &lt;cryptedValue&gt;. <br/>
-                        The secret key is read from stdin.<br/><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Output encrypted value for &lt;clearValue&gt;.<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;If &lt;clearValue&gt; is not provided, it is read from stdin.<br/><br/>
+
+                        nuxeoctl decrypt &#39;&lt;cryptedValue&gt;&#39;.. [-d [&lt;categories&gt;]|-q]<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Output decrypted value for &lt;cryptedValue&gt;. <br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;The secret key is read from stdin.<br/><br/>
 
                         nuxeoctl config [--encrypt [&lt;algorithm&gt;]] [--set [&lt;template&gt;]] [&lt;key&gt; &lt;value&gt;].. &lt;key&gt; [&lt;value&gt;] [-d [&lt;categories&gt;]|-q]<br/>
-                        Set template or global parameters.<br/>
-                        If &lt;value&gt; is not provided and the --set &#39;option&#39; is used, then the value is read from stdin.<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Set template or global parameters.<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;If &lt;value&gt; is not provided and the --set &#39;option&#39; is used, then the value is read from stdin.<br/><br/>
 
                         nuxeoctl config [--get] &lt;key&gt;.. [-d [&lt;categories&gt;]|-q]<br/>
-                        Get value for the given key(s).<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Get value for the given key(s).<br/><br/>
 
                         nuxeoctl config [--get-regexp] &lt;regexp&gt;.. [-d [&lt;categories&gt;]|-q]<br/>
-                        Get value for the keys matching the given regular expression(s).<br/>
-                    </div></p>
-                    <p>See "nuxeoctl help" and <a href="https://doc.nuxeo.com/x/4YeRAQ" target="blank">online documentation</a>.
+                        &nbsp;&nbsp;&nbsp;&nbsp;Get value for the keys matching the given regular expression(s).<br/>
+                    </div>
+                    <p>See <code>nuxeoctl help</code> and <a href="https://doc.nuxeo.com/x/4YeRAQ" target="blank">online documentation</a>.
                     </p>
                     <h2>
-                    <a name="anchor-3"></a>
+                    <a id="anchor-3"></a>
                     Workflow Optimisations</h2>
                     <p>
                     Several queries that list tasks and workflow models in user's views have been optimized, leading to a quicker display when a lot of tasks are in the repository and a reduced load for the database.
                     </p>
                     <h2>
-                    <a name="anchor-4"></a>
+                    <a id="anchor-4"></a>
                     Live Connect Configuration Improvements</h2>
-                  
+
                     <p>Cloud Services providers' file pickers no longer open if not properly configured in the Admin Center and a proper error message in the UI is now displayed.</p>
-                   
+
                     <p>File widget no longer displays an upload button for Cloud Services providers that are not enabled.</p>
 
                     <h2>
-                    <a name="achor-5"></a>Groups Defined Both on SQL Locally and in LDAP Directory</h2>
+                    <a id="achor-5"></a>Groups Defined Both on SQL Locally and in LDAP Directory</h2>
                     <p>For directories that are only read, it's sometimes useful to have a reference field that has several definitions to external directories.
                     For instance the "groups" information of the user directory could come from two different ways of defining groups.
                     This is something that works only for read though, because on write we wouldn't be able to know to which reference the write should be done.
-                    So with this feature a directory field can have several references:
+                    So with this feature a directory field can have several references:</p>
                     <div class="embededCode">
                         &lt;references&gt;
                         &lt;!-- we define two references for the &quot;groups&quot; field --&gt;
@@ -121,34 +122,33 @@
                         table=&quot;user2othergroup&quot; sourceColumn=&quot;userId&quot; targetColumn=&quot;groupId&quot;
                         dataFile=&quot;test-user2othergroup.csv&quot; /&gt;<br/>
                         &lt;/references&gt;
-                    </div></p>
+                    </div>
                     <h2>New Marketplace Packages</h2>
                     <ul><li><a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-diff-pictures" target="_blank">nuxeo Diff Pictures</a>: This package requires Nuxeo Dam, installs Nuxeo Diff (if not already installed), and uses ImageMagick.</li>
                     <li><a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-template-rendering-samples" target="_blank">Template Rendering Samples</a>: This package provides a set of new samples to let you discover the best of what you can do with Nuxeo Platform Rendering.</li>
-                    <li><a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-salesforce" target="_blank">Nuxeo for Salesforce</a>: This Nuxeo Platform and Salesforce integration enables to drag'n drop documents from the Salesforce UI into the Nuxeo Platform, with automated information linking (customer name, opportunity ID, ...).</li>
+                    <li><a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-salesforce" target="_blank">Nuxeo for Salesforce</a>: This Nuxeo Platform and Salesforce integration enables to drag'n drop documents from the Salesforce UI into the Nuxeo Platform, with automated information linking (customer name, opportunity ID...).</li>
                     <li><a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-review-workflows-dashboards" target="_blank">Nuxeo Review Workflows Dashboards</a>: This package provides dashboards that show information about the workflows like average execution length, top assignees, etc.</li>
                     </ul>
-                    <h2><a name="achor-6"></a>Annotations Make Use of VCS Relation Graph</h2>
-                    <p>Relations are now by default stored as core relation objects with document type AnnotationRelation. It is possible to switch back to Jena storage, see detailed Upgrade Notes.</p>
-                    <h2><a name="achor-7"></a>Redis Implementation of Cluster Invalidation Logic</h2>
-                    <p>ClusterInvalidator implementation based on Redis is replacing the SQL one. To use it edit the repository contrib and add:
+                    <h2><a id="achor-6"></a>Annotations Make Use of VCS Relation Graph</h2>
+                    <p>Relations are now stored by default as core relation objects with document type AnnotationRelation. It is possible to switch back to Jena storage, see detailed Upgrade Notes.</p>
+                    <h2><a id="achor-7"></a>Redis Implementation of Cluster Invalidation Logic</h2>
+                    <p>ClusterInvalidator implementation based on Redis is replacing the SQL one. To use it edit the repository contrib and add:</p>
                     <div class="embededCode">
                         &lt;clusterInvalidatorClass&gt;org.nuxeo.ecm.core.redis.contribs.RedisClusterInvalidator&lt;/clusterInvalidatorClass&gt;
-                    </div></p><p>
+                    </div><p>
                     Invalidations are sent and received using the Redis pubsub messaging on the channel: nuxeo:inval:default:channel
                     (default being the name of the repository). There is a Redis HSET created for each Nuxeo node with the following key: nuxeo:inval:default:nodes: <i>nodeId</i>
                     </p>
-                    <h2><a name="achor-8"></a>Redis-Based Implementation of the UIDSequencer</h2>
-                    <p>A Redis implementation of the UID Sequencer is available. In this implementation, the counter for key FOO is stored under nuxeo:counters:FOO. Such a sequencer can be contributed with the following extension:
+                    <h2><a id="achor-8"></a>Redis-Based Implementation of the UIDSequencer</h2>
+                    <p>A Redis implementation of the UID Sequencer is available. In this implementation, the counter for key FOO is stored under nuxeo:counters:FOO. Such a sequencer can be contributed with the following extension:</p>
                     <div class="embededCode"> &lt;extension target=&quot;org.nuxeo.ecm.core.uidgen.UIDGeneratorService&quot; point=&quot;sequencers&quot;&gt;
                         &lt;sequencer name=&quot;mySequencer&quot; class=&quot;org.nuxeo.ecm.core.redis.contribs.RedisUIDSequencer&quot;/&gt;
                     &lt;/extension&gt; </div>
-                    </p>
-                    <h2><a name="achor-9"></a>Redis Queue Optimisation</h2>
+                    <h2><a id="achor-9"></a>Redis Queue Optimisation</h2>
                     <p>The Redis queue implementation generates less requests to Redis and improves performance by prioritizing local worker with potentially warm cache. Also Redis commands are now pipelined reducing the number of Redis roundtrip.</p>
-                    <h2><a name="anchor-10"></a>Support of LibreOffice 5</h2>
+                    <h2><a id="anchor-10"></a>Support of LibreOffice 5</h2>
                     <p>LibreOffice 5 support has been added for conversions by adding detection of path for that version.</p>
-                    <h2><a name="anchor-11"></a>Default SAML Binding</h2>
+                    <h2><a id="anchor-11"></a>Default SAML Binding</h2>
                     <p>The new configuration property 'nuxeo.saml2.loginBindings' allows configuring available SAML login bindings.
                         Default is 'HTTP-Redirect,HTTP-POST'. First binding will be flagged as default in the metadata export.</p>
                 </div>
