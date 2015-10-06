@@ -160,12 +160,11 @@
        function addTab(data) {
          version = data[count];
          if (version.data) {
-           var name = version.name;
-           var major = name.substring(0, name.indexOf("."));
-           if (major == parseInt(major) && (major % 2 == 0)) {
-             LTScount = LTScount + 1;
-           } else {
-             FTcount = FTcount + 1;
+           var kind = version.kind
+           if (kind == "LTS") {
+               LTScount = LTScount + 1;
+           } else if (kind == "FT") {
+               FTcount = FTcount + 1;
            }
            fillTab(version.name, version.date, version.data);
          }
@@ -177,7 +176,6 @@
            addTab(data);
          });
        });
-
 
 });
 </script>
