@@ -1,5 +1,6 @@
 {
     "community":[
+        {"owner":"devcon14", "projectName":"cmis-capture", "categories": ["addon"]},
         {"owner":"nelsonsilva", "projectName":"nuxeo-dart-gadgets", "categories": ["sample"]},
         {"owner":"astone-solutions", "projectName":"NuxeoOutlookAddin", "categories": ["addon"]},
         {"owner":"intelliant", "projectName":"cronbackup", "categories": ["addon", "administration"]},
