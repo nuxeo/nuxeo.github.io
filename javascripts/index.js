@@ -1,6 +1,11 @@
 function index(page, target) {
     var div = $('<div/>');
-    div.load(page + " h2,h3");
+    div.load(page + " h2,h3", function(response, status, xhr) {
+        if (status == "error") {
+            var msg = "Sorry but there was an error: ";
+            console.error(msg + xhr.status + " " + xhr.statusText);
+        }
+    });
     div.ready(function() {
         var h3 = false;
         var items = "";
