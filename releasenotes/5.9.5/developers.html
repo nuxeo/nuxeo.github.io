@@ -56,10 +56,10 @@
     <div style="clear:both;"></div>
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
-   <h2><a name="anchor-0"></a>MongoDB Backend</h2>
+   <h2>MongoDB Backend</h2>
 <p>MongoDB support is now built-in, you don't need to install a marketplace package. A deep refactoring of low layers happened in Nuxeo so as to be able to support a non-transactionnal repository such as MongoDB. This refactoring was made so as to be able to implement other NoSQL backends in the future, as known as "Document-Based-Storage" inside the platform.</p>
 
-    <h2><a name="anchor-1"></a>REST API improvements</h2>
+    <h2>REST API improvements</h2>
 
 <h3>Content Enricher</h3>
 <p>Former Rest Providers have been renamed "Content Enricher" for more clarity. The corresponding necessary contribution was also changed, see upgrade notes.</p><p> Two content enrichers were added to the platform:
@@ -76,15 +76,15 @@ Thumbnail: This one adds url of the Thumbnail Picture to the response. You can u
 <p>You can now control whether a minor or major version is created when creating or updating a document via the REST API, using the new "X-Versioning-Option" header, with "MAJOR" or "MINOR" as a value.</p>
 
 
-<h2><a name="anchor-2"></a>Elasticsearch</h2>
+<h2>Elasticsearch</h2>
 
 <p>The Elasticseach integration has been improved. More fields are indexed, following the feebdack of first usecases. Furthermore, the documents are now fetched directly from the Elasticsearch index, instead of only fetching the reference then loading the document from the database. This saves many database queries in the result set construction and thus improves peformances.</p>
 
-<h2><a name="anchor-3"></a>Business Days Management</h2>
+<h2>Business Days Management</h2>
 
 <p>A plugin implemented at first for a customer project has been generically re-branded as it can be useful in many situations: "Business Days Management" module allows to compute a date given a delay and the list of holidays for the year. The delay will be added to the start date without counting the week ends and those holidays. See the <a href= "https://github.com/nuxeo/nuxeo-business-days-management" alt="_blank"> nuxeo-business-day-management GitHub repository</a>, we will come up soon with a post around this topic.</p>
 
- <h2><a name="anchor-4"></a>Generic Video Class Converter</h2>
+ <h2>Generic Video Class Converter</h2>
 
 <p>Thanks to this new Video converter, you can add new video conversion formats without having to write custom Java classes. A sample contribution of a new video converter would be:</p>
 <div class="embededCode"><pre>
@@ -107,13 +107,13 @@ Thumbnail: This one adds url of the Thumbnail Picture to the response. You can u
 </pre>
 </div>
 
- <h2><a name="anchor-5"></a>SCIM 1.1 Implementation</h2>
+ <h2>SCIM 1.1 Implementation</h2>
 A <a href="https://github.com/tiry/nuxeo-scim-server">new scim-server plugin</a> provides a RESTFUL implementation of <a href="http://www.simplecloud.info/">SCIM 1.1</a> interface, that allows to provision users and groups using a commonly accepted API. This API is used for instance by third party IDMs like Okta.
 
- <h2><a name="anchor-6"></a>Okta SSO</h2>
+ <h2>Okta SSO</h2>
 A <a href="https://github.com/nuxeo/nuxeo-platform-login/tree/feature-NXP-14596-Okta-integration/nuxeo-platform-login-okta">new login-okta plugin</a> allows to use Okta IDP for managing users and authentication.
 
- <h2><a name="anchor-7"></a>Duo Web Two Factors authentication plugin</h2>
+ <h2>Duo Web Two Factors authentication plugin</h2>
 A <a href="https://github.com/nuxeo/marketplace-duoweb-authentication">new duoweb-authentication plugin</a> allows to set up a two factors authentication for Nuxeo using Duo Web online sercices.
   </div>
 </div>

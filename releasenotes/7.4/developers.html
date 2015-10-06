@@ -53,19 +53,17 @@
                 <div id="welcome">
                     <div style="clear: both;"></div>
                     <h1 style="margin-left: -0.5em !important;">For Developers</h1>
-                    <h2><a name ="anchor-0"></a>Data Visualization</h2>
+                    <h2>Data Visualization</h2>
                     <p>A set of elements (custom HTML tags) has been implemented for fetching aggregated data on the workflows, the repository and the audit. Combined with graphical elements (like Google Chart or Chart.js libraries) they allow to build meaningful business dashboards very quickly.</p>
-                    <p>
-                    Ex:
-                    The one below allows to get arrays of information on data stored in documents of the repository (of type Insurance Claim).
+                    <p>Ex: The one below allows to get arrays of information on data stored in documents of the repository (of type Insurance Claim).</p>
                     <div class="embededCode">
                         &lt;nuxeo-repository-data ecm-primary-type=&quot;InsuranceClaim&quot;<br/>
                         where=&quot;[[_incidentBetween(startDate, endDate)]]&quot;<br/>
                         grouped-by=&quot;incl:incident_us_state&quot;<br/>
                         data=&quot;{{kindPerState}}&quot;&gt;<br/>
                         &lt;/nuxeo-repository-data&gt;<br/>
-                    </div></p>
-                    <p> The one below fetches aggregated information on the TravelExpenseValidation workflow.
+                    </div>
+                    <p> The one below fetches aggregated information on the TravelExpenseValidation workflow.</p>
                     <div class="embededCode">
                         &lt;nuxeo-workflow-data workflow=&quot;TravelExpenseValidation&quot;<br/>
                         task=&quot;wf.travelExpenses.create&quot;<br/>
@@ -77,40 +75,31 @@
                         &lt;/nuxeo-workflow-data&gt;<br/>
                     </div>
 
-                    </p>
                     <p>More information can be found in the <a href ="https://doc.nuxeo.com/x/WZCRAQ" target="blank">Nuxeo Data Visualization documentation</a>.</p>
-                    <h2><a name ="anchor-1"></a>Asynchronous Conversions</h2>
-                    <p>The Conversion service has been improved to handle asynchronous conversions. This new feature has also been exposed on the REST API, with new endpoints. Launch an asynchronous conversion by doing a POST on the @convert adapter, with the parameter async to true:
-                    <div class="embededCode">POST http://localhost:8080/nuxeo/api/v1/path/to/file/@convert?async=true</div></p>
-                    <p>
-                    This returns a JSON object with the following data:
+                    <h2>Asynchronous Conversions</h2>
+                    <p>The Conversion service has been improved to handle asynchronous conversions. This new feature has also been exposed on the REST API, with new endpoints. Launch an asynchronous conversion by doing a POST on the @convert adapter, with the parameter async to true:</p>
+                    <div class="embededCode">POST http://localhost:8080/nuxeo/api/v1/path/to/file/@convert?async=true</div>
+                    <p>This returns a JSON object with the following data:</p>
                     <div class="embededCode">{
                         "entity-type": "conversionScheduled",
                         "conversionId": "id",
                         "pollingURL": "http://localhost:8080/nuxeo/api/v1/conversion/id/poll"
                     }</div>
-                    </p>
-                    <P>
-                    The new endpoint available to poll and get the result of a conversion:
+                    <p>The new endpoint available to poll and get the result of a conversion:</p>
                     <div class="embededCode">
                         GET http://localhost:8080/nuxeo/api/v1/conversion/id/poll
                     </div>
-                    </P>
-                    <p>
-                    For conversion not completed, it returns the status of the conversion with a 200 HTTP code:
+                    <p>For conversion not completed, it returns the status of the conversion with a 200 HTTP code:</p>
                     <div class="embededCode">
                         {
                         "entity-type": "conversionStatus",
                         "conversionId": "id",
                         "status": "running" // scheduled, completed
                     }</div>
-                    </p>
-                    <p>
-                    For conversion completed, it returns the result URL in the Location header with a 303 HTTP code.
+                    <p>For conversion completed, it returns the result URL in the Location header with a 303 HTTP code.</p>
                     <div class="embededCode">GET http://localhost:8080/nuxeo/api/v1/conversion/id/result</div>
-                    </p>
                     <p>This returns the result Blob of the conversion if any, returns 404 if there is no conversion / no result yet for the conversion.</p>
-                    <h2><a name="anchor-2"></a>Upload by Chunks</h2>
+                    <h2>Upload by Chunks</h2>
                     <p>The batch upload REST API has been improved to allow:</p>
                     <ul><li>Batch initialization</li>
                     <li> File upload in chunks</li>
@@ -128,8 +117,7 @@
             <li>Drag and drop</li>
             <li>Bulk import</li>
             <li>JS client</li></ul>
-            </p>
-            <h2><a name="anchor-3"></a>Elasticsearch Passthrough: Audit Index and Contribuable Filters</h2>
+            <h2>Elasticsearch Passthrough: Audit Index and Contribuable Filters</h2>
             <p>The Elasticsearch API passthrough now allows to hit different indexes, like the audit one. Also, an extension point has been added for being able to plug different logics of filtering depending on the index name that is hit. For instance for the "workflow" index, a logic has been added for returning only audit events that are related to the workflow instances for which the workflow model is one on which the user has the permission "Data Visualization". Here is an exemple of such a contribution:</p>
             <div class="embededCode">
                 &lt;?xml version=&quot;1.0&quot;?&gt;<br/>
@@ -144,25 +132,25 @@
             </div>
             <p>More information on the <a href="https://doc.nuxeo.com/x/5Y_RAQ" target="_blank">Nuxeo Elasticsearch Passthrough documentation</a>.
             </p>
-            <h2><a name="anchor-4"></a>Batch Manager Uses the Transiant Store</h2><p>Now the Batch Manager relies on the Transient Store to allow several implementations among which the Redis one that is cluster aware.</p>
+            <h2>Batch Manager Uses the Transiant Store</h2><p>Now the Batch Manager relies on the Transient Store to allow several implementations among which the Redis one that is cluster aware.</p>
             <h2>
             Theme Removal and Styling Methods Evolutions
             </h2>
-            <h3><a name="anchor-5"></a>Former Theme Framework has been Removed</h3>
+            <h3>Former Theme Framework has been Removed</h3>
             <p>
             The page layout is now relying on a standard XHTML page instead of an XML contribution to Nuxeo runtime extension points. <br/>JavaScript and CSS resources to be presented on the page are now served by a wro4j servlet (<a href="http://wro4j.github.io/wro4j/" target="_blank">http://wro4j.github.io/wro4j/</a>).
             This allows to use standard ways of managing these resources, and eases up style customization through Studio, thanks to standard CSS cascading features.<br/>
             Also, the favicon can now be customized by flavor (like the logo already was).<br/>
             <a href="https://doc.nuxeo.com/x/N4AO" target="_blank">Updated documentation</a> and <a href="https://doc.nuxeo.com/x/toORAQ" target="_blank">migration instructions</a> are available. </p>
-            <h3><a name="anchor-6"></a>From .css to Sass .scss
+            <h3>From .css to Sass .scss
             </h3>
             <p>The styles framework is now using Sass. Thanks to this major evolution of Nuxeo's styles framework, the styles will be updated in the next versions of the product to have a cleaner structure, a neat logic, and have a better maintenability. The variables customizable by Studio are contained in one file, default_variable.scss. The old variables used by the Theme engine are now obsolete and will be moved to theme-webapp-compat.
             </p>
-            <h3><a name="anchor-7"></a>DIV Instead of Tables</h3>
+            <h3>DIV Instead of Tables</h3>
             <p>
             The container widget used in Nuxeo Studio has been lightened and displays now a div instead of a table on some cases. The main left column is now independant from the main area, allowing user to scroll only in the required area.</p>
             <h2>ACLs and Security Framework</h2>
-            <h3><a name ="anchor-8"></a> New Methods on Java ACL Object</h3>
+            <h3> New Methods on Java ACL Object</h3>
             <p>
             New methods were added on ACL object:</p>
             <ul>
@@ -175,11 +163,11 @@
             <li>any other ACL before local and inherited</li>
         </ul>
 
-        <h3><a name="anchor-9"></a>New Content Enricher: Allowed Permissions </h3>
+        <h3>New Content Enricher: Allowed Permissions </h3>
         <p>A new enricher "AllowedPermissions" allows to fetch accepted UI Permissions for the given document according to the <a target="alt" href="http://explorer.nuxeo.com/nuxeo/site/distribution/current/viewExtensionPoint/org.nuxeo.ecm.core.security.SecurityService--permissionsVisibility">permission</a> extension point.
         </p>
-        <h3><a name="anchor-10"></a>File Download Security Policy</h3>
-        <p>In addition to the permissions applying to a document, which restrict access to a document as a whole, it's now possible to specify more fine-grained permissions to disallow the download of some file attachments. To additionally restrict the download of a given blob inside a document, you can contribute to the following extension point:
+        <h3>File Download Security Policy</h3>
+        <p>In addition to the permissions applying to a document, which restrict access to a document as a whole, it's now possible to specify more fine-grained permissions to disallow the download of some file attachments. To additionally restrict the download of a given blob inside a document, you can contribute to the following extension point:</p>
         <div class="embededCode">
             &lt;extension target=&quot;org.nuxeo.ecm.core.io.download.DownloadService&quot; point=&quot;permissions&quot;&gt;<br/>
             &lt;permission name=&quot;myperm&quot;&gt;<br/>
@@ -193,15 +181,15 @@
             &lt;/script&gt;<br/>
             &lt;/permission&gt;<br/>
             &lt;/extension&gt;<br/>
-        </div></p><p>
+        </div><p>
         In the JavaScript context, access is provided when relevant to the Document, the XPath where the file is stored, the rendition name, the current user, the blob itself, and more contextual information.</p>
-        <h2><a name="anchor-11"></a>Nuxeo Elements</h2>
+        <h2>Nuxeo Elements</h2>
         <p>
         The Nuxeo team has started implementing some Web Components, i.e. custom HTML elements that you can include in your HTML page, wherever that one is hosted. This set of custom elements allows to fetch data from the Nuxeo Platform: documents, directories, users. It also allows to easily execute some rest calls as well as some Nuxeo Automation operations calls. Those elements are a way to build an integration very quickly between a portal and Nuxeo Plaform, or any tierce application and Nuxeo Plaform. That's what was used for implementing the Salesforce connector. See <a href="http://nuxeo.github.io/nuxeo-elements/components/nuxeo-elements/" target="blank">the list of existing elements</a> as well as a <a href="https://doc.nuxeo.com/x/yJCRAQ" target="blank">quick start</a>.</p>
-        <h2><a name="anchor-12"></a>Runtime Configuration Service</h2>
+        <h2>Runtime Configuration Service</h2>
         <p>A new extension point has been added to define configuration properties to be checked by application code.
         This allows to tweak some of the application behaviours thanks to standard runtime contributions, in particular from a Studio project.
-        Here is a sample contribution to use ajaxified tabs:
+        Here is a sample contribution to use ajaxified tabs:</p>
         <div class="embededCode">
             &lt;component name=&quot;org.nuxeo.ecm.platform.ajaxified.tabs&quot;&gt;<br/>
             &lt;extension target=&quot;org.nuxeo.runtime.ConfigurationService&quot;<br/>
@@ -210,11 +198,10 @@
             &lt;/extension&gt;<br/>
             &lt;/component&gt;<br/>
         </div>
-        </p>
         <p>
         Those configuration properties aim at being at application level while the nuxeo.conf properties will be assigned to deployment level.</p>
         <h2> New and Enriched Audit Events</h2>
-        <h3><a name="anchor-13"></a>Search Events</h3>
+        <h3>Search Events</h3>
         A new parameter on the page provider allows to enable audit on page providers, thanks to an implementation in the AbstractPageProvider class that logs:
         <ul><li>The PageProvider name</li>
         <li>The PageProvider class</li>
@@ -230,28 +217,28 @@
     <div class="embededCode">
         nuxeo.pageprovider.track
     </div>
-    <h3><a name="anchor-14"></a>Workflow Events</h3>
+    <h3>Workflow Events</h3>
     <p>Information logged on workflow events has been greatly extended and more events are logged. You can find the details in the <a href="https://doc.nuxeo.com/x/tY_RAQ" target="_blank">documentation</a>.</p>
     <h2>Automation Scripting: Documents are Returned as DocumentWrappers</h2>
     <p>Documents (input, output, etc.) are now DocumentWrappers like in Automation Chains, allowing to use same sytnax such as Document["dc:title"].</p>
-    <h2><a name="anchor-15"></a>New Insert Zone on Content Views</h2>
+    <h2>New Insert Zone on Content Views</h2>
     <p>
     A new include zone, "bottom_buttons", has been added on content views. It can be easily overriden by JSF Templating composition.</p>
-    <h2><a name="anchor-16"></a>New API to Compare Pictures</h2>
+    <h2>New API to Compare Pictures</h2>
     <p>The org.nuxeo.diff.pictures.DiffPictures class allows to compare two pictures (must be same format and same dimensions), either from two Documents or two Blobs, and returns the image (as Blob) of the difference. Parameters can be used to setup the fuzz and the highlight colors. It requires ImageMagick.</p>
-    <h2><a name="anchor-17"></a>Use \ to escape wildcards in NXQL LIKE</h2>
-    <p>Possibility has been added to escape _ and % wildcards using a \ in a LIKE query:
+    <h2>Use \ to escape wildcards in NXQL LIKE</h2>
+    <p>Possibility has been added to escape _ and % wildcards using a \ in a LIKE query:</p>
     <div class="embededCode">
         SELECT ... WHERE dc:title LIKE 'foo\_'
-    </div></p><p>
+    </div><p>
     This will only match foo_ but not for instance foo1. Without the \ it matches foo_ and foo1. This is now true for all backends that make use of NXQL Queries: VCS, MongoDB, Elasticsearch.</p>
 
-    <h2><a name="anchor-18"></a>No Search On First Display</h2>
+    <h2>No Search On First Display</h2>
     <p>
     When accessing the Search tab for the first time, the rendering of results trigger a search that presents all documents.
     Some users would rather wait for the search filter form to be submitted at least once for this search to be triggered.
     This can be handled by detecting if user has already clicked on "Filter" at least once. Display of results should also be adapted when search has not been performed yet.
-    The content view accepts a boolean property for this behaviour, as well as a customizable sentence to display when no result is shown because of this setting:
+    The content view accepts a boolean property for this behaviour, as well as a customizable sentence to display when no result is shown because of this setting:</p>
     <div class="embededCode">
         &lt;component name=&quot;org.nuxeo.ecm.platform.ajaxified.tabs&quot;&gt;<br/>
         &lt;extension target=&quot;org.nuxeo.runtime.ConfigurationService&quot;<br/>
@@ -260,18 +247,17 @@
         &lt;/extension&gt;<br/>
         &lt;/component&gt;<br/>
     </div>
-    </p><p>
-    New Java API can be used to adapt display:
+    <p>New Java API can be used to adapt display:</p>
     <ul> <li>ContentView#isWaitForExecution()</li><li> ContentView#isExecuted()</li><li> ContentView#getWaitForExecutionSentence() </li></ul>
-    </p>
+
     <h2>CMIS</h2>
-    <h3><a name="anchor-19"></a> ETag for CMIS Renditions</h3>
+    <h3> ETag for CMIS Renditions</h3>
     <p>
     CMIS renditions now support an ETag like regular CMIS streams. </p>
-    <h3><a name="anchor-20"></a>Flag to Allow Computation of CMIS Renditions Info</h3>
+    <h3>Flag to Allow Computation of CMIS Renditions Info</h3>
     <p>
     Set framework property org.nuxeo.cmis.computeRenditionInfo to true to have <b>all</b> renditions return a width, height, length and MIME type.</p>
-    <h2><a name="anchor-21"></a>Template Rendering Samples</h2>
+    <h2>Template Rendering Samples</h2>
     <p>Installing <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-template-rendering" target="_blank">Nuxeo Template Rendering</a> package won't install samples anymore, which avoids you to have undesired documents in the repository. Updated sample documents are now available in a dedicated addon, <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-template-rendering-samples" target="_blank">NUxeo Template Rendering Samples</a>.
     </p>
     <h2>Cluster Invalidator Made Pluggable</h2>
@@ -280,17 +266,15 @@
         &lt;clusterInvalidatorClass&gt;some.class.name&lt;/clusterInvalidatorClass&gt;
     </div>
     <p>Here the class implements org.nuxeo.ecm.core.storage.sql.ClusterInvalidator. The default is org.nuxeo.ecm.core.storage.sql.jdbc.JDBCClusterInvalidator.</p>
-    <h2><a name="anchor-22"></a>Core-IO tooling For Transtypage</h2>
-    <p>
-    Core-io can now be used to handle a migration between two Nuxeo repositories where there are some changes in the doc types or other kind of transformations. Several "transformers" have been added:
+    <h2>Core-IO tooling For Transtypage</h2>
+    <p>Core-io can now be used to handle a migration between two Nuxeo repositories where there are some changes in the doc types or other kind of transformations. Several "transformers" have been added:</p>
     <ul><li>DoctypeToFacetTranslator(String docType, String newDocType, String facet)</li>
     <li>FacetRemover(String docType, String facet)</li>
     <li>FieldMapper(String srcSchemaName, String srcField, String dstSchemaName, String dstField)</li>
     <li>SchemaRemover(String docType, String schema)</li>
     <li>SchemaRenamer(String srcSchema, String dstSchema, String dstPrefix).</li>
-</ul></p>
-<p>
-Ex:
+</ul>
+<p>Ex:</p>
 <div class="embededCode">final ExtensibleDocumentTreeReader reader = new ExtensibleDocumentTreeReader(root.getCoreSession(), root); <br/>
     XMLDirectoryWriter writer = new XMLDirectoryWriter(destination);<br/>
     writer.setSkipBlobs(skipBlobs);<br/>
@@ -309,7 +293,6 @@ Ex:
     pipe.addTransformer(new SchemaRemover(null, "deprecated"));<br/>
     pipe.addTransformer(new SchemaRenamer("invoice", "invoiceNew", "iv"));<br/>
 pipe.run();</div>
-</p>
 </div>
 </div>
 <!-- JS

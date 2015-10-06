@@ -54,7 +54,7 @@
                     <div style="clear: both;"></div>
                     <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
                     <h2>
-                    <a name="anchor-0"></a>
+
                    Changing Tomcat Admin Host</h2>
                    <p>
                     A <a href="https://doc.nuxeo.com/x/QQA7" target="_blank">new parameter in nuxeo.conf</a> allows you to customize the address for which the server waits for a shutdown command. 
@@ -63,7 +63,7 @@
                     </div>
                     </p>
 
-                    <h2><a name="anchor-1"></a>VCS Full Text Search Enablement and Configuration</h2>
+                    <h2>VCS Full Text Search Enablement and Configuration</h2>
                     <p>Most of the production set up will now rely on Elasticsearch for full-text search. In that case you can disable the VCS full-text index computation by setting the <a href="https://doc.nuxeo.com/x/QQA7" target="_blank">following flag set</a> to true:
                         <div class="embededCode"><i>nuxeo.vcs.fulltext.search.disabled</i></div></p>
                         <p>
@@ -71,11 +71,11 @@
                          Alternatively, if you do want to use it, it is now easy to configure the analyzer language thanks to the following property: <div class="embededCode">nuxeo.vcs.fulltext.analyzer.language</div> 
                     </p>
                     <h2>
-                    <a name="anchor-2"></a>
+
                     Elasticsearch Server Version Recommended is Now Elasticsearch 1.5.2
                     </h2>
                     <h2>
-                    <a name="anchor-3"></a>
+
                     Reindexing Optimization and Reindexing on Startup
                     </h2>
                     <p>Recursive indexing has been made much quicker thanks to a change in the algorithm. We now propose a flag for automatizing it on startup when the index is empty:
@@ -84,7 +84,7 @@
 
 
                     <h2>
-                    <a name="anchor-4"></a>
+
                     Audit is Stored in Elasticsearch
                     </h2>
                     <p>

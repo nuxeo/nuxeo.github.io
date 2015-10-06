@@ -39,6 +39,7 @@
 </style>
 <script src="../../javascripts/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+<script src="../../javascripts/index.js"></script>
 <!-- Favicons
     ================================================== -->
 <link rel="shortcut icon" href="images/favicon.ico">
@@ -61,8 +62,11 @@
       <div class="message">
         <p>
           Nuxeo Platform 7.4 is now
-          <a href="http://nuxeo.github.io/downloads.html">available for download</a>. This is the fourth Fast Track for the LTS 2015 cycle using the
-          <a href="http://www.nuxeo.com/blog/new-version-names-numbers-for-nuxeo-lts/"> Nuxeo Platform versioning scheme</a>.
+          <a href="http://nuxeo.github.io/downloads.html">available for download</a>
+          . This is the fourth Fast Track for the LTS 2015 cycle using the
+          <a href="http://www.nuxeo.com/blog/new-version-names-numbers-for-nuxeo-lts/"> Nuxeo Platform versioning
+            scheme</a>
+          .
         </p>
       </div>
 
@@ -72,69 +76,11 @@
 
       <ul id="features">
         <li><a href="users.html">For Users</a>
-          <ul class="second-label">
-            <li><a href="users.html#anchor-0">ACLs</a></li>
-            <li><a href="users.html#anchor-1">Drive Edit Link on Documents Listings</a></li>
-            <li><a href="users.html#anchor-2">Data Visualization</a></li>
-            <li><a href="users.html#anchor-3">Quick Search Now Uses Elasticsearch</a></li>
-            <li><a href="users.html#anchor-4">Better Management of Accents</a></li>
-            <li><a href="users.html#anchor-5">Technical Metadata Removed From Index</a></li>
-            <li><a href="users.html#anchor-6">Search Events Logged</a></li>
-            <li><a href="users.html#anchor-7">Do Not Display Search Result First</a></li>
-            <li><a href="users.html#anchor-8">Look'n Feel Refresh</a></li>
-            <li><a href="users.html#anchor-9">Labels Have Been Capitalized</a></li>
-            <li><a href="users.html#anchor-10">Unpublish a Media from Nuxeo Platform Web UI</a></li>
-            <li><a href="users.html#anchor-11">Compare Images</a></li>
-            <li><a href="users.html#anchor-12">Preview Screenshot and Storyboard Generation Can Be Configured</a></li>
-            <li><a href="users.html#anchor-13">Nuxeo For Salesforce</a></li>
-            <li><a href="users.html#anchor-14">Default Filename for Renditions</a></li>
-            <li><a href="users.html#anchor-15">New Samples for Template Rendering</a></li>
-            <li><a href="users.html#anchor-16">No More Limit CMIS Upload</a></li>
-            <li><a href="users.html#anchor-17">Invite a User With Email Only</a></li>
-          </ul></li>
-
+          <ul class="second-label" id="users"></ul></li>
         <li><a href="administrators.html">For Administrators</a>
-          <ul class="second-label">
-          <li><a href="administrators.html#anchor-0">Redirect Downloads to a Content Delivery Network</a></li>
-            <li><a href="administrators.html#anchor-1">nuxeoctl --strict start</a></li>
-            <li><a href="administrators.html#anchor-2">nuxeo.conf password encryption</a></li>
-            <li><a href="administrators.html#anchor-3">Workflow Optimisations</a></li>
-            <li><a href="administrators.html#anchor-4">Live Connect Configuration Improvements</a></li>
-            <li><a href="administrators.html#anchor-5">Groups Defined Both on SQL Locally and in LDAP Directory</a></li>
-            <li><a href="administrators.html#anchor-6">Annotations Make Use Of VCS Relation Graph</a></li>
-            <li><a href="administrators.html#anchor-7">Redis Implementation of Cluster Invalidation Logic</a></li>
-            <li><a href="administrators.html#anchor-8">Redis Based Implementation Of The UIDSequencer</a></li>
-            <li><a href="administrators.html#anchor-9">Redis Queue Optimisation</a></li>
-            <li><a href="administrators.html#anchor-10">Support of LibreOffice 5</a></li>
-            <li><a href="administrators.html#anchor-11">Default SAML Binding</a></li>
-          </ul></li>
+          <ul class="second-label" id="administrators"></ul></li>
         <li><a href="developers.html">For Developers</a>
-          <ul class="second-label">
-            <li><a href="developers.html#anchor-0">Data Visualization</a></li>
-            <li><a href="developers.html#anchor-1">Asynchroneous Conversion</a></li>
-            <li><a href="developers.html#anchor-2">Upload by Chunks</a></li>
-            <li><a href="developers.html#anchor-3">Elasticsearch Passthrough: Audit Index and Contribuable Filters</a></li>
-            <li><a href="developers.html#anchor-4">Batchmanager Uses the Transiantstore</a></li>
-            <li><a href="developers.html#anchor-5">Former Theme Framework has been Removed</a></li>
-            <li><a href="developers.html#anchor-6">From .css to Sass .scss</a></li>
-            <li><a href="developers.html#anchor-7">DIV Instead of Tables</a></li>
-            <li><a href="developers.html#anchor-8">New Methods on Java ACL Object</a></li>
-            <li><a href="developers.html#anchor-9">New Content Enricher: Allowed Permissions</a></li>
-            <li><a href="developers.html#anchor-10">File Download Security Policy</a></li>
-            <li><a href="developers.html#anchor-11">Nuxeo Elements</a></li>
-            <li><a href="developers.html#anchor-12">Runtime Configuration Service</a></li>
-            <li><a href="developers.html#anchor-13">Search Events</a></li>
-            <li><a href="developers.html#anchor-14">Workflow Events</a></li>
-            <li><a href="developers.html#anchor-15">New Insert Zone on Content Views</a></li>
-            <li><a href="developers.html#anchor-16">New API to Compare Pictures</a></li>
-            <li><a href="developers.html#anchor-17">Use \ to escape wildcards in NXQL LIKE</a></li>
-            <li><a href="developers.html#anchor-18">No Search On First Display</a></li>
-            <li><a href="developers.html#anchor-19">ETag for CMIS Renditions</a></li>
-            <li><a href="developers.html#anchor-20">Flag to Allow Computation of CMIS Renditions Info</a></li>
-            <li><a href="developers.html#anchor-21">Template Rendering Samples</a></li>
-            <li><a href="developers.html#anchor-22">Cluster Invalidator Made Pluggable</a></li>
-
-          </ul></li>
+          <ul class="second-label" id="developers"></ul></li>
         <li><a href="upgrade_notes.html">Upgrade Notes</a></li>
         <li><a href="issues.html">Known Issues</a></li>
       </ul>
@@ -146,5 +92,10 @@
     ================================================== -->
   <script src="../../javascripts/strftime.js"></script>
   <script src="../../javascripts/tabs.js"></script>
+  <script>
+            index("users.html", "#users");
+            index("administrators.html", "#administrators");
+            index("developers.html", "#developers");
+        </script>
 </body>
 </html>

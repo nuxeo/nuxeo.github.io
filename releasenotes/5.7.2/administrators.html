@@ -60,11 +60,11 @@ td.parameter {width:36%;}
 
 <h1 style="margin-left:-0.5em !important;">For Administrators</h1>
 
-  <h2><a name="anchor-0">Monitoring</a></h2>
+  <h2>Monitoring</a></h2>
     <p>Upgrade to the latest <a href="https://jira.nuxeo.com/browse/NXP-11995">metrics codahale lib</a> providing more metrics and fixes. Also note that metrics names have changed. Read more in our <a href="http://doc.nuxeo.com/x/gBDF">documentation</a>.</p>
 <p><img class="lightboxed" src="./nuxeo-jmx-metrics.png"/></p>
 
-  <h2><a name="anchor-1">Multi-Tabs Navigation</a></h2>
+  <h2>Multi-Tabs Navigation</a></h2>
   <p>Nuxeo now handles multiple-tabs navigation without having a "cannot restore view" error. A new StateManager has been introduced in order to store ViewStates per conversation. In other words, when a user navigates to a new tab, a new conversation is started and its view states are saved separately. If the user comes back to an old tab, he will not have "view expired" exceptions anymore.</p>
   <ul>
     <li>By default, 4 conversation states are saved following a LRU policy (Least Recently Used).</li>
@@ -74,7 +74,7 @@ td.parameter {width:36%;}
   <p>You can adapt these settings using the apropriate parameters in nuxeo.conf.</p>
 
 
-<h2><a name="anchor-2">Nuxeo.conf New Parameters</a></h2>
+<h2>Nuxeo.conf New Parameters</a></h2>
 <table class="release">
 <thead>
 <tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr>

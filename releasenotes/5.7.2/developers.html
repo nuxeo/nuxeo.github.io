@@ -57,7 +57,7 @@
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
 
-<h2><a name="anchor-0">Content Automation</a></h2>
+<h2>Content Automation</a></h2>
 <p>We made a lot of progress on the Content Automation API.</p>
 <p>It's possible to contribute a chain into another chain -> Composite Automation Chain</p>
 <p>It's possible to add parameters to a chain</p>
@@ -74,7 +74,7 @@ push : BusinessObject (POJO) -----JSON---> DocumentModelAdapter ----> DocumentMo
 
 </pre></div>
 
-<h2><a name="anchor-1">Document Oriented REST API</a></h2>
+<h2>Document Oriented REST API</a></h2>
 <p>We have a new <a href="http://doc.nuxeo.com/x/WIvZ">document oriented API</a> for CRUD operation.</p>
 
 <h3>Create</h3>
@@ -136,26 +136,26 @@ push : BusinessObject (POJO) -----JSON---> DocumentModelAdapter ----> DocumentMo
 }
 </pre></div>
 
-<h2><a name="anchor-2">Richfaces</a></h2>
+<h2>Richfaces</a></h2>
 
 <p>Nuxeo uses a custom version of Richfaces based on 3.3.1 GA, This custom version of Richfaces is now available on <a href="https://github.com/nuxeo/richfaces">GitHub</a> with all Nuxeo's patches.</p>
 
-<h2><a name="anchor-3">CMIS</a></h2>
+<h2>CMIS</a></h2>
 
 <p>We've upgraded OpenCMIS to 0.9.0 . This gives us the new CMIS 1.1 browser bindings but we haven't finished implementing all the new features yet.</p>
 
-<h2><a name="anchor-4">Content Views</a></h2>
+<h2>Content Views</a></h2>
 <p>On Nuxeo side, filter can be shown unfolded by default, and some content view templates have been redefined to ease the customization.</p>
 <p>On Studio side, the "filter unfolded" option is presented for 5.7.2, and events as well as the page provider class and properties can now be configured also.</p>
 
-<h2><a name="anchor-5">CORS support</a></h2>
+<h2>CORS support</a></h2>
 <p>If you do cross-domain requests from any JavaScript client to access WebEngine resources or Automation APIs, there's a chance that your browser forbids it. <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> allows you to communicate with Nuxeo from another domain using XMLHttpRequests.</p>
 
 <p>We've added <a href="http://doc.nuxeo.com/x/vIvZ">a new extension point</a> based on Vladimir Dzhuvinov's universal CORS filter, which allows you to configure on which URL cross-origin headers are needed.</p>
-<h2><a name="anchor-6">Scan Importer</a></h2>
+<h2>Scan Importer</a></h2>
 <p>The scan importer has been improved. You can choose if you want to create the import document container each time you launch an import. You can also choose to update an existing document instead of creating a new one.</p>
 
-<h2><a name="anchor-7">New Operation</a></h2>
+<h2>New Operation</a></h2>
 
 <h3>Get a Directory Projection</h3>
 <p><strong>Category:</strong> Services</p>
@@ -175,7 +175,7 @@ lastName=doe
 <p>Run an operation in a new Transaction for each element from the list defined by the 'list' paramter. The 'list' parameter is pointing to context variable that represent the list which will be iterated. The 'item' parameter represent the name of the context varible which will point to the current element in the list at each iteration. You can use the 'isolate' parameter to specify whether or not the evalution context is the same as the parent context or a copy of it. If the isolate is 'true' then a copy of the current contetx is used and so that modifications in this context will not affect the parent context. Any input is accepted. The input is returned back as output when operation terminate. </p>
 
 
-<h2><a name="anchor-8">Login Page</a></h2>
+<h2>Login Page</a></h2>
 
 <p>The login page can now be configured via an extension point, making it easier to upgrade when the login page is customized, and benefit from new features, like <a href="http://www.nuxeo.com/blog/development/2013/03/contributed-openid-authentication-nelson-silva/">OpenID authentication</a> provided by Nelson Silva.</p>
 
@@ -197,7 +197,7 @@ lastName=doe
 &lt;/extension&gt;
 </pre></div>
 
-<h2><a name="anchor-9">Long Running Listener</a></h2>
+<h2>Long Running Listener</a></h2>
 <p>You can now extend a new abstract class called <strong>AbstractLongRunningListener</strong>. Its purpose is to help building an Asynchronous listeners that will handle a long running process. </p>
 <p>By default, PostCommitEventListener is executed in a Worker that will take care of starting/comitting the transaction.</p>
 <p>If the listener requires a long processing, this will create long transactions which should be avoided. To avoid this behavior, this base class split the processing in 3 steps:</p>
@@ -208,7 +208,7 @@ lastName=doe
 </ul>
 <p>To manage sharing between the 3 steps, a simple Map is provided.</p>
 
-<h2><a name="anchor-10">Move To Tomcat 7</a></h2>
+<h2>Move To Tomcat 7</a></h2>
 <p>Tomcat has been upgraded to version 7.0.42. The main improvement is the upgrade to the Servlet 3.0 API. Take a look at the <a href="http://tomcat.apache.org/migration-7.html">details</a>. </p>
   </div>
 </div>

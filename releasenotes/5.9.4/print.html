@@ -60,11 +60,11 @@ div.breakafter {
 
     <h1 style="margin-left:-0.5em !important;">For Users</h1>
 
-    <h2><a name="anchor-0"></a>Favorites</h2>
+    <h2>Favorites</h2>
 
 <p>Users are able to pin documents. These documents are then in their "Favorites" collection, which is automatically created. When a document is pinned, the icon changes so that the user knows it is pinned. Clicking on the new icon "unpins" the document.</p>
 
-    <h2><a name="anchor-1"></a>Nuxeo Drive Auto-Update</h2>
+    <h2>Nuxeo Drive Auto-Update</h2>
 
 <p>The major enhancement to Nuxeo Drive for this new release is the automatic, silent update. This makes everything much smoother. The user will be notified when a new version is available and when it has been installed. </p>
 <p>It is now also possible to filter out some folders from the Drive desktop interface.</p>
@@ -74,7 +74,7 @@ div.breakafter {
 
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
-   <h2><a name="anchor-0"></a>Content Automation</h2>
+   <h2>Content Automation</h2>
 
 <h3>Parameterised Automation Chains and Other Productivity Improvements on Automation</h3>
 <p>Users can design automation chains with parameters, saving a great number of chains whose structure is repeated with only a few changes in operations parameters.</p>
@@ -104,7 +104,7 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 </pre></div>
 
 
-    <h2><a name="anchor-1"></a>CMIS</h2>
+    <h2>CMIS</h2>
 
 <h3>CMIS Rendition</h3>
 <p>Renditions from the RenditionService are now exposed as CMIS renditions of kind "nuxeo:rendition", with a name that's based on Rendition name. For example "nuxeo:rendition:pdf" for the "pdf" rendition.</p><p>A &lt;renditionDefinition&gt; must now define a &lt;contentType&gt; element if it wants to be exposed to CMIS.</p>
@@ -114,7 +114,7 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
 
 <div class="breakafter"></div>
 
-    <h2><a name="anchor-2"></a>Mail Folder</h2>
+    <h2>Mail Folder</h2>
 
 <p>If used extensively, the Mailbox Folder could present some performance issues. We have added some new system properties to help fine tune the IMAP configuration.</p>
 
@@ -136,7 +136,7 @@ http://localhost:8080/nuxeo/site/automation/doc?id=validateDocument
      <h1  style="margin-left:-0.5em !important;">For Administrators</h1>
 
 
-<h2><a name="anchor-0"></a>Move Packages Directory Out of the Data Directory</h2>
+<h2>Move Packages Directory Out of the Data Directory</h2>
 <p>The Marketplace packages used to be stored in the Nuxeo data directory. This is not really their place so now instead of being stored in "nxserver/data/packages/", they'll be stored in "packages/". You can also change this location using the new property "nuxeo.mp.dir".</p>
 
 

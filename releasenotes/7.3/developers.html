@@ -57,15 +57,15 @@
                             Automation
                            
                             </h2>
-                            <h3><a name="anchor-0"></a>Class Filter on Automation Scripting</h3>
+                            <h3>Class Filter on Automation Scripting</h3>
                             <p>
                                 It is no longer possible to perform Java imports from an Automation Script, as a class filter has been added to the Nashorn VM. This has been done for security and maintenance reasons.</p>
-                            <h3><a name="anchor-1"></a>Platform Functions Available in Automation Scripts 
+                            <h3>Platform Functions Available in Automation Scripts
                             </h3>
                             <p>
                             You can use Platform Functions under the Fn object like in Automation chains in Automation script, as it has been added to Nashorn context.
                         </p>
-                            <h3><a name="anchor-2"></a>Helpers Automation</h3>
+                            <h3>Helpers Automation</h3>
                             <p>
                             An extension point has been implemented to configure new function helpers to the automation module:
                            <div class="embededCode">
@@ -78,82 +78,82 @@
                                 
                              </p>
 
-                                 <h3><a name="anchor-3"></a>HTTP Helper</h3>
+                                 <h3>HTTP Helper</h3>
                                  <p>
                                  A new helper for HTTP calls as been added. It can be used to perform external services API calls right from an automation script. See <a href="https://doc.nuxeo.com/display/NXDOC/Automation+Helpers#AutomationHelpers-HTTPExamples">exemples</a> for our documentation.
                              </p>
                             <h2>
                             Elasticsearch
                             </h2>
-                                <h3><a name="anchor-4"></a>Elasticsearch API Passthrough</h3>
+                                <h3>Elasticsearch API Passthrough</h3>
                                 <p>
                                 A proxy API has been implemented on the Nuxeo Platform so you can use native Elasticsearch GET queries as documented on the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html">Elasticsearch documentation</a> website. The proxy will ensure that only those documents each end user has the right to view are returned in search query results. Thanks to this feature, Elasticsearch-skilled developers can add the Nuxeo Platform in their architecture and benefit from a secure and modular content store with an extensible content management user interface, while still implementing their front office with JavaScript ES sdk.
                             </p>
                             <h3>
-                            <a name="anchor-5"></a>
+
                            Elasticsearch Hints
                             </h3>
                             <p>Elasticsearch hints have been added to NXQL and to the page provider object. It allows you to use native Elasticsearch operators in your query when using an Elasticsearch page provider. This will help you build content applications with fuzzy search support, phrase search, using specific tokenizers (arabic, chinese, phonems), as well as run geographical queries against the repository, such as searching for all photos that where taken within a scope of 5 miles around the Brooklyn bridge. It also allows you to hit specific index fields. The Nuxeo Studio Content View feature has been updated to support the declaration of Elasticsearch hints (operator, analyzer and field). Read the following <a href="https://doc.nuxeo.com/display/NXDOC/NXQL#NXQL-ElasticsearchNXQLHints" target="_blank">documentation</a> for more information.</p>
 
                             <h2> API Evolutions</h2>
-                                <h3><a name="anchor-6"></a>File Support on Workflow API</h3>
+                                <h3>File Support on Workflow API</h3>
                                 <p>
                                 You can  now upload a file for completing a task using Workflow REST API.
                                  </p>
 
-                                <h3><a name="anchor-7"></a>Reassign and Delegate Task Endpoints</h3>
+                                <h3>Reassign and Delegate Task Endpoints</h3>
                                 <p>
                                  Workflow Rest API provides ways to reassign or delegate a given task.</p>
 
-                                <h3><a name="anchor-8"></a>Get Rendition Operation</h3>
+                                <h3>Get Rendition Operation</h3>
                                 <p>
                                 This new operation allows you to fetch a given rendition on a document in input.
                             </p>
 
-                                <h3><a name="anchor-9"></a>Conversion</h3>
+                                <h3>Conversion</h3>
                                 <p>
                                 A web adapter has been added on REST API: <em>/@blob/file:content/@convert?format=pdf</em> for getting a conversion of a binary property, given a converter or a target mime type (as parameters).
                             </p>
 
-                                <h3><a name="anchor-10"></a>Workmanager Find Method</h3>
+                                <h3>Workmanager Find Method</h3>
                                 <p>
                                 A Java method has been added on workmanager service for performing an optimized search of a given job.
                             </p>
 
-                                <h3><a name="anchor-11"></a>JSON Export of Layout and Widgets</h3>
+                                <h3>JSON Export of Layout and Widgets</h3>
                                 <p>
                                 This new API endpoint allows you to get the layout and widgets instances serialization in JSON for helping you build specific front office UIs, while leveraging the forms and data display you have declared in Nuxeo Studio.
                             </p>
                                 
 
                             <h2> UI</h2>
-                            <h3><a name="anchor-12"></a>Pluggable File Widget</h3>
+                            <h3>Pluggable File Widget</h3>
                             <p>
                                 View mode of file widget is pluggable: you can contribute actions to display new links besides the file download link.
                             </p>
-                                <h3><a name="anchor-13"></a>JavaScript List Widget</h3>
+                                <h3>JavaScript List Widget</h3>
                                 <p>
                                   A second implementation of the generic List widget is provided in JavaScript that fixes many bugs encountered on the initial implementation. This is the one used by default on Fast Track and it has been back ported as an option in 6.0.
                               </p>
 
-                                  <h3><a name="anchor-14"></a>REST Endpoint for CSS and JS Resources</h3>
+                                  <h3>REST Endpoint for CSS and JS Resources</h3>
                                   <p>
         A new endpoint is available for serving CSS and REST resources on a web page of Nuxeo Platform Web UI. This is a first step of the refactoring that will lead to the removal of the use of the legacy Theme framework.
         </p>
 
-                            <h2><a name="anchor-15"></a></a>OAuth Service Providers Extension Point</h2>
+                            <h2></a>OAuth Service Providers Extension Point</h2>
                             <p>
                                 It is possible to plug new OAuth Service providers with custom logic on parts where the protocol is not precise enough.</p>
 
 
-                                <h2><a name="anchor-16"></a>Web Components and Polymer</a></h2>
+                                <h2>Web Components and Polymer</a></h2>
                                 <p>
                                 We have started to add Polymer dependencies to the build. You will notice a new tab for managing rights on a document now appears, but it is disabled by default, as this is still a work in progress using Polymer.
                             </p>
 
 
 
-                            <h2><a name="anchor-17"></a>Removal / Deprecation</h2>    
+                            <h2>Removal / Deprecation</h2>
                                <ul>
                                  <li>OpenSocial and dependencies have been removed from build.</li>
                                  <li>CMF and dependencies have been removed from build.</li>

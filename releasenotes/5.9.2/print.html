@@ -60,17 +60,17 @@ div.breakafter {
 
     <h1 style="margin-left:-0.5em !important;">For Users</h1>
 
-    <h2><a name="anchor-0"></a>DAM Enhancement</h2>
+    <h2>DAM Enhancement</h2>
       <p>We added some minor features on DAM like enabling CSV export on DAM listing or reseting thumbnails and video conversions when updating the main file of the document.</p>
 
-    <h2><a name="anchor-1"></a>Nuxeo Drive</h2>
+    <h2>Nuxeo Drive</h2>
 
 <p>Nuxeo Drive upgrade will now be transparent. Meaning you won't have to open a terminal, delete <em>.nuxeo drive</em> folder, and then install the new version anymore. See <a href="https://jira.nuxeo.com/browse/NXP-13083">NXP-13083</a> for details.
 </p>
 <p>Binary installer for OS X and Windows are all signed. See <a href="https://jira.nuxeo.com/browse/NXP-12981">NXP-12981</a> for details.
 </p>
 
-    <h2><a name="anchor-2"></a>Suggestion widgets</h2>
+    <h2>Suggestion widgets</h2>
 <p>
 Select2-based suggestion widgets introduced in 5.7.3 received a couple of bug fixes. New widgets properties have been introduced (available in Studio):
 </p>
@@ -92,11 +92,11 @@ Select2-based suggestion widgets introduced in 5.7.3 received a couple of bug fi
      <h1  style="margin-left:-0.5em !important;">For Administrators</h1>
 
 
-    <h2><a name="anchor-0"></a>Private Marketplace Channel</h2>
+    <h2>Private Marketplace Channel</h2>
 
 <p>Users are able to upload their own marketplace packages on Connect so as to make them visible and available in the admin center. The first implementation offers a web UI for upload/update only. REST endpoints are available for upload/update and delete.</p>
 
-    <h2><a name="anchor-1"></a>New Parameters for Nuxeo.conf</h2>
+    <h2>New Parameters for Nuxeo.conf</h2>
 
 <table class="release">
 <thead>
@@ -110,7 +110,7 @@ Select2-based suggestion widgets introduced in 5.7.3 received a couple of bug fi
 <div class="breakafter"></div>
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
-   <h2><a name="anchor-0"></a>JavaScript SDK</h2>
+   <h2>JavaScript SDK</h2>
 
 <p>The <a href="https://github.com/nuxeo/nuxeo-js-client">JavaScript Client SDK</a> is fully part of the Nuxeo Platform. Two implementations are provided. One uses node.js primitives, one is based on JQuery XHR. The client exposes:</p>
 <ul><li>Wrappers for resources oriented REST API (at least documents)</li>
@@ -120,16 +120,16 @@ Select2-based suggestion widgets introduced in 5.7.3 received a couple of bug fi
 <li>Basic and token based authentications.</li></ul>
 <p>Client is packaged using bower for the JQuery implementation, and NPM for the node implementation. Clients are under continuous integration using phantom.js.</p>
 
-    <h2><a name="anchor-1"></a>Migration to Maven 3</h2>
+    <h2>Migration to Maven 3</h2>
 <p>As of this new release, Nuxuo Platform is built using Maven 3. This has been made possible because we have written a new version of our assembly plugin compatible with Maven3. See <a href="https://jira.nuxeo.com/browse/NXP-13555">NXP-13555</a>.</p>
 
-    <h2><a name="anchor-2"></a>Token Based Authentication Management & OAuth 2.0 Support</h2>
+    <h2>Token Based Authentication Management & OAuth 2.0 Support</h2>
 
 <p>Exploding demand of API use makes it necessary to provide easy means for developers to manage authentication of the applications they develop, let it be on JavaScript based app, iOS, Python (with Drive)… The token based authentication service, implemented initially for the requirements of Nuxeo Drive is extracted and generalized, made available to the Nuxeo Platform developers. In the same time, OAuth 2.0 support is added, so as to provide as an option a very secured way of handling the authentication process.</p>
 
 
 
-    <h2><a name="anchor-3"></a>JSF State and HTTP Session Debug</h2>
+    <h2>JSF State and HTTP Session Debug</h2>
 <p>We have added new debugging tools to inspect the JSF state and the HTTP session.</p>
 <ul>
 	<li>
@@ -138,11 +138,11 @@ Select2-based suggestion widgets introduced in 5.7.3 received a couple of bug fi
 </ul>
 <p>This module provides a WebEngine access to inspect the JSF state of a faces view. It is useful to figure out the size of the http session and the complexity of implemented view.</p>
 
-    <h2><a name="anchor-4"></a>Java 8 Support</h2>
+    <h2>Java 8 Support</h2>
 <p>This new release has been tested with Java 8. You can see the list of changes on <a href="https://jira.nuxeo.com/browse/NXP-13570">NXP-13570</a>.
 </p>
 <div class="breakafter"></div>
-    <h2><a name="anchor-5"></a>NXQL Query and Fetch</h2>
+    <h2>NXQL Query and Fetch</h2>
 
 <p>Using the <em>queryAndFetch</em> method you can now use COUNT, AVG, SUM, MIN and MAX in your NXQL queries. Again, this only work when using <em>queryAndFetch</em>. See <a href="https://jira.nuxeo.com/browse/NXP-13708">NXP-13708</a> for reference.</p>
 

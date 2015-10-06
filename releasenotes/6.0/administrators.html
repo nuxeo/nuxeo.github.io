@@ -57,18 +57,18 @@
      <h1  style="margin-left:-0.5em !important;">For Administrators</h1>
 
 
-<h2><a name="anchor-0"></a>User and Groups Providers and Authentication Mode Configuration Wizard</h2>
+<h2>User and Groups Providers and Authentication Mode Configuration Wizard</h2>
 <p>A wizard is available both at  set up time and in the Admin Center. This wizard allows to configure the way Nuxeo Platform will fetch users and groups: in an ldap directory, active directory or a SQL database. It also enables to configure the user attribute mapping. </p>
 
-<h2><a name="anchor-1"></a>AES Binary Store Encryption Mode</h2>
+<h2>AES Binary Store Encryption Mode</h2>
 <p>It is possible to use an AES algorithm to encrypt binaries before storing them in the binary store. See <a href="http://doc.nuxeo.com/x/UoIlAQ">Configuring Encryption Documentation page</a>.
 </p>
 
-   <h2><a name="anchor-2"></a>Private Marketplace Channel</h2>
+   <h2>Private Marketplace Channel</h2>
 
 <p>Users are able to upload their own marketplace packages on Connect so as to make them visible and available in the admin center. The first implementation offers a web UI for upload/update only. REST endpoints are available for upload/update and delete.</p>
 
-<h2><a name="anchor-3"></a>Store Password Hash in LDAP User Directory</h2>
+<h2>Store Password Hash in LDAP User Directory</h2>
 <p>Now you can store password hash in LDAP User Directories (it was already possible with SQL directories). You just have to use the <em>passwordHashAlgorithm</em> option as in this configuration sample:</p>
 
 
@@ -82,15 +82,15 @@
       ...
 </pre></div>
 
-<h2><a name="anchor-4"></a>Packages Directory Out of the Data Directory</h2>
+<h2>Packages Directory Out of the Data Directory</h2>
 <p>The Marketplace packages used to be stored in the Nuxeo data directory. This is not really their place so now instead of being stored in "nxserver/data/packages/", they'll be stored in "packages/". You can also change this location using the new property "nuxeo.mp.dir".</p>
-<h2><a name="anchor-5"></a>Logging Slow Queries</h2>
+<h2>Logging Slow Queries</h2>
 <p>To trace all NXQL queries that take more than 100ms, activate the log for <i>org.nuxeo.ecm.core.storage.sql</i> at the INFO level and add in the nuxeo.conf:
 <div class="embededCode">
 	org.nuxeo.vcs.query.log_min_duration_ms=100
 </div></p>
 
-<h2><a name="anchor-6"></a>Java version is checked at server startup</h2>
+<h2>Java version is checked at server startup</h2>
 <p>The check on the Java version (greater or equal to 1.7) is done in nuxeoctl and nuxeoctl.bat scripts. If the correct version is not found, a comprehensive message is displayed: "ERROR: Nuxeo requires Java 1.7+ (detected 1.6.0_38)".
 </p>
 
