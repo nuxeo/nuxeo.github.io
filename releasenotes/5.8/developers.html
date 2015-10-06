@@ -59,7 +59,7 @@
 
 
 
-<h2><a name="anchor-0">Content Automation</a></h2>
+<h2>Content Automation</a></h2>
 
 
 <p><a href="https://jira.nuxeo.com/browse/NXP-10078">Automation client is fully OSGI, which means you can use it from any OSGI container (Felix, Equinox etc..)</a></p>
@@ -112,7 +112,7 @@ push : BusinessObject (POJO) -----JSON---> DocumentModelAdapter ----> DocumentMo
 <p>When you write a new operation, you can add a description to your declared parameters. This comes in handy for the API documentation and Nuxeo Studio.</p>
 
 
-<h2 ><a name="anchor-1">Document Oriented REST API</a></h2>
+<h2 >Document Oriented REST API</a></h2>
 <p>We have a new <a href="http://doc.nuxeo.com/x/WIvZ">document oriented API</a> for CRUD operation.</p>
 
 <h3>Create</h3>
@@ -207,12 +207,12 @@ push : BusinessObject (POJO) -----JSON---> DocumentModelAdapter ----> DocumentMo
 <p>Using the version segment is mandatory. The version is used mostly for giving guarantees to the API user that the JSON entities won't change when migrating to newer version of Nuxeo.</p>
 
 
-<h2><a name="anchor-2">CMIS</a></h2>
+<h2>CMIS</a></h2>
 
 <p>We've upgraded OpenCMIS to 0.9.0 . This gives us the new CMIS 1.1 browser bindings but we haven't finished implementing all the new features yet.</p>
 
 
-<h2><a name="anchor-3">New operations</a></h2>
+<h2>New operations</a></h2>
 
 <h3>Add Message - <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Seam.AddMessage">Seam.AddMessage</a></h3>
 <p>Add a feedback message to be displayed. The message will be internationalized. You can specify the severity of the message using INFO, WARN and ERROR, INFO being the default. Message parameters are extracted from the context using the 'AddMessage.messageParams'. </p>
@@ -274,13 +274,13 @@ lastName=doe
 
 
 
-<h2><a name="anchor-4">CSS 3 Support in Theme Engine</a></h2>
+<h2>CSS 3 Support in Theme Engine</a></h2>
 <p><a href="https://jira.nuxeo.com/browse/NXP-7672">The flute CSS parser</a> has now been replaced by <a href="https://code.google.com/p/phloc-css/">phloc-css</a>, allowing CSS3 to be used in the Theme engine.</p>
 
-<h2><a name="anchor-5">UI Style Guide</a></h2>
+<h2>UI Style Guide</a></h2>
 <p>The <a href="http://showcase.nuxeo.com/nuxeo/styleGuide/">Nuxeo UI Style Guide</a> is an online help to design your content, explore all the available CSS classes for the different elements, and to check the list of icons embedded in the platform.</p>
 
-<h2><a name="anchor-6">UI Framework</a></h2>
+<h2>UI Framework</a></h2>
 
 <p>Widget Label properties now accept an EL expression. This allows you to have <a href=" https://jira.nuxeo.com/browse/NXP-11040">dynamic labels</a>.</p>
 <p>Every richfaces ajax call use a <a href="https://jira.nuxeo.com/browse/NXP-11136">global default ajax event queue</a>. You can of course still specify your own queue. This results in more stable pages.</p>
@@ -360,21 +360,21 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 <p>When you are in dev mode, the JavaScript files are not minified. This is much better when you need to debug JavaScript.</p>
 
 
-<h2><a name="anchor-7">Content Views</a></h2>
+<h2>Content Views</a></h2>
 <p>On Nuxeo side, filter can be shown unfolded by default, and some content view templates have been redefined to ease the customization.</p>
 <p>On Studio side, the "filter unfolded" option is presented for 5.7.2, and events as well as the page provider class and properties can now be configured also.</p>
 
-<h2><a name="anchor-8">CORS support</a></h2>
+<h2>CORS support</a></h2>
 <p>If you do cross-domain requests from any JavaScript client to access WebEngine resources or Automation APIs, there's a chance that your browser forbids it. <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> allows you to communicate with Nuxeo from another domain using XMLHttpRequests.</p>
 
 <p>We've added <a href="http://doc.nuxeo.com/x/vIvZ">a new extension point</a> based on Vladimir Dzhuvinov's universal CORS filter, which allows you to configure on which URL cross-origin headers are needed.</p>
 
 
 
-<h2><a name="anchor-9">Scan Importer</a></h2>
+<h2>Scan Importer</a></h2>
 <p>The scan importer has been improved. You can choose if you want to create the import document container each time you launch an import. You can also choose to update an existing document instead of creating a new one.</p>
 
-<h2><a name="anchor-10">Login Page</a></h2>
+<h2>Login Page</a></h2>
 
 <p>The login page can now be configured via an extension point, making it easier to upgrade when the login page is customized, and benefit from new features, like <a href="http://www.nuxeo.com/blog/development/2013/03/contributed-openid-authentication-nelson-silva/">OpenID authentication</a> provided by Nelson Silva.</p>
 
@@ -396,7 +396,7 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 &lt;/extension&gt;
 </pre></div>
 
-<h2><a name="anchor-11">Long Running Listener</a></h2>
+<h2>Long Running Listener</a></h2>
 <p>You can now extend a new abstract class called <strong>AbstractLongRunningListener</strong>. Its purpose is to help building an Asynchronous listeners that will handle a long running process. </p>
 <p>By default, PostCommitEventListener is executed in a Worker that will take care of starting/comitting the transaction.</p>
 <p>If the listener requires a long processing, this will create long transactions which should be avoided. To avoid this behavior, this base class split the processing in 3 steps:</p>
@@ -407,12 +407,12 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 </ul>
 <p>To manage sharing between the 3 steps, a simple Map is provided.</p>
 
-<h2><a name="anchor-12">Move To Tomcat 7</a></h2>
+<h2>Move To Tomcat 7</a></h2>
 <p>Tomcat has been upgraded to version 7.0.42. The main improvement is the upgrade to the Servlet 3.0 API. Take a look at the <a href="http://tomcat.apache.org/migration-7.html">details</a>. </p>
 
 
 
-<h2><a name="anchor-13">Nuxeo Visible Content Store (VCS)</a></h2>
+<h2>Nuxeo Visible Content Store (VCS)</a></h2>
 <p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20%3D%20%22Core%20SQL%20Storage%22%20AND%20fixVersion%20%3D%20%225.7.1%22%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
 
 <h3>Enhancements</h3>
@@ -440,7 +440,7 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 <p><a href="https://jira.nuxeo.com/browse/NXP-10219">Support Microsoft's JDBC driver for SQL Server</a>.</p>
 
 
-<h2><a name="anchor-14">Redis</a></h2>
+<h2>Redis</a></h2>
 
 <p>Several components in Nuxeo will make use of Redis as an optional feature. To configure Redis, the following extension point can be used:</p>
 
@@ -504,7 +504,7 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
     <li>New feature: node-aware job execution.</li>
 </ul>
 
-<h2><a name="anchor-15">PDF Signing</a></h2>
+<h2>PDF Signing</a></h2>
 <p>Now you can apply more than one signature to a PDF and configure the position of the signatures following a predefined matrix. Here's a sample contribution:</p>
 
 <div class="embededCode"><pre>
@@ -519,7 +519,7 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 
 </pre></div>
 
-<h2><a name="anchor-16">Mockito Integration</a></h2>
+<h2>Mockito Integration</a></h2>
 <p>We've added Mockito support to our test framework. Here's an example:</p>
 
 <div class="embededCode"><pre>
@@ -546,7 +546,7 @@ public class CanMockServicesTest {
 }
 </pre></div>
 
-<h2><a name="anchor-17">Localization</a></h2>
+<h2>Localization</a></h2>
 
 <h3>Crowdin</h3>
 <p>Nuxeo has an account on <a href="https://crowdin.net/project/nuxeo">Crowdin</a>. It makes it easier for everyone to help translate Nuxeo in different languages. You can read <a href="http://www.nuxeo.com/blog/development/2013/10/nuxeo-project-crowdin/">this blog</a> for more information.</p>
@@ -557,7 +557,7 @@ public class CanMockServicesTest {
 <p>Our partner Capgemini Netherlands has contributed the Dutch translation for Nuxeo.</p>
 
 
-<h2><a name="anchor-18">Miscellaneous</a></h2>
+<h2>Miscellaneous</a></h2>
 
 <h3>Simple Computed Group</h3>
 

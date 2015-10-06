@@ -5,28 +5,28 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
 
-	<!-- Basic Page Needs
+  <!-- Basic Page Needs
   ================================================== -->
-	<meta charset="utf-8">
-	<title>Nuxeo 5.7.1 - New and Noteworthy</title>
-	<meta name="description" content="Nuxeo on Github">
-	<meta name="author" content="nuxeo">
+  <meta charset="utf-8">
+  <title>Nuxeo 5.7.1 - New and Noteworthy</title>
+  <meta name="description" content="Nuxeo on Github">
+  <meta name="author" content="nuxeo">
 
-	<!-- Mobile Specific Metas
+  <!-- Mobile Specific Metas
   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- CSS
+  <!-- CSS
   ================================================== -->
-	<link rel="stylesheet" href="../../stylesheets/base.css">
-	<link rel="stylesheet" href="../../stylesheets/skeleton.css">
-	<link rel="stylesheet" href="../../stylesheets/layout.css">
-	<link rel="stylesheet" href="../../stylesheets/release_notes.css">
-	<link rel="stylesheet" href="../../stylesheets/lightbox.css">
+  <link rel="stylesheet" href="../../stylesheets/base.css">
+  <link rel="stylesheet" href="../../stylesheets/skeleton.css">
+  <link rel="stylesheet" href="../../stylesheets/layout.css">
+  <link rel="stylesheet" href="../../stylesheets/release_notes.css">
+  <link rel="stylesheet" href="../../stylesheets/lightbox.css">
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 
@@ -35,12 +35,12 @@
 </style>
 <script src="../../javascripts/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <!-- Favicons
+  ================================================== -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
 </head>
 
@@ -56,13 +56,13 @@
     <div style="clear:both;"></div>
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
-<h2><a name="anchor-0">Content Automation</a></h2>
+<h2>Content Automation</h2>
 <p><a href="https://jira.nuxeo.com/browse/NXP-10078">Automation client is fully OSGi, which means you can use it from any OSGi container (Felix, Equinox etc..)</a></p>
 <p>Even though we have a new version coming out, we've kept Nuxeo 5.7.1 compatible with the 5.6 automation client.</p>
 <p>You can fetch dirty properties of a modified document to send only modified properties with automation client</p>
 <p>JSON Marshalling enhancement. You can send POJO in input or parameters. (5.7.1 only)</p>
 
-<h2><a name="anchor-1">New operations</a></h2>
+<h2>New operations</h2>
 
 <h3>Add Message</h3>
 <p><strong>Category:</strong> User Interface</p>
@@ -73,12 +73,12 @@
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/AddEntryToMultivaluedProperty">AddEntryToMultivaluedProperty</a></p>
 <p>Add value to the field expressed by the xpath parameter. This field must be a multivalued metadata.</p>
 <h3>Convert to given mime-type</h3>
-<p><strong>Category:</strong> Conversion</p> 
-<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.Convert">Blob.Convert</a></p> 
+<p><strong>Category:</strong> Conversion</p>
+<p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Blob.Convert">Blob.Convert</a></p>
 <p> Convert the input file to a file of the given mime-type and return the new file. </p>
 <h3>Create Asset(s) from file(s)</h3>
-<p> <strong>Category:</strong> Dam</p> 
-<p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Dam.Import">Dam.Import</a></p> 
+<p> <strong>Category:</strong> Dam</p>
+<p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Dam.Import">Dam.Import</a></p>
 <p> Create Asset(s) from Blob(s) using the FileManagerService. </p>
 <h3>Create Proxy Live</h3>
 <p><strong>Category:</strong> Document</p>
@@ -89,7 +89,7 @@
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.CreateEntries">Directory.CreateEntries</a></p>
 <p> Creates directory entries. Entries are sent as a JSON array. Returns the created entry ids as a JSON array. </p>
 <h3>Deletes directory entries</h3>
-<p> <strong>Category:</strong> Services</p> 
+<p> <strong>Category:</strong> Services</p>
 <p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.DeleteEntries">Directory.DeleteEntries</a></p>
 <p> Deletes directory entries. Entry ids to be delete are sent through a JSON array. Returns the deleted entry ids as a JSON array. </p>
 <h3>Get Live Document</h3>
@@ -97,12 +97,12 @@
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/GetLiveDocument">GetLiveDocument</a></p>
 <p> Get the live document even if this is a Proxy or Version Document. </p>
 <h3>Get Nuxeo Principal</h3>
-<p><strong>Category:</strong> Users & Groups</p>
+<p><strong>Category:</strong> Users &amp; Groups</p>
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/NuxeoPrincipal.Get">NuxeoPrincipal.Get</a></p>
 <p> Retrieve Nuxeo principal and export it as a DocumentModel. If login parameter is not set, the operation will return information about the current user, otherwise Directory Administration rights are required. </p>
 <h3>QueryAndFetch</h3>
-<p> <strong>Category:</strong> Fetch</p> 
-<p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Resultset.PageProvider">Resultset.PageProvider</a></p> 
+<p> <strong>Category:</strong> Fetch</p>
+<p> <strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Resultset.PageProvider">Resultset.PageProvider</a></p>
 <p> Perform a query or a named provider query on the repository. The result is paginated. The result is returned as a RecordSet (QueryAndFetch) rather than as a List of Document. The query result will become the input for the next operation. If no query or provider name is given, a query returning all the documents that the user has access to will be executed. </p>
 <h3>Raise Seam events</h3>
 <p><strong>Category:</strong> User Interface</p>
@@ -126,13 +126,13 @@ if not then just the first one found will be removed.</p>
 <p><strong>Operation Id:</strong> <a href="http://explorer.nuxeo.org/nuxeo/site/distribution/current/viewOperation/Directory.UpdateEntries">Directory.UpdateEntries</a></p>
 <p> Updates directory entries. Entries to be updated are sent as a JSON array. Returns the updated entry ids as a JSON array of JSON objects containing all fields. </p>
 
-<h2><a name="anchor-2">CSS 3 Support in Theme Engine</a></h2>
+<h2>CSS 3 Support in Theme Engine</h2>
 <p><a href="https://jira.nuxeo.com/browse/NXP-7672">The flute CSS parser</a> has now been replaced by <a href="https://code.google.com/p/phloc-css/">phloc-css</a>, allowing CSS3 to be used in the Theme engine.</p>
 
-<h2><a name="anchor-3">UI Style Guide</a></h2>
+<h2>UI Style Guide</h2>
 <p>The <a href="http://showcase.nuxeo.com/nuxeo/styleGuide/">Nuxeo UI Style Guide</a> is an online help to design your content, explore all the available CSS classes for the different elements, and to check the list of icons embedded in the platform.</p>
 
-<h2><a name="anchor-4">UI Framework</a></h2>
+<h2>UI Framework</h2>
 
 <p>Widget Label properties now accept an EL expression. This allows you to have <a href=" https://jira.nuxeo.com/browse/NXP-11040">dynamic labels</a>.</p>
 <p>Every richfaces ajax call use a <a href="https://jira.nuxeo.com/browse/NXP-11136">global default ajax event queue</a>. You can of course still specify your own queue. This results in more stable pages.</p>
@@ -151,14 +151,14 @@ if not then just the first one found will be removed.</p>
 <blockquote>
 <pre>
  &lt;action id="JenkinsReportSendMail"&gt;
-   &lt;properties&gt
-     &lt;property name="confirmMessage"&gt;label.jenkins.sendMail.confirm&lt;/property&gt
+   &lt;properties&gt;
+     &lt;property name="confirmMessage"&gt;label.jenkins.sendMail.confirm&lt;/property&gt;
      &lt;propertyList name="confirmMessageArgs"&gt;
        &lt;value&gt;#{docSuggestionActions.getDocumentWithId(currentSuperSpace.id)
          .getPropertyValue('jenkinsreports:report_email')}&lt;/value&gt;
      &lt;/propertyList&gt;
    &lt;/properties&gt;
- &lt;/action&gt; 
+ &lt;/action&gt;
 messages:
 label.jenkins.sendMail.confirm=This will send an email to {0},
  are you sure that you would like to continue?
@@ -175,7 +175,7 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 
 <p><a href="https://jira.nuxeo.com/browse/NXP-11566">We allow resetting of JSF components state when using ajax</a>. JSF action listener <em>#{jsfResetActions.resetComponents}</em> can be used in actions that need to reset all components in the same JSF naming container.</p>
 
-<h2><a name="anchor-5">Nuxeo Visible Content Store (VCS)</a></h2>
+<h2>Nuxeo Visible Content Store (VCS)</h2>
 <p><a href="https://jira.nuxeo.com/issues/?jql=project%20%3D%20NXP%20AND%20component%20%3D%20%22Core%20SQL%20Storage%22%20AND%20fixVersion%20%3D%20%225.7.1%22%20ORDER%20BY%20issuetype%20DESC%2C%20priority%20DESC">Issues list</a></p>
 
 <h3>Enhancements</h3>
@@ -207,7 +207,7 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 <h3>Misc</h3>
 <p>Various performance enhancements for PostgreSQL, Oracle and SQL Server</p>
 <p><a href="https://jira.nuxeo.com/browse/NXP-10324">Added "NotFulltextIndexable" facet</a> to avoid indexing documents with this facet.</p>
-<p><a href="https://jira.nuxeo.com/browse/NXP-10272">Allow clustering</a> for Oracle on Amazon RDS.</p> 
+<p><a href="https://jira.nuxeo.com/browse/NXP-10272">Allow clustering</a> for Oracle on Amazon RDS.</p>
 <p><a href="https://jira.nuxeo.com/browse/NXP-10216">Optimize complex list property update</a> (use UPDATE instead of DELETE + INSERT).</p>
 <p><a href="https://jira.nuxeo.com/browse/NXP-10219">Support Microsoft's JDBC driver for SQL Server</a>.</p>
 
@@ -217,8 +217,8 @@ label.jenkins.sendMail.confirm=This will send an email to {0},
 </div>
 
 
-	<!-- JS
-	================================================== -->
+  <!-- JS
+  ================================================== -->
     <script src="../../javascripts/strftime.js"></script>
     <script src="../../javascripts/tabs.js"></script>
     <script src="../../javascripts/float_menu.js"></script>

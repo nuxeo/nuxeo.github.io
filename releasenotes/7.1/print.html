@@ -58,16 +58,16 @@
      <div style="clear:both;"></div>
 
      <h1 style="margin-left:-0.5em !important;">For Users</h1>
-     <h2><a name="anchor-0"></a>New Tab for Pictures</h2>
+     <h2>New Tab for Pictures</h2>
 
      <p>The default Summary tab for pictures has been revamped, with actions for rotation straight from there, and a new list of picture views with ability to download them and display the technical details of the views. </p>
      
 
-     <h2><a name="anchor-1"></a> HTML5 drag'n drop now works for IE 11 users</h2>
+     <h2> HTML5 drag'n drop now works for IE 11 users</h2>
 
      <p>Some old limitations were removed and Internet Explorer users can now benefit from drag'n drop. This change was backported in 6.0.</p>
 
-     <h2><a name="anchor-2"></a>Empty Trash Button</h2>
+     <h2>Empty Trash Button</h2>
 
      <p>A button has been added to empty the trash of a specific folder.</p>
 
@@ -77,7 +77,7 @@
 
      <h1  style="margin-left:-0.5em !important;">For Developers</h1>
 
-     <h2><a name="anchor-0"></a>Constraints</h2>
+     <h2>Constraints</h2>
      <p>Nuxeo Core Repository now accepts the definition of XSD constraints on document properties. Those constraints can be for example number and text formats, text length, a list of accepted values, a numeric range. They are based on XML Schema facets. A sample constraint for expressing the fact the field value should be an email would be:</p>
      <div class="embededCode"><pre>
       
@@ -92,7 +92,7 @@
     </pre></div>
     <p></p>Once constraints are defined, validation can be enabled/disabled at different level by means of the extension point activations of the org.nuxeo.ecm.core.api.DocumentValidationService component.
     Nuxeo Studio will allow constraints definition in the future.</p>
-    <h2><a name="anchor-1"></a>Field Reference</h2>
+    <h2>Field Reference</h2>
     <p>A reference system has been added. It allows to define a field (usually  a string field) as a reference to an other object. A resolver is used to be able to load the referenced object when needed.
       Here is the way to define a constraint:</p>
       <div class="embededCode"><pre>
@@ -114,53 +114,53 @@
 
       </pre></div>
 
-      <h2><a name="anchor-2"></a>CMIS 1.1 Secondary Types Support</h2>
+      <h2>CMIS 1.1 Secondary Types Support</h2>
       <p>
         Dynamical facets are now exposed as <a href="http://docs.oasis-open.org/cmis/CMIS/v1.1/os/CMIS-v1.1-os.html#x1-690009" target ="_blanck"> CMIS secondary types.</a>
       </p>
 
-      <h2><a name="anchor-3"></a>Workflow Module Improvements</h2>
+      <h2>Workflow Module Improvements</h2>
       <p>A lot of work has been done on the workflow module for improving graph readability: designer in Nuxeo Studio now benefits from grid snapping for positionning the nodes. It is also possible to edit the position of the transitions, while in the past it was 100% controled by Studio. This is specifically interesting in situations where there are many transitions coming out from one node, with looping, etc.  We also changed the look and feel, with rounded corners and new set of colors. We hope you will like it! 
        Finally, we changed the position of the "exclusive node" checkbox, it is now displayed in the Transition tab, for more consistency.</p>
 
-       <h2><a name="anchor-4"></a>File Metadata Read-Write</h2>
+       <h2>File Metadata Read-Write</h2>
        <p>
         A new module in the Nuxeo Platform (nuxeo-platform-binary-metadata)is dedicated to reading and writing metadata on files, like Office metadata, XMP metadata, EXIF, PDF, etc. This new addon provides a configurable service that makes it very easy to map metadata of the files to metadata of the document, and let Nuxeo Platform maintain this mapping when the data is updated. The service also providers several helpers and operations to use it in different manners. You can read <a href ="http://doc.nuxeo.com/x/w4JkAQ" target="_blank">the documentation </a>to discover more of this great new platform feature.</a>
       </p>
 
-      <h2><a name="anchor-5"></a>Computed Picture Views</h2>
+      <h2>Computed Picture Views</h2>
       <p>
         The Picture Views definition, i.e. the list of resolutions/format that are systematically computed when uploading a Picture, is no more hardcoded. It is now easy to add new views to a picture, depending on the document type, the user properties, etc.  We wrote a <a target="_black" href="http://doc.nuxeo.com/x/4Bs5AQ">how-to</a> to let you discover how to contribute your own views.</a>
       </p>
 
-      <h2><a name="anchor-6"></a>Aliases for Automation Operations</h2>
+      <h2>Aliases for Automation Operations</h2>
       <p>It is now possible to rename an operation without breaking the compatibility using the alias system.</p>
 
-      <h2><a name="anchor-7"></a>MVEL Expressions Debugging</h2>
+      <h2>MVEL Expressions Debugging</h2>
 
 
       <p>MVEL expressions are now evaluated in automation traces while only the object name was appearing before. This makes it easier to debug some complex chains.</p>
 
-      <h2><a name="anchor-8"></a>Page Provider Name is Part of the Content View State</h2>
+      <h2>Page Provider Name is Part of the Content View State</h2>
 
       <p>The serialized state of a content view now holds the page provider name, which can be useful for building and running the query associated to a given content view in a client application.</p>
 
-      <h2><a name="anchor-9"></a>Command Line Converter and Converter Operation</h2>
+      <h2>Command Line Converter and Converter Operation</h2>
       
       <p>A command line converter has been added to the platform. This converter allows to reference a declared command line (contributed to the command line extension point) for doing a conversion. An operation has also been added so as to call any converter and convey parameters. That way, in two contributions you can very easily operate advanced transformations from Automation.</p>
 
-      <h2><a name="anchor-10"></a>PDF Signing Operation</h2>
+      <h2>PDF Signing Operation</h2>
       <p>A new operation makes it possible to sign a PDF directly from an Automation chain. This operation is part of the nuxeo-platform-digital-signature module.</p>
 
-      <h2><a name="anchor-11"></a>Tagging Operations</h2>
+      <h2>Tagging Operations</h2>
       <p>A set of operations has been added for being able to tag or remove tags on a document.</p>
 
       
 
-      <h2><a name="anchor-12"></a>Possibility to Brand Home and Admin Tabs</h2>
+      <h2>Possibility to Brand Home and Admin Tabs</h2>
       <p>You can now easily brand the Home and Admin tabs from Studio.</p>
 
-      <h2><a name="anchor-13"></a>InfoView Action Category and Other New UI Elements</h2>
+      <h2>InfoView Action Category and Other New UI Elements</h2>
       <p>Some new UI elements were added in 6.0 and are now available in Studio for configuration, like the INFO_VIEW actions category (the popup from the Search tab) and some new widgets that are used on that view. </p>
 
 
@@ -171,14 +171,14 @@
 
 
 
-      <h2><a name="anchor-0"></a>More Resiliant LDAP Directory</h2>
+      <h2>More Resiliant LDAP Directory</h2>
       <p>When LDAP Directory is slow or network is bad, some requests where issuing timeouts. A new system where LDAP directory is cached in an SQL directory makes the experience much better in those situations.</p>
 
-      <h2><a name="anchor-1"></a>Elasticsearch: Re-Indexing Actions</h2>
+      <h2>Elasticsearch: Re-Indexing Actions</h2>
       <p>A set of re-indexing actions are provided from the Admin Center, for re-indexing everything starting from one node (and the children iteratively) or for re-indexing a list of documents corresponding to an NXQL request. Also, indexing the repository has been made faster.
       </p>
 
-      <h2><a name="anchor-2"></a>Elasticsearch: Configuring the Indexing Pool from nuxeo.conf</h2>
+      <h2>Elasticsearch: Configuring the Indexing Pool from nuxeo.conf</h2>
       <p>Some options are available in nuxeo.conf directly for configuring Elasticsearch service:</p>
 
       <ul> 
@@ -192,7 +192,7 @@
                 <div class="embededCode">elasticsearch.indexing.clearCompletedAfterSeconds=90</div></li>
 
 
-                <h2><a name="anchor-3"></a>Tasks Do Not Hold Dynamical Facets Anymore</h2>
+                <h2>Tasks Do Not Hold Dynamical Facets Anymore</h2>
                 <p>Tasks now hold statical facets only, making queries on tasks more efficient.</p>
 
               </div>
