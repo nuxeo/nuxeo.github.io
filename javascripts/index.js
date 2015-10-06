@@ -1,6 +1,7 @@
 function index(page, target) {
     var div = $('<div/>');
-    div.load(page, function(response, status, xhr) {
+    div.load(page + " h2,h3", function(response, status, xhr) {
+        // console.log(response)
         if (status == "error") {
             var msg = "Sorry but there was an error: ";
             console.error(msg + xhr.status + " " + xhr.statusText);
