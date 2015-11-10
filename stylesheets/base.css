@@ -347,23 +347,24 @@
 }
 
 #site-title span {
-  font-weight:400; 
+  font-weight:400;
 }
 
 #site-title span.separator {
-  color:#93bdd3; 
+  color:#93bdd3;
   margin:0 0.2em;
   display:inline-block;
 }
 
 #site-title span.nxsexion {
+	color: #163C7C;
 }
 
   #welcome {
     clear:both;
     background-color:white;
   }
-  
+
   #welcome h2 {
     display:inline-block;
     background-color:#ffe600;
@@ -372,23 +373,23 @@
     padding:0.3em 0.7em;
     }
  .message {
-   padding-bottom:0.5em;	
+   padding-bottom:0.5em;
  }
  #welcome p {
  }
- 
+
   .numbers {
     background-color:#c6d6e5;
     margin:2em -1em 0 1em;
   text-align:center;
   }
-  
+
   .numbers div {
-    padding:2em 1em;	
+    padding:2em 1em;
   }
 
 .numbers h5 {
-  font-size:24px;	
+  font-size:24px;
 }
 
 .numbers h5.members {
@@ -411,20 +412,20 @@
   #participant-list div {
   float:left;
   margin:0 1em 1em 0;
-  } 
+  }
 
 #participant-list img {
   width:64px;
   height:64px;
 /*  border:1px solid #666; */
-} 
+}
 
 .personal, .nuxeo {
   background-color:white;
 }
 
 .personal {
-  background-color:#f4f7fa;	
+  background-color:#f4f7fa;
 }
 
 .community {
@@ -443,7 +444,7 @@
 }
 
 .project .byline {
-  color:#757575;	
+  color:#757575;
 }
 
 .toggle {
@@ -451,6 +452,3 @@
   margin-top:1.5em;
   margin-bottom:2em;
 }
-
-
-	
