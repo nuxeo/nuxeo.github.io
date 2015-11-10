@@ -1,39 +1,79 @@
 {
-    "community":[
-        {"owner":"devcon14", "projectName":"cmis-capture", "categories": ["addon"]},
-        {"owner":"nelsonsilva", "projectName":"nuxeo-dart-gadgets", "categories": ["sample"]},
-        {"owner":"astone-solutions", "projectName":"NuxeoOutlookAddin", "categories": ["addon"]},
-        {"owner":"intelliant", "projectName":"cronbackup", "categories": ["addon", "administration"]},
-        {"owner":"mkalam-alami", "projectName":"nuxeo-webengine-isotope-browsing", "categories": ["addon", "UI"]},
-        {"owner":"Open-Wide", "projectName":"openwide-nuxeo-commons", "categories": ["addon", "UI"]},
-        {"owner":"IMAmuseum", "projectName":"ima-nuxeo-custom", "categories": ["addon"]},
-        {"owner":"IMAmuseum", "projectName":"ima-nuxeo-template", "categories": ["addon", "configuration"]},
-        {"owner":"IMAmuseum", "projectName":"nuxeo-7.x-1.x-dev", "categories": ["addon", "administration"]}
-    ],
-    "platform":["nuxeo", "addons"],
-    "personal" : [
-        {"owner":"tiry", "projectName":"nuxeo-platform-rendering-templates", "categories": ["addon", "UI"]},
-        {"owner":"tiry", "projectName":"nuxeo-tree-snapshot", "categories": ["addon", "core"]}
-    ],
-    "timeline" : [
-        {"owner":"nuxeo", "projectName":"nuxeo-distribution"},
-        {"owner":"nuxeo", "projectName":"nuxeo-social-collaboration"},
-        {"owner":"nuxeo", "projectName":"nuxeo-dam"},
-        {"owner":"nuxeo", "projectName":"nuxeo-cmf"},
-        {"owner":"nuxeo", "projectName":"nuxeo"},
-        {"owner":"nuxeo", "projectName":"addons"}
-    ],
-    "defaultRepoCategories" : {
-        "nuxeo-diff": ["addon", "UI"],
-        "nuxeo-platform-audio": ["addon", "dam"]
+  "community": [{
+    "owner": "devcon14",
+    "projectName": "cmis-capture",
+    "categories": ["addon"]
+  }, {
+    "owner": "nelsonsilva",
+    "projectName": "nuxeo-dart-gadgets",
+    "categories": ["sample"]
+  }, {
+    "owner": "astone-solutions",
+    "projectName": "NuxeoOutlookAddin",
+    "categories": ["addon"]
+  }, {
+    "owner": "intelliant",
+    "projectName": "cronbackup",
+    "categories": ["addon", "administration"]
+  }, {
+    "owner": "mkalam-alami",
+    "projectName": "nuxeo-webengine-isotope-browsing",
+    "categories": ["addon", "UI"]
+  }, {
+    "owner": "Open-Wide",
+    "projectName": "openwide-nuxeo-commons",
+    "categories": ["addon", "UI"]
+  }, {
+    "owner": "IMAmuseum",
+    "projectName": "ima-nuxeo-custom",
+    "categories": ["addon"]
+  }, {
+    "owner": "IMAmuseum",
+    "projectName": "ima-nuxeo-template",
+    "categories": ["addon", "configuration"]
+  }, {
+    "owner": "IMAmuseum",
+    "projectName": "nuxeo-7.x-1.x-dev",
+    "categories": ["addon", "administration"]
+  }],
+  "platform": ["nuxeo", "addons"],
+  "personal": [{
+    "owner": "tiry",
+    "projectName": "nuxeo-platform-rendering-templates",
+    "categories": ["addon", "UI"]
+  }, {
+    "owner": "tiry",
+    "projectName": "nuxeo-tree-snapshot",
+    "categories": ["addon", "core"]
+  }],
+  "timeline": [{
+    "owner": "nuxeo",
+    "projectName": "nuxeo-distribution"
+  }, {
+    "owner": "nuxeo",
+    "projectName": "nuxeo-social-collaboration"
+  }, {
+    "owner": "nuxeo",
+    "projectName": "nuxeo-dam"
+  }, {
+    "owner": "nuxeo",
+    "projectName": "nuxeo-cmf"
+  }, {
+    "owner": "nuxeo",
+    "projectName": "nuxeo"
+  }, {
+    "owner": "nuxeo",
+    "projectName": "addons"
+  }],
+  "defaultRepoCategories": {
+    "nuxeo-diff": ["addon", "UI"],
+    "nuxeo-platform-audio": ["addon", "dam"]
 
-    },
-    "customRepoUrls" : {
-    },
-    "customRepoDescriptions" : {
-    },
-    "customRepoLanguages" : {
-        "nuxeo": "Java"
-    }
+  },
+  "customRepoUrls": {},
+  "customRepoDescriptions": {},
+  "customRepoLanguages": {
+    "nuxeo": "Java"
+  }
 
 }

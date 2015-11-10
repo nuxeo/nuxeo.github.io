@@ -2,7 +2,10 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
 <head>
 
   <!-- Basic Page Needs
@@ -30,7 +33,9 @@
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 
   <style>
-  #xnav-footer {margin-top:0px !important;}
+    #xnav-footer {
+      margin-top: 0px !important;
+    }
   </style>
 
   <script src="javascripts/jquery-1.7.1.min.js"></script>
@@ -43,154 +48,166 @@
   <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
 </head>
+
 <body>
 
-<!-- Primary Page Layout
+  <!-- Primary Page Layout
 ================================================== -->
-<h1 class="remove-bottom" id="site-title" style="margin-top: 40px">nuxeo<span class="separator">/</span><span class="nxsexion">Download</span></h1>
-<div id="mainContainer" class="container">
+  <h1 class="remove-bottom" id="site-title" style="margin-top: 40px">nuxeo
+    <span class="separator">/</span>
+    <span class="nxsexion">Download</span>
+  </h1>
+  <div id="mainContainer" class="container">
 
-  <div id="welcome">
-  <div class="sixteen message">
-     <h2>Welcome to the Nuxeo Platform download page</h2>
-     <p>Nuxeo provides an extensible and modular <a href="http://www.nuxeo.com/products/content-management-platform/">Enterprise Content Management Platform</a> enabling architects and developers to easily build and run business applications. The Nuxeo Platform's powerful plug-in model offers many integrations with 3rd party software providers and extensive packaging capabilities for <a href="http://www.nuxeo.com/solutions/document-management/">Document Management</a>, <a href="http://www.nuxeo.com/solutions/digital-asset-management/">Digital Asset Management</a> and <a href="http://www.nuxeo.com/solutions/case-management/">Case Management applications</a>.</p>
-     <p>Here you will find every version of the Nuxeo Platform as well as the source code for each version (scroll to the bottom). Nuxeo also provides <a href="http://community.nuxeo.com/static/snapshots/">daily snapshots</a> of the current development version.</p>
-     <h3>Tips and Resources</h3>
-     <p>While your file is downloading, please complete the form below. We’ll send you online resources, links to helpful documentation, updates on the Nuxeo Platform and more.</p>
+    <div id="welcome">
+      <div class="sixteen message">
+        <h2>Welcome to the Nuxeo Platform download page</h2>
+        <p>Nuxeo provides an extensible and modular <a href="http://www.nuxeo.com/products/content-management-platform/">Enterprise Content Management Platform</a> enabling architects and developers to easily build and run business applications. The Nuxeo
+          Platform's powerful plug-in model offers many integrations with 3rd party software providers and extensive packaging capabilities for <a href="http://www.nuxeo.com/solutions/document-management/">Document Management</a>, <a href="http://www.nuxeo.com/solutions/digital-asset-management/">Digital Asset Management</a>          and <a href="http://www.nuxeo.com/solutions/case-management/">Case Management applications</a>.</p>
+        <p>Here you will find every version of the Nuxeo Platform as well as the source code for each version (scroll to the bottom). Nuxeo also provides <a href="http://community.nuxeo.com/static/snapshots/">daily snapshots</a> of the current development
+          version.</p>
+        <h3>Tips and Resources</h3>
+        <p>While your file is downloading, please complete the form below. We’ll send you online resources, links to helpful documentation, updates on the Nuxeo Platform and more.</p>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+
   </div>
-  <div style="clear:both;"></div>
-</div>
-
-</div>
 
   <!-- JS
   ================================================== -->
-    <script type="text/javascript" src="//www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
-    <script src="//app-abk.marketo.com/js/forms2/js/forms2.min.js"></script>
-    <script src="javascripts/jquery-1.7.1.min.js"></script>
-    <script src="javascripts/strftime.js"></script>
-    <script src="javascripts/tabs.js"></script>
+  <script type="text/javascript" src="//www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+  <script src="//app-abk.marketo.com/js/forms2/js/forms2.min.js"></script>
+  <script src="javascripts/jquery-1.7.1.min.js"></script>
+  <script src="javascripts/strftime.js"></script>
+  <script src="javascripts/tabs.js"></script>
 
 
-    <script type="text/javascript">
-    $(document).ready(function () {
+  <script type="text/javascript">
+    $(document).ready(function() {
 
-        var alreadyloading = false;
+      var alreadyloading = false;
 
-        var $mainContainer = $("#mainContainer");
+      var $mainContainer = $("#mainContainer");
 
-        var count = 0;
-        var LTScount = 0;
-        var FTcount = 0;
+      var count = 0;
+      var LTScount = 0;
+      var FTcount = 0;
 
-        var identifier = window.location.hash;
+      var identifier = window.location.hash;
 
-        function fillTab(title, date, dlLinks) {
-            $versionContainer = $("<div>").attr("class","sixteen");
-            $mainContainer.append($versionContainer);
-            $titleContainer = $("<div>").attr("class","three columns version").appendTo($versionContainer);
-            $tableContainer = $("<div>").attr("class","thirteen columns dl").appendTo($versionContainer);
-            appendTitle($titleContainer, title, date);
-            id = appendTable($tableContainer, title);
-            // fill the table
-            $.each(dlLinks, function (i, item) {
-                tr = addDownloadLink(item, id);
-                if ((i+1)%2 == 0) {tr.attr("class","even")}
-            });
-            if (identifier == "#"+title) {
-               $('html,body').animate({scrollTop: $(identifier.replace(/(:|\.)/g,'\\$1')).offset().top},'fast');
-            }
+      function fillTab(title, date, dlLinks) {
+        $versionContainer = $("<div>").attr("class", "sixteen");
+        $mainContainer.append($versionContainer);
+        $titleContainer = $("<div>").attr("class", "three columns version").appendTo($versionContainer);
+        $tableContainer = $("<div>").attr("class", "thirteen columns dl").appendTo($versionContainer);
+        appendTitle($titleContainer, title, date);
+        id = appendTable($tableContainer, title);
+        // fill the table
+        $.each(dlLinks, function(i, item) {
+          tr = addDownloadLink(item, id);
+          if ((i + 1) % 2 == 0) {
+            tr.attr("class", "even")
+          }
+        });
+        if (identifier == "#" + title) {
+          $('html,body').animate({
+            scrollTop: $(identifier.replace(/(:|\.)/g, '\\$1')).offset().top
+          }, 'fast');
         }
+      }
 
-        function appendTitle(target, title, date) {
-           target.append($("<h2>").attr("id",title).text("Nuxeo Platform " + title));
-           if (LTScount == 1) {
-             target.append($("<div class='date current'>").text("Latest LTS!"));
-             LTScount = LTScount + 1;
-           } else if (FTcount == 1) {
-             target.append($("<div class='date current'>").text("Latest Fast Track!"));
-             FTcount = FTcount + 1;
-           } else {
-             target.append($("<div class='date'>").text(date));
-           }
+      function appendTitle(target, title, date) {
+        target.append($("<h2>").attr("id", title).text("Nuxeo Platform " + title));
+        if (LTScount == 1) {
+          target.append($("<div class='date current'>").text("Latest LTS!"));
+          LTScount = LTScount + 1;
+        } else if (FTcount == 1) {
+          target.append($("<div class='date current'>").text("Latest Fast Track!"));
+          FTcount = FTcount + 1;
+        } else {
+          target.append($("<div class='date'>").text(date));
         }
+      }
 
-        function appendTable(target, title) {
-           tbodyid = "tbody-" + title;
-           $table = $("<table>").attr("id", "table-" + title).attr("class","nxdl").attr("border","0").attr("cellpadding","0").attr("cellspacing","0");
-           $thead = $("<thead>").append($("<tr>").append($("<th class='os'>").append($("<span>").text("OS"))).append($("<th class='name'>").append($("<span>").text("Name")).append($("<span>").attr("class", "subtitle").text("description"))).append($("<th>").append($("<span>").text("Check"))).append($("<th class='size'>").append($("<span>").text("Size"))).append($("<th>").append($("<span>"))));
-           $table.append($thead);
-           $tbody = $("<tbody>").attr("id", tbodyid);
-           $table.append($tbody);
-           target.append($table);
-           return tbodyid;
+      function appendTable(target, title) {
+        tbodyid = "tbody-" + title;
+        $table = $("<table>").attr("id", "table-" + title).attr("class", "nxdl").attr("border", "0").attr("cellpadding", "0").attr("cellspacing", "0");
+        $thead = $("<thead>").append($("<tr>").append($("<th class='os'>").append($("<span>").text("OS"))).append($("<th class='name'>").append($("<span>").text("Name")).append($("<span>").attr("class", "subtitle").text("description"))).append($(
+          "<th>").append($("<span>").text("Check"))).append($("<th class='size'>").append($("<span>").text("Size"))).append($("<th>").append($("<span>"))));
+        $table.append($thead);
+        $tbody = $("<tbody>").attr("id", tbodyid);
+        $table.append($tbody);
+        target.append($table);
+        return tbodyid;
+      }
+
+      function addDownloadLink(dlItem, tabId) {
+        $tbody = $(jq(tabId));
+        $tr = $("<tr>");
+        $os = $("<td class='os'>");
+        if (dlItem.os) {
+          $osdiv = $("<div>").attr("class", dlItem.os).text(dlItem.os);
+          $os.append($osdiv);
         }
+        $name = $("<td class='name'>").text(dlItem.label).append($("<span class='subtitle'>").text(dlItem.description));
+        $linkTd = $("<td class='buttons'>");
+        $check = $("<td class='check'>");
+        $size = $("<td class='size'>").text(dlItem.size);
+        var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("target", "_blank").attr("class", "button launch").click(function() {
+          MktoForms2.loadForm("//app-abk.marketo.com", "498-JDO-611", 672, function(url) {
+            MktoForms2.lightbox(url).show();
+          });
+        });
+        $dowloadLink.append($("<span>").text("Download"));
+        var $permaLink = $("<a>").attr("href", dlItem.url).attr("class", "button permalink").click(
+          function() {
+            window.prompt("Copy to clipboard: Ctrl+C", dlItem.url);
+            return false;
+          }
+        );
+        $permaLink.append($("<img>").attr("src", "images/permalink.png"));
+        $linkTd.append($permaLink);
+        $linkTd.append($dowloadLink);
+        if (dlItem.md5) {
+          var $md5link = $("<a>").attr("href", dlItem.md5);
+          $md5link.append($("<span>").text("MD5"));
+          $check.append($md5link);
+        }
+        $tr.append($os).append($name).append($check).append($size).append($linkTd);
+        $tr.appendTo($tbody);
+        return $tr;
+      }
 
-        function addDownloadLink(dlItem, tabId) {
-            $tbody = $(jq(tabId));
-            $tr = $("<tr>");
-            $os = $("<td class='os'>");
-            if (dlItem.os) {
-              $osdiv =  $("<div>").attr("class", dlItem.os).text(dlItem.os);
-              $os.append($osdiv);
-            }
-            $name = $("<td class='name'>").text(dlItem.label).append($("<span class='subtitle'>").text(dlItem.description));
-            $linkTd = $("<td class='buttons'>");
-            $check = $("<td class='check'>");
-            $size = $("<td class='size'>").text(dlItem.size);
-            var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("target", "_blank").attr("class", "button launch").click(function() {
-              MktoForms2.loadForm("//app-abk.marketo.com", "498-JDO-611", 672, function (url) {
-                MktoForms2.lightbox(url).show();
-              });
-            });
-            $dowloadLink.append($("<span>").text("Download"));
-            var $permaLink = $("<a>").attr("href", dlItem.url).attr("class", "button permalink").click(
-              function(){
-                window.prompt("Copy to clipboard: Ctrl+C",  dlItem.url);
-                return false;
-              }
-            );
-            $permaLink.append($("<img>").attr("src","images/permalink.png"));
-            $linkTd.append($permaLink);
-            $linkTd.append($dowloadLink);
-            if (dlItem.md5) {
-                var $md5link = $("<a>").attr("href", dlItem.md5);
-                $md5link.append($("<span>").text("MD5"));
-                $check.append($md5link);
-            }
-            $tr.append($os).append($name).append($check).append($size).append($linkTd);
-            $tr.appendTo($tbody);
-            return $tr;
-       }
+      function jq(myid) {
+        return '#' + myid.replace(/(:|\.)/g, '\\$1');
+      }
 
-       function jq(myid) {
-         return '#' + myid.replace(/(:|\.)/g,'\\$1');
-       }
+      function addTab(data) {
+        version = data[count];
+        if (version.data) {
+          var kind = version.kind
+          if (kind == "LTS") {
+            LTScount = LTScount + 1;
+          } else if (kind == "FT") {
+            FTcount = FTcount + 1;
+          }
+          fillTab(version.name, version.date, version.data);
+        }
+        count = count + 1;
+      }
 
-       function addTab(data) {
-         version = data[count];
-         if (version.data) {
-           var kind = version.kind
-           if (kind == "LTS") {
-               LTScount = LTScount + 1;
-           } else if (kind == "FT") {
-               FTcount = FTcount + 1;
-           }
-           fillTab(version.name, version.date, version.data);
-         }
-         count = count + 1;
-       }
+      $.getJSON("./downloads.json", function(data) {
+        $.each(data, function() {
+          addTab(data);
+        });
+      });
 
-       $.getJSON("./downloads.json", function(data) {
-         $.each(data, function () {
-           addTab(data);
-         });
-       });
+    });
+  </script>
 
-});
-</script>
-
-<!-- End Document
+  <!-- End Document
 ================================================== -->
 </body>
+
 </html>
