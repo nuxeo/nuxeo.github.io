@@ -77,7 +77,6 @@
   <!-- JS
   ================================================== -->
   <script type="text/javascript" src="//www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
-  <script src="//app-abk.marketo.com/js/forms2/js/forms2.min.js"></script>
   <script src="javascripts/jquery-1.7.1.min.js"></script>
   <script src="javascripts/strftime.js"></script>
   <script src="javascripts/tabs.js"></script>
@@ -154,11 +153,7 @@
         $linkTd = $("<td class='buttons'>");
         $check = $("<td class='check'>");
         $size = $("<td class='size'>").text(dlItem.size);
-        var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("target", "_blank").attr("class", "button launch").click(function() {
-          MktoForms2.loadForm("//app-abk.marketo.com", "498-JDO-611", 672, function(url) {
-            MktoForms2.lightbox(url).show();
-          });
-        });
+        var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("target", "_blank").attr("class", "button launch");
         $dowloadLink.append($("<span>").text("Download"));
         var $permaLink = $("<a>").attr("href", dlItem.url).attr("class", "button permalink").click(
           function() {
