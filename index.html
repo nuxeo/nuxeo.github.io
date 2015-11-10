@@ -2,7 +2,10 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
 <head>
 
   <!-- Basic Page Needs
@@ -21,19 +24,20 @@
   <link rel="stylesheet" href="stylesheets/base.css">
   <link rel="stylesheet" href="stylesheets/skeleton.css">
   <link rel="stylesheet" href="stylesheets/layout.css">
-  <link rel="stylesheet" href="stylesheets/brooklyn.css"
-
+  <link rel="stylesheet" href="stylesheets/brooklyn.css">
   <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 
-<style>
-#xnav-footer {margin-top:0px !important;}
-</style>
-<script src="javascripts/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+  <style>
+    #xnav-footer {
+      margin-top: 0px !important;
+    }
+  </style>
+  <script src="javascripts/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
   <!-- Favicons
   ================================================== -->
   <link rel="shortcut icon" href="images/favicon.ico">
@@ -42,6 +46,7 @@
   <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
 </head>
+
 <body>
 
 
@@ -50,76 +55,100 @@
   ================================================== -->
 
 
-<div class="container">
-  <div class="sixteen columns">
-     <h1 class="remove-bottom" id="site-title" style="margin-top: 40px"><img src="images/nuxeosourcecode.png" alt="nuxeosourcecode" width="940" height="69" /></h1>
-  </div>
-  <div id="welcome">
-  <div class="sixteen columns message">
-     <h2>Welcome to the Nuxeo GitHub Repository</h2>
-
-
-      <p>If you're a Nuxeo developer, this is the place for you. This page features the list of platform modules, addons and community projects available on GitHub. We hope you'll find what you're looking for. We're waiting for your pull requests!</p>
-      <div class="numbers">
- <h5 class="repositories"><span id="repoCountLoading"><img src="./images/loading.gif" /></span><a href="https://github.com/nuxeo"><span id="num-total-repos">&nbsp;</span> repositories</a></h5>  <img src="images/github-icon.png" alt="github-icon" width="48" height="48" id="githubicon"/> <h5 class="members"><span id="membersCountLoading"><img src="./images/loading.gif" /></span><a href="https://github.com/orgs/nuxeo/people"><span id="num-members">&nbsp;</span> members</a></h5>
-</div>
-
-
-  </div>
-
-
-  <div style="clear:both;"></div>
-</div>
-  <div class="sixteen columns personal">
-    <h3>Participants</h3>
-    <div id="participant-list">
-      <span id="membersLoading"><img src="./images/loading.gif" /></span>
+  <div class="container">
+    <div class="sixteen columns">
+      <h1 class="remove-bottom" id="site-title" style="margin-top: 40px">
+        <img src="images/nuxeosourcecode.png" alt="nuxeosourcecode" width="940" height="69" />
+      </h1>
     </div>
-  </div>
+    <div id="welcome">
+      <div class="sixteen columns message">
+        <h2>Welcome to the Nuxeo GitHub Repository</h2>
 
 
-  <div>
-  <div class="ten columns nuxeo">
-    <h3>Nuxeo Projects</h3>
-<div>
-    <h4>Nuxeo Platform</h4>
-<p class="chapo">This is the main repository constituting the basis of the Nuxeo Platform. </p>
-<div id="nxPlatformContainer">
-<span id="platformLoading"><img src="./images/loading.gif" /></span>
-</div>
-</div>
+        <p>If you're a Nuxeo developer, this is the place for you. This page features the list of platform modules, addons and community projects available on GitHub. We hope you'll find what you're looking for. We're waiting for your pull requests!</p>
+        <div class="numbers">
+          <h5 class="repositories">
+            <span id="repoCountLoading">
+              <img src="./images/loading.gif" />
+            </span>
+            <a href="https://github.com/nuxeo">
+              <span id="num-total-repos">&nbsp;</span> repositories</a>
+          </h5>
+          <img src="images/github-icon.png" alt="github-icon" width="48" height="48" id="githubicon" />
+          <h5 class="members">
+            <span id="membersCountLoading">
+              <img src="./images/loading.gif" />
+            </span>
+            <a href="https://github.com/orgs/nuxeo/people">
+              <span id="num-members">&nbsp;</span> members</a>
+          </h5>
+        </div>
 
-<div>
-    <h4>Addons</h4>
-<p class="chapo">Here's the list of all the addon hosted on GitHub by Nuxeo's team. </p>
 
-<div id="nxAddonContainer">
-</div>
+      </div>
 
-<div class="toggle"><a id="addonToggle">[ Show more ]</a><span id="addonLoading"><img src="./images/loading.gif" /></span></div>
 
-</div>
+      <div style="clear:both;"></div>
+    </div>
+    <div class="sixteen columns personal">
+      <h3>Participants</h3>
+      <div id="participant-list">
+        <span id="membersLoading">
+          <img src="./images/loading.gif" />
+        </span>
+      </div>
+    </div>
 
-  </div>
 
-  <div id="communityProjects" class="six columns community">
-    <h3>Community Projects</h3>
-<p class="chapo">Take a look at all the community projects. If your project is missing, send us an email, or even better a pull request on this <a href="https://github.com/nuxeo/nuxeo.github.io/blob/master/repositories.json">file</a> :)  </p>
-<div id="cmProjectContainer" >
+    <div>
+      <div class="ten columns nuxeo">
+        <h3>Nuxeo Projects</h3>
+        <div>
+          <h4>Nuxeo Platform</h4>
+          <p class="chapo">This is the main repository constituting the basis of the Nuxeo Platform. </p>
+          <div id="nxPlatformContainer">
+            <span id="platformLoading">
+              <img src="./images/loading.gif" />
+            </span>
+          </div>
+        </div>
 
-</div>
-  </div>
+        <div>
+          <h4>Addons</h4>
+          <p class="chapo">Here's the list of all the addon hosted on GitHub by Nuxeo's team. </p>
 
-</div>
-<!-- container -->
+          <div id="nxAddonContainer">
+          </div>
 
-  <!-- JS
+          <div class="toggle"><a id="addonToggle">[ Show more ]</a>
+            <span id="addonLoading">
+              <img src="./images/loading.gif" />
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="communityProjects" class="six columns community">
+        <h3>Community Projects</h3>
+        <p class="chapo">Take a look at all the community projects. If your project is missing, send us an email, or even better a pull request on this <a href="https://github.com/nuxeo/nuxeo.github.io/blob/master/repositories.json">file</a> :) </p>
+        <div id="cmProjectContainer">
+
+        </div>
+      </div>
+
+    </div>
+    <!-- container -->
+
+    <!-- JS
   ================================================== -->
     <script src="javascripts/strftime.js"></script>
     <script src="javascripts/tabs.js"></script>
 
     <script type="text/javascript">
-    (function ($, undefined) {
+      (function($, undefined) {
 
         // Put community repositories json description
         var communityRepos;
@@ -149,191 +178,193 @@
         var alreadyloading = false;
 
         $.getJSON("./repositories.json", function(data) {
-            $("#addonLoading").hide();
-            $("#repoCountLoading").hide();
-            $("#membersLoading").hide();
-            $("membersCountLoading").hide();
-            $("#platformLoading").hide();
+          $("#addonLoading").hide();
+          $("#repoCountLoading").hide();
+          $("#membersLoading").hide();
+          $("membersCountLoading").hide();
+          $("#platformLoading").hide();
 
-            communityRepos = data.community;
-            platformRepos = data.platform;
-            personalRepos = data.personal;
-            timelineRepos = data.timeline;
-            customRepoDescriptions = data.customRepoDescriptions;
-            customRepoLanguages = data.customRepoLanguages;
-            customRepoUrls= data.customRepoUrls;
-            defaultRepoCategories = data.defaultRepoCategories;
-            addOrgaMembers();
-            addRepoCount();
-            addCommunityRepo();
-            addPlatformRepo();
-            nextAddonPage();
-            $('#addonToggle').click(nextAddonPage);
+          communityRepos = data.community;
+          platformRepos = data.platform;
+          personalRepos = data.personal;
+          timelineRepos = data.timeline;
+          customRepoDescriptions = data.customRepoDescriptions;
+          customRepoLanguages = data.customRepoLanguages;
+          customRepoUrls = data.customRepoUrls;
+          defaultRepoCategories = data.defaultRepoCategories;
+          addOrgaMembers();
+          addRepoCount();
+          addCommunityRepo();
+          addPlatformRepo();
+          nextAddonPage();
+          $('#addonToggle').click(nextAddonPage);
         });
 
 
         $(window).scroll(function() {
-           if ($('body').height() <= ($(window).height() + $(window).scrollTop())) {
-             if (alreadyloading == false) {
-               alreadyloading = true;
-               nextAddonPage();
-               alreadyloading = false;
-             }
-           }
+          if ($('body').height() <= ($(window).height() + $(window).scrollTop())) {
+            if (alreadyloading == false) {
+              alreadyloading = true;
+              nextAddonPage();
+              alreadyloading = false;
+            }
+          }
         });
 
         function repoUrl(repo) {
-            return customRepoUrls[repo.name] || repo.html_url || repo.url ;
+          return customRepoUrls[repo.name] || repo.html_url || repo.url;
         }
 
         function repoDescription(repo) {
-            return customRepoDescriptions[repo.name] || repo.description;
+          return customRepoDescriptions[repo.name] || repo.description;
         }
 
         function repoLanguage(repo) {
-            return customRepoLanguages[repo.name] || repo.language;
+          return customRepoLanguages[repo.name] || repo.language;
         }
 
 
         function addProject(repo, targetId) {
-            var $projectContainer = $("<div>").attr("class","project");
-            var $title = $("<h5>").appendTo($projectContainer);
-            var $link = $("<a>").attr("href", repo.html_url).text(repo.name).appendTo($title);
-            var meta ="";
-            var language = repoLanguage(repo);
-            if (language) {
-                meta = meta + "Written in " + language + "; ";
-            }
-            if (repo.watchers && repo.watchers != 0) {
-                meta = meta + repo.watchers + " watchers; ";
-            }
-            if (repo.forks && repo.forks != 0) {
-                meta = meta + repo.forks + " forks; ";
-            }
-            var $byline = $("<div>").attr("class", "byline").text(meta).appendTo($projectContainer);
-            var $description = $("<p>").text(repoDescription(repo)).appendTo($projectContainer);
-            $projectContainer.appendTo(targetId);
+          var $projectContainer = $("<div>").attr("class", "project");
+          var $title = $("<h5>").appendTo($projectContainer);
+          var $link = $("<a>").attr("href", repo.html_url).text(repo.name).appendTo($title);
+          var meta = "";
+          var language = repoLanguage(repo);
+          if (language) {
+            meta = meta + "Written in " + language + "; ";
+          }
+          if (repo.watchers && repo.watchers != 0) {
+            meta = meta + repo.watchers + " watchers; ";
+          }
+          if (repo.forks && repo.forks != 0) {
+            meta = meta + repo.forks + " forks; ";
+          }
+          var $byline = $("<div>").attr("class", "byline").text(meta).appendTo($projectContainer);
+          var $description = $("<p>").text(repoDescription(repo)).appendTo($projectContainer);
+          $projectContainer.appendTo(targetId);
         }
 
         function addCMProject(repo) {
-            var $projectContainer = $("<div>").attr("class","project");
-            var $title = $("<h5>").appendTo($projectContainer);
-            var $link = $("<a>").attr("href", repo.html_url).text(repo.name).appendTo($title);
-            var $orgaSpan = $("<span>").attr("class", "orga").text(" by " ).appendTo($title);
-            var $orgaLink = $("<a>").attr("href", "https://github.com/" + repo.owner.login).text(repo.owner.login).appendTo($orgaSpan);
-            var meta ="";
-            var language = repoLanguage(repo);
-            if (language) {
-                meta = meta + "Written in " + language + "; ";
-            }
-            if (repo.watchers && repo.watchers != 0) {
-                meta = meta + repo.watchers + " watchers; ";
-            }
-            if (repo.forks && repo.forks != 0) {
-                meta = meta + repo.forks + " forks; ";
-            }
-            var $byline = $("<div>").attr("class", "byline").text(meta).appendTo($projectContainer)
-            var $description = $("<p>").text(repoDescription(repo)).appendTo($projectContainer);
-            $projectContainer.appendTo("#cmProjectContainer");
+          var $projectContainer = $("<div>").attr("class", "project");
+          var $title = $("<h5>").appendTo($projectContainer);
+          var $link = $("<a>").attr("href", repo.html_url).text(repo.name).appendTo($title);
+          var $orgaSpan = $("<span>").attr("class", "orga").text(" by ").appendTo($title);
+          var $orgaLink = $("<a>").attr("href", "https://github.com/" + repo.owner.login).text(repo.owner.login).appendTo($orgaSpan);
+          var meta = "";
+          var language = repoLanguage(repo);
+          if (language) {
+            meta = meta + "Written in " + language + "; ";
+          }
+          if (repo.watchers && repo.watchers != 0) {
+            meta = meta + repo.watchers + " watchers; ";
+          }
+          if (repo.forks && repo.forks != 0) {
+            meta = meta + repo.forks + " forks; ";
+          }
+          var $byline = $("<div>").attr("class", "byline").text(meta).appendTo($projectContainer)
+          var $description = $("<p>").text(repoDescription(repo)).appendTo($projectContainer);
+          $projectContainer.appendTo("#cmProjectContainer");
         }
 
         function addPlatformRepo() {
-            $("#platformLoading").show();
-            $.each(platformRepos, function (i, repo) {
-              var repoURL = formatNuxeoRepoUrl(repo);
-              $.getJSON(repoURL, function(result) {
-                  addProject(result, "#nxPlatformContainer");
-              });
-              $("#platformLoading").hide();
+          $("#platformLoading").show();
+          $.each(platformRepos, function(i, repo) {
+            var repoURL = formatNuxeoRepoUrl(repo);
+            $.getJSON(repoURL, function(result) {
+              addProject(result, "#nxPlatformContainer");
             });
+            $("#platformLoading").hide();
+          });
         }
 
         function addCommunityRepo() {
-            for (i=0; i<communityRepos.length; i++) {
-              var repo = communityRepos[i];
-              var repoURL = formatRepoUrl(repo);
-              $.getJSON(repoURL, function(result) {
-                  addCMProject(result);
-              });
-            }
+          for (i = 0; i < communityRepos.length; i++) {
+            var repo = communityRepos[i];
+            var repoURL = formatRepoUrl(repo);
+            $.getJSON(repoURL, function(result) {
+              addCMProject(result);
+            });
+          }
         }
 
         function formatRepoUrl(repo) {
-            return "./data/"+
-                    repo.owner  +"/" + repo.projectName + "/repo.json";
+          return "./data/" +
+            repo.owner + "/" + repo.projectName + "/repo.json";
         }
 
         function formatNuxeoRepoUrl(repoName) {
-            return "./data/nuxeo/" + repoName + "/repo.json";
+          return "./data/nuxeo/" + repoName + "/repo.json";
         }
 
         function formatOrgRepoUrl(page) {
-            var url = "./data/";
-            if (page) {
-               return url + page + ".json";
-            } else {
-               return url + "1.json";
-            }
+          var url = "./data/";
+          if (page) {
+            return url + page + ".json";
+          } else {
+            return url + "1.json";
+          }
         }
 
         function addOrgaMembers() {
-        $("#membersLoading").show();
-        $("#membersCountLoading").show();
-        $.getJSON("./data/members.json", function (members) {
-            $(function () {
-                $("#num-members").text(members.length);
-                $.each(members, function (i, member) {
-                  var $item = $("<div>");
-                  var $link = $("<a>").attr("href", "https://github.com/" + member.login).appendTo($item);
-                  var $image = $("<img>").attr("src", member.avatar_url).attr("alt", member.login).appendTo($link);
-                  $item.appendTo("#participant-list");
-                });
+          $("#membersLoading").show();
+          $("#membersCountLoading").show();
+          $.getJSON("./data/members.json", function(members) {
+            $(function() {
+              $("#num-members").text(members.length);
+              $.each(members, function(i, member) {
+                var $item = $("<div>");
+                var $link = $("<a>").attr("href", "https://github.com/" + member.login).appendTo($item);
+                var $image = $("<img>").attr("src", member.avatar_url).attr("alt", member.login).appendTo($link);
+                $item.appendTo("#participant-list");
+              });
             });
-        $("#membersLoading").hide();
-        $("#membersCountLoading").hide();
-        });
+            $("#membersLoading").hide();
+            $("#membersCountLoading").hide();
+          });
         }
 
         function addRepoCount() {
-        $("#repoCountLoading").show();
-        $.getJSON("./data/orga.json", function (orga) {
-            $(function () {
-                var totalRepositories = orga.public_repos + communityRepos.length;
-                $("#num-total-repos").text(totalRepositories);
+          $("#repoCountLoading").show();
+          $.getJSON("./data/orga.json", function(orga) {
+            $(function() {
+              var totalRepositories = orga.public_repos + communityRepos.length;
+              $("#num-total-repos").text(totalRepositories);
             });
-        $("#repoCountLoading").hide();
-        });
+            $("#repoCountLoading").hide();
+          });
         }
 
         var pageCount = 1;
         var lastPageUrl;
+
         function nextAddonPage() {
-        $("#addonLoading").show();
-        var status = $.getJSON(formatOrgRepoUrl(pageCount), function (result) {
-            $(function () {
-                var repos = result;
-                $.each(repos, function (i, repo) {
-                      if (platformRepos.indexOf(repo.name) == -1) {
-                        addProject(repo, "#nxAddonContainer");
-                    }
-                });
-               pageCount++;
+          $("#addonLoading").show();
+          var status = $.getJSON(formatOrgRepoUrl(pageCount), function(result) {
+            $(function() {
+              var repos = result;
+              $.each(repos, function(i, repo) {
+                if (platformRepos.indexOf(repo.name) == -1) {
+                  addProject(repo, "#nxAddonContainer");
+                }
+              });
+              pageCount++;
             });
-        $("#addonLoading").hide();
+            $("#addonLoading").hide();
 
-        });
+          });
 
-        if (status.readyState == 0) {
-           $('#addonToggle').remove();
-           $(window).unbind('scroll');
-           $("#addonLoading").hide();
+          if (status.readyState == 0) {
+            $('#addonToggle').remove();
+            $(window).unbind('scroll');
+            $("#addonLoading").hide();
+          }
         }
-        }
 
-    })(jQuery);
+      })(jQuery);
     </script>
 
-<!-- End Document
+    <!-- End Document
 ================================================== -->
 </body>
+
 </html>

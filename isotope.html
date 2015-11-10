@@ -2,7 +2,10 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
 <head>
 
 	<!-- Basic Page Needs
@@ -28,71 +31,71 @@
 
 
 
- <style>
-/**** Isotope Filtering ****/
+	<style>
+		/**** Isotope Filtering ****/
 
-.isotope-item {
-  z-index: 2;
-}
+		.isotope-item {
+			z-index: 2;
+		}
 
-.isotope-hidden.isotope-item {
-  pointer-events: none;
-  z-index: 1;
-}
+		.isotope-hidden.isotope-item {
+			pointer-events: none;
+			z-index: 1;
+		}
+		/**** Isotope CSS3 transitions ****/
 
-/**** Isotope CSS3 transitions ****/
+		.isotope,
+		.isotope .isotope-item {
+			-webkit-transition-duration: 0.8s;
+			-moz-transition-duration: 0.8s;
+			-ms-transition-duration: 0.8s;
+			-o-transition-duration: 0.8s;
+			transition-duration: 0.8s;
+		}
 
-.isotope,
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
+		.isotope {
+			-webkit-transition-property: height, width;
+			-moz-transition-property: height, width;
+			-ms-transition-property: height, width;
+			-o-transition-property: height, width;
+			transition-property: height, width;
+		}
 
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-      -ms-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
+		.isotope .isotope-item {
+			-webkit-transition-property: -webkit-transform, opacity;
+			-moz-transition-property: -moz-transform, opacity;
+			-ms-transition-property: -ms-transform, opacity;
+			-o-transition-property: top, left, opacity;
+			transition-property: transform, opacity;
+		}
+		/**** disabling Isotope CSS3 transitions ****/
 
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-      -ms-transition-property:     -ms-transform, opacity;
-       -o-transition-property:         top, left, opacity;
-          transition-property:         transform, opacity;
-}
+		.isotope.no-transition,
+		.isotope.no-transition .isotope-item,
+		.isotope .isotope-item.no-transition {
+			-webkit-transition-duration: 0s;
+			-moz-transition-duration: 0s;
+			-ms-transition-duration: 0s;
+			-o-transition-duration: 0s;
+			transition-duration: 0s;
+		}
 
-/**** disabling Isotope CSS3 transitions ****/
+		a.highlight {
+			color: red;
+		}
 
-.isotope.no-transition,
-.isotope.no-transition .isotope-item,
-.isotope .isotope-item.no-transition {
-  -webkit-transition-duration: 0s;
-     -moz-transition-duration: 0s;
-      -ms-transition-duration: 0s;
-       -o-transition-duration: 0s;
-          transition-duration: 0s;
-}
+		.item {
+			border: 1px solid #CCC;
+			width: 200px;
+		}
 
- a.highlight {
-    color: red;
-}
-  .item {
-    border: 1px solid #CCC;
-width : 200px;
-}
-  #filter-display {
-    font-size: 18px;
-    padding: 0.5em;
-    border: 1px solid #CCC;
-    color: blue;
- }
- </style>
+		#filter-display {
+			font-size: 18px;
+			padding: 0.5em;
+			border: 1px solid #CCC;
+			color: blue;
+		}
+	</style>
 
 
 	<!-- Favicons
@@ -103,6 +106,7 @@ width : 200px;
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
 </head>
+
 <body>
 
 
@@ -110,403 +114,429 @@ width : 200px;
 	<!-- Primary Page Layout
 	================================================== -->
 
-<div>
-  <div  style="float: left;" id="options">
-<div >
+	<div>
+		<div style="float: left;" id="options">
+			<div>
 
-<fieldset>
-      <label for="">Origins</label>
-      <div class="option-set" data-group="origin">
-      <label for="origin-all"><input type="checkbox" value="" id="origin-all" class="all" checked="true" /><span>all</span></label></label>
-      <label for="origin-all"><input type="checkbox" value=".Nuxeo" id="Nuxeo" /><span>Nuxeo</span></label>
-      <label for="origin-all"><input type="checkbox" value=".Community" id="Community" /><span>Community</span></label>
-      <label for="origin-all"><input type="checkbox" value=".Personal" id="Personal" /><span>Personal</span></label>
-    </div>
-</fieldset>
-<fieldset>
-      <label for="">Languages</label>
-    <div id="languagesSelector" class="option-set" data-group="language">
-      <label for="language-all"><input type="checkbox" value="" id="language-all" class="all" checked="true" /><span>all</span></label>
-    </div>
-</fieldset>
-<fieldset>
-      <label for="">Categories</label>
-    <div id="categoriesSelector" class="option-set" data-group="categories">
-      <label for="language-all"><input type="checkbox" value="" id="categories-all" class="all" checked="true" /><span>all</span></label>
-    </div>
-</fieldset>
-</div>
+				<fieldset>
+					<label for="">Origins</label>
+					<div class="option-set" data-group="origin">
+						<label for="origin-all">
+							<input type="checkbox" value="" id="origin-all" class="all" checked="true" />
+							<span>all</span>
+						</label>
+						</label>
+						<label for="origin-all">
+							<input type="checkbox" value=".Nuxeo" id="Nuxeo" />
+							<span>Nuxeo</span>
+						</label>
+						<label for="origin-all">
+							<input type="checkbox" value=".Community" id="Community" />
+							<span>Community</span>
+						</label>
+						<label for="origin-all">
+							<input type="checkbox" value=".Personal" id="Personal" />
+							<span>Personal</span>
+						</label>
+					</div>
+				</fieldset>
+				<fieldset>
+					<label for="">Languages</label>
+					<div id="languagesSelector" class="option-set" data-group="language">
+						<label for="language-all">
+							<input type="checkbox" value="" id="language-all" class="all" checked="true" />
+							<span>all</span>
+						</label>
+					</div>
+				</fieldset>
+				<fieldset>
+					<label for="">Categories</label>
+					<div id="categoriesSelector" class="option-set" data-group="categories">
+						<label for="language-all">
+							<input type="checkbox" value="" id="categories-all" class="all" checked="true" />
+							<span>all</span>
+						</label>
+					</div>
+				</fieldset>
+			</div>
 
 
-</div>
+		</div>
 
 
-<div>
+		<div>
 
-  <div id="sort-by" >
-    <h6>Sort by:</h6>
-    <span><a class="highlight" href="#original-order">default</a></span>
-    <span><a href="#name">name</a></span>
-    <span><a href="#pushed_at">pushed_at</a></span>
-    <span><a href="#watchers">watchers</a></span>
-    <span><a href="#random">random</a></span>
-  </div>
-  </div>
+			<div id="sort-by">
+				<h6>Sort by:</h6>
+				<span><a class="highlight" href="#original-order">default</a></span>
+				<span><a href="#name">name</a></span>
+				<span><a href="#pushed_at">pushed_at</a></span>
+				<span><a href="#watchers">watchers</a></span>
+				<span><a href="#random">random</a></span>
+			</div>
+		</div>
 
- <div>  <p id="filter-display"></p> </div>
+		<div>
+			<p id="filter-display"></p>
+		</div>
 
-  <div id="container">
-  </div>
-</div>
-<!-- container -->
+		<div id="container">
+		</div>
+	</div>
+	<!-- container -->
 
 	<!-- JS
 	================================================== -->
-    <script src="javascripts/jquery-1.7.1.min.js"></script>
-    <script src="javascripts/strftime.js"></script>
-    <script src="javascripts/jquery.isotope.min.js"></script>
+	<script src="javascripts/jquery-1.7.1.min.js"></script>
+	<script src="javascripts/strftime.js"></script>
+	<script src="javascripts/jquery.isotope.min.js"></script>
 
-    <script type="text/javascript">
-    (function ($, undefined) {
+	<script type="text/javascript">
+		(function($, undefined) {
 
-        // Put community repositories json description
-        var communityRepos;
+			// Put community repositories json description
+			var communityRepos;
 
-        // Put personal repositories json description
-        var personalRepos;
+			// Put personal repositories json description
+			var personalRepos;
 
-        // Put personal repositories json description
-        var timelineRepos;
+			// Put personal repositories json description
+			var timelineRepos;
 
-        // Put custom repo URL's in this object, keyed by repo name.
-        var customRepoUrls;
+			// Put custom repo URL's in this object, keyed by repo name.
+			var customRepoUrls;
 
-        // Put custom repo descriptions in this object, keyed by repo name.
-        var customRepoDescriptions;
+			// Put custom repo descriptions in this object, keyed by repo name.
+			var customRepoDescriptions;
 
-        var defaultRepoCategories;
+			var defaultRepoCategories;
 
-        var commits = new Array();
+			var commits = new Array();
 
-        var uniqueCategories = new Array();
+			var uniqueCategories = new Array();
 
-        var uniqueLanguages = new Array();
+			var uniqueLanguages = new Array();
 
-        Array.prototype.pushUnique = function (value) {
-            var arrVal = this;
-            if ($.inArray(value, arrVal) === -1) {
-                arrVal.push(value);
-            }
-            return arrVal;
-        }
+			Array.prototype.pushUnique = function(value) {
+				var arrVal = this;
+				if ($.inArray(value, arrVal) === -1) {
+					arrVal.push(value);
+				}
+				return arrVal;
+			}
 
-        $.getJSON("./repositories.json", function(data) {
-            communityRepos = data.community;
-            personalRepos = data.personal;
-            timelineRepos = data.timeline;
-            customRepoDescriptions = data.customRepoDescriptions;
-            customRepoUrls= data.customRepoUrls;
-            defaultRepoCategories = data.defaultRepoCategories;
-            startLoadingData();
-        });
+			$.getJSON("./repositories.json", function(data) {
+				communityRepos = data.community;
+				personalRepos = data.personal;
+				timelineRepos = data.timeline;
+				customRepoDescriptions = data.customRepoDescriptions;
+				customRepoUrls = data.customRepoUrls;
+				defaultRepoCategories = data.defaultRepoCategories;
+				startLoadingData();
+			});
 
-        function repoUrl(repo) {
-            return customRepoUrls[repo.name] || repo.html_url || repo.url ;
-        }
+			function repoUrl(repo) {
+				return customRepoUrls[repo.name] || repo.html_url || repo.url;
+			}
 
-        function repoDescription(repo) {
-            return customRepoDescriptions[repo.name] || repo.description;
-        }
+			function repoDescription(repo) {
+				return customRepoDescriptions[repo.name] || repo.description;
+			}
 
-        function addRecentlyUpdatedRepo(repo) {
-            var $item = $("<li>");
+			function addRecentlyUpdatedRepo(repo) {
+				var $item = $("<li>");
 
-            var $name = $("<a>").attr("href", repo.html_url).text(repo.name + " ");
-            $item.append($("<span>").addClass("name").append($name));
+				var $name = $("<a>").attr("href", repo.html_url).text(repo.name + " ");
+				$item.append($("<span>").addClass("name").append($name));
 
-            var $time = $("<a>").attr("href", repo.html_url + "/commits").text(strftime("%h %e, %Y", repo.pushed_at));
-            $item.append($("<span>").addClass("time").append($time));
+				var $time = $("<a>").attr("href", repo.html_url + "/commits").text(strftime("%h %e, %Y", repo.pushed_at));
+				$item.append($("<span>").addClass("time").append($time));
 
-            $item.append('<span class="bullet">&sdot;</span>');
+				$item.append('<span class="bullet">&sdot;</span>');
 
-            var $watchers = $("<a>").attr("href", repo.html_url + "/watchers").text(repo.watchers + " watchers");
-            $item.append($("<span>").addClass("watchers").append($watchers));
+				var $watchers = $("<a>").attr("href", repo.html_url + "/watchers").text(repo.watchers + " watchers");
+				$item.append($("<span>").addClass("watchers").append($watchers));
 
-            $item.append('<span class="bullet">&sdot;</span>');
+				$item.append('<span class="bullet">&sdot;</span>');
 
-            var $forks = $("<a>").attr("href", repo.html_url + "/network").text(repo.forks + " forks");
-            $item.append($("<span>").addClass("forks").append($forks));
+				var $forks = $("<a>").attr("href", repo.html_url + "/network").text(repo.forks + " forks");
+				$item.append($("<span>").addClass("forks").append($forks));
 
-            $item.appendTo("#recently-updated-repos");
-        }
+				$item.appendTo("#recently-updated-repos");
+			}
 
-        function addRepo(repo) {
-            var categories = new Array();
-            var formatedCategories = "item Nuxeo ";
-            if (repo.language) {
-                formatedCategories += repo.language + " ";
-                uniqueLanguages.pushUnique(repo.language);
-            }
-            if (defaultRepoCategories[repo.name]) {
-                categories = categories.concat(defaultRepoCategories[repo.name]);
-            }
-            $.each(categories, function (i, category) {
-                uniqueCategories.pushUnique(category);
-                formatedCategories += category + " ";
-            });
-            var $item = $("<div>").addClass(formatedCategories);
-            var $link = $("<a>").attr("href", repoUrl(repo)).appendTo($item);
-            $link.append($("<p>").text("name: " + repo.name).attr("class", "name"));
-            $link.append($("<p>").text("description: " + repoDescription(repo)));
-            $link.append($("<p>").text("categories: " + formatedCategories));
-            $link.append($("<p>").text("watchers: " + repo.watchers).attr("class", "watchers"));
-            $link.append($("<p>").text("owner: " + repo.owner.login));
-            $link.append($("<img>").attr("src",repo.owner.avatar_url));
-            $link.append($("<p>").text("pushed_at: " + repo.pushed_at).attr("class", "pushed_at"));
-            $item.appendTo("#container");
-        }
+			function addRepo(repo) {
+				var categories = new Array();
+				var formatedCategories = "item Nuxeo ";
+				if (repo.language) {
+					formatedCategories += repo.language + " ";
+					uniqueLanguages.pushUnique(repo.language);
+				}
+				if (defaultRepoCategories[repo.name]) {
+					categories = categories.concat(defaultRepoCategories[repo.name]);
+				}
+				$.each(categories, function(i, category) {
+					uniqueCategories.pushUnique(category);
+					formatedCategories += category + " ";
+				});
+				var $item = $("<div>").addClass(formatedCategories);
+				var $link = $("<a>").attr("href", repoUrl(repo)).appendTo($item);
+				$link.append($("<p>").text("name: " + repo.name).attr("class", "name"));
+				$link.append($("<p>").text("description: " + repoDescription(repo)));
+				$link.append($("<p>").text("categories: " + formatedCategories));
+				$link.append($("<p>").text("watchers: " + repo.watchers).attr("class", "watchers"));
+				$link.append($("<p>").text("owner: " + repo.owner.login));
+				$link.append($("<img>").attr("src", repo.owner.avatar_url));
+				$link.append($("<p>").text("pushed_at: " + repo.pushed_at).attr("class", "pushed_at"));
+				$item.appendTo("#container");
+			}
 
-        function addCommunityRepo(repo, repoCategories) {
-            var categories = new Array();
-            var formatedCategories = "item Community ";
-            if (repo.language) {
-                formatedCategories += repo.language + " ";
-                uniqueLanguages.pushUnique(repo.language);
-            }
-            if (repoCategories) {
-                categories = categories.concat(repoCategories);
-            }
-            $.each(categories, function (i, category) {
-                uniqueCategories.pushUnique(category);
-                formatedCategories += category + " ";
-            });
-            var $item = $("<div>").addClass(formatedCategories);
-            var $link = $("<a>").attr("href", repoUrl(repo)).appendTo($item);
-            $link.append($("<p>").text("name: " + repo.name).attr("class", "name"));
-            $link.append($("<p>").text("description: " + repoDescription(repo)));
-            $link.append($("<p>").text("categories: " + formatedCategories));
-            $link.append($("<p>").text("watchers: " + repo.watchers).attr("class", "watchers"));
-            $link.append($("<p>").text("pushed_at: " + repo.pushed_at).attr("class", "pushed_at"));
-            $item.appendTo("#container");
-        }
+			function addCommunityRepo(repo, repoCategories) {
+				var categories = new Array();
+				var formatedCategories = "item Community ";
+				if (repo.language) {
+					formatedCategories += repo.language + " ";
+					uniqueLanguages.pushUnique(repo.language);
+				}
+				if (repoCategories) {
+					categories = categories.concat(repoCategories);
+				}
+				$.each(categories, function(i, category) {
+					uniqueCategories.pushUnique(category);
+					formatedCategories += category + " ";
+				});
+				var $item = $("<div>").addClass(formatedCategories);
+				var $link = $("<a>").attr("href", repoUrl(repo)).appendTo($item);
+				$link.append($("<p>").text("name: " + repo.name).attr("class", "name"));
+				$link.append($("<p>").text("description: " + repoDescription(repo)));
+				$link.append($("<p>").text("categories: " + formatedCategories));
+				$link.append($("<p>").text("watchers: " + repo.watchers).attr("class", "watchers"));
+				$link.append($("<p>").text("pushed_at: " + repo.pushed_at).attr("class", "pushed_at"));
+				$item.appendTo("#container");
+			}
 
-        function addPersonalRepo(repo, repoCategories) {
-            var categories = new Array();
-            var formatedCategories = "item Personal ";
-            if (repo.language) {
-                formatedCategories += repo.language + " ";
-                uniqueLanguages.pushUnique(repo.language);
-            }
-            if (repoCategories) {
-                categories = categories.concat(repoCategories);
-            }
-            $.each(categories, function (i, category) {
-                uniqueCategories.pushUnique(category);
-                formatedCategories += category + " ";
-            });
-            var $item = $("<div>").addClass(formatedCategories);
-            var $link = $("<a>").attr("href", repoUrl(repo)).appendTo($item);
-            $link.append($("<p>").text("name: " + repo.name).attr("class", "name"));
-            $link.append($("<p>").text("description: " + repoDescription(repo)));
-            $link.append($("<p>").text("categories: " + formatedCategories));;
-            $link.append($("<p>").text("watchers: " + repo.watchers).attr("class", "watchers"));
-            $link.append($("<p>").text("pushed_at: " + repo.pushed_at).attr("class", "pushed_at"));
-            $item.appendTo("#container");
-        }
+			function addPersonalRepo(repo, repoCategories) {
+				var categories = new Array();
+				var formatedCategories = "item Personal ";
+				if (repo.language) {
+					formatedCategories += repo.language + " ";
+					uniqueLanguages.pushUnique(repo.language);
+				}
+				if (repoCategories) {
+					categories = categories.concat(repoCategories);
+				}
+				$.each(categories, function(i, category) {
+					uniqueCategories.pushUnique(category);
+					formatedCategories += category + " ";
+				});
+				var $item = $("<div>").addClass(formatedCategories);
+				var $link = $("<a>").attr("href", repoUrl(repo)).appendTo($item);
+				$link.append($("<p>").text("name: " + repo.name).attr("class", "name"));
+				$link.append($("<p>").text("description: " + repoDescription(repo)));
+				$link.append($("<p>").text("categories: " + formatedCategories));;
+				$link.append($("<p>").text("watchers: " + repo.watchers).attr("class", "watchers"));
+				$link.append($("<p>").text("pushed_at: " + repo.pushed_at).attr("class", "pushed_at"));
+				$item.appendTo("#container");
+			}
 
-        function formatRepoUrl(repo) {
-            return "http://github.com/api/v2/json/repos/show/"+
-                    repo.owner  +"/" + repo.projectName+"?callback=?";
-        }
+			function formatRepoUrl(repo) {
+				return "http://github.com/api/v2/json/repos/show/" +
+					repo.owner + "/" + repo.projectName + "?callback=?";
+			}
 
-        function addSelector(value, containerId) {
-            var $label = $("<label>").attr("for", value).appendTo(containerId);
-            var $input = $("<input>").attr("type", "checkbox").attr("value", "."+value).attr("id", value).appendTo($label);
-            var $span = $("<span>").text(value).appendTo($label);
-        }
+			function addSelector(value, containerId) {
+				var $label = $("<label>").attr("for", value).appendTo(containerId);
+				var $input = $("<input>").attr("type", "checkbox").attr("value", "." + value).attr("id", value).appendTo($label);
+				var $span = $("<span>").text(value).appendTo($label);
+			}
 
-        function startLoadingData() {
-        $.when(
-        $.each(communityRepos, function (i, repo) {
-            $.getJSON(formatRepoUrl(repo), function(result) {
-                addCommunityRepo(result.repository, repo.categories);
-            });
-        })
-        ,
-        $.each(personalRepos, function (i, repo) {
-            $.getJSON(formatRepoUrl(repo), function(result) {
-                addPersonalRepo(result.repository, repo.categories);
-            });
-        })
-        ,
-        $.getJSON("https://api.github.com/orgs/nuxeo/repos?callback=?", function (result) {
-            var repos = result.data;
-            $(function () {
-                // Convert pushed_at to Date.
-                $.each(repos, function (i, repo) {
-                    repo.pushed_at = new Date(repo.pushed_at);
+			function startLoadingData() {
+				$.when(
+					$.each(communityRepos, function(i, repo) {
+						$.getJSON(formatRepoUrl(repo), function(result) {
+							addCommunityRepo(result.repository, repo.categories);
+						});
+					}),
+					$.each(personalRepos, function(i, repo) {
+						$.getJSON(formatRepoUrl(repo), function(result) {
+							addPersonalRepo(result.repository, repo.categories);
+						});
+					}),
+					$.getJSON("https://api.github.com/orgs/nuxeo/repos?callback=?", function(result) {
+						var repos = result.data;
+						$(function() {
+							// Convert pushed_at to Date.
+							$.each(repos, function(i, repo) {
+								repo.pushed_at = new Date(repo.pushed_at);
 
-                    var weekHalfLife  = 1.146 * Math.pow(10, -9);
+								var weekHalfLife = 1.146 * Math.pow(10, -9);
 
-                    var pushDelta    = (new Date) - Date.parse(repo.pushed_at);
-                    var createdDelta = (new Date) - Date.parse(repo.created_at);
+								var pushDelta = (new Date) - Date.parse(repo.pushed_at);
+								var createdDelta = (new Date) - Date.parse(repo.created_at);
 
-                    var weightForPush = 1;
-                    var weightForWatchers = 1.314 * Math.pow(10, 7);
+								var weightForPush = 1;
+								var weightForWatchers = 1.314 * Math.pow(10, 7);
 
-                    repo.hotness = weightForPush * Math.pow(Math.E, -1 * weekHalfLife * pushDelta);
-                    repo.hotness += weightForWatchers * repo.watchers / createdDelta;
-                });
+								repo.hotness = weightForPush * Math.pow(Math.E, -1 * weekHalfLife * pushDelta);
+								repo.hotness += weightForWatchers * repo.watchers / createdDelta;
+							});
 
-                // Sort by highest # of watchers.
-                /*          repos.sort(function (a, b) {
-                 if (a.hotness < b.hotness) return 1;
-                 if (b.hotness < a.hotness) return -1;
-                 return 0;
-                 });*/
+							// Sort by highest # of watchers.
+							/*          repos.sort(function (a, b) {
+							 if (a.hotness < b.hotness) return 1;
+							 if (b.hotness < a.hotness) return -1;
+							 return 0;
+							 });*/
 
-                $.each(repos, function (i, repo) {
-                    addRepo(repo);
-                });
+							$.each(repos, function(i, repo) {
+								addRepo(repo);
+							});
 
-                // Sort by most-recently pushed to.
-                repos.sort(function (a, b) {
-                    if (a.pushed_at < b.pushed_at) return 1;
-                    if (b.pushed_at < a.pushed_at) return -1;
-                    return 0;
-                });
+							// Sort by most-recently pushed to.
+							repos.sort(function(a, b) {
+								if (a.pushed_at < b.pushed_at) return 1;
+								if (b.pushed_at < a.pushed_at) return -1;
+								return 0;
+							});
 
-                $.each(repos.slice(0, 3), function (i, repo) {
-                    addRecentlyUpdatedRepo(repo);
-                });
-            });
-        })
-  ).done(function(a1, a2, a3) {
+							$.each(repos.slice(0, 3), function(i, repo) {
+								addRecentlyUpdatedRepo(repo);
+							});
+						});
+					})
+				).done(function(a1, a2, a3) {
 
-    $.each(uniqueCategories, function (i, value) {
-        addSelector(value, "#categoriesSelector");
-    });
-    $.each(uniqueLanguages, function (i, value) {
-        addSelector(value, "#languagesSelector");
-    });
+					$.each(uniqueCategories, function(i, value) {
+						addSelector(value, "#categoriesSelector");
+					});
+					$.each(uniqueLanguages, function(i, value) {
+						addSelector(value, "#languagesSelector");
+					});
 
-    var sortData = {name : function ( $elem ) {
-          return $elem.find('.name').text();
-        },
-        watchers : function ( $elem ) {
-          return $elem.find('.watchers').text();
-        },
-        pushed_at : function ( $elem ) {
-          return $elem.find('.pushed_at').text();
-        }
-    };
-    var $container = $('#container');
-    var $filterDisplay = $('#filter-display');
-    $container.isotope({getSortData : sortData});
-  
-    var filters = {};
-    
-    $('#options').on( 'change', function( jQEvent ) {
+					var sortData = {
+						name: function($elem) {
+							return $elem.find('.name').text();
+						},
+						watchers: function($elem) {
+							return $elem.find('.watchers').text();
+						},
+						pushed_at: function($elem) {
+							return $elem.find('.pushed_at').text();
+						}
+					};
+					var $container = $('#container');
+					var $filterDisplay = $('#filter-display');
+					$container.isotope({
+						getSortData: sortData
+					});
 
-      var checkbox = jQEvent.target;
-      var $checkbox = $( checkbox );
-      var value = checkbox.value;
-      var isAll = $checkbox.hasClass('all');
+					var filters = {};
 
-      var group = $checkbox.parents('.option-set').attr('data-group');
-      // create array for filter group, if not there yet
-      if ( !filters[ group ] ) {
-        filters[ group ] = [];
-      }
+					$('#options').on('change', function(jQEvent) {
 
-      var index = $.inArray( checkbox.value, filters[ group ] );
+						var checkbox = jQEvent.target;
+						var $checkbox = $(checkbox);
+						var value = checkbox.value;
+						var isAll = $checkbox.hasClass('all');
 
-      if ( isAll ) {
-        delete filters[ group ];
-        if ( !checkbox.checked ) {
-          checkbox.checked = 'checked';
-        }
-      }
+						var group = $checkbox.parents('.option-set').attr('data-group');
+						// create array for filter group, if not there yet
+						if (!filters[group]) {
+							filters[group] = [];
+						}
 
+						var index = $.inArray(checkbox.value, filters[group]);
 
-      if ( checkbox.checked ) {
-        var selector = isAll ? 'input' : 'input.all';
-        $checkbox.siblings( selector ).removeAttr('checked');
+						if (isAll) {
+							delete filters[group];
+							if (!checkbox.checked) {
+								checkbox.checked = 'checked';
+							}
+						}
 
 
-        if ( !isAll && index === -1 ) {
-          // add filter to group
-          filters[ group ].push( checkbox.value );
-        }
-
-      } else if ( !isAll ) {
-        // remove filter from group
-        filters[ group ].splice( index, 1 );
-        // if unchecked the last box, check the all
-        if ( !$checkbox.siblings('[checked]').length ) {
-          $checkbox.siblings('input.all').attr('checked', 'checked');
-        }
-      }
-
-      var i = 0;
-      var comboFilters = [];
-      var message = []
-
-      for ( var prop in filters ) {
-        message.push( filters[ prop ].join(' ') );
-        var filterGroup = filters[ prop ];
-        // skip to next filter group if it doesn't have any values
-        if ( !filterGroup.length ) {
-          continue;
-        }
-        if ( i === 0 ) {
-          // copy to new array
-          comboFilters = filterGroup.slice(0);
-        } else {
-          var filterSelectors = [];
-          // copy to fresh array
-          var groupCombo = comboFilters.slice(0); // [ A, B ]
-          // merge filter Groups
-          for (var k=0, len3 = filterGroup.length; k < len3; k++) {
-            for (var j=0, len2 = groupCombo.length; j < len2; j++) {
-              filterSelectors.push( groupCombo[j] + filterGroup[k] ); // [ 1, 2 ]
-            }
-            
-          }
-          // apply filter selectors to combo filters for next group
-          comboFilters = filterSelectors
-        }
-        i++
-      }
-
-      $container.isotope({ filter: comboFilters.join(', ') , 
-          getSortData : sortData
-      });
-      $filterDisplay.text( comboFilters.join(', ') );
-
-    });
+						if (checkbox.checked) {
+							var selector = isAll ? 'input' : 'input.all';
+							$checkbox.siblings(selector).removeAttr('checked');
 
 
-      $('#sort-by a').click(function(){
-        var selectedLink = $('#sort-by a.highlight');
-        if (selectedLink) {
-            selectedLink.removeClass("highlight");
-        }
-        // get href attribute, minus the '#'
-        $(this).addClass("highlight");
-        var sortName = $(this).attr('href').slice(1);
-        $('#container').isotope({ sortBy : sortName });
-        return false;
-      });
+							if (!isAll && index === -1) {
+								// add filter to group
+								filters[group].push(checkbox.value);
+							}
+
+						} else if (!isAll) {
+							// remove filter from group
+							filters[group].splice(index, 1);
+							// if unchecked the last box, check the all
+							if (!$checkbox.siblings('[checked]').length) {
+								$checkbox.siblings('input.all').attr('checked', 'checked');
+							}
+						}
+
+						var i = 0;
+						var comboFilters = [];
+						var message = []
+
+						for (var prop in filters) {
+							message.push(filters[prop].join(' '));
+							var filterGroup = filters[prop];
+							// skip to next filter group if it doesn't have any values
+							if (!filterGroup.length) {
+								continue;
+							}
+							if (i === 0) {
+								// copy to new array
+								comboFilters = filterGroup.slice(0);
+							} else {
+								var filterSelectors = [];
+								// copy to fresh array
+								var groupCombo = comboFilters.slice(0); // [ A, B ]
+								// merge filter Groups
+								for (var k = 0, len3 = filterGroup.length; k < len3; k++) {
+									for (var j = 0, len2 = groupCombo.length; j < len2; j++) {
+										filterSelectors.push(groupCombo[j] + filterGroup[k]); // [ 1, 2 ]
+									}
+
+								}
+								// apply filter selectors to combo filters for next group
+								comboFilters = filterSelectors
+							}
+							i++
+						}
+
+						$container.isotope({
+							filter: comboFilters.join(', '),
+							getSortData: sortData
+						});
+						$filterDisplay.text(comboFilters.join(', '));
+
+					});
 
 
-});
+					$('#sort-by a').click(function() {
+						var selectedLink = $('#sort-by a.highlight');
+						if (selectedLink) {
+							selectedLink.removeClass("highlight");
+						}
+						// get href attribute, minus the '#'
+						$(this).addClass("highlight");
+						var sortName = $(this).attr('href').slice(1);
+						$('#container').isotope({
+							sortBy: sortName
+						});
+						return false;
+					});
 
-        }
-    })(jQuery);
-    </script>
 
-<!-- End Document
+				});
+
+			}
+		})(jQuery);
+	</script>
+
+	<!-- End Document
 ================================================== -->
 </body>
+
 </html>
