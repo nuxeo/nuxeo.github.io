@@ -27,12 +27,14 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 
-<style>
-#xnav-footer {margin-top:0px !important;}
-</style>
-<script src="javascripts/jquery-1.7.1.min.js"></script>
+  <style>
+  #xnav-footer {margin-top:0px !important;}
+  </style>
+
+  <script src="javascripts/jquery-1.7.1.min.js"></script>
+
   <!-- Favicons
   ================================================== -->
   <link rel="shortcut icon" href="images/favicon.ico">
@@ -43,24 +45,28 @@
 </head>
 <body>
 
-  <!-- Primary Page Layout
-  ================================================== -->
+<!-- Primary Page Layout
+================================================== -->
 <h1 class="remove-bottom" id="site-title" style="margin-top: 40px">nuxeo<span class="separator">/</span><span class="nxsexion">Download</span></h1>
-  <div id="mainContainer" class="container">
+<div id="mainContainer" class="container">
 
-    <div id="welcome">
-    <div class="sixteen message">
-       <h2>Welcome to the Nuxeo Platform download page</h2>
-        <p>Here you will find every version of the Nuxeo Platform ever released as well as the source code of every version (scroll to the bottom)! Nuxeo also provides <a href="http://community.nuxeo.com/static/snapshots/">daily snapshots</a> of the current development version. </p>
-    </div>
-    <div style="clear:both;"></div>
+  <div id="welcome">
+  <div class="sixteen message">
+     <h2>Welcome to the Nuxeo Platform download page</h2>
+     <p>Nuxeo provides an extensible and modular <a href="http://www.nuxeo.com/products/content-management-platform/">Enterprise Content Management Platform</a> enabling architects and developers to easily build and run business applications. The Nuxeo Platform's powerful plug-in model offers many integrations with 3rd party software providers and extensive packaging capabilities for <a href="http://www.nuxeo.com/solutions/document-management/">Document Management</a>, <a href="http://www.nuxeo.com/solutions/digital-asset-management/">Digital Asset Management</a> and <a href="http://www.nuxeo.com/solutions/case-management/">Case Management applications</a>.</p>
+     <p>Here you will find every version of the Nuxeo Platform as well as the source code for each version (scroll to the bottom). Nuxeo also provides <a href="http://community.nuxeo.com/static/snapshots/">daily snapshots</a> of the current development version.</p>
+     <h3>Tips and Resources</h3>
+     <p>While your file is downloading, please complete the form below. We’ll send you online resources, links to helpful documentation, updates on the Nuxeo Platform and more.</p>
   </div>
+  <div style="clear:both;"></div>
+</div>
 
-  </div>
+</div>
 
   <!-- JS
   ================================================== -->
-    <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+    <script type="text/javascript" src="//www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+    <script src="//app-abk.marketo.com/js/forms2/js/forms2.min.js"></script>
     <script src="javascripts/jquery-1.7.1.min.js"></script>
     <script src="javascripts/strftime.js"></script>
     <script src="javascripts/tabs.js"></script>
@@ -132,7 +138,11 @@
             $linkTd = $("<td class='buttons'>");
             $check = $("<td class='check'>");
             $size = $("<td class='size'>").text(dlItem.size);
-            var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("class", "button launch");
+            var $dowloadLink = $("<a>").attr("href", dlItem.url).attr("target", "_blank").attr("class", "button launch").click(function() {
+              MktoForms2.loadForm("//app-abk.marketo.com", "498-JDO-611", 672, function (url) {
+                MktoForms2.lightbox(url).show();
+              });
+            });
             $dowloadLink.append($("<span>").text("Download"));
             var $permaLink = $("<a>").attr("href", dlItem.url).attr("class", "button permalink").click(
               function(){
