@@ -101,6 +101,19 @@ When some URL download redirect logics are set in the blob manager, this is now 
 <h2>Batch Manager Uses the Transiant Store</h2>
 <p>Now the Batch Manager relies on the Transient Store to allow several implementations among which the Redis
 one that is cluster aware.</p>
+<h2>TransientStore API</h2>
+<p>The TransientStore allows to store temporary blobs and associated parameters on a Nuxeo instance, outside the repository, thus the "transient" aspect. It is typically used by:</p>
+<ul>
+    <li>The new <a href="https://doc.nuxeo.com/x/OYLZ" target="_blank">Bath Upload API</a> to store a batch of uploaded blobs until they are attached to a document.</li>
+    <li>The ConversionService to store the BlobHolder resulting from an <a href="https://doc.nuxeo.com/x/PYMlAQ#Conversion-AsynchronousConversions" target="_blank">Asynchronous Conversion Work.</a></li>
+</ul>
+<p>The new <a href="https://github.com/nuxeo/nuxeo/blob/release-7.10/nuxeo-core/nuxeo-core-cache/src/main/java/org/nuxeo/ecm/core/transientstore/api/TransientStore.java" target="_blank">TransientStore</a> API allows this simply:</p>
+<div class="embededCode">
+void putBlobs(String key, List<Blob> blobs);<br/><br/>
+List<Blob> getBlobs(String key);<br/><br/>
+void putParameters(String key, Map<String, Serializable> parameters);<br/><br/>
+Map<String, Serializable> getParameters(String key);
+</div>
 <h2>Negative Caching For Directory Entries</h2>
 <p>Usually a read on a missing entry is rarely, if ever, attempted, but in the particular case of the groupDirectory it happens a lot due to the fact that internally in Nuxeo user ids and group ids are often stored in the same field (for instance in ACLs), and therefore both the groupDirectory and the userDirectory have to be consulted before finding if a given id refers to a group or a user.
 With this improvement, to activate the negative caching, use a contribution like:
