@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Nuxeo Platform LTS 2015 Release notes - New and Noteworthy</title>
+    <meta name="author" content="nuxeo">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../../stylesheets/base.css">
+    <link rel="stylesheet" href="../../stylesheets/skeleton.css">
+    <link rel="stylesheet" href="../../stylesheets/layout.css">
+    <link rel="stylesheet" href="../../stylesheets/release_notes.css">
+    <link rel="stylesheet" href="../../stylesheets/lightbox.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+        <style>
+        #xnav-footer {margin-top:0px !important;}
+        div.breakafter {
+        page-break-after: always;
+        }
+        </style>
+        <script src="../../javascripts/jquery-1.7.1.min.js"></script>
+        <!-- Favicons
+        ================================================== -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    </head>
+    <body>
+        <div id="mainContainer" class="container">
+
+            <p class="remove-bottom" id="site-title"><a href="./index.html">Nuxeo Platform <span class="version-number">LTS2015</span> Release Notes</a></p>
+            <div id="welcome">
+                <div style="clear:both;"></div>
+                <h1 style="margin-left:-0.5em !important;">For Users</h1>
+                
+
+<h2>Search Analytics</h2>
+                <p>A new Dataviz dashboard has been added in the Admin Center for understanding search usages of your application. Search Screens usage, time of the day where it is the most used, average number of documents per result, most frequent terms used in full text search, which field is the most used. This dashboard is compatible with the customisation you would do using Nuxeo Studio.</p>
+                <h2>Repository Analytics</h2>
+                <p>In the Admin Center / Activity tab, a new tab "Repository Analytics" makes use of the nuxeo-repository-data element to display information about the content.
+                With a between dates selector: (no selection means of all times)
+                <ul>
+                    <li>Number of documents (jauge)</li>
+                    <li>Pie Chart per document type</li>
+                    <li>Top 10 creators Pie Chart</li>
+                    <li>Documents Creation per weeks  </li>
+                    <li>Documents modification  per week</li>
+                </ul></p>
+                <h2>More Robust Picture Diff</h2>
+                <p>Nuxeo Diff Picture is now able to compare pictures that represent the same object but with different dimensions and/or picture format, leveraging Image Magick capabilities in this area.</p>
+                <h2>Tabs Are Ajaxified By Default</h2>
+                <p>Tabs in Nuxeo Platform Web UI are now ajaxified by default, providing a better user experience. This behaviour can be changed with the application property "uxeo.jsf.useAjaxTabs".</p>
+                <h2>Path Displayed in Location Widget</h2>
+                <p>The Location widget displays the full path so as to know which document exactly is selected, especially when two documents have the same title.</p>
+                <h2>Like Operator on Policy Search</h2>
+                <p>In Admin Center on Permissions tab, "Like" operator is used for searching on policy name field so as to be able to use "routing%" when searching, and then returning all the permissions set by the workflow engine.</p>
+                <h2>Purging ACLs Archives Them</h2>
+                <P>Purge action now moves the ACLs to "archive" state instead of being really deleted. This allows to easily audit who had access to what while making sure that someone cannot access any content of the repository anymore.</P>
+
+            <div class="breakafter"></div>
+            <h1  style="margin-left:-0.5em !important;">For Developers</h1>
+
+
+
+                <h2>nuxeo-search-data element</h2>
+                <p>
+                A new element nuxeo-search-data has been added for being able to build Search Usages dashboards. This element makes use of the search events that are logged in the Nuxeo Platform Audit trail since Nuxeo Platform 7.4.
+                </p>
+                <h2>nuxeo-repository-data element</h2>
+                <p>A new element, nuxeo-repository-data let developers easily build custom Dataviz dashboards that explore content of the Nuxeo Platform repository, with aggreation and sort per type and properties of the documents stored in it.</p>
+                <h2>Default Content Nuxeo Package</h2>
+                <p>A new marketplace package has been added so that when you start Nuxeo Platform the first time after having downloaded it, there is some demo content inside. You can consider this package as an exemple of how to bundle some content that can be easily installed on your Nuxeo Platform application.</p>
+                <h2>Complex Properties and Default Values for Drag'n Drop Metadata Screens</h2>
+                <p>Drag'n Drop Collector screens now make use of a document model instead of a map. This makes it possible to handle complex properties as well as default values in the UI that pops out when doing a drag'n drop.</p>
+                <h2>FileSystem Blob Provider</h2>
+                <p>FileSystem blob provider has been added. It makes available as blobs specific files that are stored on a file system available from the server. Typical use case is when your content is handled by external applications that can't easily be updated for using Nuxeo REST API and for which it is easier to let the files on a standard file system.
+                To use this feature, contribute a provider using:
+                <div class="embededCode">
+                    &lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt;<br/>
+                    &lt;blobprovider name=&quot;fs&quot;&gt;<br/>
+                    &lt;class&gt;org.nuxeo.ecm.core.blob.FilesystemBlobProvider&lt;/class&gt;<br/>
+                    &lt;property name=&quot;root&quot;&gt;/opt/nuxeo/nxsever/blobs&lt;/property&gt;<br/>
+                    &lt;/blobprovider&gt;<br/>
+                    &lt;/extension&gt;<br/>
+                </div>
+                The configured root property above is mandatory and restricts under which path legal blobs will be allowed to be created. Then to create a blob pointing to a file under this root one can use:
+                <div class="embededCode">
+                    BlobInfo blobInfo = new BlobInfo();<bR/>
+                    blobInfo.key = "/opt/nuxeo/nxserver/blobs/foo/bar.pdf";<br/>
+                    blobInfo.mimeType = "application/pdf";<bR/>
+                    BlobManager blobManager = Framework.getService(BlobManager.class);<br/>
+                    Blob blob = ((FilesystemBlobProvider) blobManager.getBlobProvider("fs")).createBlob(blobInfo);<br/>
+                </div>
+                Internally the blob will then be stored in the database with a key of fs:foo/bar.pdf.
+                </p>
+                <h2>Implementing a New Binary Store is Easier</h2>
+                <p>All cloud binary managers like S3, Azure, Apache jclouds are now hosted in the same repository. They all inherit from a common code base so as to have only cloud client specific code in their modules. Also, we renamed all nuxeo-core-binarymanager-* to something more realistic like nuxeo-blob-*.</p>
+                <h2>CMIS 1.0 Can Be Used</h2>
+<p>Nuxeo Platform was already compatible with CMIS 1.1. A new endpoint has been added <pre>http://localhost:8080/nuxeo/atom/cmis10</pre>.
+It provides AtomPub CMIS 1.0 compatibility. This can be useful when using some connectors that do not support CMIS 1.1.
+</p>
+<h2>CMIS also Handles File Download Redirect </h2>
+<p>
+When some URL download redirect logics are set in the blob manager, this is now taken into account by the CMIS service.
+</p>
+<h2>FS Exporter Addon</h2>
+<p>The addon fsexporter allows to export content out of Nuxeo Platform with easy extensibility when a custom output format is required. This addon is now part of the set of addons systematically released with Nuxeo Platform.</p>
+<h2>Remove Administrators Group From Suggestions</h2>
+<p>A new parameter has been added to the user suggestion widget: <pre>hideAdminGroups</pre>. It allows to make sure admin group is not part of the suggested groups</p>
+<h2>Batch Manager Uses the Transiant Store</h2>
+<p>Now the Batch Manager relies on the Transient Store to allow several implementations among which the Redis
+one that is cluster aware.</p>
+<h2>Negative Caching For Directory Entries</h2>
+<p>Usually a read on a missing entry is rarely, if ever, attempted, but in the particular case of the groupDirectory it happens a lot due to the fact that internally in Nuxeo user ids and group ids are often stored in the same field (for instance in ACLs), and therefore both the groupDirectory and the userDirectory have to be consulted before finding if a given id refers to a group or a user.
+With this improvement, to activate the negative caching, use a contribution like:
+                <div class="embededCode">
+&lt;require&gt;...&lt;/require&gt;<br/>
+&lt;extension target=&quot;org.nuxeo.ecm.directory.sql.SQLDirectoryFactory&quot; point=&quot;directories&quot;&gt;<br/>
+&lt;directory name=&quot;groupDirectory&quot;&gt;<br/>
+&lt;negativeCaching&gt;true&lt;/negativeCaching&gt;<br/>
+&lt;/directory&gt;<br/>
+&lt;/extension&gt;<br/>
+                </div>
+This improvement also adds two new metrics on directories:
+                <ul><li>nuxeo.directories.yourDirectoryName.cache.neghits: the number of hits on the negative cache, if activated.</li>
+                <li>
+                nuxeo.directories.yourDirectoryName.cache.misses: the number of cache misses.</li></ul>
+</p>
+<h2>Renditions can Be Stored By Default</h2>
+<p>
+A new boolean attribute <pre>storeByDefault</pre> has been added to the Rendition definition. This value is used for determining the default behaviour of the rendition service when a rendition is computed: store it or not. This is particularly useful when renditions are used through CMIS, as the CMIS api for rendition does not allow to specify the behaviour.
+</p>
+<h2>Per Rendition Type Last Modification Property Mapping</h2>
+<p>Property used to determine if a rendition needs to be re-computed is now configurable with a new attribute in the rendition definition: <pre>sourceDocumentModificationDatePropertyName</pre>. This is interesting in border cases of using renditions for instance when defining a rendition that is an export of the content of a folder. One would better rely on a date that is the last modification date of a given child document than the last modification date of the folder itself.</p>
+<h2>Prevent From Updating Files for a Given Blob Provider</h2>
+<p>
+                It is now possible to configure the list of blob providers for which the Web UI prevents the user from updating the file. Ways to update a file include: <ul>
+                    <li>the file widget,</li>
+                    <li>the drag'ndrop on the summary file widget,</li>
+                    <li>the drag'n drop in a folder (if the name is the same than the name of a blob stored in a child document, the file updates the file property of that document),</li>
+                    <li>Nuxeo Drive synchronization.</li>
+                </ul>
+To disable updates for a given blob provider, in the blobprovider definition add the following property:
+                <div class="embededCode">&lt;property name=&quot;preventUserUpdate&quot;&gt;true&lt;/property&gt;</div>
+For instance you could have:
+                <div class="embededCode">
+&lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt;<br/>
+&lt;blobprovider name=&quot;googledrive&quot;&gt;<br/>
+&lt;class&gt;org.nuxeo.ecm.liveconnect.google.drive.GoogleDriveBlobProvider&lt;/class&gt;<br/>
+&lt;property name=&quot;preventUserUpdate&quot;&gt;true&lt;/property&gt;<br/>
+&lt;/blobprovider&gt;<br/>
+&lt;/extension&gt;<br/>
+                </div>
+</p>
+<h2>Renditions For Non Versionnable Documents Can Be Stored</h2>
+<p>Renditions can now be stored even for the ones associated with non-versionable documents, like folders. As an exemple, it is possible to store the zipTreeExport rendition.</p>
+<h2>New Parameters For Convert Adapter</h2>
+<p>Adapter for asynchronous conversions @convert now also handles type and format parameters. An API on the ConversionService has also been added to launch a conversion based on mime type (#convertToMimeType())</p>
+<h2>Schema Update from Scalar to Array with MongoDB</h2>
+<p>When using MongoDB storage, it is now possible to change a schema from a scalar value to an array without any trouble.</p>
+<h2>NXQL Escaping with Automation</h2>
+<p>Fn.nxqlEscape can now be used in Automation MVEL expressions. Ex:
+                <div class="embededCode">
+                SELECT * FROM Document WHERE ecm:path STARTSWITH '@{Fn.nxqlEscape(Document.path)}'</div></p>
+<h2>Elasticseach query by ancestor id</h2>
+<p>ecm:ancestorId is now supported by Elasticsearch page providers. As a reminder, ecm:ancestorId allows to find all documents who are rooted to a given document, provided its id.</p>
+<h2>Abandonned Addons</h2>
+<p>The following addons are abandonned:
+                <ul><li>BIRT Addon: the new dataviz approach is recommended for analytics.</li>
+                <li>JBPM: You should use Content Routing for all of your workflows on Nuxeo Platorm LTS2015</li></ul></p>
+
+<div class="breakafter"></div>
+<h1  style="margin-left:-0.5em !important;">For Administrators</h1>
+
+<h2>Azure Object Store Binary Manager</h2>
+                <p>A new binary manager allows to store binary content on Microsoft Azure Binary Storage. This connector is <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/microsoft-azure-online-storage)">
+                    available</a> as an Nuxeo Package on the Nuxeo Marketplace .</p>
+                <h2>Server Don't Start on Pending Actions Failure </h2>
+                <p>When some pending actions fail, the server now doesn't start, unless the option --ignore-missing is used.
+                <div class="embededCode">
+
+                    $ echo "install fail" > nxserver/data/installAfterRestart.log <br/>
+                    $ ./bin/nuxeoctl start -q <br/>
+                    org.nuxeo.connect.update.PackageException: Package not found: fail<br/>
+                    Pending actions execution failed. The commands file has been moved to: /.../nuxeo-cap-7.10-SNAPSHOT-tomcat/nxserver/data/installAfterRestart.log.bak <br/>
+                    Start interrupted due to failure on pending actions. You can resume with a new start; or you can restore the file 'installAfterRestart.log', optionally using the '--ignore-missing' option. <br/>
+                    <br/><br/>
+                    $ echo "install fail" > nxserver/data/installAfterRestart.log<br/>
+                    $ ./bin/nuxeoctl start -q --ignore-missing<br/>
+                    Unable to install unknown package: fail<br/>
+                    Server started with process ID 4957.<br/>
+                </div>
+                </p>
+                <h2>Studio Link And Project Name in Admin Center</h2>
+<p>
+The Studio link from admin center was redirecting you to the welcome page of Nuxeo Studio. It now redirects you to the exact Studio project against which you registered your Nuxeo Platform instance. Furthermore user can see in the Update Center the name of the project the Nuxeo Platform instance is registered against.
+</p>
+
+                <h2>Optimized LDAP Requests</h2>
+                <p>
+                LDAP requests have been optimised to fetch only necessary attributes so as to minimize the traffic.
+                </p>
+                
+                
+                <h2>Elasticsearch audit and UID sequence indexes are configurable</h2>
+                <p>
+                    The Elasticsearch index names used for the UID sequencer and for audit logs are now configurable through the following properties in nuxeo.conf:
+                    <ul><li>Name of the Elasticsearch index for audit logs
+                    audit.elasticsearch.indexName=${elasticsearch.indexName}-audit</li>
+                    <li>Name of the Elasticsearch index for the uid sequencer
+                    seqgen.elasticsearch.indexName=${elasticsearch.indexName}-uidgen</li>
+                </ul>
+                    As a reminder, the audit Elasticsearch index is mostly used by ESAuditBackend and the UID sequencer index by ESUIDSequencer.<bR/>
+                    <b>This allows to have several Nuxeo instances sharing the same Elasticsearch cluster.</b><bR/>
+                    We use the elasticsearch.indexName property (default value : nuxeo) as a prefix to ease configuration of multiple Nuxeo insatnces sharing an Elasticsearch cluster: changing the single elasticsearch.indexName property is enough to give a unique name to all the Elasticsearch indexes.<bR/>
+                    Since the default value for elasticsearch.indexName is nuxeo, the resulting default values for the new properties are:
+                  <ul>
+                  <li>
+                    audit.elasticsearch.indexName=nuxeo-audit</li>
+                    <li> seqgen.elasticsearch.indexName=nuxeo-uidgen</li>
+                </ul>
+                </p>
+                <h2>More Comprehensive Message On Restricted Package Installation Error</h2>
+                <p>nuxeoctl mp-add command provides a more comprehensive message when user try to install a Nuxeo package that requires to be registered.</p>
+                <h2>Better Management of Matketplace Download Timeout </h2>
+                <p> Some improvements have been implemented with package download.
+                <ul> <li> spinner progress bar</li>
+                <li>no more limit on the whole download time</li>
+                <li>per-download timeouts set on connection (30s) and socket read (120s)</li>
+                <li>improved details on download error reporting</li>
+                <li>global download interruption ("Packages download was interrupted") on first server error other than "not found", "access refused" or "registration required".</li>
+            </ul>
+            <h2>Quartz Library is Upgraded</h2>
+            <p>Quartz 2.2.2 is now used. Quartz is the scheduler component.</p>
+</div>
+</div>
+<!-- JS
+================================================== -->
+<script src="../../javascripts/strftime.js"></script>
+<script src="../../javascripts/tabs.js"></script>
+</body></html>

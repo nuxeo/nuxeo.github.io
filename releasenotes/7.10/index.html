@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <title>Nuxeo LTS 2015 - New and Noteworthy</title>
+        <meta name="description" content="Nuxeo Nuxeo LTS 2015 release notes">
+        <meta name="author" content="nuxeo">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- CSS
+        ================================================== -->
+        <link rel="stylesheet" href="../../stylesheets/base.css">
+        <link rel="stylesheet" href="../../stylesheets/skeleton.css">
+        <link rel="stylesheet" href="../../stylesheets/layout.css">
+        <link rel="stylesheet" href="../../stylesheets/release_notes.css">
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+            <style>
+            #xnav-footer {
+            margin-top: 0px !important;
+            }
+            </style>
+            <script src="../../javascripts/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+            <script src="../../javascripts/index.js"></script>
+            <!-- Favicons
+            ================================================== -->
+            <link rel="shortcut icon" href="images/favicon.ico">
+            <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+            <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+            <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        </head>
+        <body>
+            <div id="mainContainer" class="container">
+                <p class="backbutton">
+                <a href="../index.html">&larr; Back to Index</a>
+                </p>
+                <p class="remove-bottom" id="site-title">
+                Nuxeo Platform <span class="version-number">7.10</span> Release Notes
+                </p>
+                <div id="welcome">
+                    <div class="message">
+                        <p>
+                        Nuxeo Platform LTS 2015 is now
+                        <a href="http://nuxeo.github.io/downloads.html">available for download</a>. Next one will be Nuxeo Platform Fast Track 8.1. Stay tuned!
+                        <a href="http://www.nuxeo.com/blog/new-version-names-numbers-for-nuxeo-lts/"> Nuxeo Platform versioning
+                        scheme</a>
+                        .
+                        </p>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <p>Below you will find the list of new features and improvements included in this new release, in addition to Nuxeo Platform 7.4:</p>
+                    <ul id="features">
+                        <li><a href="users.html">For Users</a>
+                        <ul class="second-label" id="users"></ul></li>
+                        <li><a href="administrators.html">For Administrators</a>
+                        <ul class="second-label" id="administrators"></ul></li>
+                        <li><a href="developers.html">For Developers</a>
+                        <ul class="second-label" id="developers"></ul></li>
+                        <li><a href="upgrade_notes.html">Upgrade Notes</a></li>
+                        <li><a href="issues.html">Known Issues</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- JS
+            ================================================== -->
+            <script src="../../javascripts/strftime.js"></script>
+            <script src="../../javascripts/tabs.js"></script>
+            <script>
+                        index("users.html", "#users");
+                        index("administrators.html", "#administrators");
+                        index("developers.html", "#developers");
+            </script>
+        </body>
+    </html>
