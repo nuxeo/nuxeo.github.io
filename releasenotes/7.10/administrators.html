@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8" />
+        <title>Nuxeo 7.10 - New and Noteworthy</title>
+        <meta name="description" content="Nuxeo on Github" />
+        <meta name="author" content="nuxeo" />
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <!-- CSS
+        ================================================== -->
+        <link rel="stylesheet" href="../../stylesheets/base.css" />
+        <link rel="stylesheet" href="../../stylesheets/skeleton.css" />
+        <link rel="stylesheet" href="../../stylesheets/layout.css" />
+        <link rel="stylesheet" href="../../stylesheets/release_notes.css" />
+        <link rel="stylesheet" href="../../stylesheets/lightbox.css" />
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css' />
+        <style>
+        #xnav-footer {
+        margin-top: 0px !important;
+        }
+        </style>
+        <script src="../../javascripts/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8"></script>
+        <!-- Favicons
+        ================================================== -->
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+    </head>
+    <body>
+        <div id="mainContainer" class="container">
+            <p class="backbutton">
+            <a href="./index.html">&larr; Back to Index</a>
+            </p>
+            <p class="remove-bottom" id="site-title">
+            <a href="./index.html">
+            <span class="version-number">7.10</span> Release Notes
+            </a>
+            </p>
+            <div id="welcome">
+                <div style="clear: both;"></div>
+                <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
+                <h2>Azure Object Store Binary Manager</h2>
+                <p>A new binary manager allows to store binary content on Microsoft Azure Binary Storage. This connector is <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/microsoft-azure-online-storage)">
+                    available</a> as an Nuxeo Package on the Nuxeo Marketplace .</p>
+                <h2>Server Don't Start on Pending Actions Failure </h2>
+                <p>When some pending actions fail, the server now doesn't start, unless the option --ignore-missing is used.
+                <div class="embededCode">
+
+                    $ echo "install fail" > nxserver/data/installAfterRestart.log <br/>
+                    $ ./bin/nuxeoctl start -q <br/>
+                    org.nuxeo.connect.update.PackageException: Package not found: fail<br/>
+                    Pending actions execution failed. The commands file has been moved to: /.../nuxeo-cap-7.10-SNAPSHOT-tomcat/nxserver/data/installAfterRestart.log.bak <br/>
+                    Start interrupted due to failure on pending actions. You can resume with a new start; or you can restore the file 'installAfterRestart.log', optionally using the '--ignore-missing' option. <br/>
+                    <br/><br/>
+                    $ echo "install fail" > nxserver/data/installAfterRestart.log<br/>
+                    $ ./bin/nuxeoctl start -q --ignore-missing<br/>
+                    Unable to install unknown package: fail<br/>
+                    Server started with process ID 4957.<br/>
+                </div>
+                </p>
+                <h2>Studio Link And Project Name in Admin Center</h2>
+<p>
+The Studio link from admin center was redirecting you to the welcome page of Nuxeo Studio. It now redirects you to the exact Studio project against which you registered your Nuxeo Platform instance. Furthermore user can see in the Update Center the name of the project the Nuxeo Platform instance is registered against.
+</p>
+
+                <h2>Optimized LDAP Requests</h2>
+                <p>
+                LDAP requests have been optimised to fetch only necessary attributes so as to minimize the traffic.
+                </p>
+                
+                
+                <h2>Elasticsearch audit and UID sequence indexes are configurable</h2>
+                <p>
+                    The Elasticsearch index names used for the UID sequencer and for audit logs are now configurable through the following properties in nuxeo.conf:
+                    <ul><li>Name of the Elasticsearch index for audit logs
+                    audit.elasticsearch.indexName=${elasticsearch.indexName}-audit</li>
+                    <li>Name of the Elasticsearch index for the uid sequencer
+                    seqgen.elasticsearch.indexName=${elasticsearch.indexName}-uidgen</li>
+                </ul>
+                    As a reminder, the audit Elasticsearch index is mostly used by ESAuditBackend and the UID sequencer index by ESUIDSequencer.<bR/>
+                    <b>This allows to have several Nuxeo instances sharing the same Elasticsearch cluster.</b><bR/>
+                    We use the elasticsearch.indexName property (default value : nuxeo) as a prefix to ease configuration of multiple Nuxeo insatnces sharing an Elasticsearch cluster: changing the single elasticsearch.indexName property is enough to give a unique name to all the Elasticsearch indexes.<bR/>
+                    Since the default value for elasticsearch.indexName is nuxeo, the resulting default values for the new properties are:
+                  <ul>
+                  <li>
+                    audit.elasticsearch.indexName=nuxeo-audit</li>
+                    <li> seqgen.elasticsearch.indexName=nuxeo-uidgen</li>
+                </ul>
+                </p>
+                <h2>More Comprehensive Message On Restricted Package Installation Error</h2>
+                <p>nuxeoctl mp-add command provides a more comprehensive message when user try to install a Nuxeo package that requires to be registered.</p>
+                <h2>Better Management of Matketplace Download Timeout </h2>
+                <p> Some improvements have been implemented with package download.
+                <ul> <li> spinner progress bar</li>
+                <li>no more limit on the whole download time</li>
+                <li>per-download timeouts set on connection (30s) and socket read (120s)</li>
+                <li>improved details on download error reporting</li>
+                <li>global download interruption ("Packages download was interrupted") on first server error other than "not found", "access refused" or "registration required".</li>
+            </ul>
+            <h2>Quartz Library is Upgraded</h2>
+            <p>Quartz 2.2.2 is now used. Quartz is the scheduler component.</p>
+        </div>
+    </div>
+    <!-- JS
+    ================================================== -->
+    <script src="../../javascripts/strftime.js"></script>
+    <script src="../../javascripts/tabs.js"></script>
+    <script src="../../javascripts/float_menu.js"></script>
+    <script src="../../javascripts/lightbox.js"></script>
+</body>
+</html>
