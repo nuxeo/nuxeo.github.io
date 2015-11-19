@@ -28,7 +28,7 @@
     "md5": "http://cdn.nuxeo.com/nuxeo-7.10/nuxeo_7.10_all.deb.md5",
     "os": "deb",
     "size": "213M",
-    "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_7.10_all.deb"
+    "url": "http://apt.nuxeo.org/pool/releases/nuxeo_7.10-01_all.deb"
   }, {
     "date": "TODO",
     "description": "Nuxeo Platform 7.10 Virtual Machine image (VirtualBox, RHEV, VMware ESX). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
