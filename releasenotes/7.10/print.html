@@ -44,7 +44,7 @@
             <div id="welcome">
                 <div style="clear:both;"></div>
                 <h1 style="margin-left:-0.5em !important;">For Users</h1>
-                
+
 
 <h2>Search Analytics</h2>
                 <p>A new Dataviz dashboard has been added in the Admin Center for understanding search usages of your application. Search Screens usage, time of the day where it is the most used, average number of documents per result, most frequent terms used in full text search, which field is the most used. This dashboard is compatible with the customisation you would do using Nuxeo Studio.</p>
@@ -60,6 +60,7 @@
                 </ul></p>
                 <h2>More Robust Picture Diff</h2>
                 <p>Nuxeo Diff Picture is now able to compare pictures that represent the same object but with different dimensions and/or picture format, leveraging Image Magick capabilities in this area.</p>
+                <div class="breakafter"></div>
                 <h2>Tabs Are Ajaxified By Default</h2>
                 <p>Tabs in Nuxeo Platform Web UI are now ajaxified by default, providing a better user experience. This behaviour can be changed with the application property "uxeo.jsf.useAjaxTabs".</p>
                 <h2>Path Displayed in Location Widget</h2>
@@ -152,6 +153,7 @@ A new boolean attribute <pre>storeByDefault</pre> has been added to the Renditio
                     <li>the drag'n drop in a folder (if the name is the same than the name of a blob stored in a child document, the file updates the file property of that document),</li>
                     <li>Nuxeo Drive synchronization.</li>
                 </ul>
+                <div class="breakafter"></div>
 To disable updates for a given blob provider, in the blobprovider definition add the following property:
                 <div class="embededCode">&lt;property name=&quot;preventUserUpdate&quot;&gt;true&lt;/property&gt;</div>
 For instance you could have:
@@ -174,6 +176,7 @@ For instance you could have:
 <p>Fn.nxqlEscape can now be used in Automation MVEL expressions. Ex:
                 <div class="embededCode">
                 SELECT * FROM Document WHERE ecm:path STARTSWITH '@{Fn.nxqlEscape(Document.path)}'</div></p>
+<div class="breakafter"></div>
 <h2>Elasticseach query by ancestor id</h2>
 <p>ecm:ancestorId is now supported by Elasticsearch page providers. As a reminder, ecm:ancestorId allows to find all documents who are rooted to a given document, provided its id.</p>
 <h2>Abandonned Addons</h2>
@@ -212,8 +215,8 @@ The Studio link from admin center was redirecting you to the welcome page of Nux
                 <p>
                 LDAP requests have been optimised to fetch only necessary attributes so as to minimize the traffic.
                 </p>
-                
-                
+
+
                 <h2>Elasticsearch audit and UID sequence indexes are configurable</h2>
                 <p>
                     The Elasticsearch index names used for the UID sequencer and for audit logs are now configurable through the following properties in nuxeo.conf:
