@@ -87,7 +87,7 @@
                 <h2>Implementing a New Binary Store is Easier</h2>
                 <p>All cloud binary managers like S3, Azure, Apache jclouds are now hosted in the same repository. They all inherit from a common code base so as to have only cloud client specific code in their modules. Also, we renamed all nuxeo-core-binarymanager-* to something more realistic like nuxeo-blob-*.</p>
                 <h2>CMIS 1.0 Can Be Used</h2>
-<p>Nuxeo Platform was already compatible with CMIS 1.1. A new endpoint has been added <span class=“inlineCode”>http://localhost:8080/nuxeo/atom/cmis10</span>.
+<p>Nuxeo Platform was already compatible with CMIS 1.1. A new endpoint has been added <span class="inlineCode">http://localhost:8080/nuxeo/atom/cmis10</span>.
 It provides AtomPub CMIS 1.0 compatibility. This can be useful when using some connectors that do not support CMIS 1.1.
 </p>
 <h2>CMIS also Handles File Download Redirect </h2>
@@ -97,7 +97,7 @@ When some URL download redirect logics are set in the blob manager, this is now 
 <h2>FS Exporter Addon</h2>
 <p>The addon fsexporter allows to export content out of Nuxeo Platform with easy extensibility when a custom output format is required. This addon is now part of the set of addons systematically released with Nuxeo Platform.</p>
 <h2>Remove Administrators Group From Suggestions</h2>
-<p>A new parameter has been added to the user suggestion widget: <span class=“inlineCode”>hideAdminGroups</span>. It allows to make sure that admin group is not part of the suggested groups</p>
+<p>A new parameter has been added to the user suggestion widget: <span class="inlineCode">hideAdminGroups</span>. It allows to make sure that admin group is not part of the suggested groups</p>
 <h2>Batch Manager Uses the Transient Store</h2>
 <p>Now the Batch Manager relies on the Transient Store to allow several implementations among which the Redis
 one that is cluster aware.</p>
@@ -126,16 +126,16 @@ With this improvement, to activate the negative caching, use a contribution like
 &lt;/extension&gt;<br/>
                 </div>
 This improvement also adds two new metrics on directories:
-                <ul><li><span class=“inlineCode”>nuxeo.directories.yourDirectoryName.cache.neghits</span>: the number of hits on the negative cache, if activated.</li>
+                <ul><li><span class="inlineCode">nuxeo.directories.yourDirectoryName.cache.neghits</span>: the number of hits on the negative cache, if activated.</li>
                 <li>
-                <span class=“inlineCode”>nuxeo.directories.yourDirectoryName.cache.misses</span>: the number of cache misses.</li></ul>
+                <span class="inlineCode">nuxeo.directories.yourDirectoryName.cache.misses</span>: the number of cache misses.</li></ul>
 </p>
 <h2>Renditions can Be Stored By Default</h2>
 <p>
-A new boolean attribute <span class=“inlineCode”>storeByDefault</span> has been added to the Rendition definition. This value is used for determining the default behaviour of the rendition service when a rendition is computed: store it or not. This is particularly useful when renditions are used through CMIS, as the CMIS api for rendition does not allow to specify the behaviour.
+A new boolean attribute <span class="inlineCode">storeByDefault</span> has been added to the Rendition definition. This value is used for determining the default behaviour of the rendition service when a rendition is computed: store it or not. This is particularly useful when renditions are used through CMIS, as the CMIS api for rendition does not allow to specify the behaviour.
 </p>
 <h2>Per Rendition Type Last Modification Property Mapping</h2>
-<p>Property used to determine if a rendition needs to be re-computed is now configurable with a new attribute in the rendition definition: <span class=“inlineCode”>sourceDocumentModificationDatePropertyName</span>. This is interesting in border cases of using renditions for instance when defining a rendition that is an export of the content of a folder. One would better rely on a date that is the last modification date of a given child document than the last modification date of the folder itself.</p>
+<p>Property used to determine if a rendition needs to be re-computed is now configurable with a new attribute in the rendition definition: <span class="inlineCode">sourceDocumentModificationDatePropertyName</span>. This is interesting in border cases of using renditions for instance when defining a rendition that is an export of the content of a folder. One would better rely on a date that is the last modification date of a given child document than the last modification date of the folder itself.</p>
 <h2>Prevent From Updating Files for a Given Blob Provider</h2>
 <p>
                 It is now possible to configure the list of blob providers for which the Web UI prevents the user from updating the file. Ways to update a file include: <ul>
@@ -163,11 +163,11 @@ For instance you could have:
 <h2>Schema Update from Scalar to Array with MongoDB</h2>
 <p>When using MongoDB storage, it is now possible to change a schema from a scalar value to an array without any trouble.</p>
 <h2>NXQL Escaping with Automation</h2>
-<p><span class=“inlineCode”>Fn.nxqlEscape</span> can now be used in Automation MVEL expressions. Ex:
+<p><span class="inlineCode">Fn.nxqlEscape</span> can now be used in Automation MVEL expressions. Ex:
                 <div class="embededCode">
                 SELECT * FROM Document WHERE ecm:path STARTSWITH '@{Fn.nxqlEscape(Document.path)}'</div></p>
 <h2>Elasticseach Query by Ancestor Id</h2>
-<p>ecm:ancestorId is now supported by Elasticsearch page providers. As a reminder, <span class=“inlineCode”>ecm:ancestorId</span> allows to find all documents who are rooted to a given document, provided its id.</p>
+<p>ecm:ancestorId is now supported by Elasticsearch page providers. As a reminder, <span class="inlineCode">ecm:ancestorId</span> allows to find all documents who are rooted to a given document, provided its id.</p>
 <h2>Abandonned Addons</h2>
 <p>The following addons are abandonned:
                 <ul><li>BIRT Addon: the new dataviz approach is recommended for analytics.</li>
