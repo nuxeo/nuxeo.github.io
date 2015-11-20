@@ -91,8 +91,8 @@ The Studio link from Admin Center was redirecting you to the welcome page of Nux
                 </ul>
                     As a reminder, the audit Elasticsearch index is mostly used by ESAuditBackend and the UID sequencer index by ESUIDSequencer.<bR/>
                     <b>This allows to have several Nuxeo instances sharing the same Elasticsearch cluster.</b><bR/>
-                    We use the elasticsearch.indexName property (default value: nuxeo) as a prefix to ease configuration of multiple Nuxeo insatnces sharing an Elasticsearch cluster: changing the single elasticsearch.indexName property is enough to give a unique name to all the Elasticsearch indexes.<bR/>
-                    Since the default value for elasticsearch.indexName is nuxeo, the resulting default values for the new properties are:
+                    We use the <span class="inlineCode">elasticsearch.indexName</span property (default value: nuxeo) as a prefix to ease configuration of multiple Nuxeo insatnces sharing an Elasticsearch cluster: changing the single elasticsearch.indexName property is enough to give a unique name to all the Elasticsearch indexes.<bR/>
+                    Since the default value for <span class="inlineCode">elasticsearch.indexName</span> is nuxeo, the resulting default values for the new properties are:
                   <ul>
                   <li><span class="inlineCode">audit.elasticsearch.indexName=nuxeo-audit</span></li>
                     <li><span class="inlineCode">seqgen.elasticsearch.indexName=nuxeo-uidgen</span></li>
