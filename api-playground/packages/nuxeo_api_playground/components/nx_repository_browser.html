@@ -1,8 +1,14 @@
 <link rel="import" href="../../../packages/polymer/polymer.html">
 <link rel="import" href="tree/nx_tree.html">
+<link rel="import" href="nx_batch_upload.html">
+<link rel="import" href="nx_content_enrichers.html">
+<link rel="import" href="nx_web_adapters.html">
+<link rel="import" href="nx_request_monitor.html">
+<link rel="import" href="nx_request_options.html">
 <link rel="import" href="ui_sidebar.html">
 <polymer-element name="nx-repository-browser">
   <template>
+    <link rel="stylesheet"  href="../semantic/elements/button.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/elements/header.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/elements/image.min.css" no-shim>
@@ -11,7 +17,14 @@
     <link rel="stylesheet"  href="../semantic/collections/breadcrumb.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/grid.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/menu.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/message.min.css" no-shim>
     <link rel="stylesheet"  href="../semantic/collections/table.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/modules/accordion.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/modules/tab.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/modules/dimmer.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/modules/modal.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/modules/transition.min.css" no-shim>
 
     <link rel="stylesheet"  href="../css/style.css" no-shim>
 
@@ -24,12 +37,12 @@
           </a>
           <div class="item">
             <!-- Endpoints -->
-            <nx-tree root="/" connectionId="{{connectionId}}" selected="{{documentId}}"></nx-tree>
+            <nx-tree id="tree" root="/" connectionId="{{connectionId}}" selected="{{documentId}}"></nx-tree>
           </div>
       </div>
     </ui-sidebar>
 
-    <div class="ui page grid">
+    <div class="ui full page grid">
       <div class="column">
 
         <!--  Breadcrumb -->
@@ -38,10 +51,12 @@
             <a class="section" on-click="{{goHome}}"><i class="ui home icon"></i></a>
             <div class="divider"> / </div>
              <span class="active section">{{title}}</span>
-             <template if="{{document}}">
-              <div class="divider"> / </div>
-              <div class="active section">{{document.title}}</div>
-             </template>
+             <template if="{{breadcrumb}}">
+                <template repeat="{{entry in breadcrumb}}">
+                  <div class="divider"> / </div>
+                  <div class="active section">{{entry["title"]}}</div>
+                </template>
+              </template>
           </div>
        </div>
 
@@ -59,27 +74,133 @@
 
         <template if="{{document}}">
           <div class="ui vertical segment">
-            <div class="ui huge header">{{document.type}}</div>
-            <div class="ui medium header">Properties</div>
-            <table class="ui large basic blue table">
-              <thead>
-                <tr><th>Name</th>
-                <th>Value</th>
-              </tr></thead>
-              <tbody>
-                <tr template repeat="{{key in document.properties.keys}}">
-                  <td><strong>{{key}}</strong></td>
-                  <td>{{document.properties[key]}}</td>
-                </tr>
-              </tbody>
-            </table>
-
+            <div class="ui basic segment">
+              <img class="ui small circular image" style="display:inline-block;background-color:white" _src="{{thumbnail}}">
+              <span class="ui middle aligned huge header">{{document.title}}</span>
+            </div>
+            <div class="ui basic segment">
+              {{method}} /api/v1/id/[[documentId]]<template if="{{adapter}}">/@{{adapter.name}}</template>
+              <div class="ui red submit button" style="float:right" on-click="{{runRequest}}">Execute</div>
+            </div>
          </div>
         </template>
 
       </div>
     </div>
 
+    <template if="{{document}}">
+      <div class="ui two column stackable full page grid">
+        <div class="column">
+          <div id="methods" class="ui top attached tabular menu">
+            <a class="item active" data-method="GET">GET</a>
+            <a class="item" data-method="PUT">PUT</a>
+            <a class="item" data-method="POST">POST</a>
+            <a class="item" data-method="DELETE">DELETE</a>
+          </div>
+          <div class="ui bottom attached segment">
+
+            <template if="{{method == 'GET'}}">
+
+              <div class="ui basic segment">
+                <nx-web-adapters id="adapters" connectionId="{{connectionId}}" adapter="{{adapter}}"></nx-web-adapters>
+              </div>
+
+              <div class="ui basic segment">
+                <div id="enrichers" class="ui fluid accordion">
+                  <div class="title active">
+                    X-NXenrichers.document
+                    <a target="_blank" style="text-decoration:none; float:right" href="http://doc.nuxeo.com/x/5wUuAQ">
+                      <i class="help icon"></i>
+                    </a>
+                  </div>
+                  <div class="content active">
+                    <nx-content-enrichers connectionId="{{connectionId}}" request="{{request}}"></nx-content-enrichers>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui basic segment">
+                <div id="options" class="ui fluid accordion">
+                  <div class="title">
+                    Advanced options
+                  </div>
+                  <div class="content">
+                    <nx-request-options connectionId="{{connectionId}}" request="{{request}}"></nx-request-options>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <template if="{{method == 'POST' || method == 'PUT'}}">
+
+              <div class="ui basic segment">
+                <nx-widget type="textarea" required="true" value="{{body}}"></nx-widget>
+              </div>
+
+              <div class="ui basic horizontal right aligned segment">
+                <!-- Copy default body -->
+                <template if="{{method == 'PUT'}}">
+                  <div class="ui button" on-click="{{copyBody}}">Copy document</div>
+                </template>
+                <template if="{{method == 'POST'}}">
+                  <div class="ui button" on-click="{{setDefaultBody}}">Sample document</div>
+                </template>
+                <div class="ui button" on-click="{{referenceBatch}}">Reference a Batch</div>
+              </div>
+
+              <div class="ui modal" style="width: auto;">
+                <i class="close icon"></i>
+                <div class="header">
+                  Select a batch.
+                </div>
+                <div class="content">
+                  <template if="{{batch}}">
+                    <div class="field">Copy past the JSON string below and report it on the document object you want to create<br/> or update, for the file property for which you want to upload a file, ex:<br/>
+                        <pre>{"entity-type":"document","repository":"default",
+                        "uid":"73083c4b-9f06-43ef-b26d-7b05bc845473",...,
+                        "properties":{
+                        "dc:title":"Headquarters",...
+                        "file:content":
+                        <b>{"upload-batch":"batch-1404143791155-30210","upload-fileId":"0"}</b>
+                        ,...}</pre></div>
+                    <div class="ui ribbon label">{{batch.batchId}}</div>
+                    <textarea>{{batch.asJson}}</textarea>
+                  </template>
+                  <nx-batch-reference connectionId="{{connectionId}}" readonly="true" selected="{{batch}}">
+                    <div class="empty ui yellow message">
+                      <div class="content">
+                        <div class="header">
+                          No batches created yet.
+                        </div>
+                        <p>You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
+                      </div>
+                    </div>
+                  </nx-batch-reference>
+                </div>
+              </div>
+            </template>
+
+            <!-- Submit button -->
+            <div class="ui basic right aligned segment">
+              <div class="ui red submit button" on-click="{{runRequest}}">Execute</div>
+            </div>
+          </div>
+
+          <template if="{{errors.isNotEmpty}}">
+            <div class="ui bottom attached error message">
+              <template repeat="{{error in errors}}">
+                <p><i class="icon warning"></i>{{error}}</p>
+              </template>
+            </div>
+          </template>
+
+        </div>
+
+        <div class="column">
+          <nx-request-monitor request="{{request}}" response="{{response}}"></nx-request-monitor>
+        </div>
+      </div>
+    </template>
   </template>
   <script type="application/dart" src="nx_repository_browser.dart"></script>
 

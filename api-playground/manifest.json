@@ -1,0 +1,13 @@
+{
+  "name": "Nuxeo API Playground",
+  "short_name": "Nuxeo API Playground",
+  "icons": [
+    {
+      "src": "images/nuxeo-icon-3x.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone"
+}

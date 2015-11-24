@@ -9,13 +9,15 @@
   <link rel="stylesheet"  href="../semantic/collections/breadcrumb.min.css" no-shim>
   <link rel="stylesheet"  href="../semantic/collections/menu.min.css" no-shim>
 
+  <link rel="stylesheet"  href="../semantic/elements/loader.min.css" no-shim>
+  <link rel="stylesheet"  href="../semantic/modules/dimmer.min.css" no-shim>
   <link rel="stylesheet"  href="../semantic/modules/tab.min.css" no-shim>
 
   <link rel="stylesheet"  href="../semantic/views/list.min.css" no-shim>
 
   <link rel="stylesheet"  href="../css/highlight/default.css" no-shim>
   <link rel="stylesheet"  href="../css/style.css" no-shim>
-  <template if="{{request}}">
+
   <div class="ui top attached tabular menu">
     <a class="item active" data-tab="response">Response</a>
     <a class="item" data-tab="headers">Headers</a>
@@ -47,9 +49,14 @@
       </div>
 
       <!-- Body -->
-      <template if="{{contentType.startsWith('application/json') || contentType == 'text/plain'}}">
-        <pre><code>{{body}}</code></pre>
-      </template>
+      <div class="ui basic segment">
+        <div id="loading" class="ui dimmer">
+          <div class="ui large text loader">Loading</div>
+        </div>
+        <template if="{{contentType.startsWith('application/json') || contentType == 'text/plain'}}">
+          <pre><code id="code"></code></pre>
+        </template>
+      </div>
     </template>
     <template if="{{currentTab == 'headers'}}">
       <div class="ui ribbon label">Request Headers</div>
@@ -71,6 +78,6 @@
     </template>
   </div>
   </template>
-</template>
+
 <script type="application/dart" src="nx_request_monitor.dart"></script>
 </polymer-element>

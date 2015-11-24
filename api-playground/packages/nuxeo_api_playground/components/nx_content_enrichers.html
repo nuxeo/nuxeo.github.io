@@ -1,0 +1,28 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<polymer-element name="nx-content-enrichers">
+  <template>
+    <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/collections/form.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../css/style.css" no-shim>
+
+    <div class="ui form">
+      <template repeat="{{key in contentEnrichers.keys}}">
+        <div class="two fields">
+          <div class="field">
+            <label>[[key | capitalize]]</label>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input id="enricher-{{key}}" type="checkbox" checked="{{contentEnrichers[key]}}">
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+
+  </template>
+  <script type="application/dart" src="nx_content_enrichers.dart"></script>
+</polymer-element>

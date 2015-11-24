@@ -15,13 +15,13 @@
   <link rel="stylesheet"  href="css/style.css" no-shim>
   <!-- Home -->
   <template if="{{module == null}}">
-    <div class="ui two column stackable page grid" id="modules">
+    <div class="ui two column stackable wide page grid">
       <template repeat="{{key in modules.keys}}">
         <div class="column">
           <div class="ui raised segment">
             <h3 class="ui blue header">{{modules[key].title}}</h3>
             <div class="ui grid">
-              <div class="four wide column"><img class="ui medium image" _src="{{'packages/nuxeo_api_playground/images/' + modules[key].icon}}"></div>
+              <div class="four wide column"><img class="ui medium image" _src="packages/nuxeo_api_playground/images/{{modules[key].icon}}"></div>
               <div class="twelve wide column">
                 <p class="description">{{modules[key].description}}</p>
                 <template if="{{connection.isConnected}}">

@@ -1,0 +1,63 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="nx_widget.html">
+<polymer-element name="nx-web-adapters">
+
+  <template>
+    <link rel="stylesheet"  href="../semantic/elements/header.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/icon.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/input.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/label.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/elements/segment.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/collections/form.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/grid.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/menu.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/message.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/collections/table.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/modules/accordion.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/modules/dimmer.min.css" no-shim>
+    <link rel="stylesheet"  href="../semantic/modules/transition.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../semantic/views/list.min.css" no-shim>
+
+    <link rel="stylesheet"  href="../css/style.css" no-shim>
+
+
+    <div id="adapters" class="ui fluid accordion" style="overflow:hidden">
+
+      <template repeat="{{adapter in adapters}}">
+        <div class="title item" data-adapter="[[adapter.name]]">
+          @{{adapter.name | capitalize}}
+        </div>
+        <div class="content">
+          <p>{{adapter.description}}</p>
+          <div class="ui form">
+            <table class="ui basic table">
+              <tbody>
+                <tr template repeat="{{param in adapter.params}}">
+                  <td>{{param.name}}</td>
+                  <td>
+                    <div class="field">
+                      <!-- NOTE: We use the type to specify the field of the document we want to use -->
+                      <nx-widget
+                      datatype="{{(param.name == 'docPath' || param.name == 'docId') ? 'document' : 'string'}}"
+                      type="{{param.widget}}"
+                      required="{{param.required}}"
+                      value="{{param.value}}">
+                      </nx-widget>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+           </table>
+          </div>
+        </div>
+      </template>
+
+    </div>
+
+  </template>
+  <script type="application/dart" src="nx_web_adapters.dart"></script>
+
+</polymer-element>

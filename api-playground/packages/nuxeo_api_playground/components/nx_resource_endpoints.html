@@ -201,7 +201,7 @@
             </div>
 
             <div class="content">
-              <nx-request-options connectionId="{{connectionId}}"></nx-request-options>
+              <nx-request-options connectionId="{{connectionId}}" request="{{request}}"></nx-request-options>
             </div>
           </div>
 
@@ -215,8 +215,9 @@
           <br/>
 
           <!-- Output -->
-          <nx-request-monitor request="{{request}}" response="{{response}}"></nx-request-monitor>
-
+          <template if="{{response}}">
+            <nx-request-monitor request="{{request}}" response="{{response}}"></nx-request-monitor>
+          </template>
         </template>
       </div>
     </div>
