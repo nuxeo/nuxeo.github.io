@@ -367,7 +367,6 @@ blockquote, blockquote p {
 code,
 .inlineCode {
   background-color: #E8EFF5;
-  border: 1px dashed #3670B9;
   border-radius: 2px;
   font-family: Consolas, Courier, monospace;
   padding: 0 .2em;
