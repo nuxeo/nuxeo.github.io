@@ -66,14 +66,12 @@
                 <h2>FileSystem Blob Provider</h2>
                 <p>FileSystem blob provider has been added. It makes available as blobs specific files that are stored on a file system available from the server. Typical use case is when your content is handled by external applications that can't easily be updated to use the Nuxeo REST API and for which it is easier to let the files on a standard file system.
                 To use this feature, contribute a provider using:</p>
-                <pre>
-                    &lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt;<br/>
-                    &lt;blobprovider name=&quot;fs&quot;&gt;<br/>
-                    &lt;class&gt;org.nuxeo.ecm.core.blob.FilesystemBlobProvider&lt;/class&gt;<br/>
-                    &lt;property name=&quot;root&quot;&gt;/opt/nuxeo/nxsever/blobs&lt;/property&gt;<br/>
-                    &lt;/blobprovider&gt;<br/>
-                    &lt;/extension&gt;<br/>
-                </pre>
+                <pre>&lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt;<br/>
+                &lt;blobprovider name=&quot;fs&quot;&gt;<br/>
+                &lt;class&gt;org.nuxeo.ecm.core.blob.FilesystemBlobProvider&lt;/class&gt;<br/>
+                &lt;property name=&quot;root&quot;&gt;/opt/nuxeo/nxsever/blobs&lt;/property&gt;<br/>
+                &lt;/blobprovider&gt;<br/>
+                &lt;/extension&gt;</pre>
                 
                 <p>The configured root property above is mandatory and restricts under which path legal blobs will be allowed to be created. Then to create a blob pointing to a file under this root one can use:</p>
                 <pre>
