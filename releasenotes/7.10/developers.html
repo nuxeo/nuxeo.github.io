@@ -66,20 +66,21 @@
                 <h2>FileSystem Blob Provider</h2>
                 <p>FileSystem blob provider has been added. It makes available as blobs specific files that are stored on a file system available from the server. Typical use case is when your content is handled by external applications that can't easily be updated to use the Nuxeo REST API and for which it is easier to let the files on a standard file system.
                 To use this feature, contribute a provider using:</p>
-                <pre>&lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt;<br/>
-                &lt;blobprovider name=&quot;fs&quot;&gt;<br/>
-                &lt;class&gt;org.nuxeo.ecm.core.blob.FilesystemBlobProvider&lt;/class&gt;<br/>
-                &lt;property name=&quot;root&quot;&gt;/opt/nuxeo/nxsever/blobs&lt;/property&gt;<br/>
-                &lt;/blobprovider&gt;<br/>
-                &lt;/extension&gt;</pre>
+                <pre>
+&lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt;
+    &lt;blobprovider name=&quot;fs&quot;&gt;
+        &lt;class&gt;org.nuxeo.ecm.core.blob.FilesystemBlobProvider&lt;/class&gt;
+        &lt;property name=&quot;root&quot;&gt;/opt/nuxeo/nxsever/blobs&lt;/property&gt;
+    &lt;/blobprovider&gt;
+&lt;/extension&gt;</pre>
                 
                 <p>The configured root property above is mandatory and restricts under which path legal blobs will be allowed to be created. Then to create a blob pointing to a file under this root one can use:</p>
                 <pre>
-                    BlobInfo blobInfo = new BlobInfo();<bR/>
-                    blobInfo.key = "/opt/nuxeo/nxserver/blobs/foo/bar.pdf";<br/>
-                    blobInfo.mimeType = "application/pdf";<bR/>
-                    BlobManager blobManager = Framework.getService(BlobManager.class);<br/>
-                    Blob blob = ((FilesystemBlobProvider) blobManager.getBlobProvider("fs")).createBlob(blobInfo);<br/>
+BlobInfo blobInfo = new BlobInfo();
+blobInfo.key = "/opt/nuxeo/nxserver/blobs/foo/bar.pdf";
+blobInfo.mimeType = "application/pdf";
+BlobManager blobManager = Framework.getService(BlobManager.class);
+Blob blob = ((FilesystemBlobProvider) blobManager.getBlobProvider("fs")).createBlob(blobInfo);
                 </pre>
                 <p>Internally the blob will then be stored in the database with a key of <code>fs:foo/bar.pdf</code>.</p>
                 <h2>Implementing a New Binary Store Is Easier</h2>
@@ -107,21 +108,21 @@ one that is cluster aware.</p>
 </ul>
 <p>The new <a href="https://github.com/nuxeo/nuxeo/blob/release-7.10/nuxeo-core/nuxeo-core-cache/src/main/java/org/nuxeo/ecm/core/transientstore/api/TransientStore.java" target="_blank">Transient Store</a> API allows this simply:</p>
 <pre>
-void putBlobs(String key, List<Blob> blobs);<br/><br/>
-List<Blob> getBlobs(String key);<br/><br/>
-void putParameters(String key, Map<String, Serializable> parameters);<br/><br/>
+void putBlobs(String key, List<Blob> blobs);
+List<Blob> getBlobs(String key);
+void putParameters(String key, Map<String, Serializable> parameters);
 Map<String, Serializable> getParameters(String key);
 </pre>
 <h2>Negative Caching for Directory Entries</h2>
 <p>Usually a read on a missing entry is rarely, if ever, attempted. But in the particular case of the groupDirectory, it happens a lot due to the fact that internally user ids and group ids are often stored in the same field in Nuxeo (for instance in ACLs). Therefore both the groupDirectory and the userDirectory have to be consulted before finding if a given id refers to a group or a user.
 With this improvement, to activate the negative caching, use a contribution like:</p>
                 <pre>
-&lt;require&gt;...&lt;/require&gt;<br/>
-&lt;extension target=&quot;org.nuxeo.ecm.directory.sql.SQLDirectoryFactory&quot; point=&quot;directories&quot;&gt;<br/>
-&lt;directory name=&quot;groupDirectory&quot;&gt;<br/>
-&lt;negativeCaching&gt;true&lt;/negativeCaching&gt;<br/>
-&lt;/directory&gt;<br/>
-&lt;/extension&gt;<br/>
+&lt;require&gt;...&lt;/require&gt;
+&lt;extension target=&quot;org.nuxeo.ecm.directory.sql.SQLDirectoryFactory&quot; point=&quot;directories&quot;&gt;
+    &lt;directory name=&quot;groupDirectory&quot;&gt;
+        &lt;negativeCaching&gt;true&lt;/negativeCaching&gt;
+    &lt;/directory&gt;
+&lt;/extension&gt;
                 </pre>
 <p>This improvement also adds two new metrics on directories:</p>
                 <ul><li><code>nuxeo.directories.yourDirectoryName.cache.neghits</code>: the number of hits on the negative cache, if activated.</li>
@@ -142,15 +143,15 @@ A new boolean attribute <code>storeByDefault</code> has been added to the Rendit
         <li>Nuxeo Drive synchronization</li>
     </ul>
 <p>To disable updates for a given blob provider, add the following property in the blob provider definition:</p>
-                <pre>&lt;property name=&quot;preventUserUpdate&quot;&gt;true&lt;/property&gt;</pre>
+<pre>&lt;property name=&quot;preventUserUpdate&quot;&gt;true&lt;/property&gt;</pre>
 <p>For instance you could have:</p>
                 <pre>
-&lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt;<br/>
-&lt;blobprovider name=&quot;googledrive&quot;&gt;<br/>
-&lt;class&gt;org.nuxeo.ecm.liveconnect.google.drive.GoogleDriveBlobProvider&lt;/class&gt;<br/>
-&lt;property name=&quot;preventUserUpdate&quot;&gt;true&lt;/property&gt;<br/>
-&lt;/blobprovider&gt;<br/>
-&lt;/extension&gt;<br/>
+&lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt;
+    &lt;blobprovider name=&quot;googledrive&quot;&gt;
+        &lt;class&gt;org.nuxeo.ecm.liveconnect.google.drive.GoogleDriveBlobProvider&lt;/class&gt;
+        &lt;property name=&quot;preventUserUpdate&quot;&gt;true&lt;/property&gt;
+    &lt;/blobprovider&gt;
+&lt;/extension&gt;
                 </pre>
 
 <h2>Renditions for Non Versionnable Documents Can Be Stored</h2>
@@ -161,8 +162,7 @@ A new boolean attribute <code>storeByDefault</code> has been added to the Rendit
 <p>When using MongoDB storage, it is now possible to change a schema from a scalar value to an array without any trouble.</p>
 <h2>NXQL Escaping with Automation</h2>
 <p><code>Fn.nxqlEscape</code> can now be used in Automation MVEL expressions. Ex:</p>
-                <pre>
-                SELECT * FROM Document WHERE ecm:path STARTSWITH '@{Fn.nxqlEscape(Document.path)}'</pre>
+                <pre>SELECT * FROM Document WHERE ecm:path STARTSWITH '@{Fn.nxqlEscape(Document.path)}'</pre>
 <h2>Elasticseach Query by Ancestor Id</h2>
 <p><code>ecm:ancestorId</code> is now supported by Elasticsearch page providers. As a reminder, <code>ecm:ancestorId</code> allows to find all documents who are rooted to a given document, provided its id.</p>
 <h2>Abandonned Addons</h2>
