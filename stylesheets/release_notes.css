@@ -354,9 +354,11 @@ blockquote, blockquote p {
   line-height: 180%;
 }
 
+pre,
 .embededCode {
-  background-color: #E8EFF5;
-  border: 1px dashed #3670B9;
+  background-color: #f0f5f9;
+  border: 0;
+  border-radius: 2px;
   color: black;
   line-height: 1.1em;
   padding: 1em;
@@ -371,7 +373,6 @@ code,
   font-family: Consolas, Courier, monospace;
   font-size: .96em;
   padding: 0 .2em;
-  overflow-x:auto;
 }
 
 #site-title .version-number {
