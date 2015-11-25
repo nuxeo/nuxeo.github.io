@@ -364,21 +364,13 @@ blockquote, blockquote p {
   overflow-x:auto;
 }
 
+code,
 .inlineCode {
   background-color: #E8EFF5;
-  color: black;
-  line-height: 1.1em;
-  font-family: Consolas,Courier,monospace;
-  overflow-x:auto;
-}
-
-code {
-  background-color: #E8EFF5;
   border: 1px dashed #3670B9;
-  color: black;
-/*   line-height: 1.1em; */
-/*   padding: 1em; */
-  font-family: Consolas,Courier,monospace;
+  border-radius: 2px;
+  font-family: Consolas, Courier, monospace;
+  padding: 0 .2em;
   overflow-x:auto;
 }
 
