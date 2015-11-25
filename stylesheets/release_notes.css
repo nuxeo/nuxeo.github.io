@@ -369,6 +369,7 @@ code,
   background-color: #E8EFF5;
   border-radius: 2px;
   font-family: Consolas, Courier, monospace;
+  font-size: .96em;
   padding: 0 .2em;
   overflow-x:auto;
 }
