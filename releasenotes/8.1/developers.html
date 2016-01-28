@@ -21,9 +21,9 @@
                     -->
                     <meta charset="utf-8" />
                     <title>
-                        Nuxeo 8.1 - New and Noteworthy
+                        Nuxeo Platform 8.1 - New and Noteworthy
                     </title>
-                    <meta name="description" content="Nuxeo on Github" />
+                    <meta name="description" content="Nuxeo on GitHub" />
                     <meta name="author" content="nuxeo" />
                     <!--
                         Mobile Specific Metas
@@ -90,30 +90,28 @@
                                 A C# Nuxeo Client has been added. A sample application is provided so as to understand how to make use of it.
                             </p>
                             <h2>
-                                Configuring Tinymce Editor Via Tag Properties
+                                Configuring TinyMCE Editor via Tag Properties
                             </h2>
                             <p>
                                 Plugins and options have been extracted to control them by tag properties in order to display different options depending on the field.
                             </p>
                             <h2>
-                                Understand The Sequence Of Listeners Calls
+                                Understanding The Sequence Of Listeners Calls
                             </h2>
-                            You can now add this on your log4j.xml:
-                            <div class="embededCode">
-                                
-                                &lt;category name=&quot;org.nuxeo.common.logging&quot;&gt;
-                                &lt;priority value=&quot;DEBUG&quot; /&gt;
-                                &lt;/category&gt;
-                             
-                            </div>
-                            Then use the sequence.sh to generate a PNG with a sequence diagram of all threads and listeners (TODO: ask Stéphane).
-                            Note that all events in the chart are in chronological order (not proportional) except for the Initiate link where the origin point to the thread that has generated a work without telling when (earlier for sure).
+                            <p>You can now add this on your log4j.xml:</p>
+                            <pre>
+&lt;category name=&quot;org.nuxeo.common.logging&quot;&gt;
+&lt;priority value=&quot;DEBUG&quot; /&gt;
+&lt;/category&gt;
+                            </pre>
+                            <p>Then use the sequence.sh to generate a PNG with a sequence diagram of all threads and listeners.</p>
+                            <p>Note that all events in the chart are in chronological order (not proportional) except for the Initiate link, where the origin points to the thread that has generated a work without telling when (earlier for sure).
                         </p>
                         <h2>
-                            HTML content in Tipsy Tooltip
+                            HTML Content in Tipsy Tooltip
                         </h2>
                         <p>
-                            Tooltips generated with Tipsy now render HTML content propertly.
+                            Tooltips generated with Tipsy now render HTML content properly.
                         </p>
                     </div>
                 </div>
