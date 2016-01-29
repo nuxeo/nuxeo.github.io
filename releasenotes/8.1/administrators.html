@@ -23,7 +23,7 @@
                     <title>
                         Nuxeo Platform 8.1 - New and Noteworthy
                     </title>
-                    <meta name="description" content="Nuxeo Platform 8.1 Release notes for administrators" />
+                    <meta name="description" content="Nuxeo Platform 8.1 release notes for administrators" />
                     <meta name="author" content="Nuxeo" />
                     <!--
                         Mobile Specific Metas
@@ -87,7 +87,7 @@
                                 S3 Configuration via Extension Point
                             </h2>
                             <p>
-                                Customers needing to connect to more than one S3 binary managers with different configurations are now able to do so using the new <pre>configuration</pre> extension point of <code>org.nuxeo.ecm.core.blob.BlobManager</code>. Previously only one bucket could be configured in nuxeo.conf.
+                                Customers needing to connect to more than one S3 binary managers with different configurations are now able to do so using the new <code>configuration</code> extension point of <code>org.nuxeo.ecm.core.blob.BlobManager</code>. Previously only one bucket could be configured in nuxeo.conf.
                             </p>
                             <pre>
 &lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt; 
@@ -190,10 +190,9 @@
                                             </b>
                                             : dumps the DDL (if any) to the file, and if not empty aborts startup.
                                         </li>
+                                        </ul>
                                         <p>For Nuxeo Platform 6.0 and Nuxeo Platform 7.10 the default was <code>nuxeo.vcs.ddlmode=compat</code>. For Nuxeo 8.1 the default is <code>nuxeo.vcs.ddlmode=execute</code>.</p>
                                         <p>Note that all this applies to the DDL for the document repository, but not DDL used by other users of SQL in the platform (directories, quartz, JPA persistence).</p>
-                                      </ul>
-                                    </p>
                                     <h2>
                                         Cluster Invalidation with Redis in nuxeo.conf
                                     </h2>
