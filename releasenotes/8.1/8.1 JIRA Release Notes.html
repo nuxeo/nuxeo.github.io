@@ -1,930 +1,502 @@
 
-        Release Notes - Nuxeo Platform - Version 7.4
+        Release Notes - Nuxeo Platform - Version 8.1
     
 <h2>        Sub-task
 </h2>
 <ul>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-14857'>NXP-14857</a>] -         Provide a service to manage Users/Groups creation from other systems
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-17255'>NXP-17255</a>] -         Add email template for temporary access
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-15700'>NXP-15700</a>] -         Add support for SCIM
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18205'>NXP-18205</a>] -         workflow tasks should not be serialized as part of works
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17144'>NXP-17144</a>] -         Define email template
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18356'>NXP-18356</a>] -         Create a performance template
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17145'>NXP-17145</a>] -         Store &#39;notify&#39; and &#39;comment&#39; fields
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18357'>NXP-18357</a>] -         Setup services
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17146'>NXP-17146</a>] -         Create async listener to send the notification
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17147'>NXP-17147</a>] -         Update ACE form with Notify and comment field
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17151'>NXP-17151</a>] -         Add Update ACE operation
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17431'>NXP-17431</a>] -         Allow to use creator, begin and end in ACL-related queries
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17443'>NXP-17443</a>] -         Make CoreQueryAndFetchPageProvider work with no pattern
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17475'>NXP-17475</a>] -         Add utility methods to manage ACE on ACP / ACL 
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17583'>NXP-17583</a>] -         Make DB read_acls stored procedure handle ACE status
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17584'>NXP-17584</a>] -         Make Elasticsearch use ACE status
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17585'>NXP-17585</a>] -         Send the email notification when an ACE becomes effective
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17588'>NXP-17588</a>] -         Update the ACE status based on the begin and end date
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17756'>NXP-17756</a>] -         Provide a Login Plugin for JBoss Keyloack
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17761'>NXP-17761</a>] -         Reorder addons builds 
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17784'>NXP-17784</a>] -         fixup remote throwable properties unmarshalling
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17918'>NXP-17918</a>] -         Provide a REST API to launch an asynchronous conversion
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18358'>NXP-18358</a>] -         Create a CI job to run the bench
 </li>
 </ul>
             
 <h2>        Bug
 </h2>
 <ul>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-11071'>NXP-11071</a>] -         Custom page structure changes unable to update the galaxy, userCenter and admin themes
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-15637'>NXP-15637</a>] -         OrderedFolder not updated with Elasticsearch
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-11572'>NXP-11572</a>] -         Fix management of non-string values in nxu:valueHolder tag
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-15792'>NXP-15792</a>] -         Align smart search addon for 6.0 and LTS 2015
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-12365'>NXP-12365</a>] -         Fix layout tags documentation
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-15876'>NXP-15876</a>] -         Unable to compare documents (nuxeo-diff) in an OrderedFolder
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-13965'>NXP-13965</a>] -         Make use of java.io.tmpdir
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-16026'>NXP-16026</a>] -         Edit result columns dialog not usable with Collection
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-14317'>NXP-14317</a>] -         Deleted documents are visible on the shared link
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-16755'>NXP-16755</a>] -         [IE] Text shouldn&#39;t be white on document preview (pdf, doc, odt)
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-15140'>NXP-15140</a>] -         CSS &gt; The page class is not usable
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-16985'>NXP-16985</a>] -         Change &quot;Http Transport returned a 0 status code&quot; error to make it less annoying
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-15439'>NXP-15439</a>] -         MongoDB fixes
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-15683'>NXP-15683</a>] -         Fix TemplateBundleActivator logic
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-15741'>NXP-15741</a>] -         Add back JS minimizer configurations
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-15947'>NXP-15947</a>] -         Fix shibboleth addon after JSF2 migration 
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16005'>NXP-16005</a>] -         Random failure in ITCollectionsTest#testAddDocumentToCollectionAndRemove
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16121'>NXP-16121</a>] -         Fix Kerberos package uninstallation
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16478'>NXP-16478</a>] -         Fix drive root unsync when synchronizing parent root
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16488'>NXP-16488</a>] -         Allow ACL-related queries from NXQL on MongoDB
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16492'>NXP-16492</a>] -         Document type should be read only
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16503'>NXP-16503</a>] -         Fix crash on toggleable form pages on layout showcase
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16647'>NXP-16647</a>] -         Review French translations in the Admin Center
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16857'>NXP-16857</a>] -         Rewrite UIDSequencer for removing Hibernate dependency
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17019'>NXP-17019</a>] -         Upgrade MVEL to 2.2.4-NX01
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17025'>NXP-17025</a>] -         Deadlock during Jena init
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17164'>NXP-17164</a>] -         Upgrade PDFBox libraries to latest version 1.8.9
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17183'>NXP-17183</a>] -         Blob Reference Versioning not working for Google Docs file.
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17216'>NXP-17216</a>] -         Display video on Nuxeo Platform UI when it&#39;s not available anymore in Youtube / Wistia
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17239'>NXP-17239</a>] -         Fix clearTask method when task does not exist anymore
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17240'>NXP-17240</a>] -         binaryMetadataSyncListener + command line don&#39;t work when file name contains some characters
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17241'>NXP-17241</a>] -         Migrate workflow content view template to jsf2
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17242'>NXP-17242</a>] -         Fix English labels
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17243'>NXP-17243</a>] -         Remove unused labels from messages.properties files
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17259'>NXP-17259</a>] -         Fix random failure on ITPersonalWorkspaceTest.testNavigationFromSelection
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17266'>NXP-17266</a>] -         Open with Pixlr Editor doesn&#39;t work
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17296'>NXP-17296</a>] -         nuxeo-quota addon: initial computation of quotaStatsUpdater &#39;documentsSizeUpdater&#39; does not work properly
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17314'>NXP-17314</a>] -         Put back AutomationFeature into Nuxeo SDK
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17316'>NXP-17316</a>] -         Fix duplicate component for org.nuxeo.ecm.platform.rendition.version
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17340'>NXP-17340</a>] -         Some Oracle tests should allow null instead of empty string
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17342'>NXP-17342</a>] -         In wizard, fix Live Connect spelling
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17343'>NXP-17343</a>] -         Spreadsheet does not populate Version column
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17344'>NXP-17344</a>] -         Fix typo in cancel task state
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17348'>NXP-17348</a>] -         Do not display Drive Edit link for Live Connect blobs
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17350'>NXP-17350</a>] -         nuxeo-quota addon: fix inconsistency in computation of trash size and live documents size
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-17298'>NXP-17298</a>] -         Selecting a saved search with edited columns should show the view with edited columns
 </li>
 <li>[<a href='https://jira.nuxeo.com/browse/NXP-17351'>NXP-17351</a>] -         Copy/Paste a set of files must not exceed quota
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17352'>NXP-17352</a>] -         Do not copy packages from data to $NUXEO/packages when upgrading
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-17701'>NXP-17701</a>] -         DELETE REST API should not redirect to invalid URL
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17353'>NXP-17353</a>] -         Spreadsheet does not take sort infos into account
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-17916'>NXP-17916</a>] -         Fix group by aggregation display
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17357'>NXP-17357</a>] -         connection leaks in VCS connection propagator
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18000'>NXP-18000</a>] -         dc:creator value is ignored during CSV import
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17360'>NXP-17360</a>] -         CSV import is not refreshing
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18087'>NXP-18087</a>] -         Fix JavaScript errors after installing Nuxeo Agenda
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17362'>NXP-17362</a>] -         Fix spurious table in thumbnail listings
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18089'>NXP-18089</a>] -         Fix Agenda gadget on dashboard
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17364'>NXP-17364</a>] -         Edit: Google Drive documents history (and notifications) should mention the nuxeo user and not system
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18141'>NXP-18141</a>] -         Mail parameter mismatch in different files
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17371'>NXP-17371</a>] -         Elasticsearch query should take in account custom NXQL Security Policy
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18163'>NXP-18163</a>] -         Keep the Admin tab left tabs when user browse a workflow model
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17372'>NXP-17372</a>] -         Fix DuoWeb addon identification two factor step
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18183'>NXP-18183</a>] -         Mvel results not updated when Automation Tracing enabled
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17375'>NXP-17375</a>] -         Fix JS error when displaying the calendar view on the Agenda widget
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18186'>NXP-18186</a>] -         Fix attachments display when using REST API upload endpoint
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17376'>NXP-17376</a>] -         Fix jquery ui version in agenda
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18272'>NXP-18272</a>] -         Change sort order of page provider &#39;domain_published_documents&#39; to &#39;descending&#39;
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17381'>NXP-17381</a>] -         Fix NPE in DocumentBlobHolder.getHash
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18306'>NXP-18306</a>] -         Fix NPE when testing if a document is deleted in LiveEditBootstrapHelper
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17383'>NXP-17383</a>] -         Fix TestSQLRepositoryAPI testProxy failure
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18307'>NXP-18307</a>] -         Missing translation for collection events in history
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17384'>NXP-17384</a>] -         Fix concurrent access to deleted complex property
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18309'>NXP-18309</a>] -         Fix drop area highlight on import popup
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17385'>NXP-17385</a>] -         Fix duplicated notification when replying to a comment
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18324'>NXP-18324</a>] -         Fix zone-dependent diff tests failing on some machines
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17386'>NXP-17386</a>] -         Fix concurrent access to deleted version
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18328'>NXP-18328</a>] -         Fix subtab navigation between History and Manage tab
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17389'>NXP-17389</a>] -         Drive + Elasticsearch audit: fix functional tests randomly failing because of missing events in change summary
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18332'>NXP-18332</a>] -         Workflow should not send default notifications when a mail template is selected
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17393'>NXP-17393</a>] -         Permanently deleting a folder does not delete versions of documents under it
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18334'>NXP-18334</a>] -         Label of button to continue drag&amp;drop import should be localized
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17399'>NXP-17399</a>] -         Prevent from starting workflow reviews when document is already approved.
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18351'>NXP-18351</a>] -         Fix Document Suggestion helper documentation platform side
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17401'>NXP-17401</a>] -         Live Connect doesn&#39;t work on  a pre-existing instance
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18352'>NXP-18352</a>] -         Fix pageprovider predicates with FULLTEXT and ES hints
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17403'>NXP-17403</a>] -         Members of the group administrators shoud be able to remove the user Administrator from local rights
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18363'>NXP-18363</a>] -         Admin center setup must use mail.transport.user instead or mail.transport.username
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17405'>NXP-17405</a>] -         Fix error on current blob write
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18365'>NXP-18365</a>] -         Clicking the Block or Delete permission buttons make IE crash
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17409'>NXP-17409</a>] -         Make DocumentModelJsonReader work with properties from schemas without prefix
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18366'>NXP-18366</a>] -         Unable to navigate back on nuxeo-web-mobile
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17411'>NXP-17411</a>] -         Repository Elasticsearch re-indexing drops audit log entries
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18369'>NXP-18369</a>] -         Fix LRUFileCache file cleaning
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17417'>NXP-17417</a>] -         Fix MySQL test testSaveRestoredVersionWithVersionAutoIncrement
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18372'>NXP-18372</a>] -         Show column &#39;Publication date&#39; instead of &#39;Last modification&#39; on home dashboard widget
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17418'>NXP-17418</a>] -         Use a different message key for &quot;folder content&quot; and &quot;binary content&quot;
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18379'>NXP-18379</a>] -         ES index name should not be hardcoded in the DataViz components
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17419'>NXP-17419</a>] -         CMIS query on type with complex property fails
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18381'>NXP-18381</a>] -         DocumentModelChildrenIterator should not fail on inaccessible documents
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17421'>NXP-17421</a>] -         Further fixes on toggleable layout when using a Studio layout
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18384'>NXP-18384</a>] -         Web Engine module &#39;Nuxeo User WebEngine Invite&#39; should be overridable
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17422'>NXP-17422</a>] -         Elasticsearch UIDSequencer doesn&#39;t use the sequence index contribution
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18388'>NXP-18388</a>] -         Fix missing asterisk for mandatory fields
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17423'>NXP-17423</a>] -         Handle Elasticsearch sequence index migration from 7.3 to 7.4 or higher
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18392'>NXP-18392</a>] -         Fix MongoDB active session count
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17425'>NXP-17425</a>] -         Handle contextParameters in automation client
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18393'>NXP-18393</a>] -         Fix MongoDB retrieval of date arrays
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17429'>NXP-17429</a>] -         Retry async listeners twice by default
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18397'>NXP-18397</a>] -         OpenID&#39;s UserResolver does not update email info
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17432'>NXP-17432</a>] -         nuxeo-binary-metadata must not write directly to an existing Binary
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18399'>NXP-18399</a>] -         Widget &#39;current_route_open_tasks&#39; should properly extract group name containing colon character
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17433'>NXP-17433</a>] -         Exiftool processing should ignore minor errors and warnings
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18408'>NXP-18408</a>] -         XML document export must manage CDATA
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17439'>NXP-17439</a>] -         Fix NPE in UserManagementActions
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18409'>NXP-18409</a>] -         Fix refresh of CSV import popup
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17452'>NXP-17452</a>] -         As a user, I would like to see all my tasks listing in Dashboard (delegated included) 
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18411'>NXP-18411</a>] -         Fix NPE in MetricInvocationHandler when using automations scripting service
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17455'>NXP-17455</a>] -         Drive: security updates sometimes irrelevant in change summary
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18417'>NXP-18417</a>] -         Fix closing of fancy box on actions widget sample in layout showcase
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17463'>NXP-17463</a>] -         nuxeo-quota addon: cache key should be invalidate when quota exceeded exception is thrown
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18419'>NXP-18419</a>] -         Place all CSS resources first on the home page
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17464'>NXP-17464</a>] -         Fix logging deleteComment event under the wrong user
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18421'>NXP-18421</a>] -         Fix OpenId marketplace contributions
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17466'>NXP-17466</a>] -         Fix redirection to nxbigfile
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18429'>NXP-18429</a>] -         Fix freeze on ITCollectionsTest
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17472'>NXP-17472</a>] -         Fix error management on unknown runtime extension point
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18443'>NXP-18443</a>] -         Fix Safe Edit from the Edit tab when switching to another ajaxified tab
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17480'>NXP-17480</a>] -         Fix layout demo ES errors
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18473'>NXP-18473</a>] -         Hide the metadata panel on the right when accessing the audit
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17481'>NXP-17481</a>] -         Fix the HTTPHelper accessibility by Nashorn in Automation Scripting
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18476'>NXP-18476</a>] -         Fix audit NPE for system user entries
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17482'>NXP-17482</a>] -         Index extended info in Audit for deleted documents
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18478'>NXP-18478</a>] -         Fix card document actions when document is selected
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17485'>NXP-17485</a>] -         Display a message at first when no acl is set locally
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18479'>NXP-18479</a>] -         Hide the d&amp;d zone on a folder within SF plugin when d&amp;d
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17486'>NXP-17486</a>] -         Right Management Tab: Clicking on &quot;redefine permissions from this folder&quot; doesn’t work.
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18488'>NXP-18488</a>] -         HTTP PUT a document&#39;s json just gotten through API corrupts files
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17509'>NXP-17509</a>] -         ITNoteDocumentTest.testCreateComplexNote failure on OS X FF 26
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18489'>NXP-18489</a>] -         Infinite loop in MySQL NX_ACCESS_ALLOWED
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17511'>NXP-17511</a>] -         Invalid Schema name used in Constraint Violation
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18491'>NXP-18491</a>] -         Hot Reload strategy should notify and wait for other services
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17512'>NXP-17512</a>] -         Fix CMIS query with CONTAINS qualifier
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18496'>NXP-18496</a>] -         Unable to create new user with Multi Tenant addon
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17514'>NXP-17514</a>] -         Fix NPE on access to version without live doc under DBS
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18498'>NXP-18498</a>] -         Fix NPE in nuxeo_error.jsp
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17515'>NXP-17515</a>] -         Implement NXQL BETWEEN for MongoDB
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18499'>NXP-18499</a>] -         Use rendition variants to isolate non-versionable stored renditions
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17532'>NXP-17532</a>] -         Content view for Collections doesn&#39;t work on MongoDB
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18500'>NXP-18500</a>] -         Fix layout tags documentation for the category attribute
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17536'>NXP-17536</a>] -         Implement NXQL prop/* syntax for arrays in MongoDB
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18512'>NXP-18512</a>] -         fix document listing unwrap from automation scripting context
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17538'>NXP-17538</a>] -         Drive: client might receive a 403 when trying to get a FileSystemItem for a non accessible doc
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18516'>NXP-18516</a>] -         Fix &#39;addLabel&#39; property label in list widget configuration
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17540'>NXP-17540</a>] -         Tables in Right management tab are empty with IE
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18517'>NXP-18517</a>] -         Elasticsearch indexing should not be recursive on folderish version
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17542'>NXP-17542</a>] -         Fix potential NPE in the Download service
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18522'>NXP-18522</a>] -         Fix the Approve button in a standalone task
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17543'>NXP-17543</a>] -         Fix &#39;null&#39; displayed text in user aggregate widget when user does not exist anymore
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18524'>NXP-18524</a>] -         Fix orphaned binary GC for S3 blob manager
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17544'>NXP-17544</a>] -         Fix content view state serialization / deserialization when using non-string parameters
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18526'>NXP-18526</a>] -         Display correct label for custom right when adding a permission
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17547'>NXP-17547</a>] -         Fix user menu dropdown display
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18529'>NXP-18529</a>] -         Update nuxeo-select2.min.js with latest bug fix
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17554'>NXP-17554</a>] -         Fix Package MANIFEST serialization on visibility
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18530'>NXP-18530</a>] -         Fix query generation with FULLTEXT ALL operator
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17556'>NXP-17556</a>] -         Missing select2 and fancybox resources when using wro servlet
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18532'>NXP-18532</a>] -         Fix url in task actions in task endpoint response
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17557'>NXP-17557</a>] -         Small style regression in Drive metadata view 
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18538'>NXP-18538</a>] -         Fix NPE in CachingBinaryManager on missing blob
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17558'>NXP-17558</a>] -         Fix automation marshalling
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18540'>NXP-18540</a>] -         Fix Audit lines for NuxeoAuthentication.loginSuccess principal name
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17559'>NXP-17559</a>] -         Workflow global variables are serialized in the even if not supposed to
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18541'>NXP-18541</a>] -         Drive addon 6.0 multidb tests failing under PostgreSQL looking for H2 fulltext analyzer
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17560'>NXP-17560</a>] -         Start a workflow on deleted documents
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18547'>NXP-18547</a>] -         Video or Audio Player widget breaks the UI
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17565'>NXP-17565</a>] -         Filter virtual groups from the Access Rights tab
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18549'>NXP-18549</a>] -         nuxeo-template-rendering addon: if a template, which is configured to be automatically bound to certain document types, is moved to trash, stop binding it to documents at creation time
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17568'>NXP-17568</a>] -         Fix configuration of default binary manager path and key
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18553'>NXP-18553</a>] -         Don&#39;t return unavailable renditions
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17572'>NXP-17572</a>] -         S3 Binary storage miss some etag check bypass
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18554'>NXP-18554</a>] -         Remove duplicate Content tab on easyshare folder
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17578'>NXP-17578</a>] -         Make forms.css independant of the context path
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18558'>NXP-18558</a>] -         Fix &#39;Bind a template to this Document&#39; popup style
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17586'>NXP-17586</a>] -         Satisfied ConditionalIgnoreRule on a method must not skip other class&#39; tests
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18559'>NXP-18559</a>] -         Fix Salesforce OAuth invalid session management
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17600'>NXP-17600</a>] -         Fix select2 alert popup when window unloaded event occurs during the search automation call
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18560'>NXP-18560</a>] -         Can&#39;t run workflow with MongoDB
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17603'>NXP-17603</a>] -         Fix error when creating a new user with a custom schema
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18565'>NXP-18565</a>] -         Fix S3 bucket property name
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17606'>NXP-17606</a>] -         Make sure select2 widgets are not immediate
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18571'>NXP-18571</a>] -         Remove repeat in the listview thumbnail widget style
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17607'>NXP-17607</a>] -         Redis cache invalidateAll fails with jedis exception
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18572'>NXP-18572</a>] -         Fix DBS partial update of complex list element
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17608'>NXP-17608</a>] -         Redis worker queues cleanup fails with jedis exception
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18575'>NXP-18575</a>] -         MongoDB fixes
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17616'>NXP-17616</a>] -         widgets used in result layout of content view &#39;user_open_tasks&#39; does not render properly in csv/pdf exports
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18580'>NXP-18580</a>] -         Fix default directory name used by User Select aggregate
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17622'>NXP-17622</a>] -         Fix RandomBug counts
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18581'>NXP-18581</a>] -         Fix wrong Document route facet property variable facet in writer
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17626'>NXP-17626</a>] -         Fix tooltip position in header
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18582'>NXP-18582</a>] -         Fix table display with large colum in ADMIN &gt; Vocabularies
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17631'>NXP-17631</a>] -         Fix breadcrumb display
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18585'>NXP-18585</a>] -         Fix facet add/remove when schema also belongs to primary type or other facet
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17641'>NXP-17641</a>] -         Can&#39;t access the Cloud Services  tab in Nuxeo Platform
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18586'>NXP-18586</a>] -         Don&#39;t limit dataInput forms when they are in containers
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17642'>NXP-17642</a>] -         Fix error when minimizing video addon resources
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18591'>NXP-18591</a>] -         Fix PermissionsPurgeWork#getTitle
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17646'>NXP-17646</a>] -         Set the input of a JavaScript Chain as a valid DocumentModel when the chain is called from REST
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18592'>NXP-18592</a>] -         Fix PermissionsPurgeWork#getTitle
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17651'>NXP-17651</a>] -         Replace wrong use of artifact:resolveFile with artifact:file
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18607'>NXP-18607</a>] -         Fix CMIS 1.0 use of types before getRepositoryInfo
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17652'>NXP-17652</a>] -         Fix Media publishing label issue
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18612'>NXP-18612</a>] -         Google docs are synchronized by Nuxeo Drive making the remote scan fail
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17653'>NXP-17653</a>] -         Drive: sync roots computation fail if user looses access on one of them during computation
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18617'>NXP-18617</a>] -         Dates not translated
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17655'>NXP-17655</a>] -         Fix user registration configuration contribution merge
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18619'>NXP-18619</a>] -         Fix principal of ACL &#39;routing&#39; created by document routing service when it contains colon characters
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17658'>NXP-17658</a>] -         Hide action icon or label when output bare link is empty
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18624'>NXP-18624</a>] -         Fix refresh of saved searches in Home when saving a new search
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17661'>NXP-17661</a>] -         Component application started failure must be reported
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18631'>NXP-18631</a>] -         User Registration module: it should not be possible to invite a user with an email who is already used
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17662'>NXP-17662</a>] -         nuxeo sample project prevents startup
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18633'>NXP-18633</a>] -         Speed up granting permissions to users in webdriver tests
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17663'>NXP-17663</a>] -         Possible Elasticsearch failure on startup during processStackedCommands
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18634'>NXP-18634</a>] -         Cannot access the search tab with a non correctly translated language
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17665'>NXP-17665</a>] -         Elasticsearch audit mapping should not be setup at each start
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18636'>NXP-18636</a>] -         Cannot move viewport on the image tiling after hiding the annotations
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17668'>NXP-17668</a>] -         Fix empty null blob when video is less than 10 seconds
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18637'>NXP-18637</a>] -         Return proper HTTP status code on error
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17671'>NXP-17671</a>] -         MongoDB-based locking
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18639'>NXP-18639</a>] -         Fix incorrect directory values when switching between two searches
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17672'>NXP-17672</a>] -         Implement rollback for DBS / MongoDB
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18643'>NXP-18643</a>] -         Don&#39;t display waiter after clicking Add since search is not triggered
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17695'>NXP-17695</a>] -         Elasticsearch pending worker count is wrong on Nuxeo cluster with Redis
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18644'>NXP-18644</a>] -         Don&#39;t show smart folders in Saved searches list
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17698'>NXP-17698</a>] -         When using MongoDB, the &quot;Binary Statistics&quot; only show &quot;0&quot;
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18655'>NXP-18655</a>] -         maven shade plugin should support java 1.8
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17699'>NXP-17699</a>] -         Quota value is deleted when copying/deleting several files at the same time
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18663'>NXP-18663</a>] -         Listeners incorrectly using &quot;order&quot; instead of &quot;priority&quot;
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17704'>NXP-17704</a>] -         UpdateAceStatus worker not serializable, fails in redis cluster mode
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18677'>NXP-18677</a>] -         Fix MongoDB query select on wildcard properties
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17708'>NXP-17708</a>] -         Allow NXQL queries on complex properties on MongoDB
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18684'>NXP-18684</a>] -         Deactivate randomly failing testParallelPrepareUserReadAcls on Oracle
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17710'>NXP-17710</a>] -         Elasticsearch indexing may be skipped on Nuxeo cluster with Redis
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18687'>NXP-18687</a>] -         Fix randomly-failing testProxy on MySQL
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17714'>NXP-17714</a>] -         Must rollback transaction on WebEngine/JAX-RS error
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18691'>NXP-18691</a>] -         Fix TestPermissionGrantedNotification.shouldTriggerOnlyOnceForAnACE on MSSQL and MySQL
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17715'>NXP-17715</a>] -         Do not hide empty content view when there are filtering criteria
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18720'>NXP-18720</a>] -         nuxeo.s3storage.cachesize not taken into account
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17717'>NXP-17717</a>] -         Fix binary store absolute location on Windows
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18727'>NXP-18727</a>] -         Fix preview when a document type does not have the file schema
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17723'>NXP-17723</a>] -         Make Query endpoint work with Elasticsearch
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18729'>NXP-18729</a>] -         Fix attributes fetching for LDAP references
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17724'>NXP-17724</a>] -         Annotations can&#39;t be stored on MySQL due to small column
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18732'>NXP-18732</a>] -         Lock / unlock events are not detected by GetChangeSummary
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17725'>NXP-17725</a>] -         Fix authentication of transientStoreGCStart scheduled event
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18736'>NXP-18736</a>] -         Allow write on version when publishing a document member of &#39;My Favorites&#39; collection
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17726'>NXP-17726</a>] -         Fix work scheduling on disabled queue
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18738'>NXP-18738</a>] -         NPE at checkin on a document with an old dynamic facet
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17727'>NXP-17727</a>] -         Avoid NPE when no blob is present
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18740'>NXP-18740</a>] -         Fix default S3 cache size parsing
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17728'>NXP-17728</a>] -         Fix virtual hosting with https X-Forwarded-Proto
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18741'>NXP-18741</a>] -         Fix incorrect column title
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17729'>NXP-17729</a>] -         Fix binary GC on MongoDB or when using multiple binary managers
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18742'>NXP-18742</a>] -         Align time format salesforce audit trail on backoffice audit
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17741'>NXP-17741</a>] -         Review tabs styles
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18744'>NXP-18744</a>] -         Fix NPE in EventService.registerExtension()
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17745'>NXP-17745</a>] -         Resolving hierarchical directory entries produces infinite loop
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18745'>NXP-18745</a>] -         Fix local lookup of RuntimeDeployment.deploy()
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17755'>NXP-17755</a>] -         When validating a publication, remove existing proxies in a unrestricted session
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18746'>NXP-18746</a>] -         Persist work instance state and progress
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17757'>NXP-17757</a>] -         NPE when trying to publish a document after deletion of a restored version
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18747'>NXP-18747</a>] -         Add User Profile Json enricher
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17758'>NXP-17758</a>] -         Missing audit entry for first version when using quotas
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18770'>NXP-18770</a>] -         Fix select2 restore from safe edit draft inside toggleable layouts
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17765'>NXP-17765</a>] -         Fix WorkManager wildcard queue disabling
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18773'>NXP-18773</a>] -         Fix MongoDB configuration
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17772'>NXP-17772</a>] -         client code should not set autocommit mode at all
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18774'>NXP-18774</a>] -         Fix the &quot;wait for execution&quot; behavior when clicking on Search tab
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17775'>NXP-17775</a>] -         nuxeoctl gui start doesn&#39;t start the server
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18776'>NXP-18776</a>] -         Fix date display in Permission popup
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17779'>NXP-17779</a>] -         Avoid NPE when creating a relation to an empty document
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18781'>NXP-18781</a>] -         Fix document with accents in their titles
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17782'>NXP-17782</a>] -         Fix content view refresh when child document title is changed using &#39;rename&#39; from contextual popup menu
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18786'>NXP-18786</a>] -         Make DBS MongoDB/Mem obey fulltext configuration
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17785'>NXP-17785</a>] -         Fix French labels and check the unit in Admin/Binary file stats
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18787'>NXP-18787</a>] -         Fix Home &gt; Alerts tab (MongoDB)
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17786'>NXP-17786</a>] -         invalid byte sequence for encoding &quot;UTF8&quot; when Drive trys to create a file
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18793'>NXP-18793</a>] -         Fix Drive behavior with MongoDB
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17788'>NXP-17788</a>] -         Execute Maven enforcer rules check on all builds
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18794'>NXP-18794</a>] -         Fix Permission search results on a Nuxeo + Mongo instance
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17791'>NXP-17791</a>] -         Fix detection of UTF-16 text files in Notes
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18796'>NXP-18796</a>] -         Fix UI glitch on salesforce canvas app
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17792'>NXP-17792</a>] -         Avoid multiple highlighted items in navigation tree
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18806'>NXP-18806</a>] -         Fix infinite loop in Studio update from admin page
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17802'>NXP-17802</a>] -         Fix XSS on unknown facelet error page
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18807'>NXP-18807</a>] -         Fix DocumentBrowsingTest.iCanGetIsADocumentFavorite random failure.
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17803'>NXP-17803</a>] -         Fix XSS due to injected language URL parameter
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18810'>NXP-18810</a>] -         ERROR: facelet not found
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17805'>NXP-17805</a>] -         Fix XSS in workflow result displaying user name
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18821'>NXP-18821</a>] -         Fix MongoDB complex boolean property query
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17806'>NXP-17806</a>] -         Fix table display on nested list widgets
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18829'>NXP-18829</a>] -         Don&#39;t try to retrieve tasks without route instance
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17807'>NXP-17807</a>] -         Fix XSS in select2 autocompletion
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18848'>NXP-18848</a>] -         Fix &quot;default is already configured&quot; error when hot-reloading a studio project
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17808'>NXP-17808</a>] -         Handle the trailing slash in path query with Elasticsearch
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18849'>NXP-18849</a>] -         Hot-reload fails with Redis WorkManager
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17814'>NXP-17814</a>] -         Sanitize the shareComment metadata in Easy Share addon
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18857'>NXP-18857</a>] -         Sometimes, the HttpSession is invalidated twice
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17816'>NXP-17816</a>] -         Remove the Comment column from My tasks gadget
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18858'>NXP-18858</a>] -         Fix writing null as complex list element
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17817'>NXP-17817</a>] -         Move &#39;%&#39; appended in nuxeo-select2.js to the page provider definition
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18868'>NXP-18868</a>] -         Fix nuxeo home for tasks without target document
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17818'>NXP-17818</a>] -         Fix Javadoc generation failure on AbstractJsonWriterTest
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17823'>NXP-17823</a>] -         TestActivateFactories.testSetActiveFactories failing under PostgreSQL due to bad H2 driver configuration
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17825'>NXP-17825</a>] -         Fix duplicate loading of JS resources in nuxeo-elements
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17826'>NXP-17826</a>] -         NXQL search on ancestorId does not work with PostgreSQL sequence idType
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17837'>NXP-17837</a>] -         Make &quot;From&quot; / &quot;To&quot; labels disabled in the New Permission popup
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17839'>NXP-17839</a>] -         Allow lock of MongoDB created document before initial save
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17847'>NXP-17847</a>] -         Permission actions not displayed on Firefox
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17856'>NXP-17856</a>] -         Fix time frame dates displayed in permission Update and Delete popups
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17858'>NXP-17858</a>] -         Give a little space to the Permission delete popup
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17860'>NXP-17860</a>] -         Group members granted a permission should get the notification
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17863'>NXP-17863</a>] -         Update permission: selected right should be the previously assigned right
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17868'>NXP-17868</a>] -         Add missing decreasing sort icon on columns 
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17870'>NXP-17870</a>] -         Permission purge: add titles to the purge wizard screens
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17872'>NXP-17872</a>] -         Fix fancybox popups
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17873'>NXP-17873</a>] -         Fix EXIF date parsing
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17878'>NXP-17878</a>] -         Fix error clicking on a saved search from Home &gt; Searches
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17881'>NXP-17881</a>] -         Fix document search in Add to collection popup
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17886'>NXP-17886</a>] -         Windows installer fails to add third parties to the PATH in Windows 10
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17887'>NXP-17887</a>] -         Make it possible to use HTML5 drag and drop on Edge
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17888'>NXP-17888</a>] -         Rename variables to workflowVariables in extended audit for workflow event
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17889'>NXP-17889</a>] -         Summary &gt; Publication block title should be a h3 + fix tree style
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17890'>NXP-17890</a>] -         fs-exporter MP package should have a title
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17891'>NXP-17891</a>] -         Empty line at the end of a sass css file make the vaadin compiler fails
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17937'>NXP-17937</a>] -         Fix invitation emails 
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17938'>NXP-17938</a>] -         Button labels in Permission tab are not visible
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17948'>NXP-17948</a>] -         Fix buttons font size
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17949'>NXP-17949</a>] -         Fix travel expenses Studio reference to the nature vocabulary
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17951'>NXP-17951</a>] -         TransientStore caching directory lazy initialization crashes if accessed by multiple threads
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17960'>NXP-17960</a>] -         Fix missing inputlist in shibboleth groups template (due to JSF2 migration)
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17961'>NXP-17961</a>] -         Make Drive Edit available on 7.4 
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17962'>NXP-17962</a>] -         Fix note creation by drag and drop
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17963'>NXP-17963</a>] -         Import of several files: Make sure all files are created 
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17968'>NXP-17968</a>] -         Don&#39;t show Block button when user doesn&#39;t have Manage everything permission
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17969'>NXP-17969</a>] -         Use document suggestion instead of path selector in Search / Purge permissions screens
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17970'>NXP-17970</a>] -         Re-enable aggregates on default search
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17983'>NXP-17983</a>] -         Disable new Permissions tab for MS IE and Edge
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17985'>NXP-17985</a>] -         Permissions: make user/group required
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17988'>NXP-17988</a>] -         Internationalize rights labels in permission tab
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17989'>NXP-17989</a>] -         Fix picture preview
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17992'>NXP-17992</a>] -         Make nuxeo-core-io export / import handle new ACE fields
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-18002'>NXP-18002</a>] -         Fix template rendering samples branding 
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-18004'>NXP-18004</a>] -         After creating a permission, the user/group is not reset
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-18005'>NXP-18005</a>] -         Nuxeo-web-mobile broken after login
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-18007'>NXP-18007</a>] -         Make Shibboleth packages public MPs
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-18010'>NXP-18010</a>] -         Template rendering: Error generating financial report
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-18015'>NXP-18015</a>] -         Fix multi-tenant domain creation
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-18054'>NXP-18054</a>] -         Fix document import suggest box and search collection suggest box
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18873'>NXP-18873</a>] -         Fix MongoDB tests
 </li>
 </ul>
     
 <h2>        Clean up
 </h2>
 <ul>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16052'>NXP-16052</a>] -         Clean up exception management
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-14277'>NXP-14277</a>] -         Refactor test code to allow testing with non-SQL backends
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17441'>NXP-17441</a>] -         Remove StorageException
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18349'>NXP-18349</a>] -         Merge nuxeo-core-storage-sql-ra into nuxeo-core-storage-sql
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17446'>NXP-17446</a>] -         Deprecate DocumentException
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18390'>NXP-18390</a>] -         Fix spelling of method IterableQueryResult.isLife
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17447'>NXP-17447</a>] -         Deprecate ClientException
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18523'>NXP-18523</a>] -         Fix CMIS last modified header test
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17449'>NXP-17449</a>] -         Deprecate ClientRuntimeException
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18527'>NXP-18527</a>] -         Fix random tests failures due to spurious scheduler events
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17523'>NXP-17523</a>] -         Clean up management of broken connections in VCS
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18528'>NXP-18528</a>] -         Fix random test cleanup error in DiffPicturesOperationsTest
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17534'>NXP-17534</a>] -         Clean up task pageprovider NXQL
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18664'>NXP-18664</a>] -         Align all Nuxeo copyright headers to Apache License 2.0
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17539'>NXP-17539</a>] -         Make CoreFeature always include TransactionalFeature
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17567'>NXP-17567</a>] -         Remove maven-taglib-plugin configurations
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17776'>NXP-17776</a>] -         Preview of big text file generates error in the logs
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17865'>NXP-17865</a>] -         Move UIDGeneratorService to nuxeo-core
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17920'>NXP-17920</a>] -         Repository LockManager should be accessible
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17955'>NXP-17955</a>] -         Don&#39;t log too many errors if Redis connection is lost
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17996'>NXP-17996</a>] -         Code cleanup on nuxeo-usermapper
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18667'>NXP-18667</a>] -         Use Environment.getTemp() and nuxeo.tmp.dir
 </li>
 </ul>
         
 <h2>        Epic
 </h2>
 <ul>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-14595'>NXP-14595</a>] -         Integrate SAML V2
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-16585'>NXP-16585</a>] -         Renditions and Exports in Nuxeo Platform
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16218'>NXP-16218</a>] -         Theme module refactoring
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16389'>NXP-16389</a>] -         Integrate nuxeo-automation-scripting
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16634'>NXP-16634</a>] -         Video Publishing On Wistia and YouTube
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16863'>NXP-16863</a>] -         OAuth authentication with third party provider
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16918'>NXP-16918</a>] -         nuxeo.conf password encryption
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17087'>NXP-17087</a>] -         Implement A Blob Provider for Dropbox
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17545'>NXP-17545</a>] -         Data Visualization
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17574'>NXP-17574</a>] -         Basic Set of Nuxeo Elements
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18642'>NXP-18642</a>] -         Nuxeo Live Connect For Box
 </li>
 </ul>
     
 <h2>        Improvement
 </h2>
 <ul>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-9300'>NXP-9300</a>] -         Annotation should use VCS relation graph instead of Jena
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-10312'>NXP-10312</a>] -         Add support for S3 Server-Side Encryption
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-14920'>NXP-14920</a>] -         Make ClusterInvalidator (aka ClusterNodeHandler) pluggable 
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-11698'>NXP-11698</a>] -         Add a trace mode to generate sequence UML diagram of listeners
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-15092'>NXP-15092</a>] -         Replace tables from container widgets by div on Studio tabs
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-17001'>NXP-17001</a>] -         PDF preview should handle properly extract failures on secured un-copyable PDF
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-15617'>NXP-15617</a>] -         Allow to Drive Edit a document from the main content view
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-17358'>NXP-17358</a>] -         Configure S3 binary manager through extension point
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16332'>NXP-16332</a>] -         Add button to flush oauth providers
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-17694'>NXP-17694</a>] -         Optimize string manipulations in layout system
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16959'>NXP-16959</a>] -         Compute a rendition blob filename, support CMIS rendition ETag
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18175'>NXP-18175</a>] -         Allow to use HTML content in tipsy tooltip
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17006'>NXP-17006</a>] -         Improve Redis queue management to use pubsub instead of polling
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18319'>NXP-18319</a>] -         Introduce nuxeo-audit-data-element
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17224'>NXP-17224</a>] -         Avoid executing search when clicking on &quot;search&quot; tab
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18335'>NXP-18335</a>] -         Manage activation of db optimizations from the nuxeo.conf
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17276'>NXP-17276</a>] -         Optimize task-related SQL queries
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18353'>NXP-18353</a>] -         Add success status connection on nuxeo-resource and nuxeo-operation elements
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17310'>NXP-17310</a>] -         Allow to use &#39;try-with-resources&#39; statement with directory Session
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18360'>NXP-18360</a>] -         Expose Elasticsearch indexing via automation
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17317'>NXP-17317</a>] -         Upgrade to nuxeo-connect-client 1.4.22
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18361'>NXP-18361</a>] -         Add a waitForAsyncJobs API to nuxeo-importer-jaxrs
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17325'>NXP-17325</a>] -         Make BasicAuthenticator send a 408 HTTP status code in case of LDAP response timeout
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18385'>NXP-18385</a>] -         Upgrade to commons-collections 3.2.2
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17367'>NXP-17367</a>] -         More configurability in CMIS error HTTP mapping
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18405'>NXP-18405</a>] -         GridFS Improvements
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17378'>NXP-17378</a>] -         Optimize ancestors table initial creation when activating path optims
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18422'>NXP-18422</a>] -         Do not send email if EasyShare contact email is not filled
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17394'>NXP-17394</a>] -         Hide provider upload button if no service provider is found enabled
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18423'>NXP-18423</a>] -         Make RuntimeContext auto closeable
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17395'>NXP-17395</a>] -         Prevent users from using a file picker if provider is not properly configured
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18425'>NXP-18425</a>] -         Don&#39;t use dots in custom HTTP headers
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17404'>NXP-17404</a>] -         Allow nuxeo-diff to compare images
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18514'>NXP-18514</a>] -         Make BasicAuthenticator send a dedicated HTTP status code in case of LDAP Connection reset
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17427'>NXP-17427</a>] -         Upgrade to nuxeo-connect-client 1.4.23
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18521'>NXP-18521</a>] -         Workflow endpoint should read variables
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17428'>NXP-17428</a>] -         Exclude thumbnails info from Elasticsearch fulltext index
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18537'>NXP-18537</a>] -         Expose Redis based cluster invalidation using nuxeo.conf option
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17430'>NXP-17430</a>] -         Add better logs when Work instances fail
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18550'>NXP-18550</a>] -         Make WorkManager.awaitCompletion works in cluster mode
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17438'>NXP-17438</a>] -         Do not send email if EasyShare contact email is not filled
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18563'>NXP-18563</a>] -         Report Failed Lazy Rendition Builder Work Blob Computation to client
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17453'>NXP-17453</a>] -         Allow configuring the default binding for SAML
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18579'>NXP-18579</a>] -         Allow exporting all Studio widget types at once
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17459'>NXP-17459</a>] -         Automation scripting - Documents should be returned as DocumentWrappers
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18587'>NXP-18587</a>] -         Display a message in the JSF UI when JavaScript is disabled
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17460'>NXP-17460</a>] -         Use entry id instead of search keyword to build the result of a multi-directory query
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18622'>NXP-18622</a>] -         Add a confirmation popup before purging
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17467'>NXP-17467</a>] -         Add new area for inserting content on top of content view
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18625'>NXP-18625</a>] -         Raise Seam events when selecting and saving a search
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17487'>NXP-17487</a>] -         Add i18n support on new Right Management tab
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18628'>NXP-18628</a>] -         Add user/group icon on permissions tables in admin center for user/group colon
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17488'>NXP-17488</a>] -         Right Management Tab:  Add &quot;Policy name” column on ACL listings
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18649'>NXP-18649</a>] -         Allow configuring tinymce editor via tag properties
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17489'>NXP-17489</a>] -         Display All ACLs 
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18668'>NXP-18668</a>] -         Reduce LRUFileCache contention
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17490'>NXP-17490</a>] -         Right Management Tab for any document
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18683'>NXP-18683</a>] -         Fulltext JobId index is required even if fulltext is not indexed in database
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17492'>NXP-17492</a>] -         Make list of permissions dynamical on create/edit acl pop up
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18688'>NXP-18688</a>] -         LRUFileCache should have a max entries setting
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17496'>NXP-17496</a>] -         Remove Granted column on acls listings
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18689'>NXP-18689</a>] -         Improve WorkManager metrics on work state
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17498'>NXP-17498</a>] -         Use sentences for displaying the dates acls
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18715'>NXP-18715</a>] -         Extract standalone rights management element
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17499'>NXP-17499</a>] -         Sort ACLs lines
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18717'>NXP-18717</a>] -         Make LRUFileCache MIN_AGE_MILLIS configurable
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17501'>NXP-17501</a>] -         Add a link around title of the document on  right search and purge screens in admin center
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18718'>NXP-18718</a>] -         Change WorkManager default clear completed work cleaner timeout
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17503'>NXP-17503</a>] -         In the result of searches on permission search and purge screens in admin center, add the column user/group
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18723'>NXP-18723</a>] -         Add content enricher for Favorites
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17504'>NXP-17504</a>] -         Make sure you can search  or purge for groups
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18725'>NXP-18725</a>] -         Add Albanian language to Nuxeo default languages
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17505'>NXP-17505</a>] -         On purge:  make sure content view cache of “acls to be purged” lists is refreshed
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18728'>NXP-18728</a>] -         Use JSF locales instead of hardcoded locale directory values
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17508'>NXP-17508</a>] -         Rename Rights Management by Permissions Management every where
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18733'>NXP-18733</a>] -         Fix SQLDirectoryFeature when some tests are skipped
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17518'>NXP-17518</a>] -         Split template rendering separating samples
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17519'>NXP-17519</a>] -         Provide appropriate samples for template rendering
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17524'>NXP-17524</a>] -         Use all metrics extensions when sending to datadog
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17533'>NXP-17533</a>] -         Optimize workflow-related SQL queries
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17551'>NXP-17551</a>] -         Don&#39;t limit CMIS uploaded files to 4GB.
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17553'>NXP-17553</a>] -         Improve speed of workflow model listing
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17570'>NXP-17570</a>] -         Add update feature to XML parser
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17596'>NXP-17596</a>] -         Flag to allow computation of CMIS renditions info
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17611'>NXP-17611</a>] -         Check Elasticsearch availability at startup
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17627'>NXP-17627</a>] -         Rename nxr prefix for RSS tag library to avoid conflict with Resource tag library
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17644'>NXP-17644</a>] -         Allow running error-web and layout-demo functional tests during test&amp;push
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17664'>NXP-17664</a>] -         NXQL escapeString should escape newlines
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17669'>NXP-17669</a>] -         Allow to configure the preview screenshot and storyboard generation
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17673'>NXP-17673</a>] -         Define a runtime component to hold nuxeo.conf properties for UI
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17676'>NXP-17676</a>] -         nuxeoctl should return error status on start failure
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17686'>NXP-17686</a>] -         Review global layout (footer, scroll bar, colums)
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17688'>NXP-17688</a>] -         Review Login page
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17692'>NXP-17692</a>] -         Improve Elasticsearch fulltext analyzer to support unicode wildcard search and html
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17693'>NXP-17693</a>] -         Don&#39;t escape stemming prefix in Oracle full-text searches
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17706'>NXP-17706</a>] -         Review labels before LTS
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17709'>NXP-17709</a>] -         Switch Quick Search on Elastic Search
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17713'>NXP-17713</a>] -         Make favicons configurable by flavor
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17716'>NXP-17716</a>] -         Configure maven-dependency-plugin to use ignoredUnusedDeclaredDependencies parameter
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17721'>NXP-17721</a>] -         Improve RedisBlockingQueue to reduce number of requests
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17731'>NXP-17731</a>] -         gitfunctions.sh should also work with Git worktree
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17759'>NXP-17759</a>] -         Rewrite move method in Scan importer to be more robust
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17795'>NXP-17795</a>] -         clone.py should handle case &#39;local branch with no remote&#39;
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17796'>NXP-17796</a>] -         Use user suggestion polymer component
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17798'>NXP-17798</a>] -         Allow to block / unblock inheritance on a given ACL
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17800'>NXP-17800</a>] -         Improve MongoDB performance through indexing
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17809'>NXP-17809</a>] -         Better workflow extended audit fields
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17815'>NXP-17815</a>] -         Allow \ to escape wildcards in NXQL LIKE
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17827'>NXP-17827</a>] -         Centralize download URL generation
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17829'>NXP-17829</a>] -         Allow specifying date format in workflow data elements
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17830'>NXP-17830</a>] -         Support retrieving a single scalar value with workflow data elements
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17855'>NXP-17855</a>] -         Improve error message on missing field in webdriver tests 
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17874'>NXP-17874</a>] -         Optimize MongoDB memory footprint
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17882'>NXP-17882</a>] -         Add (optional) fallback nuxeo.virtual.host parameter in nuxeo.conf
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17884'>NXP-17884</a>] -         Improve TransientStore API
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17885'>NXP-17885</a>] -         Use TransientStore for batch upload
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17898'>NXP-17898</a>] -         Add LibreOffice 5 detection to jodconverter
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17950'>NXP-17950</a>] -         Extend Core-IO Tooling
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17987'>NXP-17987</a>] -         Add a default cache configuration to SQL directories
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-18023'>NXP-18023</a>] -         Java 8 update 40+ is required
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18748'>NXP-18748</a>] -         Configure skipTests and skipITs per package in mp_release.py
 </li>
 </ul>
     
 <h2>        New Feature
 </h2>
 <ul>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-14923'>NXP-14923</a>] -         Redis-based ClusterInvalidator
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-17396'>NXP-17396</a>] -         Allow separate repository DDL generation
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-15701'>NXP-15701</a>] -         Make Nuxeo Platform ready to be integrated with external IdMs
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-17590'>NXP-17590</a>] -         Add helpers to scaffold a JSF layout
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16887'>NXP-16887</a>] -         Manage multiple references to directories
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16951'>NXP-16951</a>] -         Allow to resume upload
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16953'>NXP-16953</a>] -         Polish upload API
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17215'>NXP-17215</a>] -         Unpublish from Wistia / Youtube from the Web UI
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17306'>NXP-17306</a>] -         Redis implementation of the UIDSequencer
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17361'>NXP-17361</a>] -         Allow read-only directories with multiple references for the same field
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17440'>NXP-17440</a>] -         Add a deprecation logger
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17491'>NXP-17491</a>] -         Add an enricher that lists the permissions allowed for a document.
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17587'>NXP-17587</a>] -         Add a ConditionalIgnoreRule.IgnoreWindows
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17705'>NXP-17705</a>] -         Send events when a search is done via a PageProvider
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17783'>NXP-17783</a>] -         As an administrator I would like to invite a user with its email only (Shibboleth)
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17813'>NXP-17813</a>] -         Define a generic runtime service holding properties
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17871'>NXP-17871</a>] -         Move .css to Sass .scss
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17895'>NXP-17895</a>] -         Allow downloads to redirect to an external CDN
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17933'>NXP-17933</a>] -         Allow downloads to get per-blob security policies
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17952'>NXP-17952</a>] -         Update Login Page
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18739'>NXP-18739</a>] -         Add ability to create Folders to Nuxeo Web UI
 </li>
 </ul>
-                
+                    
 <h2>        Task
 </h2>
 <ul>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-11386'>NXP-11386</a>] -         Remove the generated prefixes in CSS files
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-16465'>NXP-16465</a>] -         Upgrade selenium-server version to 2.45
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-12428'>NXP-12428</a>] -         Rewrite layout-demo tests using webdriver
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18316'>NXP-18316</a>] -         Add a sample application that makes use of C# Client
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-13775'>NXP-13775</a>] -         Styles &gt; Unify boxes styles
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18378'>NXP-18378</a>] -         Upgrade org.nuxeo:nuxeo-ftest to 1.7.21
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-13898'>NXP-13898</a>] -         Forms &gt; Review global styles of forms
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18396'>NXP-18396</a>] -         Reset nuxeo-resources-compat module content after 7.10 release
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16190'>NXP-16190</a>] -         Investigate perf issues on JSF UI
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18400'>NXP-18400</a>] -         Test time off plugin
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16416'>NXP-16416</a>] -         Remove Theme modules
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18401'>NXP-18401</a>] -         MongoDB GridFS marketplace package
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16425'>NXP-16425</a>] -         Make Theme Styling module independant of other Theme modules
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18402'>NXP-18402</a>] -         Approve all language on crowdin
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16827'>NXP-16827</a>] -         Make default &quot;SI&quot; Binary Prefix configurable and its usage consistent
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18427'>NXP-18427</a>] -         Include GridFS Binary Manager in nuxeo-core
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17088'>NXP-17088</a>] -         Implement a Blob Provider for Dropbox
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18428'>NXP-18428</a>] -         Add nuxeo-binarymanager-gridfs in default addons
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17089'>NXP-17089</a>] -         Integrate Dropbox file chooser
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18438'>NXP-18438</a>] -         Move nuxeo-platform-login addon to nuxeo/nuxeo-services
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17090'>NXP-17090</a>] -         Implement Blob sync for Live Connect For Dropbox
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18441'>NXP-18441</a>] -         Move nuxeo-user-center addon to nuxeo/nuxeo-features
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17128'>NXP-17128</a>] -         Add an API to get the digest algorithm from the binary manager and binary blobs
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18486'>NXP-18486</a>] -         Clear removed element state in ajaxified list widget
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17131'>NXP-17131</a>] -         Nuxeo Drive: use blob&#39;s digest algorithm in FileSystemItem serialization
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18487'>NXP-18487</a>] -         Add tests for ajaxified list widget on layout demo
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17133'>NXP-17133</a>] -         As a user, I&#39;d like to confirm and add another local right
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18513'>NXP-18513</a>] -         Rename Batch Upload drop API to cancel
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17345'>NXP-17345</a>] -         Create marketplace package for SAML2 plugin
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18515'>NXP-18515</a>] -         Test Instant Share
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17382'>NXP-17382</a>] -         Archive blob conversions for native Google Drive document versions.
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18542'>NXP-18542</a>] -         Do not display placeless documents in the default search
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17413'>NXP-17413</a>] -         Define template rendering sample refactoring
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18545'>NXP-18545</a>] -         Enable rest exception stack in RestServerInit to return exceptions
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17424'>NXP-17424</a>] -         Make Elasticsearch sequence and audit indexes more consistent / configurable
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18653'>NXP-18653</a>] -         Nuxeo Web UI &gt; Clean CSS styles
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17442'>NXP-17442</a>] -         Extract components from the existing rights tab
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18654'>NXP-18654</a>] -         Update login page video for 8.1
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17451'>NXP-17451</a>] -         Archive nuxeo-webengine-sites and nuxeo-platform-splitpane repositories
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18660'>NXP-18660</a>] -         Rework liveconnect code
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17458'>NXP-17458</a>] -         Complete renaming for missing operations
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18674'>NXP-18674</a>] -         Update internal repositories URLs in POMs
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17465'>NXP-17465</a>] -         Rename Live Connect scheduler contribution
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18679'>NXP-18679</a>] -         Approve labels on Crowdin for 8.1 release
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17473'>NXP-17473</a>] -         Remove &#39;Download All&#39; user action 
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18681'>NXP-18681</a>] -         8.1 release: Upgrade demo.nuxeo.com
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17477'>NXP-17477</a>] -         Update Travel Expenses sample to Polymer 1.0
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18722'>NXP-18722</a>] -         Add AddToFavorite and RemoveFromFavorites Operations
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17478'>NXP-17478</a>] -         Align nuxeo-elements master branch on Polymer 1.x
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18750'>NXP-18750</a>] -         Factor out fulltext configuration from VCS into generic storage code
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17493'>NXP-17493</a>] -         Make the ACL create/edit form clearer on Right Management tab
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18785'>NXP-18785</a>] -         Update Template Rendering addon Studio dependency for 8.1 release
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17494'>NXP-17494</a>] -         Replace Update and Delete buttons by icons
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17531'>NXP-17531</a>] -         Create 1.4 branch on the 6.0-HF X-SNAPSHOT for marketplace-multi-tenant
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17541'>NXP-17541</a>] -         Drive / GetChangeSummary: don&#39;t send a &quot;deleted&quot; event in case of a move to a synchronization root
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17548'>NXP-17548</a>] -         Update nuxeo-elements widget set to Polymer 1.x
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17549'>NXP-17549</a>] -         Create user and group suggestion widget
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17550'>NXP-17550</a>] -         Create document suggestion widget
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17577'>NXP-17577</a>] -         Secure duoweb temporary credentials map
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17594'>NXP-17594</a>] -         Identify elasticsearch query to build graph of data vizualisation
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17595'>NXP-17595</a>] -         Add missing workflow event logging
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17602'>NXP-17602</a>] -         Drive: allow to attach a blob to a document using the default versioning policy
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17604'>NXP-17604</a>] -         Create elasticsearch passthrough to query audit indice
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17609'>NXP-17609</a>] -         Upgrade JSF tld doc to JSF2 vdl doc
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17628'>NXP-17628</a>] -         Increase contrast for labels in summary + infoview
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17632'>NXP-17632</a>] -         Allow to define audit extended info per event name
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17634'>NXP-17634</a>] -         Remove unused or useless nxd and nxu tags and functions
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17656'>NXP-17656</a>] -         Allow to serialize complex object in audit extended info field
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17683'>NXP-17683</a>] -         Add Sass preprocessor
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17685'>NXP-17685</a>] -         Add a grid library for global layout 
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17689'>NXP-17689</a>] -         Update variables for Platform
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17720'>NXP-17720</a>] -         Use Workflow Charts &amp; Data elements in travel expenses addon
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17732'>NXP-17732</a>] -         Add a service to contribute search request filter on elasticsearch passthrough
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17735'>NXP-17735</a>] -         Create elements to provide a set of Data Visualization Charts
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17736'>NXP-17736</a>] -         Workflows Data Components
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17743'>NXP-17743</a>] -         Include nuxeo-elasticsearch-http-read-only in default distribution
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17766'>NXP-17766</a>] -         Upgrade to org.nuxeo:nuxeo-ftest 1.7.19
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17767'>NXP-17767</a>] -         Upgrade to ant-maven-assembly-plugin 2.0.4
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17768'>NXP-17768</a>] -         Release default workflows for 7.4
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17769'>NXP-17769</a>] -         Test &amp; Push Label review changes
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17778'>NXP-17778</a>] -         As a dev I&#39;d like to configure the url redirect after Shibboleth Authentication
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17790'>NXP-17790</a>] -         Upgrade to nuxeo-connect-client 1.4.23
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17804'>NXP-17804</a>] -         Make sure all labels are available in French on Crowdin
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17810'>NXP-17810</a>] -         Make the travel expenses dashboard available in a tab
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17812'>NXP-17812</a>] -         Build dashboard for default serial and parallel review workflows
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17828'>NXP-17828</a>] -         Align SAML2 and Shibboleth marketplaces on User Mapper Service
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17840'>NXP-17840</a>] -         Add missing layout class in Home screens
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17841'>NXP-17841</a>] -         Add missing layout class in Admin screens
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17883'>NXP-17883</a>] -         Add workflow model name to task document
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17901'>NXP-17901</a>] -         Have a wizard feeling on acl purge user experience
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17939'>NXP-17939</a>] -         Summary &gt; Use more space for main column
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17941'>NXP-17941</a>] -         Fix bower.json dependency versions
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17945'>NXP-17945</a>] -         Rename nuxeo-workflow-data-elements to nuxeo-dataviz-elements
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17946'>NXP-17946</a>] -         Release initial version of nuxeo-dataviz-elements
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17954'>NXP-17954</a>] -         Add treemap support to google-chart elements
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17995'>NXP-17995</a>] -         Wizard evolutions
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-18003'>NXP-18003</a>] -         Release initial version of nuxeo-elements
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18798'>NXP-18798</a>] -         Shrinkwrap npm dependencies
 </li>
 </ul>
     
 <h2>        User story
 </h2>
 <ul>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16508'>NXP-16508</a>] -         Align and move Node.js importers to nuxeo-sandbox
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-17225'>NXP-17225</a>] -         As an administrator, I&#39;d like to invite Nuxeo external user to a specific document 
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-16815'>NXP-16815</a>] -         Spreadsheet: use JSON extended fields
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18495'>NXP-18495</a>] -         Add Nuxeo Authentication to the new Java Client
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17104'>NXP-17104</a>] -         As a user, I&#39;d like to be able to notify by email the user I give a local right
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18613'>NXP-18613</a>] -         As an administrator, I&#39;d like to send again the notification email for an external sharing
 </li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17106'>NXP-17106</a>] -         As a user, I&#39;d like to update a local right
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17136'>NXP-17136</a>] -         As a user, I&#39;d like to view in my dashboard the documents &quot;Shared with me&quot;
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17138'>NXP-17138</a>] -         As an Administrator, I&#39;d like to access in my Admin Center the Rights Search Panel
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17139'>NXP-17139</a>] -         As an Administrator, I&#39;d like to access in my Admin Center the Rights Purge Panel
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17228'>NXP-17228</a>] -         As an administrator, I want to invite a user through Shibboleth
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17323'>NXP-17323</a>] -         As an Administrator, I want the access rights to be enabled / disabled based on the begin and end dates
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17598'>NXP-17598</a>] -         As a user I can define the user group for invitation
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17599'>NXP-17599</a>] -         As a user I can define the acl dates for invitation
-</li>
-<li>[<a href='https://jira.nuxeo.com/browse/NXP-17737'>NXP-17737</a>] -         As a user I&#39;d like to authenticate Nuxeo &lt;&gt; Salesforce
+<li>[<a href='https://jira.nuxeo.com/browse/NXP-18615'>NXP-18615</a>] -         Add user feedback when doing an action on the Permissions tab
 </li>
 </ul>
