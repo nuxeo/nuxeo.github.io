@@ -24,7 +24,7 @@
     "md5": "http://cdn.nuxeo.com/nuxeo-8.1/nuxeo_8.1_all.deb.md5",
     "os": "deb",
     "size": "261M",
-    "url": "http://apt.nuxeo.org/pool/releases/nuxeo_8.1-01_all.deb"
+    "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_8.1-01_all.deb"
   }, {
     "description": "Nuxeo Platform 8.1 Virtual Machine image (VirtualBox, RHEV, VMware ESX). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
     "label": "nuxeo-8.1-vm.zip (includes OVF and VMX)",
