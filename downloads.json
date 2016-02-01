@@ -57,7 +57,7 @@
   "date": "2016-01-28",
   "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/8.1/",
   "name": "8.1",
-  "kind": "LTS"
+  "kind": "FT"
 }, {
   "data": [{
     "description": "Nuxeo Platform 7.10 release notes",
