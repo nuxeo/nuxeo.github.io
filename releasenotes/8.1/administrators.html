@@ -90,26 +90,26 @@
                                 Customers needing to connect to more than one S3 binary managers with different configurations are now able to do so using the new <code>configuration</code> extension point of <code>org.nuxeo.ecm.core.blob.BlobManager</code>. Previously only one bucket could be configured in nuxeo.conf.
                             </p>
                             <pre>
-&lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt; 
-    &lt;blobprovider name=&quot;default&quot;&gt; 
-        &lt;class&gt;org.nuxeo.ecm.core.storage.sql.S3BinaryManager&lt;/class&gt; 
-        &lt;property name=&quot;awsid&quot;&gt;your_AWS_ACCESS_KEY_ID&lt;/property&gt; 
-        &lt;property name=&quot;awssecret&quot;&gt;your_AWS_SECRET_ACCESS_KEY&lt;/property&gt; 
-        &lt;property name=&quot;region&quot;&gt;us-west-1&lt;/property&gt; 
-        &lt;property name=&quot;bucket&quot;&gt;your_s3_bucket_name&lt;/property&gt; 
-        &lt;property name=&quot;bucket.prefix&quot;&gt;myprefix/&lt;/property&gt; 
-        &lt;property name=&quot;directdownload&quot;&gt;true&lt;/property&gt; 
-        &lt;property name=&quot;directdownload.expire&quot;&gt;3600&lt;/property&gt; 
-        &lt;property name=&quot;cachesize&quot;&gt;100MB&lt;/property&gt; 
-        &lt;property name=&quot;crypt.keystore.file&quot;&gt;/my/keystore.jks&lt;/property&gt; 
-        &lt;property name=&quot;crypt.keystore.password&quot;&gt;password&lt;/property&gt; 
-        &lt;property name=&quot;crypt.key.alias&quot;&gt;mykey&lt;/property&gt; 
-        &lt;property name=&quot;crypt.key.password&quot;&gt;password&lt;/property&gt; 
-        &lt;property name=&quot;connection.max&quot;&gt;50&lt;/property&gt; 
-        &lt;property name=&quot;connection.retry&quot;&gt;3&lt;/property&gt; 
-        &lt;property name=&quot;connection.timeout&quot;&gt;50000&lt;/property&gt; 
-        &lt;property name=&quot;socket.timeout&quot;&gt;50000&lt;/property&gt; 
-    &lt;/blobprovider&gt; 
+&lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt;
+    &lt;blobprovider name=&quot;default&quot;&gt;
+        &lt;class&gt;org.nuxeo.ecm.core.storage.sql.S3BinaryManager&lt;/class&gt;
+        &lt;property name=&quot;awsid&quot;&gt;your_AWS_ACCESS_KEY_ID&lt;/property&gt;
+        &lt;property name=&quot;awssecret&quot;&gt;your_AWS_SECRET_ACCESS_KEY&lt;/property&gt;
+        &lt;property name=&quot;region&quot;&gt;us-west-1&lt;/property&gt;
+        &lt;property name=&quot;bucket&quot;&gt;your_s3_bucket_name&lt;/property&gt;
+        &lt;property name=&quot;bucket.prefix&quot;&gt;myprefix/&lt;/property&gt;
+        &lt;property name=&quot;directdownload&quot;&gt;true&lt;/property&gt;
+        &lt;property name=&quot;directdownload.expire&quot;&gt;3600&lt;/property&gt;
+        &lt;property name=&quot;cachesize&quot;&gt;100MB&lt;/property&gt;
+        &lt;property name=&quot;crypt.keystore.file&quot;&gt;/my/keystore.jks&lt;/property&gt;
+        &lt;property name=&quot;crypt.keystore.password&quot;&gt;password&lt;/property&gt;
+        &lt;property name=&quot;crypt.key.alias&quot;&gt;mykey&lt;/property&gt;
+        &lt;property name=&quot;crypt.key.password&quot;&gt;password&lt;/property&gt;
+        &lt;property name=&quot;connection.max&quot;&gt;50&lt;/property&gt;
+        &lt;property name=&quot;connection.retry&quot;&gt;3&lt;/property&gt;
+        &lt;property name=&quot;connection.timeout&quot;&gt;50000&lt;/property&gt;
+        &lt;property name=&quot;socket.timeout&quot;&gt;50000&lt;/property&gt;
+    &lt;/blobprovider&gt;
 &lt;/extension&gt;
                             </pre>
                             <h2>
@@ -133,6 +133,7 @@
                             <p>
                                 Elasticsearch indexing operations are now available from Nuxeo Automation in addition to the Admin Center.
                                 Using a REST call you can now:
+                            </p>
                                 <ul>
                                     <li>
                                         Re-index an entire repository
@@ -147,7 +148,6 @@
                                         Wait for indexing and perform an index refresh
                                     </li>
                                   </ul>
-                                </p>
                                 <h2>
                                     Allow Separate Repository DDL Generation
                                 </h2>
