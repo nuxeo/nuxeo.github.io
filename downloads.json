@@ -1,5 +1,65 @@
 [{
   "data": [{
+    "description": "Nuxeo Platform 8.2 release notes",
+    "label": "8.2 Release Notes.pdf",
+    "os": "all",
+    "size": "232K",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.2/8.2%20Release%20Notes.pdf"
+  }, {
+    "description": "Nuxeo Platform 8.2 upgrade notes",
+    "label": "8.2 Upgrade Notes.pdf",
+    "os": "all",
+    "size": "184K",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.2/8.2%20Upgrade%20Notes.pdf"
+  }, {
+    "description": "Nuxeo Platform 8.2 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
+    "label": "nuxeo-8.2-setup.exe",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-setup.exe.md5",
+    "os": "win",
+    "size": "370M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-setup.exe"
+  }, {
+    "description": "Nuxeo Platform 8.2 Debian installer. Based on Tomcat, it also installs all the third-party dependencies if necessary.",
+    "label": "nuxeo_8.2_all.deb",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo_8.2_all.deb.md5",
+    "os": "deb",
+    "size": "264M",
+    "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_8.2-01_all.deb"
+  }, {
+    "description": "Nuxeo Platform 8.2 Virtual Machine image (VirtualBox, RHEV, VMware ESX). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+    "label": "nuxeo-8.2-vm.zip (includes OVF and VMX)",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-vm.zip.md5",
+    "os": "vm",
+    "size": "1.2G",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-vm.zip"
+  }, {
+    "description": "Nuxeo Platform 8.2 multi-OS package. Based on Tomcat, for Linux, Mac, Windows.",
+    "label": "nuxeo-cap-8.2-tomcat.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-cap-8.2-tomcat.zip.md5",
+    "os": "all",
+    "size": "274M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-cap-8.2-tomcat.zip"
+  }, {
+    "description": "Nuxeo Platform 8.2 SDK package. For use with Nuxeo IDE.",
+    "label": "nuxeo-cap-8.2-tomcat-sdk.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-cap-8.2-tomcat-sdk.zip.md5",
+    "os": "all",
+    "size": "661M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-cap-8.2-tomcat-sdk.zip"
+  }, {
+    "description": "Nuxeo Platform 8.2 sources",
+    "label": "nuxeo-8.2-sources.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-sources.zip.md5",
+    "os": "all",
+    "size": "73M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-sources.zip"
+  }],
+  "date": "2016-01-28",
+  "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/8.2/",
+  "name": "8.2",
+  "kind": "FT"
+}, {
+  "data": [{
     "description": "Nuxeo Platform 8.1 release notes",
     "label": "8.1 Release Notes.pdf",
     "os": "all",
