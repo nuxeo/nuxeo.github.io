@@ -45,8 +45,8 @@
       </div>
 
       <div class="content">
-        <template repeat="{{child in children}}">
-            <nx-tree-node connectionId="{{connectionId}}" docId="{{child.uid}}"></nx-tree-node>
+        <template repeat="{{doc in docs}}">
+            <nx-tree-node connectionId="{{connectionId}}" docId="{{doc.uid}}"></nx-tree-node>
         </template>
       </div>
     </div>

@@ -36,10 +36,7 @@
     <content select=".action"></content>
     <div class="content">
       <div class="header">
-        <template if="{{!wasUploaded && !readonly}}">
-          <div class="ui form"><input type="text" value="{{batchId}}" required></div>
-        </template>
-        <template if="{{wasUploaded || readonly}}">{{batchId}}</template>
+        <template if="{{wasUploaded}}">{{batchId}}</template>
       </div>
       <template if="{{!readonly}}">
         <nx-widget type="bloblist" required="true" value="{{blobs}}"></nx-widget>
