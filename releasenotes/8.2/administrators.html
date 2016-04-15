@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+    <html class="ie ie6" lang="en">
+    <![endif]-->
+    <!--[if IE 7 ]>
+        <html class="ie ie7" lang="en">
+        <![endif]-->
+        <!--[if IE 8 ]>
+            <html class="ie ie8" lang="en">
+            <![endif]-->
+            <!--[if (gte IE 9)|!(IE)]>
+                <!
+            -->
+            <html lang="en">
+                <!--
+                <![endif]-->
+                <head>
+                    <!--
+                        Basic Page Needs
+                        ==================================================
+                    -->
+                    <meta charset="utf-8" />
+                    <title>
+                        Nuxeo Platform 8.2 - New and Noteworthy
+                    </title>
+                    <meta name="description" content="Nuxeo Platform 8.2 release notes for administrators" />
+                    <meta name="author" content="Nuxeo" />
+                    <!--
+                        Mobile Specific Metas
+                        ==================================================
+                    -->
+                    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+                    <!--
+                        CSS
+                        ==================================================
+                    -->
+                    <link rel="stylesheet" href="../../stylesheets/base.css" />
+                    <link rel="stylesheet" href="../../stylesheets/skeleton.css" />
+                    <link rel="stylesheet" href="../../stylesheets/layout.css" />
+                    <link rel="stylesheet" href="../../stylesheets/release_notes.css" />
+                    <link rel="stylesheet" href="../../stylesheets/lightbox.css" />
+                    <!--[if lt IE 9]>
+                        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+                        </script>
+                    <![endif]-->
+                    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css' />
+                    <style>
+                        #xnav-footer {
+                        margin-top: 0px !important;
+                        }
+                    </style>
+                    <script src="../../javascripts/jquery-1.7.1.min.js">
+                    </script>
+                    <script type="text/javascript" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" charset="utf-8">
+                    </script>
+                    <!--
+                        Favicons
+                        ==================================================
+                    -->
+                    <link rel="shortcut icon" href="images/favicon.ico" />
+                    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+                    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+                    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+                </head>
+                <body>
+                    <div id="mainContainer" class="container">
+                        <p class="backbutton">
+                            <a href="./index.html">
+                                &larr; Back to Index
+                            </a>
+                        </p>
+                        <p class="remove-bottom" id="site-title">
+                            <a href="./index.html">
+                                <span class="version-number">
+                                    8.2
+                                </span>
+                                Release Notes
+                            </a>
+                        </p>
+                        <div id="welcome">
+                            <div style="clear: both;">
+                            </div>
+                            <h1 style="margin-left: -0.5em !important;">
+                                For Administrators
+                            </h1>
+                            <h2><span class="release new">8.3</span>MongoDB 3.2</h2>
+                            <p>
+MongoDB 3.2 is now supported as a storage backend.
+                            </p>
+
+                            <h2>
+                                S3 Configuration via Extension Point
+                            </h2>
+                            <p>
+                                Customers needing to connect to more than one S3 binary managers with different configurations are now able to do so using the new <code>configuration</code> extension point of <code>org.nuxeo.ecm.core.blob.BlobManager</code>. Previously only one bucket could be configured in nuxeo.conf.
+                            </p>
+                            <pre>
+&lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt;
+    &lt;blobprovider name=&quot;default&quot;&gt;
+        &lt;class&gt;org.nuxeo.ecm.core.storage.sql.S3BinaryManager&lt;/class&gt;
+        &lt;property name=&quot;awsid&quot;&gt;your_AWS_ACCESS_KEY_ID&lt;/property&gt;
+        &lt;property name=&quot;awssecret&quot;&gt;your_AWS_SECRET_ACCESS_KEY&lt;/property&gt;
+        &lt;property name=&quot;region&quot;&gt;us-west-1&lt;/property&gt;
+        &lt;property name=&quot;bucket&quot;&gt;your_s3_bucket_name&lt;/property&gt;
+        &lt;property name=&quot;bucket.prefix&quot;&gt;myprefix/&lt;/property&gt;
+        &lt;property name=&quot;directdownload&quot;&gt;true&lt;/property&gt;
+        &lt;property name=&quot;directdownload.expire&quot;&gt;3600&lt;/property&gt;
+        &lt;property name=&quot;cachesize&quot;&gt;100MB&lt;/property&gt;
+        &lt;property name=&quot;crypt.keystore.file&quot;&gt;/my/keystore.jks&lt;/property&gt;
+        &lt;property name=&quot;crypt.keystore.password&quot;&gt;password&lt;/property&gt;
+        &lt;property name=&quot;crypt.key.alias&quot;&gt;mykey&lt;/property&gt;
+        &lt;property name=&quot;crypt.key.password&quot;&gt;password&lt;/property&gt;
+        &lt;property name=&quot;connection.max&quot;&gt;50&lt;/property&gt;
+        &lt;property name=&quot;connection.retry&quot;&gt;3&lt;/property&gt;
+        &lt;property name=&quot;connection.timeout&quot;&gt;50000&lt;/property&gt;
+        &lt;property name=&quot;socket.timeout&quot;&gt;50000&lt;/property&gt;
+    &lt;/blobprovider&gt;
+&lt;/extension&gt;
+                            </pre>
+                            <h2>
+                                Server-Side Encryption with S3
+                            </h2>
+                            <p>
+                                Support for Server-Side Encryption (SSE-S3) has been added as an alternative to Client-Side Encryption (CSE) as documented in the
+                                <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html" target="alt">
+                                    S3 Java SDK
+                                </a>
+                                . This is enabled through the property <code>nuxeo.s3storage.crypt.serverside=true</code>.</p>
+                            <h2>
+                                GridFS as Part of the Default Distribution
+                            </h2>
+                            <p>
+                                GridFS is now part of the base distribution, in nuxeo-core. It will have to be activated explicitly using the gridfsbinaries template. There is no need to install an additional Nuxeo Package anymore. Read our <a href="https://doc.nuxeo.com/x/yAEuAQ">MongoDB admin documentation</a> for more information.
+                            </p>
+                            <h2>
+                                Elasticsearch Indexing Operations
+                            </h2>
+                            <p>
+                                Elasticsearch indexing operations are now available from Nuxeo Automation in addition to the Admin Center.
+                                Using a REST call you can now:
+                            </p>
+                                <ul>
+                                    <li>
+                                        Re-index an entire repository
+                                    </li>
+                                    <li>
+                                        Re-index documents that match an NXQL query
+                                    </li>
+                                    <li>
+                                        Re-index a document and its children
+                                    </li>
+                                    <li>
+                                        Wait for indexing and perform an index refresh
+                                    </li>
+                                  </ul>
+                                <h2>
+                                    Allow Separate Repository DDL Generation
+                                </h2>
+                                <p>
+                                    Nuxeo can now start with a new <code>nuxeo.vcs.ddlmode</code> parameter that specifies how the DDL for repository initialization should be executed at startup. Depending on the chosen mode, the DDL may not be executed at all and instead dumped to the <code>log/ddl-vcs-default.sql</code> log file. Possible values for <code>nuxeo.vcs.ddlmode</code> are:</p>
+                                    <ul>
+                                        <li>
+                                            <b>
+                                                ignore
+                                            </b>
+                                            : no DDL detected or executed. Replaces <code>nuxeo.vcs.noddl=true</code>.
+                                        </li>
+                                        <li>
+                                            <b>
+                                                compat
+                                            </b>
+                                            : compatibility mode with previous version. Always executes DDL that recreates stored procedures (and does not attempt to detect existing ones). Replaces <code>nuxeo.vcs.noddl=false</code>.
+                                        </li>
+                                        <li>
+                                            <b>
+                                                execute
+                                            </b>
+                                            : executes the DDL and starts Nuxeo normally.
+                                        </li>
+                                        <li>
+                                            <b>
+                                                dump
+                                            </b>
+                                            : dumps the DDL (if any) to the file but still executes it and starts Nuxeo normally.
+                                        </li>
+                                        <li>
+                                            <b>
+                                                dump,ignore
+                                            </b>
+                                            : dumps the DDL (if any) to the file but does not execute it and starts Nuxeo normally (will likely result in errors).
+                                        </li>
+                                        <li>
+                                            <b>
+                                                dump,abort
+                                            </b>
+                                            : dumps the DDL (if any) to the file, and if not empty aborts startup.
+                                        </li>
+                                        </ul>
+                                        <p>For Nuxeo Platform 6.0 and Nuxeo Platform 7.10 the default was <code>nuxeo.vcs.ddlmode=compat</code>. For Nuxeo 8.2 the default is <code>nuxeo.vcs.ddlmode=execute</code>.</p>
+                                        <p>Note that all this applies to the DDL for the document repository, but not DDL used by other users of SQL in the platform (directories, quartz, JPA persistence).</p>
+                                    <h2>
+                                        Cluster Invalidation with Redis in nuxeo.conf
+                                    </h2>
+                                    <p>
+                                        Using Redis to process cluster invalidation instead of database can be configured in nuxeo.conf using <code>repository.clustering.invalidation=redis</code> (it used to be in the repository contribution).
+                                    </p>
+                                </div>
+                            </div>
+                            <!--
+                                JS
+                                ==================================================
+                            -->
+                            <script src="../../javascripts/strftime.js">
+                            </script>
+                            <script src="../../javascripts/tabs.js">
+                            </script>
+                            <script src="../../javascripts/float_menu.js">
+                            </script>
+                            <script src="../../javascripts/lightbox.js">
+                            </script>
+                        </body>
+                    </html>

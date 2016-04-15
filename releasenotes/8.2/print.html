@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+  <!-- Basic Page Needs
+    ================================================== -->
+  <meta charset="utf-8">
+  <title>Nuxeo Platform 8.2 Release notes - New and Noteworthy</title>
+  <meta name="author" content="nuxeo">
+  <!-- Mobile Specific Metas
+    ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- CSS
+    ================================================== -->
+  <link rel="stylesheet" href="../../stylesheets/base.css">
+  <link rel="stylesheet" href="../../stylesheets/skeleton.css">
+  <link rel="stylesheet" href="../../stylesheets/layout.css">
+  <link rel="stylesheet" href="../../stylesheets/release_notes.css">
+  <link rel="stylesheet" href="../../stylesheets/lightbox.css">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+  <style>
+    #xnav-footer {
+      margin-top: 0px !important;
+    }
+
+    div.breakafter {
+      page-break-after: always;
+    }
+  </style>
+  <script src="../../javascripts/jquery-1.7.1.min.js"></script>
+  <!-- Favicons
+        ================================================== -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+</head>
+
+<body>
+  <div id="mainContainer" class="container">
+
+    <p class="remove-bottom" id="site-title"><a href="./index.html">Nuxeo Platform <span class="version-number">8.2</span> Release Notes</a></p>
+    <div id="welcome">
+      <div style="clear:both;"></div>
+      <h1 style="margin-left: -0.5em !important;">For Users</h1>
+   
+
+   <h2>
+                                Instant Share
+                            </h2>
+                            <p>
+                                A new feature allows to invite users to a given folder of the Nuxeo Platform with either Read or Edit permission, by email. Invited users do not have an account on the Nuxeo Platform instance. The access is temporary and any access remains tracked in the audit log, based on the used email address. <a href="https://doc.nuxeo.com/x/UYEk">Read more in the documentation</a>.
+                            </p>
+                            <div>
+                            <img class="lightboxed" src="./8.2_external_permissions.png" />
+                            </div>
+                            <h2>
+                                Nuxeo Live Connect for Box
+                            </h2>
+                            <p>
+                                <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-liveconnect">Nuxeo Live Connect</a> has been improved and now integrates with Box.com. Nuxeo Live Connect allows to easily reference files that are stored in the cloud and have them participate to your business processes. Check the <a href="https://doc.nuxeo.com/x/EgOIAQ">Nuxeo Live Connect documentation</a> for more information.
+                            </p>
+                            <div>
+                            <img class="lightboxed" src="./8.2_LiveConnect_file_creation.png" width="400"/>
+                            </div>
+                            <h2>
+                                User Feedback on Permission Management Tab
+                            </h2>
+                            <p>
+                                Feedback using the Polymer element paper-toast has been implemented on the Permissions tab. It is used on the create, update and delete permission actions, as well as on the "send notification email" action.
+                            </p>
+                            <h2>
+                                Smart Search Has Been Re-Aligned
+                            </h2>
+                            <p>
+                                <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-platform-smart-search">Smart Search</a>, that allows users to build their own queries, has been re-integrated to the Search tab, consistently with other search options. Smart Search is delivered as a Nuxeo Package.
+                            </p>
+                            <div>
+                            <img class="lightboxed" src="./8.2_SmartSearch_query.png" width="250"/>
+                            </div>
+                            <h2>
+                                Confirmation Popup before Purge
+                            </h2>
+                            <p>
+                                In the Admin Center, when removing the permissions of a given user, you now have to confirm on a popup that you really want to purge all the permissions.
+                            </p>
+                            <div>
+                            <img class="lightboxed" src="./8.2_permission_purge_confirm.png" width="400"/>
+                            </div>
+                            <h2>
+                                More Friendly "Http Transport returned a 0 status code" Error
+                            </h2>
+                            <p>
+                                When this error happens, the message is now displayed as a warning and translated in a more friendly way.
+                            </p>
+
+
+
+
+
+
+
+
+
+      <div class="breakafter"></div>
+      <h1 style="margin-left: -0.5em !important;">For Developers</h1>
+ 
+
+
+ <h2>
+                                A C# Nuxeo Client
+                            </h2>
+                            <p>
+                                A C# Nuxeo Client has been added. A <a href="https://github.com/nuxeo/nuxeo-dotnet-browser" target="_blank">sample application</a> is provided so as to understand how to make use of it. Read the <a href="https://doc.nuxeo.com/x/dwSlAQ" target="_blank">C# client documentation</a> for more information.
+                            </p>
+                            <h2>
+                                Configuring TinyMCE Editor via Tag Properties
+                            </h2>
+                            <p>
+                                Plugins and options have been extracted to control them by tag properties in order to display different options depending on the field.
+                            </p>
+                            <h2>
+                                Understanding The Sequence Of Listeners Calls
+                            </h2>
+                            <p>You can now add this on your log4j.xml:</p>
+                            <pre>
+&lt;category name=&quot;org.nuxeo.common.logging&quot;&gt;
+&lt;priority value=&quot;DEBUG&quot; /&gt;
+&lt;/category&gt;
+                            </pre>
+                            <p>Then use the sequence.sh to generate a PNG with a sequence diagram of all threads and listeners.</p>
+                            <p>Note that all events in the chart are in chronological order (not proportional) except for the Initiate link, where the origin points to the thread that has generated a work without telling when (earlier for sure).
+                        </p>
+                        <h2>
+                            HTML Content in Tipsy Tooltip
+                        </h2>
+                        <p>
+                            Tooltips generated with Tipsy now render HTML content properly.
+                        </p>
+
+
+
+
+
+
+
+      <div class="breakafter"></div>
+      <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
+     
+ <h2>
+                                S3 Configuration via Extension Point
+                            </h2>
+                            <p>
+                                Customers needing to connect to more than one S3 binary managers with different configurations are now able to do so using the new <code>configuration</code> extension point of <code>org.nuxeo.ecm.core.blob.BlobManager</code>. Previously only one bucket could be configured in nuxeo.conf.
+                            </p>
+                            <pre>
+&lt;extension target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot; point=&quot;configuration&quot;&gt; 
+    &lt;blobprovider name=&quot;default&quot;&gt; 
+        &lt;class&gt;org.nuxeo.ecm.core.storage.sql.S3BinaryManager&lt;/class&gt; 
+        &lt;property name=&quot;awsid&quot;&gt;your_AWS_ACCESS_KEY_ID&lt;/property&gt; 
+        &lt;property name=&quot;awssecret&quot;&gt;your_AWS_SECRET_ACCESS_KEY&lt;/property&gt; 
+        &lt;property name=&quot;region&quot;&gt;us-west-1&lt;/property&gt; 
+        &lt;property name=&quot;bucket&quot;&gt;your_s3_bucket_name&lt;/property&gt; 
+        &lt;property name=&quot;bucket.prefix&quot;&gt;myprefix/&lt;/property&gt; 
+        &lt;property name=&quot;directdownload&quot;&gt;true&lt;/property&gt; 
+        &lt;property name=&quot;directdownload.expire&quot;&gt;3600&lt;/property&gt; 
+        &lt;property name=&quot;cachesize&quot;&gt;100MB&lt;/property&gt; 
+        &lt;property name=&quot;crypt.keystore.file&quot;&gt;/my/keystore.jks&lt;/property&gt; 
+        &lt;property name=&quot;crypt.keystore.password&quot;&gt;password&lt;/property&gt; 
+        &lt;property name=&quot;crypt.key.alias&quot;&gt;mykey&lt;/property&gt; 
+        &lt;property name=&quot;crypt.key.password&quot;&gt;password&lt;/property&gt; 
+        &lt;property name=&quot;connection.max&quot;&gt;50&lt;/property&gt; 
+        &lt;property name=&quot;connection.retry&quot;&gt;3&lt;/property&gt; 
+        &lt;property name=&quot;connection.timeout&quot;&gt;50000&lt;/property&gt; 
+        &lt;property name=&quot;socket.timeout&quot;&gt;50000&lt;/property&gt; 
+    &lt;/blobprovider&gt; 
+&lt;/extension&gt;
+                            </pre>
+                            <h2>
+                                Server-Side Encryption with S3
+                            </h2>
+                            <p>
+                                Support for Server-Side Encryption (SSE-S3) has been added as an alternative to Client-Side Encryption (CSE) as documented in the
+                                <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html" target="alt">
+                                    S3 Java SDK
+                                </a>
+                                . This is enabled through the property <code>nuxeo.s3storage.crypt.serverside=true</code>.</p>
+                            <h2>
+                                GridFS as Part of the Default Distribution
+                            </h2>
+                            <p>
+                                GridFS is now part of the base distribution, in nuxeo-core. It will have to be activated explicitly using the gridfsbinaries template. There is no need to install an additional Nuxeo Package anymore. Read our <a href="https://doc.nuxeo.com/x/yAEuAQ">MongoDB admin documentation</a> for more information.
+                            </p>
+                            <h2>
+                                Elasticsearch Indexing Operations
+                            </h2>
+                            <p>
+                                Elasticsearch indexing operations are now available from Nuxeo Automation in addition to the Admin Center.
+                                Using a REST call you can now:
+                                <ul>
+                                    <li>
+                                        Re-index an entire repository
+                                    </li>
+                                    <li>
+                                        Re-index documents that match an NXQL query
+                                    </li>
+                                    <li>
+                                        Re-index a document and its children
+                                    </li>
+                                    <li>
+                                        Wait for indexing and perform an index refresh
+                                    </li>
+                                  </ul>
+                                </p>
+                                <h2>
+                                    Allow Separate Repository DDL Generation
+                                </h2>
+                                <p>
+                                    Nuxeo can now start with a new <code>nuxeo.vcs.ddlmode</code> parameter that specifies how the DDL for repository initialization should be executed at startup. Depending on the chosen mode, the DDL may not be executed at all and instead dumped to the <code>log/ddl-vcs-default.sql</code> log file. Possible values for <code>nuxeo.vcs.ddlmode</code> are:</p>
+                                    <ul>
+                                        <li>
+                                            <b>
+                                                ignore
+                                            </b>
+                                            : no DDL detected or executed. Replaces <code>nuxeo.vcs.noddl=true</code>.
+                                        </li>
+                                        <li>
+                                            <b>
+                                                compat
+                                            </b>
+                                            : compatibility mode with previous version. Always executes DDL that recreates stored procedures (and does not attempt to detect existing ones). Replaces <code>nuxeo.vcs.noddl=false</code>.
+                                        </li>
+                                        <li>
+                                            <b>
+                                                execute
+                                            </b>
+                                            : executes the DDL and starts Nuxeo normally.
+                                        </li>
+                                        <li>
+                                            <b>
+                                                dump
+                                            </b>
+                                            : dumps the DDL (if any) to the file but still executes it and starts Nuxeo normally.
+                                        </li>
+                                        <li>
+                                            <b>
+                                                dump,ignore
+                                            </b>
+                                            : dumps the DDL (if any) to the file but does not execute it and starts Nuxeo normally (will likely result in errors).
+                                        </li>
+                                        <li>
+                                            <b>
+                                                dump,abort
+                                            </b>
+                                            : dumps the DDL (if any) to the file, and if not empty aborts startup.
+                                        </li>
+                                        </ul>
+                                        <p>For Nuxeo Platform 6.0 and Nuxeo Platform 7.10 the default was <code>nuxeo.vcs.ddlmode=compat</code>. For Nuxeo 8.2 the default is <code>nuxeo.vcs.ddlmode=execute</code>.</p>
+                                        <p>Note that all this applies to the DDL for the document repository, but not DDL used by other users of SQL in the platform (directories, quartz, JPA persistence).</p>
+                                    <h2>
+                                        Cluster Invalidation with Redis in nuxeo.conf
+                                    </h2>
+                                    <p>
+                                        Using Redis to process cluster invalidation instead of database can be configured in nuxeo.conf using <code>repository.clustering.invalidation=redis</code> (it used to be in the repository contribution).
+                                    </p>
+
+
+     
+    </div>
+  </div>
+  <!-- JS
+================================================== -->
+  <script src="../../javascripts/strftime.js"></script>
+  <script src="../../javascripts/tabs.js"></script>
+</body>
+
+</html>
