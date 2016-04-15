@@ -118,7 +118,19 @@ p.backbutton a:active {
  padding-left: 0.5em;
 }
 
+#welcome .release {
+  font-size: .8em;
+  background-color: #eee;
+  padding: .4em .7em .2em;
+  margin-right: .5em;
+  border-radius: 2px;
+  color: #444;
+}
 
+.release.new {
+  background-color: #0ac064;
+  color: #fff;
+}
 
 #welcome p {
  padding:0.75em 0 1em 0;
@@ -503,8 +515,6 @@ body {
 
 
 @media handheld, screen and (max-width:1020px)  {
-
-
 
 #site-title, .container {
   margin:0;
