@@ -84,18 +84,20 @@
                     For Administrators
                 </h1>
                 <h2>
-                    <span class="release new">
-                        8.2
-                    </span>
+                    
                     MongoDB 3.2
                 </h2>
                 <p>
-                    MongoDB 3.2 is now supported as a storage backend.
+                   <span class="release new">
+                        8.2
+                    </span> MongoDB 3.2 is now supported as a storage backend.
                 </p>
                 <h2>
                     S3 Configuration via Extension Point
                 </h2>
-                <p>
+                <p><span class="release">
+                        8.1
+                    </span>
                     Customers needing to connect to more than one S3 binary managers with different configurations are now able to do so using the new
                     <code>
                         configuration
@@ -107,32 +109,32 @@
                     . Previously only one bucket could be configured in nuxeo.conf.
                 </p>
                 <pre>
-<extension point="configuration" target="org.nuxeo.ecm.core.blob.BlobManager">
-    <blobprovider name="default">
-        <class>org.nuxeo.ecm.core.storage.sql.S3BinaryManager</class>
-        <property name="awsid">your_AWS_ACCESS_KEY_ID</property>
-        <property name="awssecret">your_AWS_SECRET_ACCESS_KEY</property>
-        <property name="region">us-west-1</property>
-        <property name="bucket">your_s3_bucket_name</property>
-        <property name="bucket.prefix">myprefix/</property>
-        <property name="directdownload">true</property>
-        <property name="directdownload.expire">3600</property>
-        <property name="cachesize">100MB</property>
-        <property name="crypt.keystore.file">/my/keystore.jks</property>
-        <property name="crypt.keystore.password">password</property>
-        <property name="crypt.key.alias">mykey</property>
-        <property name="crypt.key.password">password</property>
-        <property name="connection.max">50</property>
-        <property name="connection.retry">3</property>
-        <property name="connection.timeout">50000</property>
-        <property name="socket.timeout">50000</property>
-    </blobprovider>
-</extension>
+&lt;extension point=&quot;configuration&quot; target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot;&gt;
+    &lt;blobprovider name=&quot;default&quot;&gt;
+        &lt;class&gt;org.nuxeo.ecm.core.storage.sql.S3BinaryManager&lt;/class&gt;
+        &lt;property name=&quot;awsid&quot;&gt;your_AWS_ACCESS_KEY_ID&lt;/property&gt;
+        &lt;property name=&quot;awssecret&quot;&gt;your_AWS_SECRET_ACCESS_KEY&lt;/property&gt;
+        &lt;property name=&quot;region&quot;&gt;us-west-1&lt;/property&gt;
+        &lt;property name=&quot;bucket&quot;&gt;your_s3_bucket_name&lt;/property&gt;
+        &lt;property name=&quot;bucket.prefix&quot;&gt;myprefix/&lt;/property&gt;
+        &lt;property name=&quot;directdownload&quot;&gt;true&lt;/property&gt;
+        &lt;property name=&quot;directdownload.expire&quot;&gt;3600&lt;/property&gt;
+        &lt;property name=&quot;cachesize&quot;&gt;100MB&lt;/property&gt;
+        &lt;property name=&quot;crypt.keystore.file&quot;&gt;/my/keystore.jks&lt;/property&gt;
+        &lt;property name=&quot;crypt.keystore.password&quot;&gt;password&lt;/property&gt;
+        &lt;property name=&quot;crypt.key.alias&quot;&gt;mykey&lt;/property&gt;
+        &lt;property name=&quot;crypt.key.password&quot;&gt;password&lt;/property&gt;
+        &lt;property name=&quot;connection.max&quot;&gt;50&lt;/property&gt;
+        &lt;property name=&quot;connection.retry&quot;&gt;3&lt;/property&gt;
+        &lt;property name=&quot;connection.timeout&quot;&gt;50000&lt;/property&gt;
+        &lt;property name=&quot;socket.timeout&quot;&gt;50000&lt;/property&gt;
+    &lt;/blobprovider&gt;
+&lt;/extension&gt;
                             </pre>
                 <h2>
-                    <span class="release">8.1</span>Server-Side Encryption with S3
+                    Server-Side Encryption with S3
                 </h2>
-                <p>
+                <p><span class="release">8.1</span>
                     Support for Server-Side Encryption (SSE-S3) has been added as an alternative to Client-Side Encryption (CSE) as documented in the
                     <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html" target="alt">
                         S3 Java SDK
@@ -144,9 +146,9 @@
                     .
                 </p>
                 <h2>
-                    <span class="release">8.1</span>GridFS as Part of the Default Distribution
+                   GridFS as Part of the Default Distribution
                 </h2>
-                <p>
+                <p> <span class="release">8.1</span>
                     GridFS is now part of the base distribution, in nuxeo-core. It will have to be activated explicitly using the gridfsbinaries template. There is no need to install an additional Nuxeo Package anymore. Read our
                     <a href="https://doc.nuxeo.com/x/yAEuAQ">
                         MongoDB admin documentation
@@ -154,16 +156,16 @@
                     for more information.
                 </p>
                 <h2>
-                    <span class="release new">8.2</span>
+                    
                     SAML Addon Compatible with ADFS
                 </h2>
-                <p>
-                    After adjusting a few blind parts of the spec, the SAML plugin has been successfully used with Active Directory Federation Services.
+                <p><span class="release new">8.2</span>
+                    After adjusting a few blind parts of the spec, the SAML plug-in has been successfully used with Active Directory Federation Services.
                 </p>
                 <h2>
-                    <span class="release">8.1</span>Elasticsearch Indexing Operations
+                    Elasticsearch Indexing Operations
                 </h2>
-                <p>
+                <p><span class="release">8.1</span>
                     Elasticsearch indexing operations are now available from Nuxeo Automation in addition to the Admin Center.
                                 Using a REST call you can now:
                 </p>
@@ -182,9 +184,9 @@
                     </li>
                 </ul>
                 <h2>
-                    <span class="release">8.1</span>Allow Separate Repository DDL Generation
+                    Allow Separate Repository DDL Generation
                 </h2>
-                <p>
+                <p><span class="release">8.1</span>
                     Nuxeo can now start with a new
                     <code>
                         nuxeo.vcs.ddlmode
@@ -263,9 +265,9 @@
                     Redis
                 </h2>
                 <h3>
-                    <span class="release">8.1</span>Cluster Invalidation with Redis in nuxeo.conf
+                    Cluster Invalidation with Redis in nuxeo.conf
                 </h3>
-                <p>
+                <p><span class="release">8.1</span>
                     Using Redis to process cluster invalidation instead of database can be configured in nuxeo.conf using
                     <code>
                         repository.clustering.invalidation=redis
@@ -273,51 +275,51 @@
                     (it used to be in the repository contribution).
                 </p>
                 <h3>
-                    <span class="release new">
-                        8.2
-                    </span>
+                   
                     Less Memory Footprint for Redis
                 </h3>
-                <p>
+                <p> <span class="release new">
+                        8.2
+                    </span>
                     Some work has been done to optimise the size of serialized works, hence lowering the requirements in terms of memory size for Redis.
                 </p>
                 <h3>
-                    <span class="release new">
-                        8.2
-                    </span>
-                    Redis Pool Size Configuratin
+                   
+                    Redis Pool Size Configuration
                 </h3>
                 <p>
-                    The Redis connection pool size can be configured using the new nuxeo.conf options:
+                     <span class="release new">
+                        8.2
+                    </span>The Redis connection pool size can be configured using the new nuxeo.conf options:
                     <div class="embededCode">
                         nuxeo.redis.maxTotal (default 16)
 nuxeo.redis.maxIdle (default 8)
                     </div>
                 </p>
                 <h3>
-                    <span class="release new">
-                        8.2
-                    </span>
+                   
                     Retry Logic For Redis Calls
                 </h3>
                 <p>
-                    Nuxeo now uses a failover executor with an exponential delay policy: (1ms, 2ms, 4ms, 8ms, 16ms, 32ms .. until the timeout is reached 5min by default).
+                     <span class="release new">
+                        8.2
+                    </span>Nuxeo now uses a failover executor with an exponential delay policy: (1ms, 2ms, 4ms, 8ms, 16ms, 32ms .. until the timeout is reached 5min by default).
                 </p>
                 <h2>
-                    <span class="release new">
-                        8.2
-                    </span>
+                    
                     Work Manager and Shutdown
                 </h2>
                 <p>
-                    There was some clean up in the way jobs were processed, especially at server's shutdown. When server is shutdown, works being processed are finnished before real shutdown. If server's process is killed, job will be restarted as the system is transactional.
+                    <span class="release new">
+                        8.2
+                    </span>There was some clean up in the way jobs were processed, especially at server's shutdown. When server is shutdown, works being processed are finished before real shutdown. If server's process is killed, job will be restarted as the system is transactional.
                 </p>
                 <h2>
-                    <span class="release new">8.2</span>
+                    
                         Web App Optimisations
                                </h2>
-                <p>
-                    Since 6.0 and migration to JSF2, some regressions on the performance of the web app were found, especially on heavy load. Some optimization work has been done. On a commodity hardware benchmarks shows after optimization that we are able to server 25% more requests.
+                <p><span class="release new">8.2</span>
+                    Since 6.0 and migration to JSF2, some regressions on the performance of the webapp were found, especially on heavy load. Some optimization work has been done. On a commodity hardware benchmarks shows after optimization that we are able to server 25% more requests.
                 </p>
             </div>
         </div>

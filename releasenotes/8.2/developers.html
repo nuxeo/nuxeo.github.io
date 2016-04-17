@@ -84,10 +84,12 @@
                     For Developers
                 </h1>
                 <h2>
-                    <span class="release">8.1</span>A C# Nuxeo Client
+                    A C# Nuxeo Client
                 </h2>
                 <p>
-                    A C# Nuxeo Client has been added. A
+                    <span class="release">
+                        8.1
+                    </span>A C# Nuxeo Client has been added. A
                     <a href="https://github.com/nuxeo/nuxeo-dotnet-browser" target="_blank">
                         sample application
                     </a>
@@ -97,92 +99,110 @@
                     </a>
                     for more information.
                 </p>
+
                 <h2>
-                   <span class="release">8.1</span> Configuring TinyMCE Editor via Tag Properties
-                </h2>
-                <p>
-                    Plugins and options have been extracted to control them by tag properties in order to display different options depending on the field.
-                </p>
-                <h2>
-                    <span class="release">8.1</span>Understanding The Sequence Of Listeners Calls
-                </h2>
-                <p>
-                    You can now add this on your log4j.xml:
-                </p>
-                <pre>
-<category name="org.nuxeo.common.logging">
-<priority value="DEBUG" />
-</category>
-                            </pre>
-                <p>
-                    Then use the sequence.sh to generate a PNG with a sequence diagram of all threads and listeners.
-                </p>
-                <p>
-                    Note that all events in the chart are in chronological order (not proportional) except for the Initiate link, where the origin points to the thread that has generated a work without telling when (earlier for sure).
-                </p>
-                <h2>
-                   <span class="release">8.1</span> HTML Content in Tipsy Tooltip
-                </h2>
-                <p>
-                    Tooltips generated with Tipsy now render HTML content properly.
-                </p>
-                <h2>
-                    <span class="release new">
-                        8.2
-                    </span>
-                    Authentication Prompt
-                </h2>
-                When configuring authentication chains, a new attribute is avaiilable at the authentication chain level, "handlePrompt" so as to configure if the authentication filter delegates the login prompt to its plugins or if it returns systematically a 401 response code.
-            </div>
-        </div>
-    </body>
-</html>
+    New Operations
+</h2>
+<h3>
+   
+    User Invitation
+</h3>
+<p>
+     <span class="release new">
+        8.2
+    </span>The operation "User.Invite" is now available to trigger a user invitation remotely.
+</p>
+<h3>
+   
+    Studio Jar Hot Reload
+</h3>
+<p>
+     <span class="release new">
+        8.2
+    </span>The operation "Service.HotReloadStudioSnapshot" is now available to trigger a hot-reload of the Studio Jar.
+</p>
 <h2>
+    Rest End Point Evolutions
+</h2>
+<h3>
+    
+    New Content-Type Header
+</h3>
+<p>
+    <span class="release new">
+        8.2
+    </span>Content-Type header now returns the nuxeo-entity type as well: application/json; nuxeo-entity=documents
+</p>
+<h3>
+    
+    Fetching Members of Group object
+</h3>
+<p>
+   <span class="release new">
+        8.2
+    </span> New endpoints were added for getting members of a group:
+    <ul>
+        <li>
+            /group/ {groupname}/@members
+        </li>
+        <li>
+            /group/{groupname}
+/@groups
+        </li>
+    </ul>
+This endpoint supports pagination and returns the full objects (full users and groups).
+
+Full objects are returned.
+And by default when fetching a user or a group, users and groups members are no more marshaled (only ids are returned), you can use fetch.group=memberUsers and/or fetch.group=memberGroups to get the full object.
+</p>
+                <h2>
     Directories
 </h2>
 <h3>
-    <span class="release new">
-        8.2
-    </span>
+   
     Generic Directory and Directory Templating
 </h3>
-<p>
+<p> <span class="release new">
+        8.2
+    </span>
     Generic Directories have been introduced, along with the possibility to make regular directories be "templates". 
 
 First, register a template directory (template="true"):
-    <div class="embededCode">
-        <extension target="org.nuxeo.ecm.directory.sql.SQLDirectoryFactory" point="directories"> 
-  <directory name="template-dir" template="true"> 
-      <dataSource>java:/nxsqldirectory</dataSource> 
-      <createTablePolicy>always</createTablePolicy> 
-      <querySizeLimit>100</querySizeLimit> 
-    </directory> 
-  </extension>
-    </div>
-    Then use a generic directory to provide specific customizations over the extended template (extends="template-dir"):
-    <div class="embededCode">
-        <extension target="org.nuxeo.ecm.directory.GenericDirectory" point="directories"> 
-    <directory name="my-directory" extends="template-dir"> 
-      <schema>myschema</schema> 
-      <table>mytable</table> 
-      <idField>id</idField> 
-      <passwordField>password</passwordField> 
-      <passwordHashAlgorithm>SSHA</passwordHashAlgorithm> 
-      <substringMatchType>subany</substringMatchType> 
-      <cacheTimeout>3600</cacheTimeout> 
-      <cacheMaxSize>1000</cacheMaxSize> 
-    </directory> 
-  </extension>
-    </div>
+  <div class="embededCode">
+        &lt;extension target=&quot;org.nuxeo.ecm.directory.sql.SQLDirectoryFactory&quot; point=&quot;directories&quot;&gt; <br/>
+  &lt;directory name=&quot;template-dir&quot; template=&quot;true&quot;&gt; <br/>
+      &lt;dataSource&gt;java:/nxsqldirectory&lt;/dataSource&gt; <br/>
+      &lt;createTablePolicy&gt;always&lt;/createTablePolicy&gt; <br/>
+      &lt;querySizeLimit&gt;100&lt;/querySizeLimit&gt; <br/>
+    &lt;/directory&gt; <br/>
+  &lt;/extension&gt;<br/>
+    &lt;/div&gt;<br/><br/>
+    Then use a generic directory to provide specific customizations over the extended template (extends=&quot;template-dir&quot;):<br/><br/>
+    &lt;div class=&quot;embededCode&quot;&gt;<br/>
+        &lt;extension target=&quot;org.nuxeo.ecm.directory.GenericDirectory&quot; point=&quot;directories&quot;&gt; <br/>
+    &lt;directory name=&quot;my-directory&quot; extends=&quot;template-dir&quot;&gt; <br/>
+      &lt;schema&gt;myschema&lt;/schema&gt; <br/>
+      &lt;table&gt;mytable&lt;/table&gt; <br/>
+      &lt;idField&gt;id&lt;/idField&gt; <br/>
+      &lt;passwordField&gt;password&lt;/passwordField&gt; <br/>
+      &lt;passwordHashAlgorithm&gt;SSHA&lt;/passwordHashAlgorithm&gt; <br/>
+      &lt;substringMatchType&gt;subany&lt;/substringMatchType&gt; <br/>
+      &lt;cacheTimeout&gt;3600&lt;/cacheTimeout&gt; <br/>
+      &lt;cacheMaxSize&gt;1000&lt;/cacheMaxSize&gt; <br/>
+    &lt;/directory&gt; <br/>
+  &lt;/extension&gt;<br/>
+ <br/>
+  </div>
     The Generic Directory descriptor only supports a generic subset of the configuration of the directories in general (see org.nuxeo.ecm.directory.BaseDirectoryDescriptor for the exact fields). 
 This new indirection allows to make it easier to change implementation of a directory for a given business requirement.
 </p>
 <h3>
-    <span class="release new">
-        8.2
-    </span>
+   
     Cache is Back
 </h3>
+<p> <span class="release new">
+        8.2
+    </span>
 Directories that still have a
 <i>
     cacheMaxSize
@@ -196,107 +216,97 @@ but no newly-defined
     cacheEntryName
 </i>
 are still be using a cache.
-<h2>
+    </p>
+    <h2>
     Elasticsearch Evolutions
 </h2>
 <h3>
-    <span class="release new">
-        8.2
-    </span>
-    ecm.path field
+   
+    ecm.path Field
 </h3>
 <p>
-    A new field in es index is availble: ecm:path with the following informations :
+     <span class="release new">
+        8.2
+    </span>A new field in es index is available: ecm:path with the following informations :
 </p>
 <div class="embededCode">
-    "ecm:path.level1": "default-domain",
- "ecm:path.level2": "workspaces",
- "ecm:path.level3": "aWorkspace",
- "ecm:path.level4": "aFolder",
- "ecm:path.level5": "aFile",
- etc.
- "ecm:path.depth": 5
+    "ecm:path.level1": "default-domain", <br/>
+ "ecm:path.level2": "workspaces", <br/>
+ "ecm:path.level3": "aWorkspace", <br/>
+ "ecm:path.level4": "aFolder", <br/>
+ "ecm:path.level5": "aFile", <br/>
+ etc. <br/>
+ "ecm:path.depth": 5 <br/>
 </div>
 <h3>
-    <span class="release new">
-        8.2
-    </span>
+   
     Mapping for Audit Index
 </h3>
 <p>
-    No specific mapping had been contributed for Audit index. This is now done.
+     <span class="release new">
+        8.2
+    </span>No specific mapping had been contributed for Audit index. This is now done.
 </p>
+
+     <h2>
+                   
+                    Authentication Prompt
+                </h2>
+                <p> <span class="release new">
+                        8.2
+                    </span>
+                When configuring authentication chains, a new attribute is available at the authentication chain level, "handlePrompt" so as to configure if the authentication filter delegates the login prompt to its plug-ins or if it returns systematically a 401 response code.
+            </p>
+                <h2>
+                   Configuring TinyMCE Editor via Tag Properties
+                </h2>
+                <p><span class="release">8.1</span> 
+                    Plugins and options have been extracted to control them by tag properties in order to display different options depending on the field.
+                </p>
+                <h2>
+                    Understanding The Sequence Of Listeners Calls
+                </h2>
+                <p><span class="release">8.1</span>
+                    You can now add this on your log4j.xml:
+                </p>
+                <pre>
+&lt;category name=&quot;org.nuxeo.common.logging&quot;&gt;
+&lt;priority value=&quot;DEBUG&quot; /&gt;
+&lt;/category&gt;
+                            </pre>
+                <p>
+                    Then use the sequence.sh to generate a PNG with a sequence diagram of all threads and listeners.
+                </p>
+                <p>
+                    Note that all events in the chart are in chronological order (not proportional) except for the Initiate link, where the origin points to the thread that has generated a work without telling when (earlier for sure).
+                </p>
+                <h2>
+                   HTML Content in Tipsy Tooltip
+                </h2>
+                <p><span class="release">8.1</span> 
+                    Tooltips generated with Tipsy now render HTML content properly.
+                </p>
+               
+      
+
+
 <h2>
     JSF Widgets Evolutions
 </h2>
 <h3>
-    <span class="release new">
-        8.2
-    </span>
+    
     Limit Attribute for SuggestDirectoryEntries
 </h3>
 <p>
-    A new attribute "limit" is available for limiting the number of entries returned by the SuggestDirectoryEntries
-</p>
-<h2>
-    New Operations
-</h2>
-<h3>
     <span class="release new">
         8.2
-    </span>
-    User Invitation
-</h3>
-<p>
-    The operation "User.Invite" is now available to trigger a user invitation remotely.
+    </span>A new attribute "limit" is available for limiting the number of entries returned by the SuggestDirectoryEntries
 </p>
-<h3>
-    <span class="release new">
-        8.2
-    </span>
-    Studio Jar Hot Reload Operation
-</h3>
-<p>
-    The operation "Service.HotReloadStudioSnapshot" is now available to trigger a hotreload of the Studio Jar.
-</p>
-<h2>
-    Rest End Point Evolutions
-</h2>
-<h3>
-    <span class="release new">
-        8.2
-    </span>
-    New Content-Type Header
-</h3>
-<p>
-    Content-Type header now returns the nuxeo-entity type as well: application/json; nuxeo-entity=documents
-</p>
-<h3>
-    <span class="release new">
-        8.2
-    </span>
-    Fetching Members of Group object
-</h3>
-<p>
-    New endpoints were added for getting members of a group:
-    <ul>
-        <li>
-            /group/ {groupname}/@members
-        </li>
-        <li>
-            /group/{groupname}
-/@groups
-        </li>
-    </ul>
-    .This endpoint supports pagination and returns the full objects (full users and groups).
 
-Full objects are returned.
-And by default when fetching a user or a group, users and groups members are no more marshalled (only ids are returned), you can use fetch.group=memberUsers and/or fetch.group=memberGroups to get the full obect.
-</p>
-<!--
-                    JS
-                    ==================================================
-                -->
+          </div>
+        </div>
+
+                  
 <script src="../../javascripts/strftime.js">
 </script>
 <script src="../../javascripts/tabs.js">
@@ -305,3 +315,9 @@ And by default when fetching a user or a group, users and groups members are no 
 </script>
 <script src="../../javascripts/lightbox.js">
 </script>
+
+    </body>
+</html>
+
+
+
