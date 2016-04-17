@@ -127,10 +127,13 @@ p.backbutton a:active {
   color: #444;
 }
 
-.release.new {
+#welcome .new {
   background-color: #0ac064;
   color: #fff;
 }
+
+
+
 
 #welcome p {
  padding:0.75em 0 1em 0;
