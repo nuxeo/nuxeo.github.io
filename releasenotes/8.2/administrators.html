@@ -129,8 +129,7 @@
                 <p><span class="release">8.1</span>
                     Support for Server-Side Encryption (SSE-S3) has been added as an alternative to Client-Side Encryption (CSE) as documented in the
                     <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html" target="alt">
-                        S3 Java SDK
-                    </a>. This is enabled through the property <code>nuxeo.s3storage.crypt.serverside=true</code>.
+                        S3 Java SDK</a>. This is enabled through the property <code>nuxeo.s3storage.crypt.serverside=true</code>.
                 </p>
                 <h2>
                    GridFS as Part of the Default Distribution
@@ -183,46 +182,24 @@
                     </li>
                     <li>
                         <b>compat</b>: compatibility mode with previous version. Always executes DDL that recreates stored procedures (and does not attempt to detect existing ones). Replaces
-                        <code>
-                            nuxeo.vcs.noddl=false
-                        </code>
-                        .
+                        <code>nuxeo.vcs.noddl=false</code>.
                     </li>
                     <li>
-                        <b>
-                            execute
-                        </b>
-                        : executes the DDL and starts Nuxeo normally.
+                        <b>execute</b>: executes the DDL and starts Nuxeo normally.
                     </li>
                     <li>
-                        <b>
-                            dump
-                        </b>
-                        : dumps the DDL (if any) to the file but still executes it and starts Nuxeo normally.
+                        <b>dump</b>: dumps the DDL (if any) to the file but still executes it and starts Nuxeo normally.
                     </li>
                     <li>
-                        <b>
-                            dump,ignore
-                        </b>
-                        : dumps the DDL (if any) to the file but does not execute it and starts Nuxeo normally (will likely result in errors).
+                        <b>dump,ignore</b>: dumps the DDL (if any) to the file but does not execute it and starts Nuxeo normally (will likely result in errors).
                     </li>
                     <li>
-                        <b>
-                            dump,abort
-                        </b>
-                        : dumps the DDL (if any) to the file, and if not empty aborts startup.
+                        <b>dump,abort</b>: dumps the DDL (if any) to the file, and if not empty aborts startup.
                     </li>
                 </ul>
                 <p>
                     For Nuxeo Platform 6.0 and Nuxeo Platform 7.10 the default was
-                    <code>
-                        nuxeo.vcs.ddlmode=compat
-                    </code>
-                    . For Nuxeo 8.2 the default is
-                    <code>
-                        nuxeo.vcs.ddlmode=execute
-                    </code>
-                    .
+                    <code>nuxeo.vcs.ddlmode=compat</code>. For Nuxeo 8.2 the default is <code>nuxeo.vcs.ddlmode=execute</code>.
                 </p>
                 <p>
                     Note that all this applies to the DDL for the document repository, but not DDL used by other users of SQL in the platform (directories, quartz, JPA persistence).
@@ -231,17 +208,13 @@
                     Redis
                 </h2>
                 <h3>
-                    Cluster Invalidation with Redis in nuxeo.conf
+                    Cluster Invalidation with Redis in <code>nuxeo.conf</code>
                 </h3>
                 <p><span class="release">8.1</span>
                     Using Redis to process cluster invalidation instead of database can be configured in nuxeo.conf using
-                    <code>
-                        repository.clustering.invalidation=redis
-                    </code>
-                    (it used to be in the repository contribution).
+                    <code>repository.clustering.invalidation=redis</code> (it used to be in the repository contribution).
                 </p>
                 <h3>
-                   
                     Less Memory Footprint for Redis
                 </h3>
                 <p> <span class="release new">
@@ -250,29 +223,28 @@
                     Some work has been done to optimise the size of serialized works, hence lowering the requirements in terms of memory size for Redis.
                 </p>
                 <h3>
-                   
                     Redis Pool Size Configuration
                 </h3>
                 <p>
                      <span class="release new">
                         8.2
-                    </span>The Redis connection pool size can be configured using the new nuxeo.conf options:
+                    </span>The Redis connection pool size can be configured using the new <code>nuxeo.conf</code> options:
                     <div class="embededCode">
-                        nuxeo.redis.maxTotal (default 16)
-nuxeo.redis.maxIdle (default 8)
-                    </div>
+                <ul>
+                <li><code>nuxeo.redis.maxTotal</code> (default 16)</br></li>
+                <li><code>nuxeo.redis.maxIdle</code> (default 8)</li>
+                </ul>
+                </div>
                 </p>
                 <h3>
-                   
                     Retry Logic For Redis Calls
                 </h3>
                 <p>
                      <span class="release new">
                         8.2
-                    </span>Nuxeo now uses a failover executor with an exponential delay policy: (1ms, 2ms, 4ms, 8ms, 16ms, 32ms .. until the timeout is reached 5min by default).
+                    </span>Nuxeo now uses a failover executor with an exponential delay policy: 1ms, 2ms, 4ms, 8ms, 16ms, 32ms .. until the timeout has reached 5min by default.
                 </p>
                 <h2>
-                    
                     Work Manager and Shutdown
                 </h2>
                 <p>
@@ -281,9 +253,8 @@ nuxeo.redis.maxIdle (default 8)
                     </span>There was some clean up in the way jobs were processed, especially at server's shutdown. When server is shutdown, works being processed are finished before real shutdown. If server's process is killed, job will be restarted as the system is transactional.
                 </p>
                 <h2>
-                    
-                        Web App Optimisations
-                               </h2>
+                    Web App Optimisations
+                </h2>
                 <p><span class="release new">8.2</span>
                     Since 6.0 and migration to JSF2, some regressions on the performance of the webapp were found, especially on heavy load. Some optimization work has been done. On a commodity hardware benchmarks shows after optimization that we are able to server 25% more requests.
                 </p>
