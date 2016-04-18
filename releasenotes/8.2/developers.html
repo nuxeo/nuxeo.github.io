@@ -126,7 +126,10 @@
 <p>
     <span class="release new">
         8.2
-    </span>Content-Type header now returns the nuxeo-entity type as well: application/json; nuxeo-entity=documents
+    </span>Content-Type header now returns the nuxeo-entity type as well: 
+<pre>
+application/json; nuxeo-entity=documents
+</pre>
 </p>
 <h3>
     Fetching Members of Group object
@@ -137,10 +140,10 @@
     </span> New endpoints were added for getting members of a group:
     <ul>
         <li>
-            /group/{groupname}/@members
+            <code>/group/{groupname}/@members</code>
         </li>
         <li>
-            /group/{groupname}/@groups
+            <code>/group/{groupname}/@groups</code>
         </li>
     </ul>
 This endpoint supports pagination and returns the full objects (full users and groups).
