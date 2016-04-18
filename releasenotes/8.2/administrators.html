@@ -84,7 +84,6 @@
                     For Administrators
                 </h1>
                 <h2>
-                    
                     MongoDB 3.2
                 </h2>
                 <p>
@@ -99,14 +98,7 @@
                         8.1
                     </span>
                     Customers needing to connect to more than one S3 binary managers with different configurations are now able to do so using the new
-                    <code>
-                        configuration
-                    </code>
-                    extension point of
-                    <code>
-                        org.nuxeo.ecm.core.blob.BlobManager
-                    </code>
-                    . Previously only one bucket could be configured in nuxeo.conf.
+                    <code>configuration</code> extension point of <code>org.nuxeo.ecm.core.blob.BlobManager</code>. Previously only one bucket could be configured in <code>nuxeo.conf</code>.
                 </p>
                 <pre>
 &lt;extension point=&quot;configuration&quot; target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot;&gt;
@@ -138,12 +130,7 @@
                     Support for Server-Side Encryption (SSE-S3) has been added as an alternative to Client-Side Encryption (CSE) as documented in the
                     <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html" target="alt">
                         S3 Java SDK
-                    </a>
-                    . This is enabled through the property
-                    <code>
-                        nuxeo.s3storage.crypt.serverside=true
-                    </code>
-                    .
+                    </a>. This is enabled through the property <code>nuxeo.s3storage.crypt.serverside=true</code>.
                 </p>
                 <h2>
                    GridFS as Part of the Default Distribution
@@ -151,12 +138,9 @@
                 <p> <span class="release">8.1</span>
                     GridFS is now part of the base distribution, in nuxeo-core. It will have to be activated explicitly using the gridfsbinaries template. There is no need to install an additional Nuxeo Package anymore. Read our
                     <a href="https://doc.nuxeo.com/x/yAEuAQ">
-                        MongoDB admin documentation
-                    </a>
-                    for more information.
+                        MongoDB admin documentation</a> for more information.
                 </p>
                 <h2>
-                    
                     SAML Addon Compatible with ADFS
                 </h2>
                 <p><span class="release new">8.2</span>
@@ -188,35 +172,17 @@
                 </h2>
                 <p><span class="release">8.1</span>
                     Nuxeo can now start with a new
-                    <code>
-                        nuxeo.vcs.ddlmode
-                    </code>
-                    parameter that specifies how the DDL for repository initialization should be executed at startup. Depending on the chosen mode, the DDL may not be executed at all and instead dumped to the
-                    <code>
-                        log/ddl-vcs-default.sql
-                    </code>
-                    log file. Possible values for
-                    <code>
-                        nuxeo.vcs.ddlmode
-                    </code>
-                    are:
+                    <code>nuxeo.vcs.ddlmode</code> parameter that specifies how the DDL for repository initialization should be executed at startup. Depending on the chosen mode, the DDL may not be executed at all and instead dumped to the
+                    <code>log/ddl-vcs-default.sql</code> log file. Possible values for <code>nuxeo.vcs.ddlmode</code> are:
                 </p>
                 <ul>
                     <li>
                         <b>
-                            ignore
-                        </b>
-                        : no DDL detected or executed. Replaces
-                        <code>
-                            nuxeo.vcs.noddl=true
-                        </code>
-                        .
+                            ignore</b>: no DDL detected or executed. Replaces
+                        <code>nuxeo.vcs.noddl=true</code>.
                     </li>
                     <li>
-                        <b>
-                            compat
-                        </b>
-                        : compatibility mode with previous version. Always executes DDL that recreates stored procedures (and does not attempt to detect existing ones). Replaces
+                        <b>compat</b>: compatibility mode with previous version. Always executes DDL that recreates stored procedures (and does not attempt to detect existing ones). Replaces
                         <code>
                             nuxeo.vcs.noddl=false
                         </code>
