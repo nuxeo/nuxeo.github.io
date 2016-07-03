@@ -86,27 +86,27 @@
       <h2>New Operations</h2>
       <h3>User Invitation</h3>
       <p>
-        <span class="release new">8.2</span>The operation
+        <span class="release">8.2</span>The operation
         <code>User.Invite</code>
         is now available to trigger a user invitation remotely.
       </p>
       <h3>Studio Jar Hot Reload</h3>
       <p>
-        <span class="release new">8.2</span>The operation
+        <span class="release">8.2</span>The operation
         <code>Service.HotReloadStudioSnapshot</code>
         is now available to trigger a hot-reload of the Studio Jar.
       </p>
       <h2>REST Endpoint Evolutions</h2>
       <h3>New Content-Type Header</h3>
       <p>
-        <span class="release new">8.2</span>Content-Type header now returns the nuxeo-entity type as well:
+        <span class="release">8.2</span>Content-Type header now returns the nuxeo-entity type as well:
       </p>
       <pre>
 application/json; nuxeo-entity=documents
 </pre>
       <h3>Fetching Members of Group object</h3>
       <p>
-        <span class="release new">8.2</span> New endpoints were added for getting members of a group:
+        <span class="release">8.2</span> New endpoints were added for getting members of a group:
       <ul>
         <li><code>/group/{groupname}/@members</code></li>
         <li><code>/group/{groupname}/@groups</code></li>
@@ -122,7 +122,7 @@ application/json; nuxeo-entity=documents
       <h2>Directories</h2>
       <h3>Generic Directory and Directory Templating</h3>
       <p>
-        <span class="release new">8.2</span> Generic Directories have been introduced, along with the possibility to
+        <span class="release">8.2</span> Generic Directories have been introduced, along with the possibility to
         make regular directories be "templates". First, register a template directory (
         <code>template="true"</code>
         ):
@@ -165,13 +165,62 @@ application/json; nuxeo-entity=documents
       </p>
       <h3>Cache is Back</h3>
       <p>
-        <span class="release new">8.2</span> Directories that still have a <i> cacheMaxSize </i> and <i>
+        <span class="release">8.2</span> Directories that still have a <i> cacheMaxSize </i> and <i>
           cacheTimeOut </i> but no newly-defined <i> cacheEntryName </i> are still be using a cache.
       </p>
       <h2>Elasticsearch Evolutions</h2>
+      <h3>Elasticsearch Crawl API </h3>
+      <p>
+        <span class="release new">8.3</span>
+
+        The {{ElasticSearchService}} now exposes the [Elasticsearch scroll API|https://www.elastic.co/guide/en/elasticsearch/reference/2.3/search-request-scroll.html] allowing to process large amounts of data.
+
+You can use it this way for instance:
+
+<div class="embededCode"><pre>
+
+ElasticSearchService ess = Framework.getService(ElasticSearchService.class);
+
+// Perform initial search and get first batch of 20 results
+
+String query = "SELECT * FROM Document ORDER BY ecm:path";
+
+EsScrollResult scrollResult = ess.scroll(new NxQueryBuilder(session).nxql(query).limit(20), 10000);
+
+while (true) {
+
+DocumentModelList batchOfDocs = scrollResult.getDocuments();
+
+if (batchOfDocs.isEmpty()) {
+
+// No more documents to handle
+
+break;
+
+}
+
+for (DocumentModel doc : batchOfDocs) {
+
+// Process document
+
+...
+
+}
+
+// Get next batch of results
+
+scrollResult= ess.scroll(scrollResult);
+
+}
+
+{code}
+
+Note: the {{keepAlive}} parameter in milliseconds only needs to be long enough to perform the next scroll query.
+</pre></div>
+      </p>
       <h3>ecm.path Field</h3>
       <p>
-        <span class="release new">8.2</span>A new field in Elasticsearch index is available:
+        <span class="release">8.2</span>A new field in Elasticsearch index is available:
         <code>ecm:path</code>
         with the following informations:
       </p>
@@ -186,12 +235,30 @@ application/json; nuxeo-entity=documents
 </pre>
       <h3>Mapping for Audit Index</h3>
       <p>
-        <span class="release new">8.2</span>No specific mapping had been contributed for Audit index. This is now
+        <span class="release">8.2</span>No specific mapping had been contributed for Audit index. This is now
         done.
       </p>
+<H2>NXQL Evolutions</H2>
+<h3><span class="release new">8.3</span>Fetching Documents From Specific Fields</h3>
+<p>
+When calling {{CoreSession.query}}, doing a {{SELECT * FROM Document WHERE ...}} is doing {{SELECT ecm:uuid FROM Document WHERE ...}} and returning the documents whose ids are matching. There are additional use cases of returning documents with other ids. Ex:
+
+1. Direct page provider with 
+<div class="EmbededCode">SELECT relation:target FROM DefaultRelation WHERE relation:source = ?</div>
+
+2. Simplifying collection management with a query like 
+<div class="EmbededCode">SELECT collection:documentIds/* FROM Collection WHERE ecm:uuid = ?</div> 
+You can now use such a syntax in your NXQL queries.
+</p>
+      <h2>CMIS Evolutions</h2>
+      <h3><span class="release new">8.3</span>Proxies Are Visible Through CMIS</h3>
+      <p>
+      Now when the system property org.nuxeo.cmis.proxies=true (default value) then proxies are visible like any other documents using CMIS.
+      </p>
+
       <h2>Authentication Prompt</h2>
       <p>
-        <span class="release new">8.2</span> When configuring authentication chains, a new attribute is available at
+        <span class="release">8.2</span> When configuring authentication chains, a new attribute is available at
         the authentication chain level,
         <code>handlePrompt</code>
         so as to configure if the authentication filter delegates the login prompt to its plug-ins or if it returns
@@ -223,11 +290,13 @@ application/json; nuxeo-entity=documents
         <code>SuggestDirectoryEntries</code>
       </h3>
       <p>
-        <span class="release new">8.2</span>A new attribute
+        <span class="release">8.2</span>A new attribute
         <code>limit</code>
         is available for limiting the number of entries returned by the
         <code>SuggestDirectoryEntries</code>
       </p>
+      <h2><span class="release new">8.3</span>No More Selenium Tests </h2>
+      Selenium has been fully replaced by Webdriver for the functional tests of the Nuxeo Platform and is no longer used.
     </div>
   </div>
   <script src="../../javascripts/strftime.js">

@@ -75,9 +75,13 @@
     <div id="welcome">
       <div style="clear: both;"></div>
       <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
+
+      <H2><span class="new release">8.3></span>Marklogic as a new storage backend</H2>
+      <p>A new implementation of the DBS interface (NoSQL) has been done for Marklogic database. It is available as a Nuxeo Package on the marketplace.
+      </p>
       <h2>MongoDB 3.2</h2>
       <p>
-        <span class="release new">8.2</span> MongoDB 3.2 is now supported as a storage backend.
+        <span class="release">8.2</span> MongoDB 3.2 is now supported as a storage backend.
       </p>
       <h2>S3 Configuration via Extension Point</h2>
       <p>
@@ -134,8 +138,9 @@
       </p>
       <h2>SAML Addon Compatible with ADFS</h2>
       <p>
-        <span class="release new">8.2</span> After adjusting a few blind parts of the specification, the SAML plug-in
+        <span class="release">8.2</span> After adjusting a few blind parts of the specification, the SAML plug-in
         has been successfully used with Active Directory Federation Services.
+
       </p>
       <h2>Elasticsearch Indexing Operations</h2>
       <p>
@@ -148,6 +153,10 @@
         <li>Re-index a document and its children</li>
         <li>Wait for indexing and perform an index refresh</li>
       </ul>
+      <H2><span class="release new">8.3</span>Full Text Indexing Optimisation</H2>
+      <p>
+        Indexing flow is optimized by using ES bulk indexing features, when fulltext indexation is disabled at the repository level. (Number of works queued is divided by two).
+      </p>
       <h2>Allow Separate Repository DDL Generation</h2>
       <p>
         <span class="release">8.1</span> Nuxeo can now start with a new
@@ -178,7 +187,20 @@
       </p>
       <p>Note that all this applies to the DDL for the document repository, but not DDL used by other users of SQL
         in the platform (directories, quartz, JPA persistence).</p>
+        <h2><div class="release new">8.3</div>New nuxeoctl Commands to Register Instances</h2>
+        <p>Some new commands are available:
+        
+
+        <div class="embededCode">
+        
+nuxeoctl register [<username> [<project> [<type> <description>] [<pwd>]]] 
+nuxeoctl register-trial [<email> <company> <project> <description> [<pwd>]] 
+        </div>
+        "register" allows to register an instance while "register-trial" allows to create an account and get a trial against Connect portal.
+        </p>
+
       <h2>Redis</h2>
+
       <h3>
         Cluster Invalidation with Redis in
         <code>nuxeo.conf</code>
@@ -191,12 +213,12 @@
       </p>
       <h3>Less Memory Footprint for Redis</h3>
       <p>
-        <span class="release new">8.2</span> Some work has been done to optimize the size of serialized works, hence
+        <span class="release">8.2</span> Some work has been done to optimize the size of serialized works, hence
         lowering the requirements in terms of memory size for Redis.
       </p>
       <h3>Redis Pool Size Configuration</h3>
       <p>
-        <span class="release new">8.2</span>The Redis connection pool size can be configured using the new
+        <span class="release">8.2</span>The Redis connection pool size can be configured using the new
         <code>nuxeo.conf</code>
         options:
       </p>
@@ -208,18 +230,18 @@
       </div>
       <h3>Retry Logic For Redis Calls</h3>
       <p>
-        <span class="release new">8.2</span>Nuxeo now uses a failover executor with an exponential delay policy: 1ms,
+        <span class="release">8.2</span>Nuxeo now uses a failover executor with an exponential delay policy: 1ms,
         2ms, 4ms, 8ms, 16ms, 32ms .. until the timeout has reached 5min by default.
       </p>
       <h2>Work Manager and Shutdown</h2>
       <p>
-        <span class="release new">8.2</span>There was some clean up in the way jobs were processed, especially at
+        <span class="release">8.2</span>There was some clean up in the way jobs were processed, especially at
         server's shutdown. When server is shutdown, works being processed are finished before real shutdown. If server's
         process is killed, job will be restarted as the system is transactional.
       </p>
       <h2>Web App Optimizations</h2>
       <p>
-        <span class="release new">8.2</span> Since 6.0 and migration to JSF2, some regressions on the performance of the
+        <span class="release">8.2</span> Since 6.0 and migration to JSF2, some regressions on the performance of the
         webapp were found, especially on heavy load. Some optimization work has been done. On a commodity hardware
         benchmarks shows after optimization that we are able to server 25% more requests.
       </p>
