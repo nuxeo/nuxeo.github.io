@@ -36,7 +36,7 @@
     "projectName": "nuxeo-7.x-1.x-dev",
     "categories": ["addon", "administration"]
   }],
-  "platform": ["nuxeo", "addons"],
+  "platform": ["nuxeo", "nuxeo-web-ui", "nuxeo-dam", "nuxeo-drive", "generator-nuxeo", "nuxeo-api-playground", "addons"],
   "personal": [{
     "owner": "tiry",
     "projectName": "nuxeo-platform-rendering-templates",
@@ -48,16 +48,19 @@
   }],
   "timeline": [{
     "owner": "nuxeo",
-    "projectName": "nuxeo-distribution"
-  }, {
-    "owner": "nuxeo",
-    "projectName": "nuxeo-social-collaboration"
+    "projectName": "nuxeo-web-ui"
   }, {
     "owner": "nuxeo",
     "projectName": "nuxeo-dam"
   }, {
     "owner": "nuxeo",
-    "projectName": "nuxeo-cmf"
+    "projectName": "nuxeo-drive"
+  }, {
+    "owner": "nuxeo",
+    "projectName": "generator-nuxeo"
+  }, {
+    "owner": "nuxeo",
+    "projectName": "nuxeo-api-playground"
   }, {
     "owner": "nuxeo",
     "projectName": "nuxeo"
