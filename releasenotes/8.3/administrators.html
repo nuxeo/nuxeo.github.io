@@ -83,6 +83,10 @@
       <p>
         <span class="release">8.2</span> MongoDB 3.2 is now supported as a storage backend.
       </p>
+       <h2>Postgres 9.5</h2>
+      <p>
+        <span class="release new">8.3</span> Postgres 9.5 is now supported as a storage backend.
+      </p>
       <h2>S3 Configuration via Extension Point</h2>
       <p>
         <span class="release">8.1</span> Customers needing to connect to more than one S3 binary managers with different
@@ -187,8 +191,8 @@
       </p>
       <p>Note that all this applies to the DDL for the document repository, but not DDL used by other users of SQL
         in the platform (directories, quartz, JPA persistence).</p>
-        <h2><div class="release new">8.3</div>New nuxeoctl Commands to Register Instances</h2>
-        <p>Some new commands are available:
+        <h2>New nuxeoctl Commands to Register Instances</h2>
+        <p><span class="release new">8.3</span>Some new commands are available:
         
 
         <div class="embededCode">
@@ -198,6 +202,9 @@ nuxeoctl register-trial [<email> <company> <project> <description> [<pwd>]]
         </div>
         "register" allows to register an instance while "register-trial" allows to create an account and get a trial against Connect portal.
         </p>
+
+        <h2>Sending Environment Information to Support Easily</h2>
+        <p><span class="release new">8.3</span>A new command for nuxeoctl, "nuxeoctl connect-report", allows to easily and quickly fetch some information about your environment so as to share it with the Nuxeo support team. Dumped information is about:<ul><li>nuxeoctl showconf</li><li>template custom (optional, could harm customer)</li></ul></p>
 
       <h2>Redis</h2>
 
@@ -239,6 +246,8 @@ nuxeoctl register-trial [<email> <company> <project> <description> [<pwd>]]
         server's shutdown. When server is shutdown, works being processed are finished before real shutdown. If server's
         process is killed, job will be restarted as the system is transactional.
       </p>
+      <h2>Nuxeo Importer Without ES Indexing</h2>
+      <p><span class="release new">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
       <h2>Web App Optimizations</h2>
       <p>
         <span class="release">8.2</span> Since 6.0 and migration to JSF2, some regressions on the performance of the
