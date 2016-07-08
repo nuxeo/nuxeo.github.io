@@ -75,18 +75,19 @@
     <div id="welcome">
       <div style="clear: both;"></div>
       <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
-      <H2>Environment Information Dumping with nuxeoctl connect-report</H2><p><span class="new release">8.3</span>A new command has been added to nuxeoctl, "nuxeoctl connect-report" for easily gathering all information that can be useful for helping understanding the environment of a reproduction case of a bug or a problem. This command is added in an effort of constantly improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via jvm mbeans and more. For now the feature is delivered via an additional Nuxeo Package that needs to be installed.</p>
+      <H2>Environment Information Dumping with nuxeoctl connect-report</H2>
+      <p><span class="new release">8.3</span>A new command has been added to nuxeoctl, <code>nuxeoctl connect-report</code>. This new command gathers information that can be useful to understand the environment in which a bug or a problem can be reproduced. This command was added in an effort to keep improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via JVM MBeans and more. For now this feature is delivered via a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report" target="_blank">Nuxeo Package</a> that needs to be installed on the Nuxeo server.</p>
 
-      <H2>Marklogic as a new storage backend</H2>
-      <p><span class="new release">8.3></span>A new implementation of the DBS interface (NoSQL) has been done for Marklogic database. It is available as a Nuxeo Package on the marketplace.
-      </p>
+      <H2>MarkLogic as a New Storage Backend</H2>
+      <p><span class="new release">8.3></span>A new implementation of the DBS interface (NoSQL) has been done for the MarkLogic database. It is available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-marklogic-connector" target="_blank">as a Nuxeo Package</a> on the Nuxeo Marketplace.</p>
+
       <h2>MongoDB 3.2</h2>
       <p>
         <span class="release">8.2</span> MongoDB 3.2 is now supported as a storage backend.
       </p>
-       <h2>Postgres 9.5</h2>
+       <h2>PostgreSQL 9.5</h2>
       <p>
-        <span class="release new">8.3</span> Postgres 9.5 is now supported as a storage backend.
+        <span class="release new">8.3</span> PostgreSQL 9.5 is now supported as a storage backend.
       </p>
       <h2>S3 Configuration via Extension Point</h2>
       <p>
@@ -143,7 +144,7 @@
       </p>
       <h2>SAML Addon Compatible with ADFS</h2>
       <p>
-        <span class="release">8.2</span> After adjusting a few blind parts of the specification, the SAML plug-in
+        <span class="release">8.2</span> After adjusting a few blind parts of the specification, the SAML plugin
         has been successfully used with Active Directory Federation Services.
 
       </p>
@@ -160,8 +161,9 @@
       </ul>
       <H2><span class="release new">8.3</span>Full Text Indexing Optimisation</H2>
       <p>
-        Indexing flow is optimized by using ES bulk indexing features, when fulltext indexation is disabled at the repository level. (Number of works queued is divided by two).
+         We optimized the indexing flow by using ES bulk indexing features, when full-text indexation is disabled at the repository level. Number of works queued is now divided by two.
       </p>
+
       <h2>Allow Separate Repository DDL Generation</h2>
       <p>
         <span class="release">8.1</span> Nuxeo can now start with a new
@@ -192,20 +194,17 @@
       </p>
       <p>Note that all this applies to the DDL for the document repository, but not DDL used by other users of SQL
         in the platform (directories, quartz, JPA persistence).</p>
+
         <h2>New nuxeoctl Commands to Register Instances</h2>
         <p><span class="release new">8.3</span>Some new commands are available:
         
 
-        <div class="embededCode">
-        
-nuxeoctl register [<username> [<project> [<type> <description>] [<pwd>]]] 
-nuxeoctl register-trial [<email> <company> <project> <description> [<pwd>]] 
-        </div>
-        "register" allows to register an instance while "register-trial" allows to create an account and get a trial against Connect portal.
+        <pre>
+nuxeoctl register [&lt;username&gt; [&lt;project&gt; [&lt;type&gt; &lt;description&gt;] [&lt;pwd&gt;]]] 
+nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;description&gt; [&lt;pwd&gt;]] 
+        </pre>
+        <code>register</code> allows to register an instance using an existing Nuxeo Online Services account while <code>register-trial</code> allows to create an account and get a trial against the Nuxeo Online Services portal.
         </p>
-
-        <h2>Sending Environment Information to Support Easily</h2>
-        <p><span class="release new">8.3</span>A new command for nuxeoctl, "nuxeoctl connect-report", allows to easily and quickly fetch some information about your environment so as to share it with the Nuxeo support team. Dumped information is about:<ul><li>nuxeoctl showconf</li><li>template custom (optional, could harm customer)</li></ul></p>
 
       <h2>Redis</h2>
 
@@ -230,12 +229,11 @@ nuxeoctl register-trial [<email> <company> <project> <description> [<pwd>]]
         <code>nuxeo.conf</code>
         options:
       </p>
-      <div class="embededCode">
+  
         <ul>
           <li><code>nuxeo.redis.maxTotal</code> (default 16)</li>
           <li><code>nuxeo.redis.maxIdle</code> (default 8)</li>
         </ul>
-      </div>
       <h3>Retry Logic For Redis Calls</h3>
       <p>
         <span class="release">8.2</span>Nuxeo now uses a failover executor with an exponential delay policy: 1ms,
@@ -248,22 +246,22 @@ nuxeoctl register-trial [<email> <company> <project> <description> [<pwd>]]
         process is killed, job will be restarted as the system is transactional.
       </p>
       <h2>User Manager Cache is Back</h2>
-      <p><span class="release new">8.3</span>A cache is now setup for the UserManager by default. It was note the case any more on 7.10 for users persisted in an SQL Directory.</p>
+      <p><span class="release new">8.3</span>A cache is now set up for the UserManager by default. It was not the case any more on LTS 2015 for users persisted in an SQL directory.</p>
       <h2>Nuxeo Importer</h2>
-      <h3></h3><p><span class="release new">8.3</span>
-      With the following contribution one can now configure the importer to work in non-bulk mode, which is a bit slower but allows regular Work instances to be created and directed to specific queues:
+      <h3>Non-Bulk Mode Available</h3><p><span class="release new">8.3</span>
+      With the following contribution you can now configure the importer to work in non-bulk mode, which is a bit slower but allows regular Work instances to be created and directed to specific queues:</p>
 
-{code:xml}
-<extension target="org.nuxeo.ecm.platform.importer.service.DefaultImporterComponent" point="importerConfiguration">
-<importerConfig>
-<bulkMode>false</bulkMode>
-</importerConfig>
-</extension>
-{code}
-
-      </p>
+<pre>
+&lt;extension target=&quot;org.nuxeo.ecm.platform.importer.service.DefaultImporterComponent&quot; point=&quot;importerConfiguration&quot;&gt;
+  &lt;importerConfig&gt;
+  &lt;bulkMode&gt;false&lt;/bulkMode&gt;
+  &lt;/importerConfig&gt;
+&lt;/extension&gt;
+</pre>
+      
       <h3>Nuxeo Importer Without ES Indexing</h3>
       <p><span class="release new">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
+      
       <h2>Web App Optimizations</h3>
       <p>
         <span class="release">8.2</span> Since 6.0 and migration to JSF2, some regressions on the performance of the
