@@ -132,9 +132,6 @@ p.backbutton a:active {
   color: #fff;
 }
 
-
-
-
 #welcome p {
  padding:0.75em 0 1em 0;
  padding-left:1em;
@@ -257,8 +254,7 @@ column-break-inside:avoid;
 
 #features > li > a:hover {
   color:white;
-   background-color:#3670b9;
-
+  background-color:#3670b9;
 }
 
 #welcome ul.second-label {
@@ -299,7 +295,10 @@ p.backbutton a {
 }
 
 img{
-  max-width:500px;
+ max-width: 500px;
+ max-height: 500px;
+ margin: 1em;
+ border: 1px solid #E8EFF5;
 }
 
 table {
