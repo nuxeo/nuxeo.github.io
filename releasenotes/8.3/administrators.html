@@ -79,7 +79,7 @@
       <p><span class="new release">8.3</span>A new command has been added to nuxeoctl, <code>nuxeoctl connect-report</code>. This new command gathers information that can be useful to understand the environment in which a bug or a problem can be reproduced. This command was added in an effort to keep improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via JVM MBeans and more. For now this feature is delivered via a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report" target="_blank">Nuxeo Package</a> that needs to be installed on the Nuxeo server.</p>
 
       <H2>MarkLogic as a New Storage Backend</H2>
-      <p><span class="new release">8.3></span>A new implementation of the DBS interface (NoSQL) has been done for the MarkLogic database. It is available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-marklogic-connector" target="_blank">as a Nuxeo Package</a> on the Nuxeo Marketplace.</p>
+      <p><span class="new release">8.3</span>A new implementation of the DBS interface (NoSQL) has been done for the MarkLogic database. It is available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-marklogic-connector" target="_blank">as a Nuxeo Package</a> on the Nuxeo Marketplace.</p>
 
       <h2>MongoDB 3.2</h2>
       <p>
@@ -128,10 +128,8 @@
         <span class="release">8.1</span> Support for Server-Side Encryption (SSE-S3) has been added as an alternative to
         Client-Side Encryption (CSE) as documented in the
         <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html" target="alt"> S3
-          Java SDK</a>
-        . This is enabled through the property
-        <code>nuxeo.s3storage.crypt.serverside=true</code>
-        .
+          Java SDK</a>. This is enabled through the property
+        <code>nuxeo.s3storage.crypt.serverside=true</code>.
       </p>
       <h2>GridFS as Part of the Default Distribution</h2>
       <p>
@@ -159,9 +157,8 @@
         <li>Re-index a document and its children</li>
         <li>Wait for indexing and perform an index refresh</li>
       </ul>
-      <H2><span class="release new">8.3</span>Full Text Indexing Optimisation</H2>
-      <p>
-         We optimized the indexing flow by using ES bulk indexing features, when full-text indexation is disabled at the repository level. Number of works queued is now divided by two.
+      <H2>Full-Text Indexing Optimisation</H2>
+      <p><span class="release new">8.3</span>We optimized the indexing flow by using ES bulk indexing features, when full-text indexation is disabled at the repository level. Number of works queued is now divided by two.
       </p>
 
       <h2>Allow Separate Repository DDL Generation</h2>
@@ -196,14 +193,14 @@
         in the platform (directories, quartz, JPA persistence).</p>
 
         <h2>New nuxeoctl Commands to Register Instances</h2>
-        <p><span class="release new">8.3</span>Some new commands are available:
+        <p><span class="release new">8.3</span>Some new commands are available:</p>
         
 
         <pre>
 nuxeoctl register [&lt;username&gt; [&lt;project&gt; [&lt;type&gt; &lt;description&gt;] [&lt;pwd&gt;]]] 
 nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;description&gt; [&lt;pwd&gt;]] 
         </pre>
-        <code>register</code> allows to register an instance using an existing Nuxeo Online Services account while <code>register-trial</code> allows to create an account and get a trial against the Nuxeo Online Services portal.
+        <p><code>register</code> allows to register an instance using an existing Nuxeo Online Services account while <code>register-trial</code> allows to create an account and get a trial against the Nuxeo Online Services portal.
         </p>
 
       <h2>Redis</h2>
