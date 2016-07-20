@@ -261,7 +261,7 @@ scrollResult= ess.scroll(scrollResult);
      <p>When calling <code>CoreSession.query</code>, doing a <code>SELECT * FROM Document WHERE ...</code> is doing <code>SELECT ecm:uuid FROM Document WHERE ...</code> and returning the documents whose ids are matching. There are additional use cases of returning documents with other ids. Ex:</p>
      <ol>
       <li>Direct page provider with <code>SELECT relation:target FROM DefaultRelation WHERE relation:source = ?</code></li>
-      <li>Simplifying collection management with a query like <code>SELECT collection:documentIds/* FROM Collection WHERE ecm:uuid = ?</code> </li></ul>
+      <li>Simplifying collection management with a query like <code>SELECT collection:documentIds/* FROM Collection WHERE ecm:uuid = ?</code> </li></ol>
      <p>You can now use such a syntax in your NXQL queries.</p>
       
       <h2>CMIS Evolutions</h2>
