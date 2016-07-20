@@ -1,5 +1,65 @@
 [{
   "data": [{
+    "description": "Nuxeo Platform 8.3 release notes",
+    "label": "8.3 Release Notes.pdf",
+    "os": "all",
+    "size": "1,9M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.3/8.3%20Release%20Notes.pdf"
+  }, {
+    "description": "Nuxeo Platform 8.3 upgrade notes",
+    "label": "8.3 Upgrade Notes.pdf",
+    "os": "all",
+    "size": "89K",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.3/8.3%20Upgrade%20Notes.pdf"
+  }, {
+    "description": "Nuxeo Platform 8.3 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
+    "label": "nuxeo-8.3-setup.exe",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-setup.exe.md5",
+    "os": "win",
+    "size": "376M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-setup.exe"
+  }, {
+    "description": "Nuxeo Platform 8.3 Debian installer. Based on Tomcat, it also installs all the third-party dependencies if necessary.",
+    "label": "nuxeo_8.3-01_all.deb",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo_8.3-01_all.deb.md5",
+    "os": "deb",
+    "size": "268M",
+    "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_8.3-01_all.deb"
+  }, {
+    "description": "Nuxeo Platform 8.3 Virtual Machine image (VirtualBox, RHEV, VMware ESX). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+    "label": "nuxeo-8.3-vm.zip (includes OVF and VMX)",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-vm.zip.md5",
+    "os": "vm",
+    "size": "1.2G",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-vm.zip"
+  }, {
+    "description": "Nuxeo Platform 8.3 multi-OS package. Based on Tomcat, for Linux, Mac, Windows.",
+    "label": "nuxeo-server-8.3-tomcat.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-server-8.3-tomcat.zip.md5",
+    "os": "all",
+    "size": "278M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-server-8.3-tomcat.zip"
+  }, {
+    "description": "Nuxeo Platform 8.3 SDK package. For use with Nuxeo IDE.",
+    "label": "nuxeo-server-8.3-tomcat-sdk.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-server-8.3-tomcat-sdk.zip.md5",
+    "os": "all",
+    "size": "942M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-server-8.3-tomcat-sdk.zip"
+  }, {
+    "description": "Nuxeo Platform 8.3 sources",
+    "label": "nuxeo-8.3-sources.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-sources.zip.md5",
+    "os": "all",
+    "size": "73M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-sources.zip"
+  }],
+  "date": "2016-07-13",
+  "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/8.3/",
+  "name": "8.3",
+  "kind": "FT"
+}, {
+  "data": [{
     "description": "Nuxeo Platform 8.2 release notes",
     "label": "8.2 Release Notes.pdf",
     "os": "all",
@@ -54,7 +114,7 @@
     "size": "73M",
     "url": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-sources.zip"
   }],
-  "date": "2016-01-28",
+  "date": "2016-04-06",
   "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/8.2/",
   "name": "8.2",
   "kind": "FT"
@@ -2012,7 +2072,34 @@
   "kind": "FT"
 }, {
   "data": [{
-    "date": "01-Oct-2015 21:59",
+    "description": "Nuxeo Platform 8.3 sources",
+    "label": "nuxeo-8.3-sources.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-sources.zip.md5",
+    "os": "all",
+    "size": "73M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-sources.zip"
+  }, {
+    "description": "Nuxeo Platform 8.2 sources",
+    "label": "nuxeo-8.2-sources.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-sources.zip.md5",
+    "os": "all",
+    "size": "73M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-sources.zip"
+  }, {
+    "description": "Nuxeo Platform 8.1 sources",
+    "label": "nuxeo-8.1-sources.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.1/nuxeo-8.1-sources.zip.md5",
+    "os": "all",
+    "size": "72M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.1/nuxeo-8.1-sources.zip"
+  }, {
+    "description": "Nuxeo Platform 7.10 sources",
+    "label": "nuxeo-7.10-sources.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-sources.zip.md5",
+    "os": "all",
+    "size": "72M",
+    "url": "http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-sources.zip"
+  }, {
     "description": "Nuxeo Platform 7.4 sources",
     "label": "nuxeo-7.4-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-7.4/nuxeo-7.4-sources.zip.md5",
@@ -2020,7 +2107,6 @@
     "size": "71M",
     "url": "http://cdn.nuxeo.com/nuxeo-7.4/nuxeo-7.4-sources.zip"
   }, {
-    "date": "22-Jun-2015 17:45",
     "description": "Nuxeo Platform 7.3 sources",
     "label": "nuxeo-7.3-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-7.3-sources.zip.md5",
@@ -2028,7 +2114,6 @@
     "size": "70M",
     "url": "http://cdn.nuxeo.com/nuxeo-7.3/nuxeo-7.3-sources.zip"
   }, {
-    "date": "18-Mar-2015 09:40",
     "description": "Nuxeo Platform 7.2 sources",
     "label": "nuxeo-7.2-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-7.2/nuxeo-7.2-sources.zip.md5",
@@ -2036,7 +2121,6 @@
     "size": "71M",
     "url": "http://cdn.nuxeo.com/nuxeo-7.2/nuxeo-7.2-sources.zip"
   }, {
-    "date": "14-Jan-2015 14:47",
     "description": "Nuxeo Platform 7.1 sources",
     "label": "nuxeo-7.1-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-7.1/nuxeo-7.1-sources.zip.md5",
@@ -2044,7 +2128,6 @@
     "size": "70M",
     "url": "http://cdn.nuxeo.com/nuxeo-7.1/nuxeo-7.1-sources.zip"
   }, {
-    "date": "05-Nov-2014 10:41",
     "description": "Nuxeo Platform 6.0 sources",
     "label": "nuxeo-6.0-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip.md5",
@@ -2052,7 +2135,6 @@
     "size": "60M",
     "url": "http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip"
   }, {
-    "date": "06-Aug-2014 12:06",
     "description": "Nuxeo Platform 5.9.5 sources",
     "label": "nuxeo-5.9.5-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-5.9.5-sources.zip.md5",
@@ -2060,7 +2142,6 @@
     "size": "63M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.9.5/nuxeo-5.9.5-sources.zip"
   }, {
-    "date": "06-Jun-2014 12:45",
     "description": "Nuxeo Platform 5.9.4 sources",
     "label": "nuxeo-5.9.4-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-sources.zip.md5",
@@ -2068,7 +2149,6 @@
     "size": "63M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.9.4/nuxeo-5.9.4-sources.zip"
   }, {
-    "date": "10-Apr-2014 21:24",
     "description": "Nuxeo Platform 5.9.3 sources",
     "label": "nuxeo-5.9.3-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-sources.zip.md5",
@@ -2076,7 +2156,6 @@
     "size": "63M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.9.3/nuxeo-5.9.3-sources.zip"
   }, {
-    "date": "17-Feb-2014 18:05",
     "description": "Nuxeo Platform 5.9.2 sources",
     "label": "nuxeo-5.9.2-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-sources.zip.md5",
@@ -2084,7 +2163,6 @@
     "size": "63M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.9.2/nuxeo-5.9.2-sources.zip"
   }, {
-    "date": "18-Dec-2013 14:22",
     "description": "Nuxeo Platform 5.9.1 sources",
     "label": "nuxeo-5.9.1-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-sources.zip.md5",
@@ -2092,7 +2170,6 @@
     "size": "63",
     "url": "http://cdn.nuxeo.com/nuxeo-5.9.1/nuxeo-5.9.1-sources.zip"
   }, {
-    "date": "30-Oct-2013 12:10",
     "description": "Nuxeo Platform 5.8 sources",
     "label": "nuxeo-5.8-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-sources.zip.md5",
@@ -2100,7 +2177,6 @@
     "size": "64M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.8/nuxeo-5.8-sources.zip"
   }, {
-    "date": "24-Sep-2013 01:06",
     "description": "Nuxeo Platform 5.7.3 sources",
     "label": "nuxeo-5.7.3-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-sources.zip.md5",
@@ -2108,7 +2184,6 @@
     "size": "88M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.7.3/nuxeo-5.7.3-sources.zip"
   }, {
-    "date": "03-Aug-2013 01:03",
     "description": "Nuxeo Platform 5.7.2 sources",
     "label": "nuxeo-5.7.2-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-sources.zip.md5",
@@ -2116,7 +2191,6 @@
     "size": "87M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.7.2/nuxeo-5.7.2-sources.zip"
   }, {
-    "date": "18-Jun-2013 15:19",
     "description": "Nuxeo Platform 5.7.1 sources",
     "label": "nuxeo-5.7.1-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-sources.zip.md5",
@@ -2124,7 +2198,6 @@
     "size": "86M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.7.1/nuxeo-5.7.1-sources.zip"
   }, {
-    "date": "31-Aug-2012 17:17",
     "description": "Nuxeo Platform 5.6 sources",
     "label": "nuxeo-5.6-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip.md5",
@@ -2132,7 +2205,6 @@
     "size": "83M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.6/nuxeo-5.6-sources.zip"
   }, {
-    "date": "10-Jan-2012 15:11",
     "description": "Nuxeo Platform 5.5 sources",
     "label": "nuxeo-5.5-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip.md5",
@@ -2140,28 +2212,24 @@
     "size": "82M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.5/nuxeo-5.5-sources.zip"
   }, {
-    "date": "31-May-2011 22:48",
     "description": "Nuxeo Platform 5.4.2 sources",
     "label": "nuxeo-5.4.2-sources.zip",
     "os": "all",
     "size": "84M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.4.2/nuxeo-5.4.2-sources.zip"
   }, {
-    "date": "23-Mar-2011 04:15",
     "description": "Nuxeo Platform 5.4.1 sources",
     "label": "nuxeo-5.4.1-sources.zip",
     "os": "all",
     "size": "61M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.4.1/nuxeo-5.4.1-sources.zip"
   }, {
-    "date": "09-Nov-2010 21:11",
     "description": "Nuxeo Platform 5.4 sources",
     "label": "nuxeo-5.4.0-sources.zip",
     "os": "all",
     "size": "63M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0-sources.zip"
   }, {
-    "date": "24-Nov-2010 19:37",
     "description": "Nuxeo Platform 5.4.0.1 sources",
     "label": "nuxeo-5.4.0.1-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip.md5",
@@ -2169,28 +2237,24 @@
     "size": "64M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.4.0/nuxeo-5.4.0.1-sources.zip"
   }, {
-    "date": "19-Jul-2010 18:45",
     "description": "Nuxeo Platform 5.3.2 sources",
     "label": "nuxeo-5.3.2-sources.zip",
     "os": "all",
     "size": "53M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.3.2/nuxeo-5.3.2-sources.zip"
   }, {
-    "date": "25-Mar-2010 09:11",
     "description": "Nuxeo Platform 5.3.1 sources",
     "label": "nuxeo-ep-5.3.1-src.zip",
     "os": "all",
     "size": "50M",
     "url": "http://cdn.nuxeo.com/nuxeo-5.3.1/nuxeo-ep-5.3.1-src.zip"
   }, {
-    "date": "16-Nov-2009 11:59  ",
     "description": "Nuxeo DM 5.3.0 sources",
     "label": "nuxeo-5.3.0-sources.zip",
     "os": "all",
     "size": "48M",
     "url": "http://cdn.nuxeo.com/nuxeo-dm-5.3.0/nuxeo-5.3.0-sources.zip"
   }, {
-    "date": "22-May-2009 19:04",
     "description": "Nuxeo DM 5.2 sources",
     "label": "nuxeo-5.2.0-sources.zip",
     "os": "all",
