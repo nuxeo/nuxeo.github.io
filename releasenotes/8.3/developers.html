@@ -83,33 +83,33 @@
         <a href="https://doc.nuxeo.com/x/dwSlAQ" target="_blank"> C# client documentation </a>
         for more information.
       </p>
-      
+
       <h2>New Operations</h2>
-      
+
       <h3>User Invitation</h3>
       <p>
         <span class="release">8.2</span>The operation
         <code>User.Invite</code>
         is now available to trigger a user invitation remotely.
       </p>
-      
+
       <h3>Studio JAR Hot-Reload</h3>
       <p>
         <span class="release">8.2</span>The operation
         <code>Service.HotReloadStudioSnapshot</code>
         is now available to trigger a hot-reload of the Studio JAR.
       </p>
-      
+
       <h2>REST Endpoint Evolutions</h2>
-      
+
       <h3>New Token Endpoint</h3><p>
       <span class="release new">8.3</span>An endpoint has been added to be able to fetch and delete via the REST API tokens for the Nuxeo Authentication module.
       </p>
-      
+
       <h3>New Search Endpoint</h3><p>
       <span class="release new">8.3</span>A new <code>search</code> endpoint has been added to be able to be able to perform searches as well as saving and fetching them. The <code>query</code> endpoint is now deprecated.
       </p>
-      
+
       <h3>New Content-Type Header</h3>
       <p>
         <span class="release">8.2</span>Content-Type header now returns the nuxeo-entity type as well:
@@ -117,10 +117,10 @@
       <pre>
 application/json; nuxeo-entity=documents
 </pre>
-      
+
       <h3>Client-Side Localisation</h3>
       <p><span class="release new">8.3</span>The client is now responsible for sending the locale it is interested in via a dedicated request header.</p>
-      
+
       <h3>Fetching Members of Group object</h3>
       <p>
         <span class="release">8.2</span> New endpoints were added for getting members of a group:
@@ -136,9 +136,9 @@ application/json; nuxeo-entity=documents
       <code>fetch.group=memberGroups</code>
       to get the full object.
       </p>
-      
+
       <h2>Directories</h2>
-      
+
       <h3>Generic Directory and Directory Templating</h3>
       <p>
         <span class="release">8.2</span> Generic Directories have been introduced, along with the possibility to
@@ -182,55 +182,34 @@ application/json; nuxeo-entity=documents
       for the exact fields). This new indirection allows to make it easier to change implementation of a directory for a
       given business requirement.
       </p>
-      
+
       <h3>Cache is Back</h3>
       <p>
         <span class="release">8.2</span> Directories that still have a <i> cacheMaxSize </i> and <i>
           cacheTimeOut </i> but no newly-defined <i> cacheEntryName </i> are still be using a cache.
       </p>
-      
+
       <h2>Elasticsearch Evolutions</h2>
-      
+
       <h3>Elasticsearch Crawl API </h3>
       <p><span class="release new">8.3</span>The <code>ElasticSearchService</code> now exposes the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/search-request-scroll.html" target="_blank">Elasticsearch scroll API</a> allowing to process large amounts of data.</p>
       <p>You can use it this way for instance:</p>
       <pre>
-
 ElasticSearchService ess = Framework.getService(ElasticSearchService.class);
-
-// Perform initial search and get first batch of 20 results
-
 String query = "SELECT * FROM Document ORDER BY ecm:path";
 
+// Perform initial search and get first batch of 20 results
 EsScrollResult scrollResult = ess.scroll(new NxQueryBuilder(session).nxql(query).limit(20), 10000);
-
-while (true) {
-
 DocumentModelList batchOfDocs = scrollResult.getDocuments();
-
-if (batchOfDocs.isEmpty()) {
-
-// No more documents to handle
-
-break;
-
-}
-
-for (DocumentModel doc : batchOfDocs) {
-
-// Process document
-
-...
-
-}
-
-// Get next batch of results
-
-scrollResult= ess.scroll(scrollResult);
-
-}
-
-</pre>
+while (!batchOfDocs.isEmpty()) {
+  for (DocumentModel doc : batchOfDocs) {
+    // Process document
+    // ...
+  }
+  // Get next batch of results
+  scrollResult = ess.scroll(scrollResult);
+  batchOfDocs = scrollResult.getDocuments();
+}</pre>
 
       <p>Note: the <code>keepAlive</code> parameter in milliseconds only needs to be long enough to perform the next scroll query.</p>
 
@@ -249,7 +228,7 @@ scrollResult= ess.scroll(scrollResult);
  etc. <br />
  "ecm:path.depth": 5
 </pre>
-      
+
       <h3>Mapping for Audit Index</h3>
       <p>
         <span class="release">8.2</span>No specific mapping had been contributed for Audit index. This is now
@@ -263,13 +242,13 @@ scrollResult= ess.scroll(scrollResult);
       <li>Direct page provider with <code>SELECT relation:target FROM DefaultRelation WHERE relation:source = ?</code></li>
       <li>Simplifying collection management with a query like <code>SELECT collection:documentIds/* FROM Collection WHERE ecm:uuid = ?</code> </li></ol>
      <p>You can now use such a syntax in your NXQL queries.</p>
-      
+
       <h2>CMIS Evolutions</h2>
-      
+
       <h3>Proxies Are Visible through CMIS</h3>
       <p><span class="release new">8.3</span>Now when the system property <code>org.nuxeo.cmis.proxies=true</code> (default value) then proxies are visible like any other document using CMIS.
       </p>
-      
+
       <h3>CMIS Test Feature Can Be Used from Third-Party Bundle</h3>
       <p><span class="release new">8.3</span>It is now possible to have third-party modules use the <code>CmisFeatureSessionHttp</code> feature to run their own tests in the context of a preconfigured CMIS test server.</p>
 
@@ -281,25 +260,25 @@ scrollResult= ess.scroll(scrollResult);
         so as to configure if the authentication filter delegates the login prompt to its plug-ins or if it returns
         systematically a 401 response code.
       </p>
-      
+
       <h2>Configuring TinyMCE Editor via Tag Properties</h2>
       <p>
         <span class="release">8.1</span> Plugins and options have been extracted to control them by tag properties in
         order to display different options depending on the field.
       </p>
-      
+
       <h2>Understanding The Sequence Of Listeners Calls</h2>
       <p>
         <span class="release">8.1</span> You can now add this in your log4j.xml:
       </p>
       <pre>
 &lt;category name=&quot;org.nuxeo.common.logging&quot;&gt;
-&lt;priority value=&quot;DEBUG&quot;/&gt;
+  &lt;priority value=&quot;DEBUG&quot;/&gt;
 &lt;/category&gt; </pre>
       <p>Then use the sequence.sh to generate a PNG with a sequence diagram of all threads and listeners.</p>
       <p>Note that all events in the chart are in chronological order (not proportional) except for the Initiate
         link, where the origin points to the thread that has generated a work without telling when (earlier for sure).</p>
-      
+
       <h2>HTML Content in Tipsy Tooltip</h2>
       <p>
         <span class="release">8.1</span> Tooltips generated with Tipsy now render HTML content properly.
@@ -317,8 +296,8 @@ scrollResult= ess.scroll(scrollResult);
       </ul>
 
       <h2>Explorer Addon Evolution</h2>
-      <p> <span class="release new">8.3</span>The Explorer plugin has been greatly improved: better search features, cleaner look & feel. We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We have also extended the XML generation feature to help developers have a working sample. Check it out on <a href="http://explorer.nuxeo.com/" target="_blank">explorer.nuxeo.com</a> or by installing the <a ref="https://connect.nuxeo.com/nuxeo/site/marketplace/package/platform-explorer" target="_blank">Platform Explorer Nuxeo Package</a>.</p>
-      
+      <p> <span class="release new">8.3</span>The Explorer plugin has been greatly improved: better search features, cleaner look &amp; feel. We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We have also extended the XML generation feature to help developers have a working sample. Check it out on <a href="http://explorer.nuxeo.com/" target="_blank">explorer.nuxeo.com</a> or by installing the <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/platform-explorer" target="_blank">Platform Explorer Nuxeo Package</a>.</p>
+
       <h2>JSF Widgets Evolutions</h2>
       <h3>
         Limit Attribute for
@@ -330,10 +309,10 @@ scrollResult= ess.scroll(scrollResult);
         is available for limiting the number of entries returned by the
         <code>SuggestDirectoryEntries</code>
       </p>
-      
+
       <h2>No More Selenium Tests </h2>
       <p><span class="release new">8.3</span>Selenium has been fully replaced by Webdriver for the functional tests of the Nuxeo Platform and is no longer used.</p>
-      
+
       <h2>Miscellaneous</h2>
       <p><span class="release new">8.3</span>The UIDSequencer interface now supports long integer.
       </p>

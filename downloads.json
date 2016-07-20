@@ -3,13 +3,13 @@
     "description": "Nuxeo Platform 8.3 release notes",
     "label": "8.3 Release Notes.pdf",
     "os": "all",
-    "size": "",
+    "size": "1,9M",
     "url": "http://cdn.nuxeo.com/nuxeo-8.3/8.3%20Release%20Notes.pdf"
   }, {
     "description": "Nuxeo Platform 8.3 upgrade notes",
     "label": "8.3 Upgrade Notes.pdf",
     "os": "all",
-    "size": "",
+    "size": "89K",
     "url": "http://cdn.nuxeo.com/nuxeo-8.3/8.3%20Upgrade%20Notes.pdf"
   }, {
     "description": "Nuxeo Platform 8.3 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
@@ -114,7 +114,7 @@
     "size": "73M",
     "url": "http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-sources.zip"
   }],
-  "date": "2016-01-28",
+  "date": "2016-04-06",
   "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/8.2/",
   "name": "8.2",
   "kind": "FT"

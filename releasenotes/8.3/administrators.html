@@ -121,8 +121,7 @@
         &lt;property name=&quot;connection.timeout&quot;&gt;50000&lt;/property&gt;
         &lt;property name=&quot;socket.timeout&quot;&gt;50000&lt;/property&gt;
     &lt;/blobprovider&gt;
-&lt;/extension&gt;
-                            </pre>
+&lt;/extension&gt;</pre>
       <h2>Server-Side Encryption with S3</h2>
       <p>
         <span class="release">8.1</span> Support for Server-Side Encryption (SSE-S3) has been added as an alternative to
@@ -173,14 +172,14 @@
         are:
       </p>
       <ul>
-        <li><b> ignore</b>: no DDL detected or executed. Replaces <code>nuxeo.vcs.noddl=true</code>.</li>
-        <li><b>compat</b>: compatibility mode with previous version. Always executes DDL that recreates stored
+        <li><code>ignore</code>: no DDL detected or executed. Replaces <code>nuxeo.vcs.noddl=true</code>.</li>
+        <li><code>compat</code>: compatibility mode with previous version. Always executes DDL that recreates stored
           procedures (and does not attempt to detect existing ones). Replaces <code>nuxeo.vcs.noddl=false</code>.</li>
-        <li><b>execute</b>: executes the DDL and starts Nuxeo normally.</li>
-        <li><b>dump</b>: dumps the DDL (if any) to the file but still executes it and starts Nuxeo normally.</li>
-        <li><b>dump,ignore</b>: dumps the DDL (if any) to the file but does not execute it and starts Nuxeo
+        <li><code>execute</code>: executes the DDL and starts Nuxeo normally.</li>
+        <li><code>dump</code>: dumps the DDL (if any) to the file but still executes it and starts Nuxeo normally.</li>
+        <li><code>dump,ignore</code>: dumps the DDL (if any) to the file but does not execute it and starts Nuxeo
           normally (will likely result in errors).</li>
-        <li><b>dump,abort</b>: dumps the DDL (if any) to the file, and if not empty aborts startup.</li>
+        <li><code>dump,abort</code>: dumps the DDL (if any) to the file, and if not empty aborts startup.</li>
       </ul>
       <p>
         For Nuxeo Platform 6.0 and Nuxeo Platform 7.10 the default was
@@ -194,12 +193,11 @@
 
         <h2>New nuxeoctl Commands to Register Instances</h2>
         <p><span class="release new">8.3</span>Some new commands are available:</p>
-        
+
 
         <pre>
-nuxeoctl register [&lt;username&gt; [&lt;project&gt; [&lt;type&gt; &lt;description&gt;] [&lt;pwd&gt;]]] 
-nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;description&gt; [&lt;pwd&gt;]] 
-        </pre>
+nuxeoctl register [&lt;username&gt; [&lt;project&gt; [&lt;type&gt; &lt;description&gt;] [&lt;pwd&gt;]]]
+nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;description&gt; [&lt;pwd&gt;]]</pre>
         <p><code>register</code> allows to register an instance using an existing Nuxeo Online Services account while <code>register-trial</code> allows to create an account and get a trial against the Nuxeo Online Services portal.
         </p>
 
@@ -226,7 +224,7 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
         <code>nuxeo.conf</code>
         options:
       </p>
-  
+
         <ul>
           <li><code>nuxeo.redis.maxTotal</code> (default 16)</li>
           <li><code>nuxeo.redis.maxIdle</code> (default 8)</li>
@@ -255,11 +253,11 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
   &lt;/importerConfig&gt;
 &lt;/extension&gt;
 </pre>
-      
+
       <h3>Nuxeo Importer Without ES Indexing</h3>
       <p><span class="release new">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
-      
-      <h2>Web App Optimizations</h3>
+
+      <h2>Web App Optimizations</h2>
       <p>
         <span class="release">8.2</span> Since 6.0 and migration to JSF2, some regressions on the performance of the
         webapp were found, especially on heavy load. Some optimization work has been done. On a commodity hardware
