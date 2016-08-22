@@ -36,12 +36,52 @@
             
             <div class="container">
                 <div class="section">
-                    <h4>Activity</h3>
+                    <h4>Releases and Activity</h3>
                         <!--   Icon Section   -->
                         <div class="row">
-                            <div class="col s12">
-                                <h5>Contributors</h5>  Antoine Taillefer, Rémi Cattiau
-                                <p></p>
+                            <div class="col s12 m6">
+                                <h5>Releases</h5>
+                                <table class="bordered">
+                                    <thead>
+                                        <tr>
+                                            <th data-field="version">Version and Type</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <ul class="collapsible" data-collapsible="accordion">
+                                    <li>
+                                        <div class="collapsible-header"><a>2.1.818 </a> Beta <span class="new badge red" data-badge-caption="Last Beta version"></span></div>
+                                        <div class="collapsible-body"><p><b>Bug fixes / improvements:</b></br>
+                                            
+                                            - Uninstallation with deleted root folder: <i>NXDRIVE-629</i></br>
+                                            - Fix conflicts window shows blank screen for long time: <i>NXDRIVE-622</i></br>
+                                            - Fix duplicate file synchronization with InterfaceError: <i>NXDRIVE-599</i></br>
+                                            - With no updater the systray in some case do not display: <i>NXDRIVE-625</i></br>
+                                            - Fix tracker with no updater: <i>NXDRIVE-623</i></br>
+                                            - Warn users when drive client doesn't have enough space on local file system when duplicating a conflicted file <i>NXDRIVE-615</i></br>
+                                            <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.818">More Informations / Download</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header"><b><a>2.1.707</a> Production <span class="new badge green" data-badge-caption="Last Production version"></span></b></div>
+                                        <div class="collapsible-body"><p><b>Bug fixes / improvements:</b></br>
+                                            
+                                            - On File untrash, content is not updating according to local copy: <i>NXDRIVE-618</i></br>
+                                            - DirectEdit stop working on unexpected exception on cleanup: <i>NXDRIVE-617</i></br>
+                                            <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.707">More Informations / Download</a></p></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header"><a>2.1.623 </a>Production</div>
+                                        <div class="collapsible-body"><p><b>Bug fixes / improvements:</b></br>
+                                            
+                                            - Add MS office temp files support: <i>NXDRIVE-611</i></br>
+                                            - ImageInfo errors when sync'ing several pictures at the same time: <i>NXDRIVE-608</i></br>
+                                            - Replace file don't update remote_id: <i>NXDRIVE-603</i></br>
+                                            <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.623">More Informations / Download</a></p></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col s12 m6">
                                 <h5>Last commits</h5>
                                 <table class="bordered">
                                     <thead>
@@ -71,82 +111,77 @@
                                     </tbody>
                                 </table>
                             </div>
+
                         </div>
                     </div>
-                <br><br>
-            
+                <h5>Contributors</h5>  Antoine Taillefer, Rémi Cattiau
             </div>
-            
-            <div class="container">
-                <div class="section">
-                    <h4>Releases</h4>
-                        <!--   Icon Section   -->
-                        <div class="row">
-                            <div class="col s12">
-                            
-                            <table class="bordered">
-                                <thead>
-                                    <tr>
-                                        <th data-field="version">Version</th>
-                                        <th data-field="type">Type</th>
-                                        <th data-field="download">Download</th>
-                                        <th data-field="informations">Informations</th>
-                                    </tr>
-                                </thead>
-                                
-                                <tbody>
-                                    <tr>
-                                        <td><b>2.1.726</b></td>
-                                        <td>Beta</td>
-                                        <td><a href="http://community.nuxeo.com/static/drive-tests/nuxeo-drive-2.1.726-osx.dmg">Download</a></td>
-                                        <td><a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/2.1.726">Informations</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>2.1.707</b></td>
-                                        <td>Production</td>
-                                        <td><a href="http://community.nuxeo.com/static/drive/nuxeo-drive-2.1.707-osx.dmg">Download</a></td>
-                                        <td><a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/2.1.707">Informations</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2.1.623</td>
-                                        <td>Production</td>
-                                        <td><a href="http://community.nuxeo.com/static/drive/nuxeo-drive-2.1.623-osx.dmg">Download</a></td>
-                                        <td><a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/2.1.623">Informations</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2.1.608</td>
-                                        <td>Production</td>
-                                        <td><a href="http://community.nuxeo.com/static/drive/nuxeo-drive-2.1.608-osx.dmg">Download</a></td>
-                                        <td><a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/2.1.608">Informations</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            </div>
-                            
-                            
-                        </div>
-                        </div>
-                <br><br>
-                
-            </div>
-
-
 
         <div class="container">
             <div class="section">
-                <h4>Useful links</h3>
+                <h4>Nuxeo Drive Roadmap</h4>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"> blablabla <a href="https://jira.nuxeo.com/browse/NXROADMAP-173"><i class="material-icons">mode_edit</i></a> <span class="new badge green" data-badge-caption="8.4"></div>
+                        <div class="collapsible-body"><p>blablablablabl</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"> blablabla <a href="https://jira.nuxeo.com/browse/NXROADMAP-173"><i class="material-icons">mode_edit</i></a> <span class="new badge green" data-badge-caption="8.4"></div>
+                        <div class="collapsible-body"><p>blablablablabl</p>
+                        </div>
+                    </li>
+                </ul>
+                </br>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header">File System Decoration <a href="https://jira.nuxeo.com/browse/NXROADMAP-173"><i class="material-icons">mode_edit</i></a> <span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                        <div class="collapsible-body"><p>Decoration of the file system so as to represent the state of the documents.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Push notifications for Nuxeo Drive and Mobile<a href="https://jira.nuxeo.com/browse/NXROADMAP-254"><i class="material-icons">mode_edit</i></a><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                        <div class="collapsible-body"><p>Nuxeo offers a notification service to its customers. Notifications are delivered via Mobile Applications and Nuxeo Drive and can be used for various use cases:</br>
+                            - tasks notifications</br>
+                            - collaborative information (someone working on someone else document, comments, ...)</br>
+                            - real time updates.</br></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Nuxeo Drive: Upload Resume<a href="https://jira.nuxeo.com/browse/NXROADMAP-207"><i class="material-icons">mode_edit</i></a><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                        <div class="collapsible-body"><p>Drive is able to resume the upload of a binary content. This option is interesting in case of big files or bad network conditions.</p>
+                        </div>
+                    </li>
+                </ul>
+                </br>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header">Nuxeo Drive: Dataviz dashboard / monitoring <a href="https://jira.nuxeo.com/browse/NXROADMAP-312"><i class="material-icons">mode_edit</i></a> <span class="new badge orange" data-badge-caption="Ideas"></div>
+                        <div class="collapsible-body"><p>Dataviz dashboard / monitoring to know:</br>
+                            - Who downloads/uploads how much documents</br>
+                            - Real time view of synchronisations</br></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Nuxeo Drive: Implement some bitrate control<a href="https://jira.nuxeo.com/browse/NXROADMAP-311"><i class="material-icons">mode_edit</i></a><span class="new badge orange" data-badge-caption="Ideas"></div>
+                        <div class="collapsible-body"><p>Implement some kind of control /limit for downloading / uploading synchronisations.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Nuxeo Drive Importer<a href="https://jira.nuxeo.com/browse/NXROADMAP-264"><i class="material-icons">mode_edit</i></a><span class="new badge orange" data-badge-caption="Ideas"></div>
+                        <div class="collapsible-body"><p>A third feature (after documents syncing and live edit) is added to Nuxeo Drive: Document Import. User can easily benefit from a robust and scalable importer.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h4>Useful links</h4>
                 <!--   Icon Section   -->
                 <div class="row">
-                    <div class="col s12 m3">
-                        
-                        <div class="icon-block">
-                            <h2 class="center light-blue-text"><i class="material-icons"><a href="https://github.com/nuxeo/nuxeo-drive">query_builder</i></a></h2>
-                            <h5 class="center"><a class="indigo-text" href="https://github.com/nuxeo/nuxeo-drive">Roadmap</a></h5>
-                            
-                            <p class="light center">Evolution of Nuxeo Drive!</p>
-                        </div>
-                    </div>
-                    <div class="col s12 m3">
+                    <div class="col s12 m6">
                         
                         <div class="icon-block">
                             <h2 class="center light-blue-text"><i class="material-icons"><a href="https://github.com/nuxeo/nuxeo-drive">settings</i></a></h2>
@@ -156,16 +191,8 @@
                         </div>
                     </div>
                     
-                    <div class="col s12 m3">
-                        <div class="icon-block">
-                            <h2 class="center light-blue-text"><i class="material-icons"><a ref="https://github.com/nuxeo/nuxeo-drive/releases/">visibility</i></a></h2>
-                            <h5 class="center"><a class="indigo-text" href="https://github.com/nuxeo/nuxeo-drive/releases/">Releases Notes</a></h5>
-                            
-                            <p class="light center">Contains detailed information about each release: beta and production with a list of improvements, bug fixes.</p>
-                        </div>
-                    </div>
                     
-                    <div class="col s12 m3">
+                    <div class="col s12 m6">
                         <div class="icon-block">
                             <h2 class="center light-blue-text"><i class="material-icons"><a href="https://doc.nuxeo.com/x/04HQ">info</i></a></h2>
                             <h5 class="center"><a class="indigo-text" href="https://doc.nuxeo.com/x/04HQ">Documentation</a></h5>
@@ -174,7 +201,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
             <br><br>
             

@@ -16,3 +16,12 @@
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
   color:#00b0ff;
 }
+
+.material-tooltip {
+    max-width: 20em;}
+
+.collapsible-header {
+    position:relative;
+    line-height:2rem;
+}
+
