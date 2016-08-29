@@ -30,3 +30,11 @@ margin-left: 5em;
 .marge2 {
 margin-left: 4em;
 }
+
+.tabs .tab a {
+  color: #039be5;
+}
+
+.tabs .indicator {
+    background-color: #039be5;
+}

@@ -28,7 +28,6 @@
                         <h5 class="header col s12 light">Designed by developers for developers, the Nuxeo Platform is a highly customizable and extensible content management platform for building business applications.</h5>
                     </div>
             </div>
-
         </div>
         <div class="container">
             <div class="section">
@@ -69,64 +68,340 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-                <div class="section">
-                    <h4>Releases</h3>
-                      <h6>Version<span class="marge">Type</span><span class="marge">Release Date</span></h6>
-                        <div class="row">
-                                <ul class="collapsible" data-collapsible="accordion">
-                                    <li>
-                                        <div class="collapsible-header"><a>8.3</a><span class="marge">Fast Track</span><span class="marge">July 2016</span><span class="new badge red" data-badge-caption="Last FT version"></span></div>
-                                        <div class="collapsible-body"><p><b>What's new:</b></br>
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s4"><a href="#releases">Releases</a></li>
+      <li class="tab col s4"><a href="#downloads">Downloads</a></li>
+      <li class="tab col s4"><a href="#notes">Release / Upgrade Notes</a></li>
+    </ul>
+  </div>
 
-                                            - Nuxeo Web UI Preview Edition <i><a href="http://jira.nuxeo.com/browse/NXROADMAP-303">NXROADMAP-303</a></i></br>
-                                            - JSF Webapp Extraction <i><a href="http://jira.nuxeo.com/browse/NXROADMAP-302">NXROADMAP-302</a></i></br>
-                                            - Fix conflicts window shows blank screen for long time: <i>NXDRIVE-622</i></br>
-                                            - Nuxeo Mobile for iOS <i><a href="http://jira.nuxeo.com/browse/NXROADMAP-238">NXROADMAP-238</a></i></br>
-                                            - Python Client SDK  <i><a href="http://jira.nuxeo.com/browse/NXROADMAP-287">NXROADMAP-287</a></i></br>
-                                            - New Search Endpoint <i><a href="http://jira.nuxeo.com/browse/NXROADMAP-309">NXROADMAP-309</a></i></br>
-                                            - Marklogic Persistence Engine <i><a href="http://jira.nuxeo.com/browse/NXROADMAP-299">NXROADMAP-299</a></i></br>
-                                            - Nuxeo Connect Report tools <i><a href="http://jira.nuxeo.com/browse/NXROADMAP-275">NXROADMAP-275</a></i></br>
-                                            - Nuxeo Edge Proxy: Reduce Download Time <i><a href="http://jira.nuxeo.com/browse/NXROADMAP-313">NXROADMAP-313</a></i></br>
-                                          </br>
-                                            <a href="https://www.nuxeo.com/downloads/"><b>Download</b></a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="collapsible-header"><a>7.10<span class="marge2"></a>Long Term Support</span><span class="marge2">November 2015</span><span class="new badge green" data-badge-caption="Last LTS version"></span></div>
-                                        <div class="collapsible-body"><p><b>Main new features</b></br>
+  <div class="container">
+  <div id="releases" class="col s12">
+      <p><b>Check all new features for each release !</b>
+      <br/></p>
+      <div class="row">
+          <div class="col s12">
+              <ul class="collapsible" data-collapsible="accordion">
+                  <li>
+                      <div class="collapsible-header"><b><a>8.3</a><span class="marge">Fast Track</span><span class="marge"><span class="marge">July 2016</span></span><span class="new badge red" data-badge-caption="Latest FT"></span></b></div>
+                      <div class="collapsible-body">
+                          <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Web UI Preview Edition</div>
+                              <div class="collapsible-body"><p>
+                                The Nuxeo Web UI has been rewritten entirely, switching from JSF stack to Web Component (HTML) / Polymer framework, with a completely re-designed interface.
+                                It allows enhanced productivity with direct access to last visited documents, collections, easy browsing between prev/next document, full screen suggester. Effort has been made for making the tasks validation flow highly efficient. With all those improvements, Nuxeo Web UI is a first class choice for projects where visual and workflows are important requirements.
+                                  <img class="materialboxed" data-caption="screenshot" width="100" src="images/WebUI-Browse.png"/>
+                                  <img class="materialboxed" data-caption="screenshot" width="100" src="images/WebUI-Tasks.png"/>
+                              </p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>JSF Webapp Extraction</div>
+                              <div class="collapsible-body"><p>
+                                The JSF Webapp is extracted from Nuxeo Platform distribution, as a Nuxeo Package available for install. This allows to have a lighter default distribution that starts more quickly.</p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Mobile for iOS</div>
+                              <div class="collapsible-body"><p>
+                                Nuxeo Mobile for iOS provides the best experience for viewing, searching and browsing content stored in Nuxeo Platform from the Apple mobile platform.
+                                <img class="materialboxed" data-caption="screenshot" width="100" src="images/iOS.jpeg"/></p></div>
+                            </li>
+                          </ul>
+                        </p>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="collapsible-header"><a>8.2</a><span class="marge">Fast Track</span><span class="marge"><span class="marge">April 2016</span></span></div>
+                      <div class="collapsible-body">
+                          <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>Branch management on Studio, git based</div>
+                              <div class="collapsible-body"><p>Provide the ability to manage several branches of the configuration made in a Studio project.
+                              </p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>Unified JavaScript Client</div>
+                              <div class="collapsible-body"><p>
+                                JavaScript client has evolved in one code base for browsers and node.js and is compatible with React Native. It is now written in ES6 and is compatible with latest API improvements of the platform, including new file upload api.
+  This version of the client also includes new helpers for facilitating the use of the platform: permissions management, conversions, etc ..  </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Java Client: Android/Java Convergence</div>
+                              <div class="collapsible-body"><p>The Nuxeo Java Client is refactored for covering both automation resources endpoints, with coverage of the most recent features of our rest api (marshallers, content enrichers, ...) and this client is designed for being used both in plain jav or JEE applications as well as on Android OS.</p></div>
+                            </li>
+                          </ul>
+                        </p>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="collapsible-header"><b><a>7.10</a><span class="marge">Long Term Version</span><span class="marge">November 2015</span><span class="new badge green" data-badge-caption="Latest LTS"></span></b></div>
+                      <div class="collapsible-body">
+                          <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Live Connect for Google Drive and Dropbox</div>
+                              <div class="collapsible-body"><p>
+                                It is possible to reference in Nuxeo a file stored in Google Drive while providing a seamless integration with platform features:...
+                              </p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>New Office Document Viewer</div>
+                              <div class="collapsible-body"><p>
+                                The current HTML Preview is replaced by the integration of pdf.js for office files. This offers more client side features (zoom, rotate, multi-page), better annotation handling, and be able to stream the content preview for large document.</p>
+                                  <img class="materialboxed" data-caption="screenshot" width="100" src="images/document-viewer.png"/>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Theme Removal</div>
+                              <div class="collapsible-body"><p>
+                                Nuxeo Theme Framework is removed for simplifying graphical appearance customization.</p></div>
+                            </li>
+                          </ul>
+                        </p>
+                      </div>
+                  </li>
+              </ul>
+      </div>
+      </div>
+    </div>
+    <div id="downloads" class="col s12">
+      <p><b>Select the correct version of Nuxeo Platform and download it! </b>
+      <br/></p>
+        <div class="row">
+            <div class="col s12">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"><a>Nuxeo Platform 8.3</a><span class="new badge red" data-badge-caption="Latest FT"></span></div>
+                        <div class="collapsible-body">
+                          <table class="bordered">
+                              <thead>
+                                  <tr>
+                                    <th data-field="os">OS</th>
+                                    <th data-field="name">Name</th>
+                                    <th data-field="size">Size</th>
+                                    <th data-field="download">Download</th>
+                                  </tr>
+                                </thead>
 
-                                          - Nuxeo Live Connect for Google Drive and Dropbox <i><a href="http://jira.nuxeo.com/browse/NXROADMAP-235">NXROADMAP-235</a></i></br>
-                                          - New Office Document Viewer <i><a href="http://jira.nuxeo.com/browse/NXROADMAP-204">NXROADMAP-204</a></i></br>
-                                          </br>
-                                          <a href="http://community.nuxeo.com/static/releases/nuxeo-7.10/">Download</a></p></div>
-                                    </li>
-                                </ul>
+                                <tbody>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>nuxeo-8.3-setup.exe</td>
+                                    <td>376Mo</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-setup.exe">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Deb</td>
+                                    <td>nuxeo_8.3-01_all.deb</td>
+                                    <td>268Mo</td>
+                                    <td><a href="http://apt.nuxeo.org/pool/fasttracks/nuxeo_8.3-01_all.deb">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>VM</td>
+                                    <td>nuxeo-8.3-vm.zip</td>
+                                    <td>1.2Go</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-vm.zip">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>nuxeo-server-8.3-tomcat.zip</td>
+                                    <td>278Mo</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-server-8.3-tomcat.zip">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>nuxeo-server-8.3-tomcat-sdk.zip</td>
+                                    <td>942Mo</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-server-8.3-tomcat-sdk.zip">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>nuxeo-8.3-sources.zip</td>
+                                    <td>73Mo</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-sources.zip">Download</a></td>
+                                  </tr>
+                              </tbody>
+                            </table>
                         </div>
-                    </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><a>Nuxeo Platform 8.2</a></div>
+                        <div class="collapsible-body">
+                          <table class="bordered">
+                              <thead>
+                                  <tr>
+                                    <th data-field="os">OS</th>
+                                    <th data-field="name">Name</th>
+                                    <th data-field="size">Size</th>
+                                    <th data-field="download">Download</th>
+                                  </tr>
+                                </thead>
+
+                                <tbody>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>nuxeo-8.2-setup.exe</td>
+                                    <td>376Mo</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-setup.exe">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Deb</td>
+                                    <td>nuxeo_8.2-01_all.deb</td>
+                                    <td>268Mo</td>
+                                    <td><a href="http://apt.nuxeo.org/pool/fasttracks/nuxeo_8.3-01_all.deb">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>VM</td>
+                                    <td>nuxeo-8.2-vm.zip</td>
+                                    <td>1.2Go</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-vm.zip">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>nuxeo-server-8.2-tomcat.zip</td>
+                                    <td>278Mo</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-server-8.3-tomcat.zip">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>nuxeo-server-8.2-tomcat-sdk.zip</td>
+                                    <td>942Mo</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-server-8.3-tomcat-sdk.zip">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>nuxeo-8.2-sources.zip</td>
+                                    <td>73Mo</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-sources.zip">Download</a></td>
+                                  </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><a>Nuxeo Platform 7.10</a><span class="new badge green" data-badge-caption="Latest LTS"></span></div>
+                      <div class="collapsible-body">
+                        <table class="bordered">
+                            <thead>
+                                <tr>
+                                  <th data-field="os">OS</th>
+                                  <th data-field="name">Name</th>
+                                  <th data-field="size">Size</th>
+                                  <th data-field="download">Download</th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+                                <tr>
+                                  <td>All</td>
+                                  <td>nuxeo-7.10-setup.exe</td>
+                                  <td>376Mo</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-setup.exe">Download</a></td>
+                                </tr>
+                                <tr>
+                                  <td>Deb</td>
+                                  <td>nuxeo_7.10-01_all.deb</td>
+                                  <td>268Mo</td>
+                                  <td><a href="http://apt.nuxeo.org/pool/fasttracks/nuxeo_7.10-01_all.deb">Download</a></td>
+                                </tr>
+                                <tr>
+                                  <td>VM</td>
+                                  <td>nuxeo-7.10-vm.zip</td>
+                                  <td>1.2Go</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-vm.zip">Download</a></td>
+                                </tr>
+                                <tr>
+                                  <td>All</td>
+                                  <td>nuxeo-server-7.10-tomcat.zip</td>
+                                  <td>278Mo</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-server-7.10-tomcat.zip">Download</a></td>
+                                </tr>
+                                <tr>
+                                  <td>All</td>
+                                  <td>nuxeo-server-7.10-tomcat-sdk.zip</td>
+                                  <td>942Mo</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-server-7.10-tomcat-sdk.zip">Download</a></td>
+                                </tr>
+                                <tr>
+                                  <td>All</td>
+                                  <td>nuxeo-7.10-sources.zip</td>
+                                  <td>73Mo</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-sources.zip">Download</a></td>
+                                </tr>
+                            </tbody>
+                          </table>
+                      </div>
+                </ul>
+        </div>
+        </div>
+      </div>
+      <div id="notes" class="col s12">
+        <p><b>You will find here links to access release and upgrade notes </b>
+        <br/></p>
+          <div class="row">
+              <div class="col s12">
+                            <table class="bordered">
+                                <thead>
+                                    <tr>
+                                      <th data-field="version">Version</th>
+                                      <th data-field="upgrade">Upgrade Notes</th>
+                                      <th data-field="release">Release Notes</th>
+                                    </tr>
+                                  </thead>
+
+                                  <tbody>
+                                    <tr>
+                                      <td>8.3</td>
+                                      <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/8.3%20Release%20Notes.pdf">8.3 Release Notes.pdf</a></td>
+                                      <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/8.3%20Upgrade%20Notes.pdf">8.3 Upgrade Notes.pdf</a></td>
+                                    </tr>
+                                    <tr>
+                                      <td>8.2</td>
+                                      <td><a href="http://cdn.nuxeo.com/nuxeo-8.2/8.2%20Release%20Notes.pdf">8.2 Release Notes.pdf</a></td>
+                                      <td><a href="http://cdn.nuxeo.com/nuxeo-8.2/8.2%20Upgrade%20Notes.pdf">8.2 Upgrade Notes.pdf</a></td>
+                                    </tr>
+                                    <tr>
+                                      <td>7.10</td>
+                                      <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/7.10%20Release%20Notes.pdf">7.10 Release Notes.pdf</a></td>
+                                      <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/7.10%20Upgrade%20Notes.pdf">7.10 Upgrade Notes.pdf</a></td>
+                                    </tr>
+                                  </tbody>
+                            </table>
             </div>
+      </div>
+    </div>
+</div>
+</div>
+
+
+
 
         <div class="container">
             <div class="section">
                 <h4>Nuxeo Platform Roadmap</h4>
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
-                        <div class="collapsible-header">Search: Synonyms Management<a href="https://jira.nuxeo.com/browse/NXROADMAP-307"><i class="material-icons">mode_edit</i></a> <span class="new badge green" data-badge-caption="8.4"></div>
+                        <div class="collapsible-header">Search: Synonyms Management<i class="material-icons">done</i></a> <span class="new badge red" data-badge-caption="8.4"></div>
                         <div class="collapsible-body"><p>A synonyms management module, that makes use of Elasticsearch thesaurus capabilities behind the scene, allows administrators of Nuxeo Platform to edit business synonyms for any term. For instance "painkiller" can be synonym of "aspirin". All documents containing painkiller will be returned if user searches for "aspirin".</p>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Elasticsearch 2.X<a href="https://jira.nuxeo.com/browse/NXROADMAP-306"><i class="material-icons">mode_edit</i></a> <span class="new badge green" data-badge-caption="8.4"></div>
+                        <div class="collapsible-header">Elasticsearch 2.X<i class="material-icons">note_add</i></a> <span class="new badge red" data-badge-caption="8.4"></div>
                         <div class="collapsible-body"><p>Nuxeo Platform will now use Elasticsearch 2.x versions and ability to use the REST inteface of Elasticsearch to improve facilities on security management for ops. Elasticsearch 2.X provides more features around data aggregation that can be used through our Elasticsearch API passthrough.</p>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Nuxeo Mobile for Android<a href="https://jira.nuxeo.com/browse/NXROADMAP-305"><i class="material-icons">mode_edit</i></a> <span class="new badge green" data-badge-caption="8.4"></div>
+                        <div class="collapsible-header">Nuxeo Mobile for Android<i class="material-icons">note_add</i></a> <span class="new badge red" data-badge-caption="8.4"></div>
                         <div class="collapsible-body"><p>Nuxeo Mobile for Android provides the best experience for viewing, searching and browsing content stored in Nuxeo Platform from the Google mobile platform.</p>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header"> Annotations on Document Viewers<a href="https://jira.nuxeo.com/browse/NXROADMAP-300"><i class="material-icons">mode_edit</i></a> <span class="new badge green" data-badge-caption="8.4"></div>
+                        <div class="collapsible-header"> Annotations on Document Viewers<i class="material-icons">note_add</i></a> <span class="new badge red" data-badge-caption="8.4"></div>
                         <div class="collapsible-body"><p>Annotation support is added to the new set of documents viewers that have been added recently to the platform. Annotations covers geometrical annotations, textual annotations, etc...</p>
                         </div>
                     </li>
@@ -134,21 +409,115 @@
                 </br>
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
-                        <div class="collapsible-header">Image Previewer <a href="https://jira.nuxeo.com/browse/NXROADMAP-290"><i class="material-icons">mode_edit</i></a> <span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                        <div class="collapsible-header"><b>8.10</a><span class="marge">Long Term Support</span><span class="marge">November 2016</span> <span class="new badge green" data-badge-caption="8.10"></b></div>
+                        <div class="collapsible-body">
+                          <li>
+                              <div class="collapsible-header"><a>8.4</a><span class="marge">Fast Track</span><span class="marge"><span class="marge">October 2016</span></span></div>
+                              <div class="collapsible-body">
+                                  <ul class="collapsible" data-collapsible="accordion">
+                                    <li>
+                                      <div class="collapsible-header"><a><i class="material-icons">done</i></a>Search: Synonyms Management</div>
+                                      <div class="collapsible-body"><p>
+                                      A synonyms management module, that makes use of Elasticsearch thesaurus capabilities behind the scene, allows administrators of Nuxeo Platform to edit business synonyms for any term. For instance "painkiller" can be synonym of "aspirin". All documents containing painkiller will be returned if user searches for "aspirin".</div>
+                                    </li>
+                                    <li>
+                                      <div class="collapsible-header"><a><i class="material-icons">note_add</i></a>Elasticsearch 2.X</div>
+                                      <div class="collapsible-body"><p>
+                                        Nuxeo Platform will now use Elasticsearch 2.x versions and ability to use the REST inteface of Elasticsearch to improve facilities on security management for ops. Elasticsearch 2.X provides more features around data aggregation that can be used through our Elasticsearch API passthrough.</p>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="collapsible-header"><a><i class="material-icons">note_add</i></a>Nuxeo Mobile for Android</div>
+                                      <div class="collapsible-body"><p>
+                                        Nuxeo Mobile for Android provides the best experience for viewing, searching and browsing content stored in Nuxeo Platform from the Google mobile platform.</div>
+                                    </li>
+                                    <li>
+                                      <div class="collapsible-header"><a><i class="material-icons">note_add</i></a>Annotations on Document Viewers</div>
+                                      <div class="collapsible-body"><p>Annotation support is added to the new set of documents viewers that have been added recently to the platform. Annotations covers geometrical annotations, textual annotations, etc...</p></div>
+                                    </li>
+                                  </ul>
+                                </p>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="collapsible-header"><a>8.3</a><span class="marge">Fast Track</span><span class="marge"><span class="marge">July 2016</span></span></div>
+                              <div class="collapsible-body">
+                                  <ul class="collapsible" data-collapsible="accordion">
+                                    <li>
+                                      <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Web UI Preview Edition</div>
+                                      <div class="collapsible-body"><p>
+                                        The Nuxeo Web UI has been rewritten entirely, switching from JSF stack to Web Component (HTML) / Polymer framework, with a completely re-designed interface.
+                                        It allows enhanced productivity with direct access to last visited documents, collections, easy browsing between prev/next document, full screen suggester. Effort has been made for making the tasks validation flow highly efficient. With all those improvements, Nuxeo Web UI is a first class choice for projects where visual and workflows are important requirements.
+                                          <img class="materialboxed" data-caption="screenshot" width="100" src="images/WebUI-Browse.png"/>
+                                          <img class="materialboxed" data-caption="screenshot" width="100" src="images/WebUI-Tasks.png"/>
+                                      </p>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="collapsible-header"><a><i class="material-icons">done</i></a>JSF Webapp Extraction</div>
+                                      <div class="collapsible-body"><p>
+                                        The JSF Webapp is extracted from Nuxeo Platform distribution, as a Nuxeo Package available for install. This allows to have a lighter default distribution that starts more quickly.</p>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Mobile for iOS</div>
+                                      <div class="collapsible-body"><p>
+                                        Nuxeo Mobile for iOS provides the best experience for viewing, searching and browsing content stored in Nuxeo Platform from the Apple mobile platform.
+                                        <img class="materialboxed" data-caption="screenshot" width="100" src="images/iOS.jpeg"/></p></div>
+                                    </li>
+                                  </ul>
+                                </p>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="collapsible-header"><a>8.2</a><span class="marge">Fast Track</span><span class="marge"><span class="marge">April 2016</span></span></div>
+                              <div class="collapsible-body">
+                                  <ul class="collapsible" data-collapsible="accordion">
+                                    <li>
+                                      <div class="collapsible-header"><a><i class="material-icons">done</i></a>Branch management on Studio, git based</div>
+                                      <div class="collapsible-body"><p>Provide the ability to manage several branches of the configuration made in a Studio project.
+                                      </p>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="collapsible-header"><a><i class="material-icons">done</i></a>Unified JavaScript Client</div>
+                                      <div class="collapsible-body"><p>
+                                        JavaScript client has evolved in one code base for browsers and node.js and is compatible with React Native. It is now written in ES6 and is compatible with latest API improvements of the platform, including new file upload api.
+          This version of the client also includes new helpers for facilitating the use of the platform: permissions management, conversions, etc ..  </div>
+                                    </li>
+                                    <li>
+                                      <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Java Client: Android/Java Convergence</div>
+                                      <div class="collapsible-body"><p>The Nuxeo Java Client is refactored for covering both automation resources endpoints, with coverage of the most recent features of our rest api (marshallers, content enrichers, ...) and this client is designed for being used both in plain jav or JEE applications as well as on Android OS.</p></div>
+                                    </li>
+                                  </ul>
+                                </p>
+                              </div>
+                          </li>
+
+                        </div>
+                    </li>
+                </ul>
+                </br>
+
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header">Image Previewer<i class="material-icons">note_add</i></a> <span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
                         <div class="collapsible-body"><p>An Image Previewer is made available for allowing each time there is an image displayed in Nuxeo Web UI to:</br>
                           - zoom in</br>
                           - zoom out</br>
                           - rotate</br>
-                          This Previewer would be used everywhere a picture can be downloaded (mostly the list of renditions).</p>
+                          This Previewer would be used everywhere a picture can be downloaded (mostly the list of renditions).</br>
+                          <i class="material-icons">trending_up</i><a href="https://intranet.nuxeo.com/nuxeo/nxpath/default/default-domain/workspaces/team-r-d/Product%20Management/Spec/Admin%20Center%20Migration%20f@view_documents?mainTabId=MAIN_TABS%3Adocuments&tabIds=MAIN_TABS%3Adocuments%2CTREE_EXPLORER%3Anavtree_CONTENT_TREE&conversationId=0NXMAIN">More details on the specifications.</a>
+                        </p>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Tree Versionning<a href="https://jira.nuxeo.com/browse/NXROADMAP-288"><i class="material-icons">mode_edit</i></a><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                        <div class="collapsible-header">Tree Versionning<i class="material-icons">note_add</i></a><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
                         <div class="collapsible-body"><p>It is possible to version a complete hierarchy of document. This is typically useful in configuration management type of project, as well as when using Nuxeo Platform to manage live content of a website, so as to be able to snapshot in a performant and robust manner the state of the whole site in a single api operation.</p>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header"> Activity Streams<a href="https://jira.nuxeo.com/browse/NXROADMAP-285"><i class="material-icons">mode_edit</i></a><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                        <div class="collapsible-header"> Activity Streams<i class="material-icons">note_add</i></a><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
                         <div class="collapsible-body"><p>  Soon Scheduled
 Activity Streams are intended to be a user friendly history track of what happens in the repository. Activities are quite similar to audit log entries, with the goal of being less verbose, nicely formatted, with easily translatable sentences, and a native ability to be aggregated at a folder or workspace level. Custom Activities can be fired easily from an automation chain.</p>
                         </div>
@@ -157,12 +526,12 @@ Activity Streams are intended to be a user friendly history track of what happen
                 </br>
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
-                        <div class="collapsible-header">Microsoft Office Server based PDF conversion<a href="https://jira.nuxeo.com/browse/NXROADMAP-218"><i class="material-icons">mode_edit</i></a> <span class="new badge orange" data-badge-caption="Ideas"></div>
+                        <div class="collapsible-header">Microsoft Office Server based PDF conversion<i class="material-icons">note_add</i></a> <span class="new badge orange" data-badge-caption="Ideas"></div>
                         <div class="collapsible-body"><p>Office files are transformed in PDF using Microsoft Office server rather than Libre Office to improve the quality of the rendering.</p>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Graph exploration of the repository<a href="https://jira.nuxeo.com/browse/NXROADMAP-316"><i class="material-icons">mode_edit</i></a><span class="new badge orange" data-badge-caption="Ideas"></div>
+                        <div class="collapsible-header">Graph exploration of the repository<i class="material-icons">note_add</i></a><span class="new badge orange" data-badge-caption="Ideas"></div>
                         <div class="collapsible-body"><p>It would be nice to propose a graph exploration of the repository, using Graph ES, or coming Graph capabilities of mongoDB.</p>
                         </div>
                     </li>
@@ -178,7 +547,7 @@ Activity Streams are intended to be a user friendly history track of what happen
 
 
                 <div class="col s12 m6">
-                <h5>Last commits</h5>
+                <h5>Last commits</h5>""
                 <table class="bordered">
                     <thead>
                         <tr>
@@ -208,12 +577,12 @@ Activity Streams are intended to be a user friendly history track of what happen
                 </table>
             </div>
             <div class="col s12 m6">
-                <h5>Principal Contributors</h5>  atcherchian, efge, jcarsique
+                <h5>Main Contributors</h5>  atcherchian, efge, jcarsique
                 <div class="row">
                     <div class="col s12 m4">
                         <div class="card blue darken-4">
                             <div class="card-content white-text">
-                                <span class="card-title"><a href="https://github.com/atcherchian"><div class="chip"><img src="images/avatar_atcherchian.png" alt="Contact Person">ataillefer</div></a></span>
+                                <span class="card-title"><a href="https://github.com/atcherchian"><div class="chip"><img src="images/avatar_atcherchian.png" alt="Contact Person">atch</div></a></span>
                                 <p>4547 commits, #1</p>
                             </div>
                         </div>
@@ -229,8 +598,8 @@ Activity Streams are intended to be a user friendly history track of what happen
                     <div class="col s12 m4">
                         <div class="card blue darken-4">
                             <div class="card-content white-text">
-                                <span class="card-title"><a href="https://github.com/jcarsique"><div class="chip"><img src="images/avatar_jcarsique.jpeg" alt="Contact Person">jcarsique</div></a></span>
-                                <p>3029 commits, #2</p>
+                                <span class="card-title"><a href="https://github.com/jcarsique"><div class="chip"><img src="images/avatar_jcarsique.jpeg" alt="Contact Person">jcar</div></a></span>
+                                <p>3029 commits, #3</p>
                             </div>
                         </div>
                     </div>
