@@ -27,6 +27,9 @@
 .marge {
 margin-left: 5em;
 }
+.marge9 {
+margin-left: 9em;
+}
 .marge2 {
 margin-left: 4em;
 }
@@ -37,4 +40,14 @@ margin-left: 4em;
 
 .tabs .indicator {
     background-color: #039be5;
+}
+
+.btn, .btn-large {
+    background-color: #039be5;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    font-size: 13px;
+    color: #039be5;
+
 }
