@@ -11,14 +11,22 @@
             <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
-        <nav class="light-blue lighten-1" role="navigation">
-            <div class="nav-wrapper container">
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="drive.html">Drive</a></li>
-                </ul>
-            </div>
-        </nav>
+      <ul id="dropdown-products" class="dropdown-content">
+        <li><a href="nuxeoplatform.html">Nuxeo Platform</a></li>
+        <li class="divider"></li>
+        <li><a href="drive.html">Nuxeo Drive</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Nuxeo Mobile</a></li>
+      </ul>
+
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Nuxeo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="index.html">Home</a></li>
+              <li><a class="dropdown-button" href="#!" data-activates="dropdown-products">Products<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
 
         <div class="section no-pad-bot" id="index-banner">
             <div class="container">
@@ -72,14 +80,14 @@
   <div class="col s12">
     <ul class="tabs">
       <li class="tab col s4"><a href="#releases">Releases</a></li>
-      <li class="tab col s4"><a href="#downloads">Downloads</a></li>
-      <li class="tab col s4"><a href="#notes">Release / Upgrade Notes</a></li>
+      <li class="tab col s4"><a href="#downloads">Downloads / Notes</a></li>
+      <li class="tab col s4"><a href="#notes">Old Versions</a></li>
     </ul>
   </div>
 
   <div class="container">
   <div id="releases" class="col s12">
-      <p><b>Check all new features for each release !</b>
+      <p><b>Check all new features for latest releases !</b>
       </br>
       <div class="center"><a class='dropdown-button btn' href='#' data-activates='dropdown1'>Filter by component!</a>
      <!-- Dropdown Structure -->
@@ -246,45 +254,7 @@
                         </p>
                       </div>
                   </li>
-                  <li>
-                      <div class="collapsible-header"><a>LTS 2014</a><span class="marge">Long Term Version</span><span class="marge">November 2014</span><span class="marge9">October 2017</span></div>
-                      <div class="collapsible-body">
-                          <ul class="collapsible" data-collapsible="accordion">
-                            <li>
-                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Live Connect for Google Drive and Dropbox</div>
-                              <div class="collapsible-body">
-                                <p>
-                                It is possible to reference in Nuxeo a file stored in Google Drive while providing a seamless integration with platform features:...
-                              </br></br>
-                              <span class="blue-text text-darken-2"><i>Integrations</i></span>
-                                </p>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>New Office Document Viewer</div>
-                              <div class="collapsible-body">
-                                <p>
-                                The current HTML Preview is replaced by the integration of pdf.js for office files. This offers more client side features (zoom, rotate, multi-page), better annotation handling, and be able to stream the content preview for large document.</p>
-                                  <img class="materialboxed" data-caption="screenshot" width="100" src="images/document-viewer.png"/>
-                                </br></br>
-                                <span class="blue-text text-darken-2"><i>Web UI</i></span>
-                                </p>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Theme Removal</div>
-                              <div class="collapsible-body">
-                                <p>
-                                Nuxeo Theme Framework is removed for simplifying graphical appearance customization.
-                              </br></br>
-                              <span class="blue-text text-darken-2"><i>Web UI</i></span>
-                                </p>
-                              </div>
-                            </li>
-                          </ul>
-                        </p>
-                      </div>
-                  </li>
+
               </ul>
       </div>
       </div>
@@ -312,6 +282,20 @@
                                 <tbody>
                                   <tr>
                                     <td>All</td>
+                                    <td>8.3 Release Notes.pdf</td>
+                                    <td></td>
+                                    <td>63k</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/8.3%20Release%20Notes.pdf">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>8.3 Upgrade Notes.pdf</td>
+                                    <td></td>
+                                    <td>151k</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/8.3%20Upgrade%20Notes.pdf">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Win</td>
                                     <td>nuxeo-8.3-setup.exe</td>
                                     <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/nuxeo-8.3-setup.exe.md5">MD5</a></td>
                                     <td>376Mo</td>
@@ -373,6 +357,20 @@
                                 <tbody>
                                   <tr>
                                     <td>All</td>
+                                    <td>8.2 Release Notes.pdf</td>
+                                    <td></td>
+                                    <td>63k</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.2/8.2%20Release%20Notes.pdf">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>8.2 Upgrade Notes.pdf</td>
+                                    <td></td>
+                                    <td>151k</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.2/8.2%20Upgrade%20Notes.pdf">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Win</td>
                                     <td>nuxeo-8.2-setup.exe</td>
                                     <td><a href="http://cdn.nuxeo.com/nuxeo-8.2/nuxeo-8.2-setup.exe.md5">MD5</a></td>
                                     <td>376Mo</td>
@@ -434,6 +432,20 @@
                                 <tbody>
                                   <tr>
                                     <td>All</td>
+                                    <td>8.1 Release Notes.pdf</td>
+                                    <td></td>
+                                    <td>63k</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.1/8.1%20Release%20Notes.pdf">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>All</td>
+                                    <td>8.1 Upgrade Notes.pdf</td>
+                                    <td></td>
+                                    <td>151k</td>
+                                    <td><a href="http://cdn.nuxeo.com/nuxeo-8.1/8.1%20Upgrade%20Notes.pdf">Download</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Win</td>
                                     <td>nuxeo-8.1-setup.exe</td>
                                     <td><a href="http://cdn.nuxeo.com/nuxeo-8.1/nuxeo-8.1-setup.exe.md5">MD5</a></td>
                                     <td>376Mo</td>
@@ -486,6 +498,7 @@
                                 <tr>
                                   <th data-field="os">OS</th>
                                   <th data-field="name">Name</th>
+                                  <th data-field="name">Check</th>
                                   <th data-field="size">Size</th>
                                   <th data-field="download">Download</th>
                                 </tr>
@@ -494,37 +507,57 @@
                               <tbody>
                                 <tr>
                                   <td>All</td>
+                                  <td>7.10 Release Notes.pdf</td>
+                                  <td></td>
+                                  <td>63k</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/7.10%20Release%20Notes.pdf">Download</a></td>
+                                </tr>
+                                <tr>
+                                  <td>All</td>
+                                  <td>7.10 Upgrade Notes.pdf</td>
+                                  <td></td>
+                                  <td>151k</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/7.10%20Upgrade%20Notes.pdf">Download</a></td>
+                                </tr>
+                                <tr>
+                                  <td>Win</td>
                                   <td>nuxeo-7.10-setup.exe</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-setup.exe.md5">MD5</a></td>
                                   <td>376Mo</td>
                                   <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-setup.exe">Download</a></td>
                                 </tr>
                                 <tr>
                                   <td>Deb</td>
                                   <td>nuxeo_7.10-01_all.deb</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo_7.10-01_all.deb.md5">MD5</a></td>
                                   <td>268Mo</td>
                                   <td><a href="http://apt.nuxeo.org/pool/fasttracks/nuxeo_7.10-01_all.deb">Download</a></td>
                                 </tr>
                                 <tr>
                                   <td>VM</td>
                                   <td>nuxeo-7.10-vm.zip</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-vm.zip.md5">MD5</a></td>
                                   <td>1.2Go</td>
                                   <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-vm.zip">Download</a></td>
                                 </tr>
                                 <tr>
                                   <td>All</td>
                                   <td>nuxeo-server-7.10-tomcat.zip</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-server-7.10-tomcat.zip.md5">MD5</a></td>
                                   <td>278Mo</td>
                                   <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-server-7.10-tomcat.zip">Download</a></td>
                                 </tr>
                                 <tr>
                                   <td>All</td>
                                   <td>nuxeo-server-7.10-tomcat-sdk.zip</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-server-7.10-tomcat-sdk.zip.md5">MD5</a></td>
                                   <td>942Mo</td>
                                   <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-server-7.10-tomcat-sdk.zip">Download</a></td>
                                 </tr>
                                 <tr>
                                   <td>All</td>
                                   <td>nuxeo-7.10-sources.zip</td>
+                                  <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-sources.zip.md5">MD5</a></td>
                                   <td>73Mo</td>
                                   <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/nuxeo-7.10-sources.zip">Download</a></td>
                                 </tr>
@@ -532,106 +565,226 @@
                           </table>
                       </div>
                     </li>
-                    <li>
-                      <div class="collapsible-header"><a>LTS 2014</a></div>
-                      <div class="collapsible-body">
-                        <table class="bordered">
-                            <thead>
-                                <tr>
-                                  <th data-field="os">OS</th>
-                                  <th data-field="name">Name</th>
-                                  <th data-field="size">Size</th>
-                                  <th data-field="download">Download</th>
-                                </tr>
-                              </thead>
 
-                              <tbody>
-                                <tr>
-                                  <td>All</td>
-                                  <td>nuxeo-6.0-setup.exe</td>
-                                  <td>376Mo</td>
-                                  <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-setup.exe">Download</a></td>
-                                </tr>
-                                <tr>
-                                  <td>Deb</td>
-                                  <td>nuxeo_6.0-01_all.deb</td>
-                                  <td>268Mo</td>
-                                  <td><a href="http://apt.nuxeo.org/pool/fasttracks/nuxeo_6.0-01_all.deb">Download</a></td>
-                                </tr>
-                                <tr>
-                                  <td>VM</td>
-                                  <td>nuxeo-6.0-vm.zip</td>
-                                  <td>1.2Go</td>
-                                  <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-vm.zip">Download</a></td>
-                                </tr>
-                                <tr>
-                                  <td>All</td>
-                                  <td>nuxeo-server-6.0-tomcat.zip</td>
-                                  <td>278Mo</td>
-                                  <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-server-6.0-tomcat.zip">Download</a></td>
-                                </tr>
-                                <tr>
-                                  <td>All</td>
-                                  <td>nuxeo-server-6.0-tomcat-sdk.zip</td>
-                                  <td>942Mo</td>
-                                  <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-server-6.0-tomcat-sdk.zip">Download</a></td>
-                                </tr>
-                                <tr>
-                                  <td>All</td>
-                                  <td>nuxeo-6.0-sources.zip</td>
-                                  <td>73Mo</td>
-                                  <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip">Download</a></td>
-                                </tr>
-                            </tbody>
-                          </table>
-                      </div>
-                    </li>
                 </ul>
         </div>
         </div>
       </div>
       <div id="notes" class="col s12">
-        <p><b>You will find here links to access release and upgrade notes </b>
+        <p><b>Older versions of Nuxeo Platform</b>
         <br/></p>
           <div class="row">
               <div class="col s12">
-                            <table class="bordered">
-                                <thead>
-                                    <tr>
-                                      <th data-field="version">Version</th>
-                                      <th data-field="upgrade">Upgrade Notes</th>
-                                      <th data-field="release">Release Notes</th>
-                                    </tr>
-                                  </thead>
+                Version<span class="marge9">Type</span><span class="marge9">Release date</span><span class="marge9">Expiration date</span></span>
+                <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><a>LTS 2014</a><span class="marge">Long Term Version</span><span class="marge">November 2014</span><span class="marge9">October 2017</span></div>
+                    <div class="collapsible-body">
+                        <ul class="collapsible" data-collapsible="accordion">
+                          <li>
+                            <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Live Connect for Google Drive and Dropbox</div>
+                            <div class="collapsible-body">
+                              <p>
+                              It is possible to reference in Nuxeo a file stored in Google Drive while providing a seamless integration with platform features:...
+                            </br></br>
+                            <span class="blue-text text-darken-2"><i>Integrations</i></span>
+                              </p>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="collapsible-header"><a><i class="material-icons">done</i></a>New Office Document Viewer</div>
+                            <div class="collapsible-body">
+                              <p>
+                              The current HTML Preview is replaced by the integration of pdf.js for office files. This offers more client side features (zoom, rotate, multi-page), better annotation handling, and be able to stream the content preview for large document.</p>
+                                <img class="materialboxed" data-caption="screenshot" width="100" src="images/document-viewer.png"/>
+                              </br></br>
+                              <span class="blue-text text-darken-2"><i>Web UI</i></span>
+                              </p>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Theme Removal</div>
+                            <div class="collapsible-body">
+                              <p>
+                              Nuxeo Theme Framework is removed for simplifying graphical appearance customization.
+                            </br></br>
+                            <span class="blue-text text-darken-2"><i>Web UI</i></span>
+                              </p>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="collapsible-header"><a>Downloads / Notes</a></div>
+                            <div class="collapsible-body">
+                              <table class="bordered">
+                                  <thead>
+                                      <tr>
+                                        <th data-field="os">OS</th>
+                                        <th data-field="name">Name</th>
+                                        <th data-field="name">Check</th>
+                                        <th data-field="size">Size</th>
+                                        <th data-field="download">Download</th>
+                                      </tr>
+                                    </thead>
 
-                                  <tbody>
-                                    <tr>
-                                      <td>8.3</td>
-                                      <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/8.3%20Release%20Notes.pdf">8.3 Release Notes.pdf</a></td>
-                                      <td><a href="http://cdn.nuxeo.com/nuxeo-8.3/8.3%20Upgrade%20Notes.pdf">8.3 Upgrade Notes.pdf</a></td>
-                                    </tr>
-                                    <tr>
-                                      <td>8.2</td>
-                                      <td><a href="http://cdn.nuxeo.com/nuxeo-8.2/8.2%20Release%20Notes.pdf">8.2 Release Notes.pdf</a></td>
-                                      <td><a href="http://cdn.nuxeo.com/nuxeo-8.2/8.2%20Upgrade%20Notes.pdf">8.2 Upgrade Notes.pdf</a></td>
-                                    </tr>
-                                    <tr>
-                                      <td>8.1</td>
-                                      <td><a href="http://cdn.nuxeo.com/nuxeo-8.1/8.1%20Release%20Notes.pdf">8.1 Release Notes.pdf</a></td>
-                                      <td><a href="http://cdn.nuxeo.com/nuxeo-8.1/8.1%20Upgrade%20Notes.pdf">8.1 Upgrade Notes.pdf</a></td>
-                                    </tr>
-                                    <tr>
-                                      <td>7.10</td>
-                                      <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/7.10%20Release%20Notes.pdf">7.10 Release Notes.pdf</a></td>
-                                      <td><a href="http://cdn.nuxeo.com/nuxeo-7.10/7.10%20Upgrade%20Notes.pdf">7.10 Upgrade Notes.pdf</a></td>
-                                    </tr>
-                                    <tr>
-                                      <td>6.0</td>
-                                      <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/7.10%20Release%20Notes.pdf">6.0 Release Notes.pdf</a></td>
-                                      <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/7.10%20Upgrade%20Notes.pdf">6.0 Upgrade Notes.pdf</a></td>
-                                    </tr>
+                                    <tbody>
+                                      <tr>
+                                        <td>All</td>
+                                        <td>6.0 Release Notes.pdf</td>
+                                        <td></td>
+                                        <td>63k</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/6.0%20Release%20Notes.pdf">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>All</td>
+                                        <td>6.0 Upgrade Notes.pdf</td>
+                                        <td></td>
+                                        <td>151k</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/6.0%20Upgrade%20Notes.pdf">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Win</td>
+                                        <td>nuxeo-6.0-setup.exe</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-setup.exe.md5">MD5</a></td>
+                                        <td>376Mo</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-setup.exe">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Deb</td>
+                                        <td>nuxeo_6.0-01_all.deb</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo_6.0-01_all.deb.md5">MD5</a></td>
+                                        <td>268Mo</td>
+                                        <td><a href="http://apt.nuxeo.org/pool/fasttracks/nuxeo_6.0-01_all.deb">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>VM</td>
+                                        <td>nuxeo-6.0-vm.zip</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-vm.zip.md5">MD5</a></td>
+                                        <td>1.2Go</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-vm.zip">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>All</td>
+                                        <td>nuxeo-server-6.0-tomcat.zip</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-server-6.0-tomcat.zip.md5">MD5</a></td>
+                                        <td>278Mo</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-server-6.0-tomcat.zip">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>All</td>
+                                        <td>nuxeo-server-6.0-tomcat-sdk.zip</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-server-6.0-tomcat-sdk.zip.md5">MD5</a></td>
+                                        <td>942Mo</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-server-6.0-tomcat-sdk.zip">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>All</td>
+                                        <td>nuxeo-6.0-sources.zip</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip.md5">MD5</a></td>
+                                        <td>73Mo</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip">Download</a></td>
+                                      </tr>
                                   </tbody>
-                            </table>
+                                </table>
+                            </div>
+                          </li>
+                        </ul>
+                      </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><a>LTS 2013</a><span class="marge">Long Term Version</span><span class="marge">November 2013</span><span class="marge9">October 2016</span><span class="new badge orange" data-badge-caption="Deprecated"></span></div>
+                    <div class="collapsible-body">
+                        <ul class="collapsible" data-collapsible="accordion">
+                          <li>
+                            <div class="collapsible-header"><a><i class="material-icons">done</i></a>Nuxeo Live Connect for Google Drive and Dropbox</div>
+                            <div class="collapsible-body">
+                              <p>
+                              It is possible to reference in Nuxeo a file stored in Google Drive while providing a seamless integration with platform features:...
+                            </br></br>
+                            <span class="blue-text text-darken-2"><i>Integrations</i></span>
+                              </p>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="collapsible-header"><a>Downloads / Notes</a></div>
+                            <div class="collapsible-body">
+                              <table class="bordered">
+                                  <thead>
+                                      <tr>
+                                        <th data-field="os">OS</th>
+                                        <th data-field="name">Name</th>
+                                        <th data-field="name">Check</th>
+                                        <th data-field="size">Size</th>
+                                        <th data-field="download">Download</th>
+                                      </tr>
+                                    </thead>
+
+                                    <tbody>
+                                      <tr>
+                                        <td>All</td>
+                                        <td>5.8 Release Notes.pdf</td>
+                                        <td></td>
+                                        <td>63k</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/76.0%20Release%20Notes.pdf">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>All</td>
+                                        <td>5.8 Upgrade Notes.pdf</td>
+                                        <td></td>
+                                        <td>151k</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/6.0%20Upgrade%20Notes.pdf">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Win</td>
+                                        <td>nuxeo-5.8-setup.exe</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-setup.exe.md5">MD5</a></td>
+                                        <td>376Mo</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-setup.exe">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Deb</td>
+                                        <td>nuxeo_5.8-01_all.deb</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo_6.0-01_all.deb.md5">MD5</a></td>
+                                        <td>268Mo</td>
+                                        <td><a href="http://apt.nuxeo.org/pool/fasttracks/nuxeo_6.0-01_all.deb">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>VM</td>
+                                        <td>nuxeo-5.8-vm.zip</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-vm.zip.md5">MD5</a></td>
+                                        <td>1.2Go</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-vm.zip">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>All</td>
+                                        <td>nuxeo-server-5.8-tomcat.zip</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-server-6.0-tomcat.zip.md5">MD5</a></td>
+                                        <td>278Mo</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-server-6.0-tomcat.zip">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>All</td>
+                                        <td>nuxeo-server-5.8-tomcat-sdk.zip</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-server-6.0-tomcat-sdk.zip.md5">MD5</a></td>
+                                        <td>942Mo</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-server-6.0-tomcat-sdk.zip">Download</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>All</td>
+                                        <td>nuxeo-5.8-sources.zip</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip.md5">MD5</a></td>
+                                        <td>73Mo</td>
+                                        <td><a href="http://cdn.nuxeo.com/nuxeo-6.0/nuxeo-6.0-sources.zip">Download</a></td>
+                                      </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                          </li>
+                        </ul>
+                      </p>
+                    </div>
+                </li>
+              </ul>
             </div>
       </div>
     </div>
@@ -711,7 +864,7 @@
 
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
-                        <div class="collapsible-header"><b>8.10</a><span class="marge">Long Term Support</span><span class="marge">November 2016</span> <span class="new badge green" data-badge-caption="8.10"></b></div>
+                        <div class="collapsible-header"><b>8.10</a><span class="marge">Long Term Support</span><span class="marge">November 2016</span> <span class="new badge green" data-badge-caption="8.10"></span></b></div>
                         <div class="collapsible-body">
                           <li>
                               <div class="collapsible-header"><a>8.4</a><span class="marge">Fast Track</span><span class="marge"><span class="marge">October 2016</span></span></div>
