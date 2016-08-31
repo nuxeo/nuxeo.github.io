@@ -16,7 +16,7 @@
         <li class="divider"></li>
         <li><a href="drive.html">Nuxeo Drive</a></li>
         <li class="divider"></li>
-        <li><a href="#!">Nuxeo Mobile</a></li>
+        <li><a href="mobile.html">Nuxeo Mobile</a></li>
       </ul>
       <ul id="dropdown-connectors" class="dropdown-content">
         <li><a href="#!">Salesforce</a></li>
@@ -94,6 +94,98 @@
                   </div>
               </div>
           </div>
+          <div class="row">
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s6"><a href="#releases">Releases</a></li>
+                <li class="tab col s6"><a href="#old">Old Versions</a></li>
+              </ul>
+            </div>
+
+            <div class="container">
+            <div id="releases" class="row">
+              <div class="row">
+                  <table class="bordered">
+                      <thead>
+                          <tr>
+                              <th data-field="version">Version <span class="marge">Type</span><span class="marge">Release date</span</th>
+                          </tr>
+                      </thead>
+                  </table>
+                  <ul class="collapsible" data-collapsible="accordion">
+                      <li>
+                          <div class="collapsible-header"><a>2.1.818</a><span class="marge">Beta</span><span class="marge">Aug, 18th</span><span class="new badge red" data-badge-caption="Last Beta version"></span></div>
+                          <div class="collapsible-body"><p><b>Bug fixes / improvements:</b></br>
+
+                              - Uninstallation with deleted root folder: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-629">Edit/View jira issue</a></br>
+                              - Fix conflicts window shows blank screen for long time: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-622">Edit/View jira issue</a></br>
+                              - Fix duplicate file synchronization with InterfaceError: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-599">Edit/View jira issue</a></br>
+                              - With no updater the systray in some case do not display: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-625">Edit/View jira issue</a></br>
+                              - Fix tracker with no updater: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-623">Edit/View jira issue</a></br>
+                              - Warn users when drive client doesn't have enough space on local file system when duplicating a conflicted file <i>NXDRIVE-615</i></br></p>
+                              <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.818">More Informations / Download</a></p>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="collapsible-header"><b><a>2.1.707</a><span class="marge">Prod</span><span class="marge">July, 7th</span><span class="new badge green" data-badge-caption="Last Production version"></span></b></div>
+                          <div class="collapsible-body"><p><b>Bug fixes / improvements:</b></br>
+
+                              - On File untrash, content is not updating according to local copy: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-618">Edit/View jira issue</a></br>
+                              - DirectEdit stop working on unexpected exception on cleanup: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-617">Edit/View jira issue</a></br>
+                              </p><a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.707">More Informations / Download</a></p></div>
+                      </li>
+                      <li>
+                          <div class="collapsible-header"><a>2.1.623</a><span class="marge">Prod<span class="marge">June, 23rd</span></span></div>
+                          <div class="collapsible-body"><p><b>Bug fixes / improvements:</b></br>
+
+                              - Add MS office temp files support:<i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-611">Edit/View jira issue</a></br>
+                              - ImageInfo errors when sync'ing several pictures at the same time: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-608">Edit/View jira issue</a></br>
+                              - Replace file don't update remote_id: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-603">Edit/View jira issue</a></br>
+                              </p><a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.623">More Informations / Download</a></p></div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+            <div id="old" class="col s12">
+              <div class="col s12 m12">
+                  <table class="bordered">
+                      <thead>
+                          <tr>
+                              <th data-field="version">Version <span class="marge9">Release date</span></th>
+                          </tr>
+                      </thead>
+                  </table>
+                  <ul class="collapsible" data-collapsible="accordion">
+                      <li>
+                          <div class="collapsible-header">2.1.608<span class="marge9">June, 8th</span></div>
+                          <div class="collapsible-body"><p></br>
+                            <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.608">More Informations / Download</a></p>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="collapsible-header">2.1.526<span class="marge9">May, 26th</span></div>
+                          <div class="collapsible-body"><p></br>
+                            <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.526">More Informations / Download</a></p>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="collapsible-header">2.1.406<span class="marge9">April, 6th</span></div>
+                          <div class="collapsible-body"><p></br>
+                            <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.406">More Informations / Download</a></p>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="collapsible-header">2.1.316<span class="marge9">March, 16th</span></div>
+                          <div class="collapsible-body"><p></br>
+                            <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.316">More Informations / Download</a></p>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+
           <div class="section">
                     <h4>Releases/ Downloads</h3>
                         <!--   Icon Section   -->
@@ -111,12 +203,12 @@
                                         <div class="collapsible-header"><a>2.1.818</a><span class="marge">Beta</span><span class="new badge red" data-badge-caption="Last Beta version"></span></div>
                                         <div class="collapsible-body"><p><b>Bug fixes / improvements:</b></br>
 
-                                            - Uninstallation with deleted root folder: <i>NXDRIVE-629</i></br>
-                                            - Fix conflicts window shows blank screen for long time: <i>NXDRIVE-622</i></br>
-                                            - Fix duplicate file synchronization with InterfaceError: <i>NXDRIVE-599</i></br>
-                                            - With no updater the systray in some case do not display: <i>NXDRIVE-625</i></br>
-                                            - Fix tracker with no updater: <i>NXDRIVE-623</i></br>
-                                            - Warn users when drive client doesn't have enough space on local file system when duplicating a conflicted file <i>NXDRIVE-615</i></br>
+                                            - Uninstallation with deleted root folder: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-629">Edit/View jira issue</a></br>
+                                            - Fix conflicts window shows blank screen for long time: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-622">Edit/View jira issue</a></br>
+                                            - Fix duplicate file synchronization with InterfaceError: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-599">Edit/View jira issue</a></br>
+                                            - With no updater the systray in some case do not display: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-625">Edit/View jira issue</a></br>
+                                            - Fix tracker with no updater: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-623">Edit/View jira issue</a></br>
+                                            - Warn users when drive client doesn't have enough space on local file system when duplicating a conflicted file <i>NXDRIVE-615</i></br></p>
                                             <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.818">More Informations / Download</a></p>
                                         </div>
                                     </li>
@@ -124,46 +216,49 @@
                                         <div class="collapsible-header"><b><a>2.1.707</a><span class="marge">Production</span><span class="new badge green" data-badge-caption="Last Production version"></span></b></div>
                                         <div class="collapsible-body"><p><b>Bug fixes / improvements:</b></br>
 
-                                            - On File untrash, content is not updating according to local copy: <i>NXDRIVE-618</i></br>
-                                            - DirectEdit stop working on unexpected exception on cleanup: <i>NXDRIVE-617</i></br>
-                                            <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.707">More Informations / Download</a></p></div>
+                                            - On File untrash, content is not updating according to local copy: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-618">Edit/View jira issue</a></br>
+                                            - DirectEdit stop working on unexpected exception on cleanup: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-617">Edit/View jira issue</a></br>
+                                            </p><a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.707">More Informations / Download</a></p></div>
                                     </li>
                                     <li>
                                         <div class="collapsible-header"><a>2.1.623</a><span class="marge">Production</span></div>
                                         <div class="collapsible-body"><p><b>Bug fixes / improvements:</b></br>
 
-                                            - Add MS office temp files support: <i>NXDRIVE-611</i></br>
-                                            - ImageInfo errors when sync'ing several pictures at the same time: <i>NXDRIVE-608</i></br>
-                                            - Replace file don't update remote_id: <i>NXDRIVE-603</i></br>
-                                            <a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.623">More Informations / Download</a></p></div>
+                                            - Add MS office temp files support:<i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-611">Edit/View jira issue</a></br>
+                                            - ImageInfo errors when sync'ing several pictures at the same time: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-608">Edit/View jira issue</a></br>
+                                            - Replace file don't update remote_id: <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-603">Edit/View jira issue</a></br>
+                                            </p><a href="https://github.com/nuxeo/nuxeo-drive/releases/tag/release-2.1.623">More Informations / Download</a></p></div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col s12 m10">
+                            <div class="col s12 m12">
                                 <h4>Nuxeo Drive Roadmap</h4>
                                 <ul class="collapsible" data-collapsible="accordion">
                                     <li>
-                                        <div class="collapsible-header">Application update doesn't always work under Windows<a href="https://jira.nuxeo.com/browse/NXDRIVE-607"><i class="material-icons">mode_edit</i></a> <span class="new badge green" data-badge-caption="2.1+"></div>
-                                        <div class="collapsible-body"><p>blablablablabl</p>
+                                        <div class="collapsible-header">Application update doesn't always work under Windows <i class="material-icons">note_add</i><span class="new badge green" data-badge-caption="2.1+"></div>
+                                        <div class="collapsible-body"><p>
+                                          <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-607">Edit/View jira issue</a>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="collapsible-header"> Use the generic JSP to acquire a token <a href="https://jira.nuxeo.com/browse/NXROADMAP-600"><i class="material-icons">mode_edit</i></a> <span class="new badge green" data-badge-caption="2.1+"></div>
-                                        <div class="collapsible-body"><p>Taking advantage of NXP-19752, and falling back to the current system using drive_login.jsp if acquire_token.jsp is unavailable.</p>
+                                        <div class="collapsible-header"> Use the generic JSP to acquire a token  <i class="material-icons">note_add</i><span class="new badge green" data-badge-caption="2.1+"></div>
+                                        <div class="collapsible-body"><p>Taking advantage of NXP-19752, and falling back to the current system using drive_login.jsp if acquire_token.jsp is unavailable.
+                                          <i class="material-icons">mode_edit</i><a href="https://jira.nuxeo.com/browse/NXDRIVE-600">Edit/View jira issue</a>
+                                          </p>
                                         </div>
                                     </li>
                                 </ul>
                                 </br>
                                 <ul class="collapsible" data-collapsible="accordion">
                                     <li>
-                                        <div class="collapsible-header">File System Decoration <a href="https://jira.nuxeo.com/browse/NXROADMAP-173"><i class="material-icons">mode_edit</i></a> <span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                                        <div class="collapsible-header">File System Decoration  <i class="material-icons">note_add</i><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
                                         <div class="collapsible-body"><p>Decoration of the file system so as to represent the state of the documents.</p>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="collapsible-header">Push notifications for Nuxeo Drive and Mobile<a href="https://jira.nuxeo.com/browse/NXROADMAP-254"><i class="material-icons">mode_edit</i></a><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                                        <div class="collapsible-header">Push notifications for Nuxeo Drive and Mobile<i class="material-icons">note_add</i><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
                                         <div class="collapsible-body"><p>Nuxeo offers a notification service to its customers. Notifications are delivered via Mobile Applications and Nuxeo Drive and can be used for various use cases:</br>
                                             - tasks notifications</br>
                                             - collaborative information (someone working on someone else document, comments, ...)</br>
@@ -171,7 +266,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="collapsible-header">Nuxeo Drive: Upload Resume<a href="https://jira.nuxeo.com/browse/NXROADMAP-207"><i class="material-icons">mode_edit</i></a><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                                        <div class="collapsible-header">Nuxeo Drive: Upload Resume<i class="material-icons">note_add</i><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
                                         <div class="collapsible-body"><p>Drive is able to resume the upload of a binary content. This option is interesting in case of big files or bad network conditions.</p>
                                         </div>
                                     </li>
@@ -179,19 +274,19 @@
                                 </br>
                                 <ul class="collapsible" data-collapsible="accordion">
                                     <li>
-                                        <div class="collapsible-header">Nuxeo Drive: Dataviz dashboard / monitoring <a href="https://jira.nuxeo.com/browse/NXROADMAP-312"><i class="material-icons">mode_edit</i></a> <span class="new badge orange" data-badge-caption="Ideas"></div>
+                                        <div class="collapsible-header">Nuxeo Drive: Dataviz dashboard / monitoring <i class="material-icons">note_add</i><span class="new badge orange" data-badge-caption="Ideas"></div>
                                         <div class="collapsible-body"><p>Dataviz dashboard / monitoring to know:</br>
                                             - Who downloads/uploads how much documents</br>
                                             - Real time view of synchronisations</br></p>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="collapsible-header">Nuxeo Drive: Implement some bitrate control<a href="https://jira.nuxeo.com/browse/NXROADMAP-311"><i class="material-icons">mode_edit</i></a><span class="new badge orange" data-badge-caption="Ideas"></div>
+                                        <div class="collapsible-header">Nuxeo Drive: Implement some bitrate control<i class="material-icons">note_add</i><span class="new badge orange" data-badge-caption="Ideas"></div>
                                         <div class="collapsible-body"><p>Implement some kind of control /limit for downloading / uploading synchronisations.</p>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="collapsible-header">Nuxeo Drive Importer<a href="https://jira.nuxeo.com/browse/NXROADMAP-264"><i class="material-icons">mode_edit</i></a><span class="new badge orange" data-badge-caption="Ideas"></div>
+                                        <div class="collapsible-header">Nuxeo Drive Importer<i class="material-icons">note_add</i><span class="new badge orange" data-badge-caption="Ideas"></div>
                                         <div class="collapsible-body"><p>A third feature (after documents syncing and live edit) is added to Nuxeo Drive: Document Import. User can easily benefit from a robust and scalable importer.</p>
                                         </div>
                                     </li>
