@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title>Adobe CC - Connector</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+            <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </head>
+    <body>
+      <ul id="dropdown-products" class="dropdown-content">
+        <li><a href="nuxeoplatform.html">Nuxeo Platform</a></li>
+        <li class="divider"></li>
+        <li><a href="drive.html">Nuxeo Drive</a></li>
+        <li class="divider"></li>
+        <li><a href="mobile.html">Nuxeo Mobile</a></li>
+      </ul>
+      <ul id="dropdown-connectors" class="dropdown-content">
+        <li><a href="adobecc.html">Adobe CC</a></li>
+      </ul>
+
+      <ul id="dropdown-tools" class="dropdown-content">
+        <li><a href="apiplayground.html">API Playground</a></li>
+      </ul>
+
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Nuxeo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="index.html">Home</a></li>
+              <li><a class="dropdown-button" href="#!" data-activates="dropdown-products">Products<i class="material-icons right">arrow_drop_down</i></a></li>
+              <li><a class="dropdown-button" href="#!" data-activates="dropdown-connectors">Connectors<i class="material-icons right">arrow_drop_down</i></a></li>
+              <li><a class="dropdown-button" href="#!" data-activates="dropdown-tools">Tools<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+                <div class="section">
+                    <h2 class="header center blue-text">Adobe CC connector</h2>
+                    <div class="row center">
+                        <h5 class="header col s12 light">The Nuxeo Adobe CC Connector addon enables designers to import assets into an InDesign, Photoshop or Illustrator document directly from Nuxeo repository.</h5>
+                        <h5> <span class="red-text red-darken-2"><i class="material-icons">info_outline</i>Non open source project.</span></h5>
+                    </div>
+                </div>
+
+        </div>
+        <div class="container">
+            <div class="section">
+                <h4 class="center">Useful links</h4>
+                <!--   Icon Section   -->
+                <div class="row">
+                    <div class="col s12 m4">
+
+                        <div class="icon-block">
+                            <h2 class="center light-blue-text"><i class="material-icons"><a href="  https://jira.nuxeo.com/browse/NXDRIVE/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">settings</i></a></h2>
+                            <h5 class="center"><a class="indigo-text" href="https://jira.nuxeo.com/browse/ADB/?selectedTab=com.atlassian.jira.jira-projects-plugin:issues-panel">JIRA project</a></h5>
+
+                            <p class="light center">Link to the jira project</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center light-blue-text"><i class="material-icons"><a href="https://doc.nuxeo.com/display/USERDOC/Nuxeo+Drive#NuxeoDrive-InstallingNuxeoDriveonYourComputer">info</i></a></h2>
+                            <h5 class="center"><a class="indigo-text" href="https://doc.nuxeo.com/display/USERDOC/Nuxeo+Drive#NuxeoDrive-InstallingNuxeoDriveonYourComputer">Set up Doc</a></h5>
+
+                            <p class="light center">Set up documentation about Adobe CC connector.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center light-blue-text"><i class="material-icons"><a href="https://doc.nuxeo.com/display/USERDOC/Nuxeo+Drive#NuxeoDrive-ConfiguringNuxeoDrive">toc</i></a></h2>
+                            <h5 class="center"><a class="indigo-text" href="https://doc.nuxeo.com/display/USERDOC/Nuxeo+Drive#NuxeoDrive-ConfiguringNuxeoDrive">Configuration Doc</a></h5>
+
+                            <p class="light center">Configuration documentation about Adobe CC connector.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+<div class="row">
+  <div class="container">
+  <div class="col s12">
+      <h4 class="center">Releases</h4>
+      </br>
+      <div class="row">
+          <div class="col s12">
+             Version<span class="marge9">Release date</span></span>
+              <ul class="collapsible" data-collapsible="accordion">
+                  <li>
+
+                      <div class="collapsible-header"><b><a>1.0</a><span class="marge9">July 2016</span></span><span class="new badge green" data-badge-caption="Latest version"></span></b></div>
+                      <div class="collapsible-body">
+                          <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>http and https connection support</div>
+                              <div class="collapsible-body"><p>https and http are supported for the connection part.
+                              </p>
+                              </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><a><i class="material-icons">done</i></a>Information on assets listing view</div>
+                              <div class="collapsible-body"><p>Document listing view: </br>
+                                  - Search options:</br>
+                                       - On document title </br>
+                                       - On folder title: retrieve all children of returned folders </br>
+
+                                  - Document card view on the listing:  </br>
+                                       - Customised information: format and modification date. Later we want the user to be able to configure this fields through a configuration file </br>
+                                       - Green checkbox added when the document is already placed on the current project (works only for Photoshop so far)</br>
+                                </p>
+                              </div>
+                            </li>
+
+                            <li>
+                              <div class="collapsible-header"><a><i class="material-icons">done</i></a>Document View information</div>
+                              <div class="collapsible-body"><p>Asset view information / actions</br>
+                                - Thumbnail </br>
+                               - Filename with a link: it enables the user to directly open the document on the nuxeo instance </br>
+                               - Same customised fields than on the document listing view </br>
+                               - Actions:  </br>
+                                    - In Photoshop, place update or delete pictures or psd projects </br>
+                                    - In Indesign and Illustrator place pictures. Update and manage INDD projects are in progress. </br>
+
+                          Updated documents in nuxeo instance or in the adobe application will be replicated everywhere.
+                              </p>
+                              </div>
+                            </li>
+                          </ul>
+                        </p>
+                      </div>
+                  </li>
+                  </ul>
+      </div>
+      </div>
+    </div>
+    <div class="col s12">
+            <h4 class="center">Ressources</h4>
+      <br/></p>
+        <div class="row">
+            <div class="col s12">
+              <table>
+                <thead>
+                  <tr>
+                      <th data-field="version">Verion</th>
+                      <th data-field="marketplace">Marketplace package</th>
+                      <th data-field="client">Client side zip</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>1.0</td>
+                    <td><a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-cc-connector-marketplace">Download</a></td>
+                    <td><a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-cc-connector-marketplace">Download</a></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        </div>
+    </div>
+
+</div>
+</div>
+        <div class="container">
+            <div class="section">
+                <h4 class="center">Adobe CC Connector Roadmap</h4>
+             </p></p>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header">Manage update of AI and INDD files<i class="material-icons">done</i></a></i><span class="new badge red" data-badge-caption="1.1"></div>
+                        <div class="collapsible-body">
+                          <p>
+                          </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Photoshop: add options to change version of a picture while updating<i class="material-icons">note_add</i></a></i><span class="new badge red" data-badge-caption="1.1"></div>
+                        <div class="collapsible-body">
+                          <p>
+                          </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Handle authentication page<i class="material-icons">note_add</i></a></i><span class="new badge red" data-badge-caption="1.1"></div>
+                        <div class="collapsible-body">
+                          <p>
+                          </p>
+                        </div>
+                    </li>
+
+                </ul>
+                </br>
+
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header">Tree browsing versus search<i class="material-icons">note_add</i></a> <span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                        <div class="collapsible-body"><p>
+                        </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">Workflow management<i class="material-icons">note_add</i></a><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                        <div class="collapsible-body">
+                          <p>
+                          </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">New tab: "My tasks"<i class="material-icons">note_add</i></a><span class="new badge blue" data-badge-caption="Soon Scheduled"></div>
+                        <div class="collapsible-body">
+                          <p>
+                          </p>
+                        </div>
+                    </li>
+                </ul>
+                </br>
+            </div>
+
+
+        <div class="container">
+        <div class="col s12">
+          <p><br/><h4 class="center">Activity</h4>
+          </p>
+            <div class="row">
+                <div class="col s12">
+                  <p><i Tiny class="material-icons">code</i>59 commits</a>
+                  <span class="marge"><i Tiny class="material-icons">shuffle</i>3 branches</a></span>
+                  <span class="marge"><i Tiny class="material-icons">label</i>36 releases</a></span>
+                  <span class="marge"> <i Tiny class="material-icons">supervisor_account</i>3 contributors</a></span>
+                </p>
+              </div>
+            </br></br>
+              <h5 class="center">Main Contributors</h5>  andreinechaev, jcarsique
+              <div class="row">
+                  <div class="col s12 m4">
+                      <div class="card blue darken-4">
+                          <div class="card-content white-text">
+                              <span class="card-title"><a href="https://github.com/andreinechaev"><div class="chip"><img src="images/avatar_andreinechaev.jpeg" alt="Contact Person">andreinechaev</div></a></span>
+                              <p>55 commits, #1</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col s12 m4">
+                      <div class="card blue darken-4">
+                          <div class="card-content white-text">
+                              <span class="card-title"><a href="https://github.com/jcarsique"><div class="chip"><img src="images/avatar_jcarsique.jpeg" alt="Contact Person">jcar</div></a></span>
+                              <p>1 commit, #2</p>
+                          </div>
+                      </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+        <footer class="page-footer blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Nuxeo - who we are</h5>
+                        <p class="grey-text text-lighten-4">Nuxeo customers come to us to solve their content, asset and information management challenges. They use our modern and agile products and solutions to quickly develop flexible and customizable applications that meet their most difficult business requirements.</p>
+
+
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Products</h5>
+                        <ul>
+                            <li><a class="white-text" href="drive.html">Nuxeo Platform</a></li>
+                            <li><a class="white-text" href="drive.html">Drive</a></li>
+                            <li><a class="white-text" href="mobile.html">Mobile</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Connectors</h5>
+                        <ul>
+                            <li><a class="white-text" href="salesforce.html">Salesforce</a></li>
+                            <li><a class="white-text" href="adobecs.html">Adobe CS</a></li>
+                            <li><a class="white-text" href="liveconnect.html">Live Connect</a></li>
+                            <li><a class="white-text" href="vision.html">Nuxeo Vision</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                </div>
+            </div>
+        </footer>
+
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+
+    </body>
+</html>
