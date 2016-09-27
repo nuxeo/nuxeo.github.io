@@ -69,17 +69,17 @@
     </p>
     <p class="remove-bottom" id="site-title">
       <a href="./index.html">
-        <span class="version-number">8.3</span> Release Notes
+        <span class="version-number">8.4</span> Release Notes
       </a>
     </p>
     <div id="welcome">
       <div style="clear: both;"></div>
       <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
       <H2>Environment Information Dumping with nuxeoctl connect-report</H2>
-      <p><span class="new release">8.3</span>A new command has been added to nuxeoctl, <code>nuxeoctl connect-report</code>. This new command gathers information that can be useful to understand the environment in which a bug or a problem can be reproduced. This command was added in an effort to keep improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via JVM MBeans and more. For now this feature is delivered via a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report" target="_blank">Nuxeo Package</a> that needs to be installed on the Nuxeo server.</p>
+      <p><span class="release">8.3</span>A new command has been added to nuxeoctl, <code>nuxeoctl connect-report</code>. This new command gathers information that can be useful to understand the environment in which a bug or a problem can be reproduced. This command was added in an effort to keep improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via JVM MBeans and more. For now this feature is delivered via a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report" target="_blank">Nuxeo Package</a> that needs to be installed on the Nuxeo server.</p>
 
       <H2>MarkLogic as a New Storage Backend</H2>
-      <p><span class="new release">8.3</span>A new implementation of the DBS interface (NoSQL) has been done for the MarkLogic database. It is available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-marklogic-connector" target="_blank">as a Nuxeo Package</a> on the Nuxeo Marketplace.</p>
+      <p><span class="release">8.3</span>A new implementation of the DBS interface (NoSQL) has been done for the MarkLogic database. It is available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-marklogic-connector" target="_blank">as a Nuxeo Package</a> on the Nuxeo Marketplace.</p>
 
       <h2>MongoDB 3.2</h2>
       <p>
@@ -87,7 +87,7 @@
       </p>
        <h2>PostgreSQL 9.5</h2>
       <p>
-        <span class="release new">8.3</span> PostgreSQL 9.5 is now supported as a storage backend.
+        <span class="release">8.3</span> PostgreSQL 9.5 is now supported as a storage backend.
       </p>
       <h2>S3 Configuration via Extension Point</h2>
       <p>
@@ -157,7 +157,7 @@
         <li>Wait for indexing and perform an index refresh</li>
       </ul>
       <H2>Full-Text Indexing Optimisation</H2>
-      <p><span class="release new">8.3</span>We optimized the indexing flow by using ES bulk indexing features, when full-text indexation is disabled at the repository level. Number of works queued is now divided by two.
+      <p><span class="release">8.3</span>We optimized the indexing flow by using ES bulk indexing features, when full-text indexation is disabled at the repository level. Number of works queued is now divided by two.
       </p>
 
       <h2>Allow Separate Repository DDL Generation</h2>
@@ -192,7 +192,7 @@
         in the platform (directories, quartz, JPA persistence).</p>
 
         <h2>New nuxeoctl Commands to Register Instances</h2>
-        <p><span class="release new">8.3</span>Some new commands are available:</p>
+        <p><span class="release">8.3</span>Some new commands are available:</p>
 
 
         <pre>
@@ -241,9 +241,9 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
         process is killed, job will be restarted as the system is transactional.
       </p>
       <h2>User Manager Cache is Back</h2>
-      <p><span class="release new">8.3</span>A cache is now set up for the UserManager by default. It was not the case any more on LTS 2015 for users persisted in an SQL directory.</p>
+      <p><span class="release">8.3</span>A cache is now set up for the UserManager by default. It was not the case any more on LTS 2015 for users persisted in an SQL directory.</p>
       <h2>Nuxeo Importer</h2>
-      <h3>Non-Bulk Mode Available</h3><p><span class="release new">8.3</span>
+      <h3>Non-Bulk Mode Available</h3><p><span class="release">8.3</span>
       With the following contribution you can now configure the importer to work in non-bulk mode, which is a bit slower but allows regular Work instances to be created and directed to specific queues:</p>
 
 <pre>
@@ -255,7 +255,7 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
 </pre>
 
       <h3>Nuxeo Importer Without ES Indexing</h3>
-      <p><span class="release new">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
+      <p><span class="release">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
 
       <h2>Web App Optimizations</h2>
       <p>
