@@ -20,8 +20,8 @@
                         ==================================================
                     -->
 <meta charset="utf-8" />
-<title>Nuxeo Platform 8.3 - New and Noteworthy</title>
-<meta content="Release notes for Nuxeo Platform 8.3" name="description" />
+<title>Nuxeo Platform 8.4 - New and Noteworthy</title>
+<meta content="Release notes for Nuxeo Platform 8.4" name="description" />
 <meta content="Nuxeo" name="author" />
 <!--
                         Mobile Specific Metas
@@ -69,7 +69,7 @@
     </p>
     <p class="remove-bottom" id="site-title">
       <a href="./index.html">
-        <span class="version-number"> 8.3 </span> Release Notes
+        <span class="version-number"> 8.4 </span> Release Notes
       </a>
     </p>
     <div id="welcome">
@@ -103,11 +103,11 @@
       <h2>REST Endpoint Evolutions</h2>
 
       <h3>New Token Endpoint</h3><p>
-      <span class="release new">8.3</span>An endpoint has been added to be able to fetch and delete via the REST API tokens for the Nuxeo Authentication module.
+      <span class="release">8.3</span>An endpoint has been added to be able to fetch and delete via the REST API tokens for the Nuxeo Authentication module.
       </p>
 
       <h3>New Search Endpoint</h3><p>
-      <span class="release new">8.3</span>A new <code>search</code> endpoint has been added to be able to be able to perform searches as well as saving and fetching them. The <code>query</code> endpoint is now deprecated.
+      <span class="release">8.3</span>A new <code>search</code> endpoint has been added to be able to be able to perform searches as well as saving and fetching them. The <code>query</code> endpoint is now deprecated.
       </p>
 
       <h3>New Content-Type Header</h3>
@@ -119,7 +119,7 @@ application/json; nuxeo-entity=documents
 </pre>
 
       <h3>Client-Side Localisation</h3>
-      <p><span class="release new">8.3</span>The client is now responsible for sending the locale it is interested in via a dedicated request header.</p>
+      <p><span class="release">8.3</span>The client is now responsible for sending the locale it is interested in via a dedicated request header.</p>
 
       <h3>Fetching Members of Group object</h3>
       <p>
@@ -192,7 +192,7 @@ application/json; nuxeo-entity=documents
       <h2>Elasticsearch Evolutions</h2>
 
       <h3>Elasticsearch Crawl API </h3>
-      <p><span class="release new">8.3</span>The <code>ElasticSearchService</code> now exposes the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/search-request-scroll.html" target="_blank">Elasticsearch scroll API</a> allowing to process large amounts of data.</p>
+      <p><span class="release">8.3</span>The <code>ElasticSearchService</code> now exposes the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/search-request-scroll.html" target="_blank">Elasticsearch scroll API</a> allowing to process large amounts of data.</p>
       <p>You can use it this way for instance:</p>
       <pre>
 ElasticSearchService ess = Framework.getService(ElasticSearchService.class);
@@ -236,7 +236,7 @@ while (!batchOfDocs.isEmpty()) {
       </p>
 
      <h2>NXQL Evolutions</h2>
-      <h3><span class="release new">8.3</span>Fetching Documents from Specific Fields</h3>
+      <h3><span class="release">8.3</span>Fetching Documents from Specific Fields</h3>
      <p>When calling <code>CoreSession.query</code>, doing a <code>SELECT * FROM Document WHERE ...</code> is doing <code>SELECT ecm:uuid FROM Document WHERE ...</code> and returning the documents whose ids are matching. There are additional use cases of returning documents with other ids. Ex:</p>
      <ol>
       <li>Direct page provider with <code>SELECT relation:target FROM DefaultRelation WHERE relation:source = ?</code></li>
@@ -246,11 +246,11 @@ while (!batchOfDocs.isEmpty()) {
       <h2>CMIS Evolutions</h2>
 
       <h3>Proxies Are Visible through CMIS</h3>
-      <p><span class="release new">8.3</span>Now when the system property <code>org.nuxeo.cmis.proxies=true</code> (default value) then proxies are visible like any other document using CMIS.
+      <p><span class="release">8.3</span>Now when the system property <code>org.nuxeo.cmis.proxies=true</code> (default value) then proxies are visible like any other document using CMIS.
       </p>
 
       <h3>CMIS Test Feature Can Be Used from Third-Party Bundle</h3>
-      <p><span class="release new">8.3</span>It is now possible to have third-party modules use the <code>CmisFeatureSessionHttp</code> feature to run their own tests in the context of a preconfigured CMIS test server.</p>
+      <p><span class="release">8.3</span>It is now possible to have third-party modules use the <code>CmisFeatureSessionHttp</code> feature to run their own tests in the context of a preconfigured CMIS test server.</p>
 
       <h2>Authentication Prompt</h2>
       <p>
@@ -285,10 +285,10 @@ while (!batchOfDocs.isEmpty()) {
       </p>
 
       <h2>Sample Project for Benchmarking Nuxeo Platform with Gatling</h2>
-      <p><span class="release new">8.3</span>For people who need to write and launch Gatling scenarios for an addon or any Nuxeo project, a Gatling sample is available in the <a href="https://github.com/nuxeo/nuxeo-marketplace-sample/tree/master/ftest/gatling" target="blank">Nuxeo marketplace sample project</a>. Note that Nuxeo has switched to Gatling as it was better suited to reach the level of performances required for benchmarking the Nuxeo Platform in extremely high stress conditions: multiple thousands of requests per seconds.</p>
+      <p><span class="release">8.3</span>For people who need to write and launch Gatling scenarios for an addon or any Nuxeo project, a Gatling sample is available in the <a href="https://github.com/nuxeo/nuxeo-marketplace-sample/tree/master/ftest/gatling" target="blank">Nuxeo marketplace sample project</a>. Note that Nuxeo has switched to Gatling as it was better suited to reach the level of performances required for benchmarking the Nuxeo Platform in extremely high stress conditions: multiple thousands of requests per seconds.</p>
 
       <h2>Random Generation of Documents with Nuxeo Platform Importer</h2>
-      <p><span class="release new">8.3</span>Using the <code>/randomImporter</code> endpoint, the bulk document importer already offered the possibility to generate random documents so as to fill the repository, typically for benchmark purposes. The number of documents that are generated in the various folders is now random, for more realistic load tests. It follows this rule:</p>
+      <p><span class="release">8.3</span>Using the <code>/randomImporter</code> endpoint, the bulk document importer already offered the possibility to generate random documents so as to fill the repository, typically for benchmark purposes. The number of documents that are generated in the various folders is now random, for more realistic load tests. It follows this rule:</p>
       <ul>
       <li>10% folders with a big number of files (~= 5000)</li>
       <li>10% folders with 1 file</li>
@@ -296,7 +296,7 @@ while (!batchOfDocs.isEmpty()) {
       </ul>
 
       <h2>Explorer Addon Evolution</h2>
-      <p> <span class="release new">8.3</span>The Explorer plugin has been greatly improved: better search features, cleaner look &amp; feel. We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We have also extended the XML generation feature to help developers have a working sample. Check it out on <a href="http://explorer.nuxeo.com/" target="_blank">explorer.nuxeo.com</a> or by installing the <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/platform-explorer" target="_blank">Platform Explorer Nuxeo Package</a>.</p>
+      <p> <span class="release">8.3</span>The Explorer plugin has been greatly improved: better search features, cleaner look &amp; feel. We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We have also extended the XML generation feature to help developers have a working sample. Check it out on <a href="http://explorer.nuxeo.com/" target="_blank">explorer.nuxeo.com</a> or by installing the <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/platform-explorer" target="_blank">Platform Explorer Nuxeo Package</a>.</p>
 
       <h2>JSF Widgets Evolutions</h2>
       <h3>
@@ -311,10 +311,10 @@ while (!batchOfDocs.isEmpty()) {
       </p>
 
       <h2>No More Selenium Tests </h2>
-      <p><span class="release new">8.3</span>Selenium has been fully replaced by Webdriver for the functional tests of the Nuxeo Platform and is no longer used.</p>
+      <p><span class="release">8.3</span>Selenium has been fully replaced by Webdriver for the functional tests of the Nuxeo Platform and is no longer used.</p>
 
       <h2>Miscellaneous</h2>
-      <p><span class="release new">8.3</span>The UIDSequencer interface now supports long integer.
+      <p><span class="release">8.3</span>The UIDSequencer interface now supports long integer.
       </p>
     </div>
   </div>
