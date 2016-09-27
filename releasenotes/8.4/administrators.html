@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+    <html class="ie ie6" lang="en">
+    <![endif]-->
+<!--[if IE 7 ]>
+        <html class="ie ie7" lang="en">
+        <![endif]-->
+<!--[if IE 8 ]>
+            <html class="ie ie8" lang="en">
+            <![endif]-->
+<!--[if (gte IE 9)|!(IE)]>
+                <!
+            -->
+<html lang="en">
+<!--
+                <![endif]-->
+<head>
+<!--
+                        Basic Page Needs
+                        ==================================================
+                    -->
+<meta charset="utf-8" />
+<title>Nuxeo Platform 8.3 - New and Noteworthy</title>
+<meta content="Nuxeo Platform 8.3 release notes for administrators" name="description" />
+<meta content="Nuxeo" name="author" />
+<!--
+                        Mobile Specific Metas
+                        ==================================================
+                    -->
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
+<!--
+                        CSS
+                        ==================================================
+                    -->
+<link href="../../stylesheets/base.css" rel="stylesheet" />
+<link href="../../stylesheets/skeleton.css" rel="stylesheet" />
+<link href="../../stylesheets/layout.css" rel="stylesheet" />
+<link href="../../stylesheets/release_notes.css" rel="stylesheet" />
+<link href="../../stylesheets/lightbox.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+                        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+                        </script>
+                    <![endif]-->
+<link href="http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700" rel="stylesheet" type="text/css" />
+<style>
+#xnav-footer {
+  margin-top: 0px !important;
+}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js">
+
+</script>
+<script charset="utf-8" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" type="text/javascript">
+
+</script>
+<!--
+                        Favicons
+                        ==================================================
+                    -->
+<link href="images/favicon.ico" rel="shortcut icon" />
+<link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
+<link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+<link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+</head>
+<body>
+  <div class="container" id="mainContainer">
+    <p class="backbutton">
+      <a href="./index.html"> ← Back to Index </a>
+    </p>
+    <p class="remove-bottom" id="site-title">
+      <a href="./index.html">
+        <span class="version-number">8.3</span> Release Notes
+      </a>
+    </p>
+    <div id="welcome">
+      <div style="clear: both;"></div>
+      <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
+      <H2>Environment Information Dumping with nuxeoctl connect-report</H2>
+      <p><span class="new release">8.3</span>A new command has been added to nuxeoctl, <code>nuxeoctl connect-report</code>. This new command gathers information that can be useful to understand the environment in which a bug or a problem can be reproduced. This command was added in an effort to keep improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via JVM MBeans and more. For now this feature is delivered via a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report" target="_blank">Nuxeo Package</a> that needs to be installed on the Nuxeo server.</p>
+
+      <H2>MarkLogic as a New Storage Backend</H2>
+      <p><span class="new release">8.3</span>A new implementation of the DBS interface (NoSQL) has been done for the MarkLogic database. It is available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-marklogic-connector" target="_blank">as a Nuxeo Package</a> on the Nuxeo Marketplace.</p>
+
+      <h2>MongoDB 3.2</h2>
+      <p>
+        <span class="release">8.2</span> MongoDB 3.2 is now supported as a storage backend.
+      </p>
+       <h2>PostgreSQL 9.5</h2>
+      <p>
+        <span class="release new">8.3</span> PostgreSQL 9.5 is now supported as a storage backend.
+      </p>
+      <h2>S3 Configuration via Extension Point</h2>
+      <p>
+        <span class="release">8.1</span> Customers needing to connect to more than one S3 binary managers with different
+        configurations are now able to do so using the new
+        <code>configuration</code>
+        extension point of
+        <code>org.nuxeo.ecm.core.blob.BlobManager</code>
+        . Previously only one bucket could be configured in
+        <code>nuxeo.conf</code>
+        .
+      </p>
+      <pre>
+&lt;extension point=&quot;configuration&quot; target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot;&gt;
+    &lt;blobprovider name=&quot;default&quot;&gt;
+        &lt;class&gt;org.nuxeo.ecm.core.storage.sql.S3BinaryManager&lt;/class&gt;
+        &lt;property name=&quot;awsid&quot;&gt;your_AWS_ACCESS_KEY_ID&lt;/property&gt;
+        &lt;property name=&quot;awssecret&quot;&gt;your_AWS_SECRET_ACCESS_KEY&lt;/property&gt;
+        &lt;property name=&quot;region&quot;&gt;us-west-1&lt;/property&gt;
+        &lt;property name=&quot;bucket&quot;&gt;your_s3_bucket_name&lt;/property&gt;
+        &lt;property name=&quot;bucket.prefix&quot;&gt;myprefix/&lt;/property&gt;
+        &lt;property name=&quot;directdownload&quot;&gt;true&lt;/property&gt;
+        &lt;property name=&quot;directdownload.expire&quot;&gt;3600&lt;/property&gt;
+        &lt;property name=&quot;cachesize&quot;&gt;100MB&lt;/property&gt;
+        &lt;property name=&quot;crypt.keystore.file&quot;&gt;/my/keystore.jks&lt;/property&gt;
+        &lt;property name=&quot;crypt.keystore.password&quot;&gt;password&lt;/property&gt;
+        &lt;property name=&quot;crypt.key.alias&quot;&gt;mykey&lt;/property&gt;
+        &lt;property name=&quot;crypt.key.password&quot;&gt;password&lt;/property&gt;
+        &lt;property name=&quot;connection.max&quot;&gt;50&lt;/property&gt;
+        &lt;property name=&quot;connection.retry&quot;&gt;3&lt;/property&gt;
+        &lt;property name=&quot;connection.timeout&quot;&gt;50000&lt;/property&gt;
+        &lt;property name=&quot;socket.timeout&quot;&gt;50000&lt;/property&gt;
+    &lt;/blobprovider&gt;
+&lt;/extension&gt;</pre>
+      <h2>Server-Side Encryption with S3</h2>
+      <p>
+        <span class="release">8.1</span> Support for Server-Side Encryption (SSE-S3) has been added as an alternative to
+        Client-Side Encryption (CSE) as documented in the
+        <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html" target="alt"> S3
+          Java SDK</a>. This is enabled through the property
+        <code>nuxeo.s3storage.crypt.serverside=true</code>.
+      </p>
+      <h2>GridFS as Part of the Default Distribution</h2>
+      <p>
+        <span class="release">8.1</span> GridFS is now part of the base distribution, in nuxeo-core. It will have to be
+        activated explicitly using the
+        <code>gridfsbinaries</code>
+        template. There is no need to install an additional Nuxeo Package anymore. Read our
+        <a href="https://doc.nuxeo.com/x/yAEuAQ"> MongoDB documentation</a>
+        for more information.
+      </p>
+      <h2>SAML Addon Compatible with ADFS</h2>
+      <p>
+        <span class="release">8.2</span> After adjusting a few blind parts of the specification, the SAML plugin
+        has been successfully used with Active Directory Federation Services.
+
+      </p>
+      <h2>Elasticsearch Indexing Operations</h2>
+      <p>
+        <span class="release">8.1</span> Elasticsearch indexing operations are now available from Nuxeo Automation in
+        addition to the Admin Center. Using a REST call you can now:
+      </p>
+      <ul>
+        <li>Re-index an entire repository</li>
+        <li>Re-index documents that match an NXQL query</li>
+        <li>Re-index a document and its children</li>
+        <li>Wait for indexing and perform an index refresh</li>
+      </ul>
+      <H2>Full-Text Indexing Optimisation</H2>
+      <p><span class="release new">8.3</span>We optimized the indexing flow by using ES bulk indexing features, when full-text indexation is disabled at the repository level. Number of works queued is now divided by two.
+      </p>
+
+      <h2>Allow Separate Repository DDL Generation</h2>
+      <p>
+        <span class="release">8.1</span> Nuxeo can now start with a new
+        <code>nuxeo.vcs.ddlmode</code>
+        parameter that specifies how the DDL for repository initialization should be executed at startup. Depending on
+        the chosen mode, the DDL may not be executed at all and instead dumped to the
+        <code>log/ddl-vcs-default.sql</code>
+        log file. Possible values for
+        <code>nuxeo.vcs.ddlmode</code>
+        are:
+      </p>
+      <ul>
+        <li><code>ignore</code>: no DDL detected or executed. Replaces <code>nuxeo.vcs.noddl=true</code>.</li>
+        <li><code>compat</code>: compatibility mode with previous version. Always executes DDL that recreates stored
+          procedures (and does not attempt to detect existing ones). Replaces <code>nuxeo.vcs.noddl=false</code>.</li>
+        <li><code>execute</code>: executes the DDL and starts Nuxeo normally.</li>
+        <li><code>dump</code>: dumps the DDL (if any) to the file but still executes it and starts Nuxeo normally.</li>
+        <li><code>dump,ignore</code>: dumps the DDL (if any) to the file but does not execute it and starts Nuxeo
+          normally (will likely result in errors).</li>
+        <li><code>dump,abort</code>: dumps the DDL (if any) to the file, and if not empty aborts startup.</li>
+      </ul>
+      <p>
+        For Nuxeo Platform 6.0 and Nuxeo Platform 7.10 the default was
+        <code>nuxeo.vcs.ddlmode=compat</code>
+        . For Nuxeo 8.2 the default is
+        <code>nuxeo.vcs.ddlmode=execute</code>
+        .
+      </p>
+      <p>Note that all this applies to the DDL for the document repository, but not DDL used by other users of SQL
+        in the platform (directories, quartz, JPA persistence).</p>
+
+        <h2>New nuxeoctl Commands to Register Instances</h2>
+        <p><span class="release new">8.3</span>Some new commands are available:</p>
+
+
+        <pre>
+nuxeoctl register [&lt;username&gt; [&lt;project&gt; [&lt;type&gt; &lt;description&gt;] [&lt;pwd&gt;]]]
+nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;description&gt; [&lt;pwd&gt;]]</pre>
+        <p><code>register</code> allows to register an instance using an existing Nuxeo Online Services account while <code>register-trial</code> allows to create an account and get a trial against the Nuxeo Online Services portal.
+        </p>
+
+      <h2>Redis</h2>
+
+      <h3>
+        Cluster Invalidation with Redis in
+        <code>nuxeo.conf</code>
+      </h3>
+      <p>
+        <span class="release">8.1</span> Using Redis to process cluster invalidation instead of database can be
+        configured in nuxeo.conf using
+        <code>repository.clustering.invalidation=redis</code>
+        (it used to be in the repository contribution).
+      </p>
+      <h3>Less Memory Footprint for Redis</h3>
+      <p>
+        <span class="release">8.2</span> Some work has been done to optimize the size of serialized works, hence
+        lowering the requirements in terms of memory size for Redis.
+      </p>
+      <h3>Redis Pool Size Configuration</h3>
+      <p>
+        <span class="release">8.2</span>The Redis connection pool size can be configured using the new
+        <code>nuxeo.conf</code>
+        options:
+      </p>
+
+        <ul>
+          <li><code>nuxeo.redis.maxTotal</code> (default 16)</li>
+          <li><code>nuxeo.redis.maxIdle</code> (default 8)</li>
+        </ul>
+      <h3>Retry Logic For Redis Calls</h3>
+      <p>
+        <span class="release">8.2</span>Nuxeo now uses a failover executor with an exponential delay policy: 1ms,
+        2ms, 4ms, 8ms, 16ms, 32ms .. until the timeout has reached 5min by default.
+      </p>
+      <h2>Work Manager and Shutdown</h2>
+      <p>
+        <span class="release">8.2</span>There was some clean up in the way jobs were processed, especially at
+        server's shutdown. When server is shutdown, works being processed are finished before real shutdown. If server's
+        process is killed, job will be restarted as the system is transactional.
+      </p>
+      <h2>User Manager Cache is Back</h2>
+      <p><span class="release new">8.3</span>A cache is now set up for the UserManager by default. It was not the case any more on LTS 2015 for users persisted in an SQL directory.</p>
+      <h2>Nuxeo Importer</h2>
+      <h3>Non-Bulk Mode Available</h3><p><span class="release new">8.3</span>
+      With the following contribution you can now configure the importer to work in non-bulk mode, which is a bit slower but allows regular Work instances to be created and directed to specific queues:</p>
+
+<pre>
+&lt;extension target=&quot;org.nuxeo.ecm.platform.importer.service.DefaultImporterComponent&quot; point=&quot;importerConfiguration&quot;&gt;
+  &lt;importerConfig&gt;
+  &lt;bulkMode&gt;false&lt;/bulkMode&gt;
+  &lt;/importerConfig&gt;
+&lt;/extension&gt;
+</pre>
+
+      <h3>Nuxeo Importer Without ES Indexing</h3>
+      <p><span class="release new">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
+
+      <h2>Web App Optimizations</h2>
+      <p>
+        <span class="release">8.2</span> Since 6.0 and migration to JSF2, some regressions on the performance of the
+        webapp were found, especially on heavy load. Some optimization work has been done. On a commodity hardware
+        benchmarks shows after optimization that we are able to server 25% more requests.
+      </p>
+    </div>
+  </div>
+  <!--
+                                JS
+                                ==================================================
+                            -->
+  <script src="../../javascripts/strftime.js">
+
+        </script>
+  <script src="../../javascripts/tabs.js">
+
+        </script>
+  <script src="../../javascripts/float_menu.js">
+
+        </script>
+  <script src="../../javascripts/lightbox.js">
+
+        </script>
+</body>
+</html>
