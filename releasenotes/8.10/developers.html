@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+    <html class="ie ie6" lang="en">
+    <![endif]-->
+<!--[if IE 7 ]>
+        <html class="ie ie7" lang="en">
+        <![endif]-->
+<!--[if IE 8 ]>
+            <html class="ie ie8" lang="en">
+            <![endif]-->
+<!--[if (gte IE 9)|!(IE)]>
+                <!
+            -->
+<html lang="en">
+<!--
+                <![endif]-->
+<head>
+<!--
+                        Basic Page Needs
+                        ==================================================
+                    -->
+<meta charset="utf-8" />
+<title>Nuxeo Platform 8.10 - New and Noteworthy</title>
+<meta content="Release notes for Nuxeo Platform LTS 2016" name="description" />
+<meta content="Nuxeo" name="author" />
+<!--
+                        Mobile Specific Metas
+                        ==================================================
+                    -->
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
+<!--
+                        CSS
+                        ==================================================
+                    -->
+<link href="../../stylesheets/base.css" rel="stylesheet" />
+<link href="../../stylesheets/skeleton.css" rel="stylesheet" />
+<link href="../../stylesheets/layout.css" rel="stylesheet" />
+<link href="../../stylesheets/release_notes.css" rel="stylesheet" />
+<link href="../../stylesheets/lightbox.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+                        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+                        </script>
+                    <![endif]-->
+<link href="http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700" rel="stylesheet" type="text/css" />
+<style>
+#xnav-footer {
+  margin-top: 0px !important;
+}
+</style>
+<script src="../../javascripts/jquery-1.7.1.min.js">
+
+</script>
+<script charset="utf-8" src="https://www.nuxeo.com/wp-content/themes/nuxeo.com_wp/js/xnav_get.js" type="text/javascript">
+
+</script>
+<!--
+                        Favicons
+                        ==================================================
+                    -->
+<link href="images/favicon.ico" rel="shortcut icon" />
+<link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
+<link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+<link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+</head>
+<body>
+  <div class="container" id="mainContainer">
+    <p class="backbutton">
+      <a href="./index.html"> ← Back to Index </a>
+    </p>
+    <p class="remove-bottom" id="site-title">
+      <a href="./index.html">
+        <span class="version-number"> 8.3 </span> Release Notes
+      </a>
+    </p>
+    <div id="welcome">
+      <div style="clear: both;"></div>
+      <h1 style="margin-left: -0.5em !important;">For Developers</h1>
+      <h2>A C# Nuxeo Client</h2>
+      <p>
+        <span class="release">8.1</span>A C# Nuxeo Client has been added. A
+        <a href="https://github.com/nuxeo/nuxeo-dotnet-browser" target="_blank"> sample application</a>
+        is provided so as to understand how to make use of it. Read the
+        <a href="https://doc.nuxeo.com/x/dwSlAQ" target="_blank"> C# client documentation </a>
+        for more information.
+      </p>
+
+      <h2>New Operations</h2>
+
+      <h3>User Invitation</h3>
+      <p>
+        <span class="release">8.2</span>The operation
+        <code>User.Invite</code>
+        is now available to trigger a user invitation remotely.
+      </p>
+
+      <h3>Studio JAR Hot-Reload</h3>
+      <p>
+        <span class="release">8.2</span>The operation
+        <code>Service.HotReloadStudioSnapshot</code>
+        is now available to trigger a hot-reload of the Studio JAR.
+      </p>
+
+      <h2>REST Endpoint Evolutions</h2>
+
+      <h3>New Token Endpoint</h3><p>
+      <span class="release">8.3</span>An endpoint has been added to be able to fetch and delete via the REST API tokens for the Nuxeo Authentication module.
+      </p>
+
+      <h3>New Search Endpoint</h3><p>
+      <span class="release">8.3</span>A new <code>search</code> endpoint has been added to be able to be able to perform searches as well as saving and fetching them. The <code>query</code> endpoint is now deprecated.
+      </p>
+
+      <h3>New Content-Type Header</h3>
+      <p>
+        <span class="release">8.2</span>Content-Type header now returns the nuxeo-entity type as well:
+      </p>
+      <pre>
+application/json; nuxeo-entity=documents
+</pre>
+
+      <h3>Client-Side Localisation</h3>
+      <p><span class="release">8.3</span>The client is now responsible for sending the locale it is interested in via a dedicated request header.</p>
+
+      <h3>Fetching Members of Group object</h3>
+      <p>
+        <span class="release">8.2</span> New endpoints were added for getting members of a group:
+      <ul>
+        <li><code>/group/{groupname}/@members</code></li>
+        <li><code>/group/{groupname}/@groups</code></li>
+      </ul>
+      <p>
+      This endpoint supports pagination and returns the full objects (full users and groups). And by default when
+      fetching a user or a group, users and groups members are no more marshaled (only ids are returned), you can use
+      <code>fetch.group=memberUsers</code>
+      and/or
+      <code>fetch.group=memberGroups</code>
+      to get the full object.
+      </p>
+
+      <h2>Directories</h2>
+
+      <h3>Generic Directory and Directory Templating</h3>
+      <p>
+        <span class="release">8.2</span> Generic Directories have been introduced, along with the possibility to
+        make regular directories be "templates". First, register a template directory (
+        <code>template="true"</code>
+        ):
+      </p>
+      <pre>
+&lt;extension target=&quot;org.nuxeo.ecm.directory.sql.SQLDirectoryFactory&quot; point=&quot;directories&quot;&gt; <br />
+  &lt;directory name=&quot;template-dir&quot; template=&quot;true&quot;&gt; <br />
+      &lt;dataSource&gt;java:/nxsqldirectory&lt;/dataSource&gt; <br />
+      &lt;createTablePolicy&gt;always&lt;/createTablePolicy&gt; <br />
+      &lt;querySizeLimit&gt;100&lt;/querySizeLimit&gt; <br />
+   &lt;/directory&gt; <br />
+ &lt;/extension&gt;
+    </pre>
+    <p>
+      Then use a generic directory to provide specific customizations over the extended template (
+      <code>extends=&quot;template-dir&quot;</code>
+      ):<br />
+      <br />
+      </p>
+      <pre>
+&lt;extension target=&quot;org.nuxeo.ecm.directory.GenericDirectory&quot; point=&quot;directories&quot;&gt; <br />
+    &lt;directory name=&quot;my-directory&quot; extends=&quot;template-dir&quot;&gt; <br />
+      &lt;schema&gt;myschema&lt;/schema&gt; <br />
+      &lt;table&gt;mytable&lt;/table&gt; <br />
+      &lt;idField&gt;id&lt;/idField&gt; <br />
+      &lt;passwordField&gt;password&lt;/passwordField&gt; <br />
+      &lt;passwordHashAlgorithm&gt;SSHA&lt;/passwordHashAlgorithm&gt; <br />
+      &lt;substringMatchType&gt;subany&lt;/substringMatchType&gt; <br />
+      &lt;cacheTimeout&gt;3600&lt;/cacheTimeout&gt; <br />
+      &lt;cacheMaxSize&gt;1000&lt;/cacheMaxSize&gt; <br />
+    &lt;/directory&gt; <br />
+&lt;/extension&gt;
+  </pre>
+  <p>
+      The Generic Directory descriptor only supports a generic subset of the configuration of the directories in general
+      (see
+      <code>org.nuxeo.ecm.directory.BaseDirectoryDescriptor</code>
+      for the exact fields). This new indirection allows to make it easier to change implementation of a directory for a
+      given business requirement.
+      </p>
+
+      <h3>Cache is Back</h3>
+      <p>
+        <span class="release">8.2</span> Directories that still have a <i> cacheMaxSize </i> and <i>
+          cacheTimeOut </i> but no newly-defined <i> cacheEntryName </i> are still be using a cache.
+      </p>
+
+      <h2>Elasticsearch Evolutions</h2>
+
+      <h3>Elasticsearch Crawl API </h3>
+      <p><span class="release">8.3</span>The <code>ElasticSearchService</code> now exposes the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/search-request-scroll.html" target="_blank">Elasticsearch scroll API</a> allowing to process large amounts of data.</p>
+      <p>You can use it this way for instance:</p>
+      <pre>
+ElasticSearchService ess = Framework.getService(ElasticSearchService.class);
+String query = "SELECT * FROM Document ORDER BY ecm:path";
+
+// Perform initial search and get first batch of 20 results
+EsScrollResult scrollResult = ess.scroll(new NxQueryBuilder(session).nxql(query).limit(20), 10000);
+DocumentModelList batchOfDocs = scrollResult.getDocuments();
+while (!batchOfDocs.isEmpty()) {
+  for (DocumentModel doc : batchOfDocs) {
+    // Process document
+    // ...
+  }
+  // Get next batch of results
+  scrollResult = ess.scroll(scrollResult);
+  batchOfDocs = scrollResult.getDocuments();
+}</pre>
+
+      <p>Note: the <code>keepAlive</code> parameter in milliseconds only needs to be long enough to perform the next scroll query.</p>
+
+      <h3>ecm.path Field</h3>
+      <p>
+        <span class="release">8.2</span>A new field in Elasticsearch index is available:
+        <code>ecm:path</code>
+        with the following informations:
+      </p>
+      <pre>
+ "ecm:path.level1": "default-domain", <br />
+ "ecm:path.level2": "workspaces", <br />
+ "ecm:path.level3": "aWorkspace", <br />
+ "ecm:path.level4": "aFolder", <br />
+ "ecm:path.level5": "aFile", <br />
+ etc. <br />
+ "ecm:path.depth": 5
+</pre>
+
+      <h3>Mapping for Audit Index</h3>
+      <p>
+        <span class="release">8.2</span>No specific mapping had been contributed for Audit index. This is now
+        done.
+      </p>
+
+     <h2>NXQL Evolutions</h2>
+      <h3><span class="release">8.3</span>Fetching Documents from Specific Fields</h3>
+     <p>When calling <code>CoreSession.query</code>, doing a <code>SELECT * FROM Document WHERE ...</code> is doing <code>SELECT ecm:uuid FROM Document WHERE ...</code> and returning the documents whose ids are matching. There are additional use cases of returning documents with other ids. Ex:</p>
+     <ol>
+      <li>Direct page provider with <code>SELECT relation:target FROM DefaultRelation WHERE relation:source = ?</code></li>
+      <li>Simplifying collection management with a query like <code>SELECT collection:documentIds/* FROM Collection WHERE ecm:uuid = ?</code> </li></ol>
+     <p>You can now use such a syntax in your NXQL queries.</p>
+
+      <h2>CMIS Evolutions</h2>
+
+      <h3>Proxies Are Visible through CMIS</h3>
+      <p><span class="release">8.3</span>Now when the system property <code>org.nuxeo.cmis.proxies=true</code> (default value) then proxies are visible like any other document using CMIS.
+      </p>
+
+      <h3>CMIS Test Feature Can Be Used from Third-Party Bundle</h3>
+      <p><span class="release">8.3</span>It is now possible to have third-party modules use the <code>CmisFeatureSessionHttp</code> feature to run their own tests in the context of a preconfigured CMIS test server.</p>
+
+      <h2>Authentication Prompt</h2>
+      <p>
+        <span class="release">8.2</span> When configuring authentication chains, a new attribute is available at
+        the authentication chain level,
+        <code>handlePrompt</code>
+        so as to configure if the authentication filter delegates the login prompt to its plug-ins or if it returns
+        systematically a 401 response code.
+      </p>
+
+      <h2>Configuring TinyMCE Editor via Tag Properties</h2>
+      <p>
+        <span class="release">8.1</span> Plugins and options have been extracted to control them by tag properties in
+        order to display different options depending on the field.
+      </p>
+
+      <h2>Understanding The Sequence Of Listeners Calls</h2>
+      <p>
+        <span class="release">8.1</span> You can now add this in your log4j.xml:
+      </p>
+      <pre>
+&lt;category name=&quot;org.nuxeo.common.logging&quot;&gt;
+  &lt;priority value=&quot;DEBUG&quot;/&gt;
+&lt;/category&gt; </pre>
+      <p>Then use the sequence.sh to generate a PNG with a sequence diagram of all threads and listeners.</p>
+      <p>Note that all events in the chart are in chronological order (not proportional) except for the Initiate
+        link, where the origin points to the thread that has generated a work without telling when (earlier for sure).</p>
+
+      <h2>HTML Content in Tipsy Tooltip</h2>
+      <p>
+        <span class="release">8.1</span> Tooltips generated with Tipsy now render HTML content properly.
+      </p>
+
+      <h2>Sample Project for Benchmarking Nuxeo Platform with Gatling</h2>
+      <p><span class="release">8.3</span>For people who need to write and launch Gatling scenarios for an addon or any Nuxeo project, a Gatling sample is available in the <a href="https://github.com/nuxeo/nuxeo-marketplace-sample/tree/master/ftest/gatling" target="blank">Nuxeo marketplace sample project</a>. Note that Nuxeo has switched to Gatling as it was better suited to reach the level of performances required for benchmarking the Nuxeo Platform in extremely high stress conditions: multiple thousands of requests per seconds.</p>
+
+      <h2>Random Generation of Documents with Nuxeo Platform Importer</h2>
+      <p><span class="release">8.3</span>Using the <code>/randomImporter</code> endpoint, the bulk document importer already offered the possibility to generate random documents so as to fill the repository, typically for benchmark purposes. The number of documents that are generated in the various folders is now random, for more realistic load tests. It follows this rule:</p>
+      <ul>
+      <li>10% folders with a big number of files (~= 5000)</li>
+      <li>10% folders with 1 file</li>
+      <li>80% folders with a random variation of the default number of files, so between 50 and 150</li>
+      </ul>
+
+      <h2>Explorer Addon Evolution</h2>
+      <p> <span class="release">8.3</span>The Explorer plugin has been greatly improved: better search features, cleaner look &amp; feel. We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We have also extended the XML generation feature to help developers have a working sample. Check it out on <a href="http://explorer.nuxeo.com/" target="_blank">explorer.nuxeo.com</a> or by installing the <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/platform-explorer" target="_blank">Platform Explorer Nuxeo Package</a>.</p>
+
+      <h2>JSF Widgets Evolutions</h2>
+      <h3>
+        Limit Attribute for
+        <code>SuggestDirectoryEntries</code>
+      </h3>
+      <p>
+        <span class="release">8.2</span>A new attribute
+        <code>limit</code>
+        is available for limiting the number of entries returned by the
+        <code>SuggestDirectoryEntries</code>
+      </p>
+
+      <h2>No More Selenium Tests </h2>
+      <p><span class="release">8.3</span>Selenium has been fully replaced by Webdriver for the functional tests of the Nuxeo Platform and is no longer used.</p>
+
+      <h2>Miscellaneous</h2>
+      <p><span class="release">8.3</span>The UIDSequencer interface now supports long integer.
+      </p>
+    </div>
+  </div>
+  <script src="../../javascripts/strftime.js">
+
+        </script>
+  <script src="../../javascripts/tabs.js">
+
+        </script>
+  <script src="../../javascripts/float_menu.js">
+
+        </script>
+  <script src="../../javascripts/lightbox.js">
+
+        </script>
+</body>
+</html>
