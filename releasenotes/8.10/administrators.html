@@ -76,7 +76,15 @@
       <div style="clear: both;"></div>
       <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
       <H2>Environment Information Dumping with nuxeoctl connect-report</H2>
-      <p><span class="release">8.3</span>A new command has been added to nuxeoctl, <code>nuxeoctl connect-report</code>. This new command gathers information that can be useful to understand the environment in which a bug or a problem can be reproduced. This command was added in an effort to keep improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via JVM MBeans and more. For now this feature is delivered via a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report" target="_blank">Nuxeo Package</a> that needs to be installed on the Nuxeo server.</p>
+      <p><span class="release">8.3</span> A new command has been added to nuxeoctl, <code>nuxeoctl connect-report</code>. This new command gathers information that can be useful to understand the environment in which a bug or a problem can be reproduced. This command was added in an effort to keep improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via JVM MBeans and more. For now this feature is delivered via a <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report" target="_blank">Nuxeo Package</a> that needs to be installed on the Nuxeo server.</p>
+      <p><span class="release new">8.10</span> The command <code>nuxeoctl connect-report</code> has been integrated to the default deistribution of the Nuxeo Platform, removing the step to  install an addon to benefit from this feature. The addon <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report-web">Nuxeo Connect Tools Report Web</a> remains available to provide basic user interface to get the report.
+      </p>
+      <h2>Startup Wizard Improvements on Module Selection</h2>
+      <p><span class="release new">8.10</span> The Module selection step of the startup wizard has been reviewed to provide a more user-friendly interface, take into consideration the distribution changes and make dependencies betweens addons and UIs more straightforward.
+      </p>
+      <div>
+          <img class="lightbox" src="./wizard_module_selection.png" />
+      </div>
 
       <H2>MarkLogic as a New Storage Backend</H2>
       <p><span class="release">8.3</span>A new implementation of the DBS interface (NoSQL) has been done for the MarkLogic database. It is available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-marklogic-connector" target="_blank">as a Nuxeo Package</a> on the Nuxeo Marketplace.</p>
@@ -243,7 +251,7 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
       <h2>User Manager Cache is Back</h2>
       <p><span class="release">8.3</span>A cache is now set up for the UserManager by default. It was not the case any more on LTS 2015 for users persisted in an SQL directory.</p>
       <h2>Nuxeo Importer</h2>
-      <h3>Non-Bulk Mode Available</h3><p><span class="release new">8.3</span>
+      <h3>Non-Bulk Mode Available</h3><p><span class="release">8.3</span>
       With the following contribution you can now configure the importer to work in non-bulk mode, which is a bit slower but allows regular Work instances to be created and directed to specific queues:</p>
 
 <pre>
@@ -257,6 +265,15 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
       <h3>Nuxeo Importer Without ES Indexing</h3>
       <p><span class="release">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
 
+      <h2>Nuxeo PDF Utils now in the Default Distribution</h2>
+      <p><span class="release new">8.10</span> The Nuxeo PDF Utils is now integrated by default in the Nuxeo Platform, it offers a set of utilities for who needs to deal with PDFs from a nuxeo application.
+          More information in the <a href="https://github.com/nuxeo/nuxeo-platform-pdf-utils"Nuxeo PDF Utils GitHub repository</a>.
+
+      <h2>Nuxeo Vision Events Optimization</h2>
+      <p><span class="release new">8.10</span> <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-vision">Nuxeo Vision</a> has been improved and allows to trigger event (typically, an asynchronous event) and process business logic after nuxeo-vision has extracted tags or text.
+          Example: for a Picture, nuxeo-vision stores by default in <code>dc:source</code> the text extracted via OCR.
+          Adding a listener for <code>visionOnImageDone</code> is a good idea if one wants to check for unauthorized words (start a workflow, tag the picture, change its ACL so only an administrator can access it, ...).
+      </p>
       <h2>Web App Optimizations</h2>
       <p>
         <span class="release">8.2</span> Since 6.0 and migration to JSF2, some regressions on the performance of the
