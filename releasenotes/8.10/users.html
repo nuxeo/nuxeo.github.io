@@ -82,8 +82,17 @@
         <img class="lightboxed" src="./6+-Menu-EN.jpeg" /> <img class="lightboxed" src="./6+-Browse-EN.jpeg" />
       </div>
       <h2>Nuxeo Web UI Beta</h2>
-      <p><span class="release">8.3</span> The Nuxeo Web UI has been rewritten entirely, switching from JSF stack to Web Component (HTML) / Polymer framework, with a completely re-designed interface. It will be available in preview edition for the Nuxeo Platform 8.3 and fully available along with the LTS 2016.
-It allows enhanced productivity with direct access to last visited documents, collections, easy browsing between prev/next document, full screen suggester. Effort has been made for making the tasks validation flow highly efficient. With all those improvements, <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-web-ui" target="_blank">Nuxeo Web UI</a> is a first class choice for projects where visual and workflows are important requirements.
+      <p><span class="release">8.3</span> <span class="release new">8.10</span> A new UI is being written for LTS 2016. Purpose is to move to more recent standards and technological stack (Web Components and Polymer) and to take the opportunity to reboot the user experience. Some important steps around configurability are missing before reaching the 1.0 version. Yet a large part of the feature scope is implemented and robust, we encourage you to check it out yourself:
+<ul>
+<li>Content browsing, with great new features in comparison with JSF UI, like recently seen documents</li>
+<li>Content capture, including batch metadata edition and Live Connect</li>
+<li>Workflows</li>
+<li>Search, including new asset search screens</li>
+<li>Document lists a.k.a Queues</li>
+<li>Analytics</li>
+<li>Preview and more.</li>
+</ul>
+Final release for LTS 2016 is to be expected for April 2017.
       </p>
       <div>
         <img class="lightboxed" src="./WebUI-search-results.png" />
@@ -99,7 +108,7 @@ It allows enhanced productivity with direct access to last visited documents, co
         <img class="lightboxed" src="./8.1_external_permissions.png" />
       </div>
 
-      <h2> Nuxeo 3D Addon</h2>
+      <h2>Nuxeo 3D Addon</h2>
       <p>
         <span class="release new">8.10</span> A new addon adds 3D Support to the Nuxeo Platform: canonical views extraction, technical metadata, transformations and 3D previewer for web applications. Those new capabilities can be used for creative process in the textile industry for instance. <a href="https://doc.nuxeo.com/nxdoc/nuxeo-3d/">Read more in the documentation</a>.
       </p>
@@ -126,7 +135,7 @@ It allows enhanced productivity with direct access to last visited documents, co
         <a href="https://doc.nuxeo.com/x/EgOIAQ"> Nuxeo Live Connect documentation</a>
         for more information.
       </p>
-      <h2> Versions and Proxys as Collection Members </h2>
+      <h2>Versions and Proxys as Collection Members </h2>
       <p> <span class="release new">8.10</span>
         It is now possible to add a version or a proxy to a collection.
       </p>
@@ -135,7 +144,7 @@ It allows enhanced productivity with direct access to last visited documents, co
         <span class="release">8.2</span> Creation, Update and deletion of users and groups actions are now logged
         into the audit trail of Nuxeo Platform.
       </p>
-      <h2>Nuxeo Drive Optimisations</h2>
+      <h2>Nuxeo Drive Optimizations</h2>
       <p><span class="release">8.3</span> <span class="release new">8.10</span>Some improvements were brought to Nuxeo Drive: </p>
         <ul>
             <li>A message is now displayed to the user when there is no space left on their device (used to be logs only).</li>
@@ -159,7 +168,7 @@ Medium picture rendition width limit has been increased from 550 to 1000.
         </p>
         <h2>Canon Raw Image as Picture</h2>
         <p> <span class="release new">8.10</span>
-        CR2 files are finally considered as images!
+        CR2 files are finally considered as pictures.
         </p>
 
         <h2>Universal Login Page</h2>
@@ -167,7 +176,7 @@ Medium picture rendition width limit has been increased from 550 to 1000.
         </p>
         <div>
             <img class="lightboxed" src="./login_desktop.png" />
-            <img class="lightboxed" src="./login_mobile.png" />
+            <img class="lightboxed" src="./login_mobile.PNG" />
         </div>
       <h2>JSF UI Evolutions</h2>
       <h3>New Document Types Icons</h3>
@@ -198,7 +207,7 @@ Medium picture rendition width limit has been increased from 550 to 1000.
         reasons. In order to activate the traces display in error pages of Nuxeo, the dev mode has to be set:
         org.nuxeo.dev in nuxeo.conf or in the admin center.
       </p>
-      <h3>Smart Search is Back</h3>
+      <h3>Smart Search Is Back</h3>
       <p>
         <span class="release">8.1</span>
         <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-platform-smart-search"> Smart Search</a>,
@@ -208,7 +217,7 @@ Medium picture rendition width limit has been increased from 550 to 1000.
       <div>
         <img class="lightboxed" src="./8.1_SmartSearch_query.png" width="250" />
       </div>
-      <h3>Confirmation Pop-up Before Purge</h3>
+      <h3>Confirmation Pop-up before Purge</h3>
       <p>
         <span class="release">8.1</span> In the Admin Center, when removing the permissions of a given user, you now
         have to confirm on a pop-up that you really want to purge all the permissions.
@@ -220,13 +229,13 @@ Medium picture rendition width limit has been increased from 550 to 1000.
       <p>
         <span class="release">8.2</span> When a user changes their password, they are now required to fill in the old password value.
       </p>
-      <h3>See Assigned Groups Before Validating Invitation</h3>
+      <h3>See Assigned Groups before Validating Invitation</h3>
       <p>
         <span class="release">8.2</span> When validating an invitation request, Administrator can now see the
         groups the user will be granted.
       </p>
-      <h3>Permlink in invitation email</h3>
-      <p>A permilink link is now used in emails sent for invitation. </p>
+      <h3>Permlink in Invitation Email</h3>
+      <p><span class="release new">8.10</span>A permlink link is now used in emails sent for invitation. </p>
       <h3>More Friendly "Http Transport returned a 0 status code" Error</h3>
       <p>
         <span class="release">8.1</span> When this error happens, the message is now displayed as a warning and
@@ -240,7 +249,7 @@ Medium picture rendition width limit has been increased from 550 to 1000.
   &lt;property name=&quot;org.nuxeo.trash.keepCheckedIn&quot;>true&lt;/property&gt;
 &lt;/extension&gt;
 </pre>
-  <h3>Query Optimisation on Dashboard</h3>
+  <h3>Query Optimization on Dashboard</h3>
   <p><span class="release new">8.10</span>Some of the queries used on the dashboard have been migrated to using Elasticsearch and now scale better, lowering the display time of the dashboard.</p>
       <h2>Nuxeo Explorer Improvements</h2>
       <p><span class="release">8.3</span>
@@ -269,7 +278,7 @@ Medium picture rendition width limit has been increased from 550 to 1000.
       </p>
 
       <h2>Nuxeo Spreadsheet</h2>
-      <h3>Locale is Respected</h3>
+      <h3>Locale Is Respected</h3>
       <p>
         <span class="release">8.2</span> Locale setting is now taken into account when using Nuxeo Spreadsheet for
         the JSF Web UI.

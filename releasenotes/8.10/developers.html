@@ -119,7 +119,7 @@
         <span class="release new">8.10</span> The operation
         <code>Document.MoveCollectionMember</code> allows to move up and down a document's position inside a collection.
       </p>
-      <h3>Multi-Valued Property support for Context.SetWorkflowVar Operation</h3>
+      <h3>Multi-Valued Property Support for Context.SetWorkflowVar Operation</h3>
       <p>
         <span class="release new">8.10</span> All kind of lists are now supported, not only String list.
       </p>
@@ -159,7 +159,7 @@
       <p>
         <span class="release">8.2</span>Content-Type header now returns the nuxeo-entity type as well:
         <pre>
-  application/json; nuxeo-entity=documents
+application/json; nuxeo-entity=documents
   </pre>
       </p>
       <h3>Constraints and References on Schema Endpoint</h3><p>
@@ -171,16 +171,16 @@
       <p>
         <span class="release">8.2</span>Content-Type header now returns the nuxeo-entity type as well:
         <pre>
-      application/json; nuxeo-entity=documents
+application/json; nuxeo-entity=documents
       </pre>
       </p>
 
 
-<h3>Remove a Blob From A Batch</h3>
+<h3>Remove a Blob from a Batch</h3>
 <p><span class="release new">8.10</span>
 <code>DELETE /api/v1/upload/{batchId}/{fileId}</code> will remove the file of index "fileId" in the batch "batchId".
   </p>
-<h3>Prevent a Batch From Being Dropped</h3>
+<h3>Prevent a Batch from Being Dropped</h3>
 <p><span class="release new">8.10</span>
   A flag  has been added to prevent a batch from being dropped when referencing its blobs via Automation / REST API. The header is called
   <code>X-Batch-No-Drop</code>. When set to true the batch won't be dropped after operated on or referenced. The default is false.
@@ -189,7 +189,7 @@
       <h3>Client-Side Localisation</h3>
       <p><span class="release">8.3</span>The client is now responsible for sending the locale it is interested in via a dedicated request header.</p>
 
-      <h3>Fetching Members of Group object</h3>
+      <h3>Fetching Members of Group Object</h3>
       <p>
         <span class="release">8.2</span> New endpoints were added for getting members of a group:
       <ul>
@@ -254,7 +254,7 @@
       given business requirement.
       </p>
 
-      <h3>Cache is Back</h3>
+      <h3>Cache Is Back</h3>
       <p>
         <span class="release">8.2</span> Directories that still have a <i> cacheMaxSize </i> and <i>
           cacheTimeOut </i> but no newly-defined <i> cacheEntryName </i> are still be using a cache.
@@ -324,8 +324,8 @@ while (!batchOfDocs.isEmpty()) {
       </p>
 
      <h2>NXQL Evolutions</h2>
-      <h3><span class="release">8.3</span>Fetching Documents from Specific Fields</h3>
-     <p>When calling <code>CoreSession.query</code>, doing a <code>SELECT * FROM Document WHERE ...</code> is doing <code>SELECT ecm:uuid FROM Document WHERE ...</code> and returning the documents whose ids are matching. There are additional use cases of returning documents with other ids. Ex:</p>
+      <h3>Fetching Documents from Specific Fields</h3>
+     <p><span class="release">8.3</span>When calling <code>CoreSession.query</code>, doing a <code>SELECT * FROM Document WHERE ...</code> is doing <code>SELECT ecm:uuid FROM Document WHERE ...</code> and returning the documents whose ids are matching. There are additional use cases of returning documents with other ids. Ex:</p>
      <ol>
       <li>Direct page provider with <code>SELECT relation:target FROM DefaultRelation WHERE relation:source = ?</code></li>
       <li>Simplifying collection management with a query like <code>SELECT collection:documentIds/* FROM Collection WHERE ecm:uuid = ?</code> </li></ol>
@@ -334,7 +334,7 @@ while (!batchOfDocs.isEmpty()) {
       <h2>Repository Scroll API</h2>
       <P><span class="release new">8.10</span>There is now a repository scroll API to retrieve large number of results from a single search request. This acts like a database cursor returning batch of document ids.
       </P>
-     <h2> Subtypes Declaration at Core Level</h2>
+     <h2>Subtypes Declaration at Core Level</h2>
      <p> <span class="release new">8.10</span>
        Allowed subtype declarations has been moved to <a href="http://explorer.nuxeo.com/nuxeo/site/distribution/latest/viewExtensionPoint/org.nuxeo.ecm.core.schema.TypeService--doctype">core document type declaration extension point</a> and the platform TypeService now relies on those clore declarations. Subtype and icon contributions have been moved to core so that they are available even without JSF. A new facet <code>HiddenInCreation</code>  is used to identify doctypes that should not be visible on creation.
      </p>
@@ -362,7 +362,7 @@ while (!batchOfDocs.isEmpty()) {
       <h3>JSF Application Is Now a Package</h3>
       <p><span class="release new">8.10</span>The JSF application is now shipped as package, available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-jsf-ui">on the marketplace</a>.
       </p>
-      <h3>nuxeo-sever Is the New cap</h3>
+      <h3>Nuxeo-Sever Is the New cap</h3>
         <p><span class="release new">8.10</span> The Nuxeo CAP distribution is no more used. Nuxeo is now distributed as a bare "server" distribution on top of which different user interfaces can be installed. The main ones available are the standard Seam/JSF UI (identical to the previous LTS releases), and a new Web UI (beta). The startup wizard allows you to select which one(s) you want to install on your server. Nuxeo Packages may also provide different functionalities depending on the installed UI.
         </p>
         <h3>Optional Dependency</h3>
@@ -374,10 +374,10 @@ while (!batchOfDocs.isEmpty()) {
           </pre>
           </div>
           </p>
-    <h3>Protection Against Network Corruption</h3>
+    <h3>Protection against Network Corruption</h3>
     <p><span class="release new">8.10</span>Sometimes content streams get corrupted over the wire. Content Stream hashes are now supported following  RFC 3230/5843 "Digest" request header if present, as well as RFC 3230 "Want-Digest". </p>
 
-<h2></h2>
+<h2>Quick Filters for Page Providers</h2>
 <p><span class="release new">8.10</span>
 Quick Filters have been added to PageProvider object. They allow to add actionable additional "filters + Sort". They are typically bound to some switches in user interface, to implement things like "Remove Folders From The Result". The REST API has been updated accordingly.
 <pre>
@@ -394,9 +394,7 @@ Quick Filters have been added to PageProvider object. They allow to add actionab
     &lt;/quickFilter&gt;
 </pre>
 </p>
-<h2>
-documentImportedWithPlatformImporter Event
-</h2>
+<h2>documentImportedWithPlatformImporter Event</h2>
 <p><span class="release new">8.10</span> An event <code>documentImportedWithPlatformImporter</code> is now fired at the end when a document is imported, to ensure the import process is done for that document. Relying on document created or modified is indeed not enough as several modifications happen during the import process. </p>
 
 
@@ -412,25 +410,27 @@ If web-ui only is installed, point to the Web UI. If both are installed point to
         order to display different options depending on the field.
       </p>
 
-      <h2>Understanding The Sequence Of Listeners Calls</h2>
+      <h2>Understanding the Sequence of Listeners Calls</h2>
       <p>
         <span class="release">8.1</span> You can now add this in your log4j.xml:
       </p>
       <pre>
 &lt;category name=&quot;org.nuxeo.common.logging&quot;&gt;
   &lt;priority value=&quot;DEBUG&quot;/&gt;
-&lt;/category&gt; </pre>
+&lt;/category&gt;</pre>
       <p>Then use the sequence.sh to generate a PNG with a sequence diagram of all threads and listeners.</p>
       <p>Note that all events in the chart are in chronological order (not proportional) except for the Initiate
         link, where the origin points to the thread that has generated a work without telling when (earlier for sure).</p>
-      <h2> Forcing Locale on Login page and Disabling Some Languages</h2>
+
+      <h2>Forcing Locale on Login Page and Disabling Some Languages</h2>
       <p><span class="release new">8.10</span>A new extension point <code>loginScreen</code> on <code>org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService</code> allows to contribute explicitly what are the supported locales.</p>
+
       <h2>HTML Content in Tipsy Tooltip</h2>
       <p>
         <span class="release">8.1</span> Tooltips generated with Tipsy now render HTML content properly.
       </p>
 
-      <h2>Sample Project for Benchmarking Nuxeo Platform with Gatling</h2>
+      <h2>Sample Project to Benchmark the Nuxeo Platform with Gatling</h2>
       <p><span class="release">8.3</span>For people who need to write and launch Gatling scenarios for an addon or any Nuxeo project, a Gatling sample is available in the <a href="https://github.com/nuxeo/nuxeo-marketplace-sample/tree/master/ftest/gatling" target="blank">Nuxeo marketplace sample project</a>. Note that Nuxeo has switched to Gatling as it was better suited to reach the level of performances required for benchmarking the Nuxeo Platform in extremely high stress conditions: multiple thousands of requests per seconds.</p>
 
       <h2>Random Generation of Documents with Nuxeo Platform Importer</h2>
@@ -447,14 +447,11 @@ It's now possible in the extension point for a command to include a <code>testPa
 &lt;extension target=&#34;org.nuxeo.ecm.platform.commandline.executor.service.CommandLineExecutorComponent&#34; point=&#34;command&#34;&gt;&#10;    &lt;command name=&#34;mycommand&#34;&gt;&#10;      &lt;commandLine&gt;somecommand&lt;/commandLine&gt;&#10;      &lt;parameterString&gt;arg1 --arg2 --arg3&lt;/parameterString&gt;&#10;      &lt;winCommand&gt;somecommand.exe&lt;/winCommand&gt;&#10;      &lt;winParameterString&gt;arg1 /arg2 /arg3&lt;/winParameterString&gt;&#10;      &lt;testParameterString&gt;--exists&lt;/testParameterString&gt;&#10;      &lt;winTestParameterString&gt;/exists&lt;/winTestParameterString&gt;&#10;    &lt;/command&gt;&#10;  &lt;/extension&gt;
 </pre>
 </p>
-      <h2>Explorer Addon Evolution</h2>
-      <p> <span class="release">8.3</span>The Explorer plugin has been greatly improved: better search features, cleaner look &amp; feel. We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We have also extended the XML generation feature to help developers have a working sample. Check it out on <a href="http://explorer.nuxeo.com/" target="_blank">explorer.nuxeo.com</a> or by installing the <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/platform-explorer" target="_blank">Platform Explorer Nuxeo Package</a>.</p>
+      <h2>Platform Explorer Addon Evolution</h2>
+      <p> <span class="release">8.3</span>The Platform Explorer addon has been greatly improved: better search features, cleaner look &amp; feel. We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We have also extended the XML generation feature to help developers have a working sample. Check it out on <a href="http://explorer.nuxeo.com/" target="_blank">explorer.nuxeo.com</a> or by installing the <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/platform-explorer" target="_blank">Platform Explorer Nuxeo Package</a>.</p>
 
       <h2>JSF Widgets Evolutions</h2>
-      <h3>
-        Limit Attribute for
-        <code>SuggestDirectoryEntries</code>
-      </h3>
+      <h3>Limit Attribute for <code>SuggestDirectoryEntries</code></h3>
       <p>
         <span class="release">8.2</span>A new attribute
         <code>limit</code>
@@ -480,15 +477,15 @@ It's now possible in the extension point for a command to include a <code>testPa
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;&#10;&lt;component name=&#34;org.nuxeo.test.showcase.content&#34;&gt;&#10;    &lt;extension target=&#34;org.nuxeo.ecm.showcase.content&#34; point=&#34;contents&#34;&gt;&#10;        &lt;content name=&#34;mycontent&#34;&gt;&#10;            &lt;filename&gt;export.zip&lt;/filename&gt;&#10;        &lt;/content&gt;&#10;&#10;        &lt;content name=&#34;disabled&#34; enable=&#34;false&#34;&gt;&#10;            &lt;filename&gt;export.zip&lt;/filename&gt;&#10;        &lt;/content&gt;&#10;    &lt;/extension&gt;&#10;&lt;/component&gt;
         </pre>
       </p>
-      <h2>Finer Control On Nuxeo Vision Processing </h2>
+      <h2>Finer Control on Nuxeo Vision Processing</h2>
       <p><span class="release new">8.10</span>
         <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-vision">Nuxeo Vision</a> has been improved to allow to trigger event (typically, an asynchronous event) and process business logic after nuxeo-vision has extracted tags or text. Example: for a Picture, nuxeo-vision stores by default in <code>dc:source</code> the text extracted via OCR. Adding a listener for <code>visionOnImageDone</code> is a good idea if one wants to check for unauthorized words (start a workflow, tag the picture, change its ACL so only an administrator can access it, ...).
       </p>
 
-      <h2>No More Selenium Tests </h2>
+      <h2>No More Selenium Tests</h2>
       <p><span class="release">8.3</span>Selenium has been fully replaced by Webdriver for the functional tests of the Nuxeo Platform and is no longer used.</p>
 
-      <h2>Miscellaneous</h2>
+      <h2>Miscellaneous</h2>No More Selenium Tests
       <p><span class="release">8.3</span>The UIDSequencer interface now supports long integer.
 
       </p>

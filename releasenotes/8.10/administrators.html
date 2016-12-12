@@ -77,7 +77,7 @@
       <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
       <H2>Environment Information Dumping with nuxeoctl connect-report</H2>
       <p><span class="release">8.3</span> <span class="release new">8.10</span> A new command has been added to nuxeoctl, <code>nuxeoctl connect-report</code>. This new command gathers information that can be useful to understand the environment in which a bug or a problem can be reproduced. This command was added in an effort to keep improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via JVM MBeans and more.</p>
-      <p>The addon <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report-web">Nuxeo Connect Tools Report Web</a> is available to provide basic user interface to get the report.
+      <p>The addon <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report-web">Nuxeo Connect Tools Report Web</a> is available to provide a basic user interface to get the report.
       </p>
       <h2>Startup Wizard Improvements on Module Selection</h2>
       <p><span class="release new">8.10</span> The Module selection step of the startup wizard has been reviewed to provide a more user-friendly interface, take into consideration the distribution changes and make dependencies betweens addons and UIs more straightforward.
@@ -100,7 +100,7 @@
 
       <h2>Elasticsearch 2.X</h2>
      <p>
-       <span class="release new">8.10</span> From version 8.10, Nuxeo uses ElasticSearch 2.x version. Please carefully read upgrade notes.
+       <span class="release new">8.10</span> From version 8.10, Nuxeo uses Elasticsearch 2.x version. Please carefully read our <a href ="https://doc.nuxeo.com/nxdoc/upgrade-from-lts-2015-to-lts-2016/#elasticsearch-upgrade">upgrade documentation</a>.
      </p>
 
       <h2>S3 Configuration via Extension Point</h2>
@@ -182,11 +182,11 @@
         <li>Re-index a document and its children</li>
         <li>Wait for indexing and perform an index refresh</li>
       </ul>
-      <h2>Indexing Optimisation Using Scroll API</h2>
+      <h2>Indexing Optimization Using Scroll API</h2>
       <p>
         <span class="release new">8.10</span> Instead of loading all document ids to reindex, the new repository scroll API is used to remove memory pressure.
       </p>
-      <H2>Full-Text Indexing Optimisation</H2>
+      <H2>Full-Text Indexing Optimization</H2>
       <p><span class="release">8.3</span>We optimized the indexing flow by using ES bulk indexing features, when full-text indexation is disabled at the repository level. Number of works queued is now divided by two.
       </p>
 
@@ -230,7 +230,7 @@ nuxeoctl register [&lt;username&gt; [&lt;project&gt; [&lt;type&gt; &lt;descripti
 nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;description&gt; [&lt;pwd&gt;]]</pre>
         <p><code>register</code> allows to register an instance using an existing Nuxeo Online Services account while <code>register-trial</code> allows to create an account and get a trial against the Nuxeo Online Services portal.
         </p>
-        <h2>Lots of Improvements For nuxeoctl mp-install</h2>
+        <h2>Lots of Improvements for nuxeoctl mp-install</h2>
         <p><span class="release new">8.10</span>Many improvements were added to nuxeoctl mp-install behavior and multiple bugs were fixed.</p>
 
 
@@ -263,7 +263,7 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
           <li><code>nuxeo.redis.maxTotal</code> (default 16)</li>
           <li><code>nuxeo.redis.maxIdle</code> (default 8)</li>
         </ul>
-      <h3>Retry Logic For Redis Calls</h3>
+      <h3>Retry Logic for Redis Calls</h3>
       <p>
         <span class="release">8.2</span>Nuxeo now uses a failover executor with an exponential delay policy: 1ms,
         2ms, 4ms, 8ms, 16ms, 32ms .. until the timeout has reached 5min by default.
@@ -288,7 +288,8 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
       <p>
         A queue based importer has been added as an additional bundle of the Nuxeo Platform Importer addon. This importer's interest is that it allows to store import job in queues, with a Kafka implementation, guaranteeing robustness and reliability of the import process at scale.
       </p>
-      <h3>Non-Bulk Mode Available</h3><p><span class="release">8.3</span>
+      <h3>Non-Bulk Mode Available</h3>
+      <p><span class="release">8.3</span>
       With the following contribution you can now configure the importer to work in non-bulk mode, which is a bit slower but allows regular Work instances to be created and directed to specific queues:</p>
 
 <pre>
@@ -299,7 +300,7 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
 &lt;/extension&gt;
 </pre>
 
-      <h3>Nuxeo Importer Without ES Indexing</h3>
+      <h3>Nuxeo Importer without ES Indexing</h3>
       <p><span class="release">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
 
       <h2>Use of Docker for 3D conversions</h2>
@@ -316,7 +317,7 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
         <span class="release new">8.10</span> The JDK (versus JRE) is now required to launch The Nuxeo Platform.
       </p>
 
-      <h2>Configurable Content-Security-Policy header</h2>
+      <h2>Configurable Content-Security-Policy Header</h2>
       <p><span class="release new">8.10</span>
       The Content-Security-Policy header is useful to protect against a variety of attacks, one of them being clickjacking (https://www.owasp.org/index.php/Clickjacking). Nuxeo now includes a permissive Content-Security-Policy. The default Nuxeo configuration is:
       <pre>
