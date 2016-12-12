@@ -98,6 +98,11 @@ It allows enhanced productivity with direct access to last visited documents, co
       <div>
         <img class="lightboxed" src="./8.1_external_permissions.png" />
       </div>
+
+      <h2> Nuxeo 3D Addon</h2>
+      <p>
+        <span class="release new">8.10</span> A new addon adds 3D Support to Nuxeo Platform: canonical views extraction, technical metadata, transformations and 3D previewer for web applications. Those new capabilities can be used for creative process in textile industry for instance.<a href="https://doc.nuxeo.com/nxdoc/nuxeo-3d/"> Read more in the documentation</a>.
+      </p>
       <h2>Nuxeo Live Connect for Box</h2>
       <p>
         <span class="release">8.1</span>
@@ -121,6 +126,10 @@ It allows enhanced productivity with direct access to last visited documents, co
         <a href="https://doc.nuxeo.com/x/EgOIAQ"> Nuxeo Live Connect documentation</a>
         for more information.
       </p>
+      <h2> Versions and Proxys as Collection Members </h2>
+      <p> <span class="release new">8.10</span>
+        It is now possible to add a version or a proxy to a collection.
+      </p>
       <h2>Users and Groups Management Audit</h2>
       <p>
         <span class="release">8.2</span> Creation, Update and deletion of users and groups actions are now logged
@@ -133,7 +142,35 @@ It allows enhanced productivity with direct access to last visited documents, co
             <li>d the autolock of files edited with Drive Edit on Windows is now more consistent.</li>
             <li>At initial synchronisation, the time needed to retrieve the documents is 4 times lower and the number of children synchronized in a folder is no more limited to 1000.</li>
         </ul>
+
+        <h2>Long Renditions</h2>
+        <p> <span class="release new">8.10</span>Optimizations have been done on the way renditions computation are scheduled to avoid that a long one with quickly changing documents would monopolize all the resouces all the time, preventing uses to get other renditions.
+        </p>
+
+        <h2>Bigger Resolutions for Picture Renditions</h2>
+        <p> <span class="release new">8.10</span>
+          A new FullHD rendition has been added: 1920x1080, and other renditions's resolutions have been increased: Small picture rendition width limit has been increased from 280 to 560.
+Medium picture rendition width limit has been increased from 550 to 1000.
+        </p>
+
+        <h2>PDF Rendition For Picture</h2>
+        <p> <span class="release new">8.10</span>
+        The Picture document type (and all document types with the Picture facet) now has a PDF rendition.
+        </p>
+        <h2>Canon Raw Image as Picture</h2>
+        <p> <span class="release new">8.10</span>
+        CR2 files are finally considered as images!
+        </p>
+
+        <h2>Universal Login Page</h2>
+        <p> <span class="release new">8.10</span>A login page used by Drive, Android and iOS application, JSF UI and Web UI has been implemented, with responsive design and mecanisms to support Nuxeo token based authentication in the related applications.
+        </p>
       <h2>JSF UI Evolutions</h2>
+      <h3>New Document Types Icons</h3>
+      <p>
+        <span class="release new">8.10</span> Icons of document types have been updated. We hope you like the new set!
+      </p>
+
       <h3>New Previewers</h3>
       <p>
         <span class="release">8.2</span> Preview now offers to see office documents with pdf.js, video documents
@@ -184,6 +221,8 @@ It allows enhanced productivity with direct access to last visited documents, co
         <span class="release">8.2</span> When validating an invitation request, Administrator can now see the
         groups the user will be granted.
       </p>
+      <h3>Permlink in invitation email</h3>
+      <p>A permilink link is now used in emails sent for invitation. </p>
       <h3>More Friendly "Http Transport returned a 0 status code" Error</h3>
       <p>
         <span class="release">8.1</span> When this error happens, the message is now displayed as a warning and
@@ -197,6 +236,8 @@ It allows enhanced productivity with direct access to last visited documents, co
   &lt;property name=&quot;org.nuxeo.trash.keepCheckedIn&quot;>true&lt;/property&gt;
 &lt;/extension&gt;
 </pre>
+  <h3>Query Optimisation on Dashboard</h3>
+  <p><span class="release new">8.10</span>Some of the queries used on the dashboard have been migrated to using Elasticsearch and now scales better, lowering the display time of the dashboard.</p>
       <h2>Nuxeo Explorer Improvements</h2>
       <p><span class="release">8.3</span>
       We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We've also extended the XML generation feature to help developers have a working sample. The documentation has been completed and will be maintained regularly.
@@ -222,6 +263,7 @@ It allows enhanced productivity with direct access to last visited documents, co
         <code>dc:created</code>
         property using CSV importer. It used to be overridden with the date of import.
       </p>
+
       <h2>Nuxeo Spreadsheet</h2>
       <h3>Locale is Respected</h3>
       <p>
@@ -270,6 +312,8 @@ It allows enhanced productivity with direct access to last visited documents, co
         <h3>Nuxeo Forum</h3>
         <p>The Forum feature of the Nuxeo Platform has been taken out of the default distribution to become an addon. <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-forum">Nuxeo Forum</a> is available from the Nuxeo Marketplace.
         </p>
+
+
 
     </div>
   </div>
