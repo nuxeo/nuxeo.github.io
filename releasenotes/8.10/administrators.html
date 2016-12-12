@@ -69,7 +69,7 @@
     </p>
     <p class="remove-bottom" id="site-title">
       <a href="./index.html">
-        <span class="version-number">8.3</span> Release Notes
+        <span class="version-number">8.10</span> Release Notes
       </a>
     </p>
     <div id="welcome">
@@ -77,7 +77,7 @@
       <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
       <H2>Environment Information Dumping with nuxeoctl connect-report</H2>
       <p><span class="release">8.3</span> <span class="release new">8.10</span> A new command has been added to nuxeoctl, <code>nuxeoctl connect-report</code>. This new command gathers information that can be useful to understand the environment in which a bug or a problem can be reproduced. This command was added in an effort to keep improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via JVM MBeans and more.</p>
-      <p>The addon <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report-web">Nuxeo Connect Tools Report Web</a> is available to provide a basic user interface to get the report.
+      <p>The addon <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report-web" target="_blank">Nuxeo Connect Tools Report Web</a> is available to provide a basic user interface to get the report.
       </p>
       <h2>Startup Wizard Improvements on Module Selection</h2>
       <p><span class="release new">8.10</span> The Module selection step of the startup wizard has been reviewed to provide a more user-friendly interface, take into consideration the distribution changes and make dependencies betweens addons and UIs more straightforward.
@@ -100,7 +100,7 @@
 
       <h2>Elasticsearch 2.X</h2>
      <p>
-       <span class="release new">8.10</span> From version 8.10, Nuxeo uses Elasticsearch 2.x version. Please carefully read our <a href ="https://doc.nuxeo.com/nxdoc/upgrade-from-lts-2015-to-lts-2016/#elasticsearch-upgrade">upgrade documentation</a>.
+       <span class="release new">8.10</span> From version 8.10, Nuxeo uses Elasticsearch 2.x version. Please carefully read our <a href ="https://doc.nuxeo.com/nxdoc/upgrade-from-lts-2015-to-lts-2016/#elasticsearch-upgrade" target="_blank">upgrade documentation</a>.
      </p>
 
       <h2>S3 Configuration via Extension Point</h2>
@@ -150,7 +150,7 @@
         activated explicitly using the
         <code>gridfsbinaries</code>
         template. There is no need to install an additional Nuxeo Package anymore. Read our
-        <a href="https://doc.nuxeo.com/x/yAEuAQ"> MongoDB documentation</a>
+        <a href="https://doc.nuxeo.com/nxdoc/mongodb/" target="_blank"> MongoDB documentation</a>
         for more information.
       </p>
       <h2>JCloud Binary Manager</h2>
@@ -280,7 +280,7 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
       <p><span class="release">8.3</span>A cache is now set up for the UserManager by default. It was not the case any more on LTS 2015 for users persisted in an SQL directory.</p>
       <h2>LibreOffice is Started In CommandLine</h2>
       <p><span class="release new">8.10</span>
-      The PDF transformation of an office document is now  done without using JODConverter but using a command line based PDF converter. This gives a more stable architecture. It assumes LibreOffice is on the path.
+      The PDF transformation of an office document is now  done without using JODConverter but using a command line based PDF converter. This gives a more stable architecture. It assumes LibreOffice is on the path. Read our <a href="https://doc.nuxeo.com/nxdoc/installation/" target="_blank">Installation documentation</a> for all the requirements.
       </p>
 
       <h2>Nuxeo Importer</h2>
@@ -304,7 +304,7 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
       <p><span class="release">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
 
       <h2>Use of Docker for 3D conversions</h2>
-      <p><span class="release new">8.10</span> 3D conversions run with the new 3D addon make use by default of Docker and pull images containing necessary software for conversions (Collada, Blender). Nuxeo should generalise this design in the future.</p>
+      <p><span class="release new">8.10</span> 3D conversions run with the new 3D addon make use by default of Docker and pull images containing necessary software for conversions (Collada, Blender). Nuxeo should generalize this design in the future.</p> Read the <a href="https://doc.nuxeo.com/nxdoc/nuxeo-3d/" target="_blank">Nuxeo 3D documentation</a>.
 
       <h2>Web App Optimizations</h2>
       <p>
@@ -314,16 +314,16 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
       </p>
       <h2>JDK Required</h2>
       <p>
-        <span class="release new">8.10</span> The JDK (versus JRE) is now required to launch The Nuxeo Platform.
+        <span class="release new">8.10</span> The JDK (versus JRE) is now required to launch The Nuxeo Platform. Read our <a href="https://doc.nuxeo.com/nxdoc/installation/" target="_blank">Installation documentation</a> for all the requirements.
       </p>
 
       <h2>Configurable Content-Security-Policy Header</h2>
       <p><span class="release new">8.10</span>
-      The Content-Security-Policy header is useful to protect against a variety of attacks, one of them being clickjacking (https://www.owasp.org/index.php/Clickjacking). Nuxeo now includes a permissive Content-Security-Policy. The default Nuxeo configuration is:
+      The Content-Security-Policy header is useful to protect against a variety of attacks, one of them being clickjacking (<a href="https://www.owasp.org/index.php/Clickjacking" target="_blank">https://www.owasp.org/index.php/Clickjacking</a>). Nuxeo now includes a permissive Content-Security-Policy. The default Nuxeo configuration is:
       <pre>
   &lt;header name="Content-Security-Policy"&gt;default-src *; script-src 'unsafe-inline' 'unsafe-eval' data: *; style-src 'unsafe-inline' *; font-src data: *&lt;/header&gt;
       </pre>
-      A stricter policy can be defined using a contribution like:
+      <p>A stricter policy can be defined using a contribution like:</p>
         <pre>
       &lt;require&gt;org.nuxeo.ecm.platform.web.common.requestcontroller.service.RequestControllerService.defaultContrib&lt;/require&gt;
 

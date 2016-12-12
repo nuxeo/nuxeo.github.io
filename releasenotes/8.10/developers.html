@@ -80,14 +80,14 @@
         <span class="release">8.1</span>A C# Nuxeo Client has been added. A
         <a href="https://github.com/nuxeo/nuxeo-dotnet-browser" target="_blank"> sample application</a>
         is provided so as to understand how to make use of it. Read the
-        <a href="https://doc.nuxeo.com/x/dwSlAQ" target="_blank"> C# client documentation </a>
+        <a href="https://doc.nuxeo.com/nxdoc/net-client/" target="_blank">C# client documentation</a>
         for more information.
       </p>
 
       <h2>New Operations</h2>
 
       <h3>nuxeo-platform-pdf-util</h3>
-      <p><span class="release new">8.10</span>The new Nuxeo-Platform-PDF-utils addon brings a set of operations to work around PDFs: merging several PDFs, watermarking, page extraction and <a href="https://doc.nuxeo.com/nxdoc/how-to-use-pdf-conversion-operations-with-studio/" target="blank">more</a>.
+      <p><span class="release new">8.10</span>The new Nuxeo-Platform-PDF-utils addon brings a set of operations to work around PDFs: merging several PDFs, watermarking, page extraction and more. Read this <a href="https://doc.nuxeo.com/nxdoc/how-to-use-pdf-conversion-operations-with-studio/" target="blank">how-to</a> to see an example.
       </p>
 
       <h3>Video Transformations</h3>
@@ -145,7 +145,7 @@
       </p>
 
       <h3>New Search Endpoint</h3><p>
-      <span class="release">8.3</span>A new <code>search</code> endpoint has been added to be able to be able to perform searches as well as saving and fetching them. The <code>query</code> endpoint is now deprecated.
+      <span class="release">8.3</span>A new <code>search</code> endpoint has been added to be able to be able to perform searches as well as saving and fetching them. The <code>query</code> endpoint is now deprecated. Read <a href="https://doc.nuxeo.com/nxdoc/search-endpoint/" target="_blank">documentation</a> for details.
       </p>
       <h3>Support for LiveConnect Blobs in REST API</h3><p>
       <span class="release new">8.10</span>
@@ -267,16 +267,15 @@ application/json; nuxeo-entity=documents
       </p>
       <h3>deleteConstraints</h3>
       <p><span class="release new">8.10</span>
-      Previously you had to declare:
+      Previously you had to declare:</p>
       <pre>
 &lt;component name=&#34;org.nuxeo.ecm.webapp.directory.directoryUI&#34;&gt;&#10;&#10;  &lt;extension target=&#34;org.nuxeo.ecm.directory.ui.DirectoryUIManager&#34;&#10;    point=&#34;directories&#34;&gt;&#10;&#10;    &lt;directory name=&#34;continent&#34; layout=&#34;vocabulary&#34; sortField=&#34;label&#34;&gt;&#10;      &lt;deleteConstraint&#10;        class=&#34;org.nuxeo.ecm.directory.api.ui.HierarchicalDirectoryUIDeleteConstraint&#34;&gt;&#10;        &lt;property name=&#34;targetDirectory&#34;&gt;country&lt;/property&gt;&#10;        &lt;property name=&#34;targetDirectoryField&#34;&gt;parent&lt;/property&gt;&#10;      &lt;/deleteConstraint&gt;&#10;    &lt;/directory&gt;&#10;    &lt;directory name=&#34;country&#34; layout=&#34;country_vocabulary&#34; sortField=&#34;parent&#34; /&gt;&#10;&lt;/extension&gt;
       </pre>
-      You can now declare directly in the directory core contribution:
-
+      <p>You can now declare directly in the directory core contribution:</p>
       <pre>
  &lt;extension target=&#34;org.nuxeo.ecm.directory.sql.SQLDirectoryFactory&#34;&#10;    point=&#34;directories&#34;&gt;&#10;    &lt;directory name=&#34;country&#34;&gt;&#10;      &lt;schema&gt;xvocabulary&lt;/schema&gt;&#10;      &lt;parentDirectory&gt;continent&lt;/parentDirectory&gt;&#10;      &lt;dataSource&gt;java:/nxsqldirectory&lt;/dataSource&gt;&#10;      &lt;cacheTimeout&gt;3600&lt;/cacheTimeout&gt;&#10;      &lt;cacheMaxSize&gt;1000&lt;/cacheMaxSize&gt;&#10;      &lt;table&gt;country&lt;/table&gt;&#10;      &lt;idField&gt;id&lt;/idField&gt;&#10;      &lt;autoincrementIdField&gt;false&lt;/autoincrementIdField&gt;&#10;      &lt;dataFile&gt;directories/country.csv&lt;/dataFile&gt;&#10;      &lt;createTablePolicy&gt;on_missing_columns&lt;/createTablePolicy&gt;&#10;    &lt;/directory&gt;&#10;&#10;    &lt;directory name=&#34;continent&#34;&gt;&#10;      &lt;schema&gt;vocabulary&lt;/schema&gt;&#10;      &lt;dataSource&gt;java:/nxsqldirectory&lt;/dataSource&gt;&#10;      &lt;cacheTimeout&gt;3600&lt;/cacheTimeout&gt;&#10;      &lt;cacheMaxSize&gt;1000&lt;/cacheMaxSize&gt;&#10;      &lt;table&gt;continent&lt;/table&gt;&#10;      &lt;idField&gt;id&lt;/idField&gt;&#10;      &lt;autoincrementIdField&gt;false&lt;/autoincrementIdField&gt;&#10;      &lt;dataFile&gt;directories/continent.csv&lt;/dataFile&gt;&#10;      &lt;createTablePolicy&gt;on_missing_columns&lt;/createTablePolicy&gt;&#10;      &lt;deleteConstraint&#10;        class=&#34;org.nuxeo.ecm.directory.HierarchicalDirectoryDeleteConstraint&#34;&gt;&#10;        &lt;property name=&#34;targetDirectory&#34;&gt;country&lt;/property&gt;&#10;        &lt;property name=&#34;targetDirectoryField&#34;&gt;parent&lt;/property&gt;&#10;      &lt;/deleteConstraint&gt;&#10;    &lt;/directory&gt;&#10;&lt;/extension&gt;
       </pre>
-      The directory session will check these delete constraints and throw a <code>org.nuxeo.ecm.directory.DirectoryDeleteConstraintException</code> if any are met.
+      <p>The directory session will check these delete constraints and throw a <code>org.nuxeo.ecm.directory.DirectoryDeleteConstraintException</code> if any are met.</p>
       <h2>Elasticsearch Evolutions</h2>
 
       <h3>Elasticsearch Crawl API </h3>
@@ -336,7 +335,7 @@ while (!batchOfDocs.isEmpty()) {
       </P>
      <h2>Subtypes Declaration at Core Level</h2>
      <p> <span class="release new">8.10</span>
-       Allowed subtype declarations has been moved to <a href="http://explorer.nuxeo.com/nuxeo/site/distribution/latest/viewExtensionPoint/org.nuxeo.ecm.core.schema.TypeService--doctype">core document type declaration extension point</a> and the platform TypeService now relies on those clore declarations. Subtype and icon contributions have been moved to core so that they are available even without JSF. A new facet <code>HiddenInCreation</code>  is used to identify doctypes that should not be visible on creation.
+       Allowed subtype declarations has been moved to <a href="http://explorer.nuxeo.com/nuxeo/site/distribution/latest/viewExtensionPoint/org.nuxeo.ecm.core.schema.TypeService--doctype" target="_blank">core document type declaration extension point</a> and the platform TypeService now relies on those clore declarations. Subtype and icon contributions have been moved to core so that they are available even without JSF. A new facet <code>HiddenInCreation</code>  is used to identify doctypes that should not be visible on creation.
      </p>
 
       <h2>CMIS Evolutions</h2>
@@ -360,13 +359,13 @@ while (!batchOfDocs.isEmpty()) {
 
       <h2>Packaging Evolutions</h2>
       <h3>JSF Application Is Now a Package</h3>
-      <p><span class="release new">8.10</span>The JSF application is now shipped as package, available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-jsf-ui">on the marketplace</a>.
+      <p><span class="release new">8.10</span>The JSF application is now shipped as package, available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-jsf-ui" target="_blank">on the marketplace</a>.
       </p>
-      <h3>Nuxeo-Sever Is the New cap</h3>
-        <p><span class="release new">8.10</span> The Nuxeo CAP distribution is no more used. Nuxeo is now distributed as a bare "server" distribution on top of which different user interfaces can be installed. The main ones available are the standard Seam/JSF UI (identical to the previous LTS releases), and a new Web UI (beta). The startup wizard allows you to select which one(s) you want to install on your server. Nuxeo Packages may also provide different functionalities depending on the installed UI.
+      <h3>Nuxeo-Server Is the New CAP</h3>
+        <p><span class="release new">8.10</span> The Nuxeo CAP distribution is no more used. Nuxeo is now distributed as a bare "server" distribution on top of which different user interfaces can be installed. The main ones available are the standard Seam/JSF UI (identical to the previous LTS releases), and a new Web UI (beta). The startup wizard allows you to select which one(s) you want to install on your server. Nuxeo addons may also provide different functionalities depending on the installed UI.
         </p>
         <h3>Optional Dependency</h3>
-          <p><span class="release new">8.10</span>The Nuxeo Packages system now offers the ability to state an optional dependency for situations where some bundles of the package must be installed only if another specific package is installed. The typical use case is when an addon has bundles for the JSF UI and for the new Web UI. The JSF bundle must be installed only if the JSF Application has been installed.
+          <p><span class="release new">8.10</span>The Nuxeo Package system now offers the ability to state an optional dependency for situations where some bundles of the package must be installed only if another specific package is installed. The typical use case is when an addon has bundles for the JSF UI and for the new Web UI. The JSF bundle must be installed only if the JSF Application has been installed.
           <div><pre>
 &lt;optional-dependencies&gt;
   &lt;package&gt;nuxeo-jsf-ui&lt;/package&gt;
@@ -479,7 +478,7 @@ It's now possible in the extension point for a command to include a <code>testPa
       </p>
       <h2>Finer Control on Nuxeo Vision Processing</h2>
       <p><span class="release new">8.10</span>
-        <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-vision">Nuxeo Vision</a> has been improved to allow to trigger event (typically, an asynchronous event) and process business logic after nuxeo-vision has extracted tags or text. Example: for a Picture, nuxeo-vision stores by default in <code>dc:source</code> the text extracted via OCR. Adding a listener for <code>visionOnImageDone</code> is a good idea if one wants to check for unauthorized words (start a workflow, tag the picture, change its ACL so only an administrator can access it, ...).
+        <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-vision" target="_blank">Nuxeo Vision</a> has been improved to allow to trigger event (typically, an asynchronous event) and process business logic after nuxeo-vision has extracted tags or text. Example: for a Picture, nuxeo-vision stores by default in <code>dc:source</code> the text extracted via OCR. Adding a listener for <code>visionOnImageDone</code> is a good idea if one wants to check for unauthorized words (start a workflow, tag the picture, change its ACL so only an administrator can access it, ...).
       </p>
 
       <h2>No More Selenium Tests</h2>
