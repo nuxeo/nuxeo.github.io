@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+  <!-- Basic Page Needs
+    ================================================== -->
+  <meta charset="utf-8">
+  <title>Nuxeo Platform LTS 2016 Release notes - New and Noteworthy</title>
+  <meta name="author" content="nuxeo">
+  <!-- Mobile Specific Metas
+    ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- CSS
+    ================================================== -->
+  <link rel="stylesheet" href="../../stylesheets/base.css">
+  <link rel="stylesheet" href="../../stylesheets/skeleton.css">
+  <link rel="stylesheet" href="../../stylesheets/layout.css">
+  <link rel="stylesheet" href="../../stylesheets/release_notes.css">
+  <link rel="stylesheet" href="../../stylesheets/lightbox.css">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+  <style>
+    #xnav-footer {
+      margin-top: 0px !important;
+    }
+
+    div.breakafter {
+      page-break-after: always;
+    }
+  </style>
+  <script src="../../javascripts/jquery-1.7.1.min.js"></script>
+  <!-- Favicons
+        ================================================== -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+</head>
+
+<body>
+  <div id="mainContainer" class="container">
+    <p class="remove-bottom" id="site-title"><a href="./index.html">Nuxeo Platform <span class="version-number">8.10</span> Release Notes</a></p>
+<div id="welcome">
+      <div style="clear:both;"></div>
+      <h1 style="margin-left: -0.5em !important;">For Users</h1>
+      <h2>Nuxeo Mobile</h2>
+      <p><span class="release">8.3</span> Nuxeo Mobile</a> provides an out of the box mobile experience with any customized Nuxeo Platform server. It lets you access content stored on Nuxeo Platform servers on your phone. Nuxeo Mobile provides a seamless experience on essential features such as searching, browsing, previewing documents (typically images, videos, text documents and notes), and managing favorite documents. Nuxeo Mobile is available <a href="https://itunes.apple.com/app/nuxeo/id1103802613">for iOs</a> and <a href="https://play.google.com/store/apps/details?id=com.nuxeomobile">Android</a>.</p>
+      <div>
+        <img class="lightboxed" src="./6+-Menu-EN.jpeg" /> <img class="lightboxed" src="./6+-Browse-EN.jpeg" />
+      </div>
+      <h2>Nuxeo Web UI Beta</h2>
+      <p><span class="release">8.3</span> <span class="release new">8.10</span> A new UI is being written for the LTS 2016. Purpose is to move to more recent standards and technological stack (Web Components and Polymer) and to take the opportunity to reboot the user experience. Some important steps around configurability are missing before reaching the 1.0 version. Yet a large part of the feature scope is implemented and robust. We encourage you to check it out yourself:
+      <ul>
+      <li>Content browsing, with great new features in comparison with JSF UI, like recently seen documents</li>
+      <li>Content capture, including batch metadata edition and Live Connect</li>
+      <li>Workflows</li>
+      <li>Search, including new asset search screens</li>
+      <li>Document lists a.k.a Queues</li>
+      <li>Analytics</li>
+      <li>Preview and more.</li>
+      </ul>
+      Final release for LTS 2016 is to be expected for April 2017. Nuxeo Web UI is already available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-web-ui" target="_blank">on the marketplace and you can check <a href="https://doc.nuxeo.com/nxdoc/web-ui/" target="_blank">its documentation</a> for more details.
+      </p>
+      <div>
+        <img class="lightboxed" src="./WebUI-search-results.png" />
+      </div>
+      <h2>Instant Share</h2>
+      <p>
+        <span class="release">8.1</span> A new feature allows to invite users to a given folder of the Nuxeo Platform
+        with either Read or Edit permission, by email. Invited users do not have an account on the Nuxeo Platform
+        instance. The access is temporary and any access remains tracked in the audit log, based on the used email
+        address. <a href="https://doc.nuxeo.com/userdoc/managing-permissions/"> Read more in the documentation</a>.
+      </p>
+      <div>
+        <img class="lightboxed" src="./8.1_external_permissions.png" />
+      </div>
+
+      <h2>Nuxeo 3D Addon</h2>
+      <p>
+        <span class="release new">8.10</span> A new addon adds 3D Support to the Nuxeo Platform: canonical views extraction, technical metadata, transformations and 3D previewer for web applications. Those new capabilities can be used for creative process in the textile industry for instance. <a href="https://doc.nuxeo.com/nxdoc/nuxeo-3d/" target="_blank">Read more in the documentation</a>.
+      </p>
+      <h2>Nuxeo Live Connect for Box</h2>
+      <p>
+        <span class="release">8.1</span>
+        <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-liveconnect" target="_blank"> Nuxeo Live Connect</a>
+        has been improved and now integrates with Box.com. Nuxeo Live Connect allows to easily reference files that are
+        stored in the cloud and have them participate to your business processes. Check the
+        <a href="https://doc.nuxeo.com/nxdoc/nuxeo-live-connect/" target="_blank"> Nuxeo Live Connect documentation</a>
+        for more information.
+      </p>
+      <div>
+        <img class="lightboxed" src="./8.1_LiveConnect_file_creation.png" width="400" />
+      </div>
+      <h2>Nuxeo Live Connect for One Drive</h2>
+      <p>
+        <span class="release">8.2</span>
+        <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-liveconnect" target="_blank">Nuxeo Live Connect</a>
+        has been improved and now integrates with One Drive. Nuxeo Live Connect allows to easily reference files that
+        are stored in the cloud and have them participate to your business processes. It offers as usual with Live
+        Connect: direct download from the Microsoft Cloud, full text indexing etc. We also have come out with a generic
+        One Drive Java client and a generic file picker as well. Check the
+        <a href="https://doc.nuxeo.com/nxdoc/nuxeo-live-connect/" target="_blank"> Nuxeo Live Connect documentation</a>
+        for more information.
+      </p>
+      <h2>Versions and Proxys as Collection Members </h2>
+      <p> <span class="release new">8.10</span>
+        It is now possible to add a version or a proxy to a collection.
+      </p>
+      <h2>Users and Groups Management Audit</h2>
+      <p>
+        <span class="release">8.2</span> Creation, Update and deletion of users and groups actions are now logged
+        into the audit trail of Nuxeo Platform.
+      </p>
+      <h2>Nuxeo Drive Optimizations</h2>
+      <p><span class="release">8.3</span> <span class="release new">8.10</span>Some improvements were brought to Nuxeo Drive: </p>
+        <ul>
+            <li>A message is now displayed to the user when there is no space left on their device (used to be logs only).</li>
+            <li>The autolock of files edited with Drive Edit on Windows is now more consistent.</li>
+            <li>At initial synchronisation, the time needed to retrieve the documents is 4 times lower and the number of children synchronized in a folder is no more limited to 1000.</li>
+        </ul>
+
+        <h2>Long Renditions</h2>
+        <p> <span class="release new">8.10</span>Optimizations have been done on the way renditions computation are scheduled to avoid that a long one with quickly changing documents would monopolize all the resouces all the time, preventing uses to get other renditions.
+        </p>
+
+        <h2>Bigger Resolutions for Picture Renditions</h2>
+        <p> <span class="release new">8.10</span>
+          A new FullHD rendition has been added: 1920x1080, and other renditions's resolutions have been increased: Small picture rendition width limit has been increased from 280 to 560.
+      Medium picture rendition width limit has been increased from 550 to 1000.
+        </p>
+
+        <h2>PDF Rendition For Picture</h2>
+        <p> <span class="release new">8.10</span>
+        The Picture document type (and all document types with the Picture facet) now has a PDF rendition.
+        </p>
+        <h2>Canon Raw Image as Picture</h2>
+        <p> <span class="release new">8.10</span>
+        CR2 files are finally considered as pictures.
+        </p>
+
+        <h2>Universal Login Page</h2>
+        <p> <span class="release new">8.10</span>A login page used by Drive, Android and iOS application, JSF UI and Web UI has been implemented, with responsive design and mecanisms to support Nuxeo token based authentication in the related applications.
+        </p>
+        <div>
+            <img class="lightboxed" src="./login_desktop.png" />
+            <img class="lightboxed" src="./login_mobile.PNG" />
+        </div>
+      <h2>JSF UI Evolutions</h2>
+      <h3>New Document Types Icons</h3>
+      <p>
+        <span class="release new">8.10</span> Icons of document types have been updated. We hope you like the new set!
+      </p>
+      <div>
+          <img class="lightboxed" src="./8.10_doctypes_icons.png" />
+      </div>
+
+      <h3>New Previewers</h3>
+      <p>
+        <span class="release">8.2</span> Preview now offers to see office documents with pdf.js, video documents
+        with video.js and images with a JavaScript client side viewer. Markdown documents are rendered in HTML. Preview
+        is opened in a fancybox.
+      </p>
+      <h3>Placeless Document Can Be Browsed</h3>
+      <p>
+        <span class="release">8.2</span> Placeless documents like persisted renditions can now be browsed in the
+        JSF UI without any crash.
+      </p>
+      <h3>User Feedback on Permission Management Tab</h3>
+      <p>
+        <span class="release">8.1</span> Feedback using the Polymer element paper-toast has been implemented on the
+        Permissions tab. It is used on the create, update and delete permission actions, as well as on the "send
+        notification email" action.
+      </p>
+      <h3>No More Error Stack Trace by Default</h3>
+      <p>
+        <span class="release">8.2</span> By default the traces are hidden in error pages of Nuxeo, for security
+        reasons. In order to activate the traces display in error pages of Nuxeo, the dev mode has to be set:
+        org.nuxeo.dev in nuxeo.conf or in the admin center.
+      </p>
+      <h3>Smart Search Is Back</h3>
+      <p>
+        <span class="release">8.1</span>
+        <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-platform-smart-search"> Smart Search</a>,
+        that allows users to build their own queries, has been re-integrated to the Search tab, consistently with
+        other search options. Smart Search is delivered as a Nuxeo Package.
+      </p>
+      <div>
+        <img class="lightboxed" src="./8.1_SmartSearch_query.png" width="250" />
+      </div>
+      <h3>Confirmation Pop-up before Purge</h3>
+      <p>
+        <span class="release">8.1</span> In the Admin Center, when removing the permissions of a given user, you now
+        have to confirm on a pop-up that you really want to purge all the permissions.
+      </p>
+      <div>
+        <img class="lightboxed" src="./8.1_permission_purge_confirm.png" width="400" />
+      </div>
+      <h3>Password Protection</h3>
+      <p>
+        <span class="release">8.2</span> When a user changes their password, they are now required to fill in the old password value.
+      </p>
+      <h3>See Assigned Groups before Validating Invitation</h3>
+      <p>
+        <span class="release">8.2</span> When validating an invitation request, Administrator can now see the
+        groups the user will be granted.
+      </p>
+      <h3>Permlink in Invitation Email</h3>
+      <p><span class="release new">8.10</span>A permlink link is now used in emails sent for invitation. </p>
+      <h3>More Friendly "Http Transport returned a 0 status code" Error</h3>
+      <p>
+        <span class="release">8.1</span> When this error happens, the message is now displayed as a warning and
+        translated in a more friendly way.
+      </p>
+      <h3>Do Not Checkout a Document When Putting It in the Trash</h3>
+      <p><span class="release">8.3</span> Now, putting a checked-in document in the trash will not check it out, thus not spuriously changing its quota size. This behavior can be also activated in Nuxeo 7.10 since HF10 using:
+      </p>
+      <pre>
+      &lt;extension target=&quot;org.nuxeo.runtime.ConfigurationService&quot; point=&quot;configuration&quot;&gt;
+      &lt;property name=&quot;org.nuxeo.trash.keepCheckedIn&quot;>true&lt;/property&gt;
+      &lt;/extension&gt;
+      </pre>
+      <h3>Query Optimization on Dashboard</h3>
+      <p><span class="release new">8.10</span>Some of the queries used on the dashboard have been migrated to using Elasticsearch and now scale better, lowering the display time of the dashboard.</p>
+      <h2>Nuxeo Explorer Improvements</h2>
+      <p><span class="release">8.3</span>
+      We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We've also extended the XML generation feature to help developers have a working sample. The documentation has been completed and will be maintained regularly.
+      </p>
+      <div>
+        <img class="lightboxed" src="./explorer-improvement.png" />
+      </div>
+      <h2>CSV Importer Small Improvements</h2>
+      <h3>Import Time Reduction</h3>
+      <p><span class="release">8.3</span> Now, the time needed to import an element in a large collection has been greatly reduced.</p>
+      <h3>Type Attribute Not Mandatory</h3>
+      <p>
+        <span class="release">8.2</span> Type attribute is not mandatory anymore when updating documents. It must be
+        given only for document creation.
+      </p>
+      <h3>
+        Possible to Redefine
+        <code>dc:created</code>
+        Attribute Value
+      </h3>
+      <p>
+        <span class="release">8.2</span> It is now possible to set
+        <code>dc:created</code>
+        property using CSV importer. It used to be overridden with the date of import.
+      </p>
+
+      <h2>Nuxeo Spreadsheet</h2>
+      <h3>Locale Is Respected</h3>
+      <p>
+        <span class="release">8.2</span> Locale setting is now taken into account when using <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-spreadsheet" target="_blank">Nuxeo Spreadsheet</a> for
+        the JSF UI.
+      </p>
+      <h2>No More Error Stack Trace</h2>
+      <p>
+        <span class="release">8.2</span> By default the traces are hidden in error pages of Nuxeo, for security
+        reasons. In order to activate the traces display in error pages of Nuxeo, the dev mode has to be set (
+        <code>org.nuxeo.dev</code>
+        in
+        <code>nuxeo.conf</code>
+        or in the Admin Center.)
+      </p>
+      <h2>Overriding Subject of the Permission Assignment Email Notification</h2>
+      <p>
+        <span class="release">8.2</span> It is now possible to override the subject of the notification that is
+        sent when assigning a permission to someone on a given document. You need to override the label property
+        <code>label.subject.new.permission</code>.
+      </p>
+      <h2>Documents Created by Copy Can Have Their Own Dublincore Schema Metadata Values</h2>
+      <p>
+        <span class="release">8.2</span> Metadata
+        <code>dc:creator</code>, <code>dc:creationDate</code>, <code>dc:modification</code> and <code>dc:contributors</code>
+        are now reseted for documents created from a template (workspace template). You can also enable this behavior
+        for all kind of document copies by setting <code>nuxeo.dclistener.reset-creator-on-copy</code>
+        configuration property to true.
+      </p>
+
+      <h2>New Addons</h2>
+        <h3>Nuxeo Showcase Content</h3>
+        <p><span class="release">8.3</span> The <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-showcase-content" target="_blank">Nuxeo Showcase Content addon</a> imports a set of showcase content so that the repository is not empty for your first steps: office documents, images, videos. The content of this addon has been updated with new sample documents (reports, case studies, etc.). This addon is a good way to start with your Nuxeo Platform.</p>
+        <h3>Nuxeo Platform Additional Languages</h3>
+        <p><span class="release new">8.10</span> In order to improve the quality of the Nuxeo Platform and user experience, only languages that are sufficiently translated are now available in the default distribution of the Nuxeo Platform.
+          Other languages are available in the new addon <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/marketplace-lang-ext-incomplete">Nuxeo Platform Additional Languages</a>, from the Nuxeo Marketplace.
+          The conditions for a language to be available by default are that it is translated at 95% and approved at 75% minimum.
+          For more information about how to translate the Nuxeo Platform, read <a href="https://doc.nuxeo.com/nxdoc/how-to-translate-the-nuxeo-platform/">our documentation</a>.
+        </p>
+        <h3>Nuxeo Forum</h3>
+        <p>The Forum feature of the Nuxeo Platform has been taken out of the default distribution to become an addon. <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-forum">Nuxeo Forum</a> is available from the Nuxeo Marketplace.
+        </p>
+
+
+
+
+
+
+
+      <div class="breakafter"></div>
+           <h1 style="margin-left: -0.5em !important;">For Developers</h1>
+           <h2>A C# Nuxeo Client</h2>
+           <p>
+             <span class="release">8.1</span>A C# Nuxeo Client has been added. A
+             <a href="https://github.com/nuxeo/nuxeo-dotnet-browser" target="_blank"> sample application</a>
+             is provided so as to understand how to make use of it. Read the
+             <a href="https://doc.nuxeo.com/nxdoc/net-client/" target="_blank">C# client documentation</a>
+             for more information.
+           </p>
+
+           <h2>New Operations</h2>
+
+           <h3>nuxeo-platform-pdf-util</h3>
+           <p><span class="release new">8.10</span>The new Nuxeo-Platform-PDF-utils addon brings a set of operations to work around PDFs: merging several PDFs, watermarking, page extraction and more. Read this <a href="https://doc.nuxeo.com/nxdoc/how-to-use-pdf-conversion-operations-with-studio/" target="blank">how-to</a> to see an example.
+           </p>
+
+           <h3>Video Transformations</h3>
+           <p><span class="release new">8.10</span>
+             A complete set of video tools is now integrated to the DAM addon. It adds tools, operations, automation for handling videos: Slice, Merge, Extract ClosedCaptions and more.
+           </p>
+
+           <h3>User Invitation</h3>
+           <p>
+             <span class="release">8.2</span>The operation
+             <code>User.Invite</code>
+             is now available to trigger a user invitation remotely.
+           </p>
+
+           <h3>Studio JAR Hot-Reload</h3>
+           <p>
+             <span class="release">8.2</span>The operation
+             <code>Service.HotReloadStudioSnapshot</code>
+             is now available to trigger a hot-reload of the Studio JAR.
+           </p>
+           <h3>Document.Suscribe</h3>
+           <p>
+             <span class="release new">8.10</span> The operations
+             <code>Document.Subscribe</code> and <code>Document.Unsubscribe</code>
+             are now available to suscribe a user to notifications on the input document.
+           </p>
+           <h3>Document.MoveCollectionMember</h3>
+           <p>
+             <span class="release new">8.10</span> The operation
+             <code>Document.MoveCollectionMember</code> allows to move up and down a document's position inside a collection.
+           </p>
+           <h3>Multi-Valued Property Support for Context.SetWorkflowVar Operation</h3>
+           <p>
+             <span class="release new">8.10</span> All kind of lists are now supported, not only String list.
+           </p>
+
+           <h3>HTTP Helper Greatly Improved</h3>
+           <p>
+             <span class="release new">8.10</span> Automation Scripting Helper <code>org.nuxeo.ecm.automation.features.HTTPHelper</code> has been improved to support external HTTP calls and remote file download. This helper can typically be used to quickly integrate from Automation with a remote API.
+           </p>
+           <h3>Blob Input Resolver</h3>
+           <p>
+             <span class="release new">8.10</span> It is possible to reference blobs using their key in the blob provider as input of an Automation operation.
+           </p>
+
+
+           <h2>REST Endpoint Evolutions</h2>
+
+           <h3>New Token Endpoint</h3><p>
+           <span class="release">8.3</span>An endpoint has been added to be able to fetch and delete via the REST API tokens for the Nuxeo Authentication module.
+           </p>
+
+           <h3>OAuth2 Authentication Data New Endpoint</h3><p>
+           <span class="release new">8.10</span> The new endpoint <code>provider/{providerId}</code> aims at providing access to OAuth2 authentication data for the current user, such as client ID, authorization URL and service user ID. This is required by addons relying on OAuth2, such as Live Connect, for the New Web UI.
+           </p>
+
+           <h3>New Search Endpoint</h3><p>
+           <span class="release">8.3</span>A new <code>search</code> endpoint has been added to be able to be able to perform searches as well as saving and fetching them. The <code>query</code> endpoint is now deprecated. Read <a href="https://doc.nuxeo.com/nxdoc/search-endpoint/" target="_blank">documentation</a> for details.
+           </p>
+           <h3>Support for LiveConnect Blobs in REST API</h3><p>
+           <span class="release new">8.10</span>
+           It is now possible from the REST API to create and get a blob that comes from an external blob provider, such as the Live Connect ones.
+         </p>
+
+           <h3>List Existing Directories</h3><p>
+           <span class="release new">8.10</span> A GET on '/directory' will list the directories that are not system directory. You can list a subset of directory filtered by types using the `types` query param: <code>curl -X GET -u Administrator:Administrator  http://localhost:8080/nuxeo/api/v1/directory?types=ui,my_type</code>. Note that if a directory with system type will never be returned by the REST endpoint even though it has other types matching the query param.</p>
+
+           <h3>New Content-Type Header</h3>
+           <p>
+             <span class="release">8.2</span>Content-Type header now returns the nuxeo-entity type as well:
+             <pre>
+     application/json; nuxeo-entity=documents
+       </pre>
+           </p>
+           <h3>Constraints and References on Schema Endpoint</h3><p>
+           <span class="release new">8.10</span>New JSON writers have been enabled and old ones removed. On the schema endpoint (http://demo.nuxeo.com/nuxeo/api/v1/config/schemas/)
+            a new <code>fetch.schema=fields</code> property allows to return extended schema fields containing validation constraints.
+         </p>
+
+           <h3>New Content-Type Header</h3>
+           <p>
+             <span class="release">8.2</span>Content-Type header now returns the nuxeo-entity type as well:
+             <pre>
+     application/json; nuxeo-entity=documents
+           </pre>
+           </p>
+
+
+     <h3>Remove a Blob from a Batch</h3>
+     <p><span class="release new">8.10</span>
+     <code>DELETE /api/v1/upload/{batchId}/{fileId}</code> will remove the file of index "fileId" in the batch "batchId".
+       </p>
+     <h3>Prevent a Batch from Being Dropped</h3>
+     <p><span class="release new">8.10</span>
+       A flag  has been added to prevent a batch from being dropped when referencing its blobs via Automation / REST API. The header is called
+       <code>X-Batch-No-Drop</code>. When set to true the batch won't be dropped after operated on or referenced. The default is false.
+     </p>
+
+           <h3>Client-Side Localisation</h3>
+           <p><span class="release">8.3</span>The client is now responsible for sending the locale it is interested in via a dedicated request header.</p>
+
+           <h3>Fetching Members of Group Object</h3>
+           <p>
+             <span class="release">8.2</span> New endpoints were added for getting members of a group:
+           <ul>
+             <li><code>/group/{groupname}/@members</code></li>
+             <li><code>/group/{groupname}/@groups</code></li>
+           </ul>
+           <p>
+           This endpoint supports pagination and returns the full objects (full users and groups). And by default when
+           fetching a user or a group, users and groups members are no more marshaled (only ids are returned), you can use
+           <code>fetch.group=memberUsers</code>
+           and/or
+           <code>fetch.group=memberGroups</code>
+           to get the full object.
+           </p>
+           <h3>isPoxy, isVersion</h3>
+           <p><span class="release new">8.10</span> Now the documents returned by the REST API have "isProxy" and "isVersion" properties.</p>
+           <h3>subtypes Enricher</h3>
+           <p><span class="release new">8.10</span>Using the <code>subtypes</code> enricher, you can get document types that can be instanciated under a given document.</p>
+
+           <h2>Directories</h2>
+
+           <h3>Generic Directory and Directory Templating</h3>
+           <p>
+             <span class="release">8.2</span> Generic Directories have been introduced, along with the possibility to
+             make regular directories be "templates". First, register a template directory (
+             <code>template="true"</code>
+             ):
+           </p>
+           <pre>
+     &lt;extension target=&quot;org.nuxeo.ecm.directory.sql.SQLDirectoryFactory&quot; point=&quot;directories&quot;&gt; <br />
+       &lt;directory name=&quot;template-dir&quot; template=&quot;true&quot;&gt; <br />
+           &lt;dataSource&gt;java:/nxsqldirectory&lt;/dataSource&gt; <br />
+           &lt;createTablePolicy&gt;always&lt;/createTablePolicy&gt; <br />
+           &lt;querySizeLimit&gt;100&lt;/querySizeLimit&gt; <br />
+        &lt;/directory&gt; <br />
+      &lt;/extension&gt;
+         </pre>
+         <p>
+           Then use a generic directory to provide specific customizations over the extended template (
+           <code>extends=&quot;template-dir&quot;</code>
+           ):
+           </p>
+           <pre>
+     &lt;extension target=&quot;org.nuxeo.ecm.directory.GenericDirectory&quot; point=&quot;directories&quot;&gt; <br />
+         &lt;directory name=&quot;my-directory&quot; extends=&quot;template-dir&quot;&gt; <br />
+           &lt;schema&gt;myschema&lt;/schema&gt; <br />
+           &lt;table&gt;mytable&lt;/table&gt; <br />
+           &lt;idField&gt;id&lt;/idField&gt; <br />
+           &lt;passwordField&gt;password&lt;/passwordField&gt; <br />
+           &lt;passwordHashAlgorithm&gt;SSHA&lt;/passwordHashAlgorithm&gt; <br />
+           &lt;substringMatchType&gt;subany&lt;/substringMatchType&gt; <br />
+           &lt;cacheTimeout&gt;3600&lt;/cacheTimeout&gt; <br />
+           &lt;cacheMaxSize&gt;1000&lt;/cacheMaxSize&gt; <br />
+         &lt;/directory&gt; <br />
+     &lt;/extension&gt;
+       </pre>
+       <p>
+           The Generic Directory descriptor only supports a generic subset of the configuration of the directories in general
+           (see
+           <code>org.nuxeo.ecm.directory.BaseDirectoryDescriptor</code>
+           for the exact fields). This new indirection allows to make it easier to change implementation of a directory for a
+           given business requirement.
+           </p>
+
+           <h3>Cache Is Back</h3>
+           <p>
+             <span class="release">8.2</span> Directories that still have a <i> cacheMaxSize </i> and <i>
+               cacheTimeOut </i> but no newly-defined <i> cacheEntryName </i> are still be using a cache.
+           </p>
+           <h3>Default Directories</h3>
+           <p><span class="release new">8.10</span>
+             Nuxeo now uses template-based directories for its vocabularies and directories (apart from users and groups). They can be redefined to use another datasource, cache configuration or directory backend by overriding just the single template-directory template. See <a href="https://doc.nuxeo.com/nxdoc/data-lists-and-directories/#generic-directory-and-directory-templates" target="blank">documentation</a>.
+
+
+           </p>
+           <h3>deleteConstraints</h3>
+           <p><span class="release new">8.10</span>
+           Previously you had to declare:</p>
+           <pre>
+     &lt;component name=&#34;org.nuxeo.ecm.webapp.directory.directoryUI&#34;&gt;&#10;&#10;  &lt;extension target=&#34;org.nuxeo.ecm.directory.ui.DirectoryUIManager&#34;&#10;    point=&#34;directories&#34;&gt;&#10;&#10;    &lt;directory name=&#34;continent&#34; layout=&#34;vocabulary&#34; sortField=&#34;label&#34;&gt;&#10;      &lt;deleteConstraint&#10;        class=&#34;org.nuxeo.ecm.directory.api.ui.HierarchicalDirectoryUIDeleteConstraint&#34;&gt;&#10;        &lt;property name=&#34;targetDirectory&#34;&gt;country&lt;/property&gt;&#10;        &lt;property name=&#34;targetDirectoryField&#34;&gt;parent&lt;/property&gt;&#10;      &lt;/deleteConstraint&gt;&#10;    &lt;/directory&gt;&#10;    &lt;directory name=&#34;country&#34; layout=&#34;country_vocabulary&#34; sortField=&#34;parent&#34; /&gt;&#10;&lt;/extension&gt;
+           </pre>
+           <p>You can now declare directly in the directory core contribution:</p>
+           <pre>
+      &lt;extension target=&#34;org.nuxeo.ecm.directory.sql.SQLDirectoryFactory&#34;&#10;    point=&#34;directories&#34;&gt;&#10;    &lt;directory name=&#34;country&#34;&gt;&#10;      &lt;schema&gt;xvocabulary&lt;/schema&gt;&#10;      &lt;parentDirectory&gt;continent&lt;/parentDirectory&gt;&#10;      &lt;dataSource&gt;java:/nxsqldirectory&lt;/dataSource&gt;&#10;      &lt;cacheTimeout&gt;3600&lt;/cacheTimeout&gt;&#10;      &lt;cacheMaxSize&gt;1000&lt;/cacheMaxSize&gt;&#10;      &lt;table&gt;country&lt;/table&gt;&#10;      &lt;idField&gt;id&lt;/idField&gt;&#10;      &lt;autoincrementIdField&gt;false&lt;/autoincrementIdField&gt;&#10;      &lt;dataFile&gt;directories/country.csv&lt;/dataFile&gt;&#10;      &lt;createTablePolicy&gt;on_missing_columns&lt;/createTablePolicy&gt;&#10;    &lt;/directory&gt;&#10;&#10;    &lt;directory name=&#34;continent&#34;&gt;&#10;      &lt;schema&gt;vocabulary&lt;/schema&gt;&#10;      &lt;dataSource&gt;java:/nxsqldirectory&lt;/dataSource&gt;&#10;      &lt;cacheTimeout&gt;3600&lt;/cacheTimeout&gt;&#10;      &lt;cacheMaxSize&gt;1000&lt;/cacheMaxSize&gt;&#10;      &lt;table&gt;continent&lt;/table&gt;&#10;      &lt;idField&gt;id&lt;/idField&gt;&#10;      &lt;autoincrementIdField&gt;false&lt;/autoincrementIdField&gt;&#10;      &lt;dataFile&gt;directories/continent.csv&lt;/dataFile&gt;&#10;      &lt;createTablePolicy&gt;on_missing_columns&lt;/createTablePolicy&gt;&#10;      &lt;deleteConstraint&#10;        class=&#34;org.nuxeo.ecm.directory.HierarchicalDirectoryDeleteConstraint&#34;&gt;&#10;        &lt;property name=&#34;targetDirectory&#34;&gt;country&lt;/property&gt;&#10;        &lt;property name=&#34;targetDirectoryField&#34;&gt;parent&lt;/property&gt;&#10;      &lt;/deleteConstraint&gt;&#10;    &lt;/directory&gt;&#10;&lt;/extension&gt;
+           </pre>
+           <p>The directory session will check these delete constraints and throw a <code>org.nuxeo.ecm.directory.DirectoryDeleteConstraintException</code> if any are met.</p>
+           <h2>Elasticsearch Evolutions</h2>
+
+           <h3>Elasticsearch Crawl API </h3>
+           <p><span class="release">8.3</span>The <code>ElasticSearchService</code> now exposes the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/search-request-scroll.html" target="_blank">Elasticsearch scroll API</a> allowing to process large amounts of data.</p>
+           <p>You can use it this way for instance:</p>
+           <pre>
+     ElasticSearchService ess = Framework.getService(ElasticSearchService.class);
+     String query = "SELECT * FROM Document ORDER BY ecm:path";
+
+     // Perform initial search and get first batch of 20 results
+     EsScrollResult scrollResult = ess.scroll(new NxQueryBuilder(session).nxql(query).limit(20), 10000);
+     DocumentModelList batchOfDocs = scrollResult.getDocuments();
+     while (!batchOfDocs.isEmpty()) {
+       for (DocumentModel doc : batchOfDocs) {
+         // Process document
+         // ...
+       }
+       // Get next batch of results
+       scrollResult = ess.scroll(scrollResult);
+       batchOfDocs = scrollResult.getDocuments();
+     }</pre>
+
+           <p>Note: the <code>keepAlive</code> parameter in milliseconds only needs to be long enough to perform the next scroll query.</p>
+
+           <h3>ecm.path Field</h3>
+           <p>
+             <span class="release">8.2</span>A new field in Elasticsearch index is available:
+             <code>ecm:path</code>
+             with the following informations:
+           </p>
+           <pre>
+      "ecm:path.level1": "default-domain", <br />
+      "ecm:path.level2": "workspaces", <br />
+      "ecm:path.level3": "aWorkspace", <br />
+      "ecm:path.level4": "aFolder", <br />
+      "ecm:path.level5": "aFile", <br />
+      etc. <br />
+      "ecm:path.depth": 5
+     </pre>
+
+           <h3>Mapping for Audit Index</h3>
+           <p>
+             <span class="release">8.2</span>No specific mapping had been contributed for Audit index. This is now
+             done.
+           </p>
+
+          <h2>NXQL Evolutions</h2>
+           <h3>Fetching Documents from Specific Fields</h3>
+          <p><span class="release">8.3</span>When calling <code>CoreSession.query</code>, doing a <code>SELECT * FROM Document WHERE ...</code> is doing <code>SELECT ecm:uuid FROM Document WHERE ...</code> and returning the documents whose ids are matching. There are additional use cases of returning documents with other ids. Ex:</p>
+          <ol>
+           <li>Direct page provider with <code>SELECT relation:target FROM DefaultRelation WHERE relation:source = ?</code></li>
+           <li>Simplifying collection management with a query like <code>SELECT collection:documentIds/* FROM Collection WHERE ecm:uuid = ?</code> </li></ol>
+          <p>You can now use such a syntax in your NXQL queries.</p>
+
+           <h2>Repository Scroll API</h2>
+           <P><span class="release new">8.10</span>There is now a repository scroll API to retrieve large number of results from a single search request. This acts like a database cursor returning batch of document ids.
+           </P>
+          <h2>Subtypes Declaration at Core Level</h2>
+          <p> <span class="release new">8.10</span>
+            Allowed subtype declarations has been moved to <a href="http://explorer.nuxeo.com/nuxeo/site/distribution/latest/viewExtensionPoint/org.nuxeo.ecm.core.schema.TypeService--doctype" target="_blank">core document type declaration extension point</a> and the platform TypeService now relies on those clore declarations. Subtype and icon contributions have been moved to core so that they are available even without JSF. A new facet <code>HiddenInCreation</code>  is used to identify doctypes that should not be visible on creation.
+          </p>
+
+           <h2>CMIS Evolutions</h2>
+
+           <h3>Proxies Are Visible through CMIS</h3>
+           <p><span class="release">8.3</span>Now when the system property <code>org.nuxeo.cmis.proxies=true</code> (default value) then proxies are visible like any other document using CMIS.
+           </p>
+
+           <h3>CMIS Test Feature Can Be Used from Third-Party Bundle</h3>
+           <p><span class="release">8.3</span>It is now possible to have third-party modules use the <code>CmisFeatureSessionHttp</code> feature to run their own tests in the context of a preconfigured CMIS test server.</p>
+           <h3>OpenCMIS 1.0.0</h3>
+           <p><span class="release new">8.10</span>The CMIS connector now relies on OpenCMIS 1.0.0.</p>
+           <h2>Authentication Prompt</h2>
+           <p>
+             <span class="release">8.2</span> When configuring authentication chains, a new attribute is available at
+             the authentication chain level,
+             <code>handlePrompt</code>
+             so as to configure if the authentication filter delegates the login prompt to its plug-ins or if it returns
+             systematically a 401 response code.
+           </p>
+
+           <h2>Packaging Evolutions</h2>
+           <h3>JSF Application Is Now a Package</h3>
+           <p><span class="release new">8.10</span>The JSF application is now shipped as package, available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-jsf-ui" target="_blank">on the marketplace</a>.
+           </p>
+           <h3>Nuxeo-Server Is the New CAP</h3>
+             <p><span class="release new">8.10</span> The Nuxeo CAP distribution is no more used. Nuxeo is now distributed as a bare "server" distribution on top of which different user interfaces can be installed. The main ones available are the standard Seam/JSF UI (identical to the previous LTS releases), and a new Web UI (beta). The startup wizard allows you to select which one(s) you want to install on your server. Nuxeo addons may also provide different functionalities depending on the installed UI.
+             </p>
+             <h3>Optional Dependency</h3>
+               <p><span class="release new">8.10</span>The Nuxeo Package system now offers the ability to state an optional dependency for situations where some bundles of the package must be installed only if another specific package is installed. The typical use case is when an addon has bundles for the JSF UI and for the new Web UI. The JSF bundle must be installed only if the JSF Application has been installed.
+               <div><pre>
+     &lt;optional-dependencies&gt;
+       &lt;package&gt;nuxeo-jsf-ui&lt;/package&gt;
+     &lt;/optional-dependencies&gt;
+               </pre>
+               </div>
+               </p>
+         <h3>Protection against Network Corruption</h3>
+         <p><span class="release new">8.10</span>Sometimes content streams get corrupted over the wire. Content Stream hashes are now supported following  RFC 3230/5843 "Digest" request header if present, as well as RFC 3230 "Want-Digest". </p>
+
+     <h2>Quick Filters for Page Providers</h2>
+     <p><span class="release new">8.10</span>
+     Quick Filters have been added to PageProvider object. They allow to add actionable additional "filters + Sort". They are typically bound to some switches in user interface, to implement things like "Remove Folders From The Result". The REST API has been updated accordingly.
+     <pre>
+       &lt;quickFilters&gt;
+             &lt;quickFilter name="noFolder"&gt;
+               &lt;clause&gt;ecm:mixinType != 'Folderish'&lt;/clause&gt;
+             &lt;/quickFilter&gt;
+             &lt;quickFilter name="mostRecent"&gt;
+               &lt;sort column="dc:modified" ascending="false" /&gt;
+             &lt;/quickFilter&gt;
+             &lt;quickFilter name="onlyValidated"&gt;
+               &lt;clause&gt;ecm:currentLifeCycleState = 'approved'&lt;/clause&gt;
+               &lt;sort column="dc:modified" ascending="false" /&gt;
+         &lt;/quickFilter&gt;
+     </pre>
+     </p>
+     <h2>documentImportedWithPlatformImporter Event</h2>
+     <p><span class="release new">8.10</span> An event <code>documentImportedWithPlatformImporter</code> is now fired at the end when a document is imported, to ensure the import process is done for that document. Relying on document created or modified is indeed not enough as several modifications happen during the import process. </p>
+
+
+     <h2>URL Codec Evolution</h2>
+     <p><span class="release new">8.10</span>
+       An evolution has been made to enable to easily switch the URL used in notifications between the JSF application and the Web UI application: If jsf-ui only is installed, point to the JSF UI.
+     If web-ui only is installed, point to the Web UI. If both are installed point to the JSF UI by default. Being able to override this behavior to point to the Web UI, to be documented.
+
+     </p>
+           <h2>Configuring TinyMCE Editor via Tag Properties</h2>
+           <p>
+             <span class="release">8.1</span> Plugins and options have been extracted to control them by tag properties in
+             order to display different options depending on the field.
+           </p>
+
+           <h2>Understanding the Sequence of Listeners Calls</h2>
+           <p>
+             <span class="release">8.1</span> You can now add this in your log4j.xml:
+           </p>
+           <pre>
+     &lt;category name=&quot;org.nuxeo.common.logging&quot;&gt;
+       &lt;priority value=&quot;DEBUG&quot;/&gt;
+     &lt;/category&gt;</pre>
+           <p>Then use the sequence.sh to generate a PNG with a sequence diagram of all threads and listeners.</p>
+           <p>Note that all events in the chart are in chronological order (not proportional) except for the Initiate
+             link, where the origin points to the thread that has generated a work without telling when (earlier for sure).</p>
+
+           <h2>Forcing Locale on Login Page and Disabling Some Languages</h2>
+           <p><span class="release new">8.10</span>A new extension point <code>loginScreen</code> on <code>org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService</code> allows to contribute explicitly what are the supported locales.</p>
+
+           <h2>HTML Content in Tipsy Tooltip</h2>
+           <p>
+             <span class="release">8.1</span> Tooltips generated with Tipsy now render HTML content properly.
+           </p>
+
+           <h2>Sample Project to Benchmark the Nuxeo Platform with Gatling</h2>
+           <p><span class="release">8.3</span>For people who need to write and launch Gatling scenarios for an addon or any Nuxeo project, a Gatling sample is available in the <a href="https://github.com/nuxeo/nuxeo-marketplace-sample/tree/master/ftest/gatling" target="blank">Nuxeo marketplace sample project</a>. Note that Nuxeo has switched to Gatling as it was better suited to reach the level of performances required for benchmarking the Nuxeo Platform in extremely high stress conditions: multiple thousands of requests per seconds.</p>
+
+           <h2>Random Generation of Documents with Nuxeo Platform Importer</h2>
+           <p><span class="release">8.3</span>Using the <code>/randomImporter</code> endpoint, the bulk document importer already offered the possibility to generate random documents so as to fill the repository, typically for benchmark purposes. The number of documents that are generated in the various folders is now random, for more realistic load tests. It follows this rule:</p>
+           <ul>
+           <li>10% folders with a big number of files (~= 5000)</li>
+           <li>10% folders with 1 file</li>
+           <li>80% folders with a random variation of the default number of files, so between 50 and 150</li>
+           </ul>
+     <h2> Parameters on CommandLine</h2>
+     <p> <span class="release new">8.10</span>
+     It's now possible in the extension point for a command to include a <code>testParameterString</code> to allow to test commands that require parameters:
+     <pre>
+     &lt;extension target=&#34;org.nuxeo.ecm.platform.commandline.executor.service.CommandLineExecutorComponent&#34; point=&#34;command&#34;&gt;&#10;    &lt;command name=&#34;mycommand&#34;&gt;&#10;      &lt;commandLine&gt;somecommand&lt;/commandLine&gt;&#10;      &lt;parameterString&gt;arg1 --arg2 --arg3&lt;/parameterString&gt;&#10;      &lt;winCommand&gt;somecommand.exe&lt;/winCommand&gt;&#10;      &lt;winParameterString&gt;arg1 /arg2 /arg3&lt;/winParameterString&gt;&#10;      &lt;testParameterString&gt;--exists&lt;/testParameterString&gt;&#10;      &lt;winTestParameterString&gt;/exists&lt;/winTestParameterString&gt;&#10;    &lt;/command&gt;&#10;  &lt;/extension&gt;
+     </pre>
+     </p>
+           <h2>Platform Explorer Addon Evolution</h2>
+           <p> <span class="release">8.3</span>The Platform Explorer addon has been greatly improved: better search features, cleaner look &amp; feel. We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We have also extended the XML generation feature to help developers have a working sample. Check it out on <a href="http://explorer.nuxeo.com/" target="_blank">explorer.nuxeo.com</a> or by installing the <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/platform-explorer" target="_blank">Platform Explorer Nuxeo Package</a>.</p>
+
+           <h2>JSF Widgets Evolutions</h2>
+           <h3>Limit Attribute for <code>SuggestDirectoryEntries</code></h3>
+           <p>
+             <span class="release">8.2</span>A new attribute
+             <code>limit</code>
+             is available for limiting the number of entries returned by the
+             <code>SuggestDirectoryEntries</code>
+           </p>
+
+           <h3>
+           Disabling Document Field Validation
+           </h3>
+           <p>
+             <span class="release new">8.10</span>
+             You can now disable the document constraint validation in creation and modification forms.
+             <pre>
+     &lt;require&gt;org.nuxeo.ecm.platform.ui.web.DocumentValidationService.activations&lt;/require&gt;&#10;  &lt;extension target=&#34;org.nuxeo.ecm.core.api.DocumentValidationService&#34; point=&#34;activations&#34;&gt;&#10;    &lt;validation context=&#34;jsfValidator&#34; activated=&#34;false&#34; /&gt;&#10;  &lt;/extension&gt;
+             </pre>
+           </p>
+
+           <h2>Let Content Be Part of Your Application Definition</h2>
+           <p><span class="release new">8.10</span>
+             If you install the Nuxeo Showcase Content Sample package, you can then add Nuxeo Archives into other bundles and provide a contribution so that this Nuxeo Archive is automatically imported.
+             <pre>
+     &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;&#10;&lt;component name=&#34;org.nuxeo.test.showcase.content&#34;&gt;&#10;    &lt;extension target=&#34;org.nuxeo.ecm.showcase.content&#34; point=&#34;contents&#34;&gt;&#10;        &lt;content name=&#34;mycontent&#34;&gt;&#10;            &lt;filename&gt;export.zip&lt;/filename&gt;&#10;        &lt;/content&gt;&#10;&#10;        &lt;content name=&#34;disabled&#34; enable=&#34;false&#34;&gt;&#10;            &lt;filename&gt;export.zip&lt;/filename&gt;&#10;        &lt;/content&gt;&#10;    &lt;/extension&gt;&#10;&lt;/component&gt;
+             </pre>
+           </p>
+           <h2>Finer Control on Nuxeo Vision Processing</h2>
+           <p><span class="release new">8.10</span>
+             <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-vision" target="_blank">Nuxeo Vision</a> has been improved to allow to trigger event (typically, an asynchronous event) and process business logic after nuxeo-vision has extracted tags or text. Example: for a Picture, nuxeo-vision stores by default in <code>dc:source</code> the text extracted via OCR. Adding a listener for <code>visionOnImageDone</code> is a good idea if one wants to check for unauthorized words (start a workflow, tag the picture, change its ACL so only an administrator can access it, ...).
+           </p>
+
+           <h2>No More Selenium Tests</h2>
+           <p><span class="release">8.3</span>Selenium has been fully replaced by Webdriver for the functional tests of the Nuxeo Platform and is no longer used.</p>
+
+           <h2>Miscellaneous</h2>No More Selenium Tests
+           <p><span class="release">8.3</span>The UIDSequencer interface now supports long integer.
+
+           </p>
+           <p><span class="release new">8.10</span>Transaction timeouts are now detected as soon as possible which helps pinpointing long-running processes with more accuracy.</p>
+
+
+
+
+
+
+
+      <div class="breakafter"></div>
+            <h1 style="margin-left: -0.5em !important;">For Administrators</h1>
+            <H2>Environment Information Dumping with nuxeoctl connect-report</H2>
+            <p><span class="release">8.3</span> <span class="release new">8.10</span> A new command has been added to nuxeoctl, <code>nuxeoctl connect-report</code>. This new command gathers information that can be useful to understand the environment in which a bug or a problem can be reproduced. This command was added in an effort to keep improving the quality of the service delivered by the Nuxeo Support Team. Information includes: configuration, templates used, environment information via JVM MBeans and more.</p>
+            <p>The addon <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report-web" target="_blank">Nuxeo Connect Tools Report Web</a> is available to provide a basic user interface to get the report.
+            </p>
+            <h2>Startup Wizard Improvements on Module Selection</h2>
+            <p><span class="release new">8.10</span> The Module selection step of the startup wizard has been reviewed to provide a more user-friendly interface, take into consideration the distribution changes and make dependencies betweens addons and UIs more straightforward.
+            </p>
+            <div>
+                <img class="lightbox" src="./wizard_module_selection.png" />
+            </div>
+
+            <H2>MarkLogic as a New Storage Backend</H2>
+            <p><span class="release">8.3</span>A new implementation of the DBS interface (NoSQL) has been done for the MarkLogic database. It is available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-marklogic-connector" target="_blank">as a Nuxeo Package</a> on the Nuxeo Marketplace.</p>
+
+            <h2>MongoDB 3.2</h2>
+            <p>
+              <span class="release">8.2</span> MongoDB 3.2 is now supported as a storage backend.
+            </p>
+             <h2>PostgreSQL 9.5</h2>
+            <p>
+              <span class="release">8.3</span> PostgreSQL 9.5 is now supported as a storage backend. 8.10 also works with 9.6 although not yet added to CI.
+            </p>
+
+            <h2>Elasticsearch 2.X</h2>
+            <p>
+             <span class="release new">8.10</span> From version 8.10, Nuxeo uses Elasticsearch 2.x version. Please carefully read our <a href ="https://doc.nuxeo.com/nxdoc/upgrade-from-lts-2015-to-lts-2016/#elasticsearch-upgrade" target="_blank">upgrade documentation</a>.
+            </p>
+
+            <h2>S3 Configuration via Extension Point</h2>
+            <p>
+              <span class="release">8.1</span> Customers needing to connect to more than one S3 binary managers with different
+              configurations are now able to do so using the new
+              <code>configuration</code>
+              extension point of
+              <code>org.nuxeo.ecm.core.blob.BlobManager</code>
+              . Previously only one bucket could be configured in
+              <code>nuxeo.conf</code>
+              .
+            </p>
+            <pre>
+            &lt;extension point=&quot;configuration&quot; target=&quot;org.nuxeo.ecm.core.blob.BlobManager&quot;&gt;
+            &lt;blobprovider name=&quot;default&quot;&gt;
+              &lt;class&gt;org.nuxeo.ecm.core.storage.sql.S3BinaryManager&lt;/class&gt;
+              &lt;property name=&quot;awsid&quot;&gt;your_AWS_ACCESS_KEY_ID&lt;/property&gt;
+              &lt;property name=&quot;awssecret&quot;&gt;your_AWS_SECRET_ACCESS_KEY&lt;/property&gt;
+              &lt;property name=&quot;region&quot;&gt;us-west-1&lt;/property&gt;
+              &lt;property name=&quot;bucket&quot;&gt;your_s3_bucket_name&lt;/property&gt;
+              &lt;property name=&quot;bucket.prefix&quot;&gt;myprefix/&lt;/property&gt;
+              &lt;property name=&quot;directdownload&quot;&gt;true&lt;/property&gt;
+              &lt;property name=&quot;directdownload.expire&quot;&gt;3600&lt;/property&gt;
+              &lt;property name=&quot;cachesize&quot;&gt;100MB&lt;/property&gt;
+              &lt;property name=&quot;crypt.keystore.file&quot;&gt;/my/keystore.jks&lt;/property&gt;
+              &lt;property name=&quot;crypt.keystore.password&quot;&gt;password&lt;/property&gt;
+              &lt;property name=&quot;crypt.key.alias&quot;&gt;mykey&lt;/property&gt;
+              &lt;property name=&quot;crypt.key.password&quot;&gt;password&lt;/property&gt;
+              &lt;property name=&quot;connection.max&quot;&gt;50&lt;/property&gt;
+              &lt;property name=&quot;connection.retry&quot;&gt;3&lt;/property&gt;
+              &lt;property name=&quot;connection.timeout&quot;&gt;50000&lt;/property&gt;
+              &lt;property name=&quot;socket.timeout&quot;&gt;50000&lt;/property&gt;
+            &lt;/blobprovider&gt;
+            &lt;/extension&gt;</pre>
+            <h2>Server-Side Encryption with S3</h2>
+            <p>
+              <span class="release">8.1</span> Support for Server-Side Encryption (SSE-S3) has been added as an alternative to
+              Client-Side Encryption (CSE) as documented in the
+              <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html" target="alt"> S3
+                Java SDK</a>. This is enabled through the property
+              <code>nuxeo.s3storage.crypt.serverside=true</code>.
+            </p>
+            <h2>GridFS as Part of the Default Distribution</h2>
+            <p>
+              <span class="release">8.1</span> GridFS is now part of the base distribution, in nuxeo-core. It will have to be
+              activated explicitly using the
+              <code>gridfsbinaries</code>
+              template. There is no need to install an additional Nuxeo Package anymore. Read our
+              <a href="https://doc.nuxeo.com/nxdoc/mongodb/" target="_blank"> MongoDB documentation</a>
+              for more information.
+            </p>
+            <h2>JCloud Binary Manager</h2>
+            <p>
+              <span class="release new">8.10</span> The JClouds binary manager that allows to store files on the main cloud blobstores has been upgraded to use the version 1.9.2 of the underlying Apache libary. Some bugs have been fixed to handle large files and a new property <code>jclouds.blobstore.endpoint</code> allows to configure the endpoint to use.
+            </p>
+            <h2>Quartz MongoDB Backend</h2>
+            <p><span class="release new">8.10</span> Quartz is now automatically enabled in cluster mode when using the mongodb template and do not require a SQL backend anymore.</p>
+            <h2>Quartz MYSQL Backend</h2>
+            <p><span class="release new">8.10</span> Quartz is now automatically enabled in cluster mode when using the mysql template.</p>
+            <h2>SAML Addon Compatible with ADFS</h2>
+            <p>
+              <span class="release">8.2</span> After adjusting a few blind parts of the specification, the SAML plugin
+              has been successfully used with Active Directory Federation Services.
+
+            </p>
+            <h2>SAML - Sample for Use Mapper</h2>
+            <p>
+              <span class="release new">8.10</span> A generic user mapper <a href="https://github.com/nuxeo/nuxeo/commit/eb32ed1ea99deff98d242140a711cc730769181d#diff-05a0a29ed9d2b5c0e9979c3e38b963ae" target="blank">sample</a> has been added.
+            </p>
+            <h2>Elasticsearch Indexing Operations</h2>
+            <p>
+              <span class="release">8.1</span> Elasticsearch indexing operations are now available from Nuxeo Automation in
+              addition to the Admin Center. Using a REST call you can now:
+            </p>
+            <ul>
+              <li>Re-index an entire repository</li>
+              <li>Re-index documents that match an NXQL query</li>
+              <li>Re-index a document and its children</li>
+              <li>Wait for indexing and perform an index refresh</li>
+            </ul>
+            <h2>Indexing Optimization Using Scroll API</h2>
+            <p>
+              <span class="release new">8.10</span> Instead of loading all document ids to reindex, the new repository scroll API is used to remove memory pressure.
+            </p>
+            <H2>Full-Text Indexing Optimization</H2>
+            <p><span class="release">8.3</span>We optimized the indexing flow by using ES bulk indexing features, when full-text indexation is disabled at the repository level. Number of works queued is now divided by two.
+            </p>
+
+            <h2>Allow Separate Repository DDL Generation</h2>
+            <p>
+              <span class="release">8.1</span> Nuxeo can now start with a new
+              <code>nuxeo.vcs.ddlmode</code>
+              parameter that specifies how the DDL for repository initialization should be executed at startup. Depending on
+              the chosen mode, the DDL may not be executed at all and instead dumped to the
+              <code>log/ddl-vcs-default.sql</code>
+              log file. Possible values for
+              <code>nuxeo.vcs.ddlmode</code>
+              are:
+            </p>
+            <ul>
+              <li><code>ignore</code>: no DDL detected or executed. Replaces <code>nuxeo.vcs.noddl=true</code>.</li>
+              <li><code>compat</code>: compatibility mode with previous version. Always executes DDL that recreates stored
+                procedures (and does not attempt to detect existing ones). Replaces <code>nuxeo.vcs.noddl=false</code>.</li>
+              <li><code>execute</code>: executes the DDL and starts Nuxeo normally.</li>
+              <li><code>dump</code>: dumps the DDL (if any) to the file but still executes it and starts Nuxeo normally.</li>
+              <li><code>dump,ignore</code>: dumps the DDL (if any) to the file but does not execute it and starts Nuxeo
+                normally (will likely result in errors).</li>
+              <li><code>dump,abort</code>: dumps the DDL (if any) to the file, and if not empty aborts startup.</li>
+            </ul>
+            <p>
+              For Nuxeo Platform 6.0 and Nuxeo Platform 7.10 the default was
+              <code>nuxeo.vcs.ddlmode=compat</code>
+              . For Nuxeo 8.2 the default is
+              <code>nuxeo.vcs.ddlmode=execute</code>
+              .
+            </p>
+            <p>Note that all this applies to the DDL for the document repository, but not DDL used by other users of SQL
+              in the platform (directories, quartz, JPA persistence).</p>
+
+              <h2>New nuxeoctl Commands to Register Instances</h2>
+              <p><span class="release">8.3</span>Some new commands are available:</p>
+
+
+              <pre>
+            nuxeoctl register [&lt;username&gt; [&lt;project&gt; [&lt;type&gt; &lt;description&gt;] [&lt;pwd&gt;]]]
+            nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;description&gt; [&lt;pwd&gt;]]</pre>
+              <p><code>register</code> allows to register an instance using an existing Nuxeo Online Services account while <code>register-trial</code> allows to create an account and get a trial against the Nuxeo Online Services portal.
+              </p>
+              <h2>Lots of Improvements for nuxeoctl mp-install</h2>
+              <p><span class="release new">8.10</span>Many improvements were added to nuxeoctl mp-install behavior and multiple bugs were fixed.</p>
+
+
+
+            <h2>Redis</h2>
+
+            <h3>
+              Cluster Invalidation with Redis in
+              <code>nuxeo.conf</code>
+            </h3>
+            <p>
+              <span class="release">8.1</span> Using Redis to process cluster invalidation instead of database can be
+              configured in nuxeo.conf using
+              <code>repository.clustering.invalidation=redis</code>
+              (it used to be in the repository contribution).
+            </p>
+            <h3>Less Memory Footprint for Redis</h3>
+            <p>
+              <span class="release">8.2</span> Some work has been done to optimize the size of serialized works, hence
+              lowering the requirements in terms of memory size for Redis.
+            </p>
+            <h3>Redis Pool Size Configuration</h3>
+            <p>
+              <span class="release">8.2</span>The Redis connection pool size can be configured using the new
+              <code>nuxeo.conf</code>
+              options:
+            </p>
+
+              <ul>
+                <li><code>nuxeo.redis.maxTotal</code> (default 16)</li>
+                <li><code>nuxeo.redis.maxIdle</code> (default 8)</li>
+              </ul>
+            <h3>Retry Logic for Redis Calls</h3>
+            <p>
+              <span class="release">8.2</span>Nuxeo now uses a failover executor with an exponential delay policy: 1ms,
+              2ms, 4ms, 8ms, 16ms, 32ms .. until the timeout has reached 5min by default.
+            </p>
+
+            <h2>Work Manager and Shutdown</h2>
+            <p>
+              <span class="release">8.2</span>There was some clean up in the way jobs were processed, especially at
+              server's shutdown. When server is shutdown, works being processed are finished before real shutdown. If server's
+              process is killed, job will be restarted as the system is transactional.
+            </p>
+
+            <h2>User Manager Cache is Back</h2>
+            <p><span class="release">8.3</span>A cache is now set up for the UserManager by default. It was not the case any more on LTS 2015 for users persisted in an SQL directory.</p>
+            <h2>LibreOffice is Started In CommandLine</h2>
+            <p><span class="release new">8.10</span>
+            The PDF transformation of an office document is now  done without using JODConverter but using a command line based PDF converter. This gives a more stable architecture. It assumes LibreOffice is on the path. Read our <a href="https://doc.nuxeo.com/nxdoc/installation/" target="_blank">Installation documentation</a> for all the requirements.
+            </p>
+
+            <h2>Nuxeo Importer</h2>
+            <h3>New Queue Importer</h3>
+            <p>
+              A queue based importer has been added as an additional bundle of the Nuxeo Platform Importer addon. This importer's interest is that it allows to store import job in queues, with a Kafka implementation, guaranteeing robustness and reliability of the import process at scale.
+            </p>
+            <h3>Non-Bulk Mode Available</h3>
+            <p><span class="release">8.3</span>
+            With the following contribution you can now configure the importer to work in non-bulk mode, which is a bit slower but allows regular Work instances to be created and directed to specific queues:</p>
+
+            <pre>
+            &lt;extension target=&quot;org.nuxeo.ecm.platform.importer.service.DefaultImporterComponent&quot; point=&quot;importerConfiguration&quot;&gt;
+            &lt;importerConfig&gt;
+            &lt;bulkMode&gt;false&lt;/bulkMode&gt;
+            &lt;/importerConfig&gt;
+            &lt;/extension&gt;
+            </pre>
+
+            <h3>Nuxeo Importer without ES Indexing</h3>
+            <p><span class="release">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
+
+            <h2>Use of Docker for 3D conversions</h2>
+            <p><span class="release new">8.10</span> 3D conversions run with the new 3D addon make use by default of Docker and pull images containing necessary software for conversions (Collada, Blender). Nuxeo should generalize this design in the future.</p> Read the <a href="https://doc.nuxeo.com/nxdoc/nuxeo-3d/" target="_blank">Nuxeo 3D documentation</a>.
+
+            <h2>Web App Optimizations</h2>
+            <p>
+              <span class="release">8.2</span> Since 6.0 and migration to JSF2, some regressions on the performance of the
+              webapp were found, especially on heavy load. Some optimization work has been done. On a commodity hardware
+              benchmarks shows after optimization that we are able to server 25% more requests.
+            </p>
+            <h2>JDK Required</h2>
+            <p>
+              <span class="release new">8.10</span> The JDK (versus JRE) is now required to launch The Nuxeo Platform. Read our <a href="https://doc.nuxeo.com/nxdoc/installation/" target="_blank">Installation documentation</a> for all the requirements.
+            </p>
+
+            <h2>Configurable Content-Security-Policy Header</h2>
+            <p><span class="release new">8.10</span>
+            The Content-Security-Policy header is useful to protect against a variety of attacks, one of them being clickjacking (<a href="https://www.owasp.org/index.php/Clickjacking" target="_blank">https://www.owasp.org/index.php/Clickjacking</a>). Nuxeo now includes a permissive Content-Security-Policy. The default Nuxeo configuration is:
+            <pre>
+            &lt;header name="Content-Security-Policy"&gt;default-src *; script-src 'unsafe-inline' 'unsafe-eval' data: *; style-src 'unsafe-inline' *; font-src data: *&lt;/header&gt;
+            </pre>
+            <p>A stricter policy can be defined using a contribution like:</p>
+              <pre>
+            &lt;require&gt;org.nuxeo.ecm.platform.web.common.requestcontroller.service.RequestControllerService.defaultContrib&lt;/require&gt;
+
+            &lt;extension target="org.nuxeo.ecm.platform.web.common.requestcontroller.service.RequestControllerService" point="responseHeaders"&gt;
+            &lt;header name="Content-Security-Policy"&gt;default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' data: connect.nuxeo.com apis.google.com app.box.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src 'self'; font-src 'self' data: fonts.gstatic.com; media-src 'self'; frame-src 'self' www.nuxeo.com accounts.google.com; frame-ancestors 'self'&lt;/header&gt;
+            &lt;/extension&gt;
+            </pre>
+            </p>
+
+
+
+    </div>
+  </div>
+  <!-- JS
+================================================== -->
+  <script src="../../javascripts/strftime.js"></script>
+  <script src="../../javascripts/tabs.js"></script>
+</body>
+
+</html>
