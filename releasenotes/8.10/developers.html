@@ -69,7 +69,7 @@
     </p>
     <p class="remove-bottom" id="site-title">
       <a href="./index.html">
-        <span class="version-number"> 8.3 </span> Release Notes
+        <span class="version-number"> 8.10 </span> Release Notes
       </a>
     </p>
     <div id="welcome">
@@ -87,7 +87,7 @@
       <h2>New Operations</h2>
 
       <h3>nuxeo-platform-pdf-util</h3>
-      <p><span class="release new">8.10</span>The new Nuxeo-Platform-PDF-utils  addon brings a set of operations for working around PDFs: merging several PDFs, watermarking, page extraction and <a href="https://doc.nuxeo.com/nxdoc/how-to-use-pdf-conversion-operations-with-studio/" target="blank">more</a>.
+      <p><span class="release new">8.10</span>The new Nuxeo-Platform-PDF-utils addon brings a set of operations to work around PDFs: merging several PDFs, watermarking, page extraction and <a href="https://doc.nuxeo.com/nxdoc/how-to-use-pdf-conversion-operations-with-studio/" target="blank">more</a>.
       </p>
 
       <h3>Video Transformations</h3>
@@ -110,13 +110,13 @@
       </p>
       <h3>Document.Suscribe</h3>
       <p>
-        <span class="release new">8.10</span>The operations
+        <span class="release new">8.10</span> The operations
         <code>Document.Subscribe</code> and <code>Document.Unsubscribe</code>
-        are now available for suscribing a user to notifications on the input document.
+        are now available to suscribe a user to notifications on the input document.
       </p>
       <h3>Document.MoveCollectionMember</h3>
       <p>
-        <span class="release new">8.10</span>The operation
+        <span class="release new">8.10</span> The operation
         <code>Document.MoveCollectionMember</code> allows to move up and down a document's position inside a collection.
       </p>
       <h3>Multi-Valued Property support for Context.SetWorkflowVar Operation</h3>
@@ -130,7 +130,7 @@
       </p>
       <h3>Blob Input Resolver</h3>
       <p>
-        <span class="release new">8.10</span>It is possible to reference blobs using their key in the blob provider as input of an Automation operation.
+        <span class="release new">8.10</span> It is possible to reference blobs using their key in the blob provider as input of an Automation operation.
       </p>
 
 
@@ -141,7 +141,7 @@
       </p>
 
       <h3>OAuth2 Authentication Data New Endpoint</h3><p>
-      <span class="release new">8.10</span><code>provider/{providerId}</code> goal of this endpoint is for it to provide access to OAuth2 authentication data for the current user, such as client ID, authorization URL and service user ID. This is required by addons for the New Web UI that rely on OAuth2, such as Live Connect.
+      <span class="release new">8.10</span> The new endpoint <code>provider/{providerId}</code> aims at providing access to OAuth2 authentication data for the current user, such as client ID, authorization URL and service user ID. This is required by addons relying on OAuth2, such as Live Connect, for the New Web UI.
       </p>
 
       <h3>New Search Endpoint</h3><p>
@@ -152,9 +152,8 @@
       It is now possible from the REST API to create and get a blob that comes from an external blob provider, such as the Live Connect ones.
     </p>
 
-
       <h3>List Existing Directories</h3><p>
-      <span class="release new">8.10</span>A GET on '/directory' will list the directories that are not system directory.  You can list a subset of directory filtered by types using the `types` query param: <code>curl -X GET -u Administrator:Administrator  http://localhost:8080/nuxeo/api/v1/directory?types=ui,toto,pouet</code>.note that if a directory with system type will never be returned by the rest endpoint even though it has other types matching the query param.</p>
+      <span class="release new">8.10</span> A GET on '/directory' will list the directories that are not system directory. You can list a subset of directory filtered by types using the `types` query param: <code>curl -X GET -u Administrator:Administrator  http://localhost:8080/nuxeo/api/v1/directory?types=ui,my_type</code>. Note that if a directory with system type will never be returned by the REST endpoint even though it has other types matching the query param.</p>
 
       <h3>New Content-Type Header</h3>
       <p>
@@ -164,8 +163,8 @@
   </pre>
       </p>
       <h3>Constraints and References on Schema Endpoint</h3><p>
-      <span class="release new">8.10</span>New json writers have been enabled and old one removed. On the schema endpoint (<code>http://demo.nuxeo.com/nuxeo/api/v1/config/schemas/</code>)
-       a new fetch.schema=fields property allows to return extended schema fields containing validation constraints.
+      <span class="release new">8.10</span>New JSON writers have been enabled and old ones removed. On the schema endpoint (http://demo.nuxeo.com/nuxeo/api/v1/config/schemas/)
+       a new <code>fetch.schema=fields</code> property allows to return extended schema fields containing validation constraints.
     </p>
 
       <h3>New Content-Type Header</h3>
@@ -183,10 +182,9 @@
   </p>
 <h3>Prevent a Batch From Being Dropped</h3>
 <p><span class="release new">8.10</span>
-  A flag to prevent a batch from being dropped when referencing its blobs via Automation / REST API has been added. The header is called
-  <code>X-Batch-No-Drop</code>.When set to true the batch won't be dropped after operated on or referenced. The default is false.
+  A flag  has been added to prevent a batch from being dropped when referencing its blobs via Automation / REST API. The header is called
+  <code>X-Batch-No-Drop</code>. When set to true the batch won't be dropped after operated on or referenced. The default is false.
 </p>
-
 
       <h3>Client-Side Localisation</h3>
       <p><span class="release">8.3</span>The client is now responsible for sending the locale it is interested in via a dedicated request header.</p>
@@ -207,10 +205,9 @@
       to get the full object.
       </p>
       <h3>isPoxy, isVersion</h3>
-      <p><span class="release new">8.10</span> Now the documents returned by the REST API have a "isProxy" and a "isVersion" properties.</p>
-      <h3>subtypes enricher</h3>
-      <p><span class="release new">8.10</span>Using the <code>subtypes</code> enricher, I can get document types that can be instanciated under a given document.</p>
-
+      <p><span class="release new">8.10</span> Now the documents returned by the REST API have "isProxy" and "isVersion" properties.</p>
+      <h3>subtypes Enricher</h3>
+      <p><span class="release new">8.10</span>Using the <code>subtypes</code> enricher, you can get document types that can be instanciated under a given document.</p>
 
       <h2>Directories</h2>
 
@@ -233,8 +230,7 @@
     <p>
       Then use a generic directory to provide specific customizations over the extended template (
       <code>extends=&quot;template-dir&quot;</code>
-      ):<br />
-      <br />
+      ):
       </p>
       <pre>
 &lt;extension target=&quot;org.nuxeo.ecm.directory.GenericDirectory&quot; point=&quot;directories&quot;&gt; <br />
@@ -280,7 +276,7 @@
       <pre>
  &lt;extension target=&#34;org.nuxeo.ecm.directory.sql.SQLDirectoryFactory&#34;&#10;    point=&#34;directories&#34;&gt;&#10;    &lt;directory name=&#34;country&#34;&gt;&#10;      &lt;schema&gt;xvocabulary&lt;/schema&gt;&#10;      &lt;parentDirectory&gt;continent&lt;/parentDirectory&gt;&#10;      &lt;dataSource&gt;java:/nxsqldirectory&lt;/dataSource&gt;&#10;      &lt;cacheTimeout&gt;3600&lt;/cacheTimeout&gt;&#10;      &lt;cacheMaxSize&gt;1000&lt;/cacheMaxSize&gt;&#10;      &lt;table&gt;country&lt;/table&gt;&#10;      &lt;idField&gt;id&lt;/idField&gt;&#10;      &lt;autoincrementIdField&gt;false&lt;/autoincrementIdField&gt;&#10;      &lt;dataFile&gt;directories/country.csv&lt;/dataFile&gt;&#10;      &lt;createTablePolicy&gt;on_missing_columns&lt;/createTablePolicy&gt;&#10;    &lt;/directory&gt;&#10;&#10;    &lt;directory name=&#34;continent&#34;&gt;&#10;      &lt;schema&gt;vocabulary&lt;/schema&gt;&#10;      &lt;dataSource&gt;java:/nxsqldirectory&lt;/dataSource&gt;&#10;      &lt;cacheTimeout&gt;3600&lt;/cacheTimeout&gt;&#10;      &lt;cacheMaxSize&gt;1000&lt;/cacheMaxSize&gt;&#10;      &lt;table&gt;continent&lt;/table&gt;&#10;      &lt;idField&gt;id&lt;/idField&gt;&#10;      &lt;autoincrementIdField&gt;false&lt;/autoincrementIdField&gt;&#10;      &lt;dataFile&gt;directories/continent.csv&lt;/dataFile&gt;&#10;      &lt;createTablePolicy&gt;on_missing_columns&lt;/createTablePolicy&gt;&#10;      &lt;deleteConstraint&#10;        class=&#34;org.nuxeo.ecm.directory.HierarchicalDirectoryDeleteConstraint&#34;&gt;&#10;        &lt;property name=&#34;targetDirectory&#34;&gt;country&lt;/property&gt;&#10;        &lt;property name=&#34;targetDirectoryField&#34;&gt;parent&lt;/property&gt;&#10;      &lt;/deleteConstraint&gt;&#10;    &lt;/directory&gt;&#10;&lt;/extension&gt;
       </pre>
-      The directory session will check these delete constraints and throw a org.nuxeo.ecm.directory.DirectoryDeleteConstraintException if any are met.
+      The directory session will check these delete constraints and throw a <code>org.nuxeo.ecm.directory.DirectoryDeleteConstraintException</code> if any are met.
       <h2>Elasticsearch Evolutions</h2>
 
       <h3>Elasticsearch Crawl API </h3>
@@ -336,11 +332,11 @@ while (!batchOfDocs.isEmpty()) {
      <p>You can now use such a syntax in your NXQL queries.</p>
 
       <h2>Repository Scroll API</h2>
-      <P><span class="release new">8.10</span>There is now a repository scroll API to retrieve large number of results from a single search request, this act like database cursor returning batch of document ids.
+      <P><span class="release new">8.10</span>There is now a repository scroll API to retrieve large number of results from a single search request. This acts like a database cursor returning batch of document ids.
       </P>
      <h2> Subtypes Declaration at Core Level</h2>
      <p> <span class="release new">8.10</span>
-       Allowed subtype declarations has been moved to core document type declaration extension point and platform TypeService now relies on those clore declarations. Subtype and icon contributions have been moved to core so that they are available even without JSF. A new facet <code>HiddenInCreation</code>  is used to identify doctypes that should not be visible on creation.
+       Allowed subtype declarations has been moved to <a href="http://explorer.nuxeo.com/nuxeo/site/distribution/latest/viewExtensionPoint/org.nuxeo.ecm.core.schema.TypeService--doctype">core document type declaration extension point</a> and the platform TypeService now relies on those clore declarations. Subtype and icon contributions have been moved to core so that they are available even without JSF. A new facet <code>HiddenInCreation</code>  is used to identify doctypes that should not be visible on creation.
      </p>
 
       <h2>CMIS Evolutions</h2>
@@ -352,7 +348,7 @@ while (!batchOfDocs.isEmpty()) {
       <h3>CMIS Test Feature Can Be Used from Third-Party Bundle</h3>
       <p><span class="release">8.3</span>It is now possible to have third-party modules use the <code>CmisFeatureSessionHttp</code> feature to run their own tests in the context of a preconfigured CMIS test server.</p>
       <h3>OpenCMIS 1.0.0</h3>
-      <p><span class="release new">8.10</span>The CMIS conenctor now relies on OpenCMIS 1.0.0.</p>
+      <p><span class="release new">8.10</span>The CMIS connector now relies on OpenCMIS 1.0.0.</p>
       <h2>Authentication Prompt</h2>
       <p>
         <span class="release">8.2</span> When configuring authentication chains, a new attribute is available at
@@ -363,27 +359,27 @@ while (!batchOfDocs.isEmpty()) {
       </p>
 
       <h2>Packaging Evolutions</h2>
-      <h3>JSF Application is now a package</h3>
-      <p><span class="release new">8.10</span>The JSF application is now shipped as package
+      <h3>JSF Application Is Now a Package</h3>
+      <p><span class="release new">8.10</span>The JSF application is now shipped as package, available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-jsf-ui">on the marketplace</a>.
       </p>
-      <h3>nuxeo-sever is the new cap</h3>
-        <p><span class="release new">8.10</span>Nuxeo CAP distribution is no more used. Nuxeo is now distributed as a bare "server" distribution on top of which several different user interfaces can be intalled. The main ones available are the standard Seam/JSF UI (identical to the previous LTS releases), and a new Web UI (beta). The startup wizard allows you to select which one(s) you want to install in your server. Nuxeo Packages may also provide different functionality depending on the installed UI.
+      <h3>nuxeo-sever Is the New cap</h3>
+        <p><span class="release new">8.10</span> The Nuxeo CAP distribution is no more used. Nuxeo is now distributed as a bare "server" distribution on top of which different user interfaces can be installed. The main ones available are the standard Seam/JSF UI (identical to the previous LTS releases), and a new Web UI (beta). The startup wizard allows you to select which one(s) you want to install on your server. Nuxeo Packages may also provide different functionalities depending on the installed UI.
         </p>
         <h3>Optional Dependency</h3>
-          <p><span class="release new">8.10</span>The Nuxeo Packages system now offers ability to state an optional dependency for situations where some bundles of the package must be installed only if another specific package must be installed. The typical use case is when an addon had bundles for JSF application and for the new Web UI. JSF bundle must be installed only if the JSF Application has been installed.
+          <p><span class="release new">8.10</span>The Nuxeo Packages system now offers the ability to state an optional dependency for situations where some bundles of the package must be installed only if another specific package is installed. The typical use case is when an addon has bundles for the JSF UI and for the new Web UI. The JSF bundle must be installed only if the JSF Application has been installed.
           <div><pre>
-  &lt;optional-dependencies&gt;
+&lt;optional-dependencies&gt;
   &lt;package&gt;nuxeo-jsf-ui&lt;/package&gt;
 &lt;/optional-dependencies&gt;
           </pre>
           </div>
           </p>
     <h3>Protection Against Network Corruption</h3>
-    <p>  <span class="release new">8.10</span>Sometimes content streams get corrupted over the wire.Content Stream hashes are now supported following  RFC 3230/5843 "Digest" request header if present, as well as RFC 3230 "Want-Digest". </p>
+    <p><span class="release new">8.10</span>Sometimes content streams get corrupted over the wire. Content Stream hashes are now supported following  RFC 3230/5843 "Digest" request header if present, as well as RFC 3230 "Want-Digest". </p>
 
 <h2></h2>
 <p><span class="release new">8.10</span>
-Quick Filters have been added to PageProvider object. They allow to add actionable additional "filters + Sort". They are typicall bound to some switches in user interface, to implement things like "Remove Folders From The Result". REST API has been updated accordingly.
+Quick Filters have been added to PageProvider object. They allow to add actionable additional "filters + Sort". They are typically bound to some switches in user interface, to implement things like "Remove Folders From The Result". The REST API has been updated accordingly.
 <pre>
   &lt;quickFilters&gt;
         &lt;quickFilter name="noFolder"&gt;
@@ -395,19 +391,19 @@ Quick Filters have been added to PageProvider object. They allow to add actionab
         &lt;quickFilter name="onlyValidated"&gt;
           &lt;clause&gt;ecm:currentLifeCycleState = 'approved'&lt;/clause&gt;
           &lt;sort column="dc:modified" ascending="false" /&gt;
-        &lt;/quickFilter&gt;
+    &lt;/quickFilter&gt;
 </pre>
 </p>
 <h2>
 documentImportedWithPlatformImporter Event
 </h2>
-<p><span class="release new">8.10</span> An event <code>documentImportedWithPlatformImporter</code> is now fired at the end when a document is importer, so that we are sure the import process is done for that document. Relying on document created or modified is indeed not enough as several modifications happen during the import process. </p>
+<p><span class="release new">8.10</span> An event <code>documentImportedWithPlatformImporter</code> is now fired at the end when a document is imported, to ensure the import process is done for that document. Relying on document created or modified is indeed not enough as several modifications happen during the import process. </p>
 
 
 <h2>URL Codec Evolution</h2>
-<p>
-  An evolution has been made for handling ability to easily switch url used in notifications between JSF application and Web UI application.If jsf-ui only is installed point to the JSF UI.
-If web-ui only is installed point to the Web UI. If both are installed point to the JSF UI by default, being able to override thie behavior to point to the Web UI, to be documented.
+<p><span class="release new">8.10</span>
+  An evolution has been made to enable to easily switch the URL used in notifications between the JSF application and the Web UI application: If jsf-ui only is installed, point to the JSF UI.
+If web-ui only is installed, point to the Web UI. If both are installed point to the JSF UI by default. Being able to override this behavior to point to the Web UI, to be documented.
 
 </p>
       <h2>Configuring TinyMCE Editor via Tag Properties</h2>
@@ -428,7 +424,7 @@ If web-ui only is installed point to the Web UI. If both are installed point to 
       <p>Note that all events in the chart are in chronological order (not proportional) except for the Initiate
         link, where the origin points to the thread that has generated a work without telling when (earlier for sure).</p>
       <h2> Forcing Locale on Login page and Disabling Some Languages</h2>
-      <p>A new extension point <code>loginScreen</code> on <code>org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService"</code> allows to contribute explicitly what are the suppoted locales.</p>
+      <p><span class="release new">8.10</span>A new extension point <code>loginScreen</code> on <code>org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService</code> allows to contribute explicitly what are the supported locales.</p>
       <h2>HTML Content in Tipsy Tooltip</h2>
       <p>
         <span class="release">8.1</span> Tooltips generated with Tipsy now render HTML content properly.
@@ -446,7 +442,7 @@ If web-ui only is installed point to the Web UI. If both are installed point to 
       </ul>
 <h2> Parameters on CommandLine</h2>
 <p> <span class="release new">8.10</span>
-It's now possible in the extension point for a command to include a <code>testParameterString</code> for allowing to test commands that require paameters:
+It's now possible in the extension point for a command to include a <code>testParameterString</code> to allow to test commands that require parameters:
 <pre>
 &lt;extension target=&#34;org.nuxeo.ecm.platform.commandline.executor.service.CommandLineExecutorComponent&#34; point=&#34;command&#34;&gt;&#10;    &lt;command name=&#34;mycommand&#34;&gt;&#10;      &lt;commandLine&gt;somecommand&lt;/commandLine&gt;&#10;      &lt;parameterString&gt;arg1 --arg2 --arg3&lt;/parameterString&gt;&#10;      &lt;winCommand&gt;somecommand.exe&lt;/winCommand&gt;&#10;      &lt;winParameterString&gt;arg1 /arg2 /arg3&lt;/winParameterString&gt;&#10;      &lt;testParameterString&gt;--exists&lt;/testParameterString&gt;&#10;      &lt;winTestParameterString&gt;/exists&lt;/winTestParameterString&gt;&#10;    &lt;/command&gt;&#10;  &lt;/extension&gt;
 </pre>
@@ -473,7 +469,7 @@ It's now possible in the extension point for a command to include a <code>testPa
         <span class="release new">8.10</span>
         You can now disable the document constraint validation in creation and modification forms.
         <pre>
-          &lt;require&gt;org.nuxeo.ecm.platform.ui.web.DocumentValidationService.activations&lt;/require&gt;&#10;  &lt;extension target=&#34;org.nuxeo.ecm.core.api.DocumentValidationService&#34; point=&#34;activations&#34;&gt;&#10;    &lt;validation context=&#34;jsfValidator&#34; activated=&#34;false&#34; /&gt;&#10;  &lt;/extension&gt;
+&lt;require&gt;org.nuxeo.ecm.platform.ui.web.DocumentValidationService.activations&lt;/require&gt;&#10;  &lt;extension target=&#34;org.nuxeo.ecm.core.api.DocumentValidationService&#34; point=&#34;activations&#34;&gt;&#10;    &lt;validation context=&#34;jsfValidator&#34; activated=&#34;false&#34; /&gt;&#10;  &lt;/extension&gt;
         </pre>
       </p>
 
@@ -481,12 +477,12 @@ It's now possible in the extension point for a command to include a <code>testPa
       <p><span class="release new">8.10</span>
         If you install the Nuxeo Showcase Content Sample package, you can then add Nuxeo Archives into other bundles and provide a contribution so that this Nuxeo Archive is automatically imported.
         <pre>
-          &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;&#10;&lt;component name=&#34;org.nuxeo.test.showcase.content&#34;&gt;&#10;    &lt;extension target=&#34;org.nuxeo.ecm.showcase.content&#34; point=&#34;contents&#34;&gt;&#10;        &lt;content name=&#34;mycontent&#34;&gt;&#10;            &lt;filename&gt;export.zip&lt;/filename&gt;&#10;        &lt;/content&gt;&#10;&#10;        &lt;content name=&#34;disabled&#34; enable=&#34;false&#34;&gt;&#10;            &lt;filename&gt;export.zip&lt;/filename&gt;&#10;        &lt;/content&gt;&#10;    &lt;/extension&gt;&#10;&lt;/component&gt;
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;&#10;&lt;component name=&#34;org.nuxeo.test.showcase.content&#34;&gt;&#10;    &lt;extension target=&#34;org.nuxeo.ecm.showcase.content&#34; point=&#34;contents&#34;&gt;&#10;        &lt;content name=&#34;mycontent&#34;&gt;&#10;            &lt;filename&gt;export.zip&lt;/filename&gt;&#10;        &lt;/content&gt;&#10;&#10;        &lt;content name=&#34;disabled&#34; enable=&#34;false&#34;&gt;&#10;            &lt;filename&gt;export.zip&lt;/filename&gt;&#10;        &lt;/content&gt;&#10;    &lt;/extension&gt;&#10;&lt;/component&gt;
         </pre>
       </p>
       <h2>Finer Control On Nuxeo Vision Processing </h2>
       <p><span class="release new">8.10</span>
-        Nuxeo Vision has been improved to allow to trigger event (typically, an asynchronous event) and process business logic after nuxeo-vision has extracted tags or text. Example: for a Picture, nuxeo-vision stores by default in dc:source the text extracted via OCR. Adding a listener for "visionOnImageDone" is a good idea if one wants to check for unauthorized words (start a workflow, tag the picture, change its ACL so only an administrator can access it, ...)
+        <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-vision">Nuxeo Vision</a> has been improved to allow to trigger event (typically, an asynchronous event) and process business logic after nuxeo-vision has extracted tags or text. Example: for a Picture, nuxeo-vision stores by default in <code>dc:source</code> the text extracted via OCR. Adding a listener for <code>visionOnImageDone</code> is a good idea if one wants to check for unauthorized words (start a workflow, tag the picture, change its ACL so only an administrator can access it, ...).
       </p>
 
       <h2>No More Selenium Tests </h2>
@@ -496,7 +492,7 @@ It's now possible in the extension point for a command to include a <code>testPa
       <p><span class="release">8.3</span>The UIDSequencer interface now supports long integer.
 
       </p>
-      <p><span class="release new">8.10</span>Transaction timeouts are now detected as soon as possible which helps pinpoint long-running processes with more accuracy.</p>
+      <p><span class="release new">8.10</span>Transaction timeouts are now detected as soon as possible which helps pinpointing long-running processes with more accuracy.</p>
 
     </div>
   </div>

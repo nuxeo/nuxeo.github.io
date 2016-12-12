@@ -155,12 +155,12 @@
       </p>
       <h2>JCloud Binary Manager</h2>
       <p>
-        <span class="release new">8.10</span> The JClouds binary manager that allows to store files on the main cloud blobstores has been upgraded to using the version 1.9.2 of the underlying Apache libary. Some bugs have been fixed for handling large files and a new property <code>jclouds.blobstore.endpoint</code> allows to configure the endpoint to use.
+        <span class="release new">8.10</span> The JClouds binary manager that allows to store files on the main cloud blobstores has been upgraded to use the version 1.9.2 of the underlying Apache libary. Some bugs have been fixed to handle large files and a new property <code>jclouds.blobstore.endpoint</code> allows to configure the endpoint to use.
       </p>
       <h2>Quartz MongoDB Backend</h2>
-      <p>  <span class="release new">8.10</span> Quartz is now automatically enabled in cluster mode when using the mongodb template and do not require anymore a SQL backend.</p>
+      <p><span class="release new">8.10</span> Quartz is now automatically enabled in cluster mode when using the mongodb template and do not require a SQL backend anymore.</p>
       <h2>Quartz MYSQL Backend</h2>
-      <p>  <span class="release new">8.10</span> Quartz is now automatically enabled in cluster mode when using the mysql template.</p>
+      <p><span class="release new">8.10</span> Quartz is now automatically enabled in cluster mode when using the mysql template.</p>
       <h2>SAML Addon Compatible with ADFS</h2>
       <p>
         <span class="release">8.2</span> After adjusting a few blind parts of the specification, the SAML plugin
@@ -184,8 +184,7 @@
       </ul>
       <h2>Indexing Optimisation Using Scroll API</h2>
       <p>
-        <span class="release new">8.10</span>
-Instead of loading all document ids to reindex, the new repository scroll API is used to remove memory pressure.
+        <span class="release new">8.10</span> Instead of loading all document ids to reindex, the new repository scroll API is used to remove memory pressure.
       </p>
       <H2>Full-Text Indexing Optimisation</H2>
       <p><span class="release">8.3</span>We optimized the indexing flow by using ES bulk indexing features, when full-text indexation is disabled at the repository level. Number of works queued is now divided by two.
@@ -304,13 +303,8 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
       <p><span class="release">8.3</span>The nuxeo-importer can now run with Elasticsearch indexing turned off. The reindexing can be done after the mass import.</p>
 
       <h2>Use of Docker for 3D conversions</h2>
-      <p><span class="release new">8.10</span>3D conversions run with the new 3D addon make use by default of Docker and pull images containing necessary software for conversions(Collada, Blender). Nuxeo should generalise this design in the future. </p>
+      <p><span class="release new">8.10</span> 3D conversions run with the new 3D addon make use by default of Docker and pull images containing necessary software for conversions (Collada, Blender). Nuxeo should generalise this design in the future.</p>
 
-      <h2>Nuxeo Vision Events Optimization</h2>
-      <p><span class="release new">8.10</span> <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-vision">Nuxeo Vision</a> has been improved and allows to trigger event (typically, an asynchronous event) and process business logic after nuxeo-vision has extracted tags or text.
-          Example: for a Picture, nuxeo-vision stores by default in <code>dc:source</code> the text extracted via OCR.
-          Adding a listener for <code>visionOnImageDone</code> is a good idea if one wants to check for unauthorized words (start a workflow, tag the picture, change its ACL so only an administrator can access it, ...).
-      </p>
       <h2>Web App Optimizations</h2>
       <p>
         <span class="release">8.2</span> Since 6.0 and migration to JSF2, some regressions on the performance of the
