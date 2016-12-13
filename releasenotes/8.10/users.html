@@ -20,8 +20,8 @@
                         ==================================================
                     -->
 <meta charset="utf-8" />
-<title>Nuxeo Platform 8.3 - New and Noteworthy</title>
-<meta content="Nuxeo Platform 8.3 release notes for users" name="description" />
+<title>Nuxeo Platform 8.10 - New and Noteworthy</title>
+<meta content="Nuxeo Platform LTS 2016 release notes for users" name="description" />
 <meta content="Nuxeo" name="author" />
 <!--
                         Mobile Specific Metas
@@ -69,22 +69,30 @@
     </p>
     <p class="remove-bottom" id="site-title">
       <a href="./index.html">
-        <span class="version-number">8.3</span> Release Notes
+        <span class="version-number">8.10</span> Release Notes
       </a>
     </p>
     <div id="welcome">
       <div style="clear: both;"></div>
       <h1 style="margin-left: -0.5em !important;">For Users</h1>
-      <h2>Nuxeo Mobile for iOS</h2>
-      <p><span class="release new">8.3</span> <a href="https://itunes.apple.com/app/nuxeo/id1103802613">Nuxeo Mobile for iOS</a> provides an out of the box mobile experience with any customized Nuxeo Platform server. It lets you access content stored on Nuxeo Platform servers on your phone. Nuxeo Mobile provides a seamless experience on essential features such as searching, browsing, previewing documents (typically images, videos, text documents and notes), and managing favorite documents.
-      </p>
+      <h2>Nuxeo Mobile</h2>
+      <p><span class="release">8.3</span> Nuxeo Mobile provides an out of the box mobile experience with any customized Nuxeo Platform server. It lets you access content stored on Nuxeo Platform servers on your phone. Nuxeo Mobile provides a seamless experience on essential features such as searching, browsing, previewing documents (typically images, videos, text documents and notes), and managing favorite documents. Nuxeo Mobile is available <a href="https://itunes.apple.com/app/nuxeo/id1103802613">for iOs</a> and <a href="https://play.google.com/store/apps/details?id=com.nuxeomobile">Android</a>.</p>
       <div>
-        <img class="lightboxed" src="./6+-Menu-EN.jpeg" /> <img class="lightboxed" src="./6+-Browse-EN.jpeg" />
+        <img class="lightboxed" src="./6+-Menu-EN.png" /> <img class="lightboxed" src="./6+-Browse-EN.png" />
       </div>
-      <h2>Nuxeo Web UI Preview Edition</h2>
-      <p><span class="release new">8.3</span> The Nuxeo Web UI has been rewritten entirely, switching from JSF stack to Web Component (HTML) / Polymer framework, with a completely re-designed interface. It will be available in preview edition for the Nuxeo Platform 8.3 and fully available along with the LTS 2016.
-It allows enhanced productivity with direct access to last visited documents, collections, easy browsing between prev/next document, full screen suggester. Effort has been made for making the tasks validation flow highly efficient. With all those improvements, <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-web-ui" target="_blank">Nuxeo Web UI</a> is a first class choice for projects where visual and workflows are important requirements.
+      <h2>Nuxeo Web UI Beta</h2>
+      <p><span class="release">8.3</span> <span class="release new">8.10</span> A new UI is being written for the LTS 2016. Purpose is to move to more recent standards and technological stack (Web Components and Polymer) and to take the opportunity to reboot the user experience. Some important steps around configurability are missing before reaching the 1.0 version. Yet a large part of the feature scope is implemented and robust. We encourage you to check it out yourself:
       </p>
+<ul>
+<li>Content browsing, with great new features in comparison with JSF UI, like recently seen documents</li>
+<li>Content capture, including batch metadata edition and Live Connect</li>
+<li>Workflows</li>
+<li>Search, including new asset search screens</li>
+<li>Document lists a.k.a Queues</li>
+<li>Analytics</li>
+<li>Preview and more.</li>
+</ul>
+Final release for LTS 2016 is to be expected for April 2017. Nuxeo Web UI is already available <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-web-ui" target="_blank">on the Marketplace</a> and you can check <a href="https://doc.nuxeo.com/nxdoc/web-ui/" target="_blank">its documentation</a> for more details.
       <div>
         <img class="lightboxed" src="./WebUI-search-results.png" />
       </div>
@@ -93,18 +101,23 @@ It allows enhanced productivity with direct access to last visited documents, co
         <span class="release">8.1</span> A new feature allows to invite users to a given folder of the Nuxeo Platform
         with either Read or Edit permission, by email. Invited users do not have an account on the Nuxeo Platform
         instance. The access is temporary and any access remains tracked in the audit log, based on the used email
-        address. <a href="https://doc.nuxeo.com/x/UYEk"> Read more in the documentation</a>.
+        address. <a href="https://doc.nuxeo.com/userdoc/managing-permissions/"> Read more in the documentation</a>.
       </p>
       <div>
         <img class="lightboxed" src="./8.1_external_permissions.png" />
       </div>
+
+      <h2>Nuxeo 3D Addon</h2>
+      <p>
+        <span class="release new">8.10</span> A new addon adds 3D Support to the Nuxeo Platform: canonical views extraction, technical metadata, transformations and 3D previewer for web applications. Those new capabilities can be used for creative process in the textile industry for instance. <a href="https://doc.nuxeo.com/nxdoc/nuxeo-3d/" target="_blank">Read more in the documentation</a>.
+      </p>
       <h2>Nuxeo Live Connect for Box</h2>
       <p>
         <span class="release">8.1</span>
-        <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-liveconnect"> Nuxeo Live Connect</a>
+        <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-liveconnect" target="_blank"> Nuxeo Live Connect</a>
         has been improved and now integrates with Box.com. Nuxeo Live Connect allows to easily reference files that are
         stored in the cloud and have them participate to your business processes. Check the
-        <a href="https://doc.nuxeo.com/x/EgOIAQ"> Nuxeo Live Connect documentation</a>
+        <a href="https://doc.nuxeo.com/nxdoc/nuxeo-live-connect/" target="_blank"> Nuxeo Live Connect documentation</a>
         for more information.
       </p>
       <div>
@@ -113,23 +126,66 @@ It allows enhanced productivity with direct access to last visited documents, co
       <h2>Nuxeo Live Connect for One Drive</h2>
       <p>
         <span class="release">8.2</span>
-        <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-liveconnect"> Nuxeo Live Connect</a>
+        <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-liveconnect" target="_blank">Nuxeo Live Connect</a>
         has been improved and now integrates with One Drive. Nuxeo Live Connect allows to easily reference files that
         are stored in the cloud and have them participate to your business processes. It offers as usual with Live
         Connect: direct download from the Microsoft Cloud, full text indexing etc. We also have come out with a generic
         One Drive Java client and a generic file picker as well. Check the
-        <a href="https://doc.nuxeo.com/x/EgOIAQ"> Nuxeo Live Connect documentation</a>
+        <a href="https://doc.nuxeo.com/nxdoc/nuxeo-live-connect/" target="_blank"> Nuxeo Live Connect documentation</a>
         for more information.
+      </p>
+      <h2>Versions and Proxies as Collection Members </h2>
+      <p> <span class="release new">8.10</span>
+        It is now possible to add a version or a proxy to a collection.
       </p>
       <h2>Users and Groups Management Audit</h2>
       <p>
         <span class="release">8.2</span> Creation, Update and deletion of users and groups actions are now logged
         into the audit trail of Nuxeo Platform.
       </p>
-      <h2>Nuxeo Drive Optimisations</h2>
-      <p><span class="release new">8.3</span> At initial synchronisation, the time needed to retrieve the documents is 4 times lower and the number of children synchronized in a folder is no more limited to 1000.
+      <h2>Nuxeo Drive Optimizations</h2>
+      <p><span class="release">8.3</span> <span class="release new">8.10</span>Some improvements were brought to Nuxeo Drive: </p>
+        <ul>
+            <li>A message is now displayed to the user when there is no space left on their device (used to be logs only).</li>
+            <li>The autolock of files edited with Drive Edit on Windows is now more consistent.</li>
+            <li>At initial synchronization, the time needed to retrieve the documents is 4 times lower and the number of children synchronized in a folder is no more limited to 1000.</li>
+        </ul>
+
+        <h2>Long Renditions</h2>
+        <p> <span class="release new">8.10</span>Optimizations have been done on the way renditions computation are scheduled to avoid that a long one with quickly changing documents would monopolize all the resources all the time, preventing uses to get other renditions.
+        </p>
+
+        <h2>Bigger Resolutions for Picture Renditions</h2>
+        <p> <span class="release new">8.10</span>
+          A new FullHD rendition has been added: 1920x1080, and other renditions's resolutions have been increased: Small picture rendition width limit has been increased from 280 to 560.
+Medium picture rendition width limit has been increased from 550 to 1000.
+        </p>
+
+        <h2>PDF Rendition For Picture</h2>
+        <p> <span class="release new">8.10</span>
+        The Picture document type (and all document types with the Picture facet) now has a PDF rendition.
+        </p>
+        <h2>Canon Raw Image as Picture</h2>
+        <p> <span class="release new">8.10</span>
+        CR2 files are finally considered as pictures.
+        </p>
+
+        <h2>Universal Login Page</h2>
+        <p> <span class="release new">8.10</span>A login page used by Drive, Android and iOS application, JSF UI and Web UI has been implemented, with responsive design and mechanisms to support Nuxeo token based authentication in the related applications.
+        </p>
+        <div>
+            <img class="lightboxed" src="./login_desktop.png" />
+            <img class="lightboxed" src="./login_mobile.PNG" />
+        </div>
+      <h2>JSF UI Evolutions</h2>
+      <h3>New Document Types Icons</h3>
+      <p>
+        <span class="release new">8.10</span> Icons of document types have been updated. We hope you like the new set!
       </p>
-      <h2>JSF Web UI Evolutions</h2>
+      <div>
+          <img class="lightboxed" src="./8.10_doctypes_icons.png" />
+      </div>
+
       <h3>New Previewers</h3>
       <p>
         <span class="release">8.2</span> Preview now offers to see office documents with pdf.js, video documents
@@ -153,7 +209,7 @@ It allows enhanced productivity with direct access to last visited documents, co
         reasons. In order to activate the traces display in error pages of Nuxeo, the dev mode has to be set:
         org.nuxeo.dev in nuxeo.conf or in the admin center.
       </p>
-      <h3>Smart Search is Back</h3>
+      <h3>Smart Search Is Back</h3>
       <p>
         <span class="release">8.1</span>
         <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-platform-smart-search"> Smart Search</a>,
@@ -163,7 +219,7 @@ It allows enhanced productivity with direct access to last visited documents, co
       <div>
         <img class="lightboxed" src="./8.1_SmartSearch_query.png" width="250" />
       </div>
-      <h3>Confirmation Pop-up Before Purge</h3>
+      <h3>Confirmation Pop-up before Purge</h3>
       <p>
         <span class="release">8.1</span> In the Admin Center, when removing the permissions of a given user, you now
         have to confirm on a pop-up that you really want to purge all the permissions.
@@ -175,26 +231,30 @@ It allows enhanced productivity with direct access to last visited documents, co
       <p>
         <span class="release">8.2</span> When a user changes their password, they are now required to fill in the old password value.
       </p>
-      <h3>See Assigned Groups Before Validating Invitation</h3>
+      <h3>See Assigned Groups before Validating Invitation</h3>
       <p>
         <span class="release">8.2</span> When validating an invitation request, Administrator can now see the
         groups the user will be granted.
       </p>
+      <h3>Permalink in Invitation Email</h3>
+      <p><span class="release new">8.10</span>A permalink link is now used in emails sent for invitation. </p>
       <h3>More Friendly "Http Transport returned a 0 status code" Error</h3>
       <p>
         <span class="release">8.1</span> When this error happens, the message is now displayed as a warning and
         translated in a more friendly way.
       </p>
       <h3>Do Not Checkout a Document When Putting It in the Trash</h3>
-      <p><span class="release new">8.3</span> Now, putting a checked-in document in the trash will not check it out, thus not spuriously changing its quota size. This behavior can be also activated in Nuxeo 7.10 since HF10 using:
+      <p><span class="release">8.3</span> Now, putting a checked-in document in the trash will not check it out, thus not spuriously changing its quota size. This behavior can be also activated in Nuxeo 7.10 since HF10 using:
 </p>
 <pre>
 &lt;extension target=&quot;org.nuxeo.runtime.ConfigurationService&quot; point=&quot;configuration&quot;&gt;
   &lt;property name=&quot;org.nuxeo.trash.keepCheckedIn&quot;>true&lt;/property&gt;
 &lt;/extension&gt;
 </pre>
+  <h3>Query Optimization on Dashboard</h3>
+  <p><span class="release new">8.10</span>Some of the queries used on the dashboard have been migrated to using Elasticsearch and now scale better, lowering the display time of the dashboard.</p>
       <h2>Nuxeo Explorer Improvements</h2>
-      <p><span class="release new">8.3</span>
+      <p><span class="release">8.3</span>
       We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We've also extended the XML generation feature to help developers have a working sample. The documentation has been completed and will be maintained regularly.
       </p>
       <div>
@@ -202,7 +262,7 @@ It allows enhanced productivity with direct access to last visited documents, co
       </div>
       <h2>CSV Importer Small Improvements</h2>
       <h3>Import Time Reduction</h3>
-      <p><span class="release new">8.3</span> Now, the time needed to import an element in a large collection has been greatly reduced.</p>
+      <p><span class="release">8.3</span> Now, the time needed to import an element in a large collection has been greatly reduced.</p>
       <h3>Type Attribute Not Mandatory</h3>
       <p>
         <span class="release">8.2</span> Type attribute is not mandatory anymore when updating documents. It must be
@@ -218,11 +278,12 @@ It allows enhanced productivity with direct access to last visited documents, co
         <code>dc:created</code>
         property using CSV importer. It used to be overridden with the date of import.
       </p>
+
       <h2>Nuxeo Spreadsheet</h2>
-      <h3>Locale is Respected</h3>
+      <h3>Locale Is Respected</h3>
       <p>
-        <span class="release">8.2</span> Locale setting is now taken into account when using Nuxeo Spreadsheet for
-        the JSF Web UI.
+        <span class="release">8.2</span> Locale setting is now taken into account when using <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-spreadsheet" target="_blank">Nuxeo Spreadsheet</a> for
+        the JSF UI.
       </p>
       <h2>No More Error Stack Trace</h2>
       <p>
@@ -247,8 +308,22 @@ It allows enhanced productivity with direct access to last visited documents, co
         for all kind of document copies by setting <code>nuxeo.dclistener.reset-creator-on-copy</code>
         configuration property to true.
       </p>
-      <h2>Nuxeo Showcase Content</h2>
-      <p><span class="release new">8.3</span> The <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-showcase-content" target="_blank">Nuxeo Showcase Content addon</a> imports a set of showcase content so that the repository is not empty for your first steps: office documents, images, videos. The content of this addon has been updated with new sample documents (reports, case studies, etc.). This addon is a good way to start with your Nuxeo Platform.</p>
+
+      <h2>New Addons</h2>
+        <h3>Nuxeo Showcase Content</h3>
+        <p><span class="release">8.3</span> The <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-showcase-content" target="_blank">Nuxeo Showcase Content addon</a> imports a set of showcase content so that the repository is not empty for your first steps: office documents, images, videos. The content of this addon has been updated with new sample documents (reports, case studies, etc.). This addon is a good way to start with your Nuxeo Platform.</p>
+        <h3>Nuxeo Platform Additional Languages</h3>
+        <p><span class="release new">8.10</span> In order to improve the quality of the Nuxeo Platform and user experience, only languages that are sufficiently translated are now available in the default distribution of the Nuxeo Platform.
+          Other languages are available in the new addon <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/marketplace-lang-ext-incomplete">Nuxeo Platform Additional Languages</a>, from the Nuxeo Marketplace.
+          The conditions for a language to be available by default are that it is translated at 95% and approved at 75% minimum.
+          For more information about how to translate the Nuxeo Platform, read <a href="https://doc.nuxeo.com/nxdoc/how-to-translate-the-nuxeo-platform/">our documentation</a>.
+        </p>
+        <h3>Nuxeo Forum</h3>
+        <p>The Forum feature of the Nuxeo Platform has been taken out of the default distribution to become an addon. <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-forum">Nuxeo Forum</a> is available from the Nuxeo Marketplace.
+        </p>
+
+
+
     </div>
   </div>
 
