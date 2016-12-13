@@ -112,7 +112,7 @@
       <p>
         <span class="release new">8.10</span> The operations
         <code>Document.Subscribe</code> and <code>Document.Unsubscribe</code>
-        are now available to suscribe a user to notifications on the input document.
+        are now available to subscribe a user to notifications on the input document.
       </p>
       <h3>Document.MoveCollectionMember</h3>
       <p>
@@ -158,10 +158,10 @@
       <h3>New Content-Type Header</h3>
       <p>
         <span class="release">8.2</span>Content-Type header now returns the nuxeo-entity type as well:
+      </p>
         <pre>
 application/json; nuxeo-entity=documents
   </pre>
-      </p>
       <h3>Constraints and References on Schema Endpoint</h3><p>
       <span class="release new">8.10</span>New JSON writers have been enabled and old ones removed. On the schema endpoint (http://demo.nuxeo.com/nuxeo/api/v1/config/schemas/)
        a new <code>fetch.schema=fields</code> property allows to return extended schema fields containing validation constraints.
@@ -170,10 +170,10 @@ application/json; nuxeo-entity=documents
       <h3>New Content-Type Header</h3>
       <p>
         <span class="release">8.2</span>Content-Type header now returns the nuxeo-entity type as well:
+      </p>
         <pre>
 application/json; nuxeo-entity=documents
       </pre>
-      </p>
 
 
 <h3>Remove a Blob from a Batch</h3>
@@ -186,7 +186,7 @@ application/json; nuxeo-entity=documents
   <code>X-Batch-No-Drop</code>. When set to true the batch won't be dropped after operated on or referenced. The default is false.
 </p>
 
-      <h3>Client-Side Localisation</h3>
+      <h3>Client-Side Localization</h3>
       <p><span class="release">8.3</span>The client is now responsible for sending the locale it is interested in via a dedicated request header.</p>
 
       <h3>Fetching Members of Group Object</h3>
@@ -198,7 +198,7 @@ application/json; nuxeo-entity=documents
       </ul>
       <p>
       This endpoint supports pagination and returns the full objects (full users and groups). And by default when
-      fetching a user or a group, users and groups members are no more marshaled (only ids are returned), you can use
+      fetching a user or a group, users and groups members are no more marshaled (only IDs are returned), you can use
       <code>fetch.group=memberUsers</code>
       and/or
       <code>fetch.group=memberGroups</code>
@@ -207,7 +207,7 @@ application/json; nuxeo-entity=documents
       <h3>isPoxy, isVersion</h3>
       <p><span class="release new">8.10</span> Now the documents returned by the REST API have "isProxy" and "isVersion" properties.</p>
       <h3>subtypes Enricher</h3>
-      <p><span class="release new">8.10</span>Using the <code>subtypes</code> enricher, you can get document types that can be instanciated under a given document.</p>
+      <p><span class="release new">8.10</span>Using the <code>subtypes</code> enricher, you can get document types that can be instantiated under a given document.</p>
 
       <h2>Directories</h2>
 
@@ -366,19 +366,20 @@ while (!batchOfDocs.isEmpty()) {
         </p>
         <h3>Optional Dependency</h3>
           <p><span class="release new">8.10</span>The Nuxeo Package system now offers the ability to state an optional dependency for situations where some bundles of the package must be installed only if another specific package is installed. The typical use case is when an addon has bundles for the JSF UI and for the new Web UI. The JSF bundle must be installed only if the JSF Application has been installed.
+          </p>
           <div><pre>
 &lt;optional-dependencies&gt;
   &lt;package&gt;nuxeo-jsf-ui&lt;/package&gt;
 &lt;/optional-dependencies&gt;
           </pre>
           </div>
-          </p>
     <h3>Protection against Network Corruption</h3>
     <p><span class="release new">8.10</span>Sometimes content streams get corrupted over the wire. Content Stream hashes are now supported following  RFC 3230/5843 "Digest" request header if present, as well as RFC 3230 "Want-Digest". </p>
 
 <h2>Quick Filters for Page Providers</h2>
 <p><span class="release new">8.10</span>
 Quick Filters have been added to PageProvider object. They allow to add actionable additional "filters + Sort". They are typically bound to some switches in user interface, to implement things like "Remove Folders From The Result". The REST API has been updated accordingly.
+</p>
 <pre>
   &lt;quickFilters&gt;
         &lt;quickFilter name="noFolder"&gt;
@@ -392,7 +393,6 @@ Quick Filters have been added to PageProvider object. They allow to add actionab
           &lt;sort column="dc:modified" ascending="false" /&gt;
     &lt;/quickFilter&gt;
 </pre>
-</p>
 <h2>documentImportedWithPlatformImporter Event</h2>
 <p><span class="release new">8.10</span> An event <code>documentImportedWithPlatformImporter</code> is now fired at the end when a document is imported, to ensure the import process is done for that document. Relying on document created or modified is indeed not enough as several modifications happen during the import process. </p>
 
@@ -442,10 +442,10 @@ If web-ui only is installed, point to the Web UI. If both are installed point to
 <h2> Parameters on CommandLine</h2>
 <p> <span class="release new">8.10</span>
 It's now possible in the extension point for a command to include a <code>testParameterString</code> to allow to test commands that require parameters:
+</p>
 <pre>
 &lt;extension target=&#34;org.nuxeo.ecm.platform.commandline.executor.service.CommandLineExecutorComponent&#34; point=&#34;command&#34;&gt;&#10;    &lt;command name=&#34;mycommand&#34;&gt;&#10;      &lt;commandLine&gt;somecommand&lt;/commandLine&gt;&#10;      &lt;parameterString&gt;arg1 --arg2 --arg3&lt;/parameterString&gt;&#10;      &lt;winCommand&gt;somecommand.exe&lt;/winCommand&gt;&#10;      &lt;winParameterString&gt;arg1 /arg2 /arg3&lt;/winParameterString&gt;&#10;      &lt;testParameterString&gt;--exists&lt;/testParameterString&gt;&#10;      &lt;winTestParameterString&gt;/exists&lt;/winTestParameterString&gt;&#10;    &lt;/command&gt;&#10;  &lt;/extension&gt;
 </pre>
-</p>
       <h2>Platform Explorer Addon Evolution</h2>
       <p> <span class="release">8.3</span>The Platform Explorer addon has been greatly improved: better search features, cleaner look &amp; feel. We reviewed the browsing pattern, simplifying each view to navigate between Extension Points, Services, Operations, Components and Bundles. We have also extended the XML generation feature to help developers have a working sample. Check it out on <a href="http://explorer.nuxeo.com/" target="_blank">explorer.nuxeo.com</a> or by installing the <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/platform-explorer" target="_blank">Platform Explorer Nuxeo Package</a>.</p>
 
@@ -464,25 +464,25 @@ It's now possible in the extension point for a command to include a <code>testPa
       <p>
         <span class="release new">8.10</span>
         You can now disable the document constraint validation in creation and modification forms.
+      </p>
         <pre>
 &lt;require&gt;org.nuxeo.ecm.platform.ui.web.DocumentValidationService.activations&lt;/require&gt;&#10;  &lt;extension target=&#34;org.nuxeo.ecm.core.api.DocumentValidationService&#34; point=&#34;activations&#34;&gt;&#10;    &lt;validation context=&#34;jsfValidator&#34; activated=&#34;false&#34; /&gt;&#10;  &lt;/extension&gt;
         </pre>
-      </p>
 
       <h2>Let Content Be Part of Your Application Definition</h2>
       <p><span class="release new">8.10</span>
         If you install the Nuxeo Showcase Content Sample package, you can then add Nuxeo Archives into other bundles and provide a contribution so that this Nuxeo Archive is automatically imported.
+      </p>
         <pre>
 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;&#10;&lt;component name=&#34;org.nuxeo.test.showcase.content&#34;&gt;&#10;    &lt;extension target=&#34;org.nuxeo.ecm.showcase.content&#34; point=&#34;contents&#34;&gt;&#10;        &lt;content name=&#34;mycontent&#34;&gt;&#10;            &lt;filename&gt;export.zip&lt;/filename&gt;&#10;        &lt;/content&gt;&#10;&#10;        &lt;content name=&#34;disabled&#34; enable=&#34;false&#34;&gt;&#10;            &lt;filename&gt;export.zip&lt;/filename&gt;&#10;        &lt;/content&gt;&#10;    &lt;/extension&gt;&#10;&lt;/component&gt;
         </pre>
-      </p>
       <h2>Finer Control on Nuxeo Vision Processing</h2>
       <p><span class="release new">8.10</span>
         <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-vision" target="_blank">Nuxeo Vision</a> has been improved to allow to trigger event (typically, an asynchronous event) and process business logic after nuxeo-vision has extracted tags or text. Example: for a Picture, nuxeo-vision stores by default in <code>dc:source</code> the text extracted via OCR. Adding a listener for <code>visionOnImageDone</code> is a good idea if one wants to check for unauthorized words (start a workflow, tag the picture, change its ACL so only an administrator can access it, ...).
       </p>
 
       <h2>No More Selenium Tests</h2>
-      <p><span class="release">8.3</span>Selenium has been fully replaced by Webdriver for the functional tests of the Nuxeo Platform and is no longer used.</p>
+      <p><span class="release">8.3</span>Selenium has been fully replaced by WebDriver for the functional tests of the Nuxeo Platform and is no longer used.</p>
 
       <h2>Miscellaneous</h2>No More Selenium Tests
       <p><span class="release">8.3</span>The UIDSequencer interface now supports long integer.

@@ -80,7 +80,7 @@
       <p>The addon <a href="https://connect.nuxeo.com/nuxeo/site/marketplace/package/nuxeo-connect-tools-report-web" target="_blank">Nuxeo Connect Tools Report Web</a> is available to provide a basic user interface to get the report.
       </p>
       <h2>Startup Wizard Improvements on Module Selection</h2>
-      <p><span class="release new">8.10</span> The Module selection step of the startup wizard has been reviewed to provide a more user-friendly interface, take into consideration the distribution changes and make dependencies betweens addons and UIs more straightforward.
+      <p><span class="release new">8.10</span> The Module selection step of the startup wizard has been reviewed to provide a more user-friendly interface, take into consideration the distribution changes and make dependencies between addons and UIs more straightforward.
       </p>
       <div>
           <img class="lightbox" src="./wizard_module_selection.png" />
@@ -95,7 +95,7 @@
       </p>
        <h2>PostgreSQL 9.5</h2>
       <p>
-        <span class="release">8.3</span> PostgreSQL 9.5 is now supported as a storage backend. 8.10 also works with 9.6 although not yet added to CI.
+        <span class="release">8.3</span> PostgreSQL 9.5 is now supported as a storage backend. Nuxeo 8.10 also works with PostgreSQL 9.6 although not yet added to CI.
       </p>
 
       <h2>Elasticsearch 2.X</h2>
@@ -155,12 +155,12 @@
       </p>
       <h2>JCloud Binary Manager</h2>
       <p>
-        <span class="release new">8.10</span> The JClouds binary manager that allows to store files on the main cloud blobstores has been upgraded to use the version 1.9.2 of the underlying Apache libary. Some bugs have been fixed to handle large files and a new property <code>jclouds.blobstore.endpoint</code> allows to configure the endpoint to use.
+        <span class="release new">8.10</span> The JClouds binary manager that allows to store files on the main cloud blobstores has been upgraded to use the version 1.9.2 of the underlying Apache library. Some bugs have been fixed to handle large files and a new property <code>jclouds.blobstore.endpoint</code> allows to configure the endpoint to use.
       </p>
       <h2>Quartz MongoDB Backend</h2>
-      <p><span class="release new">8.10</span> Quartz is now automatically enabled in cluster mode when using the mongodb template and do not require a SQL backend anymore.</p>
-      <h2>Quartz MYSQL Backend</h2>
-      <p><span class="release new">8.10</span> Quartz is now automatically enabled in cluster mode when using the mysql template.</p>
+      <p><span class="release new">8.10</span> Quartz is now automatically enabled in cluster mode when using the MongoDB template and does not require an SQL backend anymore.</p>
+      <h2>Quartz MySQL Backend</h2>
+      <p><span class="release new">8.10</span> Quartz is now automatically enabled in cluster mode when using the MySQL template.</p>
       <h2>SAML Addon Compatible with ADFS</h2>
       <p>
         <span class="release">8.2</span> After adjusting a few blind parts of the specification, the SAML plugin
@@ -184,10 +184,10 @@
       </ul>
       <h2>Indexing Optimization Using Scroll API</h2>
       <p>
-        <span class="release new">8.10</span> Instead of loading all document ids to reindex, the new repository scroll API is used to remove memory pressure.
+        <span class="release new">8.10</span> Instead of loading all document IDs to reindex, the new repository scroll API is used to remove memory pressure.
       </p>
       <H2>Full-Text Indexing Optimization</H2>
-      <p><span class="release">8.3</span>We optimized the indexing flow by using ES bulk indexing features, when full-text indexation is disabled at the repository level. Number of works queued is now divided by two.
+      <p><span class="release">8.3</span>We optimized the indexing flow by using ES bulk indexing features, when full-text indexing  is disabled at the repository level. Number of works queued is now divided by two.
       </p>
 
       <h2>Allow Separate Repository DDL Generation</h2>
@@ -318,7 +318,7 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
       </p>
 
       <h2>Configurable Content-Security-Policy Header</h2>
-      <p><span class="release new">8.10</span>
+      <p><span class="release new">8.10</span></p>
       The Content-Security-Policy header is useful to protect against a variety of attacks, one of them being clickjacking (<a href="https://www.owasp.org/index.php/Clickjacking" target="_blank">https://www.owasp.org/index.php/Clickjacking</a>). Nuxeo now includes a permissive Content-Security-Policy. The default Nuxeo configuration is:
       <pre>
   &lt;header name="Content-Security-Policy"&gt;default-src *; script-src 'unsafe-inline' 'unsafe-eval' data: *; style-src 'unsafe-inline' *; font-src data: *&lt;/header&gt;
@@ -331,7 +331,6 @@ nuxeoctl register-trial [&lt;email&gt; &lt;company&gt; &lt;project&gt; &lt;descr
    &lt;header name="Content-Security-Policy"&gt;default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' data: connect.nuxeo.com apis.google.com app.box.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src 'self'; font-src 'self' data: fonts.gstatic.com; media-src 'self'; frame-src 'self' www.nuxeo.com accounts.google.com; frame-ancestors 'self'&lt;/header&gt;
  &lt;/extension&gt;
    </pre>
- </p>
     </div>
   </div>
   <!--
