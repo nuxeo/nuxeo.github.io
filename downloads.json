@@ -9,7 +9,7 @@
     "description": "Nuxeo Platform 9.1 upgrade notes",
     "label": "9.1 Upgrade Notes.pdf",
     "os": "all",
-    "size": "TODO",
+    "size": "94K",
     "url": "http://cdn.nuxeo.com/nuxeo-9.1/9.1%20Upgrade%20Notes.pdf"
   }, {
     "description": "Nuxeo Platform 9.1 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
