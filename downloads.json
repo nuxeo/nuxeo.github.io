@@ -3,7 +3,7 @@
     "description": "Nuxeo Platform 9.1 release notes",
     "label": "9.1 Release Notes.pdf",
     "os": "all",
-    "size": "TODO",
+    "size": "27K",
     "url": "http://cdn.nuxeo.com/nuxeo-9.1/9.1%20Release%20Notes.pdf"
   }, {
     "description": "Nuxeo Platform 9.1 upgrade notes",
@@ -23,7 +23,7 @@
     "label": "nuxeo_9.1-01_all.deb",
     "md5": "http://cdn.nuxeo.com/nuxeo-9.1/nuxeo_9.1-01_all.deb.md5",
     "os": "deb",
-    "size": "TODO",
+    "size": "250M",
     "url": "http://apt.nuxeo.org/pool/releases/nuxeo_9.1-01_all.deb"
   }, {
     "description": "Nuxeo Platform 9.1 Virtual Machine image (VirtualBox). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
@@ -54,7 +54,7 @@
     "size": "86M",
     "url": "http://cdn.nuxeo.com/nuxeo-9.1/nuxeo-9.1-sources.zip"
   }],
-  "date": "2017-04-19",
+  "date": "2017-04-26",
   "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/9.1/",
   "name": "9.1",
   "kind": "FT"
