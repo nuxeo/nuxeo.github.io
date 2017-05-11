@@ -55,7 +55,7 @@
     "url": "http://cdn.nuxeo.com/nuxeo-9.1/nuxeo-9.1-sources.zip"
   }],
   "date": "2017-04-26",
-  "htmlReleaseNotes": "http://nuxeo.github.io/releasenotes/9.1/",
+  "htmlReleaseNotes": "https://doc.nuxeo.com/nxdoc/nuxeo-server-release-notes/",
   "name": "9.1",
   "kind": "FT"
 }, {
