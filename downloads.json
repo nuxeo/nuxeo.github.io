@@ -30,14 +30,14 @@
     "label": "nuxeo-9.2-vm-vbox.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-9.2/nuxeo-9.2-vm-vbox.zip.md5",
     "os": "vm",
-    "size": "1.0G",
+    "size": "1.1G",
     "url": "http://cdn.nuxeo.com/nuxeo-9.2/nuxeo-9.2-vm-vbox.zip"
   }, {
     "description": "Nuxeo Platform 9.2 Virtual Machine image (VMware). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
     "label": "nuxeo-9.2-vm-vmware.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-9.2/nuxeo-9.2-vm-vmware.zip.md5",
     "os": "vm",
-    "size": "1.0G",
+    "size": "1.1G",
     "url": "http://cdn.nuxeo.com/nuxeo-9.2/nuxeo-9.2-vm-vmware.zip"
   }, {
     "description": "Nuxeo Platform 9.2 multi-OS package. Based on Tomcat, for Linux, MacOS, Windows.",
