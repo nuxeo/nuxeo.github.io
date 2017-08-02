@@ -24,7 +24,7 @@
     "md5": "http://cdn.nuxeo.com/nuxeo-9.2/nuxeo_9.2-01_all.deb.md5",
     "os": "deb",
     "size": "257M",
-    "url": "http://apt.nuxeo.org/pool/releases/nuxeo_9.2-01_all.deb"
+    "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_9.2-01_all.deb"
   }, {
     "description": "Nuxeo Platform 9.2 Virtual Machine image (VirtualBox). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
     "label": "nuxeo-9.2-vm-vbox.zip",
@@ -84,7 +84,7 @@
     "md5": "http://cdn.nuxeo.com/nuxeo-9.1/nuxeo_9.1-01_all.deb.md5",
     "os": "deb",
     "size": "250M",
-    "url": "http://apt.nuxeo.org/pool/releases/nuxeo_9.1-01_all.deb"
+    "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_9.1-01_all.deb"
   }, {
     "description": "Nuxeo Platform 9.1 Virtual Machine image (VirtualBox). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
     "label": "nuxeo-9.1-vm-vbox.zip",
