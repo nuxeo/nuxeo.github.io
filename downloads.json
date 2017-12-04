@@ -1,4 +1,64 @@
 [{
+"data": [{
+  "description": "Nuxeo Platform 9.3 release notes",
+  "label": "9.3 Release Notes.pdf",
+  "os": "all",
+  "size": "8.76M",
+  "url": "http://cdn.nuxeo.com/nuxeo-9.3/9.3%20Release%20Notes.pdf"
+}, {
+  "description": "Nuxeo Platform 9.3 upgrade notes",
+  "label": "9.3 Upgrade Notes.pdf",
+  "os": "all",
+  "size": "138K",
+  "url": "http://cdn.nuxeo.com/nuxeo-9.3/9.3%20Upgrade%20Notes.pdf"
+}, {
+  "description": "Nuxeo Platform 9.3 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
+  "label": "nuxeo-9.3-setup.exe",
+  "md5": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-9.3-setup.exe.md5",
+  "os": "win",
+  "size": "617M",
+  "url": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-9.3-setup.exe"
+}, {
+  "description": "Nuxeo Platform 9.3 Debian installer. Based on Tomcat, it also installs all the third-party dependencies if necessary.",
+  "label": "nuxeo_9.3-01_all.deb",
+  "md5": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo_9.3-01_all.deb.md5",
+  "os": "deb",
+  "size": "257M",
+  "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_9.2-01_all.deb"
+}, {
+  "description": "Nuxeo Platform 9.3 Virtual Machine image (VirtualBox). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+  "label": "nuxeo-9.3-vm-vbox.zip",
+  "md5": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-9.3-vm-vbox.zip.md5",
+  "os": "vm",
+  "size": "1.2G",
+  "url": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-9.3-vm-vbox.zip"
+}, {
+  "description": "Nuxeo Platform 9.3 Virtual Machine image (VMware). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+  "label": "nuxeo-9.3-vm-vmware.zip",
+  "md5": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-9.3-vm-vmware.zip.md5",
+  "os": "vm",
+  "size": "1.2G",
+  "url": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-9.3-vm-vmware.zip"
+}, {
+  "description": "Nuxeo Platform 9.3 multi-OS package. Based on Tomcat, for Linux, MacOS, Windows.",
+  "label": "nuxeo-server-9.3-tomcat.zip",
+  "md5": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-server-9.3-tomcat.zip.md5",
+  "os": "all",
+  "size": "362M",
+  "url": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-server-9.3-tomcat.zip"
+}, {
+  "description": "Nuxeo Platform 9.3 sources",
+  "label": "nuxeo-9.3-sources.zip",
+  "md5": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-9.3-sources.zip.md5",
+  "os": "all",
+  "size": "94M",
+  "url": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-9.3-sources.zip"
+  }],
+  "date": "2017-12-05",
+  "htmlReleaseNotes": "https://doc.nuxeo.com/nxdoc/nuxeo-server-release-notes/",
+  "name": "9.3",
+  "kind": "FT"
+}, 
   "data": [{
     "description": "Nuxeo Platform 9.2 release notes",
     "label": "9.2 Release Notes.pdf",
