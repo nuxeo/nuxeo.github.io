@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="favicon.png" type="image/png">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <style>
@@ -12,27 +11,12 @@
        background: #fafafa;
        margin: 0;
        padding: 0;
-       font-family: Aregular;
+       font-family: sans-serif;
        /* sidebar transitions */
        -webkit-transition: margin 0.2s ease, -webkit-transform 0.2s ease /*rtl:append:,padding 0.2s ease*/;
        -moz-transition: margin 0.2s ease, -moz-transform 0.2s ease /*rtl:append:,padding 0.2s ease*/;
        transition: margin 0.2s ease, transform 0.2s ease /*rtl:append:,padding 0.2s ease*/;
         }
-
-        /* Nuxeo Fonts */
-        @font-face {
-          font-family:Aregular;
-          src:url(http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot);
-          src:url(http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot?#iefix) format('embedded-opentype'),url(http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.woff) format('woff'),url(http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf) format('truetype'),url(http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.svg#Aregular) format('svg');
-          font-weight:400;
-          font-style:normal }
-
-        @font-face {
-          font-family:Ademi;
-          src:url(http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.eot);
-          src:url(http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.eot?#iefix) format('embedded-opentype'),url(http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.woff) format('woff'),url(http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.ttf) format('truetype'),url(http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.svg#ademi) format('svg');
-          font-weight:400;
-          font-style:normal }
 
         /* Semantic icons */
         @font-face {
@@ -68,12 +52,12 @@
         background:transparent url(images/nuxeo_logo.png) no-repeat;
         background-size: cover;
         display: inline-block;
-        height:28px;
+        height:30px;
         width:160px;
         }
 
         header span {
-        color: #003f7d;
+        color: #0066FF;
         font-size: 1.8em;
         vertical-align: top;
         padding: 0 0 0 1em;
@@ -812,7 +796,7 @@ code {
                   <input placeholder="Password" type="password" value="{{password}}">
                 </div>
                 <div class="three wide column">
-                  <div class="ui fluid red button" on-click="{{connect}}">Connect</div>
+                  <div class="ui fluid blue button" on-click="{{connect}}">Connect</div>
                 </div>
                 </div>
               </div>
@@ -821,7 +805,7 @@ code {
             <template if="{{alerts.isNotEmpty}}">
               <div class="ui bottom attached warning message">
                  <div class="ui top right attached small label" style="font-size:.6rem;">
-                  make sure you activated the <a href="http://doc.nuxeo.com/x/vIvZ" target="_blank">CORS config</a> on your Nuxeo server
+                  make sure you activated the <a href="http://doc.nuxeo.com/nxdoc/cross-origin-resource-sharing-cors" target="_blank">CORS config</a> on your Nuxeo server
                 </div>
                 <template repeat="{{alert in alerts}}">
                   <i class="icon warning"></i>{{alert.message}}<br>
@@ -836,7 +820,7 @@ code {
 
             <div style="float:right">
              {{username}}, connected to <a _href="{{nuxeoUrl}}" target="alt">{{nuxeoUrl}}</a>
-              <div class="ui red button" on-click="{{disconnect}}">Sign out</div>
+              <div class="ui blue button" on-click="{{disconnect}}">Sign out</div>
 
             </div>
           </template>
@@ -2297,7 +2281,7 @@ code {
       <template if="{{!readonly}}">
         <nx-widget type="bloblist" required="true" value="{{blobs}}"></nx-widget>
         <!-- Upload action -->
-        <div class="ui red submit button {{blobs.isEmpty ? 'disabled' : ''}}" on-click="{{upload}}">Upload</div>
+        <div class="ui blue submit button {{blobs.isEmpty ? 'disabled' : ''}}" on-click="{{upload}}">Upload</div>
       </template>
       <br>
       <div class="ui horizontal bulleted list">
@@ -3216,7 +3200,7 @@ Ex: JavaScript (without using a Form), Android SDK 2.x.</li>
 Ex: You upload pictures you select from a mobile device.</li>
 </ul>
 In those situations, the Batch endpoint provides you a way for first uploading a set of files, then be able to reference that set of files from the API.
-You should read the <a target="alt" href="http://doc.nuxeo.com/x/OYLZ">dedicated documentation page</a> for understanding more about this endpoint. In this API playground, we allow you to upload multiple batches (you just need to change the id), and then to reference those batches both in the Resources section and in the Command one (for operations that accepts blob/blobs in input).
+You should read the <a target="alt" href="http://doc.nuxeo.com/nxdoc/batch-upload-endpoint">dedicated documentation page</a> for understanding more about this endpoint. In this API playground, we allow you to upload multiple batches (you just need to change the id), and then to reference those batches both in the Resources section and in the Command one (for operations that accepts blob/blobs in input).
         
         </div>
 
@@ -5222,7 +5206,7 @@ body{-webkit-transition:margin .3s ease,-webkit-transform .3s ease;-moz-transiti
         <content></content>
     </div>
     <!-- Button -->
-    <div class="ui red launch right attached button" id="leftmenu" on-click="{{toggleSidebar}}">
+    <div class="ui blue launch right attached button" id="leftmenu" on-click="{{toggleSidebar}}">
         <i class="reorder icon"></i>
     </div>
   </template>
@@ -5786,7 +5770,7 @@ code {
             </div>
             <div class="ui basic segment">
               {{method}} /api/v1/id/[[documentId]]<template if="{{adapter}}">/@{{adapter.name}}</template>
-              <div class="ui red submit button" style="float:right" on-click="{{runRequest}}">Execute</div>
+              <div class="ui blue submit button" style="float:right" on-click="{{runRequest}}">Execute</div>
             </div>
          </div>
         </template>
@@ -5815,7 +5799,7 @@ code {
                 <div id="enrichers" class="ui fluid accordion">
                   <div class="title active">
                     X-NXenrichers.document
-                    <a target="_blank" style="text-decoration:none; float:right" href="http://doc.nuxeo.com/x/5wUuAQ">
+                    <a target="_blank" style="text-decoration:none; float:right" href="http://doc.nuxeo.com/nxdoc/content-enrichers">
                       <i class="help icon"></i>
                     </a>
                   </div>
@@ -5863,12 +5847,13 @@ code {
                   <template if="{{batch}}">
                     <div class="field">Copy past the JSON string below and report it on the document object you want to create<br> or update, for the file property for which you want to upload a file, ex:<br>
                         <pre>{"entity-type":"document","repository":"default",
-                        "uid":"73083c4b-9f06-43ef-b26d-7b05bc845473",...,
+                        "uid":"73083c4b-9f06-43ef-b26d-7b05bc845473",
                         "properties":{
-                        "dc:title":"Headquarters",...
+                        "dc:title":"Headquarters",
                         "file:content":
-                        <b>{"upload-batch":"batch-1404143791155-30210","upload-fileId":"0"}</b>
-                        ,...}</pre></div>
+                        <b>[[batch.asJson]]</b>
+                        }}</pre>
+                    </div>
                     <div class="ui ribbon label">{{batch.batchId}}</div>
                     <textarea>{{batch.asJson}}</textarea>
                   </template>
@@ -5878,17 +5863,17 @@ code {
                         <div class="header">
                           No batches created yet.
                         </div>
-                        <p>You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
                       </div>
                     </div>
                   </nx-batch-reference>
+                  <p class="ui attached message">You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
                 </div>
               </div>
             </template>
 
             <!-- Submit button -->
             <div class="ui basic right aligned segment">
-              <div class="ui red submit button" on-click="{{runRequest}}">Execute</div>
+              <div class="ui blue submit button" on-click="{{runRequest}}">Execute</div>
             </div>
           </div>
 
@@ -6797,15 +6782,15 @@ code {
           </div>
         </template>
 
-        <template if="{{selectedItem}}">
+        <template if="{{selectedItem != null}}">
           <div class="ui huge header">{{selectedItem.name}}</div>
 
-          <template if="{{selectedItem != null &amp;&amp; selectedType != 'schemas'}}">
+          <template if="{{selectedItem != null &amp;&amp; !isSchema(selectedType)}}">
             <i class="sitemap icon link" on-click="{{showDiagram}}"></i>
           </template>
 
           <!-- SCHEMA -->
-          <template if="{{selectedType == 'schemas'}}">
+          <template if="{{isSchema(selectedItem)}}">
 
             <template if="{{selectedItem.prefix.isNotEmpty}}">
               <div class="ui gutter label">
@@ -6818,7 +6803,7 @@ code {
          </template>
 
           <!-- FACET -->
-          <template if="{{selectedType == 'facets'}}">
+          <template if="{{isFacet(selectedItem)}}">
 
             <template if="{{selectedItem.schemas.isNotEmpty}}">
             <div class="ui medium header">Related schemas</div>
@@ -6830,7 +6815,7 @@ code {
          </template>
 
           <!-- DOCTYPE -->
-          <template if="{{selectedType == 'types'}}">
+          <template if="{{isDoctype(selectedItem)}}">
 
             <template if="{{selectedItem.parent}}">
               <div class="ui label">
@@ -7535,14 +7520,17 @@ code {
                         </div>
                         <div class="content">
                           <template if="{{batch}}">
-                          <div class="field">Copy past the JSON string below and report it on the document object you want to create<br> or update, for the file property for which you want to upload a file, ex:<br>
-                        <pre>{"entity-type":"document","repository":"default",
-                        "uid":"73083c4b-9f06-43ef-b26d-7b05bc845473",...,
-                        "properties":{
-                        "dc:title":"Headquarters",...
-                        "file:content":
-                        <b>{"upload-batch":"batch-1404143791155-30210","upload-fileId":"0"}</b>
-                        ,...}</pre></div>
+                          <div class="field">Copy paste the JSON string below and report it on the document object you want to create<br> or update, for the file property for which you want to upload a file, ex:<br>
+                        <pre>{
+   "entity-type":"document",
+   "repository":"default",
+   "uid":"73083c4b-9f06-43ef-b26d-7b05bc845473",
+   "properties":{
+      "dc:title":"Headquarters",
+      "file:content":
+        <b>[[batch.asJson]]</b>
+   }
+}</pre></div>
                             <div class="ui ribbon label">{{batch.batchId}}</div>
                             <textarea>{{batch.asJson}}</textarea>
                           </template>
@@ -7552,10 +7540,10 @@ code {
                                 <div class="header">
                                   No batches created yet.
                                 </div>
-                                <p>You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
                               </div>
                             </div>
                           </nx-batch-reference>
+                          <p class="ui attached message">You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
                         </div>
                       </div>
                     </template>
@@ -7563,7 +7551,7 @@ code {
                   <td>{{param.description}}</td>
                   <td>
                   <template if="{{param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group'}}">
-                  <a target="alt" _href="http://doc.nuxeo.com/display/NXDOC/REST+API+Entity+Types#{{param.dataType}}">{{param.dataType}}</a>
+                  <a target="alt" _href="http://doc.nuxeo.com/nxdoc/rest-api-entity-types/#{{param.dataType}}">{{param.dataType}}</a>
                   </template>
                   <template if="{{!(param.dataType=='document'||param.dataType=='directoryEntries'||param.dataType=='directoryEntry'||param.dataType=='user'||param.dataType=='group')}}">
                   {{param.dataType}}
@@ -8169,10 +8157,10 @@ code {
                       <div class="header">
                         No batches created yet.
                       </div>
-                      <p>You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
                     </div>
                   </div>
                 </nx-batch-reference>
+                <p class="ui attached message">You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
               </div>
             </div>
             </template>
@@ -8218,11 +8206,11 @@ code {
              </div>
         <i class="settings icon"></i>
         <!-- Submit button -->
-      <div class="ui red submit button" on-click="{{callOp}}">Run</div>
+      <div class="ui blue submit button" on-click="{{callOp}}">Run</div>
     </div>
 
     <div class="content">
-      <nx-request-options connectionid="{{connectionId}}"></nx-request-options>
+      <nx-request-options connectionid="{{connectionId}}" request="{{opRequest}}"></nx-request-options>
     </div>
   </div>
 
@@ -9217,7 +9205,7 @@ code {
                    <li><a href="http://www.nuxeo.com/products/pricing/">Pricing</a></li>
                 </ul>
              </ul>
-             <div id="copyright">@ 2014 Nuxeo</div>
+             <div id="copyright">@ 2017 Nuxeo</div>
           </div>
           <div class="column">
              <ul>
@@ -9242,7 +9230,7 @@ code {
                    <li><a href="http://www.nuxeo.com/resources/">Resources</a></li>
                    <li><a href="http://www.nuxeo.com/events/">Events</a></li>
                    <li><a href="http://www.nuxeo.com/blog/">Blogs</a></li>
-                   <li><a href="http://doc.nuxeo.com/display/MAIN/Nuxeo+Documentation+Center+Home">Documentation</a></li>
+                   <li><a href="http://doc.nuxeo.com">Documentation</a></li>
                    <li><a href="http://answers.nuxeo.com/">Answers</a></li>
                    <li><a href="http://nuxeo.github.io/">GitHub</a></li>
                 </ul>
@@ -9259,14 +9247,6 @@ code {
                 </ul>
                 <li><a href="http://connect.nuxeo.com">My Connect</a></li>
              </ul>
-             <div id="copyright">
-                <ul class="icons f-right">
-                   <li><a href="https://www.facebook.com/Nuxeo"><img alt="facebook" title="facebook" src="http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/imgs/footer-icon-fb.png" width="30" height="30"></a></li>
-                   <li><a href="http://www.linkedin.com/groups/Nuxeo-Community-43314?home=&amp;gid=43314&amp;trk=anet_ug_hm"><img alt="linkedin" title="linkedin" src="http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/imgs/footer-icon-ln.png" width="30" height="30"></a></li>
-                   <li><a href="https://twitter.com/nuxeo"><img alt="twitter" title="twitter" src="http://1.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/imgs/footer-icon-tw.png" width="30" height="30"></a></li>
-                   <li><a href="https://plus.google.com/u/0/+nuxeo/posts"><img alt="google+" title="google+" src="http://0.assets.nuxeo.com/wp-content/themes/nuxeo.com_wp/imgs/footer-icon-gp.png" width="30" height="30"></a></li>
-                </ul>
-             </div>
           </div>
        </div>
      </div>

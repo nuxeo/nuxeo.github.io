@@ -94,15 +94,15 @@
           </div>
         </template>
 
-        <template if="{{selectedItem}}">
+        <template if="{{selectedItem != null}}">
           <div class="ui huge header">{{selectedItem.name}}</div>
 
-          <template if="{{selectedItem != null && selectedType != 'schemas'}}">
+          <template if="{{selectedItem != null && !isSchema(selectedType)}}">
             <i class="sitemap icon link" on-click="{{showDiagram}}"></i>
           </template>
 
           <!-- SCHEMA -->
-          <template if="{{selectedType == 'schemas'}}">
+          <template if="{{isSchema(selectedItem)}}">
 
             <template if="{{selectedItem.prefix.isNotEmpty}}">
               <div class="ui gutter label">
@@ -115,7 +115,7 @@
          </template>
 
           <!-- FACET -->
-          <template if="{{selectedType == 'facets'}}">
+          <template if="{{isFacet(selectedItem)}}">
 
             <template if="{{selectedItem.schemas.isNotEmpty}}">
             <div class="ui medium header">Related schemas</div>
@@ -127,7 +127,7 @@
          </template>
 
           <!-- DOCTYPE -->
-          <template if="{{selectedType == 'types'}}">
+          <template if="{{isDoctype(selectedItem)}}">
 
             <template if="{{selectedItem.parent}}">
               <div class="ui label">

@@ -73,10 +73,10 @@
                       <div class="header">
                         No batches created yet.
                       </div>
-                      <p>You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
                     </div>
                   </div>
                 </nx-batch-reference>
+                <p class="ui attached message">You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
               </div>
             </div>
             </template>
@@ -127,11 +127,11 @@
              </div>
         <i class="settings icon"></i>
         <!-- Submit button -->
-      <div class="ui red submit button" on-click="{{callOp}}">Run</div>
+      <div class="ui blue submit button" on-click="{{callOp}}">Run</div>
     </div>
 
     <div class="content">
-      <nx-request-options connectionId="{{connectionId}}"></nx-request-options>
+      <nx-request-options connectionId="{{connectionId}}" request="{{opRequest}}"></nx-request-options>
     </div>
   </div>
 

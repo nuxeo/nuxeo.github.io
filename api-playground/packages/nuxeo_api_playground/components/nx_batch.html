@@ -41,7 +41,7 @@
       <template if="{{!readonly}}">
         <nx-widget type="bloblist" required="true" value="{{blobs}}"></nx-widget>
         <!-- Upload action -->
-        <div class="ui red submit button {{blobs.isEmpty ? 'disabled' : ''}}" on-click="{{upload}}">Upload</div>
+        <div class="ui blue submit button {{blobs.isEmpty ? 'disabled' : ''}}" on-click="{{upload}}">Upload</div>
       </template>
       <br/>
       <div class="ui horizontal bulleted list">

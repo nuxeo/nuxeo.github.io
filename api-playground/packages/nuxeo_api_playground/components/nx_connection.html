@@ -38,7 +38,7 @@
                   <input placeholder="Password" type="password" value="{{password}}">
                 </div>
                 <div class="three wide column">
-                  <div class="ui fluid red button" on-click="{{connect}}">Connect</div>
+                  <div class="ui fluid blue button" on-click="{{connect}}">Connect</div>
                 </div>
                 </div>
               </div>
@@ -47,7 +47,7 @@
             <template if="{{alerts.isNotEmpty}}">
               <div class="ui bottom attached warning message">
                  <div class="ui top right attached small label" style="font-size:.6rem;">
-                  make sure you activated the <a href="http://doc.nuxeo.com/x/vIvZ" target="_blank">CORS config</a> on your Nuxeo server
+                  make sure you activated the <a href="http://doc.nuxeo.com/nxdoc/cross-origin-resource-sharing-cors" target="_blank">CORS config</a> on your Nuxeo server
                 </div>
                 <template repeat="{{alert in alerts}}">
                   <i class="icon warning"></i>{{alert.message}}<br/>
@@ -62,7 +62,7 @@
 
             <div style="float:right">
              {{username}}, connected to <a _href="{{nuxeoUrl}}" target="alt">{{nuxeoUrl}}</a>
-              <div class="ui red button" on-click="{{disconnect}}">Sign out</div>
+              <div class="ui blue button" on-click="{{disconnect}}">Sign out</div>
 
             </div>
           </template>

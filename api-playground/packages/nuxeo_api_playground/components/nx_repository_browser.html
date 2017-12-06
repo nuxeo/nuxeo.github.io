@@ -80,7 +80,7 @@
             </div>
             <div class="ui basic segment">
               {{method}} /api/v1/id/[[documentId]]<template if="{{adapter}}">/@{{adapter.name}}</template>
-              <div class="ui red submit button" style="float:right" on-click="{{runRequest}}">Execute</div>
+              <div class="ui blue submit button" style="float:right" on-click="{{runRequest}}">Execute</div>
             </div>
          </div>
         </template>
@@ -109,7 +109,7 @@
                 <div id="enrichers" class="ui fluid accordion">
                   <div class="title active">
                     X-NXenrichers.document
-                    <a target="_blank" style="text-decoration:none; float:right" href="http://doc.nuxeo.com/x/5wUuAQ">
+                    <a target="_blank" style="text-decoration:none; float:right" href="http://doc.nuxeo.com/nxdoc/content-enrichers">
                       <i class="help icon"></i>
                     </a>
                   </div>
@@ -157,12 +157,13 @@
                   <template if="{{batch}}">
                     <div class="field">Copy past the JSON string below and report it on the document object you want to create<br/> or update, for the file property for which you want to upload a file, ex:<br/>
                         <pre>{"entity-type":"document","repository":"default",
-                        "uid":"73083c4b-9f06-43ef-b26d-7b05bc845473",...,
+                        "uid":"73083c4b-9f06-43ef-b26d-7b05bc845473",
                         "properties":{
-                        "dc:title":"Headquarters",...
+                        "dc:title":"Headquarters",
                         "file:content":
-                        <b>{"upload-batch":"batch-1404143791155-30210","upload-fileId":"0"}</b>
-                        ,...}</pre></div>
+                        <b>[[batch.asJson]]</b>
+                        }}</pre>
+                    </div>
                     <div class="ui ribbon label">{{batch.batchId}}</div>
                     <textarea>{{batch.asJson}}</textarea>
                   </template>
@@ -172,17 +173,17 @@
                         <div class="header">
                           No batches created yet.
                         </div>
-                        <p>You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
                       </div>
                     </div>
                   </nx-batch-reference>
+                  <p class="ui attached message">You can use the <a href="#/uploads">Batch Upload</a> area to create and manage batches.</p>
                 </div>
               </div>
             </template>
 
             <!-- Submit button -->
             <div class="ui basic right aligned segment">
-              <div class="ui red submit button" on-click="{{runRequest}}">Execute</div>
+              <div class="ui blue submit button" on-click="{{runRequest}}">Execute</div>
             </div>
           </div>
 
