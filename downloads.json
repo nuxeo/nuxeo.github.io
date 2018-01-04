@@ -1,5 +1,65 @@
 [{
   "data": [{
+    "description": "Nuxeo Platform 9.10 release notes",
+    "label": "9.10 Release Notes.pdf",
+    "os": "all",
+    "size": "9.4M",
+    "url": "http://cdn.nuxeo.com/nuxeo-9.10/9.10%20Release%20Notes.pdf"
+  }, {
+    "description": "Nuxeo Platform 9.10 upgrade notes",
+    "label": "9.10 Upgrade Notes.pdf",
+    "os": "all",
+    "size": "248K",
+      "url": "http://cdn.nuxeo.com/nuxeo-9.10/9.10%20Upgrade%20Notes.pdf"
+  }, {
+    "description": "Nuxeo Platform 9.10 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
+    "label": "nuxeo-9.10-setup.exe",
+    "md5": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-9.10-setup.exe.md5",
+    "os": "win",
+    "size": "527M",
+    "url": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-9.10-setup.exe"
+  }, {
+    "description": "Nuxeo Platform 9.10 Debian installer. Based on Tomcat, it also installs all the third-party dependencies if necessary.",
+    "label": "nuxeo_9.10-01_all.deb",
+    "md5": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo_9.10-01_all.deb.md5",
+    "os": "deb",
+    "size": "266M",
+    "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_9.10-01_all.deb"
+  }, {
+    "description": "Nuxeo Platform 9.10 Virtual Machine image (VirtualBox). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+    "label": "nuxeo-9.10-vm-vbox.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-9.10-vm-vbox.zip.md5",
+    "os": "vm",
+    "size": "1.1G",
+    "url": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-9.10-vm-vbox.zip"
+  }, {
+    "description": "Nuxeo Platform 9.10 Virtual Machine image (VMware). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+    "label": "nuxeo-9.10-vm-vmware.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-9.10-vm-vmware.zip.md5",
+    "os": "vm",
+    "size": "1.1G",
+    "url": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-9.10-vm-vmware.zip"
+  }, {
+    "description": "Nuxeo Platform 9.10 multi-OS package. Based on Tomcat, for Linux, MacOS, Windows.",
+    "label": "nuxeo-server-9.10-tomcat.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-server-9.10-tomcat.zip.md5",
+    "os": "all",
+    "size": "272M",
+    "url": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-server-9.10-tomcat.zip"
+  }, {
+    "description": "Nuxeo Platform 9.10 sources",
+    "label": "nuxeo-9.10-sources.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-9.10-sources.zip.md5",
+    "os": "all",
+    "size": "94M",
+    "url": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-9.10-sources.zip"
+  }],
+  "date": "2018-01-09",
+  "htmlReleaseNotes": "https://doc.nuxeo.com/nxdoc/nuxeo-server-release-notes/",
+  "name": "9.10",
+  "kind": "LTS"
+  }, {
+  "data": [{
     "description": "Nuxeo Platform 9.3 release notes",
     "label": "9.3 Release Notes.pdf",
     "os": "all",
