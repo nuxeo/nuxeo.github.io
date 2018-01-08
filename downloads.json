@@ -3,7 +3,7 @@
     "description": "Nuxeo Platform 9.10 release notes",
     "label": "9.10 Release Notes.pdf",
     "os": "all",
-    "size": "9.4M",
+    "size": "16.4M",
     "url": "http://cdn.nuxeo.com/nuxeo-9.10/9.10%20Release%20Notes.pdf"
   }, {
     "description": "Nuxeo Platform 9.10 upgrade notes",
@@ -63,7 +63,7 @@
     "description": "Nuxeo Platform 9.3 release notes",
     "label": "9.3 Release Notes.pdf",
     "os": "all",
-    "size": "9.4M",
+    "size": "16.4M",
     "url": "http://cdn.nuxeo.com/nuxeo-9.3/9.3%20Release%20Notes.pdf"
   }, {
     "description": "Nuxeo Platform 9.3 upgrade notes",
