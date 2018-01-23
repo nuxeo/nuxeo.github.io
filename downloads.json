@@ -47,6 +47,13 @@
     "size": "272M",
     "url": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-server-9.10-tomcat.zip"
   }, {
+    "description": "Nuxeo Platform 9.10 SDK package. For use with Nuxeo IDE.",
+    "label": "nuxeo-server-9.10-tomcat-sdk.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-server-9.10-tomcat-sdk.zip.md5",
+    "os": "all",
+    "size": "772M",
+    "url": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-server-9.10-tomcat-sdk.zip"
+  }, {
     "description": "Nuxeo Platform 9.10 sources",
     "label": "nuxeo-9.10-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-9.10/nuxeo-9.10-sources.zip.md5",
@@ -106,6 +113,13 @@
     "os": "all",
     "size": "362M",
     "url": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-server-9.3-tomcat.zip"
+  }, {
+    "description": "Nuxeo Platform 9.3 SDK package. For use with Nuxeo IDE.",
+    "label": "nuxeo-server-9.3-tomcat-sdk.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-server-9.3-tomcat-sdk.zip.md5",
+    "os": "all",
+    "size": "774M",
+    "url": "http://cdn.nuxeo.com/nuxeo-9.3/nuxeo-server-9.3-tomcat-sdk.zip"
   }, {
     "description": "Nuxeo Platform 9.3 sources",
     "label": "nuxeo-9.3-sources.zip",
@@ -167,6 +181,13 @@
     "size": "262M",
     "url": "http://cdn.nuxeo.com/nuxeo-9.2/nuxeo-server-9.2-tomcat.zip"
   }, {
+    "description": "Nuxeo Platform 9.2 SDK package. For use with Nuxeo IDE.",
+    "label": "nuxeo-server-9.2-tomcat-sdk.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-9.2/nuxeo-server-9.2-tomcat-sdk.zip.md5",
+    "os": "all",
+    "size": "640M",
+    "url": "http://cdn.nuxeo.com/nuxeo-9.2/nuxeo-server-9.2-tomcat-sdk.zip"
+  }, {
     "description": "Nuxeo Platform 9.2 sources",
     "label": "nuxeo-9.2-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-9.2/nuxeo-9.2-sources.zip.md5",
@@ -227,6 +248,13 @@
     "size": "256M",
     "url": "http://cdn.nuxeo.com/nuxeo-9.1/nuxeo-server-9.1-tomcat.zip"
   }, {
+    "description": "Nuxeo Platform 9.1 SDK package. For use with Nuxeo IDE.",
+    "label": "nuxeo-server-9.1-tomcat-sdk.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-9.1/nuxeo-server-9.1-tomcat-sdk.zip.md5",
+    "os": "all",
+    "size": "622M",
+    "url": "http://cdn.nuxeo.com/nuxeo-9.1/nuxeo-server-9.1-tomcat-sdk.zip"
+  }, {
     "description": "Nuxeo Platform 9.1 sources",
     "label": "nuxeo-9.1-sources.zip",
     "md5": "http://cdn.nuxeo.com/nuxeo-9.1/nuxeo-9.1-sources.zip.md5",
@@ -286,6 +314,13 @@
     "os": "all",
     "size": "257M",
     "url": "http://cdn.nuxeo.com/nuxeo-8.10/nuxeo-server-8.10-tomcat.zip"
+  }, {
+    "description": "Nuxeo Platform 8.10 SDK package. For use with Nuxeo IDE.",
+    "label": "nuxeo-server-8.10-tomcat-sdk.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-8.10/nuxeo-server-8.10-tomcat-sdk.zip.md5",
+    "os": "all",
+    "size": "614M",
+    "url": "http://cdn.nuxeo.com/nuxeo-8.10/nuxeo-server-8.10-tomcat-sdk.zip"
   }, {
     "description": "Nuxeo Platform 8.10 sources",
     "label": "nuxeo-8.10-sources.zip",
