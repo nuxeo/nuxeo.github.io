@@ -24,7 +24,7 @@
     "md5": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo_10.1-01_all.deb.md5",
     "os": "deb",
     "size": "359M",
-    "url": "http://apt.nuxeo.org/pool/releases/nuxeo_10.1-01_all.deb"
+    "url": "http://apt.nuxeo.org/pool/fasttracks/nuxeo_10.1-01_all.deb"
   }, {
     "description": "Nuxeo Platform 10.1 Virtual Machine image (VirtualBox). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
     "label": "nuxeo-10.1-vm-vbox.zip",
