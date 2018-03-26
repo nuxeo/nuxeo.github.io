@@ -1,5 +1,72 @@
 [{
   "data": [{
+    "description": "Nuxeo Platform 10.1 release notes",
+    "label": "10.1 Release Notes.pdf",
+    "os": "all",
+    "size": "0M",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.1/10.1%20Release%20Notes.pdf"
+  }, {
+    "description": "Nuxeo Platform 10.1 upgrade notes",
+    "label": "10.1 Upgrade Notes.pdf",
+    "os": "all",
+    "size": "76K",
+      "url": "http://cdn.nuxeo.com/nuxeo-10.1/10.1%20Upgrade%20Notes.pdf"
+  }, {
+    "description": "Nuxeo Platform 10.1 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
+    "label": "nuxeo-10.1-setup.exe",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-10.1-setup.exe.md5",
+    "os": "win",
+    "size": "638M",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-10.1-setup.exe"
+  }, {
+    "description": "Nuxeo Platform 10.1 Debian installer. Based on Tomcat, it also installs all the third-party dependencies if necessary.",
+    "label": "nuxeo_10.1-01_all.deb",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo_10.1-01_all.deb.md5",
+    "os": "deb",
+    "size": "359M",
+    "url": "http://apt.nuxeo.org/pool/releases/nuxeo_10.1-01_all.deb"
+  }, {
+    "description": "Nuxeo Platform 10.1 Virtual Machine image (VirtualBox). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+    "label": "nuxeo-10.1-vm-vbox.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-10.1-vm-vbox.zip.md5",
+    "os": "vm",
+    "size": "1.1G",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-10.1-vm-vbox.zip"
+  }, {
+    "description": "Nuxeo Platform 10.1 Virtual Machine image (VMware). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+    "label": "nuxeo-10.1-vm-vmware.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-10.1-vm-vmware.zip.md5",
+    "os": "vm",
+    "size": "1.1G",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-10.1-vm-vmware.zip"
+  }, {
+    "description": "Nuxeo Platform 10.1 multi-OS package. Based on Tomcat, for Linux, MacOS, Windows.",
+    "label": "nuxeo-server-10.1-tomcat.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-server-10.1-tomcat.zip.md5",
+    "os": "all",
+    "size": "370M",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-server-10.1-tomcat.zip"
+  }, {
+    "description": "Nuxeo Platform 10.1 SDK package. For use with Nuxeo IDE.",
+    "label": "nuxeo-server-10.1-tomcat-sdk.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-server-10.1-tomcat-sdk.zip.md5",
+    "os": "all",
+    "size": "808M",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-server-10.1-tomcat-sdk.zip"
+  }, {
+    "description": "Nuxeo Platform 10.1 sources",
+    "label": "nuxeo-10.1-sources.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-10.1-sources.zip.md5",
+    "os": "all",
+    "size": "99M",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.1/nuxeo-10.1-sources.zip"
+  }],
+  "date": "2018-03-26",
+  "htmlReleaseNotes": "https://doc.nuxeo.com/nxdoc/nuxeo-server-release-notes/",
+  "name": "10.1",
+  "kind": "FT"
+  }, {
+  "data": [{
     "description": "Nuxeo Platform 9.10 release notes",
     "label": "9.10 Release Notes.pdf",
     "os": "all",
