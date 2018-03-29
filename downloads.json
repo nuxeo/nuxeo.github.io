@@ -3,13 +3,13 @@
     "description": "Nuxeo Platform 10.1 release notes",
     "label": "10.1 Release Notes.pdf",
     "os": "all",
-    "size": "0M",
+    "size": "113K",
     "url": "http://cdn.nuxeo.com/nuxeo-10.1/10.1%20Release%20Notes.pdf"
   }, {
     "description": "Nuxeo Platform 10.1 upgrade notes",
     "label": "10.1 Upgrade Notes.pdf",
     "os": "all",
-    "size": "76K",
+    "size": "71K",
       "url": "http://cdn.nuxeo.com/nuxeo-10.1/10.1%20Upgrade%20Notes.pdf"
   }, {
     "description": "Nuxeo Platform 10.1 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
