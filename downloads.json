@@ -1,5 +1,72 @@
 [{
   "data": [{
+    "description": "Nuxeo Platform 10.10 release notes",
+    "label": "10.10 Release Notes.pdf",
+    "os": "all",
+    "size": "430K",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.10/10.10%20Release%20Notes.pdf"
+  }, {
+    "description": "Nuxeo Platform 10.10 upgrade notes",
+    "label": "10.10 Upgrade Notes.pdf",
+    "os": "all",
+    "size": "479K",
+      "url": "http://cdn.nuxeo.com/nuxeo-10.10/10.10%20Upgrade%20Notes.pdf"
+  }, {
+    "description": "Nuxeo Platform 10.10 Windows installer. Based on Tomcat, it also installs a JVM and the third-party dependencies if necessary.",
+    "label": "nuxeo-10.10-setup.exe",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-10.10-setup.exe.md5",
+    "os": "win",
+    "size": "454M",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-10.10-setup.exe"
+  }, {
+    "description": "Nuxeo Platform 10.10 Debian installer. Based on Tomcat, it also installs all the third-party dependencies if necessary.",
+    "label": "nuxeo_10.10-01_all.deb",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo_10.10-01_all.deb.md5",
+    "os": "deb",
+    "size": "175M",
+    "url": "http://apt.nuxeo.org/pool/releases/nuxeo_10.10-01_all.deb"
+  }, {
+    "description": "Nuxeo Platform 10.10 Virtual Machine image (VirtualBox). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+    "label": "nuxeo-10.10-vm-vbox.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-10.10-vm-vbox.zip.md5",
+    "os": "vm",
+    "size": "1.1G",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-10.10-vm-vbox.zip"
+  }, {
+    "description": "Nuxeo Platform 10.10 Virtual Machine image (VMware). Based on Linux Ubuntu and Tomcat, including PostgreSQL and all the third-party dependencies.",
+    "label": "nuxeo-10.10-vm-vmware.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-10.10-vm-vmware.zip.md5",
+    "os": "vm",
+    "size": "1.0G",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-10.10-vm-vmware.zip"
+  }, {
+    "description": "Nuxeo Platform 10.10 multi-OS package. Based on Tomcat, for Linux, MacOS, Windows.",
+    "label": "nuxeo-server-10.10-tomcat.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-server-10.10-tomcat.zip.md5",
+    "os": "all",
+    "size": "260M",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-server-10.10-tomcat.zip"
+  }, {
+    "description": "Nuxeo Platform 10.10 SDK package. For use with Nuxeo IDE.",
+    "label": "nuxeo-server-10.10-tomcat-sdk.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-server-10.10-tomcat-sdk.zip.md5",
+    "os": "all",
+    "size": "681M",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-server-10.10-tomcat-sdk.zip"
+  }, {
+    "description": "Nuxeo Platform 10.10 sources",
+    "label": "nuxeo-10.10-sources.zip",
+    "md5": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-10.10-sources.zip.md5",
+    "os": "all",
+    "size": "97M",
+    "url": "http://cdn.nuxeo.com/nuxeo-10.10/nuxeo-10.10-sources.zip"
+  }],
+  "date": "2019-01-22",
+  "htmlReleaseNotes": "https://doc.nuxeo.com/nxdoc/nuxeo-server-release-notes/",
+  "name": "10.10",
+  "kind": "LTS"
+  }, {
+  "data": [{
     "description": "Nuxeo Platform 10.3 release notes",
     "label": "10.3 Release Notes.pdf",
     "os": "all",
